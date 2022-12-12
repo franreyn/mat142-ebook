@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+body[darkmode] {
+  background-color: rgba(13, 13, 13, 1);
+}
+
+body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
+  color: white;
+}
+
+#light-dark-mode {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: .25rem;
+}
+
+#light-dark-mode:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 { 
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+h2 {  
+  font-size: 1.602rem;
+  margin: 0 0 .5rem 0;
+  font-weight: 400;
+}
+
+h3 {  
+  font-size: 1.324rem;
+  margin: 0 0 .3rem 0;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 0 0 1rem 2rem;
+}
+
+li {
+  margin-bottom: .1225rem;
+}
+
+body[darkmode] a {
+  color: white;
+}
+
+a {
+  color: gray;
+}
+
+.ereader-display {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+.border {
+  background-color: rgba(13, 13, 13, .02);
+  border-left: 6px solid darkgray;
+  padding: .75rem .5rem .25rem 1.5rem;
+  margin: 2rem 0;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+/* Accordions */
+.accordion {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.accordion button {
+  background-color: lightblue;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: .5rem .75rem;
+}
+
+.accordion button:hover {
+  cursor: pointer;
+}
+
+.accordion .accordion-content {
+  border-left: 1px solid gray;
+  padding: 1rem;
+}

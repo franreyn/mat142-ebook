@@ -1,0 +1,15 @@
+{
+  "name": "mat-ebook",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install && gulp pug && gulp css && gulp js"
+  },
+  "author": "Francisco Reynoso",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0"
+  }
+}
