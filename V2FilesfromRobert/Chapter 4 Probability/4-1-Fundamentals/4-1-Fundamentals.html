@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>4.1 Probability Fundamentals</title>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width" />
+
+<link rel="stylesheet" type="text/css" href="/shared/webdev/course-files/css/themes/cards/styles.css">       
+<link rel="stylesheet" type="text/css" href="/shared/Templates/Template_Cards/css/custom.css">
+<link rel="stylesheet" href="../../MAT142.css" type="text/css" />
+
+	
+</head>
+<body id="one-column" style="overflow-y: hidden;">
+	<header class="header"><img src="../../Images/banners/Chapter 4 Probability.png" alt="decorative image of graph" />
+		<div class="text-container">
+		  <h1>4.1 Probability Fundamentals</h1>
+		</div>
+	</header>
+	
+<div id="content-wrapper">
+<div class="content-body">
+<h2>4.1 Probability Fundamentals</h2>
+    <p>Upon completion of this section, you should be able to</p>
+<ul>
+ <li>Define a sample space for a random experiment.</li> 
+ <li>Identify events for a random experiment.</li>       
+ <li>Compute theoretical and experimental probabilities for simple events.</li>
+</ul>
+    </div>
+    
+<div class="content-body">    
+<h2>Introduction</h2>
+<p>Many events in the world around us exhibit random patterns, but by repeated observations of such events it can often be seen to predict long-term patterns (despite random, short-term fluctuations). Probability is simply the branch of mathematics devoted to the study of these events. The probability of a specified event is the chance or likelihood that it will occur.</p>
+  
+<table class="display-lg">
+ <tr>
+ <td width="111"><img src="images/CoinToss.jpg" alt="Tossing a coin in the air" height="167" width="111"></td>
+ <td width="355"><p>What is the probability of a Head in a coin toss? </p>
+  <p>How do you know that?</p></td>
+ </tr>
+</table>    
+    
+<p>There are several ways of viewing probability. One would be <strong>experimental</strong> (also called empirical) in nature, where we repeatedly conduct an experiment and assign the probability to be the ratio of times we observed the event to the number of trials in the experiment. Suppose we flipped a coin 1000 times and heads occurred 529 times. We could assign the probability of being a head on a flip as the ratio <math display="inline">
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mn>529</mn></mrow>
+   <mrow>
+    <mn>1000</mn></mrow>
+  </mfrac>
+  </mrow>
+</math>. </p> 
+    
+<p>Another approach is more <strong>theoretical</strong> in that we use logic or knowledge about the experiment to assign a probability. For our coin example we could use logical reasoning to say that each side of the coin has the same chance of landing upright when flipped, so we would assign the probability as <math display="inline">
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>2</mn>
+  </mfrac>
+  </mrow>
+</math>
+ for being a heads. This theoretical value comes with some assumptions typically (the coin is balanced equally throughout, the player is not attempting to manipulate the toss, etc...). For those interested in how a coin flip may not be as fair as you think take a look at "<a href="The Coin Flip_ A Fundamentally Unfair Proposition.pdf" target="_blank">The Coin Flip: A Fundamentally Unfair Proposition</a>".</p>
+
+<p>Another view of how to assign probabilities would be <strong>subjective</strong> in nature, in other words an educated guess.  If someone asked you the probability that the Diamondbacks would win their next baseball game, it would be impossible to conduct an experiment where the same two teams played each other repeatedly, each time with the same starting lineup and starting pitchers, each starting at the same time of day on the same field under the precisely the same conditions.  Since there are so many variables to take into account, someone familiar with baseball and with the two teams involved might make an educated guess that there is a 75% chance they will win the game; that is, if the same two teams were to play each other repeatedly under identical conditions, the Mariners would win about three out of every four games.  But this is just a guess, with no way to verify its accuracy, and depending upon how educated the educated guesser is, a subjective probability may not be worth very much.</p>
+
+<p>We will return to the experimental and subjective probabilities from time to time, but in this course we will mostly be concerned with theoretical probability.</p>    
+
+    </div>
+    
+<div class="content-body">  
+<h2>Sample Spaces and Events</h2>
+    
+<p>If you roll a die, pick a card from deck of playing cards, or randomly select a person and observe their age, we say we are conducting a <strong><em>random experiment</em></strong>, an action for which all possible outcomes can be listed, but for which the actual outcome on any given trial of the experiment cannot be predicted with certainty. In probability, we look at the likelihood of an outcome or a collection of outcomes that we call an <em><strong>event</strong></em> in the random experiment.  We begin with some terminology. </p>
+
+<div class="definition">
+ <h4>Terminology</h4>
+<p>A <strong>random experiment</strong> is a mechanism that produces a definite outcome that cannot be predicted with certainty. The <strong>sample space</strong> associated with a random experiment is the set or collection of all possible outcomes. An <strong>event</strong> is any particular outcome or group of outcomes. When an event is made up of just one single outcome we call it a <strong>simple event</strong>.</p>    
+</div>
+
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 1</h3>  
+      <p>Construct a sample space for the experiment that consists of tossing a single coin.</p>
+</div>
+	<p>The outcomes could be labeled <em>h</em> for heads and <em>t</em> for tails. Then the sample space is the set
+<math display="inline">
+ <mrow>
+  <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mo>,</mo><mi>t</mi><mo>&#x007D;</mo></mrow>
+</math>
+.</p>
+</div>	    
+    
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 2</h3>
+<p>Construct a sample space for the experiment that consists of rolling a standard single die. Find the events that correspond to the phrases “an even number is rolled” and “a number greater than two is rolled.”</p>
+</div>
+ <p>The sample space is the set of all possible simple events: <math display="inline">
+ <mrow>
+  <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>&#x007D;</mo></mrow>
+</math>
+    </p>
+ 
+ <p>The event “an even number is rolled” would be the collection of all even numbers. We will call this event E and would be: <math display="inline">
+ <mi>E</mi><mo>=</mo><mo>&#x007B;</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>&#x007D;</mo>
+     </math></p>
+<p>The event “a number greater than two is rolled.” would be the collection of all numbers larger (greater) than 2. We will call this event F and would be: <math display="inline">
+ <mi>F</mi><mo>=</mo><mo>&#x007B;</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>&#x007D;</mo>
+     </math></p>    
+
+</div>
+
+<p>The choice of the letter for an event is similar to the choice for a letter in a variable in an algebra application. We pick one that will hopefully help with the meaning of the event in terms of the application. The letter <em>E</em> was a natural choice for the event of an even number in the dice rolls, so it was used. The other event didn't have a natural choice so we picked a letter close to <em>E</em> and didn't have any inferred meaning in the application.</p>    
+    
+<p>A graphical representation of a sample space and events is a Venn diagram, as shown below "Venn Diagrams for Two Sample Spaces". In general the sample space <em>S</em> is represented by a rectangle, outcomes by points within the rectangle, and events by ovals that enclose the outcomes that compose them.</p>
+<div class="side-by-side">
+ <div class="side-by-side-item">
+<figure class="center"><figcaption>Venn Diagrams for Two Sample Spaces</figcaption>
+  <img src="images/Venn Diagrams for Two Sample Spaces.jpg" width="100%" alt="first rectangle labeled a illustrating the coin toss sample space with two dots inside with one labeled h and other labeled t. Second rectangle labeled b illustrating the sample space for a single dice roll with dots labeled 1, 2, 3, 4, 5, 6 and blue oval around dots 3, 4, 5, 6 and red oval around dots 2, 4, and 6."/> </figure>    
+     </div>
+    </div> 
+    
+<p>A device that can be helpful in identifying all possible outcomes of a random experiment, particularly one that can be viewed as proceeding in stages, is what is called a <strong>tree diagram</strong>. It is described in the following example.</p>    
+    
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 3</h3>  
+      <p>Construct a sample space that describes all three-child families according to the binary genders of the children with respect to birth order. For simplicity we are only using the binary genders, but recognize there are those who identify as nonbinary.</p>
+</div>
+	<p>Two of the outcomes are “two boys then a girl,” which we might denote bbg, and “a girl then two boys,” which we would denote gbb. Clearly there are many outcomes, and when we try to list all of them it could be difficult to be sure that we have found them all unless we proceed systematically. The tree diagram shown below "Tree Diagram For Three-Child Families", gives a systematic approach.</p>
+<div class="side-by-side">
+ <div class="side-by-side-item">
+ <figure><figcaption>Tree Diagram For Three-Child Families</figcaption>
+   <img src="images/Tree Diagram For Three Child Families.jpg" width="40%" alt="Tree diagram starting with b and g and each branching out to two choices of either b or g until we have branches that list out bbb, bbg, bgb, bgg, gbb, gbg, ggb, ggb, ggg."/></figure>     
+    </div>
+    </div>   
+    
+	<p>The diagram was constructed as follows. There are two possibilities for the first child, boy or girl, so we draw two line segments coming out of a starting point, one ending in a b for “boy” and the other ending in a g for “girl.” For each of these two possibilities for the first child there are two possibilities for the second child, “boy” or “girl,” so from each of the b and g we draw two line segments, one segment ending in a b and one in a g. For each of the four ending points now in the diagram there are two possibilities for the third child, so we repeat the process once more.</p>
+	<p>The line segments are called branches of the tree. The right ending point of each branch is called a node. The nodes on the extreme right are the final nodes; to each one there corresponds an outcome, as shown in the figure.</p>
+    <p>From the tree it is easy to read off the eight outcomes of the experiment, so the sample space is, reading from the top to the bottom of the final nodes in the tree,</p>
+    <math display="block">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi><mo>&#x007D;</mo>
+</math>
+
+</div>	    
+    
+<div class="tryitnow">
+  	<h5>Try it Now 1</h5>
+	<p>A random experiment consists of tossing two coins. Write out the sample space assuming we can tell the difference between the two coins. What outcomes make up the event there is at least one head showing?</p>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+	<p>Since we can tell the coins apart, there are two ways for the coins to differ we can label each outcome as a pair of letters, the first of which indicates how the first coin landed and the second coin landed. A sample space is then <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mo>&#x007D;</mo>
+</math>
+.</p>
+        <p>The event "there is at least one head showing" can be made observed when there is one heads or two heads. We will call the event E and the outcomes are: <math display="inline">
+ <mi>E</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>&#x007D;</mo>
+</math>
+</p>
+	</div>		
+</div>
+
+</div>
+
+<div class="content-body">    
+<h2>Probability</h2>    
+
+<p>We have mentioned earlier for empirical probability that it represents a ratio of the number of times we observed an outcome over number of trials. With that in mind we will give a more formal definition along with properties that makes sense when we think of probabilities as a ratio.</p>
+    
+<div class="definition">
+<h4>Probability</h4>    
+<p>The <strong>probability of an outcome</strong> <em>e</em> in a sample space S is a number <em>p</em> between 0 and 1 that measures the likelihood that <em>e</em> will occur on a single trial of the corresponding random experiment. </p> 
+<ul>   
+<li>
+  <p>The value 
+    <math display="inline">
+      <mi>p</mi>
+      <mo>=</mo>
+      <mn>0</mn>
+    </math>
+    corresponds to the outcome <em>e</em> being impossible</p>
+</li>
+<li><p>The value 
+  <math display="inline">
+    <mi>p</mi>
+    <mo>=</mo>
+    <mn>1</mn>
+  </math> 
+  corresponds to the outcome <em>e</em> being certain.   
+</p></li>
+</ul>
+<p>The <strong>probability of an event</strong> <em>E</em> is the sum of the probabilities of the individual outcomes of which it is composed. It is denoted <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow>
+</math>
+.</p> 
+    
+<p>If <math display="inline">
+ <mi>E</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <msub>
+   <mi>e</mi>
+   <mn>1</mn>
+  </msub>
+  <mo>,</mo><msub>
+   <mi>e</mi>
+   <mn>2</mn>
+  </msub>
+  <mo>,</mo><mn>...</mn><mo>,</mo><msub>
+   <mi>e</mi>
+   <mi>k</mi>
+  </msub>
+  </mrow> <mo>}</mo></mrow>
+</math>, then 
+ <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>e</mi>
+    <mn>1</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>e</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mo>&#x22EF;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>e</mi>
+    <mi>k</mi>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow>
+</math></p>
+    
+</div>    
+    
+<p>"Sample Spaces and Probability" graphically illustrates the definitions.</p>    
+<div class="side-by-side">
+
+<figure><figcaption>Sample Spaces and Probability</figcaption>
+  <img src="images/Sample Spaces and Probability.jpg" width="70%" alt="Sample space S with outcomes e1, e2, e3, e4, e5 with associated probabilities p1, p2, p3, p4, p5. The events A={e1,e2} and B={e2,e3,e4}. P(A)=p1+p2 and P(B)=p2+p3+p4"/></figure>    
+
+    </div>     
+<p>Since the whole sample space <em>S</em> is an event that is certain to occur, the sum of the probabilities of all the outcomes must be the number 1.</p>    
+
+<p>In ordinary language probabilities are frequently expressed as percentages. For example, we would say that there is a 70% chance of rain tomorrow, meaning that the probability of rain is 0.70. We will use this practice here, but in all the computational formulas that follow we will use the form 0.70 and not 70%.</p>    
+
+<p>It is relatively straight forward to find probability is when all the outcomes have the same chance of occurring. For example experiments where each outcome has the same chance of happening would include the roll of a fair dice, flipping a fair coin, or even the results of a simple random sample from a population. Finding probabilities in these situations is just a matter or counting (as shown in the definition below).</p>    
+    
+<div class="definition">
+ <h4>Probability for Equal Likely Outcomes</h4>
+ <p>Given that all outcomes are equal likely, we can compute the probability of an event <em>E</em> using this formula:</p>
+ 
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+ <mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac>
+  <mrow>
+  <mtext>Number&#x00A0;of&#x00A0;outcomes&#x00A0;corresponding&#x00A0;to&#x00A0;the&#x00A0;event&#x00A0;E</mtext>
+  </mrow>
+  <mrow>
+  <mtext>Total&#x00A0;number&#x00A0;of&#x00A0;equally-likely&#x00A0;outcomes</mtext>
+  </mrow>
+ </mfrac>
+ </mrow>
+</math>
+
+ <p>The "<math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow>
+</math>
+" notation we will be using reads "the probability of the event E occurring". In the notation <em>P</em> just means to find the probability and <em>E</em> is the event of interest.</p>
+</div>
+
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 4</h3>  
+      <p>A coin is called “balanced” or “fair” if each side is equally likely to land up. Assign a probability to each outcome in the sample space for the experiment that consists of tossing a single fair coin.</p>
+</div>
+	<p>With the outcomes labeled <em>h</em> for heads and <em>t</em> for tails, the sample space is the set
+<math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mo>,</mo><mi>t</mi><mo>&#x007D;</mo>
+</math>
+. Since the outcomes have the same probabilities, which must add up to 1, each outcome is assigned probability <math display="inline">
+ <mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ 
+</math>
+. We could write these as <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>h</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ 
+</math> and <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>t</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ 
+</math>.
+</p>
+
+</div>	    
+    
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 5</h3>
+<p>A die is called “balanced” or “fair” if each side is equally likely to land on top. Assign a probability to each outcome in the sample space for the experiment that consists of tossing a single fair die. Find the probabilities of the events E: “an even number is rolled” and T: “a number greater than two is rolled.”</p>    
+</div>
+<p>With outcomes labeled according to the number of dots on the top face of the die, the sample space is the set <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>&#x007D;</mo>
+</math>
+. Since there are six equally likely outcomes, which must add up to 1, each is assigned probability <math display="inline">
+ <mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+    .</p>
+<p>
+Since <math display="inline">
+ <mi>E</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn></mrow> <mo>}</mo></mrow>
+    </math> and this makes up 3 of the total 6 outcomes we have </p>
+    <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>E</mi>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>2</mn>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>4</mn>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>6</mn>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>E</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>E</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>3</mn>
+     <mn>6</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>E</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mn>2</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+<p>Since <math display="inline">
+ <mi>T</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn></mrow> <mo>}</mo></mrow>
+</math>
+ and this represents 4 of the 6 outcomes we have that</p>
+  <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>T</mi>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>3</mn>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>4</mn>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>5</mn>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mn>6</mn>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>T</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mn>6</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>T</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>4</mn>
+     <mn>6</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>T</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>2</mn>
+     <mn>3</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+  
+    
+</div>
+
+    
+<p>Probabilities are essentially fractions, and can be reduced to lower terms like fractions as you saw in the examples, however we may not always do this as the unsimplified fraction may contain more information when reading it then the simplified answer. For instance in the example above we know there was six outcomes on the dice roll and the probability of rolling a number greater than 2 was found to be <math display="inline">
+ <mfrac>
+  <mn>2</mn>
+  <mn>3</mn>
+ </mfrac>
+ 
+</math>
+. If we leave the answer as <math display="inline">
+ <mfrac>
+  <mn>4</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math> we keep the information about how many outcomes out of the 6 made up the event rolling a number greater than 2.</p>
+ 
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 6</h3> 
+<p>Let's say you have a bag with 20 cherries where 14 are sweet and 6 are sour. If you pick a cherry at random, what is the probability that it will be sweet? </p>
+</div>
+ <p>There are 20 possible cherries that could be picked, so the number of possible outcomes is 20. Of these 20 possible outcomes, 14 are favorable (sweet), so the probability that the cherry will be sweet is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Sweet</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>14</mn></mrow>
+  <mrow>
+   <mn>20</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>7</mn>
+  <mrow>
+   <mn>10</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+
+. </p>
+    
+</div>
+
+<p>There is one potential complication to the cherry picking example, however. It must be assumed that the probability of picking any of the cherries is the same as the probability of picking any other. This wouldn't be true if (let us imagine) the sweet cherries are smaller than the sour ones. (The sour cherries would come to hand more readily when you sampled from the bag.) Let us keep in mind, therefore, that when we assess probabilities in terms of the ratio of favorable to all potential cases, we rely heavily on the assumption of equal probability for all outcomes.</p>
+
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 7 <img src="images/Playing Cards.jpg" alt="Cards" width="180" height="142" class="floatRight"></h3>
+<p>A standard deck of 52 playing cards consists of four <strong>suits</strong> (hearts, spades, diamonds and clubs). Spades and clubs are black while hearts and diamonds are red. Each suit contains 13 cards, each of a different <strong>rank</strong>: an Ace (which in many games functions as both a low card and a high card), cards numbered 2 through 10, a Jack, a Queen and a King.</p>   
+    
+<ol type="a">
+    <li><p>Compute the probability of randomly drawing one card from a deck and getting an Ace.</p></li>
+    <li><p>Compute the probability of randomly drawing one card from a deck and getting a Diamond.</p></li>
+    <li><p>Compute the probability of randomly drawing one card from a deck and getting a black card.</p></li>
+</ol>    
+</div>
+
+<ol type="a">
+    <li><p>There are 52 cards in the deck and 4 Aces so&nbsp;<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+ <mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mi>c</mi><mi>e</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac>
+  <mn>4</mn>
+  <mrow>
+  <mn>52</mn>
+  </mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+  <mn>13</mn>
+  </mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.0769</mn>
+ </mrow>
+</math>
+</p></li>
+    <li><p>There are 13 diamonds in the deck, so <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Diamond</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>13</mn></mrow>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>4</mn>
+ </mfrac>
+ <mo>=</mo><mn>0.25</mn>
+</math>
+</p></li>
+    <li><p>There are two suits that are black for a total of 26 cards, so <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Black</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>26</mn></mrow>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>1</mn>
+ </mfrac>
+ <mo>=</mo><mn>0.5</mn>
+</math>
+</p></li>
+</ol> 
+    
+</div>
+
+<div class="tryitnow">
+  	<h5>Try it Now 2</h5>
+	<p>Two fair coins are tossed. Find the probability that the coins match, i.e., either both land heads or both land tails.</p>
+				
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>We constructed the sample space in the first Try It Now for this chapter. That sample space was <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mo>&#x007D;</mo>
+</math>. What outcomes make up the event in question?
+</p>
+	</div>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+	<p>We constructed the sample space in the first Try It Now for this chapter. That sample space was <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mo>&#x007D;</mo>
+</math>. We are interested in finding the probability of the event <math display="inline">
+ <mi>M</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mo>&#x007D;</mo>
+</math>
+</p>. 
+<p>Now since the coin was fair we can safely assume each of the paired outcomes of the two coins will also be equally likely. This gives us that</p> 
+        <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>h</mi><mi>h</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>t</mi><mi>t</mi></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mn>4</mn>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mn>4</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>2</mn>
+     <mn>4</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mn>2</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+        
+	</div>		
+</div>
+    
+    </div>
+<div class="content-body">
+<h2>Probability when things are not equal likely</h2>    
+    
+<p>The previous examples illustrate how probabilities can be computed simply by counting when the sample space consists of a finite number of equally likely outcomes. In some situations the individual outcomes of any sample space that represents the experiment are unavoidably unequally likely, in which case probabilities cannot be computed merely by counting, but the computational formula given in the definition of the probability of an event must be used. </p>
+    
+<div class="plainblock">
+<p>The <strong>probability of an event</strong> <em>E</em> is the sum of the probabilities of the individual outcomes of which it is composed. It is denoted <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow>
+</math>
+.</p> 
+    
+<p>If <math display="inline">
+ <mi>E</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <msub>
+   <mi>e</mi>
+   <mn>1</mn>
+  </msub>
+  <mo>,</mo><msub>
+   <mi>e</mi>
+   <mn>2</mn>
+  </msub>
+  <mo>,</mo><mn>...</mn><mo>,</mo><msub>
+   <mi>e</mi>
+   <mi>k</mi>
+  </msub>
+  </mrow> <mo>}</mo></mrow>
+</math>, then 
+ <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>e</mi>
+    <mn>1</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>e</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mo>&#x22EF;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>e</mi>
+    <mi>k</mi>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow>
+</math></p>    
+    
+</div>    
+    
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 8</h3>  
+      <p>The breakdown of the student body <a href="https://pima.edu/about-pima/reports-data/student-reports/docs-student-characteristics/docs-fall/2020-fall-student-characteristics-report-das-49.pdf" target="_blank">Race and Ethnicity at Pima Community College in Fall 2020</a> was 37.33% white, 4.93% black, 47.16% Hispanic, 3.12% Asian, and 1.97% American Indian or Alaskan Native, 5.49% for all others (including undeclared). A student is randomly selected from Fall 202. (To select “randomly” means that every student has the same chance of being selected.) Find the probabilities of the following events:</p>
+<ol type="a">
+    <li><p>H: the student is Hispanic,</p></li>
+    <li><p>N: the student is not Black.</p></li>    
+    <li><p>M: the student is a minority (that is, not white),</p></li>
+</ol>      
+      
+</div>
+	<p>The student body's race and ethnicity is broken down into 6 different outcomes. We can write this out as a sample space of <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>a</mi><mi>i</mi><mo>,</mo><mi>o</mi><mo>&#x007D;</mo>
+</math>. The experiment is the action of randomly selecting a student from the student population at Pima. Since 47.16% of the students are Hispanic and all students have the same chance of being selected, <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>h</mi>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.4716</mn>
+</math>, and similarly for the other outcomes. This information is summarized below:</p>
+
+<table class="display-lg" border="1">
+ <tbody>
+  <tr>
+   <th scope="row">Outcomes</th>
+   <td>w</td>
+   <td>b</td>
+   <td>h</td>
+   <td>a</td>
+   <td>ai</td>
+   <td>o</td>
+  </tr>
+  <tr>
+   <th scope="row">Probability</th>
+   <td>0.3733</td>
+   <td>0.0493</td>
+   <td>0.4716</td>
+   <td>0.0312</td>
+   <td>0.0197</td>
+   <td>0.0549</td>
+  </tr>
+ </tbody>
+</table>
+    
+    
+<ol type="a">
+    <li><p>Since <math display="inline">
+ <mi>H</mi><mo>=</mo><mo>&#x007B;</mo><mi>h</mi><mo>&#x007D;</mo>
+</math>
+, <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>H</mi>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>h</mi>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.4716</mn>
+</math>
+</p></li>
+    <li><p>Since <math display="inline">
+ <mi>N</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>a</mi><mi>i</mi><mo>,</mo><mi>o</mi><mo>&#x007D;</mo>
+</math>, 
+</p>
+    <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>N</mi>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>w</mi>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>h</mi>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>a</mi>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>a</mi><mi>i</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>o</mi>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>N</mi>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.3733</mn><mo>+</mo><mn>0.4716</mn><mo>+</mo><mn>0.0312</mn><mo>+</mo><mn>0.0197</mn><mo>+</mo><mn>0.0549</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>N</mi>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.9507</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+    </li>    
+    <li><p>Since <math display="inline">
+ <mi>M</mi><mo>=</mo><mo>&#x007B;</mo><mi>b</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>a</mi><mi>i</mi><mo>,</mo><mi>o</mi><mo>&#x007D;</mo>
+</math>, </p>
+    <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>b</mi>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>h</mi>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>a</mi>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>a</mi><mi>i</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>o</mi>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.0493</mn><mo>+</mo><mn>0.4716</mn><mo>+</mo><mn>0.0312</mn><mo>+</mo><mn>0.0197</mn><mo>+</mo><mn>0.0549</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>M</mi>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.6267</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+    </li>
+</ol>        
+
+</div>	    
+    
+<p>In the last example the process for adding the probabilities together worked as the classifications of race/ethnicity didn't allow for any of the students to fall into more than one classification as well as all students would be captured into just one of them. If there were overlaps between two classifications we could not treat the probability question in the same way.</p>    
+    
+<div class="tryitnow">
+  	<h5>Try it Now 3</h5>
+	<p>The student body in a local high school may be broken down into ten categories as follows: 25% white male, 26% white female, 12% black male, 15% black female, 6% Hispanic male, 5% Hispanic female, 3% Asian male, 3% Asian female, 1% male of other minorities combined, and 4% female of other minorities combined. A student is randomly selected from this high school. Find the probabilities of the following events:</p>
+    
+ <ol type="a">
+    <li>
+      <p><em>B</em>: the student is black,</p></li>
+    <li>
+      <p><em>MF</em>: the student is minority female,</p></li>
+    <li>
+      <p><em>FN</em>: the student is female and is not black.</p></li>
+</ol>   
+				
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>It may be helpful to organize the data into a table and convert the outcomes in the sample space into probabilities. The sample space would be <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mi>m</mi><mo>,</mo><mi>b</mi><mi>m</mi><mo>,</mo><mi>h</mi><mi>m</mi><mo>,</mo><mi>a</mi><mi>m</mi><mo>,</mo><mi>o</mi><mi>m</mi><mo>,</mo><mi>w</mi><mi>f</mi><mo>,</mo><mi>b</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi><mo>&#x007D;</mo>
+</math>
+</p>
+	</div>
+
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+	<p>The sample space would be <math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mi>m</mi><mo>,</mo><mi>b</mi><mi>m</mi><mo>,</mo><mi>h</mi><mi>m</mi><mo>,</mo><mi>a</mi><mi>m</mi><mo>,</mo><mi>o</mi><mi>m</mi><mo>,</mo><mi>w</mi><mi>f</mi><mo>,</mo><mi>b</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi><mo>&#x007D;</mo>
+</math>. The information given in the example can be summarized in the following table, called a <em><strong>two-way contingency table</strong></em>:</p>
+        
+<table class="display-lg" border="1">
+<thead>
+                        <tr>
+                            <th rowspan="2" align="left">Gender</th>
+                            <th colspan="5" align="center">Race / Ethnicity</th>
+                        </tr>
+                        <tr>
+                            <th align="center">White</th>
+                            <th align="center">Black</th>
+                            <th align="center">Hispanic</th>
+                            <th align="center">Asian</th>
+                            <th align="center">Others</th>
+                        </tr>
+                    </thead> 
+<tbody>
+                        <tr>
+                            <td align="left">Male</td>
+                            <td align="center">0.25</td>
+                            <td align="center">0.12</td>
+                            <td align="center">0.06</td>
+                            <td align="center">0.03</td>
+                            <td align="center">0.01</td>
+                        </tr>
+                        <tr>
+                            <td align="left">Female</td>
+                            <td align="center">0.26</td>
+                            <td align="center">0.15</td>
+                            <td align="center">0.05</td>
+                            <td align="center">0.03</td>
+                            <td align="center">0.04</td>
+                        </tr>
+                    </tbody>
+</table>        
+ <ol type="a">
+    <li>
+      <p>Since <math display="inline">
+ <mi>B</mi><mo>=</mo><mo>&#x007B;</mo><mi>b</mi><mi>m</mi><mo>,</mo><mi>b</mi><mi>f</mi><mo>&#x007D;</mo>
+</math>
+: </p>
+     <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>B</mi>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>b</mi><mi>m</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>b</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>B</mi>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.12</mn><mo>+</mo><mn>0.15</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mi>B</mi>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.27</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+     </li>
+    <li>
+      <p>Since <math display="inline">
+ <mi>M</mi><mi>F</mi><mo>=</mo><mo>&#x007B;</mo><mi>b</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi><mo>&#x007D;</mo>
+</math>: </p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>M</mi><mi>F</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>b</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>h</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>a</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>o</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>M</mi><mi>F</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.15</mn><mo>+</mo><mn>0.05</mn><mo>+</mo><mn>0.03</mn><mo>+</mo><mn>0.04</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>M</mi><mi>F</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.27</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+     
+     </li>
+    <li>
+      <p>Since <math display="inline">
+ <mi>F</mi><mi>N</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi><mo>&#x007D;</mo>
+</math>
+: </p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>F</mi><mi>N</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>w</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>h</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>a</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>o</mi><mi>f</mi></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>F</mi><mi>N</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.26</mn><mo>+</mo><mn>0.05</mn><mo>+</mo><mn>0.03</mn><mo>+</mo><mn>0.04</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>F</mi><mi>N</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.38</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+     
+     </li>
+</ol>  
+        
+        
+	</div>		
+</div>
+    
+    
+</div>
+<div class="content-body">    
+<h2>Exercises:</h2>
+
+<ol>
+<li>
+ <p>Which of the following can be a probability value? </p>
+    <p><math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mn>1</mn><mo>,</mo><mtext>&#x2003;</mtext><mo>&#x2212;</mo><mn>1.2</mn><mo>,</mo><mtext>&#x2003;</mtext><mo>&#x2212;</mo><mn>.2</mn><mo>,</mo><mtext>&#x2003;</mtext><mfrac>
+   <mn>1</mn>
+   <mi>&#x03C0;</mi>
+  </mfrac>
+  <mo>,</mo><mtext>&#x2003;</mtext><msqrt>
+   <mn>2</mn>
+  </msqrt>
+  <mo>,</mo><mtext>&#x2003;</mtext><mfrac>
+   <mn>5</mn>
+   <mn>7</mn>
+  </mfrac>
+  <mo>,</mo><mtext>&#x2003;</mtext><mfrac>
+   <mn>7</mn>
+   <mn>5</mn>
+  </mfrac>
+  <mo>,</mo><mtext>&#x2003;</mtext><mn>0</mn>
+ </mrow>
+</math>
+</p>
+
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mn>1</mn><mo>,</mo><mfrac>
+  <mn>1</mn>
+  <mi>&#x03C0;</mi>
+ </mfrac>
+ <mo>,</mo><mfrac>
+  <mn>5</mn>
+  <mn>7</mn>
+ </mfrac>
+ <mo>,</mo><mn>0</mn>
+</math>
+</p>
+	            </div>	
+	        </div>    
+    
+</li>
+<li>
+<p>A box contains 10 white and 10 black marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, two marbles in succession and noting the color each time. (To draw “with replacement” means that the first marble is put back before the second marble is drawn.)</p>   
+<p>For each event listed below write out the outcomes that make up the event. If we assume each outcome is equal likely find the probability of each event.</p>    
+<ol type="a">
+    <li><p>At least one marble of each color is drawn.</p></li>
+    <li><p>No white marble is drawn.</p></li>
+</ol>    
+
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mi>w</mi><mo>,</mo><mi>w</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>w</mi><mo>,</mo><mi>b</mi><mi>b</mi><mo>&#x007D;</mo>
+</math>
+</p>
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>E</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>w</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>w</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>2</mn>
+  <mn>4</mn>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ 
+</math>
+
+</p></li>
+    <li><p><math display="inline">
+ <mi>N</mi><mi>W</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>b</mi><mi>b</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>N</mi><mi>W</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>4</mn>
+ </mfrac>
+ 
+</math>
+
+</p></li>
+</ol>                     
+	           </div>	
+	        </div>    
+    
+</li>    
+
+<li>
+<p>A box contains 16 white and 16 black marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, three marbles in succession and noting the color each time. (To draw “with replacement” means that each marble is put back before the next marble is drawn.)</p>
+<p>For each event listed below write out the outcomes that make up the event. If we assume each outcome is equal likely find the probability of each event.</p>    
+<ol type="a">
+    <li><p>At least one marble of each color is drawn.</p></li>
+    <li><p>No white marble is drawn.</p></li>
+    <li><p>More black than white marbles are drawn.</p></li>    
+</ol>    
+    
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>w</mi><mi>w</mi><mi>w</mi><mo>,</mo><mi>w</mi><mi>w</mi><mi>b</mi><mo>,</mo><mi>w</mi><mi>b</mi><mi>w</mi><mo>,</mo><mi>b</mi><mi>w</mi><mi>w</mi><mo>,</mo><mi>w</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>w</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>w</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>b</mi><mo>&#x007D;</mo>
+</math>
+</p>
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>E</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>w</mi><mi>w</mi><mi>b</mi><mo>,</mo><mi>w</mi><mi>b</mi><mi>w</mi><mo>,</mo><mi>b</mi><mi>w</mi><mi>w</mi><mo>,</mo><mi>w</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>w</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>w</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>6</mn>
+  <mn>8</mn>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>3</mn>
+  <mn>4</mn>
+ </mfrac>
+ 
+</math>
+
+</p></li>
+    <li><p><math display="inline">
+ <mi>N</mi><mi>W</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>b</mi><mi>b</mi><mi>b</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>N</mi><mi>W</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>8</mn>
+ </mfrac>
+ 
+</math>
+
+</p></li>
+    <li><p><math display="inline">
+ <mi>F</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>w</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>w</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>w</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>b</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>F</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>4</mn>
+  <mn>8</mn>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ 
+</math>
+
+</p></li>    
+</ol>                        
+	           </div>	
+	        </div>    
+    
+</li>      
+
+<li>
+<p>A box contains 8 red, 8 yellow, and 8 green marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, two marbles in succession and noting the color each time.</p> 
+<ol type="a">
+
+    <li><p>No yellow marble is drawn.</p></li>
+    <li><p>The two marbles drawn have the same color.</p></li>    
+    <li><p>At least one marble of each color is drawn.</p></li>
+</ol>     
+    
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>S</mi><mo>=</mo><mo>&#x007B;</mo><mi>r</mi><mi>r</mi><mo>,</mo><mi>r</mi><mi>y</mi><mo>,</mo><mi>y</mi><mi>r</mi><mo>,</mo><mi>r</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>r</mi><mo>,</mo><mi>y</mi><mi>y</mi><mo>,</mo><mi>y</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>y</mi><mo>,</mo><mi>g</mi><mi>g</mi><mo>&#x007D;</mo>
+</math>
+</p>
+
+<ol type="a">
+
+    <li><p><math display="inline">
+ <mi>N</mi><mi>Y</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>r</mi><mi>r</mi><mo>,</mo><mi>r</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>r</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>N</mi><mi>W</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>4</mn>
+  <mn>9</mn>
+ </mfrac>
+
+</math>
+  
+</p></li>
+    <li><p><math display="inline">
+ <mi>B</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mi>r</mi><mi>r</mi><mo>,</mo><mi>y</mi><mi>y</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow> <mo>}</mo></mrow>
+</math>: <math display="inline">
+ <mrow>
+  <mi>P</mi><mrow><mo>(</mo>
+   <mi>B</mi>
+  <mo>)</mo></mrow><mo>=</mo><mfrac>
+   <mn>3</mn>
+   <mn>9</mn>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mn>1</mn>
+   <mn>3</mn>
+  </mfrac>
+  </mrow>
+</math>
+
+
+</p></li>    
+    <li><p>This event has no outcomes as it is not possible to draw all three colors when selecting only two marbles. We would say the probability is 0.</p></li>
+</ol>                       
+                    
+	           </div>	
+	        </div>    
+    
+</li>     
+    
+<li>
+  <p>Your sock drawer is a mess.  Twelve black socks and six red socks are mixed together.  What are the chances that, without looking, you pick out a red sock? </p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>R</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>6</mn>
+  <mrow>
+   <mn>18</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>3</mn>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>    
+    
+</li>
+<li>
+  <p>A ball is drawn randomly from a jar that contains 6 red balls, 2 white balls, and 5 yellow balls. Find the probability of the given event.</p>
+<ol type="a">
+ <li>
+  <p>A red ball is drawn</p>
+ </li>
+ <li>
+  <p>A white ball is drawn</p>
+ </li>
+</ol>    
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+ <ol type="a">
+ <li>
+  <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>R</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>6</mn>
+  <mrow>
+   <mn>13</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+ </li>
+ <li>
+  <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>W</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>2</mn>
+  <mrow>
+   <mn>13</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+ </li>
+</ol> 
+	            </div>	
+	        </div>    
+    
+</li>
+
+    
+ <li>
+  <p>Suppose you write each letter of the alphabet on a different slip of paper and put the slips into a hat. What is the probability of drawing one slip of paper from the hat at random and getting (assume <em>y</em> is a consonant for this exercise):</p>
+  <ol type="a">
+  <li>
+   <p>A consonant</p>
+  </li>
+  <li>
+   <p>A vowel</p>
+  </li>
+ </ol>    
+ 	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+    <ol type="a">
+  <li>
+   <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>C</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>21</mn></mrow>
+  <mrow>
+   <mn>26</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+  </li>
+  <li>
+   <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>V</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>5</mn>
+  <mrow>
+   <mn>26</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+  </li>
+ </ol>  
+	            </div>	
+	        </div>    
+ </li>
+
+ <li>
+  <p>A group of people were asked if they had run a red light in the last year. 150 responded &quot;yes&quot;, and 185 responded &quot;no&quot;.  Find the probability that if a person is chosen at random, they have run a red light in the last year.</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>R</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>150</mn></mrow>
+  <mrow>
+   <mn>335</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>
+    
+    </li>
+    
+ <li>
+  <p>In a survey, 205 people indicated they prefer cats, 160 indicated they prefer dogs, and 40 indicated they don&rsquo;t enjoy either pet.  Find the probability that if a person is chosen at random, they prefer cats.</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>C</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>205</mn></mrow>
+  <mrow>
+   <mn>405</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>     
+ </li>
+ <li>
+  <p>Compute the probability of tossing a six-sided die (with sides numbered 1 through 6) and getting a 5.</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Roll&#x00A0;a&#x00A0;5</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>     
+ </li>
+ <li>
+  <p>Compute the probability of tossing a standard six-sided die and getting a 7.</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Roll&#x00A0;a&#x00A0;7</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0</mn>
+</math> as it is not possible to roll a 7 with a single standard six-sided die.
+</p>
+	            </div>	
+	        </div>     
+ </li>
+  <li>
+  <p>Compute the probability of tossing a six-sided die and getting an even number.</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mtext>E</mtext>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>3</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>      
+ </li>
+ <li>
+  <p>Compute the probability of tossing a six-sided die and getting a number less than 3.</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Less&#x00A0;than&#x00A0;3</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>2</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>     
+ </li>
+ <li>
+  <p>If you pick one card at random from a standard deck of cards, what is the probability it will be a King?</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mtext>K</mtext>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>4</mn>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>     
+ </li>
+ <li>
+  <p>If you pick one card at random from a standard deck of cards, what is the probability it will be a Diamond?</p>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+                    <p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>D</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>13</mn></mrow>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p>
+	            </div>	
+	        </div>     
+ </li>   
+ 
+  
+<li><p>The following two-way contingency table gives the breakdown of the population in a particular locale according to age and tobacco usage:</p>
+  <table cellpadding="0" cellspacing="0" class="display-lg">
+    <thead>
+      <tr>
+        <th rowspan="2" align="left">Age</th>
+        <th colspan="2" align="center">Tobacco Use</th>
+        </tr>
+      <tr>
+        <th align="center">Smoker</th>
+        <th align="center">Non-smoker</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td align="left">Under 30</td>
+        <td align="center">0.05</td>
+        <td align="center">0.20</td>
+        </tr>
+      <tr>
+        <td align="left">Over 30</td>
+        <td align="center">0.20</td>
+        <td align="center">0.55</td>
+        </tr>
+      </tbody>
+  </table>
+ 
+<ol type="a">
+    <li><p>The person is a smoker.</p></li>
+    <li><p>The person is under 30.</p></li>
+    <li><p>The person is a smoker who is under 30.</p></li>
+</ol>    
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Smoker</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.05</mn><mo>+</mo><mn>0.20</mn><mo>=</mo><mn>0.25</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Under&#x00A0;30</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.05</mn><mo>+</mo><mn>0.20</mn><mo>=</mo><mn>0.25</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Smoker&#x00A0;Under&#x00A0;30</mtext></mrow>
+        <mo>)</mo></mrow><mo>=</mo><mn>0.05</mn>
+</math>
+</p></li>
+</ol> 
+                    
+	            </div>	
+	        </div>                    
+  
+ </li>    
+  
+ 
+ <li>
+  <p>The following two-way contingency table gives the breakdown of the population in a particular locale according to party affiliation (A, B, C, or None) and opinion on a bond issue:</p>
+     
+  <table cellpadding="0" cellspacing="0" class="display-lg">
+    <thead>
+      <tr>
+        <th rowspan="2" align="left">Affiliation</th>
+        <th colspan="3" align="center">Opinion</th>
+      </tr>
+      <tr>
+        <th align="center">Favors</th>
+        <th align="center">Opposes</th>
+        <th align="center">Undecided</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="left">A</td>
+        <td align="center">0.12</td>
+        <td align="center">0.09</td>
+        <td align="center">0.07</td>
+      </tr>
+      <tr>
+        <td align="left">B</td>
+        <td align="center">0.16</td>
+        <td align="center">0.12</td>
+        <td align="center">0.14</td>
+      </tr>
+      <tr>
+        <td align="left">C</td>
+        <td align="center">0.04</td>
+        <td align="center">0.03</td>
+        <td align="center">0.06</td>
+      </tr>
+      <tr>
+        <td align="left">None</td>
+        <td align="center">0.08</td>
+        <td align="center">0.06</td>
+        <td align="center">0.03</td>
+      </tr>
+    </tbody>
+  </table>
+
+<p>A person is selected at random. Find the probability of each of the following events.</p>     
+     
+<ol type="a">
+    <li><p>The person is affiliated with party B.</p></li>
+    <li><p>The person is affiliated with some party.</p></li>
+    <li><p>The person is in favor of the bond issue.</p></li>
+    <li><p>The person has no party affiliation and is undecided about the bond issue.</p></li>
+</ol>     
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.16</mn><mo>+</mo><mn>0.12</mn><mo>+</mo><mn>0.14</mn><mo>=</mo><mn>0.42</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>Some&#x00A0;Party</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.12</mn><mo>+</mo><mn>0.09</mn><mo>+</mo><mn>0.07</mn><mo>+</mo><mn>0.16</mn><mo>+</mo><mn>0.12</mn><mo>+</mo><mn>0.14</mn><mo>+</mo><mn>0.04</mn><mo>+</mo><mn>0.03</mn><mo>+</mo><mn>0.06</mn><mo>=</mo><mn>0.83</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>In&#x00A0;Favor</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.12</mn><mo>+</mo><mn>0.16</mn><mo>+</mo><mn>0.04</mn><mo>+</mo><mn>0.08</mn><mo>=</mo><mn>0.40</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mtext>No&#x00A0;Party&#x00A0;and&#x00A0;Undecided</mtext></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.03</mn>
+</math>
+</p>.</li>
+</ol> 
+	            </div>	
+	        </div>     
+ </li>
+
+
+</ol>
+
+</div>
+
+	<footer>
+  		<div id="footer">
+			<p class="text-center toggle-footnotes">[Show Footnotes]</p>
+			<div class="footnotes">
+      			<h2>Attribution:</h2>
+				  <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>	
+                <p><a href="https://2012books.lardbucket.org/books/beginning-statistics/" target="_blank">Beginning Statistics (v. 1.0)</a> (download for free and license information found at: <a href="https://2012books.lardbucket.org/" target="_blank">https://2012books.lardbucket.org/</a>) Creative Commons by-nc-sa 3.0 </p>
+			  <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+    		</div>
+  		</div>
+	</footer>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/shared/webdev/course-files/js/scripts.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
+<script type="text/javascript" src="../../jquery-accessible-hide-show-aria.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+
+
+</body>	
+</html>
