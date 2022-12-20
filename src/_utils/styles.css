@@ -37,29 +37,30 @@ body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif;
+  color: rgba(30, 30, 30,1);
 }
 
 h1 { 
   font-size: 2rem;
-  margin: 0 0 1rem 0;
+  margin: 0 4rem 1rem 4rem;
 }
 
 h2 {  
   font-size: 1.602rem;
-  margin: 0 0 .5rem 0;
+  margin: 0 4rem .5rem 4rem;
   font-weight: 400;
 }
 
 h3 {  
   font-size: 1.324rem;
-  margin: 0 0 .3rem 0;
+  margin: 0 4rem .3rem 4rem;
   font-weight: 400;
 }
 
 p {
   font-size: 1.1rem;
   line-height: 1.35;
-  margin-bottom: 1rem;
+  margin: 0 4rem 1rem 4rem;
 }
 
 ul, ol {
@@ -79,7 +80,7 @@ a {
 }
 
 .ereader-display {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -90,14 +91,97 @@ header {
 }
 
 .border {
-  background-color: rgba(13, 13, 13, .02);
+  background-color: rgba(15, 15, 15, .02);
   border-left: 6px solid darkgray;
   padding: .75rem .5rem .25rem 1.5rem;
   margin: 2rem 0;
 }
 
+.border h3 {
+  margin: 2rem 4rem 0;
+}
+
+.definition {
+  background-color: rgba(244, 184, 208, .2);
+  padding: 20px 0;
+  margin: 2rem 0;
+  border: 3px solid rgba(244, 184, 208, .5);
+}
+
+.definition h3 {
+  margin-bottom: 1rem;
+}
+
+.definition::before {
+  font-family:"FontAwesome";
+  content: '\f02d';
+  opacity: 1;
+  color: rgba(210, 45, 76, 1);
+  font-weight: 900;
+  font-size: 1.5rem;
+  display:inline-block;
+  margin: 0 4rem .25rem;
+}
+
+.tryitnow {
+  background-color: rgba(238, 244, 184, .2);
+  padding: 20px 0;
+  border-left: 5px solid rgba(238, 244, 184, 1);
+  margin: 2rem 0;
+
+}
+
+.tryitnow::before {
+  font-family:"FontAwesome";
+  content: '\f545';
+  opacity: 1;
+  color: rgba(200, 196, 55, 1);
+  font-weight: 900;
+  font-size: 1.5rem;
+  display:inline-block;
+  margin: 0 4rem .25rem;
+}
+
+.example {
+  background-color: rgba(184, 244, 220, .1);
+  padding: 20px 0;
+  border-top: 5px solid rgba(45, 210, 179, 1);
+  margin: 2rem 0;
+}
+
+.example-title {
+  background-color: rgba(184, 244, 220, .2);
+  margin: 1rem 3rem;
+  padding: 1rem;
+}
+
+.example-title p, .example-title h1,.example-title h2, .example-title h3,.example-title h4 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.example::before {
+  font-family:"FontAwesome";
+  content: '\f51c';
+  opacity: 1;
+  color: rgba(45, 210, 179, 1);
+  font-weight: 900;
+  font-size: 1.5rem;
+  display:inline-block;
+  margin: 0 4rem .25rem;
+}
+
+img {
+  max-width: 800px;
+}
+
+img.center {
+  margin: 0.5rem auto !important;
+  display:block;
+}
+
 hr {
-  margin: 10px 0;
+  margin: 0 4rem 1rem 4rem;
 }
 
 /* Accordions */
