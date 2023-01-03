@@ -1,0 +1,3080 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>4.3 Conditional Probability</title>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width" />
+
+<link rel="stylesheet" type="text/css" href="/shared/webdev/course-files/css/themes/cards/styles.css">       
+<link rel="stylesheet" type="text/css" href="/shared/Templates/Template_Cards/css/custom.css">
+<link rel="stylesheet" href="../../MAT142.css" type="text/css" />
+
+	
+</head>
+<body id="one-column" style="overflow-y: hidden;">
+	<header class="header"><img src="../../Images/banners/Chapter 4 Probability.png" alt="decorative image of graph" />
+		<div class="text-container">
+		  <h1>4.3 Conditional Probability</h1>
+		</div>
+	</header>
+	
+<div id="content-wrapper">
+<div class="content-body">
+<h2>4.3 Conditional Probability</h2>
+<p>Upon completion of this section, you should be able to</p>
+<ul>
+ <li>Compute conditional probabilities</li>
+ <li>Compute probability using the multiplication rule</li>     
+ <li>Compute probability with independent events</li>
+   
+</ul>
+
+  </div>
+  <div class="content-body">    
+<h3>Conditional Probability</h3>
+      
+<p>Suppose a fair die has been rolled and you are asked to give the probability that it was a five. There are six equally likely outcomes, so your answer is <math display="inline">
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>6</mn>
+  </mfrac>
+  </mrow>
+</math>
+. But suppose that before you give your answer you are given the extra information that the number rolled was odd. Since there are only three odd numbers that are possible, one of which is five, you would certainly revise your estimate of the likelihood that a five was rolled from <math display="inline">
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>6</mn>
+  </mfrac>
+  </mrow>
+</math> to <math display="inline">
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>3</mn>
+  </mfrac>
+  </mrow>
+</math>. In general, the revised probability that an event <em>A</em> has occurred, taking into account the additional information that another event <em>B</em> has definitely occurred on this trial of the experiment, is called the conditional probability of <em>A</em> given <em>B</em> and is denoted by <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+. The reasoning employed in this example can be generalized to yield the computational formula in the following definition.</p>      
+<div class="definition">
+ <h4>Conditional Probability</h4>
+ <p> The probability of event, <em>A</em>, given that an event <em>B</em> has occurred is denoted P(<em>A</em> | <em>B</em>),  and is called a <strong>conditional probability</strong>.</p>
+
+  <div class="plainblock">
+   <p>P(<em>A</em> | <em>B</em>) reads as &ldquo;the probability that A occurs given that B has already occurred&rdquo; or as &quot;the probability of <em>A</em> given <em>B</em>&quot;.</p>
+  </div>
+
+<h4>Conditional Probability Formula</h4>    
+<p>For any events <em>A</em> and <em>B</em> where P(<em>B</em>) &gt; 0 we can write the formula in two ways: </p>
+ <p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <mi>A</mi><mtext>&#x00A0;and&#x00A0;</mtext><mi>B</mi></mrow>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mi>B</mi>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    <mtext>&#x00A0;</mtext>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mi>B</mi>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+
+ </p>    
+
+</div>      
+      
+
+<div class="Example">
+ <div class="ExampleTitle">
+<h3>Example 1</h3>
+<p>A fair die is rolled.</p>   
+<ol type="a">
+    <li><p>Find the probability that the number rolled is a five, given that it is odd.</p></li>
+    <li><p>Find the probability that the number rolled is odd, given that it is a five.</p></li>
+</ol>     
+         
+</div>
+<p>The sample space for this experiment is the set <math display="inline">
+ <mi>S</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn></mrow> <mo>}</mo></mrow>
+</math>
+ consisting of six equally likely outcomes. Let <em>F</em> denote the event “a five is rolled” and let <em>O</em> denote the event “an odd number is rolled,” so that</p>
+    
+ <math display="block">
+ <mi>F</mi><mo>=</mo><mrow><mo>{</mo> <mn>5</mn> <mo>}</mo></mrow><mtext>&#x00A0;and&#x00A0;</mtext><mi>O</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn></mrow> <mo>}</mo></mrow>
+</math>
+   
+<ol type="a">
+    <li><p>This is the introductory example, so we already know that the answer is <math display="inline">
+ <mfrac>
+  <mn>1</mn>
+  <mn>3</mn>
+ </mfrac>
+ 
+</math>
+. To use the formula in the definition to confirm this we must replace <em>A</em> in the formula (the event whose likelihood we seek to estimate) by <em>F</em> and replace <em>B</em> (the event we know for certain has occurred) by <em>O</em>:</p>
+ <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>F</mi><mo>&#x007C;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>F</mi><mo>&#x2229;</mo><mi>O</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>O</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ 
+</math>
+<p>Since <math display="inline">
+ <mi>F</mi><mo>&#x2229;</mo><mi>O</mi><mo>=</mo><mrow><mo>{</mo> <mn>5</mn> <mo>}</mo></mrow><mo>,</mo><mtext>&#x00A0;</mtext><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>F</mi><mo>&#x2229;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+</p> 
+<p>Since <math display="inline">
+ <mi>O</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn></mrow> <mo>}</mo></mrow><mo>,</mo><mtext>&#x00A0;</mtext><mi>P</mi><mrow><mo>(</mo>
+  <mi>O</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>3</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+</p>        
+<p>Thus,</p>
+<math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>F</mi><mo>&#x007C;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>F</mi><mo>&#x2229;</mo><mi>O</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>O</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mfrac>
+    <mn>1</mn>
+    <mn>6</mn>
+   </mfrac>
+   </mrow>
+  <mrow>
+   <mfrac>
+    <mn>3</mn>
+    <mn>6</mn>
+   </mfrac>
+   </mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ <mo>&#x22C5;</mo><mfrac>
+  <mn>6</mn>
+  <mn>3</mn>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>3</mn>
+ </mfrac>
+ 
+</math>
+        
+    
+    </li>
+    <li>
+      <p>This is the same problem, but with the roles of <em>F</em> and <em>O</em> reversed. Since we are given that the number that was rolled is five, which is odd, the probability in question must be 1. To apply the formula to this case we must now replace <em>A</em> (the event whose likelihood we seek to estimate) by <em>O</em> and <em>B</em> (the event we know for certain has occurred) by <em>F</em>:</p>
+    
+ <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>O</mi><mo>&#x007C;</mo><mi>F</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>O</mi><mo>&#x2229;</mo><mi>F</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>F</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ 
+</math>
+   
+<p>Since <math display="inline">
+ <mi>F</mi><mo>=</mo><mrow><mo>{</mo> <mn>5</mn> <mo>}</mo></mrow><mo>,</mo><mtext>&#x00A0;</mtext><mi>P</mi><mrow><mo>(</mo>
+  <mi>F</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>. From part (a) we found that <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>F</mi><mo>&#x2229;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>. Thus, </p>
+        
+ <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>O</mi><mo>&#x007C;</mo><mi>F</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>O</mi><mo>&#x2229;</mo><mi>F</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>F</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mfrac>
+    <mn>1</mn>
+    <mn>6</mn>
+   </mfrac>
+   </mrow>
+  <mrow>
+   <mfrac>
+    <mn>1</mn>
+    <mn>6</mn>
+   </mfrac>
+   </mrow>
+ </mfrac>
+ <mo>=</mo><mn>1</mn>
+</math>
+       
+        
+    </li>
+</ol> 
+</div>
+
+<p>Just as we did not need the computational formula in this example, we do not need it when the information is presented in a two-way classification table, as in the next example.</p>      
+      
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 2</h3>
+<p>In a sample of 902 individuals under 40 who were or had previously been married, each person was classified according to gender and age at first marriage. The results are summarized in the following two-way classification table, where the meaning of the labels is:</p>  
+<ol type="a">
+    <li>
+      <p><em>M</em>: male</p></li>
+    <li>
+      <p><em>F</em>: female</p></li>
+    <li>
+      <p><em>E</em>: a teenager when first married</p></li>
+    <li>
+      <p><em>W</em>: in one’s twenties when first married</p></li>
+    <li>
+      <p><em>H</em>: in one’s thirties when first married </p></li>
+</ol>    
+ 
+<table cellpadding="0" cellspacing="0" class="display-lg" bgcolor="#FFFFFF">
+  <thead>
+    <tr>
+      <th align="left"></th>
+      <th align="center">E</th>
+      <th align="center">W</th>
+      <th align="center">H</th>
+      <th align="center">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">M</td>
+      <td align="center">43</td>
+      <td align="center">293</td>
+      <td align="center">114</td>
+      <td align="center">450</td>
+    </tr>
+    <tr>
+      <td align="center">F</td>
+      <td align="center">82</td>
+      <td align="center">299</td>
+      <td align="center">71</td>
+      <td align="center">452</td>
+    </tr>
+    <tr>
+      <td align="center">Total</td>
+      <td align="center">125</td>
+      <td align="center">592</td>
+      <td align="center">185</td>
+      <td align="center">902</td>
+    </tr>
+  </tbody>
+</table>
+    
+<p>The numbers in the first row mean that 43 people in the sample were men who were first married in their teens, 293 were men who were first married in their twenties, 114 men who were first married in their thirties, and a total of 450 people in the sample were men. Similarly for the numbers in the second row. The numbers in the last row mean that, irrespective of gender, 125 people in the sample were married in their teens, 592 in their twenties, 185 in their thirties, and that there were 902 people in the sample in all. Suppose that the proportions in the sample accurately reflect those in the population of all individuals in the population who are under 40 and who are or have previously been married. Suppose such a person is selected at random.</p>  
+    
+<ol type="a">
+    <li><p>Find the probability that the individual selected was a teenager at first marriage.</p></li>
+    <li><p>Find the probability that the individual selected was a teenager at first marriage, given that the person is male.</p></li>
+</ol>    
+</div>
+ <p>It is natural to let <em>E</em> also denote the event that the person selected was a teenager at first marriage and to let <em>M</em> denote the event that the person selected is male.</p>
+<ol type="a">
+    <li><p>According to the table the proportion of individuals in the sample who were in their teens at their first marriage is <math display="inline">
+ <mfrac>
+  <mrow>
+   <mn>125</mn></mrow>
+  <mrow>
+   <mn>902</mn></mrow>
+ </mfrac>
+ 
+</math>
+. This is the relative frequency of such people in the population, hence <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>E</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>125</mn></mrow>
+  <mrow>
+   <mn>902</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.139</mn>
+</math>
+ or about 14&#37;.</p></li>
+    <li><p>Since it is known that the person selected is male, all the females may be removed from consideration, so that only the row in the table corresponding to men in the sample applies:</p>
+      <table cellpadding="0" cellspacing="0" class="display-lg" bgcolor="#FFFFFF">
+        <thead>
+          <tr>
+            <th align="left"></th>
+            <th align="center">E</th>
+            <th align="center">W</th>
+            <th align="center">H</th>
+            <th align="center">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">M</td>
+            <td align="center">43</td>
+            <td align="center">293</td>
+            <td align="center">114</td>
+            <td align="center">450</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+<p>The proportion of males in the sample who were in their teens at their first marriage is <math display="inline">
+ <mfrac>
+  <mrow>
+   <mn>43</mn></mrow>
+  <mrow>
+   <mn>450</mn></mrow>
+ </mfrac>
+ 
+</math>
+. This is the relative frequency of such people in the population of males, hence <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>E</mi><mo>&#x007C;</mo><mi>M</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>43</mn></mrow>
+  <mrow>
+   <mn>450</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.096</mn>
+</math>
+ or about 10&#37;.</p>
+</ol>    
+    
+</div>
+
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 3</h3>  
+      <p>Suppose that in an adult population the proportion of people who are both overweight and suffer hypertension is 0.09; the proportion of people who are not overweight but suffer hypertension is 0.11; the proportion of people who are overweight but do not suffer hypertension is 0.02; and the proportion of people who are neither overweight nor suffer hypertension is 0.78. An adult is randomly selected from this population.</p>
+      
+<ol type="a">
+    <li><p>Find the probability that the person selected suffers hypertension given that they are overweight.</p></li>
+    <li><p>Find the probability that the selected person suffers hypertension given that they are not overweight.</p></li>
+    <li><p>Compare the two probabilities just found to give an answer to the question as to whether overweight people tend to suffer from hypertension.</p></li>
+</ol>      
+     
+</div>
+	<p>Let <em>H</em> denote the event “the person selected suffers hypertension.” Let <em>O</em> denote the event “the person selected is overweight.” The probability information given in the problem may be organized into the following contingency table:</p>
+<table cellpadding="0" cellspacing="0" class="display-lg" bgcolor="#FFFFFF">
+                    <thead>
+                        <tr>
+                            <th align="left"></th>
+                            <th align="center"><em class="emphasis">O</em></th>
+                            <th align="center"><em class="emphasis">O<sup class="superscript">c</sup></em></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center"><em class="emphasis">H</em></td>
+                            <td align="center">0.09</td>
+                            <td align="center">0.11</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><em class="emphasis">H<sup class="superscript">c</sup></em></td>
+                            <td align="center">0.02</td>
+                            <td align="center">0.78</td>
+                        </tr>
+                    </tbody>
+                </table>    
+<ol type="a">
+    <li><p>Using the formula in the definition of conditional probability,</p>
+ <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>H</mi><mo>&#x007C;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>H</mi><mo>&#x2229;</mo><mi>O</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>O</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.09</mn></mrow>
+  <mrow>
+   <mn>0.09</mn><mo>+</mo><mn>0.02</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.8182</mn>
+</math>
+     
+    </li>
+    <li><p>Using the formula in the definition of conditional probability,</p>
+<math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>H</mi><mo>&#x007C;</mo><msup>
+    <mi>O</mi>
+    <mi>C</mi>
+   </msup>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>H</mi><mo>&#x2229;</mo><msup>
+      <mi>O</mi>
+      <mi>C</mi>
+     </msup>
+     </mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <msup>
+      <mi>O</mi>
+      <mi>C</mi>
+     </msup>
+     </mrow>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.11</mn></mrow>
+  <mrow>
+   <mn>0.11</mn><mo>+</mo><mn>0.78</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.1236</mn>
+</math>
+ 
+    </li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>H</mi><mo>&#x007C;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>&#x2248;</mo><mn>0.8182</mn>
+</math> is over six times as large as <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>H</mi><mo>&#x007C;</mo><msup>
+    <mi>O</mi>
+    <mi>C</mi>
+   </msup>
+   </mrow>
+ <mo>)</mo></mrow><mo>&#x2248;</mo><mn>0.1236</mn>
+</math>
+, which indicates a much higher rate of hypertension among people who are overweight than among people who are not overweight. It might be interesting to note that a direct comparison of <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>H</mi><mo>&#x2229;</mo><mi>O</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.09</mn>
+</math>
+ and <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>H</mi><mo>&#x2229;</mo><msup>
+    <mi>O</mi>
+    <mi>C</mi>
+   </msup>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.11</mn>
+</math>
+ does not answer the same question.
+</p></li>
+
+</ol>    
+
+</div>	      
+      
+<div class="tryitnow">
+  	<h5>Try it Now 1</h5>
+<p>The table below shows the number of survey subjects who have received and not received a speeding ticket in the last year, and the color of their car.  Find the probability that a randomly chosen person:</p>
+<ol type="a">
+    <li><p>Has a speeding ticket <em>given</em> they have a red car</p></li>
+    <li><p>Has a red car <em>given</em> they have a speeding ticket</p></li>
+</ol>    
+
+ <table border="1" cellspacing="0" cellpadding="0" class="display-lg" bgcolor="#FFFFFF">
+<thead>
+<tr>
+<th scope="col">&nbsp;</th>
+<th scope="col">Speeding ticket</th>
+<th scope="col">No speeding ticket</th>
+<th scope="col">Total</th>    
+</tr>
+</thead>  
+  <tr>
+   <td width="91" valign="top"><p>Red car</p></td>
+   <td width="82" valign="top"><p>15</p></td>
+   <td width="102" valign="top"><p>135</p></td>
+   <td width="82" valign="top"><p>150</p></td>
+  </tr>
+  <tr>
+   <td width="91" valign="top"><p>Not red car</p></td>
+   <td width="82" valign="top"><p>45</p></td>
+   <td width="102" valign="top"><p>470</p></td>
+   <td width="82" valign="top"><p>515</p></td>
+  </tr>
+  <tr>
+   <td width="91" valign="top"><p>Total</p></td>
+   <td width="82" valign="top"><p>60</p></td>
+   <td width="102" valign="top"><p>605</p></td>
+   <td width="82" valign="top"><p>665</p></td>
+  </tr>
+ </table>
+    
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>Both of these questions be answered by zooming in on the given information and taking the appropriate ratio. For (a) we would want to look at just the row for having a red car. For (b) we would want to look at just the column of having a speeding ticket.</p>
+	</div>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+<ol type="a">
+    <li><p> Since we know the person has a red car, we are only considering the 150 people in the first row of the table.  Of those, 15 have a speeding ticket, so</p>
+    <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>T</mi><mo>&#x007C;</mo><mi>R</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>15</mn></mrow>
+  <mrow>
+   <mn>150</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mn>0.1</mn>
+</math>
+
+    </li>
+    <li><p>Since we know the person has a speeding ticket, we are only considering the 60 people in the first column of the table.  Of those, 15 have a red car, so </p>
+    <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>R</mi><mo>&#x007C;</mo><mi>T</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>15</mn></mrow>
+  <mrow>
+   <mn>60</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mn>0.25</mn>
+</math>
+
+    </li>
+</ol>
+	</div>		
+</div>          
+
+<p>Notice from the Try It Now 1 that <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>R</mi><mo>&#x007C;</mo><mi>T</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+
+ is <strong>not</strong> equal to <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>T</mi><mo>&#x007C;</mo><mi>R</mi></mrow>
+ <mo>)</mo></mrow>
+</math>.</p>
+<p>These kinds of conditional probabilities are what insurance companies use to determine your insurance rates.  They look at the conditional probability of you having accident, given your age, your car, your car color, your driving history, etc., and price your policy based on that likelihood.</p>
+   
+    </div>
+<div class="content-body">  
+<h2>Multiplication Rule</h2>
+<p>If we rewrite the conditional probability formula we have another tool to answer questions about probability involving &quot;<em>and</em>&quot;.</p>
+
+<div class="definition">
+ <h4>General Multiplication Rule</h4>
+ <p>Given that <em>A</em> and <em>B</em> are both events that have probabilities that are not zero we can say the following about the probability of <em>A</em> and <em>B</em> together.</p>
+ <table width="550" border="4" cellpadding="4">
+ <tr>
+  <td><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>B</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ 
+</math>
+</td>
+  <td>&nbsp; &rarr;&nbsp;</td>
+  <td><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+</td>
+ </tr>
+ <tr>
+  <td><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>B</mi><mo>&#x2229;</mo><mi>A</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>A</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ 
+</math>
+</td>
+  <td>&nbsp; &rarr;&nbsp;</td>
+  <td><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+</td>
+ </tr>
+</table>
+ <p>&nbsp;</p>
+ </div>
+   
+<p>This above known as the multiplication rule of  probabilities and provides another way at getting to the probability of <em>A</em> and <em>B</em> (this also means the intersection of <em>A</em> with <em>B</em>). It is not always needed when computing the probability of an intersection (the  Addition Rule also can be manipulated or if we know the events <em>A</em> and <em>B</em> are independent we can use the rule from the previous section).</p>
+
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 4</h3>
+<p>If you pull 2 cards out of a deck one after the other and keep both, then what is the probability that both are spades?</p>    
+</div>
+ 
+ <p>Let <em>A</em> be the event that the first card drawn is a space and <em>B</em> be the event that the second card drawn is a space. We are looking to find the probabilty that both <em>A</em> and <em>B</em> occur:
+<math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+     .</p>
+     
+<p>The probability that the first card is a spade is
+<math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>13</mn></mrow>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+     .</p>
+ <p>If the first card drawn is a spade we can find the probability of the second card is a spade by counting the total number of spades left and dividing it by the total number of cards left. The probability that the second card is a spade, given the first was a spade, is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>12</mn></mrow>
+  <mrow>
+   <mn>51</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+, since there is one less spade in the deck, and one less total cards.</p>
+ <p>The probability that both cards are spades is:</p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+    <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>A</mi>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mn>12</mn></mrow>
+     <mrow>
+      <mn>51</mn></mrow>
+    </mfrac>
+    <mo>&#x22C5;</mo><mfrac>
+     <mrow>
+      <mn>13</mn></mrow>
+     <mrow>
+      <mn>52</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mn>156</mn></mrow>
+     <mrow>
+      <mn>2652</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>&#x2248;</mo><mn>0.0588</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+    
+    
+ <p><a href="http://youtu.be/ngyGsgV4_0U" target="_blank">Video Solution Example 4</a> (cc)</p>
+</div>
+
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 5</h3>
+ <p>If you draw two cards from a deck (one after the other), what is the probability that you will get the Ace of Diamonds and a black card? </p>    
+</div>
+
+ <p>You can satisfy this condition by having Case A or Case B, as follows: <br>
+   <strong>Case A</strong>) you can get the Ace of Diamonds first and then a black card<br>
+   <strong>Case B</strong>) you can get a black card first and then the Ace of Diamonds. </p>
+
+<p>Let <em>A1</em> be the event we draw the Ace of Diamonds on the first card, <em>A2</em> be the event we draw the Ace of Diamonds on the second draw, <em>B1</em> be the event we draw a black card on the first card, and <em>B2</em> be the event we draw a black card on the second draw.</p>    
+    
+ <p>Let's calculate the probability of Case A. The probability that the first card is the Ace of Diamonds is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mn>1</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+. The probability that the second card is black given that the first card is the Ace of Diamonds is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mn>2</mn><mo>&#x007C;</mo><mi>A</mi><mn>1</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>26</mn></mrow>
+  <mrow>
+   <mn>51</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+ because 26 of the remaining 51 cards are black. The probability for Case A is:</p>
+    
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x2229;</mo><mi>B</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mn>2</mn><mo>&#x007C;</mo><mi>A</mi><mn>1</mn></mrow>
+    <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x2229;</mo><mi>B</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mn>26</mn></mrow>
+     <mrow>
+      <mn>51</mn></mrow>
+    </mfrac>
+    <mo>&#x22C5;</mo><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>52</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x2229;</mo><mi>B</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>102</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+    
+    
+ <p>Now for Case B: the probability that the first card is black is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mn>1</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>26</mn></mrow>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+. The probability that the second card is the Ace of Diamonds given that the first card is black is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mn>2</mn><mo>&#x007C;</mo><mi>B</mi><mn>1</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mn>1</mn></mrow>
+  <mrow>
+   <mn>51</mn></mrow>
+ </mfrac>
+ 
+</math>
+
+. The probability of Case B is therefore</p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mn>1</mn><mo>&#x2229;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>2</mn><mo>&#x007C;</mo><mi>B</mi><mn>1</mn></mrow>
+    <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mn>1</mn></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mn>1</mn><mo>&#x2229;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mn>13</mn></mrow>
+     <mrow>
+      <mn>51</mn></mrow>
+    </mfrac>
+    <mo>&#x22C5;</mo><mfrac>
+     <mrow>
+      <mn>26</mn></mrow>
+     <mrow>
+      <mn>52</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mn>1</mn><mo>&#x2229;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>102</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+  
+ <p>Recall that the probability of <em>A</em> or <em>B</em> is <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x222A;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+.  In this problem, <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0</mn>
+</math>
+ since the first card cannot be the Ace of Diamonds and be a black card.  Therefore, the probability of Case A or Case B is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+ <mfrac>
+  <mn>1</mn>
+  <mrow>
+  <mn>102</mn>
+  </mrow>
+ </mfrac>
+ <mo>+</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+  <mn>102</mn>
+  </mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>2</mn>
+  <mrow>
+  <mn>102</mn>
+  </mrow>
+ </mfrac>
+ 
+ </mrow>
+</math>
+.  The probability that you will get the Ace of Diamonds and a black card when drawing two cards from a deck is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+ <mfrac>
+  <mn>2</mn>
+  <mrow>
+  <mn>102</mn>
+  </mrow>
+ </mfrac>
+ 
+ </mrow>
+</math>
+.</p>
+ <p><a href="http://youtu.be/ngyGsgV4_0U?t=1m55s" target="_blank">Video Solution Example 5</a> (cc) - another example starts after the 1:55 mark of the video.</p>
+</div>
+
+<div class="tryitnow">
+  	<h5>Try it Now 2</h5>
+	<p>In your drawer you have 10 pairs of socks, 6 of which are white.  If you reach in and randomly grab two pairs of socks, what is the probability that both are white?</p>
+				
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>In order for both to be white we have to have the first drawn to be white and then given that the first is white the second sock drawn is white as well. The key here is that given piece as it tells us we are dealing with conditional probability.</p>
+	</div>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+ <p>Let A be the event we draw a white sock on the first draw and B the event we draw a white sock on the second draw. We are looking to find <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mi>P</mi><mrow><mo>(</mo>
+   <mrow>
+    <mi>A</mi><mtext>&#x00A0;and&#x00A0;</mtext><mi>B</mi>
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</math>
+
+</p>
+<p>Now the multiplication rule can help us as it can be rewritten as: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mtext>&#x00A0;and&#x00A0;</mtext><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>6</mn>
+  <mrow>
+   <mn>10</mn>
+  </mrow>
+ </mfrac>
+ 
+</math>, since we have 6 white socks out of the ten when we draw the first sock from the drawer.</p>
+
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi>
+  </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>5</mn>
+  <mn>9</mn>
+ </mfrac>
+ 
+</math>, since we are assuming A has occured (we already drawn a sock from the drawer and it was white). The first sock being white means we now have 5 white socks out of the nine remaining socks in the drawer.
+</p>
+<p>Put the two above together into the formula to get: </p>
+
+<p>
+
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mtext>&#x00A0;and&#x00A0;</mtext><mi>B</mi>
+  </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi>
+  </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo>
+  <mrow>
+   <mfrac>
+    <mn>6</mn>
+    <mrow>
+     <mn>10</mn>
+    </mrow>
+   </mfrac>
+   
+  </mrow>
+ <mo>)</mo></mrow><mrow><mo>(</mo>
+  <mrow>
+   <mfrac>
+    <mn>5</mn>
+    <mn>9</mn>
+   </mfrac>
+   
+  </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>3</mn>
+ </mfrac>
+ 
+</math>.
+</p>
+	</div>		
+</div>
+
+<p>Let us put our knowledge of conditional probability, complements, and the multiplication rule to a test in this next Try It Now.</p>         
+
+<div class="tryitnow">
+  	<h5>Try it Now 3 (Challenging)</h5>
+<p>The probability that event A occurs is .63. The probability that event B occurs is .45. The probability that both events occur is .10. </p>
+<p> Find the following probabilities by using the definition of conditional probability and Venn Diagrams:</p>
+<p>a. <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+;   b. <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+;   c. <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msup>
+    <mi>A</mi>
+    <mi>C</mi>
+   </msup>
+   <mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+;   d.  <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><msup>
+    <mi>A</mi>
+    <mi>C</mi>
+   </msup>
+   </mrow>
+ <mo>)</mo></mrow>
+</math>
+;  e. <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msup>
+    <mi>A</mi>
+    <mi>C</mi>
+   </msup>
+   <mo>&#x007C;</mo><msup>
+    <mi>B</mi>
+    <mi>C</mi>
+   </msup>
+   </mrow>
+ <mo>)</mo></mrow>
+</math>
+</p>
+				
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>Start with writing out the given information in probability notation.  You will also need the following three formulas:</p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mi>B</mi>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+    <mo>)</mo></mrow><mi>P</mi><mrow><mo>(</mo>
+     <mi>A</mi>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+     <mi>A</mi>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+     
+	</div>
+   	
+	<h5 class="js-expandmore">Hint 2</h5> 
+    <div class="js-to_expand">
+	<p>If you are stuck try writing out the definition of conditional probabilty for each one to see if it leads to a solution with the given information you already have.</p>
+	</div>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+<p>The answers along with formulas/steps are given below. To see an alternative approach using Venn Diagrams see the video link much further below.</p>        
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>B</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.10</mn></mrow>
+  <mrow>
+   <mn>0.45</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>2</mn>
+  <mn>9</mn>
+ </mfrac>
+ 
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>A</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.10</mn></mrow>
+  <mrow>
+   <mn>0.63</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>10</mn></mrow>
+  <mrow>
+   <mn>63</mn></mrow>
+ </mfrac>
+ 
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msup>
+    <mi>A</mi>
+    <mi>C</mi>
+   </msup>
+   <mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>&#x2212;</mo><mfrac>
+  <mn>2</mn>
+  <mn>9</mn>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>7</mn>
+  <mn>9</mn>
+ </mfrac>
+ 
+</math> : The complement rule was used, but note how the given information doesn't change. Only the event of interest in the conditional probability has the complement taken.
+</p></li>
+    <li><p>This one takes many different steps to find expressions we are able to use. Started with the general conditional probability formula, but then used the complement rule in the denominator and the multiplication rule in the numerator to eventually get a form we can evaluate from our work in c above.</p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>A</mi>
+         <mi>C</mi>
+        </msup>
+        <mo>&#x2229;</mo><mi>B</mi></mrow>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>A</mi>
+         <mi>C</mi>
+        </msup>
+        </mrow>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>A</mi>
+         <mi>C</mi>
+        </msup>
+        <mo>&#x007C;</mo><mi>B</mi></mrow>
+      <mo>)</mo></mrow><mi>P</mi><mrow><mo>(</mo>
+       <mi>B</mi>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+       <mi>A</mi>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mfrac>
+       <mn>7</mn>
+       <mn>9</mn>
+      </mfrac>
+      <mo>&#x22C5;</mo><mfrac>
+       <mn>9</mn>
+       <mrow>
+        <mn>20</mn></mrow>
+      </mfrac>
+      </mrow>
+     <mrow>
+      <mn>1</mn><mo>&#x2212;</mo><mfrac>
+       <mrow>
+        <mn>63</mn></mrow>
+       <mrow>
+        <mn>100</mn></mrow>
+      </mfrac>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>7</mn>
+     <mrow>
+      <mn>20</mn></mrow>
+    </mfrac>
+    <mo>&#x22C5;</mo><mfrac>
+     <mrow>
+      <mn>100</mn></mrow>
+     <mrow>
+      <mn>37</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>B</mi><mo>&#x007C;</mo><msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mn>35</mn></mrow>
+     <mrow>
+      <mn>37</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+    
+    
+    </li>
+    <li><p>This one also starts with applying the formula for consitional probability and the use of the multiplication rule and complement rule:</p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>A</mi>
+         <mi>C</mi>
+        </msup>
+        <mo>&#x2229;</mo><msup>
+         <mi>B</mi>
+         <mi>C</mi>
+        </msup>
+        </mrow>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>B</mi>
+         <mi>C</mi>
+        </msup>
+        </mrow>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>B</mi>
+         <mi>C</mi>
+        </msup>
+        <mo>&#x007C;</mo><msup>
+         <mi>A</mi>
+         <mi>C</mi>
+        </msup>
+        </mrow>
+      <mo>)</mo></mrow><mi>P</mi><mrow><mo>(</mo>
+       <mrow>
+        <msup>
+         <mi>A</mi>
+         <mi>C</mi>
+        </msup>
+        </mrow>
+      <mo>)</mo></mrow></mrow>
+     <mrow>
+      <mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+       <mi>B</mi>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mrow><mo>[</mo> <mrow>
+       <mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+        <mrow>
+         <mi>B</mi><mo>&#x007C;</mo><msup>
+          <mi>A</mi>
+          <mi>C</mi>
+         </msup>
+         </mrow>
+       <mo>)</mo></mrow></mrow> <mo>]</mo></mrow><mrow><mo>[</mo> <mrow>
+       <mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+        <mi>A</mi>
+       <mo>)</mo></mrow></mrow> <mo>]</mo></mrow></mrow>
+     <mrow>
+      <mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+       <mi>B</mi>
+      <mo>)</mo></mrow></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mrow><mo>[</mo> <mrow>
+       <mn>1</mn><mo>&#x2212;</mo><mfrac>
+        <mrow>
+         <mn>35</mn></mrow>
+        <mrow>
+         <mn>37</mn></mrow>
+       </mfrac>
+       </mrow> <mo>]</mo></mrow><mrow><mo>[</mo> <mrow>
+       <mn>1</mn><mo>&#x2212;</mo><mfrac>
+        <mrow>
+         <mn>63</mn></mrow>
+        <mrow>
+         <mn>100</mn></mrow>
+       </mfrac>
+       </mrow> <mo>]</mo></mrow></mrow>
+     <mrow>
+      <mn>1</mn><mo>&#x2212;</mo><mfrac>
+       <mn>9</mn>
+       <mrow>
+        <mn>20</mn></mrow>
+      </mfrac>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mrow>
+      <mrow><mo>[</mo> <mrow>
+       <mfrac>
+        <mn>2</mn>
+        <mrow>
+         <mn>37</mn></mrow>
+       </mfrac>
+       </mrow> <mo>]</mo></mrow><mrow><mo>[</mo> <mrow>
+       <mfrac>
+        <mrow>
+         <mn>37</mn></mrow>
+        <mrow>
+         <mn>100</mn></mrow>
+       </mfrac>
+       </mrow> <mo>]</mo></mrow></mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>11</mn></mrow>
+       <mrow>
+        <mn>20</mn></mrow>
+      </mfrac>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>2</mn>
+     <mrow>
+      <mn>100</mn></mrow>
+    </mfrac>
+    <mo>&#x22C5;</mo><mfrac>
+     <mrow>
+      <mn>20</mn></mrow>
+     <mrow>
+      <mn>11</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>2</mn>
+     <mn>5</mn>
+    </mfrac>
+    <mo>&#x22C5;</mo><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>11</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <msup>
+       <mi>A</mi>
+       <mi>C</mi>
+      </msup>
+      <mo>&#x007C;</mo><msup>
+       <mi>B</mi>
+       <mi>C</mi>
+      </msup>
+      </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mfrac>
+     <mn>2</mn>
+     <mrow>
+      <mn>55</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>    
+    
+    </li>
+</ol>
+<p>Now parts d and e are a challenge to construct on your own from just the formulas. There is another approach for each of these using a more visual construction for the formulas to get the final result. Watch the youtube video below to see that work: <a href="https://youtu.be/YoD2qthOf-Q" target="_blank">Try It Now 3 Video Explanation (15 min CC)</a></p>        
+	</div>		
+</div>                 
+          
+
+
+</div>
+<div class="content-body">
+<h2>Independent Events</h2>
+    
+<p>Although typically we expect the conditional probability <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+ to be different from the probability <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+, it does not have to be true. When <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+, the occurrence of <em>B</em> has no effect on the likelihood of <em>A</em>. Whether or not the event <em>A</em> has occurred is independent of the event <em>B</em>.</p>    
+    
+<p>Using algebra it can be shown that the equality <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+ holds if and only if the equality <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+ holds, which in turn is true if and only if <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+. This is the basis for the following definition.</p>    
+    
+<div class="definition">
+<h4>Independent</h4>    
+<p>Events <em>A</em> and <em>B</em> are independent if <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>. 
+If <em>A</em> and <em>B</em> are not independent then they are dependent.</p>    
+</div>    
+  
+<p>The formula in the definition has two practical but exactly opposite uses:</p>    
+<ol>
+<li><p>In a situation in which we can compute all three probabilities <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+, <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>, and <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+, it is used to check whether or not the events <em>A</em> and <em>B</em> are independent:</p>
+<ul>
+<li><p>If <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+, then <em>A</em> and <em>B</em> are independent.</p></li>
+<li><p>If <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>&#x2260;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+, then <em>A</em> and <em>B</em> are not independent.</p></li>    
+</ul>
+</li> 
+<li><p>In a situation in which each of <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+ and <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math> can be computed and it is known that <em>A</em> and <em>B</em> are independent, then we can compute <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+ by multiplying together <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math>
+ and <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>: <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+.</p></li>     
+</ol>    
+    
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 6</h3>  
+      <p>A single fair die is rolled. Let <math display="inline">
+ <mi>A</mi><mo>=</mo><mrow><mo>{</mo> <mn>3</mn> <mo>}</mo></mrow>
+</math>
+ and <math display="inline">
+ <mi>B</mi><mo>=</mo><mrow><mo>{</mo> <mrow>
+  <mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn></mrow> <mo>}</mo></mrow>
+</math>
+. Are <em>A</em> and <em>B</em> independent?</p>
+</div>
+	<p>In this example we can compute all three probabilities <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+, <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ 
+</math>
+, and <math display="inline">
+ <mi>A</mi><mo>&#x2229;</mo><mi>B</mi><mo>=</mo><mrow><mo>{</mo> <mn>3</mn> <mo>}</mo></mrow>
+</math>
+ which means 
+<math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+. Since the product <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ <mo>&#x22C5;</mo><mfrac>
+  <mn>1</mn>
+  <mn>2</mn>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>12</mn></mrow>
+ </mfrac>
+ 
+</math>
+ is not the same number as <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mn>6</mn>
+ </mfrac>
+ 
+</math>
+, the events <em>A</em> and <em>B</em> are not independent. </p>
+</div>	
+
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 7</h3>  
+      <p>Many diagnostic tests for detecting diseases do not test for the disease directly but for a chemical or biological product of the disease, hence are not perfectly reliable. The sensitivity of a test is the probability that the test will be positive when administered to a person who has the disease. The higher the sensitivity, the greater the detection rate and the lower the false negative rate.</p>
+      <p>Suppose the sensitivity of a diagnostic procedure to test whether a person has a particular disease is 92%. A person who actually has the disease is tested for it using this procedure by two independent laboratories.</p>
+<ol type="a">
+    <li><p>What is the probability that both test results will be positive?</p></li>
+    <li><p>What is the probability that at least one of the two test results will be positive?</p></li>
+      </ol>
+      
+</div>
+<ol type="a">
+    <li><p>Let A1 denote the event “the test by the first laboratory is positive” and let A2 denote the event “the test by the second laboratory is positive.” Since A1 and A2 are independent,</p>
+    <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mn>1</mn><mo>&#x2229;</mo><mi>A</mi><mn>2</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mn>1</mn></mrow>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mn>2</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.92</mn><mo>&#x22C5;</mo><mn>0.92</mn><mo>=</mo><mn>0.8464</mn>
+</math>
+
+    </li>
+    
+    <li><p>Using the Additive Rule for Probability and the probability just computed,</p>
+    <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x222A;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn></mrow>
+    <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x2229;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x222A;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.92</mn><mo>+</mo><mn>0.92</mn><mo>&#x2212;</mo><mn>0.8464</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>P</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>A</mi><mn>1</mn><mo>&#x222A;</mo><mi>A</mi><mn>2</mn></mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>0.9936</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+    
+    </li>
+      </ol>
+    
+</div>	
+    
+    
+    
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 8</h3>
+<p>The <em>specificity</em> of a diagnostic test for a disease is the probability that the test will be negative when administered to a person who does not have the disease. The higher the specificity, the lower the false positive rate.</p> 
+<p>Suppose the specificity of a diagnostic procedure to test whether a person has a particular disease is 89%.</p> 
+    
+<ol type="a">
+    <li><p>A person who does not have the disease is tested for it using this procedure. What is the probability that the test result will be positive?</p></li>
+    <li><p>A person who does not have the disease is tested for it by two independent laboratories using this procedure. What is the probability that both test results will be positive?</p></li>
+</ol>    
+    
+</div>
+<ol type="a">
+    <li>
+      <p>Let <em>B</em> denote the event “the test result is positive.” The complement of <em>B</em> is that the test result is negative, and has probability the specificity of the test, 0.89. Thus</p>
+<math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msup>
+    <mi>B</mi>
+    <mi>C</mi>
+   </msup>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>&#x2212;</mo><mn>0.89</mn><mo>=</mo><mn>0.11</mn>
+</math>
+    
+    
+    </li>
+    <li>
+      <p>Let <em>B1</em> denote the event “the test by the first laboratory is positive” and let <em>B2</em> denote the event “the test by the second laboratory is positive.” Since <em>B1</em> and <em>B2</em> are independent, by part (a) of the example</p>
+    <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mn>1</mn><mo>&#x2229;</mo><mi>B</mi><mn>2</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mn>1</mn></mrow>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mn>2</mn></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.11</mn><mo>&#x22C5;</mo><mn>0.11</mn><mo>=</mo><mn>0.0121</mn>
+</math>
+
+    </li>
+</ol> 
+
+</div>
+
+<div class="Example">
+  <div class="ExampleTitle">
+	<h3>Example 9</h3>  
+      <p>A jar contains 10 marbles, 7 black and 3 white. Two marbles are drawn without replacement, which means that the first one is not put back before the second one is drawn.</p>
+ <ol type="a">
+    <li><p>What is the probability that both marbles are black?</p></li>
+    <li><p>What is the probability that exactly one marble is black?</p></li>
+    <li><p>What is the probability that at least one marble is black?   </p></li>
+</ol>     
+  
+</div>
+	<p>A tree diagram for the situation of drawing one marble after the other without replacement is shown in "Tree Diagram for Drawing Two Marbles". The circle and rectangle will be explained later, and should be ignored for now.</p>
+<div class="side-by-side">
+<div class="side-by-side-item">
+<figure><figcaption>Tree Diagram for Drawing Two Marbles</figcaption>
+  <img src="images/Tree Diagram for Drawing Two Marbles.jpg" width="100%" alt="Tree Diagram with first branches going to B and W. Branch going to B has 7/10, branch going to W has 3/10. From W branches to B and W with value 7/9 on branch to B and 2/9 on branch to W. From B branches to B and W with 6/9 on B branch and 3/9 on W branch. Shows probabilitys of the two nodes in branches as described in work."/>
+</figure>  
+    
+</div>    
+</div>     
+<p>The numbers on the two leftmost branches are the probabilities of getting either a black marble, 7 out of 10, or a white marble, 3 out of 10, on the first draw. The number on each remaining branch is the probability of the event corresponding to the node on the right end of the branch occurring, given that the event corresponding to the node on the left end of the branch has occurred. Thus for the top branch, connecting the two <em>B</em>s, it is
+<math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>2</mn>
+   </msub>
+   <mo>&#x007C;</mo><msub>
+    <mi>B</mi>
+    <mn>1</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow>
+</math>
+, where <math display="inline">
+ <mrow>
+  <msub>
+   <mi>B</mi>
+   <mn>1</mn>
+  </msub>
+  </mrow>
+</math>
+ denotes the event “the first marble drawn is black” and <math display="inline">
+ <mrow>
+  <msub>
+   <mi>B</mi>
+   <mn>2</mn>
+  </msub>
+  </mrow>
+</math>
+ denotes the event “the second marble drawn is black.” Since after drawing a black marble out there are 9 marbles left, of which 6 are black, this probability is <math display="inline">
+ <mfrac>
+  <mn>6</mn>
+  <mn>9</mn>
+ </mfrac>
+ 
+</math>
+.</p>    
+ <p>The number to the right of each final node is computed as shown, using the principle that if the formula in the Conditional Rule for Probability is multiplied by <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+, then the result is</p>  
+<math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x2229;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow>
+</math>
+    
+<ol type="a">
+    <li><p>The event “both marbles are black” is <math display="inline">
+ <mrow>
+  <mi>B</mi><mn>1</mn><mo>&#x2229;</mo><mi>B</mi><mn>2</mn></mrow>
+</math>
+ and corresponds to the top right node in the tree, which has been circled. Thus as indicated there, it is: </p> <math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>1</mn>
+   </msub>
+   <mo>&#x2229;</mo><msub>
+    <mi>B</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>1</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mn>7</mn>
+  <mrow>
+   <mn>10</mn></mrow>
+ </mfrac>
+ <mo>&#x22C5;</mo><mfrac>
+  <mn>6</mn>
+  <mn>9</mn>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.47</mn>
+</math>
+
+</li>
+    <li><p>The event “exactly one marble is black” corresponds to the two nodes of the tree enclosed by the rectangle. The events that correspond to these two nodes are mutually exclusive: black followed by white <math display="inline">
+ <mrow>
+  <msub>
+   <mi>B</mi>
+   <mn>1</mn>
+  </msub>
+  <mo>&#x2229;</mo><msub>
+   <mi>W</mi>
+   <mn>2</mn>
+  </msub>
+  </mrow>
+</math>
+
+ is incompatible with white followed by black <math display="inline">
+ <mrow>
+  <msub>
+   <mi>W</mi>
+   <mn>1</mn>
+  </msub>
+  <mo>&#x2229;</mo><msub>
+   <mi>B</mi>
+   <mn>2</mn>
+  </msub>
+  </mrow>
+</math>
+
+. Thus in accordance with the Additive Rule for Probability we merely add the two probabilities next to these nodes. Thus the probability of drawing exactly one black marble in two tries is:</p>
+        
+<math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>1</mn>
+   </msub>
+   <mo>&#x2229;</mo><msub>
+    <mi>W</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>W</mi>
+    <mn>1</mn>
+   </msub>
+   <mo>&#x2229;</mo><msub>
+    <mi>B</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.23</mn><mo>+</mo><mn>0.23</mn><mo>=</mo><mn>0.46</mn>
+</math>
+
+
+</li>
+    <li><p>The event “at least one marble is black” corresponds to the three nodes of the tree enclosed by either the circle or the rectangle. The events that correspond to these nodes are mutually exclusive, so as in part (b) we merely add the probabilities next to these nodes. Thus the probability of drawing at least one black marble in two tries is 0.47+0.23+0.23=0.93.</p>
+<math display="block">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>1</mn>
+   </msub>
+   <mo>&#x2229;</mo><msub>
+    <mi>W</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>W</mi>
+    <mn>1</mn>
+   </msub>
+   <mo>&#x2229;</mo><msub>
+    <mi>B</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <msub>
+    <mi>B</mi>
+    <mn>1</mn>
+   </msub>
+   <mo>&#x2229;</mo><msub>
+    <mi>B</mi>
+    <mn>2</mn>
+   </msub>
+   </mrow>
+ <mo>)</mo></mrow><mo>=</mo><mn>0.23</mn><mo>+</mo><mn>0.23</mn><mo>+</mo><mn>0.47</mn><mo>=</mo><mn>0.93</mn>
+</math>
+
+<p>Of course, this answer could have been found more easily using the Probability Law for Complements, simply subtracting the probability of the complementary event, “two white marbles are drawn,” from 1 to obtain 1−0.07=0.93.</p></li>
+
+</ol>
+
+</div>
+
+            
+<div class="tryitnow">
+  	<h5>Try it Now 4</h5>
+	<p>Are these events independent?</p>
+<ol type="a">
+    <li><p>A fair coin is tossed two times.  The two events are (1) first toss is a head and (2) second toss is a head.</p></li>
+    <li><p>The two events (1) "It will rain tomorrow in Tucson" and (2) "It will rain tomorrow in Phoenix” (a city near Tucson).</p></li>
+    <li><p>You draw a red card from a deck, then draw a second card without replacing the first.</p></li>
+    <li><p>A coin is tossed and you record Heads or Tails, and you roll a die and record the outcome.</p></li>
+</ol>
+
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+<ol type="a">
+    <li><p>The probability that a head comes up on the second toss is 1/2 regardless of whether or not a head came up on the first toss, so these events are independent.</p></li>
+    <li><p>These events are not independent because it is more likely that it will rain in Phoenix on days it rains in Tucson than on days it does not.</p></li>
+    <li><p> The probability of the second card depends on what the first card drawn is, so these events are not independent.</p></li>
+    <li><p>These are independent as the outcome of the coin toss would not change based on the outcome of the dice roll.</p></li>
+
+</ol>
+	</div>		
+</div>
+       
+<div class="tryitnow">
+  	<h5>Try it Now 5</h5>
+	<p>A card is pulled from a deck of cards and noted.  The card is then replaced, the deck is shuffled, and a second card is removed and noted.  What is the probability that both cards are Aces? </p>
+				
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>Can we state the events of drawing those two careds are independent? If we can then we can use the multiplication rule for independent events. If we can't establish independence, then we have to try something different.</p>
+
+	</div>
+
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+	<p>Since the second draw is made after replacing the first card, these events are independent.  The probability of an ace on each draw is <math display="inline">
+ <mfrac>
+  <mn>4</mn>
+  <mrow>
+   <mn>52</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>13</mn></mrow>
+ </mfrac>
+ 
+</math>, so the probability of an Ace on both draws is <math display="inline">
+ <mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>13</mn></mrow>
+ </mfrac>
+ <mo>&#x22C5;</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>13</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>169</mn></mrow>
+ </mfrac>
+ 
+</math>
+.</p>
+	</div>		
+</div>    
+
+<hr>
+<h3>WARNING!!!! Independent &ne; Disjoint (mutually exclusive)</h3>
+<p>Disjoint events means that the two events have no outcomes in common. If two are events are disjoint, then there is no way that the events can be independent of each other! Are you asking why? Well the reason is that if we know one event occurs, then the probability that the other occurs will now be 0 (they don't have anything in common with each other ... so if one occurs there is now zero chance for the other event to occur). </p>
+<p>For example. The event drawing a black card and drawing a heart are disjoint events (if it is black there is no way it can be a heart in a standard 52 card deck). Now we know the probability of drawing a heart is 4/52 or 1/13. If we were told that the given card drawn is black does the probability of that card being a heart remain the same? The answer is NO! Since it is guaranteed to be black (as it was given) there is now 0 probability of drawing a heart (there are no black hearts). So the events drawing a heart has changed probability knowing that the black was given - this tells us that the two events can not be independent of each other.</p>
+<p>A common misconception is to treat independence and disjoint events as the same thing (knowing their independent and then using the simplified addition rule or knowing their disjoint and using the Multiplication Rule for independent events).</p>
+
+    </div>
+<div class="content-body">    
+<h2>Exercises:</h2>
+
+<ol>
+    <li>
+    <p>For two events A and B, P(A)=0.73, P(B)=0.48, and P(A∩B)=0.29.</p>
+<ol type="a">
+    <li><p>Find P(A|B).</p></li>
+    <li><p>Find P(B|A).</p></li>
+    <li><p>Determine whether or not A and B are independent. </p></li>
+</ol>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>B</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.29</mn></mrow>
+  <mrow>
+   <mn>0.48</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>29</mn></mrow>
+  <mrow>
+   <mn>48</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.6042</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>A</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.29</mn></mrow>
+  <mrow>
+   <mn>0.73</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>29</mn></mrow>
+  <mrow>
+   <mn>73</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.3973</mn>
+</math>
+</p></li>
+    <li><p>They are not independent as <math display="inline">
+ <mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>&#x2260;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+</p></li>
+
+</ol>
+	            </div>	
+	        </div>
+
+    </li>
+    <li>
+    <p>For two events A and B, P(A)=0.26, P(B)=0.37, and P(A∩B)=0.11.</p>
+<ol type="a">
+    <li><p>Find P(A|B).</p></li>
+    <li><p>Find P(B|A).</p></li>
+    <li><p>Determine whether or not A and B are independent. </p></li>
+</ol>
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>B</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.11</mn></mrow>
+  <mrow>
+   <mn>0.37</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>11</mn></mrow>
+  <mrow>
+   <mn>37</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.2973</mn>
+</math>
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>A</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.11</mn></mrow>
+  <mrow>
+   <mn>0.26</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>11</mn></mrow>
+  <mrow>
+   <mn>26</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mn>0.4231</mn>
+</math>
+</p></li>
+    <li><p>They are not independent as <math display="inline">
+ <mo>&#x22C5;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>&#x2260;</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>B</mi>
+ <mo>)</mo></mrow>
+</math>
+</p></li>
+
+</ol>
+	            </div>	
+	        </div>
+
+    </li>    
+<li>
+    <p>For two events A and B, P(A)=0.25, P(B)=0.6, and P(A∩B)=0.15.</p>
+<ol type="a">
+    <li><p>Find P(A|B).</p></li>
+    <li><p>Find P(B|A).</p></li>
+    <li><p>Determine whether or not A and B are independent. </p></li>
+    <li><p>Determine whether or not A and B are mutually exclusive.</p></li>
+</ol>    
+	        <h5 class="js-expandmore">Answer</h5> 
+	        <div class="js-to_expand">
+	            <div class="exerciseanswer">
+<ol type="a">
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>B</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.15</mn></mrow>
+  <mrow>
+   <mn>0.6</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>15</mn></mrow>
+  <mrow>
+   <mn>60</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mn>0.25</mn>
+</math>
+
+</p></li>
+    <li><p><math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>B</mi><mo>&#x007C;</mo><mi>A</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mfrac>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mrow>
+     <mi>A</mi><mo>&#x2229;</mo><mi>B</mi></mrow>
+   <mo>)</mo></mrow></mrow>
+  <mrow>
+   <mi>P</mi><mrow><mo>(</mo>
+    <mi>A</mi>
+   <mo>)</mo></mrow></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>0.15</mn></mrow>
+  <mrow>
+   <mn>0.25</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>15</mn></mrow>
+  <mrow>
+   <mn>25</mn></mrow>
+ </mfrac>
+ <mo>=</mo><mn>0.60</mn>
+</math>
+</p></li>
+    <li><p>They are independent as <math display="inline">
+ <mi>P</mi><mrow><mo>(</mo>
+  <mrow>
+   <mi>A</mi><mo>&#x007C;</mo><mi>B</mi></mrow>
+ <mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo>
+  <mi>A</mi>
+ <mo>)</mo></mrow>
+</math> has been verified.
+</p></li>
+    <li>
+      <p>They are not mutually exclusive as the probability of <em>A</em> and <em>B</em> is not zero.</p></li>
+    <li><p></p></li>
+</ol>
+	            </div>	
+	        </div>    
+    
+    
+</li> 
+    
+<li>
+<p>Compute the following probabilities in connection with the roll of a single fair die.</p>    
+ <ol type="a">
+    <li><p>The probability that the roll is even.</p></li>
+    <li><p>The probability that the roll is even, given that it is not a two.</p></li>
+    <li><p>The probability that the roll is even, given that it is not a one.</p></li>
+</ol>   
+    
+</li>
+    
+ <li>
+<p>Compute the following probabilities in connection with two tosses of a fair coin.</p>    
+ <ol type="a">
+    <li><p>The probability that the second toss is heads.</p></li>
+    <li><p>The probability that the second toss is heads, given that the first toss is heads.</p></li>
+    <li><p>The probability that the second toss is heads, given that at least one of the two tosses is heads.   </p></li>
+</ol>   
+
+</li>
+    
+<li>
+<p>A special deck of 16 cards has 4 that are blue, 4 yellow, 4 green, and 4 red. The four cards of each color are numbered from one to four. A single card is drawn at random. Find the following probabilities.</p>    
+ <ol type="a">
+    <li><p>The probability that the card drawn is red.</p></li>
+    <li><p>The probability that the card is red, given that it is not green.</p></li>
+    <li><p>The probability that the card is red, given that it is neither red nor yellow.</p></li>
+    <li><p>The probability that the card is red, given that it is not a four.   </p></li>
+</ol>   
+
+</li>
+    
+<li>
+<p>A special deck of 16 cards has 4 that are blue, 4 yellow, 4 green, and 4 red. The four cards of each color are numbered from one to four. A single card is drawn at random. Find the following probabilities.
+</p>    
+ <ol type="a">
+    <li><p>The probability that the card drawn is a two or a four.</p></li>
+    <li><p>The probability that the card is a two or a four, given that it is not a one.</p></li>
+    <li><p>The probability that the card is a two or a four, given that it is either a two or a three.</p></li>
+    <li><p>The probability that the card is a two or a four, given that it is red or green.</p></li>     
+</ol>   
+   
+</li>
+    
+<li>
+<p>A random experiment gave rise to the two-way contingency table shown. Use it to compute the probabilities indicated.</p>  
+<table cellpadding="0" cellspacing="0" class="display-lg" bgcolor="#FFFFFF">
+  <thead>
+    <tr>
+      <th align="left"></th>
+      <th align="center">R</th>
+      <th align="center">S</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">A</td>
+      <td align="center">0.12</td>
+      <td align="center">0.18</td>
+    </tr>
+    <tr>
+      <td align="center">B</td>
+      <td align="center">0.28</td>
+      <td align="center">0.42</td>
+    </tr>
+  </tbody>
+</table>
+<ol type="a">
+  <li><p>P(A), P(R), P(A∩R).</p></li>
+  <li><p>Based on the answer to (a), determine whether or not the events A and R are independent.</p></li>
+  <li><p>Based on the answer to (b), determine whether or not P(A|R) can be predicted without any computation. If so, make the prediction. In any case, compute P(A|R) using the Rule for Conditional Probability.  </p></li>
+</ol>   
+    
+</li>    
+
+<li>
+<p>A random experiment gave rise to the two-way contingency table shown. Use it to compute the probabilities indicated.</p> 
+ <table cellpadding="0" cellspacing="0" class="display-lg" bgcolor="#FFFFFF">
+   <thead>
+     <tr>
+       <th align="left"></th>
+       <th align="center">R</th>
+       <th align="center">S</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td align="center">A</td>
+       <td align="center">0.13</td>
+       <td align="center">0.07</td>
+     </tr>
+     <tr>
+       <td align="center">B</td>
+       <td align="center">0.61</td>
+       <td align="center">0.19</td>
+     </tr>
+   </tbody>
+ </table>
+<ol type="a">
+  <li><p>P(A), P(R), P(A∩R).</p></li>
+  <li><p>Based on the answer to (a), determine whether or not the events A and R are independent.</p></li>
+  <li><p>Based on the answer to (b), determine whether or not P(A|R) can be predicted without any computation. If so, make the prediction. In any case, compute P(A|R) using the Rule for Conditional Probability.   </p></li>
+</ol>   
+
+</li> 
+
+<li>
+<p>Suppose for events A and B in a random experiment P(A)=0.70 and P(B)=0.30. Compute the indicated probability, or explain why there is not enough information to do so.</p>    
+ <ol type="a">
+    <li><p>P(A∩B).</p></li>
+    <li><p>P(A∩B), with the extra information that A and B are independent.</p></li>
+    <li><p>P(A∩B), with the extra information that A and B are mutually exclusive.  </p></li>
+</ol>   
+ 
+</li> 
+    
+<li>
+<p>Suppose for events A and B connected to some random experiment, P(A)=0.50 and P(B)=0.50. Compute the indicated probability, or explain why there is not enough information to do so.</p>    
+ <ol type="a">
+    <li><p>P(A∩B).</p></li>
+    <li><p>P(A∩B), with the extra information that A and B are independent.</p></li>
+    <li><p>P(A∩B), with the extra information that A and B are mutually exclusive. </p></li>
+</ol>   
+
+</li> 
+
+<li>
+<p>The following two-way contingency table gives the breakdown of the population of patrons at a grocery store according to the number of items purchased and whether or not the patron made an impulse purchase at the checkout counter:</p>  
+<table cellpadding="0" cellspacing="0" class="display-lg" bgcolor="#FFFFFF">
+  <thead>
+    <tr>
+      <th rowspan="2" align="left">Number of Items</th>
+      <th colspan="2" align="center">Impulse Purchase</th>
+    </tr>
+    <tr>
+      <th align="center">Made</th>
+      <th align="center">Not Made</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">Few</td>
+      <td align="center">0.01</td>
+      <td align="center">0.19</td>
+    </tr>
+    <tr>
+      <td align="left">Many</td>
+      <td align="center">0.04</td>
+      <td align="center">0.76</td>
+    </tr>
+  </tbody>
+</table>
+<p>A patron is selected at random. Find each of the following probabilities.</p>    
+ <ol type="a">
+    <li><p>The patron made an impulse purchase.</p></li>
+    <li><p>The patron made an impulse purchase, given that the total number of items purchased was many.</p></li>
+    <li><p>Determine whether or not the events “few purchases” and “made an impulse purchase at the checkout counter” are independent.  </p></li>
+</ol>   
+   
+</li>    
+
+<li>
+<p>The sensitivity of a drug test is the probability that the test will be positive when administered to a person who has actually taken the drug. Suppose that there are two independent tests to detect the presence of a certain type of banned drugs in athletes. One has sensitivity 0.75; the other has sensitivity 0.85. If both are applied to an athlete who has taken this type of drug, what is the chance that his usage will go undetected?</p>    
+
+</li>  
+
+<li>
+<p>A person has two lights in their well house to keep the pipes from freezing in winter. They check the lights daily. Each light has probability 0.002 of burning out before it is checked the next day (independently of the other light).</p>    
+ <ol type="a">
+    <li><p>If the lights are wired in parallel one will continue to shine even if the other burns out. In this situation, compute the probability that at least one light will continue to shine for the full 24 hours. Note the greatly increased reliability of the system of two bulbs over that of a single bulb.</p></li>
+    <li><p>If the lights are wired in series neither one will continue to shine even if only one of them burns out. In this situation, compute the probability that at least one light will continue to shine for the full 24 hours. Note the slightly decreased reliability of the system of two bulbs over that of a single bulb.</p></li>
+</ol>   
+  
+</li> 
+
+<li>
+<p>Events A and B are mutually exclusive. Find P(A|B).</p>    
+ 
+</li> 
+
+<li>
+<p>A basketball player makes 60% of the free throws that he attempts, except that if he has just tried and missed a free throw then his chances of making a second one go down to only 30%. Suppose he has just been awarded two free throws.</p>    
+ <ol type="a">
+    <li><p>Find the probability that he makes both.</p></li>
+    <li><p>Find the probability that he makes at least one. (A tree diagram could help.)</p></li>
+</ol>   
+    
+</li> 
+  
+
+  <li>
+    <p>Suppose a jar contains 17 red marbles and 32 blue marbles. If you reach in the jar and pull out 2 marbles at random one at a time without replacement, find the probability that both are red.</p>
+  </li>
+  <li>
+    <p>Suppose you write each letter of the alphabet on a different slip of paper and put the slips into a hat.  If you pull out two slips at random (one at a time without replacement), find the probability that both are vowels (a, e, i, o , or u).</p>
+    </li>
+  <li>
+    <p>A math class consists of 25 students, 14 female and 11 male.&nbsp; Two students are selected at random to participate in a probability experiment.&nbsp; Compute the probability that&nbsp;</p>
+   <ol type="a">
+    <li>
+      <p>a male is selected, then a female.</p>
+      </li>
+    <li>
+      <p>a female is selected, then a male.</p>
+      </li>
+    <li>
+      <p>two males are selected.</p>
+      </li>
+    <li>
+      <p>two females are selected.</p>
+      </li>
+    <li>
+      <p>no males are selected.</p>
+      </li>
+    </ol>     
+      
+    </li>
+
+  <li>
+    <p>A math class consists of 25 students, 14 female and 11 male.&nbsp; Three students are selected at random to participate in a probability experiment.&nbsp; Compute the probability that&nbsp;</p>
+    <ol>
+    <li>
+      <p>a male is selected, then two females.</p>
+      </li>
+    <li>
+      <p>a female is selected, then two males.</p>
+      </li>
+    <li>
+      <p>two females are selected, then one male.</p>
+      </li>
+    <li>
+      <p>three males are selected.</p>
+      </li>
+    <li>
+      <p>three females are selected.</p>
+      </li>
+    </ol>    
+      
+    </li>
+
+ 
+  <li>
+    <p>A jar contains 6 red marbles numbered 1 to 6 and 8 blue marbles numbered 1 to 8. A marble is drawn at random from the jar.  Find the probability the marble is red or odd-numbered.</p>
+    </li>
+  <li>
+    <p>A jar contains 4 red marbles numbered 1 to 4 and 10 blue marbles numbered 1 to 10. A marble is drawn at random from the jar.  Find the probability the marble is blue or even-numbered.</p>
+    </li>
+  <li>
+    <p>A jar contains 5 red marbles numbered 1 to 5 and 8 blue marbles numbered 1 to 8. A marble is drawn at random from the jar.  Find the probability the marble is </p>
+  <ol type="a">
+    <li>
+      <p>Even-numbered given that the marble is red.</p>
+      </li>
+    <li>
+      <p>Red given that the marble is even-numbered.</p>
+      </li>
+    </ol>      
+      
+    </li>
+
+  <li>
+    <p>A jar contains 4 red marbles numbered 1 to 4 and 8 blue marbles numbered 1 to 8. A marble is drawn at random from the jar.  Find the probability the marble is </p>
+  <ol type="a">
+    <li>
+      <p>Odd-numbered given that the marble is blue.</p>
+      </li>
+    <li>
+      <p>Blue given that the marble is odd-numbered.</p>
+      </li>
+    </ol>      
+      
+    </li>
+
+  <li>
+    <p>Compute the probability of flipping a coin and getting heads, given that the previous flip was tails.</p>
+    </li>
+  <li>
+    <p>Find the probability of rolling a &ldquo;1&rdquo; on a fair die, given that the last 3 rolls were all ones.</p>
+    </li>
+  <li>
+    <p>Suppose a math class contains 25 students, 14 females (three of whom speak French) and 11 males (two of whom speak French). Compute the probability that a randomly selected student speaks French, given that the student is female.</p>
+    </li>
+  <li>    
+    <p>Suppose a math class contains 25 students, 14 females (three of whom speak French) and 11 males (two of whom speak French). Compute the probability that a randomly selected student is male, given that the student speaks French.    </p>
+  </li>
+  <li>
+    <p>Forty eight percent of all undergraduates at a large  university are male, 18% are majoring  in business, and 10% are male <strong><em>and</em></strong> are majoring in business.  Let <em>M</em> be the event that a randomly selected undergraduate is male  and let <em>B</em> be the event  that  a randomly selected undergraduate is majoring in business.  
+    </p>
+    <ol type="a">
+      <li>
+        <p>Compute <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mi>P</mi><mo stretchy="false">(</mo><mi>M</mi><mo>&#x007C;</mo><mi>B</mi><mo stretchy="false">)</mo>
+ </mrow>
+</math>
+and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mo>&#x007C;</mo><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow>
+</math>
+. Interpret these results (include what the value is and what it represents in terms of the application).. </p>
+      </li>
+      <li>
+        <p>Are <em>M</em> and <em>B</em> independent?  (justify your answer using the definition of independence from this section) </p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+ </div>
+  <footer>
+    <div id="footer">
+      <p class="text-center toggle-footnotes">[Show Footnotes]</p>
+      <div class="footnotes">
+        <h2>Attribution:</h2>
+        <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+        <p><a href="https://2012books.lardbucket.org/books/beginning-statistics/" target="_blank">Beginning Statistics (v. 1.0)</a> (download for free and license information found at: <a href="https://2012books.lardbucket.org/" target="_blank">https://2012books.lardbucket.org/</a>) Creative Commons by-nc-sa 3.0 </p>
+        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script type="text/javascript" src="/shared/webdev/course-files/js/scripts.js"></script> 
+<script type="text/javascript" src="../../custom.js"></script> 
+<script type="text/javascript" src="../../jquery-accessible-hide-show-aria.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+</body>
+</html>
