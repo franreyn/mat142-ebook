@@ -4,7 +4,6 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="./src/_utils/styles.css">
 <script type="text/javascript" src="./src/_utils/scripts.js" defer></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
@@ -12,7 +11,10 @@
 <title>Document</title>
 </head>
 <body>
-<main class="ereader-display">
+  <section class="ereader-display">
+    <header>
+      <button type="button" id="light-dark-mode">Light/Dark </button>
+    </header>
 <!-- START YOUR CONTENT--> 
 <!--===================-->
 <h1>1.1 Basic Concepts</h1>
@@ -111,19 +113,25 @@
 </div>
 <p>This is a pragraph</p>
 <p><math display="inline"><mi>P</mi><mrow><mo>(</mo><mi>B</mi><mo>)</mo></mrow><mo>=</mo><mn>0.16</mn><mo>+</mo><mn>0.12</mn><mo>+</mo><mn>0.14</mn><mo>=</mo><mn>0.42</mn></math></p>
-</li>
-<li>
 <p><math display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mtext>Some&nbsp;Party</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.12</mn><mo>+</mo><mn>0.09</mn><mo>+</mo><mn>0.07</mn><mo>+</mo><mn>0.16</mn><mo>+</mo><mn>0.12</mn><mo>+</mo><mn>0.14</mn><mo>+</mo><mn>0.04</mn><mo>+</mo><mn>0.03</mn><mo>+</mo><mn>0.06</mn><mo>=</mo><mn>0.83</mn></math></p>
-</li>
-<li>
 <p><math display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mtext>In&nbsp;Favor</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.12</mn><mo>+</mo><mn>0.16</mn><mo>+</mo><mn>0.04</mn><mo>+</mo><mn>0.08</mn><mo>=</mo><mn>0.40</mn></math></p>
-</li>
-<li>
 <p><math display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mtext>No&nbsp;Party&nbsp;and&nbsp;Undecided</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.03</mn></math></p>
 <p>University of Arizona might take slightly more diverse courses than those at your college, and some of these courses may require less popular textbooks that cost more; or, on the other hand, the University Bookstore might have a larger pool of used textbooks, reducing the cost of these books to the students.  Whichever the case (and it is likely that some combination of these and other factors are in play), the data we gather from your college will probably not be the same as that from the University of Arizona.  Particularly when conveying our results to others, we want to be clear about the population we are describing with our data.</p>
-
+<footer>
+  <div >
+  <p class="text-center toggle-footnotes">[Show Footnotes]</p>
+  <div class="footnotes">
+        <h2>Attribution:</h2>
+      <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a></p>
+    <p>This page contains modified content from Psychology. Authored by: OpenStax College. Located at:, <a class="ext" href="http://cnx.org/contents/4abf04bf-93a0-45c3-9cbc-2cefd46e68cc@4.100:1/Psychology" target="_blank" rel="noopener">“Psychology”</a> License: CC BY: Attribution. License Terms: Download for free at http://cnx.org/content/col11629/latest</p>
+            <p><a href="https://openstax.org/books/prealgebra/pages/1-introduction" target="_blank">"OpenStax PreAlgebra"</a> by Lynn Marecek, MaryAnne Anthony-Smith is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0" target="_blank">CC BY-NC 4.0</a> / A derivative from the <a href="https://openstax.org/books/prealgebra/pages/1-introduction" target="_blank">original work</a></p>                
+      <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+    </div>
+  </div>
+</footer>
 <!--=================--> 
 </main>
 <!-- END YOUR CONTENT-->
+</section>
 </body>
 </html>
