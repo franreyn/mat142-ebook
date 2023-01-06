@@ -4,9 +4,12 @@
 const docBody = document.querySelector("body");
 const button = document.querySelector("#light-dark-mode");
 let isDarkMode = false;
+
+if(button){
 button.addEventListener("click", () => {
   docBody.toggleAttribute("darkmode");
-});
+}); }
+
 
 // Accordions - show/hide script
 const getAccords = document.querySelectorAll(".accordion");
@@ -30,7 +33,6 @@ const changeFootnotesText = (toggleBtns,toggleBtn) => {
 }
 
 if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-footnotes")) {
-
 
   for (let toggleBtn = 0; toggleBtn < toggleBtns.length; toggleBtn++) {
     // Add tabindex
