@@ -124,7 +124,7 @@ header {
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
-  margin: 0 4rem .25rem;
+  margin: 0rem 4rem .5rem;
 }
 
 .tryitnow {
@@ -143,7 +143,7 @@ header {
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
-  margin: 0 4rem .25rem;
+  margin: 0 4rem 1rem;
 }
 
 .example {
@@ -172,7 +172,7 @@ header {
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
-  margin: 0 4rem .25rem;
+  margin: 0 4rem 1rem;
 }
 
 img {
@@ -207,7 +207,6 @@ hr {
 }
 
 .accordion .accordion-content {
-  border-left: 1px solid gray;
   padding: 1rem;
 }
 
