@@ -16,11 +16,12 @@ body {
 }
 
 body[darkmode] {
-  background-color: rgba(13, 13, 13, 1);
+  background-color: rgba(20, 20, 20, 1);
 }
 
 body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
   color: white;
+  opacity: 87%;
 }
 
 #light-dark-mode {
@@ -240,6 +241,14 @@ hr {
   font-size: 16px;
 }
 
+body .toggle-footnotes {
+  background-color: rgba(13,13,13,.1);
+}
+
+body[darkmode] .toggle-footnotes {
+  background-color: rgba(255,255,255,.1);
+}
+
 .toggle-btn-content,
 .footnotes {
   background-color:white;
@@ -272,11 +281,19 @@ footer {
   grid-area: footer;
   text-align: center;
   margin-bottom: 40px;
-  background-color:rgba(13, 13, 13, 0.1);
 }
 
 .footnotes {
   text-align: left;
+  background-color: transparent;
+}
+
+body[darkmode] .footnotes {
+  border: 2px solid rgba(255,255,255,.1);
+}
+
+body .footnotes {
+  border: 2px solid rgba(13,13,13,.1);
 }
 
 .footnotes > * {
