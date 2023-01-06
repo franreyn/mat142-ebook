@@ -1,0 +1,2535 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>2.5 Normal Distribution</title>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width" />
+
+<link rel="stylesheet" type="text/css" href="/shared/webdev/course-files/css/themes/cards/styles.css">       
+<link rel="stylesheet" type="text/css" href="/shared/Templates/Template_Cards/css/custom.css">
+<link rel="stylesheet" href="../../MAT142.css" type="text/css" />
+
+	
+</head>
+<body id="one-column" style="overflow-y: hidden;">
+	<header class="header"><img src="../../Images/banners/Chapter 2 Descriptive Statistics.jpg" alt="decorative image of graph" />
+		<div class="text-container">
+		  <h1>2.5 Normal Distribution</h1>
+		</div>
+	</header>
+	
+<div id="content-wrapper">
+<div class="content-body">
+
+<h2>2.5 Normal Distribution</h2>
+<p>Upon completion of this section, you should be able to</p>
+<ul>
+  <li>Describe features of a normal distributions</li>
+  <li>Use the Empirical Rule (68-95-99.7 Rule) with applications involving the normal distribution</li>
+  <li>Find z-scores for values based on a normal distribution</li>
+  <li>Find a percentile for a given z-score using the standard normal table</li>
+  <li>Solve applied problems involving normal distributions and the standard normal table</li>    
+</ul>
+    </div>   
+    
+<div class="content-body">
+    
+<h3>Normal Distribution</h3>
+
+<p>One of the things we have looked at in the descriptive statistics sections is a way to describe a particular set of data, whether it be quantitative or categorical (qualitative). A next step we can take is to classify what type of distribution the data may have come from (this allows us to answer very interesting questions about the population). We will focus our time on this concept by looking at a very common distribution named the Normal Distribution. The normal distribution is recognized with its characteristic bell shape, but not all bell shaped distributions must be a normal distribution. The distribution itself only needs the mean and standard deviation to completely describe its shape and properties.</p>
+
+<div class="definition">
+  <h4>Normal Distribution </h4>
+  <p>The <strong>normal distribution</strong> is a symmetric distribution in a shape of a bell (sometimes called the bell curve). It is described by the parameters of the mean &mu; and standard deviation &sigma;. The graph below shows how the bell shape and parameter values identify key portions of the graph on how the bell turn at key points for the shape. The peak of the bell occurs at the mean for the distribution and the graph turns in concavity one standard deviation away from the mean in both directions.</p>
+  <figure class="side-by-side"><img src="images/normal_distribution_with_mean_standard_deviation_marks.GIF" alt="The normal curve is shown over a horizontal axis. The axis is labeled with points m-3s, m-2s, m-1s, m, m+1s, m+2s, m+3s.  Vertical lines connect the axis to the curve at each labeled point. The peak of the curve aligns with the mean point m. The curve changes concavity at m-s and m+s points" width="537" height="311" border="0"></figure>
+</div>
+
+<p>The Normal Distribution plays an important role in many inference procedures in Statistics. We will study some of the properties of the Normal Distribution to give you an idea of what we can say once we are able to identify clearly what the distribution of a variable is from a population. Just keep in mind just because a graph looks bell shape doesn't necessarily mean it will be in general a normal distribution that describes the data.</p>
+<p>Strictly speaking, it is not correct to talk about "the normal distribution" since there are many normal distributions. Normal distributions can differ in their means and in their standard deviations. Figure 1 shows three normal distributions. The green (left-most) distribution has a mean of -3 and a standard deviation of 0.5, the distribution in red (the middle distribution) has a mean of 0 and a standard deviation of 1, and the distribution in black (right-most) has a mean of 2 and a standard deviation of 3. These as well as all other normal distributions are symmetric with relatively more values at the center of the distribution and relatively few in the tails. </p>
+
+<div class="side-by-side"><figure><img src="images/varietiesofNormal.gif" alt="3 different normal distributions showing the heights and widths can be very different from each other, but all keep a bell shape curve even though the bells can be very narrow and very wide." width="394" height="327" border="0">
+  <figcaption>Figure 1. Normal distributions differing in mean and standard deviation. </figcaption>
+</figure>
+    </div>    
+
+
+<p>Some features of normal distributions are listed below.</p>
+<ol>
+  <li>Normal distributions are symmetric around their mean. </li>
+  <li>The mean, median, and mode of a normal distribution are equal. </li>
+  <li>Normal distributions are denser in the center and less dense in the tails. </li>
+  <li>Normal distributions are defined by two parameters, the mean (&mu;) and the standard deviation (&sigma;). </li>
+  <li>68% of the area of a normal distribution is within one standard deviation of the mean. </li>
+  <li>Approximately 95% of the area of a normal distribution is within two standard deviations of the mean.</li>
+  <li>Approximately 99.7% of the area of a normal distribution is within three standard deviations of the mean.</li>    
+</ol>
+<p>Each different choice of specific numerical values for the pair &mu; and &sigma; gives a different bell shaped curve. The value of &mu; determines the location of the center for the curve, as shown in Figure 2 "Bell Curves with different values of &mu;". In each case the curve is symmetric about µ.</p>
+
+<div class="side-by-side"><figure>
+<figcaption>Figure 2. Normal distributions with different means, but the same standard deviation.</figcaption>
+<img src="images/normal_distribution_different_means.GIF" alt="3 different normal distributions showing different mean values of -2, -1, and 1." width="545" height="323" border="0">
+</figure>
+    </div>
+    
+<p>In figure 2 the standard deviation was the same for each normal distribution, but only the mean was changed. What we see is that the mean determines where the center of the distribution is, but doesn't change with width or spread of the distribution. Visually it appears the distribution is just a copy of each other shifted left or right depending on the value of the mean.</p>
+<p>The value of &sigma; determines whether the bell curve is tall and thin or short and squat, subject always to the condition that the total area under the curve be equal to 1. This is shown in Figure 3 "Bell Curves with different values of &sigma;", where we have arbitrarily chosen to center the curves at &mu; = 6.</p>
+<div class="side-by-side">
+<figure>
+  <p>
+  <figcaption>Figure 3. Normal distributions with different standard deviations, but the same mean.</figcaption>
+  <img src="images/normal_distribution_different_standard_deviations.GIF" alt="3 different normal distributions showing different standard deviation values of .5, 1, and 2." width="524" height="329" border="0">
+  </p>
+</figure>
+    </div>
+
+<p>We just spent some time going over the shape of a normal distribution. Let's put some of these ideas together with an example of a population that has a normal distribution to see what we can say about the population just by knowing it is normal with a given mean. In the next topic for this page we will explore further how we can answer questions about the population by knowing it follows a normal distribution.</p>
+
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 1</h3>    
+<p>Heights of 25-year-old men in a certain region have mean 69.75 inches and standard deviation 2.59 inches. These heights are approximately normally distributed. </p>
+    <ol type="a">
+    <li>
+      <p>Construct a rough sketch of the normal distribution labeling the mean and one standard deviation from the mean on the horizontal axis.</p>
+    </li>
+    <li>
+      <p>What percent of men have a height above 69.75 inches?</p>
+    </li>    
+    </ol>
+    </div>
+      <ol type="a">
+    <li><p>The graph of the normal distribution is displayed below.</p>
+      <div class="side-by-side"><img src="images/normaldistribution_mensheights_mean69.75.JPG" width="80%" alt="Normal distribution. Bell shaped graph with center at  69.75 with two other points to left and right of the center marked as 67.16 and 72.34. https://www.desmos.com/calculator/mss2dgizqr"/></div></li>
+    <li>
+      <p>The normal distribution is symmetric about the mean. This means 50% of the population would be above the mean and 50% of the population would be below the mean. We can conclude 50% of men have a height above 69.75 inches.</p>
+    </li>    
+    </ol>
+    </div>
+
+</div>    
+<div class="content-body">    
+    
+<h3>Empirical Rule (68 - 95 - 99.7 Rule)</h3>
+
+<p>Below is a rough sketch of a Normal Distribution along with what we know about the amount of data within 1, 2, or 3 standard deviations about the mean. On the graph the peak is where the mean is (which would also be the median and mode value for the data set). These Rules apply to most Bell Shaped curves (there are some exceptions, but for the ones you will see in this course you may assume the rule applies).</p>
+<div class="definition">    
+<h4>Empirical Rule (68 - 95 - 99.7 Rule)</h4>    
+<p>The <strong>empirical rule</strong> or the 68 - 95 - 99.7 Rule states that for a normal distribution we are able to determine the area under the curve in regions one, two, or three standard deviations from the mean. </p>    
+<ol>
+  <li>About 68% of all values fall within 1 standard deviation of the mean.</li>
+  <li>About 95% of all values fall within 2 standard deviations of the mean.</li>
+  <li>About 99.7% of all values fall within 3 standard deviations of the mean.</li>
+</ol>
+
+<div class="side-by-side"><figure><figcaption>Figure 4. Values of area under the curve for a normal distribution.
+</figcaption><img src="images/empirical Rule.png" alt="Visual illustrating the empirical rule. Area left tail m-3s and below is .1%, from m-3s to m-2s is 2.4%, from m-2s to m-1s is 13.5%, from m-1s to m is 34%, from m to m+1s is 34%, from m+1s to m+2s is 13.5%, from m+2s to m+3s is 2.4%, from m+3s and above is .1%." width="425" height="264" border="0" style="background-color:#FFFFFF"></figure></div>
+    </div>
+
+<p>It is helpful for any problem you work on to start with a general visual for the normal distribution and then label the values of the mean and standard deviation values to help answer questions in the application. The image below is the baseline for drawing that normal distribution as it includes 1, 2, and 3 standard deviation values below and above the mean. The areas then for each region can be taken from the image above.</p>
+    
+<div class="side-by-side"><figure><figcaption>Figure 5. Normal Distribution with locations for mean and standard deviation values.
+</figcaption><img src="images/normal_distribution_with_mean_standard_deviation_marks.GIF" alt="This normal distribution curve illustrates the empirical rule. The normal curve is shown over a horizontal axis. The axis is labeled with points m-3s, m-2s, m-1s, m, m+1s, m+2s, m+3s.  Vertical lines connect the axis to the curve at each labeled point. The peak of the curve aligns with the point m." width="537" height="311" border="0"></figure>
+    </div>
+
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 2</h3> 
+<p>Suppose we have a normal distribution with a mean of 10 and standard deviation of 2. </p>
+<ol type="a">
+  <li>
+    <p>What is the percentage of the population that has a value between 8 and 12? </p>
+  </li>
+  <li>
+    <p>What is the percentage of the population that has a value below 12?</p>
+  </li>
+  <li>
+    <p>What is the percentage of the population with values between 6 and 12?</p>
+  </li>
+</ol>
+</div>
+
+<ol type="a">  
+<li>  
+<p>To use the empircal rule it is best to visualize the distribution along with the region we are looking for.</p>
+<p>&nbsp;</p>
+<div class="side-by-side">
+<img src="images/normaldistribution_example3a.jpg" alt="normal distribution showing the region from 8 to 12 shaded in with the center at 10" width="80%">
+</div>
+<p>Since 8 is 10-2 and 12 is 10+2 we can see that we are one standard deviation below the mean and one standard deviation above the mean. This means using the empirical Rule that we have 68% of the population. </p>
+</li>  
+<li>
+<p>Visualize the region of interest before jumping into the empirical rule.</p>
+
+<div class="side-by-side">
+<img src="images/normaldistribution_example3b.JPG" alt="normal distribution showing the region below 12 shaded in with the center at 10" width="80%">
+</div>
+
+<p>We will have to use the fact that the normal distribution is symmetric about the mean and the empirical rule. 12 is a score that is one standard deviation above the mean. We know two things:</p>
+<ul>
+  <li>50% of the population is below the mean (normal distribution is symmetric about the mean).</li>
+  <li>68% of the population is between 1 standard deviation above and below the mean (empirical Rule)</li>
+  </ul>
+<p>Since 68% is the percentage between 1 standard deviation above and below the mean we can say that <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mfrac>
+    <mrow>
+      <mn>68</mn>
+      <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mn>34</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math> is the percentage above the mean to 1 standard deviation away (this would be the interval from 10 to 12). Add to that the 50% below the mean (this would be the interval for everything below 10) we have that 84% of the values are below 1 standard deviation above the mean (or in context below a value of 12).</p>
+
+</li>
+    
+<li><p>The visual for the interval from 6 to 12 is shown below.</p>
+<div class="side-by-side">
+<img src="images/normaldistribution_example3c.JPG" alt="normal distribution showing the region between 6 and 12 shaded in with the center at 10" width="80%">
+     
+</div>
+<p>Using the information from b. we know that from 10 to 12 (the mean to one standard deviation above the mean) we have 34% of the values. The empirical Rule and symmetry argument like in b. will help us figure out what percentage goes from 6 to 10.</p> <p>We can see 6 is 2 standard deviations below the mean (6=10-2*2). The empirical Rule tells us that about 95% of the values are between two standard deviations above and below the mean, so this means 95% of the observations are between the values 6 and 14. We can use the symmetry of the normal distribution to say that must mean only <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mfrac>
+    <mrow>
+      <mn>95</mn>
+      <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mn>47.5</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math> of the values occur between 6 and 10 (between the mean and two standard deviations below the mean). Putting this together we see that there is a total of 34%+47.5%=81.5% of the values between 6 and 12.</p>
+</li>    
+</ol>    
+</div>
+    
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 3</h3> 
+<p>Heights of 25-year-old men in a certain region have mean 69.75 inches and standard deviation 2.59 inches. These heights are approximately normally distributed. Answer the following questions using the Empirical Rule. If the rule does not apply state why.</p>
+    <ol type="a">
+    <li>
+      <p>What percent of men have a height between 67.16 and 72.34 inches?</p>
+    </li>
+    <li>
+      <p>What percent of men have a height above 72.34 inches?</p>
+    </li>  
+    <li>
+      <p>What percent of men have a height below 64.57 inches?</p>
+    </li>         
+    <li>
+      <p>What percent of men have a height below 66.0 inches?</p>
+    </li>    
+    </ol>
+    </div><p>As you go about answering these draw a shaded in diagram of a normal distribution to represent the area of interest to help guide you in your work.</p>
+        <ol type="a">
+    <li>
+      <p>The region shown below illustrates the shaded in region for one standard deviation above and below the mean. From the empirical rule we know this region represents 68&#37; of the population.</p>
+        <div class="side-by-side"><img src="images/normaldistribution_mensheights_mean69.75_example2a.JPG" width="80%" alt="Normal distribution with region from 67.16 to 72.34 shaded in."/></div>    
+    </li>
+    <li>
+      <p>The region shown below that is shaded in shows we are looking at everything one standard deviation above the mean. The empirical rule can help us find this area along with knowing 50% of the population would be above the mean. From the empirical rule we know the region from 69.75 to 72.34 would have 34% percent of the population (this is half of the 68% from one standard deviation above and below the mean). Since 50% is above the mean we can subtract the 34% away to find the remaining upper tail shaded in below: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>50</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>34</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>=</mo>
+  <mn>16</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math></p>
+        <div class="side-by-side"><img src="images/normaldistribution_mensheights_mean69.75_example2b.JPG" width="80%" alt="Normal distribution with region 72.34 and above shaded in."/></div> 
+    </li>  
+    <li>
+      <p>The region shown below that is shaded in shows we are looking at everything two standard deviations and below the mean. We can use a similar strategy as part b above. We know 50% of the population would be below the mean and the empirical rule tells us that <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mfrac>
+    <mrow>
+      <mn>95</mn>
+      <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mn>47.5</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math> would be two standard deviations below the mean. This means the percent below 64.57 would be <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>50</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>47.5</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>=</mo>
+  <mn>2.5</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math></p>
+        <div class="side-by-side"><img src="images/normaldistribution_mensheights_mean69.75_example2c.JPG" width="80%" alt="Normal distribution with region below 64.57 shaded in."/></div> 
+    </li>         
+    <li>
+      <p>The shaded in region below 66 is shown below. The empirical rule only gives us tools to find the percentage of a population that falls at 1, 2, or 3 standard deviations away from the mean. The value 66 appears to fall between 1 and 2 standard deviation below the mean, so we cannot use the empirical rule to find this percent of the population.</p>
+        <div class="side-by-side"><img src="images/normaldistribution_mensheights_mean69.75_example2d.JPG" width="80%" alt="Normal distribution with region region below 66.0 shaded in."/></div> 
+    </li>    
+    </ol>
+</div>    
+    
+
+<p>The video below is from Sal at KhanAcademy. Please remember to pause the video and attempt the problem on your own (you may need to listen to the details as the text is hard to read).</p>
+<p>
+  <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/OhRr26AfFBU" frameborder="0" allowfullscreen></iframe> 
+  (cc)
+</p>
+<p>Now it is your turn to practice with the Empirical Rule.</p>
+<div class="tryitnow">
+ 
+<h5>Try it Now 1</h5>
+<p>It is known that the head circumference among soldiers has a mean of 22.8 inches and a standard deviation of 1.1 inches.  It is also known that the distribution has a bell shaped curve to it (i.e. a Normal Distribution). </p>
+  <ol type="a">
+    <li>
+      <p>What % of soldiers heads have a circumference larger than 22.8? </p>
+    </li>
+    <li>
+      <p>Larger than 23.9? </p>
+    </li>
+    </ol>
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+       <p>The graph of the normal distribution shows us half of the region is above the mean and the other half is below. This should make answering the first part a bit easier. For the second part you may want to draw the normal distribution and see if there is a way to use the empirical rule to find the percentage above 23.9</p>
+       <p>Below is the graph of the normal distribution to help you shade in the region of interest for each part.</p>    
+        <div class="side-by-side"><img src="images/TryItNow1.jpg" width="80%" alt="Normal distribution with marks for the at mean 22.8, one standard deviation below the mean at 21.7, and one standard deviation above the mean at 23.9"/></div>         
+	</div>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+    <ol type="a">   
+        <li>   <p>50%, since a normal distribution is symmetric about the mean. </p>
+          <div class="side-by-side"><img src="images/TryItNow1a.jpg" width="80%" alt="Normal distribution with region above 22.8 shaded in."/></div>            
+        </li>
+       <li>
+        <p>16%, We know by the empirical Rule and symmetry that 34% of the head circumferences fall between 22.8 and 23.9 inches (68% of the empirical Rule and Symmetry). By symmetry we also know that 50% are smaller than 22.8 inches. This gives us a total of 84% of head circumferences that are smaller than 23.9 inches. The remaining 16% must then be larger than 23.9 inches.</p>
+         <div class="side-by-side"><img src="images/TryItNow1b.JPG" width="80%" alt="Normal distribution with region region below 66.0 shaded in."/></div>
+        </li>  
+    </ol>    
+	</div>	
+
+</div>
+
+</div>    
+
+<div class="content-body">
+
+<h3>Z-Scores</h3>
+<p>Can we still determine percentages of observations for a normal distribution if we are not 1, 2, or 3 standard deviations away from a mean (i.e. can we find the area under a normal distribution where the starting or ending points are not 1, 2, or 3 standard deviations away from the mean)? The answer is yes, but the methods for doing so will vary depending on what tools you have available to you. The method we will use below uses the idea of still measuring how many standard deviations away from the mean an observed data value is. That signed distance is what we will call a z-score.</p>
+
+<div class="definition">
+  <h4>Z-score </h4>
+  <p>The number of standard deviations that a given value is above or below the mean from a normal distribution. We calculate a z-score by using the following formula:</p>
+
+<p>
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathM">
+    <mrow>
+      <mi>z</mi>
+      <mo>&#x2212;</mo>
+      <mtext>score</mtext>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mi>x</mi>
+          <mo>&#x2212;</mo>
+          <mi>&#x03BC;</mi>
+        </mrow>
+        <mi>&#x03C3;</mi>
+      </mfrac>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mtext>data&#x00A0;value&#x00A0;</mtext>
+          <mo>-</mo>
+          <mtext>&#x00A0;mean</mtext>
+        </mrow>
+        <mrow>
+          <mtext>standard&#x00A0;deviation</mtext>
+        </mrow>
+      </mfrac>
+    </mrow>
+  </math>
+</p>
+</div>
+
+<p>The z-score tells you how many standard deviations the value x is above (to the right of) or below (to the left of) the mean, &mu;. Values of x that are larger than the mean have positive z-scores, and values of x that are smaller than the mean have negative z-scores. If x equals the mean, then x has a z-score of zero.</p>
+
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 4</h3>
+<p>Heights of 25-year-old men in a certain region have mean 69.75 inches and standard deviation 2.59 inches. These heights are approximately normally distributed. Find the z-score for a height of 66.0 inches. Round to the nearest hundredth.</p>    
+    </div>
+<p>Based on our work from Example 2 we saw that 66.0 was below the mean, so we expect to have a z-score that is negative: </p>   <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mi>x</mi>
+            <mo>&#x2212;<!-- − --></mo>
+            <mi>&#x03BC;<!-- μ --></mi>
+            <mo>)</mo>
+          </mrow>
+          <mi>&#x03C3;<!-- σ --></mi>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>66</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>69.75</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>2.59</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mfrac>
+          <mn>3.75</mn>
+          <mn>2.59</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>&#x2248;<!-- ≈ --></mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1.45</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math> 
+    <p>The z-score is approximately -1.45.</p>
+    </div>
+
+<p>One of the things we can use z-scores for is to compare two data points from different normal distributions. What the z-score tells us is how far away the data point is from the mean of the population it is from. The further away the more extreme that data value is.</p>
+
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 5</h3>
+<p>Brand A tire has a mean life of 45,000 miles and a standard deviation of 4,500 miles. Brand B has a mean life of 38,000 miles and a standard deviation of 2080 miles. Suppose somebody with a Brand A tire lasts 48,000 miles while someone with Brand B tire lasts 40,000 miles. Which driver got a better deal from their tire?</p> 
+</div>
+  <p>We do notice that they both had better mileage than the mean (Brand A was 3,000 miles above the mean and Brand B was 2,000 miles above the mean). Brand A had more mileage above the mean, but does it mean it was better relative to the tires in its own population? The answer to this would depend on how far from the mean it was in a relative distance to the population's measure of spread (the standard deviation). The z-score will tell us that distance from the mean in terms of the standard deviation - we can use this to compare to the Brand B tire.</p>
+  <p>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathM">
+      <mrow>
+        <mtext>Brand&#x00A0;A&#x00A0;z-score</mtext>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>48000</mn>
+            <mo>&#x2212;</mo>
+            <mn>45000</mn>
+          </mrow>
+          <mrow>
+            <mn>4500</mn>
+          </mrow>
+        </mfrac>
+        <mo>&#x2248;</mo>
+        <mn>.67</mn>
+      </mrow>
+    </math>
+  </p>
+  <p>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathM">
+      <mrow>
+        <mtext>Brand&#x00A0;B&#x00A0;z-score</mtext>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>40000</mn>
+            <mo>&#x2212;</mo>
+            <mn>38000</mn>
+          </mrow>
+          <mrow>
+            <mn>2080</mn>
+          </mrow>
+        </mfrac>
+        <mo>&#x2248;</mo>
+        <mn>.96</mn>
+      </mrow>
+    </math>
+  </p>
+  <p>The Brand B tire was further from the mean  based upon the calculated z-score (remember this calculation includes the relative size of the dispersion of the population). The person with the Brand B tire received better performance out of all Brand B tires in the population than the Brand A owner did in the Brand A population. The Brand B driver got a better deal in terms of performance of the tire in the population of Brand B tires as fewer Brand B tires would have lasted longer when compared to the Brand A tire.</p>
+</div>
+
+<div class="tryitnow">
+  	<h5>Try it Now 2</h5>
+	<p>At a particular school there was concern about grade inflation. One solution presented was to issue standardized grades in addition to the regular course grade for students' records. For each class a student received a score (from 0 to 4) and the class mean and standard deviation of scores were recorded. </p>
+    <p>For a given student Camila the scores for four classes were recorded. If we were to judge by standardized grades which class did Camila do best in? Which course did she do the worst?</p>
+<table class="display-lg" bgcolor="#FFFFFF">
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col">Camila's Score</th>
+<th scope="col">Mean for Class</th>    
+<th scope="col">Standard Deviation for Class</th>
+</tr>
+</thead>
+<tbody>	
+    <tr>
+    <td>WRT 101</td>
+    <td>3.55</td>
+    <td>3.15</td> 
+    <td>.30</td> 
+    </tr>
+    <tr>
+    <td>MAT 142</td>
+    <td>3.60</td>
+    <td>3.05</td> 
+    <td>.45</td> 
+    </tr>
+    <tr>
+    <td>BIO 201IN</td>
+    <td>3.40</td>
+    <td>2.95</td> 
+    <td>.50</td> 
+    </tr>
+    <tr>
+    <td>PSY101</td>
+    <td>3.55</td>
+    <td>3.65</td> 
+    <td>.15</td> 
+    </tr>    
+</tbody>
+</table>
+	
+    <h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+	<p>For each class calculate the z-score and then compare to see which score was the highest (that will be class she did the best in) and which score was the lowest (that would be the class she did the worst in).</p>
+	</div>
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+<table class="display-lg" bgcolor="#FFFFFF">
+<thead>
+<tr>
+<th scope="col">Course</th>
+<th scope="col">Z-score</th>
+</tr>
+</thead>
+<tbody>	
+    <tr>
+    <td>WRT 101</td>
+    <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>(</mo>
+      <mn>3.55</mn>
+      <mo>&#x2212;<!-- − --></mo>
+      <mn>3.15</mn>
+      <mo>)</mo>
+    </mrow>
+    <mn>.30</mn>
+  </mfrac>
+  <mo>&#x2248;<!-- ≈ --></mo>
+  <mn>1.33</mn>
+</math></td>
+    </tr>
+    <tr>
+    <td>MAT 142</td>
+    <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>(</mo>
+      <mn>3.60</mn>
+      <mo>&#x2212;<!-- − --></mo>
+      <mn>3.05</mn>
+      <mo>)</mo>
+    </mrow>
+    <mn>.45</mn>
+  </mfrac>
+  <mo>&#x2248;<!-- ≈ --></mo>
+  <mn>1.22</mn>
+</math></td>
+    </tr>
+    <tr>
+    <td>BIO 201IN</td>
+    <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>(</mo>
+      <mn>3.40</mn>
+      <mo>&#x2212;<!-- − --></mo>
+      <mn>2.95</mn>
+      <mo>)</mo>
+    </mrow>
+    <mn>.50</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mn>0.9</mn>
+</math></td> 
+    </tr>
+    <tr>
+    <td>PSY101</td>
+    <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>(</mo>
+      <mn>3.55</mn>
+      <mo>&#x2212;<!-- − --></mo>
+      <mn>3.65</mn>
+      <mo>)</mo>
+    </mrow>
+    <mn>.15</mn>
+  </mfrac>
+  <mo>&#x2248;<!-- ≈ --></mo>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.67</mn>
+</math></td>
+    </tr>    
+</tbody>
+</table>        
+	<p>The highest z-score was in WRT 101, so Camila did best in that course. The lowest z-score was from PSY 101, so in that class she did the worst. The interesting thing to point out is that in both WRT 101 and PSY 101 she received the same score, so when dealing with different populations (classes) we cannot directly compare data values to each other.</p>
+	</div>		
+</div>
+		    
+
+</div>
+    
+<div class="content-body">
+<h3>Z-Score Percentiles</h3>
+<p>The idea of using a z-score was sort of introduced to solve problems relating to percentages of a normal distribution through the use of the empirical Rule (think about it - we were looking at being 1, 2, 3 for the value of a z-score in those problems). What do we do if the regions of interest on that normal distribution are not exactly 0, 1, 2 or 3 standard deviations away? We can't use our empirical rule to solve that problem and will have to rely on another method. One way to approach these types of problems is to relate the region of interest to an equivalent region of interest on the standard normal distribution. We can do this by converting key values to a z-score. </p>
+<p>How does converting a value to a z-score help us?</p>
+
+<p>If the data values come from a normal distribution, then these z-scores will also be a normal distribution, but this normal distribution is guaranteed to have a mean, &mu;, of 0 and a standard deviation, &sigma;, of 1. We call this the Standard Normal Distribution.</p>
+
+<div class="definition"><h4>Standard Normal Distribution</h4>
+<p>A standard normal distribution is a normal distribution with mean &mu;&nbsp;=&nbsp;0 and standard deviation &sigma;&nbsp;=&nbsp;1. It will always be denoted by the letter Z.</p>    
+</div>
+    
+<p>The way to calculate the percentage below a given z-score can be found by using a table of values from a standard normal distribution (depending on where the table comes from there are different ways to read these - we will use the table provided in the link for our calculations). Print out the pdf version for your own reference as you go through these problems.</p>
+
+<p><a href="zscore_table.html" target="_blank">Z-Score Table</a></p>
+<p><a href="ZscoreTable.pdf" target="_blank">PDF Version of Z-Score Table </a></p>
+<p>We use the table by breaking up the z-score into two parts and finding a corresponding row and column that represents that number. To break up the z-score we rewrite the number to the tenth place and then keep track of the hundredth digit. For instance z&nbsp;=&nbsp;1.61 is broken into z&nbsp;=&nbsp;1.6 and 0.01. On the table we go down until we see 1.6 in the first column. Next we go to the right to match the column with .01. The value at the intersection of row 1.6 and column 0.01 is then recorded, so in this case 0.9463. </p>
+
+<div class="side-by-side">    
+<figure><figcaption>Z-score Table showing percentile value for z&nbsp;=&nbsp;1.61.
+</figcaption>
+  <img src="images/zscoretabledemo.GIF" width="100%" alt="Z-score Table showing percentile value for z=1.61."></figure>
+</div>    
+    
+<p>The value 0.9463  is the percentile for z&nbsp;=&nbsp;1.61. That percentile represents the percentage of the population that had a z-score below your given value. For instance z&nbsp;=&nbsp;1.61 tells us that 94.63% of the population has a z-score lower than 1.61. Remember the z-score is interpreted as how many standard deviation for the mean the data point was, so z&nbsp;=&nbsp;1.61 says that the data value is 1.61 standard deviations above the mean. The graph below gives a visual of the z-score value z&nbsp;=&nbsp;1.61 and the percentile region as shaded in for a standard normal distribution.</p>
+
+<div class="side-by-side">    
+<figure>
+  <figcaption class="center">Standard Normal distribution showing z = 1.61 and shaded percentile region.
+</figcaption>
+  <img src="images/StandardNormal_z161.jpg" width="100%" alt="Standard Normal graph with a peak at x=0 showing percentile value for z=1.61 shaded in starting from negative infinity going to 1.61 on the x-axis."></figure>
+</div>
+    
+<div class="definition">
+  <h4>Percentile</h4>
+  <p>Given an observed value x in a data set, <em>x</em> is the <strong><em>P</em>th percentile</strong> of the data if the percentage of the data that are less than or equal to <em>x</em> is P.</p>
+  <p>This percentile value will also be referred to as the area under the curve to the left of the given z-score. </p>
+</div>
+
+<div class="Example">
+  <div class="ExampleTitle">
+<h3>Example 6</h3>
+<p>Find the percentiles for the indicated z-score.</p> 
+<ol type="a">
+	<li>
+	  <p>z = -1.29</p>
+	</li>
+    <li>
+      <p>z = 0</p>
+    </li>
+    <li>
+      <p>z = 0.99</p>
+    </li>
+</ol>
+  </div>
+<ol type="a">
+	<li>
+	  <p>Using the z-score table we find the percentile for z&nbsp;=&nbsp;-1.29 as 0.0985 or 9.85%</p>
+        <div class="side-by-side"><img src="images/Example6a.jpg" width="80%" alt="Standard normal distribution with region region below -1.29 shaded in."/></div>        
+	</li>
+    <li>
+      <p>Using the z-score table we find the percentile for z&nbsp;=&nbsp;0 as 0.5000 or 50.00%</p>
+        <div class="side-by-side"><img src="images/Example6b.jpg" width="80%" alt="Standard normal distribution with region region below 0 shaded in."/></div>         
+    </li>
+    <li>
+      <p>Using the z-score table we find the percentile for z&nbsp;=&nbsp;0.99 as .8389 or 83.89%</p>
+        <div class="side-by-side"><img src="images/Example6c.jpg" width="80%" alt="Standard normal distribution with region region below 0.99 shaded in."/></div>         
+    </li>
+</ol>    
+</div>
+
+<p>In the next example we will find the percentage of values for various regions on the standard normal distribution.</p>
+
+<div class="Example">
+  <div class="ExampleTitle">
+<h3>Example 7</h3>
+<p>Find the percentage of values for each interval given below:</p> 
+<ol type="a">
+	<li>
+	  <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>&lt;</mo>
+  <mn>1.48</mn>
+</math></p>
+	</li>
+    <li>
+      <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>&gt;</mo>
+  <mn>1.6</mn>
+</math></p>
+    </li>
+    <li>
+      <p>0.5 &lt; z &lt; 1.57</p>
+    </li>
+    <li>
+      <p>-2.55 &lt; z &lt; 0.09</p>
+    </li>
+</ol>
+  </div>
+<ol type="a">
+	<li><p>The z-score table already gives the percentage of values below a given z-score (also known as the area under the curve up to a given z-score). From the table for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>1.48</mn>
+</math> we read that the percentage (or area) is .9306 for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>&lt;</mo>
+  <mn>1.48</mn>
+</math>.</p>
+<figure class="side-by-side">
+  <figcaption>Shaded in region under Standard Normal Distribution that represents the percentage of value for z &lt; 1.48.
+</figcaption>
+  <img src="images/example7a.GIF" width="90%" alt="Standard Normal graph with a peak at x=0 showing percentile value for z=1.48 shaded in starting from negative infinity going to 1.61 on the x-axis."></figure>
+        
+</li>
+    
+<li><p>To find the percentage above 1.60 we are going to run into a problem by just trying to pull the value off directly on the table. The table only gives area to the left, so visually we are not getting the correct value directly. Since the total area under the curve is equal to 1 if we have the area to the left we can subtract that from 1 to find the area to the right for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>&gt;</mo>
+  <mn>1.6</mn>
+</math>.</p>
+<p>The table gives a value for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>1.60</mn>
+</math> as 0.9542, so the percentage above <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>1.60</mn>
+</math> will be <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>1</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.9542</mn>
+  <mo>=</mo>
+  <mn>0.0548</mn>
+</math>.</p>
+<figure class="side-by-side">
+  <figcaption>Shaded in region under Standard Normal Distribution that represents the percentage of value for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>1.60</mn>
+</math>.
+</figcaption>
+  <img src="images/example7b.GIF" width="60%" alt="Standard Normal graph with a peak at x=0 showing percentage (area) shaded in starting from 1.60 and going to positive infinity on the x-axis."></figure>
+</li>
+<li>
+    <p>To find the percentage of values between <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>0.50</mn>
+  <mtext>&#xA0;</mtext>
+  <mtext>and</mtext>
+  <mtext>&#xA0;</mtext>
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>1.57</mn>
+</math> first look up the areas in the table that correspond to the numbers 0.5 (which we think of as 0.50 to use the table) and 1.57. We obtain 0.6915 and 0.9418, respectively. The value 0.9418 represents the percentage shaded in below <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>1.57</mn>
+</math>, but we do not want all of that area. Take away from 0.9418 what we don't want, which is the shaded in area below <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>0.50</mn>
+</math>. The table gave us the value 0.6915 for that area. The difference of these two numbers give the percentage desired: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>0.9418</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.6915</mn>
+  <mo>=</mo>
+  <mn>0.2503</mn>
+</math>.</p>
+
+<figure class="side-by-side">
+  <figcaption>Shaded in region under Standard Normal Distribution that represents the percentage of value for z between 0.5 and 1.57</figcaption>
+  <img src="images/example7c.GIF" width="60%" alt="Standard Normal graph with a peak at x=0 showing percentage (area) shaded in starting between 0.5 and 1.57. Arrows showing area to left of z=0.5 is 0.6915 and another arrow pointing left of z=1.57 to give area of 0.9418."></figure>
+</li>
+<li>
+    <p>Using a similar strategy as c and subtract the percentiles found from the table from both z-scores. The percentage between -2.55 and 0.09 is: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>0.5359</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.0054</mn>
+  <mo>=</mo>
+  <mn>0.5305</mn>
+</math>.</p>
+    <figure class="side-by-side">
+      <figcaption>Shaded in region under Standard Normal Distribution that represents the percentage of value for z between 0.09 and -2.55</figcaption>
+        <img src="images/example7d.GIF" width="60%" alt="Standard Normal graph with a peak at x=0 showing percentage (area) shaded in starting between 0.09 and -2.55. Arrows showing area to left of z=0.09 is 0.5359 and another arrow pointing left of z=-2.55 to give area of 0.0054.">
+    </figure>
+</li>
+</ol>    
+
+</div>
+
+    </div>
+<div class="content-body">   
+<h3>Normal Distribution Applications</h3>
+<p>Now we are ready to tackle problems related to a normal distribution. We will be looking at how to find the percentage of values that will fall within certain regions of a normal distribution. The way we can answer the questions is to identify the region of interest on a normal distribution curve. Identify any key points (start and end points for the intervals of interest). Convert those key points to z-scores and use the standard normal table to find the percentiles. From there we construct an equation (if needed) to find the percentage related to our interval of interest.</p>
+<p>In the examples that follow it is helpful to always draw the normal distribution and shade in the region of interest. This will help decide what to do with values from the standard normal table. Try not to skip the step of drawing the normal distribution as work on the additional exercises below the examples.</p>
+    
+<div class="Example">
+  <div class="ExampleTitle">
+<h3>Example 8</h3>
+<p>A normal distribution has a mean of 10 and a standard deviation of 2.5. Find the percentage of values below 14.</p>
+  </div>
+  <p>Start with identifying the region of interest on the normal distribution. We want to find the percentage of values that fall below the value of 14. Draw the normal distribution and label the mean. Label 14 (the key point here as we want the percentage below 14).</p>
+     <p>Find the z-score: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mi>z</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mn>14</mn><mo>&#x2212;</mo><mn>10</mn>
+   </mrow>
+   <mrow>
+    <mn>2.5</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>1.6</mn>
+ </mrow>
+</math>
+</p>
+<p>The percentile that corresponds to a z-score of 1.60 on the table is 0.9452, so this means 94.52% of the values on this normal distribution are below a value of 14.</p>
+  <figure class="side-by-side">
+    
+      <figcaption><p>Shaded in region under Normal Distribution that represents the percentage of values below 14 on a normal distribution with a mean of 10 and standard deviation of 2.5.</p></figcaption>
+    
+    <img src="images/example8.JPG" width="60%" alt="Shaded in region under Normal Distribution that represents the percentage of values below 14 on a normal distribution with a mean of 10 and standard deviation of 2.5. Arrow showing a corresponding z-score of 1.6 and value from table given as 0.9452.">
+  </figure>
+    </div>
+    
+<p>Let us revisit the example of male heights and use the standard normal table to help us solve the question from example 2.</p>    
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 9</h3>
+<p>Heights of 25-year-old men in a certain region have mean 69.75 inches and standard deviation 2.59 inches. These heights are approximately normally distributed. Find the percentage of men whose heights are below 66.0 inches.</p>
+    </div>
+<p>Start with drawing the normal distribution as we did earlier in example 2 and show the shaded region we are interested in.</p>
+<div class="side-by-side">
+<img src="images/normaldistribution_mensheights_mean69.75_example2d.JPG?_&amp;d2lSessionVal=2HLtZPFOIoU21cj0RLO3azeqj&amp;ou=553892" width="80%" alt="Normal distribution with region region below 66.0 shaded in."></div>    
+    
+<p>To find this percentage we will convert the 66.0 to a z-score. Next we will go to the standard normal table and pull out the percentage of the population that fall below the z-score. That value will give us the percent we are interested in since it corresponds to the area to the left under the normal curve. If you were looking for the percentage above we would need to take one additional step of subtracting the value from 100&#37;.</p> 
+    
+<p>With a z-score of -1.45 we go to the standard normal table and see the corresponding value is .0735 which means 7.35% of the population is below that given z-score of -1.45. We can conclude then that 7.35% of men (from the given region) have a height below 66.0 inches.</p> 
+<div class="side-by-side">
+  <img src="images/StandardNormalTable_zscorenegative145.JPG" width="80%" alt="Standard Normal table with row -1.4 highlighted and column .05. Entry where they interest is .0735 and is highlighted."/> </div> 
+    
+    </div>    
+    
+<div class="Example">
+<div class="ExampleTitle">
+<h3>Example 10</h3>
+<p>The lifetimes of the tread of a certain automobile tire are normally distributed with mean 37,500 miles and standard deviation 4,500 miles. What percentage of tread lives will be between 30,000 and 40,000 miles?</p>
+</div>
+<p>We are looking for the percentage between two values under the number distribution. Convert each endpoint to a z-score and use the standard normal table to find the percentage of values below that given z-score. The difference between those two percentiles will be the percentage of values between them.</p>
+<p>Find the z-score for 30,000: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mi>z</mi><mo>=</mo><mfrac>
+  <mrow>
+   <mn>30000</mn><mo>&#x2212;</mo><mn>37500</mn>
+  </mrow>
+  <mrow>
+   <mn>4500</mn>
+  </mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>7500</mn>
+  </mrow>
+  <mrow>
+   <mn>4500</mn>
+  </mrow>
+ </mfrac>
+ <mo>=</mo><mo>&#x2212;</mo><mn>1.67</mn>
+</math>
+</p>
+<p>Find the z-score for 40,000: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mi>z</mi><mo>=</mo><mfrac>
+  <mrow>
+   <mn>40000</mn><mo>&#x2212;</mo><mn>37500</mn>
+  </mrow>
+  <mrow>
+   <mn>4500</mn>
+  </mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mn>2500</mn>
+  </mrow>
+  <mrow>
+   <mn>4500</mn>
+  </mrow>
+ </mfrac>
+ <mo>=</mo><mn>0.56</mn>
+</math>
+</p>
+<p>The standard normal table reads 4.75% of all values fall below the z-score of -1.67. For z-score of 0.56 we have 71.23% of all values falling below it. As illustrated below the area between them is going to be the difference of these two values: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>71.23</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>4.75</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>=</mo>
+  <mn>66.48</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math>.</p>
+
+<figure class="side-by-side">
+  <figcaption>
+  <p>Shaded in region under Normal Distribution that represents the tread life values between 30,000 and 40,000 on a normal distribution with a mean of 37,500 and standard deviation of 4,500.</p>
+</figcaption>
+<img src="images/example10.JPG" width="60%" alt="Shaded in region under Normal Distribution that represents the percentage of values between 30000 and 40000 on a normal distribution with a mean of 37500 and standard deviation of 4500. Arrow showing a corresponding z-score of -1.67 and value from table given as 0.0475. Arrow showing a corresponding z-score of 0.56 and value from table given as 0.7123.">
+</figure>
+
+</div>
+
+
+<div class="tryitnow">
+  <h5>Try it Now 4</h5>
+  <p>It is known that the head circumference among soldiers has a mean of 22.8 inches and a standard deviation of 1.1 inches.  It is also known that the distribution has a bell shaped curve to it (i.e. a Normal Distribution). </p>
+  <ol type="a">
+    <li>
+      <p>What % of soldier heads have a circumference larger than 23 inches? </p>
+    </li>
+    <li>
+      <p>Between 20 inches and 23 inches? </p>
+    </li>
+  </ol>
+    
+	<h5 class="js-expandmore">Hint 1</h5> 
+    <div class="js-to_expand">
+       <p>If you want to use the empirical rule you have to check to see if the points of interest are exactly one, two, or three standard deviations away. The mean is 22.8 with a standard deviation of 1.1. The point of interest is 23, which is not one standard deviation above, but lower than one standard deviation above. To answer this question you will need to find the z-scores so that you are able to use the z-table to find percentages. The table won't directly answer the questions, but you can use it to build up the answer with a little work.</p>        
+	</div>
+
+	<h5 class="js-expandmore">Hint 2</h5> 
+    <div class="js-to_expand">
+        <ol type="a">
+        <li><p>Shaded in area for the interval above 23 inches on the normal distribution.</p><figure class="side-by-side">
+<img src="images/TryItNow4a.JPG" width="60%" alt="Shaded in region under Normal Distribution for interval above 23">
+</figure></li>
+        <li><p>Shaded in area for the interval between 20 and 23 inches on the normal distribution.</p><figure class="side-by-side">
+<img src="images/TryItNow4b.JPG" width="60%" alt="Shaded in region under Normal Distribution for interval between 20 and 23">
+</figure></li>    
+        </ol>        
+        
+	</div>    
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+    <ol type="a">
+    <li>
+        <p>First calculate the z-score for 23 inches and then use the table to find the percentage below that given z-score:</p>
+       <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>&#x03BC;</mi><mo>=</mo><mn>22.8</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>&#x03C3;</mi><mo>=</mo><mn>1.1</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>x</mi><mo>=</mo><mn>23</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>z</mi><mo>=</mo><mfrac>
+     <mrow>
+      <mn>23</mn><mo>&#x2212;</mo><mn>22.8</mn>
+     </mrow>
+     <mrow>
+      <mn>1.1</mn>
+     </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>z</mi><mo>=</mo><mn>.1818...</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+</p>
+<p>Now we have <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>0.1818...</mn>
+</math> we will round this to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>0.18</mn>
+</math> to use the table to find the percentage of soldiers whose head circumference is "below" 23 (remember that values in the table are for the percentage below a number - we will need to subtract this from 100% to find the percentage above 23 inches). Using <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mn>0.18</mn>
+</math> we have a result of 57.14% or in terms of the application 57.14% have a head circumference below 23 inches. This means <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>100</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>57.14</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>=</mo>
+  <mn>42.86</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math> have a head circumference larger than 23 inches.</p>
+ 
+    </li>
+    <li>
+        <p>b. First find the z-scores and resulting percentages for the values 20 inches and 23 inches (we already have from above that 57.14% have a head circumference below 23 inches). </p>
+       <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mi>&#x03BC;</mi><mo>=</mo><mn>22.8</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>&#x03C3;</mi><mo>=</mo><mn>1.1</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>x</mi><mo>=</mo><mn>20</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>z</mi><mo>=</mo><mfrac>
+     <mrow>
+      <mn>20</mn><mo>&#x2212;</mo><mn>22.8</mn>
+     </mrow>
+     <mrow>
+      <mn>1.1</mn>
+     </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>z</mi><mo>=</mo><mo>&#x2212;</mo><mn>2.5454...</mn><mtext>&#x2003;</mtext><mtext>Negative&#x00A0;since&#x00A0;20&#x00A0;inches&#x00A0;is&#x00A0;below&#x00A0;the&#x00A0;mean&#x00A0;of&#x00A0;22</mtext><mtext>.8&#x00A0;inches</mtext><mtext>.</mtext>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+</p>
+<p>Use <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>2.55</mn>
+</math> we know that 0.54% have a head circumference below 20 inches. Now since we don't want that group, but do want those with a head circumference below 23 inches (which includes them) we will subtract off that below 20 inches group percentage from the below 23 inches group percentage: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>57.14</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.54</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+  <mo>=</mo>
+  <mn>56.6</mn>
+  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+</math>. We have 56.6% of the soldiers with a head circumference between 20 and 23 inches.</p>
+    </li>    
+    </ol> 
+	</div>		
+</div>
+
+</div>
+<div class="content-body">
+
+<h2>Exercises:</h2>
+<ol>
+ <li>
+   <p>The normal distribution is defined by two parameters. What are they?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>The mean &mu; and standard deviation &sigma;.</p>
+			</div>	
+			</div>     
+ </li>
+ <li>
+   <p>True/false: For any normal distribution, the mean, median, and mode will have the same value. </p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>True.</p>
+			</div>	
+			</div>     
+ </li>
+ <li>
+   <p>True/false: The proportion of values above the mean is 50%.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>True. The normal distribution is symmetric about the mean. This means 50% of the values is above the mean and 50% of the values are below the mean.</p>
+			</div>	
+			</div>     
+ </li>
+  <li>
+   <p>True/false: A normal distribution has a mean of 60 and a standard deviation of 10. 65% of the values fall within 60 to 70.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>False. That region would be 34%.</p>
+			</div>	
+			</div>      
+ </li>
+   <li>
+   <p>True/false: A normal distribution has a mean of 60 and a standard deviation of 10. You can use the empirical rule to find the percent of values between 55 and 65.</p>
+ 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>False. The value 55 is .5 standard deviations away from the mean, so we can't use the empirical rule to find a percentage of values based on the value of 55.</p>
+			</div>	
+			</div>        
+   </li>
+ <li><p>A normal distribution has a mean of 80 and a standard deviation of 12. What values are within one standard deviation of the mean?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>68 and 92 are both one standard deviation from the mean.</p>
+			</div>	
+			</div>       
+ </li>
+ <li>
+   <p>(a) What proportion of a normal distribution is within one standard deviation of the mean? (b) What proportion is more than 2.0 standard deviations from the mean? </p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<ol type="a">
+            <li><p>68%. The 68-95-99.7 rule tells us that 68% of the data values are within one standard deviation of the mean if the distribution is a normal.</p></li>
+            <li><p>95%. For part "b" using the same rule we know 95% of the data values are within 2 standard deviations from the mean, which leaves us 5% in the tales of that bell shaped curve. Since the Normal distribution is symmetric about the mean the tails must share that 5% evenly and leaves 2.5% above two standard deviations above the mean.</p></li>    
+            </ol>
+			</div>	
+			</div>      
+ </li>
+  <li>
+   <p>What proportion of a normal distribution is above one standard deviation from the mean?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>16&#37;</p>
+			</div>	
+			</div>       
+ </li>
+ <li>
+   <p>A company that makes frozen pizzas knows that the pizza that are made have a diameter with a mean of 9.2 inches with a standard deviation of .1 inch. They advertise the pizzas as 9 inch pizzas. Use the empirical Rule to determine what percentage of pizzas made are actually smaller than 9 inches.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>2.5%. The 68-95-99.7 rule tells us that 95% of the data values are within two standard deviation of the mean if the distribution is normal. With a mean of 20 and a standard deviation of 4 we know two standard deviations from the mean is between the values 12 and 28. We are interested in the percent of values below 12. The 95% tells us that there must be 5% in the tales of that bell shaped curve. Since the Normal distribution is symmetric about the mean the tails must share that 5% evenly and leaves 2.5% in the tale on the distribution that represents the values below 12.</p>
+			</div>	
+			</div>      
+ </li>
+ <li>
+   <p>The exam scores for a large class is approximated by a normal distribution with a mean of 72 and standard deviation of 8. Answer the following questions using the empirical Rule, if it is not possible to use the empirical Rule state why.
+   </p>
+   <ol type="a">
+     <li>
+       <p>What percentage of students scored below 80%?</p>
+     </li>
+     <li>
+       <p>What percentage of students had a score between 56% and 88%?</p>
+     </li>
+     <li>
+       <p>What range of scores had the middle 99.7% of students results?</p>
+     </li>
+     <li>
+       <p>What percentage of students had a score greater than 90 on the exam?</p>
+     </li>
+     <li>
+       <p>What score has the top 5% of the students exam results.</p>
+     </li>
+   </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			   <ol type="a">
+     <li>
+       <p>84%</p>
+     </li>
+     <li>
+       <p>95%</p>
+     </li>
+     <li>
+       <p>48 to 96</p>
+     </li>
+     <li><p>Find the z-score and corresponding percentage from the standard normal table for the percent that scored below 90. Take that percent away from 100% to find the percent that earned above a 90.</p>
+       <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>90</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>72</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>8</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mn>2.5</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>100</mn>
+        <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>99.38</mn>
+        <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+        <mo>=</mo>
+        <mn>0.62</mn>
+        <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+     </li>
+     <li>
+       <p>Start with identifying the 95th percentile on the standard normal table. Then use the z-score formula to find the score.</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mn>1.64</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>1.64</mn>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mi>s</mi>
+            <mi>c</mi>
+            <mi>o</mi>
+            <mi>r</mi>
+            <mi>e</mi>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>72</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>8</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>s</mi>
+        <mi>c</mi>
+        <mi>o</mi>
+        <mi>r</mi>
+        <mi>e</mi>
+        <mo>=</mo>
+        <mn>8</mn>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mn>1.64</mn>
+        <mo>+</mo>
+        <mn>72</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>s</mi>
+        <mi>c</mi>
+        <mi>o</mi>
+        <mi>r</mi>
+        <mi>e</mi>
+        <mo>=</mo>
+        <mn>85.12</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>         
+     </li>
+   </ol>
+			</div>	
+			</div>      
+ </li>
+ <li>
+   <p>A normal distribution has a mean of 20 and a standard deviation of 4. Find the percentage of values that fall below 12.</p>
+ 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>Start with finding the z-score and using the standard normal table. The table value will represent the percentage of values below 12.</p>
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>12</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>20</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>4</mn>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>2.5</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+                <p>The percentage below 12 for this normal distribution is 0.62&#37;.</p>
+			</div>	
+			</div>    
+     
+ </li>
+ <li>
+   <p>If scores are normally distributed with a mean of 35 and a standard deviation of   10, what percent of the scores is: (a) greater than 45? (b) smaller than 25? (c) Why are the values in (a) and (b) equal?</p>
+ 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+            <ol type="a">
+                <li><p>16&#37;</p></li>
+                <li><p>16&#37;</p></li>  
+                <li><p>The symmetry of the normal distribution about the mean would make any area under the curve equal to each other on opposite sides of the mean if they are the same number of standard deviations from the mean. Since both 25 and 45 are one standard deviation from the mean they would both have the same area in their respective tails on the distribution.</p></li>                 
+            </ol>    
+                
+			</div>	
+			</div>	    
+     
+ </li>
+ <li>
+   <p>The lifetimes of the tread of a certain automobile tire are normally distributed with mean 37,500 miles and standard deviation 4,500 miles. Find the probability that the tread life of a randomly selected tire will be between 33,000 and 42,000 miles.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>Both values are one standard deviation from the mean, so the percentage between is 68%.</p>
+			</div>	
+			</div>	     
+ </li>
+ <li>
+   <p>The amount X of beverage in a can labeled 12 ounces is normally distributed with mean 12.1 ounces and standard deviation 0.05 ounce. What percent of 12 ounce cans are under filled (cans that have less than 12 ounces).</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>12 ounces is two standard deviations below the mean. There would be 2.5% of the cans under filled.</p>
+			</div>	
+			</div>	     
+ </li>
+ 
+ <li>
+   <p>An automobile manufacturer introduces a new model that averages 27 miles per gallon in the city. A person who plans to purchase one of these new cars wrote the manufacturer for the details of the tests, and found out that the standard   deviation is 3 miles per gallon. Assume that in-city mileage is approximately normally distributed.
+   </p>
+   <ol type="a">
+     <li>
+       <p>What percentage of the time is the car averaging less than 21 miles per gallon for in-city driving?
+       </p>
+       </li> 
+       <li>
+         <p>What percentage of the time is the car averaging above 30 miles per gallon for in-city driving? </p>
+        </li>
+   </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>2.5%</p>
+    </li>     
+    <li>
+        <p>16%</p>
+    </li>
+   </ol>
+			</div>	
+			</div>	       
+       
+</li>    
+ 
+ <li>
+   <p>A normal distribution has a mean of 20 and a standard deviation of 4. Find the z scores for the following numbers:  (a) 28 (b) 18 (c) 10 (d) 23.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>28</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>20</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>4</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>2.0</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>     
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>18</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>20</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>4</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>0.50</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>10</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>20</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>4</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>2.50</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li> 
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>23</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>20</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>4</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>0.75</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>       
+   </ol>
+			</div>	
+			</div>	     
+ </li>
+ <li>
+ 	<p>A normal distribution has a mean of -5 and a standard deviation of 12. Find the z scores for the following numbers (round to two places):  (a) -5 (b) -10 (c) 7 (d) 12.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>5</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow>
+              <mo>(</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <mn>5</mn>
+              <mo>)</mo>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mn>12</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>     
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>10</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow>
+              <mo>(</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <mn>5</mn>
+              <mo>)</mo>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mn>12</mn>
+        </mfrac>
+        <mo>&#x2248;<!-- ≈ --></mo>
+        <mn>0.42</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>7</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow>
+              <mo>(</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <mn>5</mn>
+              <mo>)</mo>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mn>12</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>12</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow>
+              <mo>(</mo>
+              <mo>&#x2212;<!-- − --></mo>
+              <mn>5</mn>
+              <mo>)</mo>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mn>12</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>1.42</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>       
+   </ol>
+			</div>	
+			</div>     
+     
+ </li>
+ <li>
+ 	<p>A normal distribution has a mean of 1200 and a standard deviation of 100. Find the z scores for the following numbers:  (a) 1050 (b) 1200 (c) 1500 (d) 1475.</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>1050</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>1200</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>100</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1.50</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>     
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>1200</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>1200</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>100</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>0.0</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>1500</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>1200</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>100</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>3.0</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo>(</mo>
+            <mn>1475</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>1200</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>100</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>2.75</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+    </li>       
+   </ol>
+			</div>	
+			</div>     
+         
+ </li>
+ <li>
+   <p>Find the percentile for the indicated z-score.</p>
+
+ <ol type="a">
+     <li>
+       <p>z = -2.0
+       </p>
+     </li>
+     <li>
+       <p>z = 2.0
+       </p>
+     </li>
+     <li>
+       <p>z = -1.12
+       </p>
+     </li>
+     <li>
+       <p>z = 1.12
+       </p>
+     </li>
+ </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>0.0228 or 2.28%</p>
+    </li>     
+    <li>
+        <p>0.9772 or 97.72%</p>
+    </li>
+    <li>
+        <p>0.1314 or 13.14%</p>
+    </li>
+    <li>
+        <p>0.8686 or 86.86%</p>
+    </li>       
+   </ol>
+			</div>	
+			</div>     
+         
+  </li>
+  
+   <li>
+   <p>Find the percentile for the indicated z-score.</p>
+
+ <ol type="a">
+     <li>
+       <p>z = 0.65
+       </p>
+     </li>
+     <li>
+       <p>z = 0
+       </p>
+     </li>
+     <li>
+       <p>z = -1.5
+       </p>
+     </li>
+     <li>
+       <p>z = 1.09
+       </p>
+     </li>
+ </ol> 
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>0.7422 or 74.22%</p>
+    </li>     
+    <li>
+        <p>0.50 or 50.00%</p>
+    </li>
+    <li>
+        <p>0.0668 or 6.68%</p>
+    </li>
+    <li>
+        <p>0.8621 or 86.21%</p>
+    </li>       
+   </ol>
+			</div>	
+			</div>     
+           
+  </li>
+  
+ <li>
+   <p>Find the percentage of values on the standard normal distribution in the given intervals.</p>
+
+ <ol type="a">
+     <li>
+       <p>
+         <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+           <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+             <mtr>
+               <mtd>
+                 <mi>z</mi>
+                 <mo>&gt;</mo>
+                 <mn>0.65</mn>
+               </mtd>
+             </mtr>
+           </mtable>
+         </math>
+       </p>
+     </li>
+     <li>
+       <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
+    <mtr>
+      <mtd>
+        <mi>z</mi>
+        <mo>&gt;</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1.05</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+       </p>
+     </li>
+     <li><p><math display="inline">
+ <mrow>
+  <mn>1.50</mn><mo>&#x003C;</mo><mi>z</mi><mo>&#x003C;</mo><mn>2.0</mn></mrow>
+</math>
+</p>
+     </li>
+     <li><p><math display="inline">
+ <mrow>
+  <mo>&#x2212;</mo><mn>2.25</mn><mo>&#x003C;</mo><mi>z</mi><mo>&#x003C;</mo><mn>0.64</mn></mrow>
+</math>
+</p>
+     </li>
+ </ol>   
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>1</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.7422</mn>
+  <mo>=</mo>
+  <mn>0.2578</mn>
+</math> or 25.78&#37;</p>
+    </li>     
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>1</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.1469</mn>
+  <mo>=</mo>
+  <mn>0.8531</mn>
+</math> or 85.31&#37;</p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>0.9772</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.9332</mn>
+  <mo>=</mo>
+  <mn>0.044</mn>
+</math> or 4.4&#37;</p>
+    </li>
+    <li>
+        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+  <mn>0.7389</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mn>0.0122</mn>
+  <mo>=</mo>
+  <mn>0.7267</mn>
+</math> or 72.67&#37;</p>
+    </li>       
+   </ol>
+			</div>	
+			</div>     
+         
+ </li>
+ 
+  <li>
+   <p>Find the percentage of values on the standard normal distribution in the given intervals.</p>
+
+ <ol type="a">
+     <li>
+       <p>
+         <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+           <mi>z</mi>
+           <mo>&lt;</mo>
+           <mo>&#x2212;<!-- − --></mo>
+           <mn>1.69</mn>
+         </math>
+       </p>
+     </li>
+     <li>
+       <p>
+         <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+           <mi>z</mi>
+           <mo>&gt;</mo>
+           <mo>&#x2212;<!-- − --></mo>
+           <mn>1.69</mn>
+         </math>
+       </p>
+     </li>
+     <li>
+       <p>
+         <math display="inline">
+           <mrow>
+             <mo>&#x2212;</mo>
+             <mn>1.55</mn>
+             <mo>&#x003C;</mo>
+             <mi>z</mi>
+             <mo>&#x003C;</mo>
+             <mn>1.55</mn>
+           </mrow>
+         </math>
+         
+       </p>
+     </li>
+     <li>
+       <p>
+         <math display="inline">
+           <mrow>
+             <mn>0</mn>
+             <mo>&#x003C;</mo>
+             <mi>z</mi>
+             <mo>&#x003C;</mo>
+             <mn>2.13</mn>
+           </mrow>
+         </math>
+         
+       </p>
+     </li>
+ </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>The standard normal table gives the percentage below a given value, so the result is taken directly from the table: 0.0455 or 4.55&#37;</p>
+    </li>     
+    <li>
+        <p>In part (a) the percentage below -1.69 was found to be 4.55%, so the percentage above will be that value taken from 100%: <math display="inline">
+ <mrow>
+  <mn>1</mn><mo>&#x2212;</mo><mn>0.0455</mn><mo>=</mo><mn>0.9545</mn></mrow>
+</math> or 95.45&#37;
+</p>
+    </li>
+    <li>
+        <p>To find the percentage between z = -1.55 and z = 1.55 you will use the table to find the percentage below z = 1.55 and subtract off the percentage below z = -1.55. For z = 1.55 the percentage below is 93.94%. For z = -1.55 the perctange below is 6.06%. This means the percentage between the values is: <math display="inline">
+ <mrow>
+  <mn>0.9394</mn><mo>&#x2212;</mo><mn>0.0606</mn><mo>=</mo><mn>0.8788</mn></mrow>
+</math> or 87.88&#37;
+</p>
+    </li>
+    <li>
+        <p>The percentage between z = 0 and z = 2.13 is: <math display="inline">
+ <mrow>
+  <mn>0.9834</mn><mo>&#x2212;</mo><mn>0.50</mn><mo>=</mo><mn>0.4834</mn></mrow>
+</math> or 48.34&#37;
+</p>
+    </li>       
+   </ol>
+			</div>	
+			</div>     
+          
+  </li> 
+  
+   <li>
+   <p>Find the percentage of values on the standard normal distribution in the given intervals.</p>
+
+ <ol type="a">
+     <li>
+       <p>
+         <math display="inline">
+           <mrow>
+             <mi>z</mi>
+             <mo>&#x003C;</mo>
+             <mn>0.44</mn>
+           </mrow>
+         </math>
+         
+       </p>
+     </li>
+     <li>
+       <p>
+         <math display="inline">
+           <mrow>
+             <mi>z</mi>
+             <mo>&#x003E;</mo>
+             <mn>0.44</mn>
+           </mrow>
+         </math>
+       </p>
+     </li>
+     <li>
+       <p>
+         <math display="inline">
+           <mrow>
+             <mo>&#x2212;</mo>
+             <mn>0.49</mn>
+             <mo>&#x003C;</mo>
+             <mi>z</mi>
+             <mo>&#x003C;</mo>
+             <mn>0</mn>
+           </mrow>
+         </math>
+         
+       </p>
+     </li>
+     <li>
+       <p>
+         <math display="inline">
+           <mrow>
+             <mo>&#x2212;</mo>
+             <mn>2.21</mn>
+             <mo>&#x003C;</mo>
+             <mi>z</mi>
+             <mo>&#x003C;</mo>
+             <mo>&#x2212;</mo>
+             <mn>0.08</mn>
+           </mrow>
+         </math>
+         
+       </p>
+     </li>
+ </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>0.6700 or 67.0&#37;</p>
+    </li>     
+    <li>
+        <p><math display="inline">
+ <mrow>
+  <mn>1</mn><mo>&#x2212;</mo><mn>0.6700</mn><mo>=</mo><mn>0.3300</mn></mrow>
+</math> or 33.0&#37;
+</p>
+    </li>
+    <li>
+        <p><math display="inline">
+ <mrow>
+  <mn>0.5</mn><mo>&#x2212;</mo><mn>0.3121</mn><mo>=</mo><mn>0.1879</mn></mrow>
+</math> or 18.79&#37;
+</p>
+    </li>
+    <li>
+        <p><math display="inline">
+ <mrow>
+  <mn>0.4681</mn><mo>&#x2212;</mo><mn>0.0136</mn><mo>=</mo><mn>0.4545</mn></mrow>
+</math> or 45.45&#37;
+</p>
+    </li>       
+   </ol>
+			</div>	
+			</div>                
+  </li> 
+ <li>
+   <p>A student received a standardized (z) score on a test that was -0.57. What does this score tell about how this student scored in relation to the rest of the class? </p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>That z-score corresponds to 0.2843 on the standard normal table. This means that the student did better than 28.43&#37; of the students on the test.</p>
+			</div>	
+			</div>	     
+ </li>
+ <li>
+   <p>A student received a standardized (z) score on a test that was 2.0. What does this score tell about how this student scored in relation to the rest of the class? </p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>That z-score corresponds to 0.9772 on the standard normal table. This means that the student did better than 97.72&#37; of the students on the test.</p>
+			</div>	
+			</div>	 
+</li>
+  <li>
+   <p>What z-score corresponds to the 90th percentile?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>Z-score would be 1.28</p>
+			</div>	
+			</div>      
+ </li>
+   <li>
+   <p>What z-score corresponds to the 75 th percentile?</p>
+ 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>Z-score would be 0.68 or 0.67. A better approximation would be 0.675.</p>
+			</div>	
+			</div>       
+ </li>
+   <li>
+   <p>What z-score corresponds to the 50 th percentile?</p>
+ 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>Z-score would be 0.</p>
+			</div>	
+			</div>        
+ </li>
+   <li>
+   <p>What z-score corresponds to the 25 th percentile?</p>
+ 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>Z-score would be -0.68 or -0.67. A better approximation would be -0.675.</p>
+			</div>	
+			</div>        
+ </li>
+ <li>
+   <p>If scores are normally distributed with a mean of 35 and a standard deviation of 10, what percent of the scores is: (a) greater than 34? (b) smaller than 42? (c) between 28 and 34?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>Z-score: -0.10. Percentage above 34: <math display="inline">
+ <mrow>
+  <mn>1</mn><mo>&#x2212;</mo><mn>0.4602</mn><mo>=</mo><mn>0.5398</mn></mrow>
+</math> or 53.98&#37;.
+</p>
+    </li>     
+    <li>
+        <p>Z-score: 0.70. Percentage below 42: 0.7580 or 75.80&#37;</p>
+    </li>        
+    <li>
+        <p>Z-score for 28: -0.70</p>
+        <p>Z-score for 34: -0.10</p>
+        <p>Percentage between 28 and 34: <math display="inline">
+ <mrow>
+  <mn>0.4602</mn><mo>&#x2212;</mo><mn>0.2420</mn><mo>=</mo><mn>0.2182</mn></mrow>
+</math> or 21.82&#37;.
+</p>        
+    </li>
+     
+   </ol>
+			</div>	
+			</div>           
+ </li>
+ <li>
+   <p>If scores are normally distributed with a mean of -12 and a standard deviation of 3.5, what percent of the scores is: (a) greater than -8? (b) smaller than -14? (c) between -10 and -13?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>Z-score is 1.14. Percentage greater than -8: <math display="inline">
+ <mrow>
+  <mn>1</mn><mo>&#x2212;</mo><mn>0.8729</mn><mo>=</mo><mn>0.1271</mn></mrow>
+</math> or 12.71&#37;.
+</p>
+    </li>     
+    <li>
+        <p>Z-score is -0.57. Percentage lower than -14: 0.2843 or 28.43&#37;.</p>
+    </li>
+    <li>
+        <p>Z-score for -10: .57</p>
+        <p>Z-score for -13: -0.29</p>
+        <p>Percentage between -10 and -13: <math display="inline">
+ <mrow>
+  <mn>0.7157</mn><mo>&#x2212;</mo><mn>0.6141</mn><mo>=</mo><mn>0.1016</mn></mrow>
+            </math> or 10.16&#37;.</p>
+    </li>      
+   </ol>
+			</div>	
+			</div>     
+ </li>
+ <li>
+   <p>An automobile manufacturer introduces a new model that averages 27 miles per gallon in the city. A person who plans to purchase one of these new cars wrote the manufacturer for the details of the tests, and found out that the standard   deviation is 3 miles per gallon. Assume that in-city mileage is approximately normally distributed.
+   </p>
+   <ol type="a">
+        <li>
+           <p>What percentage of the time is the car averaging less than 20 miles per gallon for in-city driving?
+           </p>
+       </li>     
+       <li>
+            <p>What percentage of the time is the car averaging between 25 and 29 miles per gallon for in-city driving? </p>
+        </li>
+   </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>Z-score for 20 is -2.33. Percentage below is 0.0099 or 0.99&#37;.</p>
+    </li>     
+    <li>
+        <p>Z-score for 25: -0.67</p>
+        <p>Z-score for 29: 0.67</p>
+        <p>Percentage between 25 and 29: <math display="inline">
+ <mrow>
+  <mn>0.7486</mn><mo>&#x2212;</mo><mn>0.2514</mn><mo>=</mo><mn>0.4972</mn></mrow>
+</math> or 49.72&#37;.
+</p>
+    </li>     
+   </ol>
+			</div>	
+			</div>          
+ </li>
+ <li>
+   <p>Assume the speed of vehicles along a stretch of I-10 has an approximately normal distribution with a mean of 68 mph and a standard deviation of 6 mph. </p>
+   <ol type="a">
+     <li>
+       <p>The current speed limit is 65 mph. What is the proportion of vehicles less than or equal to the speed limit?   
+         </p>
+       </li>     
+       <li>
+         <p>What proportion of the vehicles would be going less than 55 mph?   
+          </p>
+       </li>   
+    
+        <li>
+          <p>In what way do you think the actual distribution of speeds differs from a normal distribution? 
+          </p>
+        </li>
+     </ol>
+
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>Z-score for 65 mph is -0.5. The percentage of vehicles going less than 65 mph is 0.3085 or 39.85&#37;.</p>
+    </li>     
+    <li>
+        <p>Z-score for 55 mph is -2.17. The percentage of vehicles going less than 55 mph is 0.0150 or 1.50&#37;.</p>
+    </li>
+    <li>
+        <p>Answers will vary. One possible difference is that there may be a much larger drop off in drivers going 5 mph or over the speed limit and not have the same tail of a normal distribution. Same goes for speeds under the speed limit (not having as much as the normal distribution would want to predict).</p>
+    </li>      
+   </ol>
+			</div>	
+			</div>     
+</li>      
+ <li>
+   <p>A test is normally distributed with a mean of 70 and a standard deviation of 8.   What score is needed to be in the top 15% of all scores? </p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+            <p>From the standard normal table we see a z-score of 1.04 corresponds to the 85th percentile (which would mean it is in the top 15% of scores). Next from the z-score formula determine the score on the test: </p>
+            <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mn>1.04</mn><mo>=</mo><mfrac>
+     <mrow>
+      <mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>&#x2212;</mo><mn>70</mn></mrow>
+     <mn>8</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mn>1.04</mn><mo>&#x22C5;</mo><mn>8</mn><mo>=</mo><mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>&#x2212;</mo><mn>70</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mn>8.32</mn><mo>+</mo><mn>70</mn><mo>=</mo><mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>=</mo><mn>78.32</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+                <p>Would need to have a score of 78.32 or higher to be in the top 15%.</p>
+    
+			</div>	
+			</div>      
+ </li>
+ <li>
+   <p>A group of students at a school takes a history test. The distribution is normal   with a mean of 25, and a standard deviation of 4.</p>
+   <ol type="a">
+     <li>
+       <p>Everyone who scores in the   top 30% of the distribution gets a certificate. What is the lowest score someone   can get and still earn a certificate?</p>
+     </li>
+     <li>
+       <p>The top 5% of the scores get to   compete in a statewide history contest. What is the lowest score someone can get   and still go onto compete with the rest of the state? </p>
+     </li>
+     </ol>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+   <ol type="a">
+    <li>
+        <p>From the standard normal table we see a z-score of 0.53 corresponds to the 70th percentile (which would mean it is in the top 30% of scores). Next from the z-score formula determine the score on the test: </p>
+        <math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mn>0.53</mn><mo>=</mo><mfrac>
+     <mrow>
+      <mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>&#x2212;</mo><mn>25</mn></mrow>
+     <mn>4</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mn>0.53</mn><mo>&#x22C5;</mo><mn>4</mn><mo>=</mo><mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>&#x2212;</mo><mn>25</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mn>2.12</mn><mo>+</mo><mn>25</mn><mo>=</mo><mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>=</mo><mn>27.12</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+        <p>A student would need a score of 27.12 or higher to be in the top 30% of scores.</p>
+    </li>     
+    <li>
+        <p>From the standard normal table we see a z-score of 0.53 corresponds to the 95th percentile (which would mean it is in the top 5% of scores). Next from the z-score formula determine the score on the test: </p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mn>1.65</mn><mo>=</mo><mfrac>
+     <mrow>
+      <mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>&#x2212;</mo><mn>25</mn></mrow>
+     <mn>4</mn>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mn>1.65</mn><mo>&#x22C5;</mo><mn>4</mn><mo>=</mo><mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>&#x2212;</mo><mn>25</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mn>6.6</mn><mo>+</mo><mn>25</mn><mo>=</mo><mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>s</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>e</mi><mo>=</mo><mn>31.6</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+
+        <p>A student would need a score of 31.6 or higher to be in the top 5% of scores.</p>
+    </li>      
+   </ol>
+			</div>	
+			</div>     
+         
+ </li>
+ <li>
+   <p>Suppose that weights of bags of potato chips coming from a factory follow a normal distribution with mean 12.8 ounces and standard deviation .6 ounces. If the manufacturer wants to keep the mean at 12.8 ounces but adjust the standard deviation so that only 1% of the bags weigh less than 12 ounces, how small does he/she need to make that standard deviation? Round your answer to two decimal places. </p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>We can use the z-score formula to find the standard deviation. First find the value for z such that 1% are fewer then it. From the standard normal table we have -2.32 for the z-score. In the z-score formula with a data value of 12, mean of 12.8 and z-score of -2.32 we will solve for the standard deviation, &sigma;.</p>
+<math display="block">
+ <mtable columnalign="left">
+  <mtr>
+   <mtd>
+    <mo>&#x2212;</mo><mn>2.32</mn><mo>=</mo><mfrac>
+     <mrow>
+      <mn>12</mn><mo>&#x2212;</mo><mn>12.8</mn></mrow>
+     <mi>&#x03C3;</mi>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mo>&#x2212;</mo><mn>2.32</mn><mo>&#x22C5;</mo><mi>&#x03C3;</mi><mo>=</mo><mn>12</mn><mo>&#x2212;</mo><mn>12.8</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mo>&#x2212;</mo><mn>2.32</mn><mo>&#x22C5;</mo><mi>&#x03C3;</mi><mo>=</mo><mo>&#x2212;</mo><mn>0.8</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>&#x03C3;</mi><mo>=</mo><mfrac>
+     <mrow>
+      <mo>&#x2212;</mo><mn>0.8</mn></mrow>
+     <mrow>
+      <mo>&#x2212;</mo><mn>2.32</mn></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>&#x03C3;</mi><mo>&#x2248;</mo><mn>.34</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+            <p>The machinery would need to have a standard deviation of approximately 0.34 ounces or smaller.</p>            
+                
+			</div>	
+			</div>	     
+ </li>
+ 
+ <li>
+ <p>The patient recovery time from a particular surgical procedure is normally distributed with a mean of 5.3 days and a standard deviation of 2.1 days. What percent of patients spend two or more days in recovery?</p>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>The z-score corresponding to two days is <math display="inline">
+ <mi>z</mi><mo>=</mo><mfrac>
+  <mrow>
+   <mn>2</mn><mo>&#x2212;</mo><mn>5.3</mn></mrow>
+  <mrow>
+   <mn>2.1</mn></mrow>
+ </mfrac>
+ <mo>&#x2248;</mo><mo>&#x2212;</mo><mn>1.57</mn>
+</math>
+. From the standard normal table we find the percent of patients that stay 2 days or fewer and subtract that from 100% to find the percent that stay two or more days in recovery. From the table we pull out the value 0.0582 or 5.82&#37;. Take this away from 100&#37;: <math display="inline">
+ <mn>100</mn><mi>&#x0025;</mi><mo>&#x2212;</mo><mn>5.82</mn><mi>&#x0025;</mi><mo>=</mo><mn>94.12</mn><mi>&#x0025;</mi>
+</math>.
+</p>
+			</div>	
+			</div>    
+ </li>
+ 
+</ol>
+
+
+</div>    
+
+	<footer>
+  		<div id="footer">
+			<p class="text-center toggle-footnotes">[Show Footnotes]</p>
+			<div class="footnotes">
+      			<h2>Attribution:</h2>
+				  <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+				<p>This page contains modified content from <a href="https://openstax.org/books/introductory-statistics@25.17/pages/1-introduction"> "OpenStax Introductory Satistics" </a> by Barbara Illowsky, Susan Dean. CC BY 4.0.  
+				</p>
+                <p><a href="https://2012books.lardbucket.org/books/beginning-statistics/" target="_blank">Beginning Statistics (v. 1.0)</a> (download for free and license information found at: https://2012books.lardbucket.org/)</p>
+				  <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+    		</div>
+  		</div>
+	</footer>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/shared/webdev/course-files/js/scripts.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
+<script type="text/javascript" src="../../jquery-accessible-hide-show-aria.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+
+
+</body>	
+</html>
