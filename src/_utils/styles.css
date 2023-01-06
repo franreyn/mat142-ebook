@@ -57,6 +57,12 @@ h3 {
   font-weight: 400;
 }
 
+h4 {  
+  font-size: 1.2rem;
+  margin: 0 4rem .5rem 4rem;
+  font-weight: 400;
+}
+
 p {
   font-size: 1.1rem;
   line-height: 1.35;
@@ -64,11 +70,22 @@ p {
 }
 
 ul, ol {
-  margin: 0 0 1rem 4rem;
+  margin: 0 0 1rem 5rem;
+}
+
+ol > li > ul,
+ol > li > ol,
+ul > li > ol,
+ul > li > ul  {
+  margin: 0 0 1rem 1rem;
 }
 
 li {
   margin-bottom: .1225rem;
+}
+
+li p {
+  margin-left: 1rem;
 }
 
 body[darkmode] a {
@@ -101,6 +118,10 @@ header {
   margin: 2rem 4rem 0;
 }
 
+table {
+  margin-left: 4rem;
+}
+
 .definition {
   background-color: rgba(244, 184, 208, .2);
   padding: 20px 0;
@@ -120,7 +141,7 @@ header {
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
-  margin: 0 4rem .25rem;
+  margin: 0rem 4rem .5rem;
 }
 
 .tryitnow {
@@ -139,7 +160,7 @@ header {
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
-  margin: 0 4rem .25rem;
+  margin: 0 4rem 1rem;
 }
 
 .example {
@@ -168,7 +189,7 @@ header {
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
-  margin: 0 4rem .25rem;
+  margin: 0 4rem 1rem;
 }
 
 img {
@@ -203,6 +224,81 @@ hr {
 }
 
 .accordion .accordion-content {
-  border-left: 1px solid gray;
   padding: 1rem;
+}
+
+.toggle-btn:hover,
+.toggle-footnotes:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toggle-footnotes {
+  margin: 5px;
+  text-decoration: none;
+  padding:15px;
+  font-size: 16px;
+}
+
+.toggle-btn-content,
+.footnotes {
+  background-color:white;
+  border: 2px solid rgba(13,13,13,.1);
+  max-height: 0px;
+  -webkit-transition: max-height 2.5s cubic-bezier(0, 1, 0, 1); 
+  -moz-transition: max-height 2.5s cubic-bezier(0, 1, 0, 1); 
+  -ms-transition: max-height 2.5s cubic-bezier(0, 1, 0, 1); 
+  -o-transition: max-height 2s cubic-bezier(0, 1, 0, 1); 
+  transition: max-height 2.5s cubic-bezier(0, 1, 0, 1);  
+  overflow: hidden;
+}
+
+.footnotes:not(.show) {
+  padding: 0px 10px;
+}
+
+.show {
+  padding: 0 10px;
+  -webkit-transition: max-height 2s ease-in-out; 
+  -moz-transition: max-height 2s ease-in-out; 
+  -ms-transition: max-height 2s ease-in-out; 
+  -o-transition: max-height 2s ease-in-out; 
+  transition: max-height 2s ease-in-out;  
+  max-height: 400px;
+  overflow:scroll;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color:rgba(13, 13, 13, 0.1);
+}
+
+.footnotes {
+  text-align: left;
+}
+
+.footnotes > * {
+  margin-top: .5rem;
+}
+
+a,
+a:visited,
+.toggle-footnotes {
+  color: rgba(0, 91, 226, 1);
+  text-decoration: underline;
+}
+
+a:hover,
+a:active,
+.toggle-footnotes:hover {
+  color: rgba(0, 57, 143, 1);
+  text-decoration: underline;
+}
+
+.toggle-btn:hover,
+.toggle-footnotes:hover {
+  cursor: pointer;
+  text-decoration: none;
 }

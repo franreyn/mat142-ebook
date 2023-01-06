@@ -1,0 +1,1462 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>2.2 Presenting Quantitative Data Graphically</title>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width" />
+
+<link rel="stylesheet" type="text/css" href="/shared/webdev/course-files/css/themes/cards/styles.css">       
+<link rel="stylesheet" type="text/css" href="/shared/Templates/Template_Cards/css/custom.css">
+<link rel="stylesheet" href="../../MAT142.css" type="text/css" />
+
+	
+</head>
+<body id="one-column" style="overflow-y: hidden;">
+	<header class="header"><img src="../../Images/banners/Chapter 2 Descriptive Statistics.jpg" alt="decorative image of graph" />
+		<div class="text-container">
+		  <h1>2.2 Presenting Quantitative Data Graphically</h1>
+		</div>
+	</header>
+	
+<div id="content-wrapper">
+<div class="content-body">
+<h2>2.2 Presenting Quantitative Data Graphically</h2>
+<p>Upon completion of this section, you should be able to</p>
+<ul>
+	<li>Create and interpret Historgrams</li> 
+	<li>Create and interpret frequency polygons</li>
+	<li>Create and interpret basic stem and leaf displays</li>
+	<li>Identify common graphical mistakes with graphical representation of quantitative data</li>
+</ul>
+	</div>
+<div class="content-body">	
+<h2>Presenting Quantitative Data Graphically</h2>
+<p>Quantitative, or numerical, data can be expressed as a quantity or a measurement. Height, weight, response                 time, subjective rating of pain, temperature, and score on an exam are all examples of quantitative data values. Quantitative data is distinguished from categorical (sometimes called qualitative) data such as favorite color, religion, city of birth, and favorite sport in which there is no ordering or measuring involved. </p>
+<p>We will start by seeing what happens if we use the same approach to quantitative data as we did with categorical (qualititatve) data. In our first example we will create a frequency table as we did with categorical data in the last section.</p>
+<div class="example">
+<div class="example-title">
+<h3>Example 1</h3> 
+ <p>A teacher records scores on a 20-point quiz for the 30 students in their class. The scores are:</p>
+ <p>19, 20, 18, 18, 17, 18, 19, 17, 20, 18, 20, 16, 20, 15, 17, 12, 18, 19, 18, 19, 17, 20, 18, 16, 15, 18, 20, 5, 0, 0</p>
+ <p>These scores could be summarized into a frequency table by grouping like values. Use this frequency table to also construct a bar graph.</p>	
+	</div>
+
+ <table class="display-lg" cellpadding="5" cellspacing="0" width="30%"><caption>Quiz Scores</caption>
+  <thead>
+  <tr>
+   <th scope="col">Score</th>
+   <th scope="col">Frequency</th>
+  </tr>
+  </thead>
+  <tr>
+   <td>0</td>
+   <td>2</td>
+  </tr>
+  <tr>
+   <td>5</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>12</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>15</td>
+   <td>2</td>
+  </tr>
+  <tr>
+   <td>16</td>
+   <td>2</td>
+  </tr>
+  <tr>
+   <td>17</td>
+   <td>4</td>
+  </tr>
+  <tr>
+   <td>18</td>
+   <td>8</td>
+  </tr>
+  <tr>
+   <td>19</td>
+   <td>4</td>
+  </tr>
+  <tr>
+   <td>20</td>
+   <td>6</td>
+  </tr>
+ </table>
+<p>It would be possible to create a standard bar chart, like we did for categorical data:</p>
+<p><img src="images/ScoreBarChart.PNG" alt="Score Bar Chart. Vertical Axis is Frequency. Horizontal Axis is Score. There are no empty bars for values between scores. First bar is 0 with frequency 2. 5 bar with frequency 1. 12 bar with frequency 1. 15 bar with frequency 2. 16 bar with frequency 2. 17 bar with frequency 4. 18 bar with frequency 8. 19 bar with frequency 4. 20 bar with frequency 6." width="386" height="211" border="2"></p>
+<p>However, since the scores are numerical values, this chart doesn&rsquo;t really make sense; the first and second bars are five values apart, while the later bars are only one value apart. It is not appropriate to creat a bar graph in this case.</p>	
+<p><a href="http://youtu.be/180FgZ_cTrE" target="_blank">Video Explanation of why bar graphs may not be appropriate with quantitative data.</a> (cc)</p>
+</div>
+	
+<p>For the above example it would be better to treat the horizontal axis as a number line. This way when a bar is added at the appropriate location we can see the gap that exists between values. Not including the gap hides the information from the viewer and is misleading. By adding the structure on the horizontal axis (number line) we are using what is called a <strong>histogram</strong>.</p>	
+
+<p>For the values in Example 1 above, a histogram would look like:</p>
+  <p><img src="images/ScoreHistogramClass1.gif" alt="Score Histogram. Vertical Axis is Frequency. Horizontal Axis is Score. There are empty bars for values between scores where no score was present. First bar is 0 with frequency 2. 5 bar with frequency 1. 12 bar with frequency 1. 15 bar with frequency 2. 16 bar with frequency 2. 17 bar with frequency 4. 18 bar with frequency 8. 19 bar with frequency 4. 20 bar with frequency 6." width="420" height="288" border="2"></p>
+
+<p>Notice that in the histogram, a bar represents values on the horizontal axis from that on the left hand-side of the bar up to, but not including, the value on the right hand side of the bar.<img src="images/ScoreHistogramClass1Center.GIF" alt="Score Histogram. Vertical Axis is Frequency. Horizontal Axis is Score. There are empty bars for values between scores where no score was present. First bar is 0 with frequency 2 - label is now centered under the bar. 5 bar with frequency 1. 12 bar with frequency 1. 15 bar with frequency 2. 16 bar with frequency 2. 17 bar with frequency 4. 18 bar with frequency 8. 19 bar with frequency 4. 20 bar with frequency 6." width="379" height="204" class="floatRight"> Some people choose to have bars start at &frac12; values to avoid this ambiguity.</p>
+	
+<p>Unfortunately, not a lot of common software packages can correctly graph a histogram directly from data provided. The programs all require you to give input on the number of class intervals and where to start the first interval. About the best you can do in Excel or Word is a bar (column) graph with no gap between the bars.</p>
+
+<p>If we have a large number of widely varying data values, creating a frequency table that lists every possible value as a category would lead to an exceptionally long frequency table, and probably would not reveal any patterns.&nbsp; For this reason, it is common with quantitative data to group data into <strong>class intervals</strong>.&nbsp;</p>
+
+<div class="definition">
+ <h4>Histograms</h4>
+ <p>A <strong>histogram</strong> is like a bar graph, but where the horizontal axis is a number line. Each bar represents a <strong>class interval</strong> or range of numeric values for the data observations to fall in. Each data value fits into a single class (no overlap).</p>
+ <p>In general, we define class intervals so that:</p>
+ <ul>
+  <li>Each interval is equal in width.</li>
+  <li>There should be between 5 and 20 classes, typically, depending upon the number of data we&rsquo;re working with.
+  </li>
+ </ul>	  
+</div>	
+	
+<div class="plainblock">
+<h4>How to Construct a Histogram</h4>
+	<ol>
+		<li>Construct a frequency table based on the class intervals
+			<ol type="a">
+				<li>Determine the number of class intervals to be used. Typically a number between 5 and 20 is appropriate, but it can depend on the data and some trial and error may be involved.</li>
+				<li>Calculate the class width by taking the range of the data and dividing by the number of class intervals you identified above<br/>
+				<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ 					<mrow>
+  					<mtext>Class&#x00A0;Width</mtext><mo>=</mo><mfrac>
+   					<mrow>
+    					<mtext>Max&#x00A0;Data&#x00A0;Value</mtext><mo>&#x2212;</mo><mtext>Min&#x00A0;Data&#x00A0;Value</mtext></mrow>
+   					<mrow>
+    					<mtext>Number&#x00A0;of&#x00A0;Class&#x00A0;Intervals</mtext></mrow>
+  					</mfrac>
+  					</mrow>
+					</math>
+	
+				<br/>At this point you may need to round the class width value. For a general rule of thumb you should round up based on the precision of the data values (if the data has two decimal places, then round up to two decimal places). 
+				</li>
+				<li>Construct a table with three columns: Lower class limit, upper class limit, and frequency. <br />
+				 <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>&nbsp;</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+				 </table>
+				</li>
+				<li>Next add Min data value into the first entry for the Lower Class Limit column.
+				</li>
+				<li>Fill in the rest of the lower class limits by adding the class width to each previous lower class limit value. Continue to do this until you reach the number of class intervals identified in step 1 or the next lower class limit you would enter is larger than the maximum data value.
+				</li>
+				<li>Fill in the Upper Class limits. The upper class limit is the biggest number below the next lower class limit with the same accuracy as the class width.</li>
+				<li>Find the frequency for each class interval defined by the lower and upper class limits. If done correctly the total number in the frequency column will add up to the total number of data values.</li>
+			</ol>
+		</li>
+		<li>Graph the histogram</li>
+			<ol type="a">
+				<li>First draw the coordinate system ensuring the y-axis starts at 0 and the goes to at least the maximum value in the data set. The x-axis can be truncated to start at the first lower class limit and extends out to at least the last upper class limit value. It is helpful to have just the tick marks representing the lower class limits on the x-axis.</li>
+				<li>For each class interval draw a bar going up to the frequency given in the table created. The bar for each class interval starts at the lower class limit and ends at the next lower class limit leaving no gaps between bars unless there is a class interval with a frequency of 0.</li>
+				<li>Add labels for the axis and relabel bars if needed (a common approach is to use the midpoint for the class intervals to be used as the label.</li>
+			</ol>
+		
+	</ol>	
+</div>
+	
+<p>When using software the approach may vary with the information limited above. Typically you will need to predefine the lower class limits or upper class limits. The counting can than be done through the software as well as the construction of the graph. The examples below will go through the method as identified above, but the output of the graph from the histogram will be done through Google Sheets or Excel.</p>
+	
+<div class="example">
+<div class="example-title">
+<h3>Example 2</h3> 
+<p>We will revisit our data from exercise 1 where a teacher records scores on a 20-point quiz for the 30 students in their class. The scores are:</p>
+ <p>19, 20, 18, 18, 17, 18, 19, 17, 20, 18, 20, 16, 20, 15, 17, 12, 18, 19, 18, 19, 17, 20, 18, 16, 15, 18, 20, 5, 0, 0</p>
+ <p>Create a histogram for the data using 6, 8, and then 10 class intervals.</p>	
+</div>
+<p>We will go into detail for constructing the frequency table for the 6 class intervals, but only provide short summary for the 8 and 10.</p>
+<p>First step is to create the frequency table using 6 class intervals. To get started we find the class width. The Max value in the data is 20 and the Min value is 0. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mtext>Class&#x00A0;Width</mtext><mo>=</mo><mfrac>
+   <mrow>
+    <mn>20</mn><mo>&#x2212;</mo><mn>0</mn></mrow>
+   <mn>6</mn>
+  </mfrac>
+  <mo>&#x2248;</mo><mn>3.33</mn></mrow>
+</math>. We will round this up to 4 (since all our data are integers).
+</p>
+<p>Next construct the frequency table starting with the Min value of 0 for the first lower class limit:</p>
+				 <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>&nbsp;</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>&nbsp;</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>					 
+				 </table>	
+<p>We now fill in the rest of the lower class limits by adding 4 (the class width) to the values.</p>
+				 <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>4</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>8</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>12</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>16</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>20</td>
+   					<td>&nbsp;</td>
+					<td>&nbsp;</td>	
+  					</tr>					 
+				 </table>
+<p>Since our data is expressed as an integer we will fill in the upper class limits by using the largest integer below the next lower class limit. The first upper class limit would be 3 since it is the largest value below the next lower class limit found on the second row of lower class limit values. The remaining upper class limit values can be found by adding the class width to the previous upper class limit value.</p>
+				 <table class="display-lg" width="30%">
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>3</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>4</td>
+   					<td>7</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>8</td>
+   					<td>11</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>12</td>
+   					<td>15</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>16</td>
+   					<td>19</td>
+					<td>&nbsp;</td>	
+  					</tr>
+  					<tr>
+   					<td>20</td>
+   					<td>23</td>
+					<td>&nbsp;</td>	
+  					</tr>					 
+				 </table>
+<p>Now the final step for constructing the table is getting the frequency. It may help to keep a tally marker and mark off each data value in a systematic way. Double check you counted all the data by adding up the frequency and see you have the same total as the number of data values you started with.</p>	
+				 <table class="display-lg" width="30%">
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>3</td>
+					<td>2</td>	
+  					</tr>
+  					<tr>
+   					<td>4</td>
+   					<td>7</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>8</td>
+   					<td>11</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>12</td>
+   					<td>15</td>
+					<td>3</td>	
+  					</tr>
+  					<tr>
+   					<td>16</td>
+   					<td>19</td>
+					<td>18</td>	
+  					</tr>
+  					<tr>
+   					<td>20</td>
+   					<td>23</td>
+					<td>6</td>	
+  					</tr>					 
+				 </table>
+<p>To construct the Histogram start with labeling the lower class limits on the horizontal axis and going from 0 to 20 on the vertical axis (technically you can go up to 18 as a max). For each class interval you will draw a bar going up to the frequency height. Typically you want the bars to touch each other to show there is no artificial gaps in the data trends, but some programs will put in a very small gap between bars like shown below made from Google Sheets.</p>
+
+<figure class="center"><iframe width="458" height="284" title="Histogram of quiz scores with 6 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR25u1n68qvTScasixX3KdER_HIo_88M23a7Wpai1QKB7WU97ozdLeSn4sLZefkqACg1GK1O-5pBxvi/pubchart?oid=1990990600&amp;format=interactive"></iframe><figcaption>Quiz score with 6 class intervals&#58; <a href="https://docs.google.com/spreadsheets/d/1oYj81mHFOLTFAYXDkk_wOuzUgYgegV2cvowGjPAc03w/edit?usp=sharing" target="_blank">Google Sheet for Example 2</a></figcaption></figure>	
+		
+<p>Below you will see the tables and histograms for class intervals of size 8 and 10.</p>
+        
+<div class="side-by-side">
+
+  <div class="side-by-side-item" title="Quiz Scores 8 Class Intervals">
+    				<table class="display-lg" width="30%"><caption>Quiz Scores with 8 class intervals</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>2</td>
+					<td>2</td>	
+  					</tr>
+  					<tr>
+   					<td>3</td>
+   					<td>5</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>6</td>
+   					<td>8</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>9</td>
+   					<td>11</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>12</td>
+   					<td>14</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>15</td>
+   					<td>17</td>
+					<td>8</td>	
+  					</tr>
+  					<tr>
+   					<td>18</td>
+   					<td>20</td>
+					<td>18</td>	
+  					</tr>							 
+				 </table>
+  </div>
+  
+  <div class="side-by-side-item">
+   <figure class="center"><iframe width="458" height="284" title="Histogram of quiz scores with 8 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR25u1n68qvTScasixX3KdER_HIo_88M23a7Wpai1QKB7WU97ozdLeSn4sLZefkqACg1GK1O-5pBxvi/pubchart?oid=1451232484&amp;format=interactive"></iframe><figcaption>Quiz score with 8 class intervals&#58; <a href="https://docs.google.com/spreadsheets/d/1oYj81mHFOLTFAYXDkk_wOuzUgYgegV2cvowGjPAc03w/edit?usp=sharing" target="_blank">Google Sheet for Example 2</a></figcaption></figure>	
+  </div>
+  </div>	
+  <div class="side-by-side">
+
+  <div class="side-by-side-item" title="Quiz Scores 10 Class Intervals">
+    				<table class="display-lg" width="30%"><caption>Quiz Scores with 10 class intervals</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>1</td>
+					<td>2</td>	
+  					</tr>
+  					<tr>
+   					<td>2</td>
+   					<td>3</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>4</td>
+   					<td>5</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>6</td>
+   					<td>7</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>8</td>
+   					<td>9</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>10</td>
+   					<td>11</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>12</td>
+   					<td>13</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>14</td>
+   					<td>15</td>
+					<td>2</td>	
+  					</tr>
+  					<tr>
+   					<td>16</td>
+   					<td>17</td>
+					<td>6</td>	
+  					</tr>
+  					<tr>
+   					<td>18</td>
+   					<td>19</td>
+					<td>12</td>	
+  					</tr>
+  					<tr>
+   					<td>20</td>
+   					<td>21</td>
+					<td>6</td>	
+  					</tr>						
+				 </table>
+  </div>
+  
+  <div class="side-by-side-item">
+   <figure class="center"><iframe width="458" height="284" title="Histogram of quiz scores with 8 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR25u1n68qvTScasixX3KdER_HIo_88M23a7Wpai1QKB7WU97ozdLeSn4sLZefkqACg1GK1O-5pBxvi/pubchart?oid=1811638048&amp;format=interactive"></iframe><figcaption>Quiz score with 10 class intervals&#58; <a href="https://docs.google.com/spreadsheets/d/1oYj81mHFOLTFAYXDkk_wOuzUgYgegV2cvowGjPAc03w/edit?usp=sharing" target="_blank">Google Sheet for Example 2</a></figcaption></figure>	
+  <p>It would be better to adjust the graph horizontal axis to remove the 21 to avoid confusion with the context of the application (where 20 was the maximum score), but sometimes the tool we use for the construction has limitations and edits like this may not be possible. It is best to include descriptions with any graphics to help avoid confusion (so in this case adding something about the maximum score being 20 would be helpful).</p>
+  </div>
+	
+</div>
+<p>When we look at the three histograms a slightly different visual display of the data is seen. Does that mean any of them are right or wrong? No. There is no right histogram for a given data set, but there are good ways to go about constructing them. Ensuring the each class interval has an equal width, not distorting the graph through manipulation of the vertial axis, using between 5 and 20 class intervals (typically more class intervals for larger data sets, but trial and error is needed to help determine what number of classes to use).</p> 
+	
+</div>
+
+<p>In many software packages, you can create a graph similar to a histogram by putting the class intervals as the labels on a bar (column) chart, but you need to make sure that you include any bars with 0 frequency and close the gap between the bars.</p>
+
+<div class="plainblock">
+	<h4>What should we notice?</h4>
+<p>After the construction of a histogram there are some questions that should be answered by the researcher when describing the histogram:</p>
+<ul>
+<li>What are the maximum and minimum potential values of the data set?</li>
+<li>How many peaks does the histogram have (a peak can be any bar that has a shorter bar to the left and right or a bar at the left or right hand end that is taller than the adjacent bar)? Where are those locations?</li>	
+<li>Are there any gaps in the histogram (places where a bar has a height of 0) and where are they located?</li>	
+<li>Does the histogram have a general shape you can describe (uniform, symmetric, skewed left or right, bell-shaped)?</li>
+ 	<div class="side-by-side">
+	<div class="side-by-side-item">
+	  <figure><img src="images/skewedleft_openstax.jpg" max-width="25%" max-height="25%" alt="This histogram consists of 5 adjacent bars with the x-axis split into intervals of 1 from 4 to 8. The peak is to the right, and the heights of the bars taper down to the left."/><figcaption><strong>Skewed Left</strong></figcaption></figure></div>	
+	<div class="side-by-side-item">
+		  <figure><img src="images/skewedright_openstax.jpg" max-width="100%" max-height="100%" alt="This histogram consists of 5 adjacent bars with the x-axis split into intervals of 1 from 6 to 10. The peak is to the left, and the heights of the bars taper down to the right."/><figcaption><strong>Skewed Right</strong></figcaption></figure></div>
+    <div class="side-by-side-item">			
+	  <figure><img src="images/Symmetrical_openstax.jpg" max-width="25%" max-height="25%" alt="This histogram consists of 7 adjacent bars with the x-axis split into intervals of 1 from 4 to 10. The heighs of the bars peak in the middle and taper symmetrically to the right and left."/><figcaption><strong>Symmetrical and Bell Shaped</strong></figcaption></figure></div>
+	</div>
+</ul>	
+</div>
+	
+<div class="example">
+<div class="example-title">
+<h3>Example 3</h3> 
+<p>We will revisit our data from exercise 1 and 2 where a teacher records scores on a 20-point quiz for the 30 students in their class ignoring we have the original data available to answer some questions.</p>
+<p>Answer the following based on the histogram constructored using 8 class intervals (also shown below):</p>
+<ul>
+<li>What are the maximum and minimum potential values of the data set?</li>
+<li>How many peaks does the histogram have (a peak can be any bar that has a shorter bar to the left and right or a bar at the left or right hand end that is taller than the adjacent bar)? Where are those locations?</li>	
+<li>Are there any gaps in the histogram (places where a bar has a height of 0) and where are they located?</li>	
+<li>Does the histogram have a general shape you can describe (uniform, symmetric, skewed left or right, bell-shaped)?</li>
+</ul>
+
+<div class="side-by-side">
+
+  <div class="side-by-side-item" title="Quiz Scores 8 Class Intervals">
+    				<table class="display-lg" width="30%"><caption>Quiz Scores with 8 class intervals</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>0</td>
+   					<td>2</td>
+					<td>2</td>	
+  					</tr>
+  					<tr>
+   					<td>3</td>
+   					<td>5</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>6</td>
+   					<td>8</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>9</td>
+   					<td>11</td>
+					<td>0</td>	
+  					</tr>
+  					<tr>
+   					<td>12</td>
+   					<td>14</td>
+					<td>1</td>	
+  					</tr>
+  					<tr>
+   					<td>15</td>
+   					<td>17</td>
+					<td>8</td>	
+  					</tr>
+  					<tr>
+   					<td>18</td>
+   					<td>20</td>
+					<td>18</td>	
+  					</tr>							 
+				 </table>
+  </div>
+  
+  <div class="side-by-side-item">
+   <figure class="center"><iframe width="458" height="284" title="Histogram of quiz scores with 8 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR25u1n68qvTScasixX3KdER_HIo_88M23a7Wpai1QKB7WU97ozdLeSn4sLZefkqACg1GK1O-5pBxvi/pubchart?oid=1451232484&amp;format=interactive"></iframe><figcaption>Quiz score with 8 class intervals&#58; <a href="https://docs.google.com/spreadsheets/d/1oYj81mHFOLTFAYXDkk_wOuzUgYgegV2cvowGjPAc03w/edit?usp=sharing" target="_blank">Google Sheet for Example 3</a></figcaption></figure>	
+  </div>
+  </div>	
+	
+</div>
+<p>From the histogram we can see that the first bar starts at 0 and has a frequency of 2. This tells us we have a potential value in the data to be 0 and that would be the smallest or minimum value. The last bar starting at 18 and knowing it ends at 20 lets us know we have a potential maximum value of 20.</p>
+<p>There is a peak on the right hand side on the class interval from 18 to 20. The peak reaches a height of 12. Another potential minor peak happens at the lowest class interval of 0 to 2 with a height of 2.</p>
+<p>There is a large gap in the middle of the histogram in the class intervals starting at 6 and ending at 11.</p>
+<p>The general shape of the histogram can be described as being skewed left as the peak is on the far right and as you move left the data trails off, but another minor peak occurs at the very start with a gap between the two sides.</p>	
+</div>
+
+<p>Now it is your turn to construct a histogram in the TryItNow below.</p>	
+	
+<div class="tryitnow">
+ <h5>Try it Now 1</h5>
+ <p>The total cost of textbooks for the term was collected from 36 students. Create a histogram for this data. Use 6 class intervals. Describe the results.</p>
+ <p>
+ <table class="display-lg"><caption>Textbook Prices</caption>
+   <col width="64" span="12">
+   <tr>
+     <td align="right" width="64">$140 </td>
+     <td align="right" width="64">$160 </td>
+     <td align="right" width="64">$160 </td>
+     <td align="right" width="64">$165 </td>
+     <td align="right" width="64">$180 </td>
+     <td align="right" width="64">$220 </td>
+     <td align="right" width="64">$235 </td>
+     <td align="right" width="64">$240 </td>
+     <td align="right" width="64">$250 </td>
+     <td align="right" width="64">$260 </td>
+     <td align="right" width="64">$280 </td>
+     <td align="right" width="64">$285 </td>
+   </tr>
+   <tr>
+     <td align="right">$285 </td>
+     <td align="right">$285 </td>
+     <td align="right">$290 </td>
+     <td align="right">$300 </td>
+     <td align="right">$300 </td>
+     <td align="right">$305 </td>
+     <td align="right">$310 </td>
+     <td align="right">$310 </td>
+     <td align="right">$315 </td>
+     <td align="right">$315 </td>
+     <td align="right">$320 </td>
+     <td align="right">$320 </td>
+   </tr>
+   <tr>
+     <td align="right">$330 </td>
+     <td align="right">$340 </td>
+     <td align="right">$345 </td>
+     <td align="right">$350 </td>
+     <td align="right">$355 </td>
+     <td align="right">$360 </td>
+     <td align="right">$360 </td>
+     <td align="right">$380 </td>
+     <td align="right">$395 </td>
+     <td align="right">$420 </td>
+     <td align="right">$460 </td>
+     <td align="right">$460 </td>
+   </tr>
+ </table>
+ </p>
+
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">	
+			<p>With 6 class intervals given to us we start by finding the class width: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mtext>Class&#x00A0;Width</mtext><mo>=</mo><mfrac>
+   <mrow>
+    <mn>460</mn><mo>&#x2212;</mo><mn>140</mn></mrow>
+   <mn>6</mn>
+  </mfrac>
+  <mo>&#x2248;</mo><mn>53.33</mn></mrow>
+				</math>. The textbook cost is given to us in integers, so we round this up to 54.</p> 
+				
+  <p>Starting with 140 for the first lower class limit we can now construct the frequency table. Add 54 to the first class lower limit and continue to add 54 to the previous lower class limit to fill out the first column.</p> 
+  <p>To get the upper class limit we find the highest number below the next lower class limit, so for the first lower class limit we look at the 2nd row of the lower class limits and see the value is 194, which means the first upper class limit will be 193 (since out data percision is in integers). Add the class width to the upper class limit values to fill down that column. After those are done we count how many data values fall into each interval. The finished table is below and was used to to construct the histogram.</p>
+<div class="side-by-side">				
+<div class="side-by-side-item" title="Quiz Scores 8 Class Intervals">
+    				<table class="display-lg" width="30%"><caption>Textbook Prices</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col">Lower Class Limit</th>
+					<th scope="col">Upper Class Limit</th>	
+   					<th scope="col">Frequency</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>140</td>
+   					<td>193</td>
+					<td>5</td>	
+  					</tr>
+  					<tr>
+   					<td>194</td>
+   					<td>247</td>
+					<td>3</td>	
+  					</tr>
+  					<tr>
+   					<td>248</td>
+   					<td>301</td>
+					<td>9</td>	
+  					</tr>
+  					<tr>
+   					<td>302</td>
+   					<td>355</td>
+					<td>12</td>	
+  					</tr>
+  					<tr>
+   					<td>356</td>
+   					<td>409</td>
+					<td>4</td>	
+  					</tr>
+  					<tr>
+   					<td>410</td>
+   					<td>463</td>
+					<td>3</td>	
+  					</tr>							 
+				 </table>
+  </div>
+  
+  <div class="side-by-side-item">
+   <figure class="center"><iframe width="444" height="274" title="Histogram of quiz scores with 8 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfbTYo2sEpq-TkEvv1X7EtgOdGxlsg1UbEfUtiOmmfS9gGPupkCw8Y8qvTomftatmFuvRCKn2zQ2-R/pubchart?oid=1232253488&amp;format=interactive"></iframe><figcaption>Quiz score with 8 class intervals&#58; <a href="https://docs.google.com/spreadsheets/d/1BVX8hWdp5iF1pyHkvs5MJNualmZWV2nO66UEhAF02fw/edit?usp=sharing" target="_blank">Google Sheet for TryItNow 1</a></figcaption></figure>	
+  </div>
+  </div>
+	<p>In the histogram and data for textbook prices we see the minimum value is $140 with a maximum value of $460. The histogram shows a peak that occurs between &#36;302 and &#36;356 with a frequency of 12 (out of the 36 data values). There are no gaps shown on this histogram. The overall shape appears to be symmetric about the middle where the peak occurs, but there is a small minor peak on the left hand side between &#36;140 and &#36;194.</p>	
+				
+</div>	
+     
+       
+</div>
+</div>
+<div class="content-body">	
+<h2>Stem-and-Leaf Plots</h2>
+<p>In some cases when the data set is relatively small it is easier to visualize the entire data set and distribution in a single disply. We will look at one way to do that using what is called a stem and leaf plot. In a stem and leaf plot we will be able to see the distribution of the data AND we will be able to show the entire data set. The stem-and-leaf conveys the impressions that a histogram would without going through the process for creating one (it is typically just as easy to create if doing both by hand). The benefit is that a stem and leaf plot also preserves the exact data values. </p>
+
+<div class="definition">
+  <h4>Stem-and-Leaf Plot</h4>
+<p>A stem-and-Leaf plot is a visual table that splits the data into a "stem" (first digit(s) of a data value) and a "leaf" (typically the last digit of the data value). The stems are written in a vertical column from smallest to largest. A vertical bar is drawn to the right of the stem. The leaves are then entered to the right of the stem in an increasing order .</p>
+  <h4>Directions:</h4>
+<ol>
+  <li>
+    <p>Each of the data values will have two parts: left = &ldquo;stem,&rdquo; right = &ldquo;leaf&rdquo;    </p>
+  </li>
+  <ul>
+    <li>
+      <p>Example for a data value of 45,  &ldquo;4&rdquo; would be the stem and &ldquo;5&rdquo; will be the leaf.</p>
+    </li>
+  </ul>
+  <li>
+    <p>Align all stems in vertical column in increasing order with a vertical line to their right (remove any  duplicate stems and add any stem that appears to be missing in that ordered list - we want to see gaps in the data distribution). </p>
+  </li>
+  <li>
+    <p>Place all leaves with same stem on the same row as the stem. Rearrange in an increasing order and keep equal spacing between leaves for all rows so that values align in a column.    </p>
+  </li>
+  <ul>
+    <li>
+      <p>It is important to allign the leaves in columns so that we may actually compare the length of each row directly and not worry about data points be clumped together to make two rows appear the same length yet actually have a different amount of data points.</p>
+    </li>
+  </ul>
+  <li>
+    <p>Label the plot. </p>
+  </li>
+</ol>
+</div>
+	
+<p>Programs like Excel and Google Sheets do not have an automatic way to create a stem-and-leaf plot without typically using a third party solution. Thankfully it is not difficult to style the spreadsheet in either program to look like a stem-and-leaf plot. You can also do this in a Word or Google Doc document as well by using a table and only showing particular borders. In the example below we will go through the process of creating a stem-and-leaf plot using our quiz score data from earlier.</p>
+
+	
+<div class="example">
+  <div class="example-title">
+<h3>Example 4</h3> 
+
+ <p>A teacher records scores on a 20-point quiz for the 30 students in their class. The scores are:</p>
+ <p>19, 20, 18, 18, 17, 18, 19, 17, 20, 18, 20, 16, 20, 15, 17, 12, 18, 19, 18, 19, 17, 20, 18, 16, 15, 18, 20, 5, 0, 0</p>
+ <p>Create a stem-and-leaf plot of the quiz scores.</p>	  
+</div>
+	<p>We will start by identifying how to break apart the data. Since that data starts at 0 and has a max of 20 and are all intergers it would make sense to break apart the stems as the value in the tens place. This leaves the leaf as the value in the ones place. For instance 17 would create a stem of "1" and a leaf of "7" while the number 5 would give a stem of "0" and a leaf of "5".</p>
+	<p>The Stems are 0, 1, and 2. Start by putting those values into a vertical column and add a line to the right of them as shown below:</p>
+	<table class="display-lg" width="30%"><caption>Quiz Scores</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">0</td>
+					<td>&nbsp;</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">1</td>
+					<td>&nbsp;</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">2</td>
+					<td>&nbsp;</td>	
+					</tr>			
+	</table>
+	<p>Now that we put in the stems it is time to place all the data in the table by adding the leaves in an increasing order. Make sure to repeat values as the length of each stem row is like a histogram bar showing the frequency.</p>
+	<table class="display-lg" width="50%"><caption>Quiz Scores</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">0</td>
+					<td>0 0 5</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">1</td>
+					<td>2 5 5 6 6 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">2</td>
+					<td>0 0 0 0 0 0</td>	
+					</tr>			
+	</table>	
+	
+</div>	
+
+<p>In the next example pay attention to what we do for a missing stem. The missing stem helps show what is happening in the data by identifying the gap that exists between values.</p>	
+
+
+<div class="example">
+  <div class="example-title">
+<h3>Example 5</h3> 
+
+<p>The following is a list of student ages in a MAT 142 course from Fall of 2020 at the start of the semester: 17 18 18 18 18 18 18 18 18 18 18 19 19 19 19 19 20 20 20 22 28 31 55</p>
+	  <p>Create a stem-and-leaf plot of the ages.</p>
+	</div>
+	<p>We can naturaly break up each age into a stem and leaf by using the tens place for the stem and the ones place as the leaf. Start with creating a colum for stems. Notice how we include the missing "4" stem between 3 and 5.</p>
+		<table class="display-lg" width="30%"><caption>Student Ages in MAT 142</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">1</td>
+					<td>&nbsp;</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">2</td>
+					<td>&nbsp;</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">3</td>
+					<td>&nbsp;</td>	
+					</tr>
+			  		<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">4</td>
+					<td>&nbsp;</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">5</td>
+					<td>&nbsp;</td>	
+					</tr>	
+	</table>
+	<p>Next add in the leaves behind each stem. Again make sure the leaves align in columns of equal spacing.</p>
+		<table class="display-lg" width="45%"><caption>Student Ages in MAT 142</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">1</td>
+					<td>7 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">2</td>
+					<td>0 0 0 2 8</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">3</td>
+					<td>1</td>	
+					</tr>
+			  		<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">4</td>
+					<td>&nbsp;</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">5</td>
+					<td>5</td>	
+					</tr>	
+	</table>	
+	</div>
+	
+<div class="tryitnow">
+<h5>Try it Now 2</h5>
+<p>The following is some data from past Oscar-winning Best Actors (males).</p>
+<p><table width="400" border="4" cellpadding="4">
+  <tr>
+    <td class="center"><p>32 37 36 32 51 53 33 61 35 45 76 37 42 40 32 60 38 56 48 48 62 43 42 44 41 56 39 46 31 47 46 40 36 39 43 60 55 40 45</p></td>
+  </tr>
+</table></p>
+<p>Create a stem-and-leaf plot for the data. Is there anything we should be concerned about after the creation?</p>	
+	
+	<h5 class="js-expandmore">Answer</h5> 
+    <div class="js-to_expand">
+<p>Each value is a two digit number (if someone were to be age 8 we would write 8 as 08 to put it into the same form). The first digit is the &quot;stem&quot; and second digit of each number is a &quot;leaf&quot;. We create the plot by listing all possible values of &quot;stems&quot; in a vertical column starting with the lowest and ending at the highest value (if there is a gap we put the value of the missing stem in the place, but will have no leafs attached to it on the right hand side). Each &quot;leaf&quot; is then placed to the right of its stem in an increasing order (best to start by lookinng for any leafs with a value of 0 and add it to the right for each zero then continue on to the ones, twos, etc.... When done you have a visualization that shows you all the data values along with their distribution (more powerful then just looking at the raw data by itself).</p>
+
+			<table class="display-lg" width="45%"><caption>Male Oscar Winners</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">3</td>
+					<td>1 2 2 2 3 5 6 6 7 7 8 9 9 </td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">4</td>
+					<td>0 0 0 1 2 2 3 3 4 5 5 6 6 7 8 8</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">5</td>
+					<td>1 3 5 6 6</td>	
+					</tr>
+			  		<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">6</td>
+					<td>0 0 1 2</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">7</td>
+					<td>6</td>	
+					</tr>	
+	</table>	
+<p>The plot allows us to see a visual distribution of the ages - from here we can try to make sense of the age of male oscar winners. For instance we can say it appears you have a better chance of winning if you are in your 30's or 40's. The thing to watch out for in this type of graph (and histograms in general) is that you lose track of a possible variation in results over time (we do not know if the trend of the ages was changing over time or if this distribution is held constant over time).</p>
+	</div>
+	</div>
+
+</div>	
+
+<div class="content-body">	
+<h2>Identify common graphical mistakes with graphical representation of quantitative data</h2>	
+<p>In the instructions for histogram and stem-and-leaf plot construction you were given details to help avoid distorting the data visually. We will look at some examples where an error was made in a graph for quantitative data and discuss the importance of being able to identify the error and what to watch out for when creating your own graphical display for data. Much of what we learn in the examples can be extended to graphs that we did not introduce in this section (a few examples below are also of graphs we did not review on how to make, but follow similar structures to our work from above).</p>
+
+<div class="example">
+  <div class="example-title">
+		<h3>Example 6</h3> 
+		<p>In the histogram below we have the wait times (to the nearest tenth a minute) recorded at a local fast food drive thru on a randomly selected day. The general manager is making a presentation to the regional manager about these wait times. Identify any cause for concern for how the data was presented in the histogram.</p>	
+   <figure class="center"><iframe width="502" height="312" title="Histogram of wait times in drive thru" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4ByoWflOBoiUoDukn821NlzYyTASEmp5bPO4FcS3jW5APqxGc-znxoDwfEpFBy-iYBGLC9Np56yyG/pubchart?oid=1857885456&amp;format=interactive"></iframe><figcaption>Drive Thru Wait Times <a href="https://docs.google.com/spreadsheets/d/1NRY0iOfBfky6zhpxZhPQmAb3iLsU67wiIIc7CtwKFFg/edit?usp=sharing" target="_blank">Google Sheet for Example 6</a></figcaption></figure>
+	  
+  </div>
+	<p>The first concern we can identify is that the vertical axis begins at 3 instead of zero. Visually it would appear the wait times for 3 to 4 minutes is about half the wait times from 1 to 2 minutes, but that is not what the actual data shows. The wait times really about two thirds instead of half if you extend the vertical axis down to 0.</p>
+	<p>A minor point of concern is not having any grid lines and tick marks for the vertical axis for the height of each bar. Without some visual aid it can be challenging to read the direct height from the vertical axis on each bar. Without the tick marks it is also challenging to know which value goes to a bar height. </p>
+	<p>Below is the adjusted histogram.</p>
+	<figure class="center"><iframe width="502" height="312" title="Histogram of wait times in drive thru (Fixed)" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4ByoWflOBoiUoDukn821NlzYyTASEmp5bPO4FcS3jW5APqxGc-znxoDwfEpFBy-iYBGLC9Np56yyG/pubchart?oid=467114397&amp;format=interactive"></iframe><figcaption>Drive Thru Wait Times (Fixed) <a href="https://docs.google.com/spreadsheets/d/1NRY0iOfBfky6zhpxZhPQmAb3iLsU67wiIIc7CtwKFFg/edit?usp=sharing" target="_blank">Google Sheet for Example 6</a></figcaption></figure>
+	<p>Looking at the fixed histogram it shows how the shorter wait times were not as high as previously seen when compared to the longer wait times. In this example we set up the scenario in a more nefarious way, but typically you may see those truncated graphs appear unintentionally. The problem though is that it can change the perception or feeling on a topic if shown that way. This is not isolated just to histograms as that change in the vertical axis can happen with other types of charts or graphs used to display data.</p>
+</div>
+
+<p>In the next example we will look at a chart that is similar to histograms, but instead uses a frequency polygon. A <strong>frequency polygon</strong> starts out like a histogram, but instead of drawing a bar, a point is placed in the midpoint of each interval at height equal to the frequency.  Typically the points are connected with straight lines to emphasize the distribution of the data. When the horizontal axis represents time it is typically called a <strong>Time Series</strong> graph.</p>
+
+<div class="example">
+  <div class="example-title">
+		<h3>Example 7</h3> 
+		<p>In the graph below the unemployment rate is shown for four quarters from Dec 7 till June 10. Examine the graph and identify any concerns about how it was constructed.</p>	
+  <p><img src="images/FoxUnemployment_TimeSeries_Flawed.JPG" width="50%" height="50%" alt="Time series chart showing job loss in Dec 07 as 7 mil, Sept 08 as 9 Mil, March 09 as 13.5 Mil, and June 10 as 15 Mil. No lables on vertical axis given."/></p>
+
+	  
+  </div>
+	<p>The title is the first misleading piece of information on this chart. The data presented does not represent the (gross) job loss for the given quarter, but rather the total unemployed at that time.</p>
+	<p>The horizontal axis is missing quarters between the start of Dec 07 and June 2010. This is an example of <strong>cherry picking data</strong> as only those selected quarters were used. If they used all the quarters would the chart give a different interpretation? Possibly. </p>
+	<p>Related to the above is that the horizontal axis uses different time spans between the data points. When looking at the last two dates listed of March 09 and June 10 we can count 15 months between them, but the corresponding pair right before is a shorter span with a longer gap having 9 months.</p>
+	<p>The vertical axis does not start at 0. This visually distorts the difference in values and makes the doubling of unemployment between Dec 07 and June 10 seem larger.</p>
+	<p>Take a look below at the adjusted chart including all the quarters starting at Dec 7 and extending through June 2010. The table of data is also provided for reference.</p>
+	
+<div class="side-by-side">
+  <div class="side-by-side-item">
+    				<table class="display-lg" width="30%"><caption>Unemployment Numbers</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col">Quarter</th>
+					<th scope="col">Unemployed (in Millions)</th>	
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td>Dec 07</td>
+   					<td>7.7</td>
+  					</tr>
+  					<tr>
+   					<td>Mar 08</td>
+   					<td>7.8</td>
+  					</tr>
+  					<tr>
+   					<td>Jun 08</td>
+   					<td>8.5</td>
+  					</tr>
+  					<tr>
+   					<td>Sep 08</td>
+   					<td>9.5</td>
+  					</tr>
+  					<tr>
+   					<td>Dec 08</td>
+   					<td>11.1</td>
+  					</tr>
+  					<tr>
+   					<td>Mar 09</td>
+   					<td>13.2</td>
+  					</tr>
+  					<tr>
+   					<td>Jun 09</td>
+   					<td>14.7</td>	
+  					</tr>
+  					<tr>
+   					<td>Sep 09</td>
+   					<td>15.1</td>	
+  					</tr>
+  					<tr>
+   					<td>Dec 09</td>
+   					<td>15.3</td>	
+  					</tr>
+  					<tr>
+   					<td>Mar 10</td>
+   					<td>15</td>	
+  					</tr>
+  					<tr>
+   					<td>Jun 10</td>
+   					<td>14.6</td>	
+  					</tr>						
+				 </table>
+  </div>
+  
+  <div class="side-by-side-item">
+   <figure><iframe width="429" height="266" title="Time Series for Total Number of Unemployed (in Millions) for quarters between Dec 07 to June 10" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSlnW8eYJ11tqdXtL0P38tIs7Ss3gZL0JpyAO4jcn35-IYEYQ9S8gYW0kJzzbOh4qa6Ipeil1c7kc1U/pubchart?oid=383323725&amp;format=interactive"></iframe><figcaption>Quiz score with 8 class intervals&#58; <a href="https://docs.google.com/spreadsheets/d/1OGhcGFGWBlpXDDl60CIRJmqCOdPDJjoMD3Ff0PnPVd0/edit?usp=sharing" target="_blank">Google Sheet for Example 7</a></figcaption></figure>
+	</div>
+  </div>	
+</div>	
+
+	<div class="plainblock">
+	<h4>What should we watch out for in a graph?</h4>
+	<ul>
+	<li>Look at the vertical axis. Does it start with 0? If not why is that?</li>
+	<li>Does it look like the data was cherry picked (look for non-uniform horizontal values in a time series, or missing values in the time series where data points should be)?</li>
+	<li>Does the vertical and horizontal axis keep a consistent scale (does not jump values)?</li>
+	<li>Were graphics used to display a bar? If so did the volume or area stay relative to data values?</li>
+	<li>For histograms did it add large gaps between bars that should be connected?</li>
+	<li>For histograms did it use consistent class widths?</li>
+	<li>Does the title match up with the data?</li>	
+	<li>On a stem-and-leaf plot is it missing any stems (gaps in stem values)?</li>	
+	</ul>	
+	</div>
+	
+	
+</div>	
+
+<div class="content-body">	
+
+<h2>Exercises:</h2>
+<ol>
+ <li>
+   <p>A student collected data about the type of cola students liked to drink. In the process he had people select out of four different brands (Pepsi, Coke, Sprite, Diet Cola). Would it be appropriate to graph the frequency with a historgram? Why or why not.</p>
+	 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<p class="exerciseanswer">It would not be appropriate as the selection of brand is a categorical data value and histograms are used only for a quantitative data value. It would be more appropriate to use a bar graph or pie chart.</p>
+			</div>
+ </li> 
+ <li><p>What is the difference between a bar graph and a histogram?</p>
+	 	 			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<p class="exerciseanswer">The main difference starts at what type of data you are analyzing. A bar graph is used for categorical data and each category represents a graph with a height of how many observations we have. The bar graph bars also do not touch each other and can be rearranged in any order. A histogram can be used to analyze quantitative data and have bars represented by class intervals that do touch as no gap should exist between two class intervals that data would fall into.</p>
+			</div>
+ </li>	
+ <li>
+  <p>The weights of newborn babies are given on the histogram below. If the the newborn weighs between 6.5 lb and 8.5 lb they are considered healthy. If the baby weights below 5.5 lbs we classify the baby as a low birthweight (some low birthweight babies are healthy, but others can have health problems that could be serious).</p>
+  <ol type="a">
+  <li>What percentage of these newborns were healthy?</li>
+  <li>What percentage of these newborns are considered to have a low birthweight?</li>	  
+  </ol>	  
+	  
+
+  <figure class="center"><iframe width="600" height="371"  title="Weights of Newborn Babies" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNDWaohtVZ9b_3TQVbvLqpJqV58eN2txySu5CY6Wz5ln4tbywY8vkdJXDR2HLDjvd6eF1i0RTJ395O/pubchart?oid=405520711&amp;format=interactive"></iframe><figcaption>Exercise 3: Newborn baby weights.<a href="https://docs.google.com/spreadsheets/d/1dCMuPB0FK29onZw0tf-png8nRcS_aOLCHYVMydoykAs/edit?usp=sharing" target="_blank">Google Sheet for Exercise 3</a></figcaption></figure>	 
+
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<ol type="a" class="exerciseanswer">
+			<li>Looking at the histogram we see the number of newborns between 6.5 lb and 8.5 lbs is found in the two class intervals defined by 6.5 to 7.5 and 7.5 to 8.5. There are a total of 20 newborns in those intervals. The total number of newborns on the histogram is: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>14</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>30</mn></mrow>
+</math>. This gives us the percentage of newborns in the healthy weights as: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mfrac>
+  <mrow>
+   <mn>20</mn></mrow>
+  <mrow>
+   <mn>30</mn></mrow>
+ </mfrac>
+ <mo>&#x22C5;</mo><mn>100</mn><mi>&#x0025;</mi><mo>&#x2248;</mo><mn>66.7</mn><mi>&#x0025;</mi>
+</math>. We have approximately 66.7&#37; newborns in the healthy weight.
+</li>
+	 <li>The first class interval from 4.5 to 5.5 has one newborn within, so the percentage of newborn that are considered low birthweight is: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mfrac>
+  <mn>1</mn>
+  <mrow>
+   <mn>30</mn></mrow>
+ </mfrac>
+ <mo>&#x22C5;</mo><mn>100</mn><mi>&#x0025;</mi><mo>&#x2248;</mo><mn>3.33</mn><mi>&#x0025;</mi>
+</math>
+</li>
+	</ol>
+			</div>	 
+ </li>
+
+ <li>
+      <p>The table below shows the number of hours worked for the 36 employees at a local restaurant.</p>
+    <ol start="1" type="a">
+      <li>
+        <p>Construct a histogram using 10 class intervals and another histogram with 20 class intervals.</p>
+      </li>
+      <li>
+        <p>If you were to increase the number of class intervals to 25 what would you expect to happen with the histogram?</p>
+      </li>		
+      <li>
+        <p>The affordable care act defines a full time employee as one working 30 or more hours per week. What percent of the work force would be considered a full time employee?</p>
+      </li>
+    </ol>
+<table class="display-lg">
+  <tr>
+    <td><p>38</p></td>
+    <td><p>20</p></td>
+    <td><p>28</p></td>
+    <td><p>12</p></td>
+    <td><p>44</p></td>
+    <td><p>11</p></td>
+    <td><p>22</p></td>
+    <td><p>29</p></td>
+    <td><p>18</p></td>
+    <td><p>34</p></td>
+    <td><p>30</p></td>
+    <td><p>25</p></td>
+  </tr>
+  <tr>
+    <td><p>08</p></td>
+    <td><p>24</p></td>
+    <td><p>18</p></td>
+    <td><p>13</p></td>
+    <td><p>25</p></td>
+    <td><p>43</p></td>
+    <td><p>38</p></td>
+    <td><p>36</p></td>
+    <td><p>47</p></td>
+    <td><p>20</p></td>
+    <td><p>32</p></td>
+    <td><p>18</p></td>
+  </tr>
+  <tr>
+    <td><p>15</p></td>
+    <td><p>20</p></td>
+    <td><p>22</p></td>
+    <td><p>35</p></td>
+    <td><p>18</p></td>
+    <td><p>21</p></td>
+    <td><p>18</p></td>
+    <td><p>30</p></td>
+    <td><p>36</p></td>
+    <td><p>24</p></td>
+    <td><p>16</p></td>
+    <td><p>13</p></td>
+  </tr>	
+</table>
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<ol class="exerciseanswer" type="a">
+			<li>
+	<div class="side-by-side">
+
+  		<div class="side-by-side-item">
+   		<figure class="center"><iframe width="367" height="228" title="Histogram of quiz scores with 8 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwXJevlvpsEVEuK5sQ-b88NC5UsYIaoimOlmmgTvDlUHI2e_k6lhVEWxN3A0s5aqgQ9e3NIxpfxg5L/pubchart?oid=216194471&amp;format=interactive"></iframe><figcaption>Hours worked with 10 class intervals. <a href="https://docs.google.com/spreadsheets/d/1pUwvpYWlGa60JA4uTvsxWKvd5lSznD4OY7Vrb1FdIVY/edit?usp=sharing" target="_blank">Google Sheet for Exercise 4</a></figcaption></figure>
+	  	</div>
+  
+  		<div class="side-by-side-item">
+   		<figure class="center"><iframe width="367" height="228" title="Histogram of quiz scores with 8 class intervals" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwXJevlvpsEVEuK5sQ-b88NC5UsYIaoimOlmmgTvDlUHI2e_k6lhVEWxN3A0s5aqgQ9e3NIxpfxg5L/pubchart?oid=1392023188&amp;format=interactive"></iframe><figcaption>Hours worked with 20 class intervals. <a href="https://docs.google.com/spreadsheets/d/1pUwvpYWlGa60JA4uTvsxWKvd5lSznD4OY7Vrb1FdIVY/edit?usp=sharing" target="_blank">Google Sheet for Exercise 4</a></figcaption></figure>	
+  		</div>
+  </div>				
+				</li>
+			<li>If we were to create another histogram from the same data, but instead use 25 class intervals we would expect the shape to further flatten out to many bars with very low frequency. As we increase the number of class intervals it looks like we may also get more intervals with 0 data values inside (0 for the frequency).
+				</li>
+			<li>The histogram with 10 class intervals has 30 in the 28-32 interval. We will not be able to use that histogram to figure out how many workers worked 30 hours or more. We can however use the second histogram with 20 class intervals and count the frequency of the bars starting with the 30-32 and going to the end. There are a total of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mn>2</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>12</mn></mrow>
+</math>
+
+ workers. Having a total of 36 workers we can find the percentage as: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mfrac>
+  <mrow>
+   <mn>12</mn></mrow>
+  <mrow>
+   <mn>36</mn></mrow>
+ </mfrac>
+ <mo>&#x22C5;</mo><mn>100</mn><mi>&#x0025;</mi><mo>&#x2248;</mo><mn>33.33</mn><mi>&#x0025;</mi>
+</math>. There are roughly 33.33&#37; workers who would be considered full time.
+</li>	
+			</ol>
+			</div>	 
+   </li>	 
+  <li>
+    <p>(Side by Side Histograms) An experiment compared the ability of three groups of participants to remember briefly-presented chess positions. The data are shown below. The numbers represent the total number of pieces correctly remembered from <strong>three</strong> chess positions after the first ten moves. Create a histogram for each of the player types using the same class intervals (start the first class interval as 20 - 29) for these three groups. What can you say about the differences between these groups from the Histograms?</p>
+      <table class="display-lg">
+        <thead>
+			<tr>
+		  		<th scope="col">Non-players</th>
+          		<th scope="col">Beginners</th>
+          		<th scope="col">Tournament players</th>
+			</tr>
+		</thead>
+        <tr>
+          <td>21</td>
+          <td>29</td>
+          <td>39</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>32</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>37</td>
+          <td>42</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>29</td>
+          <td>49</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>40</td>
+          <td>53</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>41</td>
+          <td>57</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td>45</td>
+          <td>58</td>
+        </tr>
+        <tr>
+          <td>34</td>
+          <td>51</td>
+          <td>63</td>
+        </tr>
+        <tr>
+          <td>39</td>
+          <td>52</td>
+          <td>71</td>
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>56</td>
+          <td>79</td>
+        </tr>
+        <tr>
+          <td>43</td>
+          <td>56</td>
+          <td>79</td>
+        </tr>
+        <tr>
+          <td>43</td>
+          <td>58</td>
+          <td>88</td>
+        </tr>
+        <tr>
+          <td>44</td>
+          <td>60</td>
+          <td>89</td>
+        </tr>		  
+      </table>
+
+			<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>To construct a side by side histogram we follow the general procedure for constructing a histogram, but instead of just one bar in a class interval there will be three spaces for bars (all equal width and in a consistent order) where each bar is raised to the height of the data for the bars. When constructing you will keep the same order of the bars for each class interval. Any bar with 0 frequency will still be on the chart, but would be represented with empty space. Below you can see the side by side histogram for the three groups (non-players, beginners, and tournament players). On the chart we can see that the non-player are less likely to remember the chess pieces when compared to the other two groups. There are two bars in the class intervals of 20 to 29 and 30 to 39 where the bars are the highest. The beginners do a little better then the non-players with a peak that occurs in the class interval of 50 to 59. The tournament players memory is more spread out, but overall higher then the beginner group. The tournament group appears to have two different location for peaks (two class intervals 40 to 49 and 50 to 59 form one peak while other peak is in the interval 7There is overlap between all three groups in the class interval 70 to 79.</p>
+			   <figure class="center"><iframe width="549" height="340" title="Side by side histogram for memory test." seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYcXO3Ex998_-AuMV67GdNG9BmkDeELv0ogJh0o5CqC4jv7YZhqgMaS5iynAt17R39bARVAALkFDXA/pubchart?oid=834741440&amp;format=interactive"></iframe><figcaption>Side by side histogram for memory test: <a href="https://docs.google.com/spreadsheets/d/1-RK1uij67wpoJko34zxcxNY20I93f3I8ZRLLZ8puG7M/edit?usp=sharing" target="_blank">Google Sheet for Exercise 5</a></figcaption></figure>		
+			</div>	
+			</div>	  
+	  
+  </li>
+  
+  <li>
+	  <p>Eight hundred adult Americans were asked by telephone poll, "What do you think constitutes a middle-class income?" The results are summarized in the table below.</p>
+      
+      <table class="display-lg">
+        <caption>
+          Middle-Class Income Survey Results
+          </caption>
+        <thead>
+          <tr>
+            <th scope="col">Income Range</th>
+            <th scope="col">Number of Respondents</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-th="Income Range">$20,001 - $40,000</td>
+            <td data-th="Number of Respondents">13</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$40,001 - $60,000</td>
+            <td data-th="Number of Respondents">79</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$60,001 - $80,000</td>
+            <td data-th="Number of Respondents">169</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$80,001 - $100,000</td>
+            <td data-th="Number of Respondents">148</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$100,001 - $120,000</td>
+            <td data-th="Number of Respondents">122</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$120,001 - $140,000</td>
+            <td data-th="Number of Respondents">115</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$140,001 - $160,000</td>
+            <td data-th="Number of Respondents">84</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$160,001 - $180,000</td>
+            <td data-th="Number of Respondents">40</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$180,001 - $200,000</td>
+            <td data-th="Number of Respondents">11</td>
+          </tr>
+          <tr>
+            <td data-th="Income Range">$200,000 +</td>
+            <td data-th="Number of Respondents">3</td>
+          </tr>
+        </tbody>
+      </table>
+
+	  <p>Answer the following questions:</p>
+	  <ol type="a">
+	  <li>How many people in the survey did not answer the question (was not sure)?</li>
+	  <li>In 2019 the Tucson Unified Governing Board approved the starting salary of teachers to be $40,200. Based on the survey approximately what percent believe people making $40,000 or more has a middle-class income?</li>		  
+	  <li>Would it be appropriate to apply the results of the survey to teachers salary in TUSD?</li>
+	  <li>Can we construct a histogram based on the given table?</li>
+	  <li>Construct a bar graph based on the table.</li>
+	  <li>In 2019 the Tucson Unified Governing Board approved the starting salary of teachers to be $40,200. Based on the survey approximately what percent believe people making $40,000 or more has a middle-class income?</li>	  
+	  </ol>
+	
+  </li>	
+	
+	
+  <li>
+    <p>The height in feet of 25 trees is shown below (lowest to highest). Construct a stem and leaf plot and describe the distribution of tree heights.</p>
+	<p>25, 27, 33, 34, 34, 34, 35, 37, 37, 38, 39, 39, 39, 40, 41, 45, 46, 47, 49, 50, 50, 53, 53, 54, 54</p>  
+	  
+	 		<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>In the stem and leaf plot we can see we have a peak on the 3 stem which means we have more tree with heights in the 30 ft to 39 ft range. Very few trees were observed below 30 ft (only 2 in the 20 ft to 29 ft range)</p>
+ 
+	  	<table class="display-lg" width="50%"><caption>Tree Heights</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">2</td>
+					<td>5 7</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">3</td>
+					<td>3 4 4 4 5 7 7 8 9 9 9</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">4</td>
+					<td>0 1 5 6 7 9</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">5</td>
+					<td>0 0 3 3 4 4</td>	
+					</tr>					
+	</table>	
+	  			</div>	
+			</div>	
+  </li>
+  <li>
+    <p>The weights of newborn babies are listed below. Can you construct a stem and leaf plot to show the distribution of weights? If so, then construct the plot.</p>
+	<p>6.4, 8.6, 8.9, 8.1, 4.8, 8.4, 6.6, 7.8, 8.0, 6.5, 5.8, 6.9, 7.9, 7.6, 7.7, 6.7, 6.5, 6.0, 7.5, 7.7, 8.4, 7.3, 7.7, 7.0, 6.8, 8.1, 8, 10.1, 7.7, 8.2, 7.2, 7.6, 8.2, 6.4, 7.9, 6.2, 5.7, 6.4, 7.1, 5.1</p>  
+	  
+	 		<h5 class="js-expandmore">Answer</h5> 
+			<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>It would be appropriate as each weight value can be broken into two parts and we have more then one stem to show a distribution of the data. Break the data into two parts by taking the stem as the digits before the decimal point on each number and the leaf would be the value in the tenth place. For example the weight 7.2 would be broken into a stem of "7" and a leaf of "2".</p>
+ 
+	  	<table class="display-lg" width="50%"><caption>Newborn Weigts</caption>
+  					<thead>
+  					<tr>
+   					<th scope="col" style="text-align: right">Stem</th>
+   					<th scope="col">Leaf</th>
+  					</tr>
+  					</thead>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">3</td>
+					<td></td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">4</td>
+					<td>8</td>	
+					</tr>	
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">5</td>
+					<td>1 7 8</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">6</td>
+					<td>0 2 4 4 4 5 5 6 7 8 9</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">7</td>
+					<td>0 1 2 3 5 6 6 7 7 7 7 8 9 9</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">8</td>
+					<td>0 0 1 1 2 2 4 4 6 9</td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">9</td>
+					<td></td>	
+					</tr>
+  					<tr>
+   					<td style="border-right: 2px solid #cdd0d4; text-align: right">10</td>
+					<td>1</td>	
+					</tr>			
+			
+	</table>	
+	  			</div>	
+			</div>	
+  </li>	
+  <li>
+    <p>The historgram shown below is misleading. Explain why.</p>
+    <figure><img src="images/MisleadingAgeCar.PNG" width="491" height="234" alt="Vertical Axis represents number of people with equal spacing on the axis with labels 5, 30, 100, and 150. Horizontal Axis represent the age of cars where the first class is 2 or less, next is 3, then 4, 5, and last class is or more. All classes equally spaced."></figure>
+	  		<h5 class="js-expandmore">Answer</h5> 	
+	  		<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>In the histogram the vertical axis scale is inconsistent as the gap between tick marks are equal in visual distance, but the values change dramatically between them. The first gap has a length of 5, the second gap has a width of 25, the third gap has length of 70, and the fourth gap has width of 50. This means when looking at the brs the "or more" category may only look like half the height of either the 4 or 5 bar, but in actual values it is one fifth the amount (not the half we see visually). Same goes for comparision between all other bars for the histogram.</p>
+			</div>	
+			</div>	
+  </li>
+
+<li><p>An advertisement for Acme Investments displays the two graphs (below) to show the value of Acme’s product in comparison with the Other Guy’s product. Describe the potentially misleading visual effect of these comparison graphs. How can this be corrected?</p>
+<div class="side-by-side">
+<figure class="side-by-side-item"><img src="images/CNX_Stats_C01_M11_001_AcmeInvestments.jpg" alt="This is a line graph titled Acme Investments. The line graph shows a dramatic increase; neither the x-axis nor y-axis are labeled." width="300"/>
+</figure>
+<figure class="side-by-side-item"><img src="images/CNX_Stats_C01_M11_002_OtherGuyInvestments.jpg" width="300" alt="This is a line graph titled Other Guy's Investments. The line graph shows a modest increase; neither the x-axis nor y-axis are labeled."/>
+</figure>		
+</div>
+	  		<h5 class="js-expandmore">Answer</h5> 	
+	  		<div class="js-to_expand">
+			<div class="exerciseanswer">	
+			<p>The values on both the horizontal and vertical axis are missing. Without knowing the scale on each graph it is not possible to know if Acme truly had a higher value for the investment.</p>
+			</div>	
+			</div>		
+	
+</li>	
+	
+	
+</ol>
+
+
+
+</div>
+</div>	
+	<footer>
+  		<div >
+			<p class="text-center toggle-footnotes">[Show Footnotes]</p>
+			<div class="footnotes">
+      			<h2>Attribution:</h2>
+				  <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+				 <p>This page contains modified content from <a href="https://chem.libretexts.org/@go/page/7082" target="_blank" rel="noopener"> "Collecting Data" </a> by Foster et al., <a href="https://libretexts.org/">LibreTexts</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener"> CC BY-NC-SA </a>.  
+				</p>
+				<p>This page contains modified content from <a href="https://openstax.org/books/introductory-statistics@25.17/pages/1-introduction"> "OpenStax Introductory Satistics" </a> by Barbara Illowsky, Susan Dean. CC BY 4.0.  
+				</p>				
+				  <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+    		</div>
+  		</div>
+	</footer>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/shared/webdev/course-files/js/scripts.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
+<script type="text/javascript" src="../../jquery-accessible-hide-show-aria.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+
+
+</body>	
+</html>
