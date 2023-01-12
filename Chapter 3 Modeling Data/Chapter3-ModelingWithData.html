@@ -1,93 +1,94 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta name="generator" content="HTML Tidy, see www.w3.org" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Chapter 3 - Modeling Data with Statistics and Algebra</title>
-<link rel="stylesheet" type="text/css" href="/shared/webdev/course-files/css/themes/cards/styles.css">       
- <link rel="stylesheet" type="text/css" href="/shared/Templates/Template_Cards/css/custom.css">
-<link rel="stylesheet" href="../MAT142.css" type="text/css" />
-    </head> 
-   
-<body id="one-column" style="overflow-y: hidden;">
-<header class="header"><img src="../Images/banners/Chapter 3 Inference.jpg" alt="decorative image of graph" />
-	<div class="text-container">
-    <h1>Chapter 3 - Modeling Data with Statistics and Algebra</h1>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="./src/_utils/styles.css">
+<script type="text/javascript" src="./src/_utils/scripts.js" defer></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<title>Document</title>
+</head>
+<body>
+<section class="ereader-display">
+  <header>
+    <button type="button" id="light-dark-mode">Light/Dark </button>
+  </header>
+  <!-- START YOUR CONTENT--> 
+  <!--===================-->
+  <h1>Chapter 3 - Modeling Data with Statistics and Algebra</h1>
+  <div id="content-wrapper">
+    <div class="content-body">
+      <h2>Introduction</h2>
+      <p>Professionals often want to know how two or more numeric variables are related. For example, is there a relationship between the grade on the second math exam a student takes and the grade on the final exam? If there is a relationship, what is the relationship and how strong is it? Is there a relationship between the assets and taxes paid by individuals? </p>
+      <p>The type of data described in the examples is <strong>bivariate</strong> data — "bi" for two variables. In reality, statisticians use <strong>multivariate</strong> data, meaning many variables. In this chapter, you will be studying the simplest form of where there are only two variables and look at an algebraic and regression approach to describe the relationship. We will focus only on linear and exponential relationship. "Linear relationships" involves data that fits a line in two dimensions. "Exponential Relationships" involved data that fits a curve in two dimensions with particular property that two consecutive pairs of values one unit from each other have the same ratio.</p>
+      <hr />
+      <h2>Learning Objectives</h2>
+      <p>Below are the learning objectives for each section of the textbook. </p>
+      <p>Make sure to read each section carefully and take notes. You should also stop to work on the TryItNow problems when you reach them before moving on.</p>
+      <h3>Modeling with Data</h3>
+      <p><a href="3-1-Linear Algebra/3-1-Linear Algebra.html" target="_blank"><strong>3.1 Modeling Linear Relationships with Algebra</strong></a></p>
+      <ul>
+        <li>Identify elements in a linear model of the form
+          <math display="inline">
+            <mi>y</mi>
+            <mo>=</mo>
+            <mi>m</mi>
+            <mi>x</mi>
+            <mo>+</mo>
+            <mi>b</mi>
+          </math>
+        </li>
+        <li>Create a linear model with algebra between two quantitative variables</li>
+        <li>Graph a linear model</li>
+        <li>Solve application problems using a linear model created with algebra</li>
+      </ul>
+      <p><a href="3-2-Exponential Algebra/3-2-Exponential Algebra.html" target="_blank"><strong>3.2 Modeling Exponential Relationships with Algebra</strong></a></p>
+      <ul>
+        <li>Identify elements in an exponential model of the form
+          <math display="inline">
+            <mi>y</mi>
+            <mo>=</mo>
+            <mi>a</mi>
+            <mo stretchy="false">(</mo>
+            <msup>
+              <mi>b</mi>
+              <mi>x</mi>
+            </msup>
+            <mo stretchy="false">)</mo>
+          </math>
+        </li>
+        <li>Create an exponential model with algebra between two quantitative variables</li>
+        <li>Graph an exponential model</li>
+        <li>Solve application problems using an exponential model created with algebra</li>
+      </ul>
+      <p><a href="3-3-Linear Regression/3-3-Linear Regression.html" target="_blank"><strong>3.3 Modeling Linear Relationships with Regression</strong></a></p>
+      <ul>
+        <li>Create a Scatterplot</li>
+        <li>Calculate the correlation coefficient to describe the linear relationship between two quantitative variables</li>
+        <li>Create a linear regression model between two quantitative variables using a spreadsheet</li>
+        <li>Interpret a linear regression model in applications</li>
+      </ul>
+      <p><a href="3-4-Exponential Regression/3-4-Exponential Regression.html" target="_blank"><strong>3.4 Modeling Exponential Relationships with Regression</strong></a></p>
+      <ul>
+        <li>Create an exponential regression model between two quantitative variables using a spreadsheet</li>
+        <li>Interpret an exponential regression model in applications</li>
+      </ul>
+    </div>
   </div>
-</header>		
-<div id="content-wrapper">
-<div class="content-body">
-  <h2>Introduction</h2>
-    
-<p>Professionals often want to know how two or more numeric variables are related. For example, is there a relationship between the grade on the second math exam a student takes and the grade on the final exam? If there is a relationship, what is the relationship and how strong is it? Is there a relationship between the assets and taxes paid by individuals?  </p>
-
-<p>The type of data described in the examples is <strong>bivariate</strong> data — "bi" for two variables. In reality, statisticians use <strong>multivariate</strong> data, meaning many variables. In this chapter, you will be studying the simplest form of where there are only two variables and look at an algebraic and regression approach to describe the relationship. We will focus only on linear and exponential relationship. "Linear relationships" involves data that fits a line in two dimensions. "Exponential Relationships" involved data that fits a curve in two dimensions with particular property that two consecutive pairs of values one unit from each other have the same ratio.</p>   
-
-    <hr />
-        <h2>Learning Objectives</h2>
-    <p>Below are the learning objectives for each section of the textbook. </p>
-    <p>Make sure to read each section carefully and take notes. You should also stop to work on the TryItNow problems when you reach them before moving on.</p>
-    
-<h3>Modeling with Data</h3>
-        <p><a href="3-1-Linear Algebra/3-1-Linear Algebra.html" target="_blank"><strong>3.1 Modeling Linear Relationships with Algebra</strong></a></p>
-        <ul>
-          <li>Identify elements in a linear model of the form <math display="inline">
- <mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi>
-</math>
-</li>
-          <li>Create a linear model with algebra between two quantitative variables</li>
-          <li>Graph a linear model</li>            
-          <li>Solve application problems using a linear model created with algebra</li>              
-        </ul>
-         
-        <p><a href="3-2-Exponential Algebra/3-2-Exponential Algebra.html" target="_blank"><strong>3.2 Modeling Exponential Relationships with Algebra</strong></a></p>
-        <ul>
-          <li>Identify elements in an exponential model of the form <math display="inline">
- <mi>y</mi><mo>=</mo><mi>a</mi><mo stretchy="false">(</mo><msup>
-  <mi>b</mi>
-  <mi>x</mi>
- </msup>
- <mo stretchy="false">)</mo>
-</math>
-</li>
-          <li>Create an exponential model with algebra between two quantitative variables</li>
-          <li>Graph an exponential model</li>            
-          <li>Solve application problems using an exponential model created with algebra</li>     
-        </ul>
-         
-        <p><a href="3-3-Linear Regression/3-3-Linear Regression.html" target="_blank"><strong>3.3 Modeling Linear Relationships with Regression</strong></a></p>
-        
-        <ul>
-          <li>Create a Scatterplot</li>
-          <li>Calculate the correlation coefficient to describe the linear relationship between two quantitative variables</li>
-          <li>Create a linear regression model between two quantitative variables using a spreadsheet</li>
-          <li>Interpret a linear regression model in applications</li>              
-        </ul>
-        
-        <p><a href="3-4-Exponential Regression/3-4-Exponential Regression.html" target="_blank"><strong>3.4 Modeling Exponential Relationships with Regression</strong></a></p>
-        
-        <ul>
-          <li>Create an exponential regression model between two quantitative variables using a spreadsheet</li>
-          <li>Interpret an exponential regression model in applications</li>   
-        </ul>
-             
-    
-  </div>
-</div>
-	<footer>
-  		<div >
-			<p class="text-center toggle-footnotes">[Show Footnotes]</p>
-			<div class="footnotes">
-      			<h2>Attribution:</h2>
-				<p>This page contains modified content from <a href="https://openstax.org/books/introductory-statistics@25.17/pages/1-introduction"> "OpenStax Introductory Satistics" </a> by Barbara Illowsky, Susan Dean. CC BY 4.0.  
-				</p>
-				<p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
-    		</div>
-  		</div>
-</footer>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="/shared/webdev/course-files/js/scripts.js"></script>
-<script type="text/javascript" src="../custom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
-</body>	
+  <footer>
+    <div >
+      <p class="text-center toggle-footnotes">[Show Footnotes]</p>
+      <div class="footnotes">
+        <h2>Attribution:</h2>
+        <p>This page contains modified content from <a href="https://openstax.org/books/introductory-statistics@25.17/pages/1-introduction"> "OpenStax Introductory Satistics" </a> by Barbara Illowsky, Susan Dean. CC BY 4.0. </p>
+        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+      </div>
+    </div>
+  </footer>
+  <!--=================--> 
+  
+  <!-- END YOUR CONTENT--> 
+</section>
+</body>
 </html>
