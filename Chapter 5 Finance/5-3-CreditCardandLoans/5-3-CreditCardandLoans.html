@@ -1,0 +1,2481 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="../../src/_utils/styles.css">
+<script type="text/javascript" src="../../src/_utils/scripts.js" defer></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<title>5.3 Amortized Loans</title>
+</head>
+<body>
+<section class="ereader-display">
+  <header>
+    <button type="button" id="light-dark-mode">Light/Dark </button>
+  </header>
+  <!-- START YOUR CONTENT--> 
+  <!--===================-->
+  <h1>5.3 Amortized Loans</h1>
+  <h2>5.3 Amortized Loans</h2>
+  <p>Upon completion of this section, you should be able to</p>
+  <ul>
+    <li>Compute the monthly payment and interest costs for simple interest amortized loans.</li>
+    <li>Calculate the loan balance for an amortized loan.</li>
+    <li>Create an amortized loan schedule.</li>
+  </ul>
+  <h2>Amortized Loans</h2>
+  <p>In the last section, you learned about simple interest add-on loans where the total amount of interest is first computed on the principal for the entire term. That type of loan as mentioned is used for smaller to medium household purchases, but for larger purchases like cars and homes it is unlikely to be seen unless you have a poor credit score. In this section, you will learn about another type of installment loan called an amortized loan (also called a conventional loan).&nbsp; Examples include auto loans and home  mortgages.&nbsp; These techniques do not apply to payday loans, add-on loans, or other loan types where the interest is  calculated up front. Amortization is a process by which the principal of a loan is reduced over the course of an agreed-upon time period through a series of regular payments that go toward both the interest and a reduction of the principal.</p>
+  <div class="definition">
+    <h4>Amortized Loan Formula</h4>
+    <div class="side-by-side">
+      <div class="side-by-side-item">
+        <math display="block">
+          <mi>P</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mtext>pymt</mtext>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>&#x2212;</mo>
+                  <msup>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>1</mn>
+                          <mo>+</mo>
+                          <mfrac>
+                            <mi>r</mi>
+                            <mi>n</mi>
+                          </mfrac>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mo>&#x2212;</mo>
+                          <mi>n</mi>
+                          <mo>&#x22C5;</mo>
+                          <mi>t</mi>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                  </msup>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mi>r</mi>
+                    <mi>n</mi>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </math>
+      </div>
+      <div class="side-by-side-item">
+        <math display="block">
+          <mtext>pymt</mtext>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mi>P</mi>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mi>r</mi>
+                    <mi>n</mi>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>&#x2212;</mo>
+                  <msup>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>1</mn>
+                          <mo>+</mo>
+                          <mfrac>
+                            <mi>r</mi>
+                            <mi>n</mi>
+                          </mfrac>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mo>&#x2212;</mo>
+                          <mi>n</mi>
+                          <mo>&#x22C5;</mo>
+                          <mi>t</mi>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                  </msup>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </math>
+      </div>
+    </div>
+    <p><em><strong>P</strong></em> &nbsp;is the principal balance (how much is being borrowed).<br>
+      <em><strong>pymt</strong></em>&nbsp;is your loan payment (your monthly payment, annual payment, etc).<br>
+      <em><strong>r</strong></em> is the annual interest rate (in decimal form).<br>
+      <em><strong>n</strong></em> is the frequency of payments in a year.&nbsp; <br>
+      <em><strong>t</strong></em> is the length of the loan, in years.</p>
+  </div>
+  <div class="plainblock">
+    <h4>When do you use this</h4>
+    <p>The amortized loan formula assumes that you make loan payments <u>on a regular schedule (every  month, year, quarter, etc.)</u> and are paying interest on the loan that reduces the amount of principal the next payment depends on to calculate the interest owed.</p>
+    <p>The first formula allows you to calculate the size of loan you can have based on a given payment amount, rate, time, and frequency of payments. The other formula allows you to find the payments needed for a given loan principal amount with a given rate, time, and frequency of payments.</p>
+  </div>
+  <div class="Example">
+    <div class="ExampleTitle">
+      <h3>Example 1</h3>
+      <p>You can afford $200 per month as a car payment.&nbsp; If you can get an auto loan at 3% interest  for 60 months (5 years), how expensive of a car can you afford?&nbsp; In other words, what amount loan can you pay  off with $200 per month?</p>
+    </div>
+    <p>In this example, </p>
+    <p>
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mtable columnalign="left">
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>pymt</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>200</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>the&#x00A0;monthly&#x00A0;loan&#x00A0;payment</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>r</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>0.03</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>3%&#x00A0;annual&#x00A0;rate</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>n</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>12</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;we're&#x00A0;doing&#x00A0;monthly&#x00A0;payments</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>t</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>5</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;we're&#x00A0;making&#x00A0;monthly&#x00A0;payments&#x00A0;for&#x00A0;5&#x00A0;years</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </math>
+    </p>
+    <p>We&rsquo;re looking for <em>P</em>, the starting principal amount of the loan.</p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mi>P</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mtext>200</mtext>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mrow>
+                                <mn>0.03</mn>
+                              </mrow>
+                              <mrow>
+                                <mn>12</mn>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mn>12</mn>
+                            <mo>&#x22C5;</mo>
+                            <mn>5</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>0.03</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>P</mi>
+            <mo>&#x2248;</mo>
+            <mi>&#x0024;</mi>
+            <mn>11</mn>
+            <mo>,</mo>
+            <mn>130.47</mn>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p>You can afford a $11,130 loan.</p>
+    <p>You will pay a total of $12,000 ($200 per month for 60 months) to the loan company.&nbsp; The difference between the amount you pay and the amount of the loan is the <u>interest paid</u>.&nbsp; In this case, you&rsquo;re paying  $12,000-$11,130&nbsp;=&nbsp;$870 interest total.</p>
+  </div>
+  <p>Now in the above example we did the complete evaluation of the loan formula all at once to avoid any rounding errors introduced while trying to evaluate the principal amount. If you had to do the calculations in steps instead and rounded to four places the principal amount you could borrow would be slightly off due to rounding errors. See below for the result of rounding during the steps.</p>
+  <math display="block">
+    <mtable columnalign="left">
+      <mtr>
+        <mtd>
+          <mi>P</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mtext>200</mtext>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>&#x2212;</mo>
+                  <msup>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>1</mn>
+                          <mo>+</mo>
+                          <mfrac>
+                            <mrow>
+                              <mn>0.03</mn>
+                            </mrow>
+                            <mrow>
+                              <mn>12</mn>
+                            </mrow>
+                          </mfrac>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mo>&#x2212;</mo>
+                          <mn>12</mn>
+                          <mo>&#x22C5;</mo>
+                          <mn>5</mn>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                  </msup>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mn>0.03</mn>
+                    </mrow>
+                    <mrow>
+                      <mn>12</mn>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>P</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mtext>200</mtext>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>&#x2212;</mo>
+                  <msup>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>1</mn>
+                          <mo>+</mo>
+                          <mn>0.0025</mn>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mrow>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mo>&#x2212;</mo>
+                          <mn>60</mn>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                  </msup>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.0025</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>P</mi>
+          <mo>&#x2248;</mo>
+          <mfrac>
+            <mrow>
+              <mtext>200</mtext>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>&#x2212;</mo>
+                  <mn>0.8609</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.0025</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>P</mi>
+          <mo>&#x2248;</mo>
+          <mfrac>
+            <mrow>
+              <mtext>200</mtext>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.1391</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.0025</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>P</mi>
+          <mo>&#x2248;</mo>
+          <mfrac>
+            <mrow>
+              <mn>27.82</mn>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.0025</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>P</mi>
+          <mo>&#x2248;</mo>
+          <mi>&#x0024;</mi>
+          <mn>11</mn>
+          <mo>,</mo>
+          <mn>128</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+  </math>
+  <p>A difference of about $2 dollars, but would be amplified further if we had rounded only to three or two decimal places in the work. To avoid the rounding errors it is best to do the full evaluation of a formula at once on a calculator. When that is not possible it is recommended you round values to 8 decimal places until the very end to reduce the amount of rounding error that may end up in your final answer.</p>
+  <div class="Example">
+    <div class="ExampleTitle">
+      <h3>Example 2</h3>
+      <p>You want to take out a $140,000 mortgage (amortized loan).&nbsp; The interest rate on the loan is 6%, and the  loan is for 30 years.&nbsp; How much will your monthly payments be?</p>
+    </div>
+    <p>In this example we&rsquo;re looking for the amount of the payment, <em>pymt</em>.</p>
+    <p>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mtable columnalign="left">
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mrow>
+                  <mi>P</mi>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>140</mn>
+                  <mo>,</mo>
+                  <mn>000</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>the&#x00A0;starting&#x00A0;loan&#x00A0;amount</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>r</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>0.06</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>6%&#x00A0;annual&#x00A0;rate</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>n</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>12</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;we're&#x00A0;doing&#x00A0;monthly&#x00A0;payments</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>t</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>30</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;we're&#x00A0;making&#x00A0;monthly&#x00A0;payments&#x00A0;for&#x00A0;30&#x00A0;years</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </math>
+    </p>
+    <p>Use the formula where pymt was already solved for</p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mn>140</mn>
+                <mo>,</mo>
+                <mn>000</mn>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>0.06</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mrow>
+                                <mn>0.06</mn>
+                              </mrow>
+                              <mrow>
+                                <mn>12</mn>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mn>12</mn>
+                            <mo>&#x22C5;</mo>
+                            <mn>30</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>&#x2248;</mo>
+            <mi>&#x0024;</mi>
+            <mn>839.37</mn>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p>You will make payments of $839.37 per month for 30  years.&nbsp; </p>
+    <p>If you add all the payments up for 30 years you are paying a total of $302,173.20 to the loan company. This means the cost of the loan is
+      <math display="inline">
+        <mi>&#x0024;</mi>
+        <mn>302</mn>
+        <mo>,</mo>
+        <mn>173.20</mn>
+        <mo>&#x00A0;</mo>
+        <mo>&#x2212;</mo>
+        <mi>&#x0024;</mi>
+        <mn>140</mn>
+        <mo>,</mo>
+        <mn>000</mn>
+        <mo>&#x00A0;</mo>
+        <mo>=</mo>
+        <mi>&#x0024;</mi>
+        <mn>162</mn>
+        <mo>,</mo>
+        <mn>173.20</mn>
+      </math>
+      (or we can say the interest charged on the loan was $163,173.20).</p>
+  </div>
+  <div class="tryitnow">
+    <h5>Try it Now 1</h5>
+    <p>Lucía bought a used car for $8,500 (including fees and taxes). She needed a loan for the purchase and will be financing the whole amount. The bank offers an amortized loan with an annual rate of 6.9% with monthly payments over the next 3 years. Calculate the monthly payments, the total cost of the car purchase, and the total amount of interest paid.</p>
+    <h5 class="js-expandmore">Hint 1</h5>
+    <div class="js-to_expand">
+      <p>In this scenario we are finding the amount of payments on the loan for Lucía. Pick the second loan formula and plug in the values that were given.</p>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mtable columnalign="left">
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mrow>
+                  <mi>P</mi>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>8</mn>
+                  <mo>,</mo>
+                  <mn>500</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>the&#x00A0;starting&#x00A0;loan&#x00A0;amount</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>r</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>0.069</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>6.9%&#x00A0;annual&#x00A0;rate</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>n</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>12</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;we're&#x00A0;doing&#x00A0;monthly&#x00A0;payments</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>t</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>3</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;we're&#x00A0;taking&#x00A0;2&#x00A0;years&#x00A0;to&#x00A0;repay</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </math>
+    </div>
+    <h5 class="js-expandmore">Answer</h5>
+    <div class="js-to_expand">
+      <p>Start with solving for the payment amount, pymt.</p>
+      <math display="block">
+        <mtable columnalign="left">
+          <mtr>
+            <mtd>
+              <mtext>pymt</mtext>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>P</mi>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mi>r</mi>
+                        <mi>n</mi>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mi>r</mi>
+                                <mi>n</mi>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mi>n</mi>
+                              <mo>&#x22C5;</mo>
+                              <mi>t</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mtext>pymt</mtext>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mn>8500</mn>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mrow>
+                          <mn>0.069</mn>
+                        </mrow>
+                        <mrow>
+                          <mn>12</mn>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mrow>
+                                  <mn>0.069</mn>
+                                </mrow>
+                                <mrow>
+                                  <mn>12</mn>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mn>12</mn>
+                              <mo>&#x22C5;</mo>
+                              <mn>3</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mtext>pymt</mtext>
+              <mo>=</mo>
+              <mi>&#x0024;</mi>
+              <mn>262.07</mn>
+            </mtd>
+          </mtr>
+        </mtable>
+      </math>
+      <p>With the payments being $262.07 each month for the next three years we have a total cost for the purchase of the car as
+        <math display="inline">
+          <mi>&#x0024;</mi>
+          <mn>262.07</mn>
+          <mo>&#x22C5;</mo>
+          <mn>12</mn>
+          <mo>&#x22C5;</mo>
+          <mn>3</mn>
+          <mo>=</mo>
+          <mi>&#x0024;</mi>
+          <mn>9</mn>
+          <mo>,</mo>
+          <mn>434.52</mn>
+        </math>
+        . The interest is then
+        <math display="inline">
+          <mi>&#x0024;</mi>
+          <mn>9</mn>
+          <mo>,</mo>
+          <mn>434.52</mn>
+          <mo>&#x2212;</mo>
+          <mi>&#x0024;</mi>
+          <mn>8</mn>
+          <mo>,</mo>
+          <mn>500</mn>
+          <mo>=</mo>
+          <mi>&#x0024;</mi>
+          <mn>934.52</mn>
+        </math>
+        . </p>
+    </div>
+  </div>
+  <h2>Remaining Loan Balance</h2>
+  <p>With loans, it is often desirable to determine what the remaining loan balance will be after some number of years.&nbsp; For example, if you purchase a home and plan to sell it in five years, you might want to know how much of the loan balance you will have paid off and how much you have to pay from the sale.</p>
+  <p>To determine the remaining loan balance after some number of years, we first need to know the loan payments, if we don&rsquo;t already know  them.&nbsp; Remember that only a portion of  your loan payments go towards the loan balance; a portion is going to go  towards interest.&nbsp; For example, if your payments were $1,000 a month, after a year you will <em>not</em> have paid off $12,000 of the loan balance.</p>
+  <p>To determine the remaining loan balance, we will answer &ldquo;how much of a loan will these loan payments be able to pay off in the remaining time on the loan?&rdquo;</p>
+  <div class="plainblock">
+    <h4>How to determine the remaining balance on an amortized loan</h4>
+    <ol>
+      <li>
+        <p>Determine the time remaining on the term of the loan. For example, if we want the balance on a loan after five years for a 30 year loan, then the time remaining is
+          <math display="inline">
+            <mn>30</mn>
+            <mo>&#x2212;</mo>
+            <mn>5</mn>
+            <mo>=</mo>
+            <mn>25</mn>
+          </math>
+          or 25 years. </p>
+      </li>
+      <li>
+        <p>Find the principal balance of a loan with the given payments, rate, and frequency of the original loan, but use the time remaining from step 1. This principal balance is the amount remaining on the loan.</p>
+      </li>
+    </ol>
+  </div>
+  <div class="Example">
+    <div class="ExampleTitle">
+      <h3>Example 3</h3>
+      <p>Going back to the second example. You take out a loan with an initial principal of $140,000. The interest rate on the loan is 6% with a term of 30 years. The monthly payments were found to be $839.37. Determine the balance of the loan at 5, 10, 15, 20, and 25 years into the loan. Was half of the balance paid at the half way mark of 15 years?</p>
+    </div>
+    <p>In the table below the first column time in years represents the amount of time after the loan has begun. When looking in the formula in the second column we see the time remaining is used to find the principal amount on a loan with the given time remaining. This will represent the balance of the loan. For instance 5 years after the loan was started there was 25 years remaining (left for the loan). The balance of the loan after 5 years was found to be $130,275.99.</p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">Time in Years</th>
+          <th scope="col">Balance of Loan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><math display="block">
+              <mn>5</mn>
+            </math></td>
+          <td><math display="block">
+              <mfrac>
+                <mrow>
+                  <mtext>839</mtext>
+                  <mtext>.37</mtext>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mrow>
+                                  <mn>0.06</mn>
+                                </mrow>
+                                <mrow>
+                                  <mn>12</mn>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mn>12</mn>
+                              <mo>&#x22C5;</mo>
+                              <mn>25</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mrow>
+                          <mn>0.06</mn>
+                        </mrow>
+                        <mrow>
+                          <mn>12</mn>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
+              <mi>&#x0024;</mi>
+              <mn>130</mn>
+              <mo>,</mo>
+              <mn>275.99</mn>
+            </math></td>
+        </tr>
+        <tr>
+          <td><math display="block">
+              <mn>10</mn>
+            </math></td>
+          <td><math display="block">
+              <mfrac>
+                <mrow>
+                  <mtext>839</mtext>
+                  <mtext>.37</mtext>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mrow>
+                                  <mn>0.06</mn>
+                                </mrow>
+                                <mrow>
+                                  <mn>12</mn>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mn>12</mn>
+                              <mo>&#x22C5;</mo>
+                              <mn>20</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mrow>
+                          <mn>0.06</mn>
+                        </mrow>
+                        <mrow>
+                          <mn>12</mn>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
+              <mi>&#x0024;</mi>
+              <mn>117</mn>
+              <mo>,</mo>
+              <mn>159.91</mn>
+            </math></td>
+        </tr>
+        <tr>
+          <td><math display="block">
+              <mn>15</mn>
+            </math></td>
+          <td><math display="block">
+              <mfrac>
+                <mrow>
+                  <mtext>839</mtext>
+                  <mtext>.37</mtext>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mrow>
+                                  <mn>0.06</mn>
+                                </mrow>
+                                <mrow>
+                                  <mn>12</mn>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mn>12</mn>
+                              <mo>&#x22C5;</mo>
+                              <mn>15</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mrow>
+                          <mn>0.06</mn>
+                        </mrow>
+                        <mrow>
+                          <mn>12</mn>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
+              <mi>&#x0024;</mi>
+              <mn>99</mn>
+              <mo>,</mo>
+              <mn>468.30</mn>
+            </math></td>
+        </tr>
+        <tr>
+          <td><math display="block">
+              <mn>20</mn>
+            </math></td>
+          <td><math display="block">
+              <mfrac>
+                <mrow>
+                  <mtext>839</mtext>
+                  <mtext>.37</mtext>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mrow>
+                                  <mn>0.06</mn>
+                                </mrow>
+                                <mrow>
+                                  <mn>12</mn>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mn>12</mn>
+                              <mo>&#x22C5;</mo>
+                              <mn>10</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mrow>
+                          <mn>0.06</mn>
+                        </mrow>
+                        <mrow>
+                          <mn>12</mn>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
+              <mi>&#x0024;</mi>
+              <mn>75</mn>
+              <mo>,</mo>
+              <mn>609.95</mn>
+            </math></td>
+        </tr>
+        <tr>
+          <td><math display="block">
+              <mn>25</mn>
+            </math></td>
+          <td><math display="block">
+              <mfrac>
+                <mrow>
+                  <mtext>839</mtext>
+                  <mtext>.37</mtext>
+                  <mo>&#x22C5;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>&#x2212;</mo>
+                      <msup>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <mfrac>
+                                <mrow>
+                                  <mn>0.06</mn>
+                                </mrow>
+                                <mrow>
+                                  <mn>12</mn>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                        <mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mo>&#x2212;</mo>
+                              <mn>12</mn>
+                              <mo>&#x22C5;</mo>
+                              <mn>5</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </msup>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mfrac>
+                        <mrow>
+                          <mn>0.06</mn>
+                        </mrow>
+                        <mrow>
+                          <mn>12</mn>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
+              <mi>&#x0024;</mi>
+              <mn>43416.88</mn>
+            </math></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Looking at the table we see that after half the time for the term of the loan has passed (15 years) there is still more than half of the balance remaining. We don't actually see the balance dip below half ($70,000) until after 20 years has passed.</p>
+    <p>If we plot the data for the balance of the loan after a given number of years we get the graph as shown below. Notice how slowly the balance is reduced at the beginning of the loan term, but quickly accelerates to zero as you get closer to the end of the term.</p>
+    <div class="side-by-side">
+      <figure>
+        <figcaption>Graph produced on Desmos. <a href="https://www.desmos.com/calculator/a59dzvuyot" target="_blank">Go to Desmos to explore this data.</a></figcaption>
+        <iframe src="https://www.desmos.com/calculator/a59dzvuyot?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder="0"></iframe>
+      </figure>
+    </div>
+  </div>
+  <p>Often times answering remaining balance questions requires two steps:<br>
+    1) Calculating the monthly payments on the loan<br>
+    2) Calculating the remaining loan balance based on the <em>remaining time</em> on the loan</p>
+  <div class="Example">
+    <div class="ExampleTitle">
+      <h3>Example 4</h3>
+      <p>A couple purchases a home with a $180,000 mortgage at 4%  for 30 years with monthly payments.&nbsp; What  will the remaining balance on their mortgage be after 5 years?</p>
+    </div>
+    <p>First we will calculate their monthly payments.&nbsp; <br>
+      We&rsquo;re looking for <em>d</em>.</p>
+    <p>
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mtable columnalign="left">
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mrow>
+                  <mi>P</mi>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>180</mn>
+                  <mo>,</mo>
+                  <mn>000</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>the&#x00A0;starting&#x00A0;loan&#x00A0;amount</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>r</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>0.04</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>4%&#x00A0;annual&#x00A0;rate</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>n</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>12</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;they're&#x00A0;paying&#x00A0;monthly</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>t</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>30</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;they're&#x00A0;making&#x00A0;monthly&#x00A0;payments&#x00A0;for&#x00A0;30&#x00A0;more&#x00A0;years</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </math>
+    </p>
+    <p>We first solve for <em>pymt</em> as we need the amount of the payments made on the loan to determine the balance after five years.</p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mi>P</mi>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mi>r</mi>
+                      <mi>n</mi>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mi>r</mi>
+                              <mi>n</mi>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mi>n</mi>
+                            <mo>&#x22C5;</mo>
+                            <mi>t</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mn>180000</mn>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>0.04</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mrow>
+                                <mn>0.04</mn>
+                              </mrow>
+                              <mrow>
+                                <mn>12</mn>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mn>12</mn>
+                            <mo>&#x22C5;</mo>
+                            <mn>30</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>=</mo>
+            <mi>&#x0024;</mi>
+            <mn>859.35</mn>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p>Now that we know the monthly payments, we can determine  the remaining balance after 5 years. We want the remaining balance after 5 years, when 25 years will be remaining on the loan, so we calculate the loan balance that will be paid off with the monthly payments of $859.35 over those 25 years.</p>
+    <p>
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mtable columnalign="left">
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>pymt</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>859.35</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>the&#x00A0;monthly&#x00A0;loan&#x00A0;payment&#x00A0;we&#x00A0;calculated&#x00A0;above</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>r</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>0.04</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>4%&#x00A0;annual&#x00A0;rate</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>n</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>12</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;they're&#x00A0;paying&#x00A0;monthly</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr columnalign="left">
+              <mtd columnalign="left">
+                <mi>t</mi>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mo>=</mo>
+                  <mn>25</mn>
+                </mrow>
+              </mtd>
+              <mtd columnalign="left">
+                <mrow>
+                  <mtext>since&#x00A0;they'd&#x00A0;be&#x00A0;making&#x00A0;monthly&#x00A0;payments&#x00A0;for&#x00A0;25&#x00A0;more&#x00A0;years</mtext>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </math>
+    </p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mi>P</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mtext>pymt</mtext>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mi>r</mi>
+                              <mi>n</mi>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mi>n</mi>
+                            <mo>&#x22C5;</mo>
+                            <mi>t</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mi>r</mi>
+                      <mi>n</mi>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>P</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mtext>859</mtext>
+                <mtext>.35</mtext>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mrow>
+                                <mn>0.04</mn>
+                              </mrow>
+                              <mrow>
+                                <mn>12</mn>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mn>12</mn>
+                            <mo>&#x22C5;</mo>
+                            <mn>25</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>0.04</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>P</mi>
+            <mo>&#x2248;</mo>
+            <mi>&#x0024;</mi>
+            <mn>162</mn>
+            <mo>,</mo>
+            <mn>805.99</mn>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p>The loan balance after 5 years, with 25 years remaining on  the loan, will be $162,805.99</p>
+    <p>Over that 5 years, the couple has paid off
+      <math display="inline">
+        <mi>&#x0024;</mi>
+        <mn>180</mn>
+        <mo>,</mo>
+        <mn>000</mn>
+        <mo>&#x2212;</mo>
+        <mi>&#x0024;</mi>
+        <mn>162</mn>
+        <mo>,</mo>
+        <mn>805.99</mn>
+        <mo>=</mo>
+        <mi>&#x0024;</mi>
+        <mn>17</mn>
+        <mo>,</mo>
+        <mn>194.01</mn>
+      </math>
+      of the loan balance.&nbsp;  They have paid a total of $859.35 a month for 5 years (60 months), for a  total of $51,561.00, so
+      <math display="inline">
+        <mi>&#x0024;</mi>
+        <mn>51561.00</mn>
+        <mo>&#x2212;</mo>
+        <mi>&#x0024;</mi>
+        <mn>17</mn>
+        <mo>,</mo>
+        <mn>194.01</mn>
+        <mo>=</mo>
+        <mi>&#x0024;</mi>
+        <mn>34</mn>
+        <mo>,</mo>
+        <mn>366.99</mn>
+      </math>
+      of what they have paid so far has been interest.</p>
+  </div>
+  <h2>Amortized Loan Schedule</h2>
+  <p>To better understand how the principal is paid down on an amortized loan we can build an amortization schedule for a loan. An amortization schedule is a table that lists all payments on a loan, splits them into the portion devoted to interest and the portion that is applied to repay principal, and calculates the outstanding balance on the loan after each payment is made.</p>
+  <div class="definition">
+    <h4>Amortization Schedule</h4>
+    <p>The Amortization schedule is a table for which each payment is broken down into the payment amount, interest paid in the payment, the amount of the payment to pay down the principal, and the new balance. An additional column can be added for extra payments as well. The table below shows the titles for each column and the calculation done for each cell on an amortized loan paid monthly with principal <em>P</em>, annual rate <em>r</em>, time <em>t</em>, and payment <em>pymt</em>. Let <em>B</em> the balance from previous payment or the principal if it is the first payment.</p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">Payment #</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Interest</th>
+          <th scope="col">Principal Paid</th>
+          <th scope="col">Extra Payment</th>
+          <th scope="col">Balance After Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-th="Payment #">1</td>
+          <td data-th="Payment">pymt</td>
+          <td data-th="Interest"><math display="inline">
+              <mi>P</mi>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mi>r</mi>
+                    <mrow>
+                      <mn>12</mn>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </math></td>
+          <td data-th="Principal Paid">pymt minus interest</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">B = P minus (principal plus extra payment)</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">2</td>
+          <td data-th="Payment">pymt</td>
+          <td data-th="Interest"><math display="inline">
+              <mi>B</mi>
+              <mo>&#x22C5;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mi>r</mi>
+                    <mrow>
+                      <mn>12</mn>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </math></td>
+          <td data-th="Principal Paid">pymt minus interest</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">P minus (principal plus extra payment)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The table would continue until you reach the last payment for the given amount of time for the loan.</p>
+  </div>
+  <div class="Example">
+    <div class="ExampleTitle">
+      <h3>Example 5</h3>
+      <p>An amount of $500 is borrowed with an amortized loan for 6 months at a rate of 12%. This loan would have a payment of $86.27. Make an amortization schedule showing the monthly payment, the monthly interest on the outstanding balance, the portion of the payment contributing toward reducing the debt, and the outstanding balance.</p>
+    </div>
+    <p>With the first payment we use the entire principal to determine the amount of interest paid from the payment</p>
+    <math display="block">
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mtext>principal</mtext>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mtext>monthly&#x00A0;interest&#x00A0;rate</mtext>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mo>=</mo>
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mn>500</mn>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mn>0.12</mn>
+            </mrow>
+            <mrow>
+              <mn>12</mn>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mo>=</mo>
+      <mi>&#x0024;</mi>
+      <mn>5</mn>
+    </math>
+    <p>This means, the first month, out of the $86.27 payment, $5 goes toward the interest and the remaining $81.27 toward the principal (or balance of the loan) leaving a new balance of
+      <math display="inline">
+        <mi>&#x0024;</mi>
+        <mn>500</mn>
+        <mo>&#x2212;</mo>
+        <mi>&#x0024;</mi>
+        <mn>81.27</mn>
+        <mo>=</mo>
+        <mi>&#x0024;</mi>
+        <mn>418.73</mn>
+      </math>
+      .</p>
+    <p>Similarly, the second month, the outstanding balance is $418.73, and the monthly interest on the outstanding balance is
+      <math display="inline">
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mn>418.73</mn>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mn>0.12</mn>
+              </mrow>
+              <mrow>
+                <mn>12</mn>
+              </mrow>
+            </mfrac>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mi>&#x0024;</mi>
+        <mn>4.19</mn>
+      </math>
+      . Again, out of the $86.27 payment, $4.19 goes toward the interest and the remaining $82.08 toward the balance leaving a new balance of
+      <math display="inline">
+        <mi>&#x0024;</mi>
+        <mn>418.73</mn>
+        <mo>&#x2212;</mo>
+        <mi>&#x0024;</mi>
+        <mn>82.08</mn>
+        <mo>=</mo>
+        <mi>&#x0024;</mi>
+        <mn>336.65</mn>
+      </math>
+      . The process continues in the table below.</p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">Payment #</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Interest</th>
+          <th scope="col">Principal Paid</th>
+          <th scope="col">Extra Payment</th>
+          <th scope="col">Balance After Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-th="Payment #">1</td>
+          <td data-th="Payment">$86.27</td>
+          <td data-th="Interest">$5</td>
+          <td data-th="Principal Paid">$81.27</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$418.73</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">2</td>
+          <td data-th="Payment">$86.27</td>
+          <td data-th="Interest">$4.19</td>
+          <td data-th="Principal Paid">$82.08</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$336.65</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">3</td>
+          <td data-th="Payment">$86.27</td>
+          <td data-th="Interest">$3.37</td>
+          <td data-th="Principal Paid">$82.90</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$253.75</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">4</td>
+          <td data-th="Payment">$86.27</td>
+          <td data-th="Interest">$2.54</td>
+          <td data-th="Principal Paid">$83.73</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$170.02</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">5</td>
+          <td data-th="Payment">$86.27</td>
+          <td data-th="Interest">$1.70</td>
+          <td data-th="Principal Paid">$84.57</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$85.45</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">6</td>
+          <td data-th="Payment">$86.27</td>
+          <td data-th="Interest">$0.85</td>
+          <td data-th="Principal Paid">$85.42</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$0.03</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that the last balance of 3 cents is due to error in rounding off. This round off value is typically added to the last payment.</p>
+  </div>
+  <p>An amortization schedule is usually lengthy and tedious to calculate by hand. For example, an amortization schedule for a 30 year mortgage loan with monthly payments would have
+    <math display="inline">
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mn>12</mn>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mn>30</mn>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mo>=</mo>
+      <mn>360</mn>
+    </math>
+    rows of calculations in the amortization schedule table. A car loan with 5 years of monthly payments would have
+    <math display="inline">
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mn>12</mn>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mo>(</mo>
+        <mrow>
+          <mn>5</mn>
+        </mrow>
+        <mo>)</mo>
+      </mrow>
+      <mo>=</mo>
+      <mn>60</mn>
+    </math>
+    rows of calculations in the amortization schedule table. However it would be straightforward to use a spreadsheet application on a computer to do these repetitive calculations by inputting and copying formulas for the calculations into the cells.</p>
+  <div class="Example">
+    <div class="ExampleTitle">
+      <h3>Example 6</h3>
+      <p>Abigail purchases a home for $160,000 and the loan is amortized over 30 years at an interest rate of 4.4%. Complete an amortized loan schedule in a spread sheet and answer the following questions.</p>
+      <ol type="a">
+        <li>
+          <p>Find the balance after the 100th payment.</p>
+        </li>
+        <li>
+          <p>Find the balance owed after 20 years</p>
+        </li>
+        <li>
+          <p>Determine the cost of the loan (interest).</p>
+        </li>
+        <li>
+          <p>If an extra $200 a month is paid towards the balance find the new number of payments and the total cost of the loan.</p>
+        </li>
+        <li>
+          <p>If an extra $400 a month is paid towards the balance find the new number of payments and the total cost of the loan.</p>
+        </li>
+      </ol>
+    </div>
+    <p>To complete the amortization schedule we need to start by finding the monthly payments</p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mn>160</mn>
+                <mo>,</mo>
+                <mn>000</mn>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>0.044</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mfrac>
+                              <mrow>
+                                <mn>0.044</mn>
+                              </mrow>
+                              <mrow>
+                                <mn>12</mn>
+                              </mrow>
+                            </mfrac>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mo>&#x2212;</mo>
+                            <mn>12</mn>
+                            <mo>&#x22C5;</mo>
+                            <mn>30</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mtext>pymt</mtext>
+            <mo>&#x2248;</mo>
+            <mi>&#x0024;</mi>
+            <mn>801.22</mn>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p>Below represents the first three payments in the amortization schedule. <a href="https://docs.google.com/spreadsheets/d/12B7iB-sN2AyBbeRqU6yQbrLRgnOnS1PIyul5bcEopL4/edit?usp=sharing" target="_blank">View the full schedule in Google Sheets</a>.</p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">Payment #</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Interest</th>
+          <th scope="col">Principal Paid</th>
+          <th scope="col">Extra Payment</th>
+          <th scope="col">Balance After Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-th="Payment #">1</td>
+          <td data-th="Payment">$801.22</td>
+          <td data-th="Interest">$584.30</td>
+          <td data-th="Principal Paid">$216.92</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$159,137.05</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">2</td>
+          <td data-th="Payment">$801.22</td>
+          <td data-th="Interest">$583.50</td>
+          <td data-th="Principal Paid">$217.72</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$158,919.34</td>
+        </tr>
+        <tr>
+          <td data-th="Payment #">3</td>
+          <td data-th="Payment">$801.22</td>
+          <td data-th="Interest">$582.70</td>
+          <td data-th="Principal Paid">$218.52</td>
+          <td data-th="Extra Payment"></td>
+          <td data-th="Balance After Payment">$158,700.82</td>
+        </tr>
+      </tbody>
+    </table>
+    <ol type="a">
+      <li>
+        <p>From the schedule we see the balance after the 100th payment is $134,139.52.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <thead>
+            <tr>
+              <th scope="col">Payment #</th>
+              <th scope="col">Payment</th>
+              <th scope="col">Interest</th>
+              <th scope="col">Principal Paid</th>
+              <th scope="col">Extra Payment</th>
+              <th scope="col">Balance After Payment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Payment #">100</td>
+              <td data-th="Payment">$801.22</td>
+              <td data-th="Interest">$492.98</td>
+              <td data-th="Principal Paid">$308.24</td>
+              <td data-th="Extra Payment"></td>
+              <td data-th="Balance After Payment">$134,139.52</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>After 20 years is the same as after the 20*12=240th payment. This balance is $77,668.70</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <thead>
+            <tr>
+              <th scope="col">Payment #</th>
+              <th scope="col">Payment</th>
+              <th scope="col">Interest</th>
+              <th scope="col">Principal Paid</th>
+              <th scope="col">Extra Payment</th>
+              <th scope="col">Balance After Payment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Payment #">240</td>
+              <td data-th="Payment">$801.22</td>
+              <td data-th="Interest">$286.67</td>
+              <td data-th="Principal Paid">$514.55</td>
+              <td data-th="Extra Payment"></td>
+              <td data-th="Balance After Payment">$77,668.70</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>The cost of the loan can be found by adding up all the interest payments in the schedule. This total was found to be $128,437.30 when adding the interest payments found in the google sheets document. It will be slightly different due to rounding from taking the sum of all payments and subtracting the principal of the loan (that value would be $128.439.20).</p>
+      </li>
+      <li>
+        <p>In the second tab of the Google Sheets file we can see the extra $200 per month added to each payment that goes towards reducing the balance in addition to the principal portion of a payment. The loan would now finish at the 241 payment as that is where the balance is now a negative value. This is 20 years plus 1 month. The cost of the loan is found by adding all the interest payments and we find the cost is $81,218.</p>
+        <p>By adding an extra $200 per month for each payment the borrower pays approximately $47,000 less in interest over the life of the loan.</p>
+      </li>
+      <li>
+        <p>In the third tab of the document we see what happens when an extra $400 is applied each month. There is a total of 184 payments yielding a cost for the loan of $59,963.</p>
+      </li>
+    </ol>
+  </div>
+  TryItNow - 5 year car loan. 2nd part what happens if you pay double?
+  <h2>Exercises:</h2>
+  <ol>
+    <li>
+      <p>You can afford a $700 per month mortgage payment.&nbsp; You&rsquo;ve found a 30 year loan with an annual rate of 5% paid monthly.&nbsp; </p>
+      <ol start="1" type="a">
+        <li>
+          <p>How big of a loan can you afford?</p>
+        </li>
+        <li>
+          <p>How much total money will you pay the loan company?</p>
+        </li>
+        <li>
+          <p>How much of that money is interest?</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>Marie can afford a $250 per month car payment. She&rsquo;s found a 5 year loan with an annual rate of 7% paid monthly.</p>
+      <ol start="1" type="a">
+        <li>
+          <p>How expensive of a car can she afford?</p>
+        </li>
+        <li>
+          <p>How much total money will she pay the loan company?</p>
+        </li>
+        <li>
+          <p>How much of that money is interest?</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>You want to buy a $25,000 car. The company is offering a loan with a 2% annual rate paid monthly for 48 months (4 years). What will your monthly payments be?</p>
+    </li>
+    <li>
+      <p>You decide finance a $12,000 car with an annual rate of 3% paid monthly for 4 years. What will your monthly payments be? How much interest will you pay over the life of the loan?</p>
+    </li>
+    <li>
+      <p>You want to buy a $200,000 home.&nbsp; You plan to pay 10% as a down payment, and take out a 30 year loan for the rest.&nbsp; </p>
+      <ol start="1" type="a">
+        <li>
+          <p>How much is the loan amount going to be?</p>
+        </li>
+        <li>
+          <p>What will your monthly payments be if the annual interest rate is 5% monthly?</p>
+        </li>
+        <li>
+          <p>What will your monthly payments be if the annual interest rate is 6% monthly?</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>Lynn bought a $300,000 house, paying 10% down, and financing the rest with an annual rate of 6% paid monthly for 30 years.&nbsp; </p>
+      <ol start="1" type="a">
+        <li>
+          <p>Find her monthly payments.&nbsp; </p>
+        </li>
+        <li>
+          <p>How much interest will she pay over the life of the loan?</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>Emile bought a car for $24,000 three years ago. &nbsp;The loan had a 5 year term with an annual rate of 4.8% paid monthly.&nbsp; How much does is still owed on the car?&nbsp; </p>
+    </li>
+    <li>
+      <p>A friend bought a house 15 years ago, taking out a $120,000 mortgage with an annual rate of 6% paid monthly for 30 years.&nbsp; How much does she still owe on the mortgage?</p>
+    </li>
+    <li>
+      <p>Taye is purchasing a used car for $9700 from a dealer. They offer an amortized loan that has an annual rate of 5.17% paid monthly. Determine the payments and cost of the loan for each of the following terms on the loan (2 years, 4 years, 6 years).</p>
+    </li>
+    <li>
+      <p>A home is purchased for $230,000 with an amortized loan over 15 years at an interest rate of 4.4%. Complete an amortized loan schedule in a spread sheet and answer the following questions.</p>
+      <ol type="a">
+        <li>
+          <p>Find the balance owed after 5 years</p>
+        </li>
+        <li>
+          <p>Determine the cost of the loan (interest).</p>
+        </li>
+        <li>
+          <p>If an extra $100 a month is paid towards the balance find the new number of payments and the total cost of the loan.</p>
+        </li>
+        <li>
+          <p>If the interest rate of the loan is doubled to 8.8% does the cost of the loan double? Explain</p>
+        </li>
+        <li>
+          <p>If the principal of the loan is doubled to $460,000 does the cost of the loan double? Explain</p>
+        </li>
+        <li>
+          <p>If the term of the loan is doubled to 30 years does the cost of the loan double? Explain</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>You take out a new amortized loan for a home in the amount of $178,000 for 30 years at an annual rate of 5.15%. If you make an additional $50 in payments each month, then how much sooner do you pay off the loan?</p>
+    </li>
+    <li>
+      <p>Compare an Add-On Loan cost to an amortized loan cost for a $10,000 loan with an annual rate of 5% and a 10 year term.</p>
+    </li>
+  </ol>
+  <footer>
+    <div id="footer">
+      <p class="text-center toggle-footnotes">[Show Footnotes]</p>
+      <div class="footnotes">
+        <h2>Attribution:</h2>
+        <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+        <p>This page contains modified content from <a href="https://math.libretexts.org/Bookshelves/Applied_Mathematics/Applied_Finite_Mathematics_(Sekhon_and_Bloom)/06%3A_Mathematics_of_Finance/6.01%3A_Simple_Interest_and_Discount" target="_blank"> " Simple Interest and Discount" and "Miscellaneous Application Problems" </a> by <a href="https://www.deanza.edu/directory/user.html?u=sekhonrupinder">Rupinder Sekhon and Roberta Bloom</a>, <a href="https://libretexts.org/" target="_blank">LibreTexts</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"> CC BY </a>. </p>
+        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+      </div>
+    </div>
+  </footer>
+  <!--=================--> 
+  
+  <!-- END YOUR CONTENT--> 
+</section>
+</body>
+</html>

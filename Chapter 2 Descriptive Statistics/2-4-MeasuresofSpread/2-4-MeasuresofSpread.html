@@ -1,1481 +1,1541 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
 <head>
- <title>2.4 Measures of Variation</title>
-<meta charset="utf-8" />
-
-<meta name="viewport" content="width=device-width" />
-
-<link rel="stylesheet" type="text/css" href="/shared/webdev/course-files/css/themes/cards/styles.css">       
-<link rel="stylesheet" type="text/css" href="/shared/Templates/Template_Cards/css/custom.css">
-<link rel="stylesheet" href="../../MAT142.css" type="text/css" />
-
-	
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="../../src/_utils/styles.css">
+<script type="text/javascript" src="../../src/_utils/scripts.js" defer></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<title>2.4 Measures of Variation </title>
 </head>
-<body id="one-column" style="overflow-y: hidden;">
-	<header class="header"><img src="../../Images/banners/Chapter 2 Descriptive Statistics.jpg" alt="decorative image of graph" />
-		<div class="text-container">
-		  <h1>2.4 Measures of Variation</h1>
-		</div>
-	</header>
-	
-<div id="content-wrapper">
-<div class="content-body">
-
-<h2>2.4 Measures of Variation</h2>
-<p>Upon completion of this section, you should be able to</p>
-<ul>
- <li>Calculate the range.</li>
- <li>Calculate the standard deviation and variance for both a population and sample.</li>
- <li>Calculate the five-number summary.</li>
- <li>Create a box-plot.</li>
- <li>Applications of Box Plots.</li>
-</ul>
-</div>
-    
-<div class="content-body">
-    
-<h2>Calculate the Range</h2>
-<p>Video (cc) - <a href="http://youtu.be/b3ofWalrHgQ" target="_blank">Introduction to Variation</a></p>
-<p> We saw already in the previous section how to measure the center of a quantitative data set using the mean, median or mode, but what about the spread? We will start off with some exploration and build up a set of tools to allow us to give some numeric summary for a measure of the spread.</p>
-<p>Consider these three sets of quiz scores:</p>
-<p>Section A: 5 5 5 5 5 5 5 5 5 5</p>
-<p>Section B: 0 0 0 0 0 10 10 10 10 10</p>
-<p>Section C: 4 4 4 5 5 5 5 6 6 6</p>
-<p>All three of these sets of data have a mean of 5 and median of 5 (verify this on your own), yet the scores for each section are clearly quite different. In section A, everyone had the same score; in  section B half the class got no points and the other half got a perfect score,  assuming this was a 10-point quiz. Section C was not as consistent as section A, but not as widely varied as section B. A numeric summary of the center doesn't tell us this about the data. From the numeric summary of center they all would appear equivalent if we didn't have the data itself in front of us. We need some way to describe how the data varies about that center.</p>
-
-<p>There are several ways to measure this &quot;spread&quot; of the data. The first is the simplest and is called the <strong>range</strong>.</p>
-
-<div class="definition">
-  <h4>Range</h4>
-  <p>The range is the  difference between the maximum value and the minimum value of the data set.</p>
-</div>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 1</h3> 
-  <p>Using the quiz scores from above find the range from each section.</p>
-</div>
-
-  <p>For section A, the range is 0 since both maximum and  minimum are 5 and 5 &ndash; 5 =&nbsp;0<br>
-    For section B, the range is 10 since 10 &ndash; 0&nbsp;=&nbsp;10<br>
-    For section C, the range is 2 since 6 &ndash; 4 = 2</p>
-</div>
-
-<p>In each of the sections from above we saw that the median was 5 and now have a tool to help describe the spread by using the range. Does the range do a good job of describing the spread? Not exactly. In the last example, range seems to be revealing how spread out the data is. However, suppose we add a fourth section, Section D, with scores 0 5 5 5 5 5 5 5 5 10. </p>
-    
-<p>This section also has a mean and median of 5. The range is 10, yet this data set is quite different than Section B. The range doesn't take into account how close all the data points are to the center. To better illuminate the differences, we&rsquo;ll have to turn to more sophisticated measures of variation. We call it the standard deviation - the formula looks complicated, but we will walk through the details and how to calculate it by hand (typically software is used and can be done on most handheld calculators and spreadsheet programs).</p>
-
-    </div>
-
-<div class="content-body">
-<h2>Calculate the Standard Deviation and Variance</h2>
-<p>If <em>x</em> is a number, then the difference "<em>x</em>-mean" is called its <strong>deviation</strong>. What we want to find is some way to describe the deviations of an entire data set. The procedure to calculate the standard deviation depends on whether the numbers are the entire population or are data from a sample. The calculations are similar, but not identical. Therefore the symbol used to represent the standard deviation depends on whether it is calculated from a population or a sample. The lower case letter s represents the sample standard deviation and the Greek letter  &sigma;  (sigma, lower case) represents the population standard deviation. If the sample has the same characteristics as the population, then s should be a good estimate of &sigma;. The formula for finding the standard deviation is given below.</p>   
-    
-<div class="definition">
-  <h4>Standard  deviation</h4>
-  <p>The <strong>standard deviation</strong> is a measure of variation based on measuring how far each data value deviates, or is different, from the mean. It should only be used if you are using the mean as a measure of the center. We use a lowercase <em><strong>s</strong></em> to represent the standard deviation if the data comes from a sample of size n and the lowercase greek letter sigma, &sigma;, if the data comes from all the population with size N.</p>
- <math display="block" xmlns="http://www.w3.org/1998/Math/MathM">
- <mtable columnalign="left">
-  <mtr>
-   <mtd>
-    <mi>s</mi><mo>=</mo><msqrt>
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mstyle displaystyle="true">
-         <mo>&#x2211;</mo> <mrow>
-          <msup>
-           <mrow>
-            <mrow><mo>(</mo>
-             <mrow>
-              <msub>
-               <mi>x</mi>
-               <mi>i</mi>
-              </msub>
-              <mo>&#x2212;</mo><mover accent="true">
-               <mi>x</mi>
-               <mo stretchy="true">&#x00AF;</mo>
-              </mover>
-              
-             </mrow>
-            <mo>)</mo></mrow>
-           </mrow>
-           <mn>2</mn>
-          </msup>
-          
-         </mrow>
-        </mstyle>
-       </mrow>
-       <mrow>
-        <mi>n</mi><mo>&#x2212;</mo><mn>1</mn>
-       </mrow>
-      </mfrac>
-      
-     </mrow>
-    </msqrt>
-    <mo>=</mo><msqrt>
-     <mrow>
-      <mfrac>
-       <mrow>
-        <msup>
-         <mrow>
-          <mrow><mo>(</mo>
-           <mrow>
-            <msub>
-             <mi>x</mi>
-             <mn>1</mn>
-            </msub>
-            <mo>&#x2212;</mo><mover accent="true">
-             <mi>x</mi>
-             <mo stretchy="true">&#x00AF;</mo>
-            </mover>
-            
-           </mrow>
-          <mo>)</mo></mrow>
-         </mrow>
-         <mn>2</mn>
-        </msup>
-        <mo>+</mo><msup>
-         <mrow>
-          <mrow><mo>(</mo>
-           <mrow>
-            <msub>
-             <mi>x</mi>
-             <mn>2</mn>
-            </msub>
-            <mo>&#x2212;</mo><mover accent="true">
-             <mi>x</mi>
-             <mo stretchy="true">&#x00AF;</mo>
-            </mover>
-            
-           </mrow>
-          <mo>)</mo></mrow>
-         </mrow>
-         <mn>2</mn>
-        </msup>
-        <mo>+</mo><mo>&#x22EF;</mo><msup>
-         <mrow>
-          <mrow><mo>(</mo>
-           <mrow>
-            <msub>
-             <mi>x</mi>
-             <mi>n</mi>
-            </msub>
-            <mo>&#x2212;</mo><mover accent="true">
-             <mi>x</mi>
-             <mo stretchy="true">&#x00AF;</mo>
-            </mover>
-            
-           </mrow>
-          <mo>)</mo></mrow>
-         </mrow>
-         <mn>2</mn>
-        </msup>
-        
-       </mrow>
-       <mrow>
-        <mi>n</mi><mo>&#x2212;</mo><mn>1</mn>
-       </mrow>
-      </mfrac>
-      
-     </mrow>
-    </msqrt>
-    
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mi>&#x03C3;</mi><mo>=</mo><msqrt>
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mstyle displaystyle="true">
-         <mo>&#x2211;</mo> <mrow>
-          <msup>
-           <mrow>
-            <mrow><mo>(</mo>
-             <mrow>
-              <msub>
-               <mi>x</mi>
-               <mi>i</mi>
-              </msub>
-              <mo>&#x2212;</mo><mi>&#x03BC;</mi>
-             </mrow>
-            <mo>)</mo></mrow>
-           </mrow>
-           <mn>2</mn>
-          </msup>
-          
-         </mrow>
-        </mstyle>
-       </mrow>
-       <mi>N</mi>
-      </mfrac>
-      
-     </mrow>
-    </msqrt>
-    <mo>=</mo><msqrt>
-     <mrow>
-      <mfrac>
-       <mrow>
-        <msup>
-         <mrow>
-          <mrow><mo>(</mo>
-           <mrow>
-            <msub>
-             <mi>x</mi>
-             <mn>1</mn>
-            </msub>
-            <mo>&#x2212;</mo><mi>&#x03BC;</mi>
-           </mrow>
-          <mo>)</mo></mrow>
-         </mrow>
-         <mn>2</mn>
-        </msup>
-        <mo>+</mo><msup>
-         <mrow>
-          <mrow><mo>(</mo>
-           <mrow>
-            <msub>
-             <mi>x</mi>
-             <mn>2</mn>
-            </msub>
-            <mo>&#x2212;</mo><mi>&#x03BC;</mi>
-           </mrow>
-          <mo>)</mo></mrow>
-         </mrow>
-         <mn>2</mn>
-        </msup>
-        <mo>+</mo><mo>&#x22EF;</mo><msup>
-         <mrow>
-          <mrow><mo>(</mo>
-           <mrow>
-            <msub>
-             <mi>x</mi>
-             <mi>N</mi>
-            </msub>
-            <mo>&#x2212;</mo><mi>&#x03BC;</mi>
-           </mrow>
-          <mo>)</mo></mrow>
-         </mrow>
-         <mn>2</mn>
-        </msup>
-        
-       </mrow>
-       <mi>N</mi>
-      </mfrac>
-      
-     </mrow>
-    </msqrt>
-    
-   </mtd>
-  </mtr>
- </mtable>
- 
-</math>
-
-
-  <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
- <mtable columnalign="left">
-  <mtr>
-   <mtd>
-    <msub>
-     <mi>x</mi>
-     <mi>i</mi>
-    </msub>
-    <mo>=</mo><mtext>&#x00A0;all&#x00A0;values&#x00A0;of&#x00A0;data&#x00A0;used&#x00A0;for&#x00A0;sample&#x00A0;or&#x00A0;from&#x00A0;population</mtext>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mi>n</mi><mo>=</mo><mtext>&#x00A0;number&#x00A0;of&#x00A0;values&#x00A0;in&#x00A0;the&#x00A0;sample</mtext>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mover accent="true">
-     <mi>x</mi>
-     <mo stretchy="true">&#x00AF;</mo>
-    </mover>
-    <mo>=</mo><mtext>&#x00A0;the&#x00A0;sample&#x00A0;mean</mtext>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mi>N</mi><mo>=</mo><mtext>&#x00A0;number&#x00A0;of&#x00A0;values&#x00A0;in&#x00A0;the&#x00A0;population</mtext>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mi>&#x03BC;</mi><mo>=</mo><mtext>&#x00A0;the&#x00A0;population&#x00A0;mean</mtext>
-   </mtd>
-  </mtr>
- </mtable>
- 
-</math>
-</p>
-    <h4>To compute  standard deviation:</h4>
-  <ol>
-    <li>Find the deviation of each data from the mean.&nbsp;  In other words, subtract the mean from the data value.</li>
-    <li>Square each deviation.</li>
-    <li>Add the squared deviations.</li>
-    <li>Divide by <em>n</em>, the number of data values, if  the data represents a whole population; divide by <em>n</em> &ndash; 1 if the data is from a sample.</li>
-    <li>Compute  the square root of the result.</li>
-  </ol>
-
-</div>
-
-<div class="plainblock">
-    <p>A few important characteristics:</p>
+<body>
+<section class="ereader-display">
+  <header>
+    <button type="button" id="light-dark-mode">Light/Dark </button>
+  </header>
+  <!-- START YOUR CONTENT--> 
+  <!--===================-->
+  <h1>2.4 Measures of Variation</h1>
+  <h2>2.4 Measures of Variation</h2>
+  <p>Upon completion of this section, you should be able to</p>
   <ul>
-    <li>Standard deviation is always positive.&nbsp; Standard deviation will be zero if all the  data values are equal, and will get larger as the data spreads out.This value will never be negative (it measures a distance - we can not have a   negative distance measurement). </li>
-    <li>Standard deviation has the same units as the  original data.</li>
-    <li>Standard deviation, like the mean, can be highly  influenced by outliers.</li>
-  </ul>  
-</div>    
-    
-<p>Using the data from section D, we could compute for each  data value the difference between the data value and the mean:</p>
-<table class="display-lg" bgcolor="#FFFFFF">
-<thead>
-<tr>
-<th scope="col">data value</th>
-<th scope="col">deviation: data value - mean</th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>0</td>
-    <td>0-5 = -5</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>10-5 = 5</td>
-  </tr>
-    </tbody>
-</table>
-<p>We would like to get an idea of the &quot;average&quot;  deviation from the mean, but if we find the average of the values in the second  column the negative and positive values cancel each other out (this will always  happen), so to prevent this we square every value in the second column:</p>
-<table class="display-lg" bgcolor="#FFFFFF">
-<thead>
-<tr>
-<th scope="col">data value</th>
-<th scope="col">deviation: data value - mean</th>
-<th scope="col">deviation squared</th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>0</td>
-    <td>0-5 = -5</td>
-    <td>(-5)<sup>2</sup> = 25</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>5-5 = 0</td>
-    <td>0<sup>2</sup> = 0</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>10-5 = 5</td>
-    <td>(5)<sup>2</sup> = 25</td>
-  </tr>
-    </tbody>
-</table>
-<p>&nbsp;</p>
-<p>We then add the squared deviations up to get 25 + 0 + 0 + 0  + 0 + 0 + 0 + 0 + 0 + 25 = 50.&nbsp; Ordinarily we would then divide by the  number of scores,<em> n</em>, (in this case,  10) to find the mean of the deviations.&nbsp; But we only do this if the data  set represents a population; if the data set represents a sample (as it almost  always does), we instead divide by <em>n</em> - 1 (in this case, &nbsp;&nbsp;10 - 1 = 9). The reason for doing so is that it provides a better estimator to the actual standard deviation of a population (a proof of this is beyond the scope of our work).</p>
-<p>So in our example, we would have 50/10 = 5 if section D  represents a population and 50/9 = about 5.56 if section D represents a  sample.&nbsp; These values (5 and 5.56) are called, respectively, the <strong>population  variance</strong> and the <strong>sample variance</strong> for section D.&nbsp; </p>
-<p>Variance can be a useful statistical concept, but note that  the units of variance in this instance would be points-squared since we squared  all of the deviations.&nbsp; What are points-squared?&nbsp; Good  question.&nbsp; We would rather deal with the units we started with (points in  this case), so to convert back we take the square root and get:</p>
-<p>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
- <mtable columnalign="left">
-  <mtr columnalign="left">
-   <mtd columnalign="left">
-    <mrow>
-     <mtext>population&#x00A0;standard&#x00A0;deviation,&#x00A0;</mtext><mi>&#x03C3;</mi><mo>=</mo><msqrt>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mn>50</mn>
-        </mrow>
-        <mrow>
-         <mn>10</mn>
-        </mrow>
-       </mfrac>
-       
-      </mrow>
-     </msqrt>
-     <mo>=</mo><msqrt>
-      <mn>5</mn>
-     </msqrt>
-     <mo>&#x2248;</mo><mn>2.2</mn>
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr columnalign="left">
-   <mtd columnalign="left">
-    <mrow>
-     <mtext>or</mtext>
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr columnalign="left">
-   <mtd columnalign="left">
-    <mrow>
-     <mtext>sample&#x00A0;standard&#x00A0;deviation,&#x00A0;s</mtext><mo>=</mo><msqrt>
-      <mrow>
-       <mfrac>
-        <mrow>
-         <mn>50</mn>
-        </mrow>
-        <mn>9</mn>
-       </mfrac>
-       
-      </mrow>
-     </msqrt>
-     <mo>&#x2248;</mo><mn>2.4</mn>
-    </mrow>
-   </mtd>
-  </mtr>
-  
- </mtable>
-</math>
-
-</p>
-<p>If we are unsure whether the data set is a sample or a  population, we will usually assume it is a sample, and we will round answers to  one more decimal place than the original data, as we have done above.&nbsp; </p>
-
-<p>Doing these calculations by hand can be tedious, but you have to be careful that when you use software to compute the standard deviation that it is most likely calculating the standard deviation for a sample.</p>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 2</h3> 
-  <p>Compute the standard deviation for Section B above. Then compute the standard deviation of the other three sections.</p>
-</div>
-
-  <p>We  first calculate that the mean is 5.&nbsp;  Using a table can help keep track of your computations for the standard  deviation:</p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-<thead>
-<tr>
-<th scope="col">data value</th>
-<th scope="col">deviation: data value - mean</th>
-<th scope="col">deviation squared</th>
-</tr>
-</thead>
-<tbody>
-    <tr>
-      <td>0</td>
-      <td>0-5 = -5</td>
-      <td>(-5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0-5 = -5</td>
-      <td>(-5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0-5 = -5</td>
-      <td>(-5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0-5 = -5</td>
-      <td>(-5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0-5 = -5</td>
-      <td>(-5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>10-5 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>10-5 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>10-5 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>10-5 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>10-5 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>
-        </tbody>
-</table>
-<p>&nbsp;</p>
-<p>Assuming this data represents a population, we will add  the squared deviations, divide by 10, the number of data values, and compute  the square root:</p>
-  <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msqrt>
-   <mrow>
-    <mfrac>
-     <mrow>
-      <mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>25</mn>
-     </mrow>
-     <mrow>
-      <mn>10</mn>
-     </mrow>
-    </mfrac>
-    
-   </mrow>
-  </msqrt>
-  <mo>=</mo><msqrt>
-   <mrow>
-    <mfrac>
-     <mrow>
-      <mn>250</mn>
-     </mrow>
-     <mrow>
-      <mn>10</mn>
-     </mrow>
-    </mfrac>
-    
-   </mrow>
-  </msqrt>
-  <mo>=</mo><mn>5</mn>
- </mrow>
-</math>
-</p>
-  <p>Notice that the standard deviation of this data set is  much larger than that of section D since the data in this set is more spread out.</p>
-  <p>For comparison, the standard deviations of all four sections  are:</p>
-<p><table class="display-lg" bgcolor="#FFFFFF">
-  <tr>    
-    <td>Section A: 5 5 5 5 5 5 5 5 5 5</td>
-    <td>Standard deviation: 0</td>
-  </tr>
-  <tr>
-    <td>Section B: 0 0 0 0 0 10 10 10 10 10</td>
-    <td>Standard deviation: 5</td>
-  </tr>
-  <tr>
-    <td>Section C: 4 4 4 5 5 5 5 6 6 6</td>
-    <td>Standard deviation: 0.8</td>
-  </tr>
-  <tr>
-    <td>Section D: 0 5 5 5 5 5 5 5 5 10</td>
-    <td>Standard deviation: 2.2</td>
-  </tr>
-</table></p>
-<p>Notice that in Section B where we have the highest standard deviation that the data is further from the mean. As the data gets more clumped at the mean that value for the standard deviation gets lower, but one or two extreme values can cause it to grow in size (see section D for this as we have most of the data equal to the mean, but those two outliers of 0 and 10 pull up the value of the standard deviation to almost half of Section B where all the data were extreme values away from the mean).  </p>
-<p><a href="http://youtu.be/wS8z90f04OU" target="_blank">Video Solution Example 2</a> (cc)</p>
-</div>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 3</h3> 
-  <p>Eight male students' weights (in pounds) were recorded:</p>
-  <p>165, 145, 160, 150, 180, 220, 200, 180</p>
-  <p>Find the standard deviation of these weights.</p>
-
-</div>
-  <p>The first thing needed is to find the mean weight.</p>
-  <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mfrac>
-   <mrow>
-    <mn>165</mn><mo>+</mo><mn>145</mn><mo>+</mo><mn>160</mn><mo>+</mo><mn>150</mn><mo>+</mo><mn>180</mn><mo>+</mo><mn>220</mn><mo>+</mo><mn>200</mn><mo>+</mo><mn>180</mn>
-   </mrow>
-   <mn>8</mn>
-  </mfrac>
-  <mo>=</mo><mn>175</mn>
- </mrow>
-</math>
-</p>
-<table class="display-lg" bgcolor="#FFFFFF">
-<thead>
-<tr>
-<th scope="col">data value</th>
-<th scope="col">deviation: data value - mean</th>
-<th scope="col">deviation squared</th>
-</tr>
-</thead>
-<tbody>
-    <tr>
-      <td>165</td>
-      <td>165 - 175 = -10</td>
-      <td>(-10)<sup>2</sup> = 100</td>
-    </tr>
-    <tr>
-      <td>145</td>
-      <td>145 - 175 = -30</td>
-      <td>(-30)<sup>2</sup> = 900</td>
-    </tr>
-    <tr>
-      <td>160</td>
-      <td>160 - 175 = -15</td>
-      <td>(-15)<sup>2</sup> = 225</td>
-    </tr>
-    <tr>
-      <td>150</td>
-      <td>150 - 175 = -25</td>
-      <td>(-25)<sup>2</sup> = 625</td>
-    </tr>
-    <tr>
-      <td>180</td>
-      <td>180 - 175 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>
-    <tr>
-      <td>220</td>
-      <td>220 - 175 = 45</td>
-      <td>(45)<sup>2</sup> = 2025</td>
-    </tr>
-    <tr>
-      <td>200</td>
-      <td>200 - 175 = 25</td>
-      <td>(25)<sup>2</sup> = 625</td>
-    </tr>
-    <tr>
-      <td>180</td>
-      <td>180 - 175 = 5</td>
-      <td>(5)<sup>2</sup> = 25</td>
-    </tr>    
-    </tbody>
-</table>
-<p>Assuming this data represents a sample, we will add  the squared deviations, divide by 7, the number of data values minus one, and compute  the square root:</p>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msqrt>
-   <mrow>
-    <mfrac>
-     <mrow>
-      <mn>100</mn><mo>+</mo><mn>900</mn><mo>+</mo><mn>225</mn><mo>+</mo><mn>625</mn><mo>+</mo><mn>25</mn><mo>+</mo>
-      <mn>2025</mn><mo>+</mo><mn>625</mn><mo>+</mo><mn>25</mn>
-     </mrow>
-     <mn>7</mn>
-    </mfrac>
-    
-   </mrow>
-  </msqrt>
-  <mo>=</mo><msqrt>
-   <mrow>
-    <mn>650</mn>
-   </mrow>
-  </msqrt>
-  <mo>&#x2248;</mo><mn>25.5</mn>
- </mrow>
-</math>
-</p>
-<p>We found that the standard deviation is 25.5 lbs. The units for the standard deviation is the same as the units for that data.</p>
-<p>Notice we also rounded the answer to one more decimal place than the data.</p>
-<p><a href="http://youtu.be/O4Th9VKhBt0" target="_blank">Video Solution Example 3</a> (cc)</p>
-</div>
-
-<p>The work we have done to find the standard deviation can be long and labor intensive for large data sets (even for calculating the mean and median). It is best to use software to do these calculations when it is available. Applications like Excel and Google Sheets both have functions built into them to help you with this. When using make sure you know if you are finding the standard deviation for a population or sample though as we have already seen the formulas are slightly different depending on where your data is coming from.</p> 
-<p><a href="https://support.microsoft.com/en-us/office/stdev-s-function-7d69cf97-0c1f-4acf-be27-f3e83904cc23" target="_blank">Excel STDEV.S or STDEV.P</a></p>
-<p><a href="https://support.google.com/docs/answer/3094054?hl=en#:~:text=To%20calculate%20standard%20deviation%20while,(VAR(...))" target="_blank">Google Sheets STDEV or STDEVP</a></p>
-    
-<div class="plainblock">
-<h3>What does the value of the standard deviation represent?</h3>
-<p>The standard deviation, s or &sigma;, is either zero or larger than zero. When the standard deviation is zero, there is no spread; that is, all the data values are equal to each other. The standard deviation is small when the data are all concentrated close to the mean, and is larger when the data values show more variation from the mean. When the standard deviation is a lot larger than zero, the data values are very spread out about the mean; outliers can make s or &sigma; very large.</p> 
-<p>For ANY data set, no matter what the distribution of the data is <strong>Chebyshev's Rule</strong> tells us that:</p>
-<ul>
-    <li>At least 75% of the data is within two standard deviations of the mean.</li>
-    <li>At least 89% of the data is within three standard deviations of the mean.</li>
-    <li>At least 95% of the data is within 4.5 standard deviations of the mean.</li>
-</ul>
-<p>The standard deviation, when first presented, can seem unclear. By graphing your data, you can get a better "feel" for the deviations and the standard deviation. You will find that in symmetrical distributions, the standard deviation can be very helpful but in skewed distributions, the standard deviation may not be much help. The reason is that the two sides of a skewed distribution have different spreads. In a skewed distribution, it is better to look at the first quartile, the median, the third quartile, the smallest value, and the largest value (these five values will be called the five-number summary). Display your data in a histogram or a box plot (which will be shown below).</p>    
-</div>    
-
-<div class="tryitnow">
-  	<h5>Try it Now 1</h5>
-	<p>The price of a jar of peanut butter at 5 stores were: $3.29, $3.59, $3.79, $3.75, and $3.99. Find the standard deviation of the prices.</p>
-				
-	<h5 class="js-expandmore">Hint 1</h5> 
-    <div class="js-to_expand">
-    <p>Use the definition to help guide you.</p>
-       
-       <p>To compute  standard deviation:</p>
-  <ul>
-    <li>Find the deviation of each data from the mean. In other words, subtract the mean from the data value.</li>
-    <li>Square each deviation.</li>
-    <li>Add the squared deviations.</li>
-    <li>Divide by <em>n</em>, the number of data values, if the data represents a whole population; divide by <em>n</em> &ndash; 1 if the data is from a sample.</li>
-    <li>Compute the square root of the result.</li>
+    <li>Calculate the range.</li>
+    <li>Calculate the standard deviation and variance for both a population and sample.</li>
+    <li>Calculate the five-number summary.</li>
+    <li>Create a box-plot.</li>
+    <li>Applications of Box Plots.</li>
   </ul>
-	</div>
-	
-	<h5 class="js-expandmore">Answer</h5> 
-    <div class="js-to_expand">
-<p>The mean of the data is $3.682. It would be best to not round this value as we do the calculations for the standard deviation.</p>
-<table class="display-lg" bgcolor="#FFFFFF">
-<thead>
-<tr>
-<th scope="col">data value</th>
-<th scope="col">deviation: data value - mean</th>
-<th scope="col">deviation squared</th>
-</tr>
-</thead>
-<tbody>
-    <tr>
-      <td>3.29</td>
-      <td>3.29 &ndash; 3.682 = -0.391</td>
-      <td>0.153664</td>
-    </tr>
-    <tr>
-      <td>3.59</td>
-      <td>3.59 &ndash; 3.682 = -0.092</td>
-      <td>0.008464</td>
-    </tr>
-    <tr>
-      <td>3.79</td>
-      <td>3.79 &ndash; 3.682 = 0.108</td>
-      <td>0.011664</td>
-    </tr>
-    <tr>
-      <td>3.75</td>
-      <td>3.75 &ndash; 3.682 = 0.068</td>
-      <td>0.004624</td>
-    </tr>
-    <tr>
-      <td>3.99</td>
-      <td>3.99 &ndash; 3.682 = 0.308</td>
-      <td>0.094864</td>
-    </tr>
-    </tbody>
-  </table>
-        
-  <p>This data is from a sample, so we will add the squared deviations, divide by 4, the number of data values minus 1, and compute the square root:</p>
-  <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msqrt>
-   <mrow>
-    <mfrac>
-     <mrow>
-      <mn>0.153664</mn><mo>+</mo><mn>0.008464</mn><mo>+</mo><mn>0.011664</mn><mo>+</mo><mn>0.004624</mn><mo>+</mo><mn>0.094864</mn>
-     </mrow>
-     <mn>4</mn>
-    </mfrac>
-    
-   </mrow>
-  </msqrt>
-  <mo>&#x2248;</mo><mi>&#x0024;</mi><mn>0.261</mn>
- </mrow>
-</math>
- </p>
-	</div>		
-</div>    
-
-</div>
-
-
-<div class="content-body">
-<h2>Calculate the five-number summary</h2>      
-
-<p>Where standard deviation is a measure of variation based on the mean, <strong>quartiles</strong> are based on the median. </p>
-
-<div class="definition">
-  <h4>Quartiles</h4>
-  <p><strong>Quartiles</strong> are values that divide the data in quarters.</p>
-  <p>The first  quartile (Q1) is the value so that 25% of the data values are below it; the third quartile (Q3) is the value so that 75% of the data values are below it. You may have  guessed that the second quartile is the same as the median, since the median is the value so that 50% of the data values are below it. </p>
-  <p>This divides the data into quarters; 25% of the data is between the minimum and Q1, 25% is between Q1 and the  median, 25% is between the median and Q3, and 25% is between Q3 and the maximum value</p>
-</div>
-
-<p>While quartiles are not a 1-number summary of variation like standard deviation, the quartiles are used with the median, minimum, and maximum values to form a <strong>5 number summary</strong> of the data. </p>
-
-<div class="definition">
-  <h4>Five number  summary</h4>
-  <p>The <strong>five number summary</strong> takes this form: <br>
-    Minimum, Q1, Median, Q3, Maximum</p>
-</div>
-
-<p>The five number summary gives a numeric description for the data set. We can go further by quantifying a spread about the median with the interquartile range and define a way to classify data that are outliers. We consider a point an outlier when it is substantially above Q3 or substantially below Q1. In the definition below we quantify what substantial means. </p>    
-    
-<div class="definition">
-<h4>Interquartile Range and Outliers</h4>    
-<p>The <strong>interquartile range (IQR)</strong> describes the spread of the data bout the median. The value is the difference between Q3 and Q1.</p>
-<p><strong>Outliers</strong> are data values that are substantially below Q1 or substantially above Q3. We consider them substantial if the data value is more than 1.5*IQR below Q1 or 1.5*IQR above Q3.</p>    
-</div>
-    
-<p>To find the first quartile, we need to find the data value so that 25% of the data is below it. If <em>n</em> is the number of data values, we  compute a locator by finding 25% of <em>n</em>. If this locator is a decimal value, we round  up, and find the data value in that position. If the locator is a whole number, we find the mean of the data value in  that position and the next data value. This is identical to the process we used to find the median, except we use 25% of  the data values rather than half the data values as the locator.</p>
-    
-<div class="plainblock">
-  <h4>To find the first quartile, Q1</h4>
-  <ol>
-    <li><p>Order the data from least to greatest.</p></li> 
-      <li><p>Compute the locator: <em>L</em>&nbsp;=&nbsp;0.25<em>n</em></p></li>
-    <li><p>Determine which case you are to find the quartile:</p>
-    <ol type="a">
-    <li><p>If <em>L</em> is a decimal value: Round up to <em>L+</em> and use the data value in the <em>L+</em><sup>th</sup> position.</p></li>
-    <li><p>If <em>L</em> is a whole number: Find the mean of the data values in the <em>L</em>th and <em>L</em>+1<sup>th</sup> positions.</p></li>    
-    </ol>  
-    </li>  
-  </ol>
-</div>
-
-<p>The goal is to guarantee that we select the smallest data value  for which 25% of the data falls below the data point in that L+ position. If we had rounded down we would have less than 25% of the data falling below L+.</p>
-    
-<div class="plainblock">
-  <h4>To find the  third quartile, Q3</h4>
-  <p>Use the same  procedure as for Q1, but with locator: <em>L</em>&nbsp;=&nbsp;0.75<em>n</em></p>
-</div>
-
-<p>Instructions on finding quartiles vary, but the general goal is to determine a value that helps measure the spread of the data. Examples should help make this clearer. </p>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 4</h3> 
-  <p>Suppose we have measured 9 females and their heights (in  inches), sorted from smallest to largest are:</p>
-  
-    <p class="center">59 60 62 64 66 67 69 70 72</p>
-
-<p>Find the 5-number summary.</p>
-</div>
-
-<p>To find the first quartile we first compute the locator:&nbsp; 25% of 9 is <em>L</em> = 0.25(9) = 2.25.&nbsp; Since this value is not a whole number, we round up to 3.&nbsp; The first quartile will  be the third data value:&nbsp; 62 inches.</p>
-  <p>To find the third quartile, we again compute the locator:&nbsp; 75% of 9 is 0.75(9) =  6.75.&nbsp; Since this value is not a whole  number, we round up to 7.&nbsp; The third quartile will be the seventh data value:&nbsp;  69 inches.</p>
-    <p>For the 9 female sample, the median is 66, the minimum is  59, and the maximum is 72.&nbsp; The 5 number  summary is:&nbsp; 59, 62, 66, 69, 72.</p>
-  <p><a href="http://youtu.be/00iQvPOOUu4" target="_blank">Video Solution Example 4</a> (cc)</p>
-</div>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 5</h3> 
-  <p>Suppose we had measured 8 females and their heights (in  inches), sorted from smallest to largest are:</p>
-
-    <p class="center">59 60 62  64 66 67 69 70 </p>
-
-<p>Find the 5-number summary.</p>
-</div>
-
-<p>To find the first quartile we first compute the locator:&nbsp; 25% of 8 is <em>L</em> = 0.25(8) = 2.&nbsp; Since this value <em>is</em> a whole number, we will find the mean of the 2nd and 3rd data values:&nbsp; (60+62)/2 = 61, so the first quartile is 61 inches.</p>
-  <p>The third quartile is computed similarly, using 75%  instead of 25%.&nbsp; <em>L</em> = 0.75(8) = 6.&nbsp; This is a  whole number, so we will find the mean of the 6th and 7th data values:&nbsp; (67+69)/2 = 68, so Q3  is 68.</p>
-  <p>Note that the median could be computed the same way, using  50%.</p>
-  <p>For the 8 female sample, the median is 65, the minimum is 59, and the maximum is 70, so the 5 number summary would be:  59, 61, 65, 68, 70.</p>
-  <p><a href="http://youtu.be/x73G2Nep05g" target="_blank">Video Solution Example 5</a> (cc)</p>
-</div>
-
-
-<div class="example">
-  <div class="example-title">
-<h3>Example 6</h3> 
-  <p>Returning to our quiz score data, find the 5-number summary of the quiz scores.&nbsp;</p>
-</div>
-
-  <p> In each case, the first quartile locator is  0.25(10) = 2.5, so the first quartile will be the 3rd data value,  and the third quartile will be the 8th data value.&nbsp; Creating the five-number summaries:</p>
-  <p><table class="display-lg" bgcolor="#FFFFFF">
-    <thead>
-    <tr>
-      <th scope="col">Section and data</th>
-      <th scope="col">5-number summary</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Section A: 5 5 5 5 5 5 5 5 5 5</td>
-      <td>5, 5, 5, 5, 5</td>
-    </tr>
-    <tr>
-      <td>Section B: 0 0 0 0 0 10 10 10 10 10</td>
-      <td>0, 0, 5, 10, 10</td>
-    </tr>
-    <tr>
-      <td>Section C: 4 4 4 5 5 5 5 6 6 6</td>
-      <td>4, 4, 5, 6, 6</td>
-    </tr>
-    <tr>
-      <td>Section D: 0 5 5 5 5 5 5 5 5 10</td>
-      <td>0, 5, 5, 5, 10</td>
-    </tr>
-    </tbody>
-  </table></p>
-<p><a href="http://youtu.be/uifLbZKPUDU" target="_blank">Video Solution Example 7</a> (cc)</p>
-</div>
-
-<p>Of course, with a relatively small data set, finding a five-number summary is a bit silly, since the summary contains almost as many values as the original data set. In the TryItNow below you will have a larger data set.</p>
-
-<div class="tryitnow">
-  <h5>Try it Now 2</h5>
-  <p>The total cost of textbooks for the term was collected  from 36 students.&nbsp; Find the 5 number summary of this data. Would we consider $140 an outlier? What about $460?</p>
- <table class="display-lg" bgcolor="#FFFFFF">
-    <tr>
-      <td>$140 </td>
-      <td>$160 </td>
-      <td>$160 </td>
-      <td>$165 </td>
-      <td>$180 </td>
-      <td>$220 </td>
-      <td>$235 </td>
-      <td>$240 </td>
-      <td>$250 </td>
-      <td>$260 </td>
-      <td>$280 </td>
-      <td>$285 </td>
-    </tr>
-    <tr>
-      <td>$285 </td>
-      <td>$285 </td>
-      <td>$290 </td>
-      <td>$300 </td>
-      <td>$300 </td>
-      <td>$305 </td>
-      <td>$310 </td>
-      <td>$310 </td>
-      <td>$315 </td>
-      <td>$315 </td>
-      <td>$320 </td>
-      <td>$320 </td>
-    </tr>
-    <tr>
-      <td>$330 </td>
-      <td>$340 </td>
-      <td>$345 </td>
-      <td>$350 </td>
-      <td>$355 </td>
-      <td>$360 </td>
-      <td>$360 </td>
-      <td>$380 </td>
-      <td>$395 </td>
-      <td>$420 </td>
-      <td>$460 </td>
-      <td>$520 </td>
-    </tr>
-  </table>
-
-	<h5 class="js-expandmore">Hint 1</h5> 
-    <div class="js-to_expand">
-       <p>The five number summary includes the Min, Q1, Median, Q3, and Max. The min and max are the easiest to grab, but just make sure you actually order the data if it was not already done. To find the median, Q1, and Q3 you will need to also know how many data values in the table. In this case n = 36, so use this to find all three values.</p>
-        <p>To determine if a value is an outlier you will need to first calculate the IQR (interquartile range).</p>
-	</div>
-	
-	<h5 class="js-expandmore">Answer</h5> 
-    <div class="js-to_expand">
-    <p>The data is already in order, so we don&rsquo;t need to sort it  first. The minimum value is $140 and the  maximum is $520.&nbsp; </p>
-   <p><strong>Median:</strong> There are 36 data values so <em>n</em>&nbsp;=&nbsp;36.&nbsp; <em>n</em>/2&nbsp;=&nbsp;18, which is a whole  number, so the median is the mean of the 18th and 19th  data values, $305 and $310.&nbsp; The median  is $307.50.</p>
-   <p><strong>Q1:</strong> To find the first quartile, we  calculate the locator, L = 0.25(36)&nbsp;=&nbsp;9.&nbsp;  Since this is a whole number, we know Q1 is the mean of the 9th  and 10th data values, $250 and $260.&nbsp;  Q1&nbsp;=&nbsp;$255.</p>
-   <p><strong>Q3:</strong> To find the third  quartile, we calculate the locator, L&nbsp;=&nbsp;0.75(36)&nbsp;=&nbsp;27.&nbsp;  Since this is a whole number, we know Q3 is the mean of the 27th  and 28th  data values, $345 and $350.&nbsp;  Q3&nbsp;=&nbsp;$347.50.</p>
-   <p>The 5 number summary of this data is:&nbsp; $140, $255, $307.50, $347.50, $520</p>
-    <p>To determine if there are any outliers we need to first calculate the interquartile range (IQR). IQR=Q3-Q1, so that gives us <math display="inline">
- <mrow>
-  <mi>I</mi><mi>Q</mi><mi>R</mi><mo>=</mo><mi>&#x0024;</mi><mn>347.50</mn><mo>&#x2212;</mo><mi>&#x0024;</mi><mn>255</mn><mo>=</mo><mi>&#x0024;</mi><mn>92.50</mn></mrow>
-</math>
-. </p>  
-    <p>Any values that are 1.5*IQR below Q1 would be considered an outlier, so first find that value: <math display="inline">
- <mrow>
-  <mtext>Q1</mtext><mo>&#x2212;</mo><mn>1.5</mn><mo>&#x22C5;</mo><mtext>IQR</mtext><mo>=</mo><mi>&#x0024;</mi><mn>255</mn><mo>&#x2212;</mo><mn>1.5</mn><mo>&#x22C5;</mo><mrow><mo>(</mo>
-   <mrow>
-    <mi>&#x0024;</mi><mn>92.50</mn></mrow>
-  <mo>)</mo></mrow><mo>=</mo><mi>&#x0024;</mi><mn>116.25</mn></mrow>
-</math>
-. Start with the lowest value in the data, $140. We can see that $140 is more than $116.25 we would not consider $140 as an outlier. No need to check any other data values as $140 was the lowest.
-</p>
-    <p>Any values that are 1.5*IQR above Q3 are also considered outliers. Calculate the value: <math display="inline">
- <mtext>Q3+</mtext><mn>1.5</mn><mo>&#x22C5;</mo><mtext>IQR</mtext><mo>=</mo><mi>&#x0024;</mi><mn>347.50</mn><mo>+</mo><mn>1.5</mn><mo>&#x22C5;</mo><mrow><mo>(</mo>
-  <mrow>
-   <mi>&#x0024;</mi><mn>92.50</mn></mrow>
- <mo>)</mo></mrow><mo>=</mo><mi>&#x0024;</mi><mn>486.25</mn>
-</math>
-. Start with the highest data value, $520. We can see that $520 is greater than $486.25 we have that $520 is considered an outlier. The next highest data value is $460, which is less than $486.25, and is not considered an outlier.
-</p>    
-<p>The only outlier in the data set is the $520 value.</p>        
-	</div>	
-
-</div>
-
-<p>In the next example below we will find the five number summary when the data is given on a frequency table.</p>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 7</h3> 
-  <p>The one hundred families in a particular neighborhood are asked their annual household income, to the nearest $5 thousand dollars. The results are summarized in a frequency table below. Find the 5-number summary.</p>
-  <p>
+  <h2>Calculate the Range</h2>
+  <p>Video (cc) - <a href="http://youtu.be/b3ofWalrHgQ" target="_blank">Introduction to Variation</a></p>
+  <p> We saw already in the previous section how to measure the center of a quantitative data set using the mean, median or mode, but what about the spread? We will start off with some exploration and build up a set of tools to allow us to give some numeric summary for a measure of the spread.</p>
+  <p>Consider these three sets of quiz scores:</p>
+  <p>Section A: 5 5 5 5 5 5 5 5 5 5</p>
+  <p>Section B: 0 0 0 0 0 10 10 10 10 10</p>
+  <p>Section C: 4 4 4 5 5 5 5 6 6 6</p>
+  <p>All three of these sets of data have a mean of 5 and median of 5 (verify this on your own), yet the scores for each section are clearly quite different. In section A, everyone had the same score; in  section B half the class got no points and the other half got a perfect score,  assuming this was a 10-point quiz. Section C was not as consistent as section A, but not as widely varied as section B. A numeric summary of the center doesn't tell us this about the data. From the numeric summary of center they all would appear equivalent if we didn't have the data itself in front of us. We need some way to describe how the data varies about that center.</p>
+  <p>There are several ways to measure this &quot;spread&quot; of the data. The first is the simplest and is called the <strong>range</strong>.</p>
+  <div class="definition">
+    <h4>Range</h4>
+    <p>The range is the  difference between the maximum value and the minimum value of the data set.</p>
+  </div>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 1</h3>
+      <p>Using the quiz scores from above find the range from each section.</p>
+    </div>
+    <p>For section A, the range is 0 since both maximum and  minimum are 5 and 5 &ndash; 5 =&nbsp;0<br>
+      For section B, the range is 10 since 10 &ndash; 0&nbsp;=&nbsp;10<br>
+      For section C, the range is 2 since 6 &ndash; 4 = 2</p>
+  </div>
+  <p>In each of the sections from above we saw that the median was 5 and now have a tool to help describe the spread by using the range. Does the range do a good job of describing the spread? Not exactly. In the last example, range seems to be revealing how spread out the data is. However, suppose we add a fourth section, Section D, with scores 0 5 5 5 5 5 5 5 5 10. </p>
+  <p>This section also has a mean and median of 5. The range is 10, yet this data set is quite different than Section B. The range doesn't take into account how close all the data points are to the center. To better illuminate the differences, we&rsquo;ll have to turn to more sophisticated measures of variation. We call it the standard deviation - the formula looks complicated, but we will walk through the details and how to calculate it by hand (typically software is used and can be done on most handheld calculators and spreadsheet programs).</p>
+  <h2>Calculate the Standard Deviation and Variance</h2>
+  <p>If <em>x</em> is a number, then the difference "<em>x</em>-mean" is called its <strong>deviation</strong>. What we want to find is some way to describe the deviations of an entire data set. The procedure to calculate the standard deviation depends on whether the numbers are the entire population or are data from a sample. The calculations are similar, but not identical. Therefore the symbol used to represent the standard deviation depends on whether it is calculated from a population or a sample. The lower case letter s represents the sample standard deviation and the Greek letter  &sigma;  (sigma, lower case) represents the population standard deviation. If the sample has the same characteristics as the population, then s should be a good estimate of &sigma;. The formula for finding the standard deviation is given below.</p>
+  <div class="definition">
+    <h4>Standard  deviation</h4>
+    <p>The <strong>standard deviation</strong> is a measure of variation based on measuring how far each data value deviates, or is different, from the mean. It should only be used if you are using the mean as a measure of the center. We use a lowercase <em><strong>s</strong></em> to represent the standard deviation if the data comes from a sample of size n and the lowercase greek letter sigma, &sigma;, if the data comes from all the population with size N.</p>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathM">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mi>s</mi>
+            <mo>=</mo>
+            <msqrt>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mstyle displaystyle="true">
+                      <mo>&#x2211;</mo>
+                      <mrow>
+                        <msup>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <msub>
+                                  <mi>x</mi>
+                                  <mi>i</mi>
+                                </msub>
+                                <mo>&#x2212;</mo>
+                                <mover accent="true">
+                                  <mi>x</mi>
+                                  <mo stretchy="true">&#x00AF;</mo>
+                                </mover>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                          </mrow>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </mstyle>
+                  </mrow>
+                  <mrow>
+                    <mi>n</mi>
+                    <mo>&#x2212;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </msqrt>
+            <mo>=</mo>
+            <msqrt>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <msub>
+                              <mi>x</mi>
+                              <mn>1</mn>
+                            </msub>
+                            <mo>&#x2212;</mo>
+                            <mover accent="true">
+                              <mi>x</mi>
+                              <mo stretchy="true">&#x00AF;</mo>
+                            </mover>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <msub>
+                              <mi>x</mi>
+                              <mn>2</mn>
+                            </msub>
+                            <mo>&#x2212;</mo>
+                            <mover accent="true">
+                              <mi>x</mi>
+                              <mo stretchy="true">&#x00AF;</mo>
+                            </mover>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mo>&#x22EF;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <msub>
+                              <mi>x</mi>
+                              <mi>n</mi>
+                            </msub>
+                            <mo>&#x2212;</mo>
+                            <mover accent="true">
+                              <mi>x</mi>
+                              <mo stretchy="true">&#x00AF;</mo>
+                            </mover>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  <mrow>
+                    <mi>n</mi>
+                    <mo>&#x2212;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </msqrt>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>&#x03C3;</mi>
+            <mo>=</mo>
+            <msqrt>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mstyle displaystyle="true">
+                      <mo>&#x2211;</mo>
+                      <mrow>
+                        <msup>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <msub>
+                                  <mi>x</mi>
+                                  <mi>i</mi>
+                                </msub>
+                                <mo>&#x2212;</mo>
+                                <mi>&#x03BC;</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                          </mrow>
+                          <mn>2</mn>
+                        </msup>
+                      </mrow>
+                    </mstyle>
+                  </mrow>
+                  <mi>N</mi>
+                </mfrac>
+              </mrow>
+            </msqrt>
+            <mo>=</mo>
+            <msqrt>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <msub>
+                              <mi>x</mi>
+                              <mn>1</mn>
+                            </msub>
+                            <mo>&#x2212;</mo>
+                            <mi>&#x03BC;</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <msub>
+                              <mi>x</mi>
+                              <mn>2</mn>
+                            </msub>
+                            <mo>&#x2212;</mo>
+                            <mi>&#x03BC;</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mo>&#x22EF;</mo>
+                    <msup>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <msub>
+                              <mi>x</mi>
+                              <mi>N</mi>
+                            </msub>
+                            <mo>&#x2212;</mo>
+                            <mi>&#x03BC;</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  <mi>N</mi>
+                </mfrac>
+              </mrow>
+            </msqrt>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p>
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mtable columnalign="left">
+          <mtr>
+            <mtd>
+              <msub>
+                <mi>x</mi>
+                <mi>i</mi>
+              </msub>
+              <mo>=</mo>
+              <mtext>&#x00A0;all&#x00A0;values&#x00A0;of&#x00A0;data&#x00A0;used&#x00A0;for&#x00A0;sample&#x00A0;or&#x00A0;from&#x00A0;population</mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mi>n</mi>
+              <mo>=</mo>
+              <mtext>&#x00A0;number&#x00A0;of&#x00A0;values&#x00A0;in&#x00A0;the&#x00A0;sample</mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mover accent="true">
+                <mi>x</mi>
+                <mo stretchy="true">&#x00AF;</mo>
+              </mover>
+              <mo>=</mo>
+              <mtext>&#x00A0;the&#x00A0;sample&#x00A0;mean</mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mi>N</mi>
+              <mo>=</mo>
+              <mtext>&#x00A0;number&#x00A0;of&#x00A0;values&#x00A0;in&#x00A0;the&#x00A0;population</mtext>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mi>&#x03BC;</mi>
+              <mo>=</mo>
+              <mtext>&#x00A0;the&#x00A0;population&#x00A0;mean</mtext>
+            </mtd>
+          </mtr>
+        </mtable>
+      </math>
+    </p>
+    <h4>To compute  standard deviation:</h4>
+    <ol>
+      <li>Find the deviation of each data from the mean.&nbsp;  In other words, subtract the mean from the data value.</li>
+      <li>Square each deviation.</li>
+      <li>Add the squared deviations.</li>
+      <li>Divide by <em>n</em>, the number of data values, if  the data represents a whole population; divide by <em>n</em> &ndash; 1 if the data is from a sample.</li>
+      <li>Compute  the square root of the result.</li>
+    </ol>
+  </div>
+  <div class="plainblock">
+    <p>A few important characteristics:</p>
+    <ul>
+      <li>Standard deviation is always positive.&nbsp; Standard deviation will be zero if all the  data values are equal, and will get larger as the data spreads out.This value will never be negative (it measures a distance - we can not have a   negative distance measurement). </li>
+      <li>Standard deviation has the same units as the  original data.</li>
+      <li>Standard deviation, like the mean, can be highly  influenced by outliers.</li>
+    </ul>
+  </div>
+  <p>Using the data from section D, we could compute for each  data value the difference between the data value and the mean:</p>
   <table class="display-lg" bgcolor="#FFFFFF">
     <thead>
-    <tr>
-      <th scope="col"><strong>Income (thousands of dollars)</strong></th>
-      <th scope="col"><strong>Frequency</strong></th>
-    </tr>
+      <tr>
+        <th scope="col">data value</th>
+        <th scope="col">deviation: data value - mean</th>
+      </tr>
     </thead>
-    <tbody>  
-    <tr>
-      <td>15</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <td>35</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>45</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>50</td>
-      <td>7</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>0-5 = -5</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>10-5 = 5</td>
+      </tr>
     </tbody>
-  </table></p>
-</div>
-
-
-<p>By adding the frequencies, we can see there are 100 data  values represented in the table.&nbsp; In the last section we found the median was $35 thousand.&nbsp; We can see in the table that the minimum  income is $15 thousand, and the maximum is $50 thousand.</p>
-  <p>To find Q1, we calculate the locator:&nbsp; <em>L</em>&nbsp;=  0.25(100)&nbsp;=&nbsp;25.&nbsp; This is a whole number,  so Q1 will be the mean of the 25th and 26th  data values.</p>
-  <p>Counting up in the data as we did before, </p>
-  <p>There are 6 data values of $15, so values 1 to 6 are $15 thousand<br>
-    The next 8 data values are $20, so values 7 to (6+8)=14 are $20 thousand<br>
-    The next 11 data values are $25, so values 15 to (14+11)=25 are $25  thousand<br>
-    The next 17 data values are $30, so values 26 to (25+17)=42 are $30  thousand</p>
-  <p>The 25th data value is $25 thousand, and the 26th  data value is $30 thousand, so Q1 will be the mean of these:&nbsp; (25&nbsp;+&nbsp;30)/2&nbsp;=&nbsp;$27.5 thousand.</p>
-  <p>To find Q3, we calculate the locator:&nbsp; <em>L</em>&nbsp;=&nbsp; 0.75(100)&nbsp;=&nbsp;75.&nbsp; This is a whole number, so Q3 will be the mean of the 75th and 76th  data values.&nbsp; Continuing our counting  from earlier,</p>
-  <p>The next 19 data values are $35, so values 43 to (42+19)&nbsp;=&nbsp;61 are $35  thousand<br>
-    The next 20 data values are $40, so values 61 to (61+20)&nbsp;=&nbsp;81 are $40  thousand</p>
-  <p>Both the 75th and 76th data values  lie in this group, so Q3 will be $40 thousand.</p>
-  <p>Putting these values together into a five-number summary, we get:&nbsp; 15, 27.5, 35, 40, 50</p>
-  <p><a href="http://youtu.be/ECOeeDrUxpo" target="_blank">Video Solution Example 8</a> (cc)</p>
-</div>
-
-</div>
-
-<div class="content-body">
-<h2>Create a Box-Plot</h2>     
-
-<p>The 5 number summary divides the data into four intervals, each of which will contain about 25% of the data. For visualizing that summary, there is a graphical representation of a 5-number summary called a <strong>box plot</strong>,  or box and whisker graph. </p>
-
-<div class="definition">
-  <h4>Box plot</h4>
-  <p>A <strong>box plot</strong> is a graphical representation  of a five-number summary. </p>
-  <p>To create a box plot, a number line is first drawn.  A box is drawn from the first quartile to the third quartile, and a line  is drawn through the box at the median.  &ldquo;Whiskers&rdquo; are extended out to the minimum and maximum values. </p>
-</div>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 8</h3> 
-  <p>The heights of a set of females had a 5-number summary: 59, 62, 66, 69, 72. Create a box-plot.</p>
-</div>
-  <p>
-    <img src="images/Module5-4_clip_image009.jpg" alt="Visual of the five number summary given" width="550" height="136"></p>
-  <p><a href="http://youtu.be/s4SPGFlMBMU" target="_blank">Video Solution Example 9</a> (cc) - another example starts after the 2:42 mark of the video.</p>
-</div>
-
-<p>Notice how the boxplot allows us to visualize the differences in the spread of the data on the quartiles instead of just having the range given to us. </p>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 9</h3> 
-  <p>Create a box plot based on the household income data  with 5 number summary: <br>
-    15, 27.5, 35, 40, 50</p>
-</div>
-
-  <p><img src="images/Module5-4_clip_image011.jpg" alt="" width="550" height="150"></p>
-  <p><a href="http://youtu.be/s4SPGFlMBMU?t=2m44s" target="_blank">Video Solution Example 10</a> (cc)</p>
-</div>
-    
-<div class="tryitnow">
-  <h5>Try it Now 3</h5>
-  <p>Create a boxplot based on the textbook price data from  the last Try it Now. The five number summary from that problem was found to be: $140, $255, $307.50, $347.50, $460.</p>
+  </table>
+  <p>We would like to get an idea of the &quot;average&quot;  deviation from the mean, but if we find the average of the values in the second  column the negative and positive values cancel each other out (this will always  happen), so to prevent this we square every value in the second column:</p>
+  <table class="display-lg" bgcolor="#FFFFFF">
+    <thead>
+      <tr>
+        <th scope="col">data value</th>
+        <th scope="col">deviation: data value - mean</th>
+        <th scope="col">deviation squared</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>0-5 = -5</td>
+        <td>(-5)<sup>2</sup> = 25</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5-5 = 0</td>
+        <td>0<sup>2</sup> = 0</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>10-5 = 5</td>
+        <td>(5)<sup>2</sup> = 25</td>
+      </tr>
+    </tbody>
+  </table>
   <p>&nbsp;</p>
-
-	<h5 class="js-expandmore">Hint 1</h5> 
+  <p>We then add the squared deviations up to get 25 + 0 + 0 + 0  + 0 + 0 + 0 + 0 + 0 + 25 = 50.&nbsp; Ordinarily we would then divide by the  number of scores,<em> n</em>, (in this case,  10) to find the mean of the deviations.&nbsp; But we only do this if the data  set represents a population; if the data set represents a sample (as it almost  always does), we instead divide by <em>n</em> - 1 (in this case, &nbsp;&nbsp;10 - 1 = 9). The reason for doing so is that it provides a better estimator to the actual standard deviation of a population (a proof of this is beyond the scope of our work).</p>
+  <p>So in our example, we would have 50/10 = 5 if section D  represents a population and 50/9 = about 5.56 if section D represents a  sample.&nbsp; These values (5 and 5.56) are called, respectively, the <strong>population  variance</strong> and the <strong>sample variance</strong> for section D.&nbsp; </p>
+  <p>Variance can be a useful statistical concept, but note that  the units of variance in this instance would be points-squared since we squared  all of the deviations.&nbsp; What are points-squared?&nbsp; Good  question.&nbsp; We would rather deal with the units we started with (points in  this case), so to convert back we take the square root and get:</p>
+  <p>
+    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mtable columnalign="left">
+        <mtr columnalign="left">
+          <mtd columnalign="left">
+            <mrow>
+              <mtext>population&#x00A0;standard&#x00A0;deviation,&#x00A0;</mtext>
+              <mi>&#x03C3;</mi>
+              <mo>=</mo>
+              <msqrt>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mn>50</mn>
+                    </mrow>
+                    <mrow>
+                      <mn>10</mn>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </msqrt>
+              <mo>=</mo>
+              <msqrt>
+                <mn>5</mn>
+              </msqrt>
+              <mo>&#x2248;</mo>
+              <mn>2.2</mn>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr columnalign="left">
+          <mtd columnalign="left">
+            <mrow>
+              <mtext>or</mtext>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr columnalign="left">
+          <mtd columnalign="left">
+            <mrow>
+              <mtext>sample&#x00A0;standard&#x00A0;deviation,&#x00A0;s</mtext>
+              <mo>=</mo>
+              <msqrt>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mn>50</mn>
+                    </mrow>
+                    <mn>9</mn>
+                  </mfrac>
+                </mrow>
+              </msqrt>
+              <mo>&#x2248;</mo>
+              <mn>2.4</mn>
+            </mrow>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+  </p>
+  <p>If we are unsure whether the data set is a sample or a  population, we will usually assume it is a sample, and we will round answers to  one more decimal place than the original data, as we have done above.&nbsp; </p>
+  <p>Doing these calculations by hand can be tedious, but you have to be careful that when you use software to compute the standard deviation that it is most likely calculating the standard deviation for a sample.</p>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 2</h3>
+      <p>Compute the standard deviation for Section B above. Then compute the standard deviation of the other three sections.</p>
+    </div>
+    <p>We  first calculate that the mean is 5.&nbsp;  Using a table can help keep track of your computations for the standard  deviation:</p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">data value</th>
+          <th scope="col">deviation: data value - mean</th>
+          <th scope="col">deviation squared</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>0-5 = -5</td>
+          <td>(-5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0-5 = -5</td>
+          <td>(-5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0-5 = -5</td>
+          <td>(-5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0-5 = -5</td>
+          <td>(-5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0-5 = -5</td>
+          <td>(-5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>10-5 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>10-5 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>10-5 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>10-5 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>10-5 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>Assuming this data represents a population, we will add  the squared deviations, divide by 10, the number of data values, and compute  the square root:</p>
+    <p>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                </mrow>
+                <mrow>
+                  <mn>10</mn>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </msqrt>
+          <mo>=</mo>
+          <msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mn>250</mn>
+                </mrow>
+                <mrow>
+                  <mn>10</mn>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </msqrt>
+          <mo>=</mo>
+          <mn>5</mn>
+        </mrow>
+      </math>
+    </p>
+    <p>Notice that the standard deviation of this data set is  much larger than that of section D since the data in this set is more spread out.</p>
+    <p>For comparison, the standard deviations of all four sections  are:</p>
+    <p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <tr>
+        <td>Section A: 5 5 5 5 5 5 5 5 5 5</td>
+        <td>Standard deviation: 0</td>
+      </tr>
+      <tr>
+        <td>Section B: 0 0 0 0 0 10 10 10 10 10</td>
+        <td>Standard deviation: 5</td>
+      </tr>
+      <tr>
+        <td>Section C: 4 4 4 5 5 5 5 6 6 6</td>
+        <td>Standard deviation: 0.8</td>
+      </tr>
+      <tr>
+        <td>Section D: 0 5 5 5 5 5 5 5 5 10</td>
+        <td>Standard deviation: 2.2</td>
+      </tr>
+    </table>
+    </p>
+    <p>Notice that in Section B where we have the highest standard deviation that the data is further from the mean. As the data gets more clumped at the mean that value for the standard deviation gets lower, but one or two extreme values can cause it to grow in size (see section D for this as we have most of the data equal to the mean, but those two outliers of 0 and 10 pull up the value of the standard deviation to almost half of Section B where all the data were extreme values away from the mean). </p>
+    <p><a href="http://youtu.be/wS8z90f04OU" target="_blank">Video Solution Example 2</a> (cc)</p>
+  </div>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 3</h3>
+      <p>Eight male students' weights (in pounds) were recorded:</p>
+      <p>165, 145, 160, 150, 180, 220, 200, 180</p>
+      <p>Find the standard deviation of these weights.</p>
+    </div>
+    <p>The first thing needed is to find the mean weight.</p>
+    <p>
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mn>165</mn>
+              <mo>+</mo>
+              <mn>145</mn>
+              <mo>+</mo>
+              <mn>160</mn>
+              <mo>+</mo>
+              <mn>150</mn>
+              <mo>+</mo>
+              <mn>180</mn>
+              <mo>+</mo>
+              <mn>220</mn>
+              <mo>+</mo>
+              <mn>200</mn>
+              <mo>+</mo>
+              <mn>180</mn>
+            </mrow>
+            <mn>8</mn>
+          </mfrac>
+          <mo>=</mo>
+          <mn>175</mn>
+        </mrow>
+      </math>
+    </p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">data value</th>
+          <th scope="col">deviation: data value - mean</th>
+          <th scope="col">deviation squared</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>165</td>
+          <td>165 - 175 = -10</td>
+          <td>(-10)<sup>2</sup> = 100</td>
+        </tr>
+        <tr>
+          <td>145</td>
+          <td>145 - 175 = -30</td>
+          <td>(-30)<sup>2</sup> = 900</td>
+        </tr>
+        <tr>
+          <td>160</td>
+          <td>160 - 175 = -15</td>
+          <td>(-15)<sup>2</sup> = 225</td>
+        </tr>
+        <tr>
+          <td>150</td>
+          <td>150 - 175 = -25</td>
+          <td>(-25)<sup>2</sup> = 625</td>
+        </tr>
+        <tr>
+          <td>180</td>
+          <td>180 - 175 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+        <tr>
+          <td>220</td>
+          <td>220 - 175 = 45</td>
+          <td>(45)<sup>2</sup> = 2025</td>
+        </tr>
+        <tr>
+          <td>200</td>
+          <td>200 - 175 = 25</td>
+          <td>(25)<sup>2</sup> = 625</td>
+        </tr>
+        <tr>
+          <td>180</td>
+          <td>180 - 175 = 5</td>
+          <td>(5)<sup>2</sup> = 25</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Assuming this data represents a sample, we will add  the squared deviations, divide by 7, the number of data values minus one, and compute  the square root:</p>
+    <p>
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mn>100</mn>
+                  <mo>+</mo>
+                  <mn>900</mn>
+                  <mo>+</mo>
+                  <mn>225</mn>
+                  <mo>+</mo>
+                  <mn>625</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                  <mo>+</mo>
+                  <mn>2025</mn>
+                  <mo>+</mo>
+                  <mn>625</mn>
+                  <mo>+</mo>
+                  <mn>25</mn>
+                </mrow>
+                <mn>7</mn>
+              </mfrac>
+            </mrow>
+          </msqrt>
+          <mo>=</mo>
+          <msqrt>
+            <mrow>
+              <mn>650</mn>
+            </mrow>
+          </msqrt>
+          <mo>&#x2248;</mo>
+          <mn>25.5</mn>
+        </mrow>
+      </math>
+    </p>
+    <p>We found that the standard deviation is 25.5 lbs. The units for the standard deviation is the same as the units for that data.</p>
+    <p>Notice we also rounded the answer to one more decimal place than the data.</p>
+    <p><a href="http://youtu.be/O4Th9VKhBt0" target="_blank">Video Solution Example 3</a> (cc)</p>
+  </div>
+  <p>The work we have done to find the standard deviation can be long and labor intensive for large data sets (even for calculating the mean and median). It is best to use software to do these calculations when it is available. Applications like Excel and Google Sheets both have functions built into them to help you with this. When using make sure you know if you are finding the standard deviation for a population or sample though as we have already seen the formulas are slightly different depending on where your data is coming from.</p>
+  <p><a href="https://support.microsoft.com/en-us/office/stdev-s-function-7d69cf97-0c1f-4acf-be27-f3e83904cc23" target="_blank">Excel STDEV.S or STDEV.P</a></p>
+  <p><a href="https://support.google.com/docs/answer/3094054?hl=en#:~:text=To%20calculate%20standard%20deviation%20while,(VAR(...))" target="_blank">Google Sheets STDEV or STDEVP</a></p>
+  <div class="plainblock">
+    <h3>What does the value of the standard deviation represent?</h3>
+    <p>The standard deviation, s or &sigma;, is either zero or larger than zero. When the standard deviation is zero, there is no spread; that is, all the data values are equal to each other. The standard deviation is small when the data are all concentrated close to the mean, and is larger when the data values show more variation from the mean. When the standard deviation is a lot larger than zero, the data values are very spread out about the mean; outliers can make s or &sigma; very large.</p>
+    <p>For ANY data set, no matter what the distribution of the data is <strong>Chebyshev's Rule</strong> tells us that:</p>
+    <ul>
+      <li>At least 75% of the data is within two standard deviations of the mean.</li>
+      <li>At least 89% of the data is within three standard deviations of the mean.</li>
+      <li>At least 95% of the data is within 4.5 standard deviations of the mean.</li>
+    </ul>
+    <p>The standard deviation, when first presented, can seem unclear. By graphing your data, you can get a better "feel" for the deviations and the standard deviation. You will find that in symmetrical distributions, the standard deviation can be very helpful but in skewed distributions, the standard deviation may not be much help. The reason is that the two sides of a skewed distribution have different spreads. In a skewed distribution, it is better to look at the first quartile, the median, the third quartile, the smallest value, and the largest value (these five values will be called the five-number summary). Display your data in a histogram or a box plot (which will be shown below).</p>
+  </div>
+  <div class="tryitnow">
+    <h5>Try it Now 1</h5>
+    <p>The price of a jar of peanut butter at 5 stores were: $3.29, $3.59, $3.79, $3.75, and $3.99. Find the standard deviation of the prices.</p>
+    <h5 class="js-expandmore">Hint 1</h5>
     <div class="js-to_expand">
-       <p>Watch the video below for how to construct the boxplot (or box and whisker plot).</p>
-       <p><iframe width="560" height="315" src="https://www.youtube.com/embed/4Y7Z7_1TrSI" frameborder="0" allowfullscreen></iframe>(cc)</p>
-	</div>
-	
-	<h5 class="js-expandmore">Answer</h5> 
+      <p>Use the definition to help guide you.</p>
+      <p>To compute  standard deviation:</p>
+      <ul>
+        <li>Find the deviation of each data from the mean. In other words, subtract the mean from the data value.</li>
+        <li>Square each deviation.</li>
+        <li>Add the squared deviations.</li>
+        <li>Divide by <em>n</em>, the number of data values, if the data represents a whole population; divide by <em>n</em> &ndash; 1 if the data is from a sample.</li>
+        <li>Compute the square root of the result.</li>
+      </ul>
+    </div>
+    <h5 class="js-expandmore">Answer</h5>
     <div class="js-to_expand">
-          <p><img name="costoftextbookwhiskerplot" src="images/costoftextbookwhiskerplot.png" width="399" height="102" border="0" alt="display of five number summary: $140, $255, $307.50, $347.50, $460"></p>
-   </div>
-</div>	
-
-
-
-</div>
-
-<div class="content-body">
-<h2>Applications of Box Plots</h2>
-    
-<p>Box plots are particularly useful for comparing data from two populations.</p>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 10</h3> 
-  <p>The box plot of service times for two fast-food  restaurants is shown below. Describe what is seen in the plots.</p>
-  <p><img src="images/Module5-4_clip_image013.jpg" alt="Five Number Summary for each store. Store 1: 0.7, 1.8, 2.3, 2.9, 6.3 Store 2: 0.5, 1.1, 2.1, 5.7, 9.6" width="550" height="250"></p>
-</div>
-
-  <p>While store 2 had a slightly shorter median service time  (2.1 minutes vs. 2.3 minutes), store 2 is less consistent, with wider spread of  the data. </p>
-  <p>At store 1, 75% of customers were served within 2.9  minutes, while at store 2, 75% of customers were served within 5.7  minutes.</p>
-  <p>Which store should you go to in a hurry? That depends upon your opinions about luck &ndash;  25% of customers at store 2 had to wait between 5.7 and 9.6 minutes.</p>
-  <p><a href="http://youtu.be/eUkgf-2NVO8" target="_blank">Video Solution Example 11</a> (cc) - another example starts after the 2:26 mark of the video.</p>
-</div>
-
-<div class="example">
-<div class="example-title">
-<h3>Example 11</h3> 
-  <p>The boxplot below is based on the birth weights of infants  with severe idiopathic respiratory distress syndrome (SIRDS). The boxplot is separated to show the birth  weights of infants who survived and those that did not. Compare these two boxplots and describe the differences that can be observed.</p>
-  <p><img src="images/Module5-4_clip_image015.jpg" alt="" width="550" height="250"></p>
-</div>
-
-  <p>Comparing the two groups, the boxplot reveals that the  birth weights of the infants that died appear to be, overall, smaller than the  weights of infants that survived. In  fact, we can see that the median birth weight of infants that survived is the  same as the third quartile of the infants that died.</p>
-  <p>Similarly, we can see that the first quartile of the  survivors is larger than the median weight of those that died, meaning that  over 75% of the survivors had a birth weight larger than the median birth  weight of those that died. </p>
+      <p>The mean of the data is $3.682. It would be best to not round this value as we do the calculations for the standard deviation.</p>
+      <table class="display-lg" bgcolor="#FFFFFF">
+        <thead>
+          <tr>
+            <th scope="col">data value</th>
+            <th scope="col">deviation: data value - mean</th>
+            <th scope="col">deviation squared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3.29</td>
+            <td>3.29 &ndash; 3.682 = -0.391</td>
+            <td>0.153664</td>
+          </tr>
+          <tr>
+            <td>3.59</td>
+            <td>3.59 &ndash; 3.682 = -0.092</td>
+            <td>0.008464</td>
+          </tr>
+          <tr>
+            <td>3.79</td>
+            <td>3.79 &ndash; 3.682 = 0.108</td>
+            <td>0.011664</td>
+          </tr>
+          <tr>
+            <td>3.75</td>
+            <td>3.75 &ndash; 3.682 = 0.068</td>
+            <td>0.004624</td>
+          </tr>
+          <tr>
+            <td>3.99</td>
+            <td>3.99 &ndash; 3.682 = 0.308</td>
+            <td>0.094864</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>This data is from a sample, so we will add the squared deviations, divide by 4, the number of data values minus 1, and compute the square root:</p>
+      <p>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <msqrt>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <mn>0.153664</mn>
+                    <mo>+</mo>
+                    <mn>0.008464</mn>
+                    <mo>+</mo>
+                    <mn>0.011664</mn>
+                    <mo>+</mo>
+                    <mn>0.004624</mn>
+                    <mo>+</mo>
+                    <mn>0.094864</mn>
+                  </mrow>
+                  <mn>4</mn>
+                </mfrac>
+              </mrow>
+            </msqrt>
+            <mo>&#x2248;</mo>
+            <mi>&#x0024;</mi>
+            <mn>0.261</mn>
+          </mrow>
+        </math>
+      </p>
+    </div>
+  </div>
+  <h2>Calculate the five-number summary</h2>
+  <p>Where standard deviation is a measure of variation based on the mean, <strong>quartiles</strong> are based on the median. </p>
+  <div class="definition">
+    <h4>Quartiles</h4>
+    <p><strong>Quartiles</strong> are values that divide the data in quarters.</p>
+    <p>The first  quartile (Q1) is the value so that 25% of the data values are below it; the third quartile (Q3) is the value so that 75% of the data values are below it. You may have  guessed that the second quartile is the same as the median, since the median is the value so that 50% of the data values are below it. </p>
+    <p>This divides the data into quarters; 25% of the data is between the minimum and Q1, 25% is between Q1 and the  median, 25% is between the median and Q3, and 25% is between Q3 and the maximum value</p>
+  </div>
+  <p>While quartiles are not a 1-number summary of variation like standard deviation, the quartiles are used with the median, minimum, and maximum values to form a <strong>5 number summary</strong> of the data. </p>
+  <div class="definition">
+    <h4>Five number  summary</h4>
+    <p>The <strong>five number summary</strong> takes this form: <br>
+      Minimum, Q1, Median, Q3, Maximum</p>
+  </div>
+  <p>The five number summary gives a numeric description for the data set. We can go further by quantifying a spread about the median with the interquartile range and define a way to classify data that are outliers. We consider a point an outlier when it is substantially above Q3 or substantially below Q1. In the definition below we quantify what substantial means. </p>
+  <div class="definition">
+    <h4>Interquartile Range and Outliers</h4>
+    <p>The <strong>interquartile range (IQR)</strong> describes the spread of the data bout the median. The value is the difference between Q3 and Q1.</p>
+    <p><strong>Outliers</strong> are data values that are substantially below Q1 or substantially above Q3. We consider them substantial if the data value is more than 1.5*IQR below Q1 or 1.5*IQR above Q3.</p>
+  </div>
+  <p>To find the first quartile, we need to find the data value so that 25% of the data is below it. If <em>n</em> is the number of data values, we  compute a locator by finding 25% of <em>n</em>. If this locator is a decimal value, we round  up, and find the data value in that position. If the locator is a whole number, we find the mean of the data value in  that position and the next data value. This is identical to the process we used to find the median, except we use 25% of  the data values rather than half the data values as the locator.</p>
+  <div class="plainblock">
+    <h4>To find the first quartile, Q1</h4>
+    <ol>
+      <li>
+        <p>Order the data from least to greatest.</p>
+      </li>
+      <li>
+        <p>Compute the locator: <em>L</em>&nbsp;=&nbsp;0.25<em>n</em></p>
+      </li>
+      <li>
+        <p>Determine which case you are to find the quartile:</p>
+        <ol type="a">
+          <li>
+            <p>If <em>L</em> is a decimal value: Round up to <em>L+</em> and use the data value in the <em>L+</em><sup>th</sup> position.</p>
+          </li>
+          <li>
+            <p>If <em>L</em> is a whole number: Find the mean of the data values in the <em>L</em>th and <em>L</em>+1<sup>th</sup> positions.</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <p>The goal is to guarantee that we select the smallest data value  for which 25% of the data falls below the data point in that L+ position. If we had rounded down we would have less than 25% of the data falling below L+.</p>
+  <div class="plainblock">
+    <h4>To find the  third quartile, Q3</h4>
+    <p>Use the same  procedure as for Q1, but with locator: <em>L</em>&nbsp;=&nbsp;0.75<em>n</em></p>
+  </div>
+  <p>Instructions on finding quartiles vary, but the general goal is to determine a value that helps measure the spread of the data. Examples should help make this clearer. </p>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 4</h3>
+      <p>Suppose we have measured 9 females and their heights (in  inches), sorted from smallest to largest are:</p>
+      <p class="center">59 60 62 64 66 67 69 70 72</p>
+      <p>Find the 5-number summary.</p>
+    </div>
+    <p>To find the first quartile we first compute the locator:&nbsp; 25% of 9 is <em>L</em> = 0.25(9) = 2.25.&nbsp; Since this value is not a whole number, we round up to 3.&nbsp; The first quartile will  be the third data value:&nbsp; 62 inches.</p>
+    <p>To find the third quartile, we again compute the locator:&nbsp; 75% of 9 is 0.75(9) =  6.75.&nbsp; Since this value is not a whole  number, we round up to 7.&nbsp; The third quartile will be the seventh data value:&nbsp;  69 inches.</p>
+    <p>For the 9 female sample, the median is 66, the minimum is  59, and the maximum is 72.&nbsp; The 5 number  summary is:&nbsp; 59, 62, 66, 69, 72.</p>
+    <p><a href="http://youtu.be/00iQvPOOUu4" target="_blank">Video Solution Example 4</a> (cc)</p>
+  </div>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 5</h3>
+      <p>Suppose we had measured 8 females and their heights (in  inches), sorted from smallest to largest are:</p>
+      <p class="center">59 60 62  64 66 67 69 70 </p>
+      <p>Find the 5-number summary.</p>
+    </div>
+    <p>To find the first quartile we first compute the locator:&nbsp; 25% of 8 is <em>L</em> = 0.25(8) = 2.&nbsp; Since this value <em>is</em> a whole number, we will find the mean of the 2nd and 3rd data values:&nbsp; (60+62)/2 = 61, so the first quartile is 61 inches.</p>
+    <p>The third quartile is computed similarly, using 75%  instead of 25%.&nbsp; <em>L</em> = 0.75(8) = 6.&nbsp; This is a  whole number, so we will find the mean of the 6th and 7th data values:&nbsp; (67+69)/2 = 68, so Q3  is 68.</p>
+    <p>Note that the median could be computed the same way, using  50%.</p>
+    <p>For the 8 female sample, the median is 65, the minimum is 59, and the maximum is 70, so the 5 number summary would be:  59, 61, 65, 68, 70.</p>
+    <p><a href="http://youtu.be/x73G2Nep05g" target="_blank">Video Solution Example 5</a> (cc)</p>
+  </div>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 6</h3>
+      <p>Returning to our quiz score data, find the 5-number summary of the quiz scores.&nbsp;</p>
+    </div>
+    <p> In each case, the first quartile locator is  0.25(10) = 2.5, so the first quartile will be the 3rd data value,  and the third quartile will be the 8th data value.&nbsp; Creating the five-number summaries:</p>
+    <p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <thead>
+        <tr>
+          <th scope="col">Section and data</th>
+          <th scope="col">5-number summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Section A: 5 5 5 5 5 5 5 5 5 5</td>
+          <td>5, 5, 5, 5, 5</td>
+        </tr>
+        <tr>
+          <td>Section B: 0 0 0 0 0 10 10 10 10 10</td>
+          <td>0, 0, 5, 10, 10</td>
+        </tr>
+        <tr>
+          <td>Section C: 4 4 4 5 5 5 5 6 6 6</td>
+          <td>4, 4, 5, 6, 6</td>
+        </tr>
+        <tr>
+          <td>Section D: 0 5 5 5 5 5 5 5 5 10</td>
+          <td>0, 5, 5, 5, 10</td>
+        </tr>
+      </tbody>
+    </table>
+    </p>
+    <p><a href="http://youtu.be/uifLbZKPUDU" target="_blank">Video Solution Example 7</a> (cc)</p>
+  </div>
+  <p>Of course, with a relatively small data set, finding a five-number summary is a bit silly, since the summary contains almost as many values as the original data set. In the TryItNow below you will have a larger data set.</p>
+  <div class="tryitnow">
+    <h5>Try it Now 2</h5>
+    <p>The total cost of textbooks for the term was collected  from 36 students.&nbsp; Find the 5 number summary of this data. Would we consider $140 an outlier? What about $460?</p>
+    <table class="display-lg" bgcolor="#FFFFFF">
+      <tr>
+        <td>$140 </td>
+        <td>$160 </td>
+        <td>$160 </td>
+        <td>$165 </td>
+        <td>$180 </td>
+        <td>$220 </td>
+        <td>$235 </td>
+        <td>$240 </td>
+        <td>$250 </td>
+        <td>$260 </td>
+        <td>$280 </td>
+        <td>$285 </td>
+      </tr>
+      <tr>
+        <td>$285 </td>
+        <td>$285 </td>
+        <td>$290 </td>
+        <td>$300 </td>
+        <td>$300 </td>
+        <td>$305 </td>
+        <td>$310 </td>
+        <td>$310 </td>
+        <td>$315 </td>
+        <td>$315 </td>
+        <td>$320 </td>
+        <td>$320 </td>
+      </tr>
+      <tr>
+        <td>$330 </td>
+        <td>$340 </td>
+        <td>$345 </td>
+        <td>$350 </td>
+        <td>$355 </td>
+        <td>$360 </td>
+        <td>$360 </td>
+        <td>$380 </td>
+        <td>$395 </td>
+        <td>$420 </td>
+        <td>$460 </td>
+        <td>$520 </td>
+      </tr>
+    </table>
+    <h5 class="js-expandmore">Hint 1</h5>
+    <div class="js-to_expand">
+      <p>The five number summary includes the Min, Q1, Median, Q3, and Max. The min and max are the easiest to grab, but just make sure you actually order the data if it was not already done. To find the median, Q1, and Q3 you will need to also know how many data values in the table. In this case n = 36, so use this to find all three values.</p>
+      <p>To determine if a value is an outlier you will need to first calculate the IQR (interquartile range).</p>
+    </div>
+    <h5 class="js-expandmore">Answer</h5>
+    <div class="js-to_expand">
+      <p>The data is already in order, so we don&rsquo;t need to sort it  first. The minimum value is $140 and the  maximum is $520.&nbsp; </p>
+      <p><strong>Median:</strong> There are 36 data values so <em>n</em>&nbsp;=&nbsp;36.&nbsp; <em>n</em>/2&nbsp;=&nbsp;18, which is a whole  number, so the median is the mean of the 18th and 19th  data values, $305 and $310.&nbsp; The median  is $307.50.</p>
+      <p><strong>Q1:</strong> To find the first quartile, we  calculate the locator, L = 0.25(36)&nbsp;=&nbsp;9.&nbsp;  Since this is a whole number, we know Q1 is the mean of the 9th  and 10th data values, $250 and $260.&nbsp;  Q1&nbsp;=&nbsp;$255.</p>
+      <p><strong>Q3:</strong> To find the third  quartile, we calculate the locator, L&nbsp;=&nbsp;0.75(36)&nbsp;=&nbsp;27.&nbsp;  Since this is a whole number, we know Q3 is the mean of the 27th  and 28th  data values, $345 and $350.&nbsp;  Q3&nbsp;=&nbsp;$347.50.</p>
+      <p>The 5 number summary of this data is:&nbsp; $140, $255, $307.50, $347.50, $520</p>
+      <p>To determine if there are any outliers we need to first calculate the interquartile range (IQR). IQR=Q3-Q1, so that gives us
+        <math display="inline">
+          <mrow>
+            <mi>I</mi>
+            <mi>Q</mi>
+            <mi>R</mi>
+            <mo>=</mo>
+            <mi>&#x0024;</mi>
+            <mn>347.50</mn>
+            <mo>&#x2212;</mo>
+            <mi>&#x0024;</mi>
+            <mn>255</mn>
+            <mo>=</mo>
+            <mi>&#x0024;</mi>
+            <mn>92.50</mn>
+          </mrow>
+        </math>
+        . </p>
+      <p>Any values that are 1.5*IQR below Q1 would be considered an outlier, so first find that value:
+        <math display="inline">
+          <mrow>
+            <mtext>Q1</mtext>
+            <mo>&#x2212;</mo>
+            <mn>1.5</mn>
+            <mo>&#x22C5;</mo>
+            <mtext>IQR</mtext>
+            <mo>=</mo>
+            <mi>&#x0024;</mi>
+            <mn>255</mn>
+            <mo>&#x2212;</mo>
+            <mn>1.5</mn>
+            <mo>&#x22C5;</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>&#x0024;</mi>
+                <mn>92.50</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>=</mo>
+            <mi>&#x0024;</mi>
+            <mn>116.25</mn>
+          </mrow>
+        </math>
+        . Start with the lowest value in the data, $140. We can see that $140 is more than $116.25 we would not consider $140 as an outlier. No need to check any other data values as $140 was the lowest. </p>
+      <p>Any values that are 1.5*IQR above Q3 are also considered outliers. Calculate the value:
+        <math display="inline">
+          <mtext>Q3+</mtext>
+          <mn>1.5</mn>
+          <mo>&#x22C5;</mo>
+          <mtext>IQR</mtext>
+          <mo>=</mo>
+          <mi>&#x0024;</mi>
+          <mn>347.50</mn>
+          <mo>+</mo>
+          <mn>1.5</mn>
+          <mo>&#x22C5;</mo>
+          <mrow>
+            <mo>(</mo>
+            <mrow>
+              <mi>&#x0024;</mi>
+              <mn>92.50</mn>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mo>=</mo>
+          <mi>&#x0024;</mi>
+          <mn>486.25</mn>
+        </math>
+        . Start with the highest data value, $520. We can see that $520 is greater than $486.25 we have that $520 is considered an outlier. The next highest data value is $460, which is less than $486.25, and is not considered an outlier. </p>
+      <p>The only outlier in the data set is the $520 value.</p>
+    </div>
+  </div>
+  <p>In the next example below we will find the five number summary when the data is given on a frequency table.</p>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 7</h3>
+      <p>The one hundred families in a particular neighborhood are asked their annual household income, to the nearest $5 thousand dollars. The results are summarized in a frequency table below. Find the 5-number summary.</p>
+      <p>
+      <table class="display-lg" bgcolor="#FFFFFF">
+        <thead>
+          <tr>
+            <th scope="col"><strong>Income (thousands of dollars)</strong></th>
+            <th scope="col"><strong>Frequency</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>35</td>
+            <td>19</td>
+          </tr>
+          <tr>
+            <td>40</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>45</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>50</td>
+            <td>7</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+    </div>
+    <p>By adding the frequencies, we can see there are 100 data  values represented in the table.&nbsp; In the last section we found the median was $35 thousand.&nbsp; We can see in the table that the minimum  income is $15 thousand, and the maximum is $50 thousand.</p>
+    <p>To find Q1, we calculate the locator:&nbsp; <em>L</em>&nbsp;=  0.25(100)&nbsp;=&nbsp;25.&nbsp; This is a whole number,  so Q1 will be the mean of the 25th and 26th  data values.</p>
+    <p>Counting up in the data as we did before, </p>
+    <p>There are 6 data values of $15, so values 1 to 6 are $15 thousand<br>
+      The next 8 data values are $20, so values 7 to (6+8)=14 are $20 thousand<br>
+      The next 11 data values are $25, so values 15 to (14+11)=25 are $25  thousand<br>
+      The next 17 data values are $30, so values 26 to (25+17)=42 are $30  thousand</p>
+    <p>The 25th data value is $25 thousand, and the 26th  data value is $30 thousand, so Q1 will be the mean of these:&nbsp; (25&nbsp;+&nbsp;30)/2&nbsp;=&nbsp;$27.5 thousand.</p>
+    <p>To find Q3, we calculate the locator:&nbsp; <em>L</em>&nbsp;=&nbsp; 0.75(100)&nbsp;=&nbsp;75.&nbsp; This is a whole number, so Q3 will be the mean of the 75th and 76th  data values.&nbsp; Continuing our counting  from earlier,</p>
+    <p>The next 19 data values are $35, so values 43 to (42+19)&nbsp;=&nbsp;61 are $35  thousand<br>
+      The next 20 data values are $40, so values 61 to (61+20)&nbsp;=&nbsp;81 are $40  thousand</p>
+    <p>Both the 75th and 76th data values  lie in this group, so Q3 will be $40 thousand.</p>
+    <p>Putting these values together into a five-number summary, we get:&nbsp; 15, 27.5, 35, 40, 50</p>
+    <p><a href="http://youtu.be/ECOeeDrUxpo" target="_blank">Video Solution Example 8</a> (cc)</p>
+  </div>
+  <h2>Create a Box-Plot</h2>
+  <p>The 5 number summary divides the data into four intervals, each of which will contain about 25% of the data. For visualizing that summary, there is a graphical representation of a 5-number summary called a <strong>box plot</strong>,  or box and whisker graph. </p>
+  <div class="definition">
+    <h4>Box plot</h4>
+    <p>A <strong>box plot</strong> is a graphical representation  of a five-number summary. </p>
+    <p>To create a box plot, a number line is first drawn.  A box is drawn from the first quartile to the third quartile, and a line  is drawn through the box at the median.  &ldquo;Whiskers&rdquo; are extended out to the minimum and maximum values. </p>
+  </div>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 8</h3>
+      <p>The heights of a set of females had a 5-number summary: 59, 62, 66, 69, 72. Create a box-plot.</p>
+    </div>
+    <p> <img src="images/Module5-4_clip_image009.jpg" alt="Visual of the five number summary given" width="550" height="136"></p>
+    <p><a href="http://youtu.be/s4SPGFlMBMU" target="_blank">Video Solution Example 9</a> (cc) - another example starts after the 2:42 mark of the video.</p>
+  </div>
+  <p>Notice how the boxplot allows us to visualize the differences in the spread of the data on the quartiles instead of just having the range given to us. </p>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 9</h3>
+      <p>Create a box plot based on the household income data  with 5 number summary: <br>
+        15, 27.5, 35, 40, 50</p>
+    </div>
+    <p><img src="images/Module5-4_clip_image011.jpg" alt="" width="550" height="150"></p>
+    <p><a href="http://youtu.be/s4SPGFlMBMU?t=2m44s" target="_blank">Video Solution Example 10</a> (cc)</p>
+  </div>
+  <div class="tryitnow">
+    <h5>Try it Now 3</h5>
+    <p>Create a boxplot based on the textbook price data from  the last Try it Now. The five number summary from that problem was found to be: $140, $255, $307.50, $347.50, $460.</p>
+    <p>&nbsp;</p>
+    <h5 class="js-expandmore">Hint 1</h5>
+    <div class="js-to_expand">
+      <p>Watch the video below for how to construct the boxplot (or box and whisker plot).</p>
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4Y7Z7_1TrSI" frameborder="0" allowfullscreen></iframe>
+        (cc)</p>
+    </div>
+    <h5 class="js-expandmore">Answer</h5>
+    <div class="js-to_expand">
+      <p><img name="costoftextbookwhiskerplot" src="images/costoftextbookwhiskerplot.png" width="399" height="102" border="0" alt="display of five number summary: $140, $255, $307.50, $347.50, $460"></p>
+    </div>
+  </div>
+  <h2>Applications of Box Plots</h2>
+  <p>Box plots are particularly useful for comparing data from two populations.</p>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 10</h3>
+      <p>The box plot of service times for two fast-food  restaurants is shown below. Describe what is seen in the plots.</p>
+      <p><img src="images/Module5-4_clip_image013.jpg" alt="Five Number Summary for each store. Store 1: 0.7, 1.8, 2.3, 2.9, 6.3 Store 2: 0.5, 1.1, 2.1, 5.7, 9.6" width="550" height="250"></p>
+    </div>
+    <p>While store 2 had a slightly shorter median service time  (2.1 minutes vs. 2.3 minutes), store 2 is less consistent, with wider spread of  the data. </p>
+    <p>At store 1, 75% of customers were served within 2.9  minutes, while at store 2, 75% of customers were served within 5.7  minutes.</p>
+    <p>Which store should you go to in a hurry? That depends upon your opinions about luck &ndash;  25% of customers at store 2 had to wait between 5.7 and 9.6 minutes.</p>
+    <p><a href="http://youtu.be/eUkgf-2NVO8" target="_blank">Video Solution Example 11</a> (cc) - another example starts after the 2:26 mark of the video.</p>
+  </div>
+  <div class="example">
+    <div class="example-title">
+      <h3>Example 11</h3>
+      <p>The boxplot below is based on the birth weights of infants  with severe idiopathic respiratory distress syndrome (SIRDS). The boxplot is separated to show the birth  weights of infants who survived and those that did not. Compare these two boxplots and describe the differences that can be observed.</p>
+      <p><img src="images/Module5-4_clip_image015.jpg" alt="" width="550" height="250"></p>
+    </div>
+    <p>Comparing the two groups, the boxplot reveals that the  birth weights of the infants that died appear to be, overall, smaller than the  weights of infants that survived. In  fact, we can see that the median birth weight of infants that survived is the  same as the third quartile of the infants that died.</p>
+    <p>Similarly, we can see that the first quartile of the  survivors is larger than the median weight of those that died, meaning that  over 75% of the survivors had a birth weight larger than the median birth  weight of those that died. </p>
     <p>Looking at the maximum value for those that died and the  third quartile of the survivors, we can see that over 25% of the survivors had  birth weights higher than the heaviest infant that died.</p>
-  <p>The box plot gives us a quick, albeit informal, way to  determine that birth weight is quite likely linked to survival of infants with SIRDS.</p>
-
-  <p><a href="http://youtu.be/eUkgf-2NVO8?t=2m26s" target="_blank">Video Solution Example 12</a> (cc)</p>
-</div>
-
-<p>Below is an example from Khanacademy. Make sure you pause the video and work the problem yourself. When you compare the solutions you will see he uses a different method for finding the quartiles - this method will give you the same results as you would get with the method shown above. Just keep in mind that we are using the locator method (.25n) and (.75n) with rounding up for decimals to find Q1 and Q3.</p>
-<p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BXq5TFLvsVw" frameborder="0" allowfullscreen></iframe></p>
-
-</div>
-
-<div class="content-body">   
-<h2>Exercises:</h2>
-<ol>
- <li>
-   <p>Determine the range for the set of scores: 10, 8, 5, 4, 6, 3, 5, 6, 7.</p>
-            <h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-			<p>Range: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
- <mn>10</mn><mo>&#x2212;</mo><mn>3</mn><mo>=</mo><mn>7</mn>
-</math>
-</p>
-			</div>	
-			</div>
- </li>
-<li><p>The temperature highs (in Fahrenheit) for the first ten days in May 2021 for the temperature in Tucson are given below. Round all answers to two decimal places.</p>
-<table class="display-lg">
-<tr>
-    <td>95&#176; </td>
-    <td>92&#176; </td>
-    <td>86&#176; </td>
-    <td>91&#176; </td>
-    <td>96&#176; </td>
-    <td>100&#176; </td>
-</tr>
-<tr>
-    <td>96&#176; </td>
-    <td>92&#176; </td>
-    <td>93&#176; </td>
-    <td>94&#176; </td>
-    <td>94&#176; </td>
-    <td>97&#176; </td>
-</tr>    
-</table>
-    
-<ol type="a">
-<li>Find the mean, median, and mode for the data set.</li>
-<li>Find the range, variance, and standard deviation for the data set. Treat the data as if it were a sample.</li> 
-<li>Find the five-number summary for the data set.</li>    
-<li>Draw a box plot for the data set.</li>
-</ol>    
-			<h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-    
-<ol type="a">
-<li>Mean 93.83, Median 94, Mode 92, 94, 96</li>
-<li>Range 14, Standard Deviation 3.51, Variance 12.33 </li> 
-<li>86, 92, 94, 96, 100</li>    
-<li><img src="../2-2-QuantitiativeGraphically/images/excerciseTucsonTempBoxplot.JPG" width="80%" alt="Boxplot for the given five number summary 86, 92, 94, 96, 100"/></li>
-</ol>       
-			</div>	
-			</div>  
-                
-</li>    
- <li>
-   <p>A sample of 30 distance scores measured in yards has a mean of 7, a variance of 16, and a standard deviation of 4. </p>
- 
- <ol start="1" type="a">
-   <li>
-     <p>You want to convert all your distances from yards to feet, so you multiply each score in the sample by 3. What are the new mean, median, variance, and standard deviation? </p>
-   </li>
-   <li>
-     <p>You then decide that you only want to look at the distance past a certain point. Thus, after multiplying the original scores by 3, you decide to subtract 4 feet from each of the scores. Now what are the new mean, median, variance, and standard deviation?</p>
-   </li>
-   </ol>
-			<h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-<ol type="a">
-   <li>
-     <p>The mean is 21, standard deviation is 12, variance is 144.</p>
-   </li>
-   <li>
-     <p>The mean is 17, standard deviation is 12, variance is 144. Notice the spread did not change when subtracting 4 from each value.</p>
-   </li>
-   </ol>            
-            </div>
-            </div>
-</li>
-  <li>
-    <p>Make up three data sets with 5 numbers each that have the same mean but different standard deviations.</p>
-  </li>
-  <li>
-    <p>Would the variance of 10, 12, 17, 20, 25, 27, 42, and 45 be larger if the numbers represented a population or a sample?</p>
-			<h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-            <p>The variance would smaller for a population as we divide by a larger number in the denominator when working data that represents the population.</p>
-            </div>
-            </div>      
-  </li>
-  <li>
-    <p>You recorded the time in seconds it took for 8 participants to solve a puzzle. The times were:&nbsp; 15.2, 18.8, 19.3, 19.7, 20.2, 21.8, 22.1, 29.4. Find the variance and standard deviation for the times (assume the data comes from a sample of all puzzle solvers).</p>
-			<h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-            <p>Standard Deviation 4.07, Variance 16.55</p>         
-            </div>
-            </div>      
-  </li>
-  <li>
-    <p>You recorded the time in seconds it took for 8 participants to solve a puzzle. These times appear below. However, when the data was entered into the statistical program, the score that was supposed to be 22.1 was entered as 21.2. Scores: 15.2, 18.8, 19.3, 19.7, 20.2, 21.8, 22.1, 29.4</p>
-    <ol type="a">
-      <li>
-        <p>Which of these measures of central tendency will change when you correct the recording error (mean, median, and/or mode)? </p>
-      </li>
-      <li>
-        <p>Which measures of variability (range, standard deviation, variance) will change  when you correct the recording error?</p>
-      </li>
-    </ol>
-  			<h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-    <ol type="a">
-      <li>
-        <p>The Mean would change.</p>
-      </li>
-      <li>
-        <p>The standard deviation and variance would change.</p>
-      </li>
-    </ol>       
-            </div>
-            </div>        
-      
-  </li>
-  <li>
-    <p>A random sample of students were selected from a local college and their age was recorded. The ages for the 25 students were: 17, 18, 18, 18, 18,  19, 19, 19, 19,  19,  20, 20, 20, 21, 21, 22, 22, 23, 25, 26, 29, 30, 32, 38, 51. Create a boxplot of the ages.</p>
-            <h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-            <p>The five number summary: 17, 19, 20, 25, 51</p>
-               <p><img src="../2-2-QuantitiativeGraphically/images/ageof25collegestudents_boxplot.JPG" width="70%" alt="Boxplot with five number summary 17, 19, 20, 25, 51"/></p>
-            </div>
-            </div>           
-</li>
-  <li>
-    <p>The box plot below shows salaries for Actuaries and CPAs. Kendra makes the median salary for an Actuary. Kelsey makes the first quartile salary for a CPA. Who makes more money? How much more?</p>
-  <p><img src="images/Module5-4_clip_image002.jpg" alt="Boxplot showing salaries for CPA and Actuaries in thousands of dollars. CPA five number summary 30, 40, 75, 90, 100. Actuary five number summary 40, 75, 90, 95, 110" width="400" height="150"></p>
-            <h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-            <p>The median salary for Actuaries is 90,000. The first quartile for CPA salaries is 40,000. Kendra made <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
-  <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
-  <mn>90</mn>
-  <mo>,</mo>
-  <mn>000</mn>
-  <mo>&#x2212;<!-- − --></mo>
-  <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
-  <mn>40</mn>
-  <mo>,</mo>
-  <mn>000</mn>
-  <mo>=</mo>
-  <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
-  <mn>50</mn>
-  <mo>,</mo>
-  <mn>000</mn>
-</math> more than Kelsey.</p>
-            </div>
-            </div>
-  </li>
-  <li>
-    <p>Studies are often done by pharmaceutical companies to determine the effectiveness of a treatment program. Suppose that a new AIDS antibody drug is currently under study. It is given to patients once the AIDS symptoms have revealed themselves. Of interest is the average length of time in months patients live once starting the treatment. Two researchers each follow a different set of 40 AIDS patients from the start of treatment until their deaths. The following data (in months) are collected.</p>
-    <p>&nbsp;Researcher One: 3; 4; 11; 15; 16; 17; 22; 44;  37; 16; 14; 24; 25; 15; 26; 27; 33; 29; 35; 44; 13; 21; 22; 10; 12; 8; 40; 32;  26; 27; 31; 34; 29; 17; 8; 24; 18; 47; 33; 34</p>
-    <p>&nbsp;Researcher Two: 3; 14; 11; 5; 16; 17; 28; 41;  31; 18; 14; 14; 26; 25; 21; 22; 31; 2; 35; 44; 23; 21; 21; 16; 12; 18; 41; 22;  16; 25; 33; 34; 29; 13; 18; 24; 23; 42; 33; 29</p>
-    <p>Create a comparative set of boxplots of the data for the researchers.</p>
-
-            <h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-            <p>The five number summary Researcher One: 1, 15, 24, 31.5, 47</p>
-            <p>The five number summary Researcher Two: 2, 16, 22, 30, 44</p>    
-               <p><img src="../2-2-QuantitiativeGraphically/images/researchersboxplots.JPG" width="50%" alt="The five number summary Researcher One: 1, 15, 24, 31.5, 47. The five number summary Researcher Two: 2, 16, 22, 30, 44"/></p>
-            </div>
-            </div>  
-      
-  </li>
-    <li><p>The following box plot shows the estimated percent of U.S. population below a given age for 2019 (from census.gov).</p>
-    <p><img src="../2-2-QuantitiativeGraphically/images/populationpercentboxplot.JPG" width="90%"  alt=""/></p>
-    <ol type="a">
+    <p>The box plot gives us a quick, albeit informal, way to  determine that birth weight is quite likely linked to survival of infants with SIRDS.</p>
+    <p><a href="http://youtu.be/eUkgf-2NVO8?t=2m26s" target="_blank">Video Solution Example 12</a> (cc)</p>
+  </div>
+  <p>Below is an example from Khanacademy. Make sure you pause the video and work the problem yourself. When you compare the solutions you will see he uses a different method for finding the quartiles - this method will give you the same results as you would get with the method shown above. Just keep in mind that we are using the locator method (.25n) and (.75n) with rounding up for decimals to find Q1 and Q3.</p>
+  <p>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BXq5TFLvsVw" frameborder="0" allowfullscreen></iframe>
+  </p>
+  <h2>Exercises:</h2>
+  <ol>
     <li>
-      <p>Can we say children (17 and under) make up 25% of the population?</p>
+      <p>Determine the range for the set of scores: 10, 8, 5, 4, 6, 3, 5, 6, 7.</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>Range:
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mn>10</mn>
+              <mo>&#x2212;</mo>
+              <mn>3</mn>
+              <mo>=</mo>
+              <mn>7</mn>
+            </math>
+          </p>
+        </div>
+      </div>
     </li>
     <li>
-      <p>What percent of the population is between 19 and 58?</p>
+      <p>The temperature highs (in Fahrenheit) for the first ten days in May 2021 for the temperature in Tucson are given below. Round all answers to two decimal places.</p>
+      <table class="display-lg">
+        <tr>
+          <td>95&#176; </td>
+          <td>92&#176; </td>
+          <td>86&#176; </td>
+          <td>91&#176; </td>
+          <td>96&#176; </td>
+          <td>100&#176; </td>
+        </tr>
+        <tr>
+          <td>96&#176; </td>
+          <td>92&#176; </td>
+          <td>93&#176; </td>
+          <td>94&#176; </td>
+          <td>94&#176; </td>
+          <td>97&#176; </td>
+        </tr>
+      </table>
+      <ol type="a">
+        <li>Find the mean, median, and mode for the data set.</li>
+        <li>Find the range, variance, and standard deviation for the data set. Treat the data as if it were a sample.</li>
+        <li>Find the five-number summary for the data set.</li>
+        <li>Draw a box plot for the data set.</li>
+      </ol>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <ol type="a">
+            <li>Mean 93.83, Median 94, Mode 92, 94, 96</li>
+            <li>Range 14, Standard Deviation 3.51, Variance 12.33 </li>
+            <li>86, 92, 94, 96, 100</li>
+            <li><img src="../2-2-QuantitiativeGraphically/images/excerciseTucsonTempBoxplot.JPG" width="80%" alt="Boxplot for the given five number summary 86, 92, 94, 96, 100"/></li>
+          </ol>
+        </div>
+      </div>
     </li>
     <li>
-      <p>If the total population is estimated to be 328,239,523, then approximately how many people are between the ages 19 and 39?</p>
-    </li>    
+      <p>A sample of 30 distance scores measured in yards has a mean of 7, a variance of 16, and a standard deviation of 4. </p>
+      <ol start="1" type="a">
+        <li>
+          <p>You want to convert all your distances from yards to feet, so you multiply each score in the sample by 3. What are the new mean, median, variance, and standard deviation? </p>
+        </li>
+        <li>
+          <p>You then decide that you only want to look at the distance past a certain point. Thus, after multiplying the original scores by 3, you decide to subtract 4 feet from each of the scores. Now what are the new mean, median, variance, and standard deviation?</p>
+        </li>
+      </ol>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <ol type="a">
+            <li>
+              <p>The mean is 21, standard deviation is 12, variance is 144.</p>
+            </li>
+            <li>
+              <p>The mean is 17, standard deviation is 12, variance is 144. Notice the spread did not change when subtracting 4 from each value.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </li>
     <li>
-      <p>11.5% are age 65 and over. Approximately what percentage of the population are working adults (age 18 to age 65)?</p>
-    </li>    
-    </ol>
-            <h5 class="js-expandmore">Answer</h5> 
-			<div class="js-to_expand">
-			<div class="exerciseanswer">	
-            <p>The five number summary: 0, 19, 39, 58, 105</p>
-    
-    <ol type="a">
-    <li>No. The first quartile ends at 19, so less than 25% of the population is below the age of 18.</li>
-    <li>The first and third quartile are 19 and 58 respectively, so 50% of the population will be between 19 and 58.</li>
-    <li>The first quartile is at age 19 and the median is at age 39. This means 25% of the population is between those ages and gives <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
-  <mn>328</mn>
-  <mo>,</mo>
-  <mn>239</mn>
-  <mo>,</mo>
-  <mn>523</mn>
-  <mo>&#x22C5;<!-- ⋅ --></mo>
-  <mrow>
-    <mo>(</mo>
-    <mn>0.25</mn>
-    <mo>)</mo>
-  </mrow>
-  <mo>=</mo>
-  <mn>82</mn>
-  <mo>,</mo>
-  <mn>059</mn>
-  <mo>,</mo>
-  <mn>880</mn>
-</math> for the population between those ages.</li>    
-    <li>If we consider the first quartile as being really close to 18 and say 25% are below the age of 18, then we can approximate this percentage as <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
-  <mn>100</mn>
-  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
-  <mo>&#x2212;<!-- − --></mo>
-  <mn>11.5</mn>
-  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
-  <mo>&#x2212;<!-- − --></mo>
-  <mn>25</mn>
-  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
-  <mo>=</mo>
-  <mn>63.5</mn>
-  <mi mathvariant="normal">&#x0025;<!-- % --></mi>
-</math>. This result may be slightly off.</li>    
-    </ol>
-            </div>
-            </div> 
-    </li>    
-</ol>
-<hr/>
-	<div id="ftn1">
- <p><a href="#_ftnref1" name="_ftn1" title=""> </a> van Vliet, P.K. and Gupta,  J.M. (1973) Sodium bicarbonate in idiopathic respiratory distress syndrome. <em>Arch.  Disease in Childhood</em>, <strong>48</strong>, 249&ndash;255.&nbsp;&nbsp;  As quoted on http://openlearn.open.ac.uk/mod/oucontent/view.php?id=398296&amp;section=1.1.3</p>
-</div>
-</div>    
-
-	<footer>
-  		<div >
-			<p class="text-center toggle-footnotes">[Show Footnotes]</p>
-			<div class="footnotes">
-      			<h2>Attribution:</h2>
-				  <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
-				<p>This page contains modified content from <a href="https://openstax.org/books/introductory-statistics@25.17/pages/1-introduction"> "OpenStax Introductory Satistics" </a> by Barbara Illowsky, Susan Dean. CC BY 4.0.  
-				</p>				
-				  <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
-    		</div>
-  		</div>
-	</footer>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="/shared/webdev/course-files/js/scripts.js"></script>
-<script type="text/javascript" src="../../custom.js"></script>
-<script type="text/javascript" src="../../jquery-accessible-hide-show-aria.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
-
-
-</body>	
+      <p>Make up three data sets with 5 numbers each that have the same mean but different standard deviations.</p>
+    </li>
+    <li>
+      <p>Would the variance of 10, 12, 17, 20, 25, 27, 42, and 45 be larger if the numbers represented a population or a sample?</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>The variance would smaller for a population as we divide by a larger number in the denominator when working data that represents the population.</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <p>You recorded the time in seconds it took for 8 participants to solve a puzzle. The times were:&nbsp; 15.2, 18.8, 19.3, 19.7, 20.2, 21.8, 22.1, 29.4. Find the variance and standard deviation for the times (assume the data comes from a sample of all puzzle solvers).</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>Standard Deviation 4.07, Variance 16.55</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <p>You recorded the time in seconds it took for 8 participants to solve a puzzle. These times appear below. However, when the data was entered into the statistical program, the score that was supposed to be 22.1 was entered as 21.2. Scores: 15.2, 18.8, 19.3, 19.7, 20.2, 21.8, 22.1, 29.4</p>
+      <ol type="a">
+        <li>
+          <p>Which of these measures of central tendency will change when you correct the recording error (mean, median, and/or mode)? </p>
+        </li>
+        <li>
+          <p>Which measures of variability (range, standard deviation, variance) will change  when you correct the recording error?</p>
+        </li>
+      </ol>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <ol type="a">
+            <li>
+              <p>The Mean would change.</p>
+            </li>
+            <li>
+              <p>The standard deviation and variance would change.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </li>
+    <li>
+      <p>A random sample of students were selected from a local college and their age was recorded. The ages for the 25 students were: 17, 18, 18, 18, 18,  19, 19, 19, 19,  19,  20, 20, 20, 21, 21, 22, 22, 23, 25, 26, 29, 30, 32, 38, 51. Create a boxplot of the ages.</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>The five number summary: 17, 19, 20, 25, 51</p>
+          <p><img src="../2-2-QuantitiativeGraphically/images/ageof25collegestudents_boxplot.JPG" width="70%" alt="Boxplot with five number summary 17, 19, 20, 25, 51"/></p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <p>The box plot below shows salaries for Actuaries and CPAs. Kendra makes the median salary for an Actuary. Kelsey makes the first quartile salary for a CPA. Who makes more money? How much more?</p>
+      <p><img src="images/Module5-4_clip_image002.jpg" alt="Boxplot showing salaries for CPA and Actuaries in thousands of dollars. CPA five number summary 30, 40, 75, 90, 100. Actuary five number summary 40, 75, 90, 95, 110" width="400" height="150"></p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>The median salary for Actuaries is 90,000. The first quartile for CPA salaries is 40,000. Kendra made
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+              <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
+              <mn>90</mn>
+              <mo>,</mo>
+              <mn>000</mn>
+              <mo>&#x2212;<!-- − --></mo>
+              <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
+              <mn>40</mn>
+              <mo>,</mo>
+              <mn>000</mn>
+              <mo>=</mo>
+              <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
+              <mn>50</mn>
+              <mo>,</mo>
+              <mn>000</mn>
+            </math>
+            more than Kelsey.</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <p>Studies are often done by pharmaceutical companies to determine the effectiveness of a treatment program. Suppose that a new AIDS antibody drug is currently under study. It is given to patients once the AIDS symptoms have revealed themselves. Of interest is the average length of time in months patients live once starting the treatment. Two researchers each follow a different set of 40 AIDS patients from the start of treatment until their deaths. The following data (in months) are collected.</p>
+      <p>&nbsp;Researcher One: 3; 4; 11; 15; 16; 17; 22; 44;  37; 16; 14; 24; 25; 15; 26; 27; 33; 29; 35; 44; 13; 21; 22; 10; 12; 8; 40; 32;  26; 27; 31; 34; 29; 17; 8; 24; 18; 47; 33; 34</p>
+      <p>&nbsp;Researcher Two: 3; 14; 11; 5; 16; 17; 28; 41;  31; 18; 14; 14; 26; 25; 21; 22; 31; 2; 35; 44; 23; 21; 21; 16; 12; 18; 41; 22;  16; 25; 33; 34; 29; 13; 18; 24; 23; 42; 33; 29</p>
+      <p>Create a comparative set of boxplots of the data for the researchers.</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>The five number summary Researcher One: 1, 15, 24, 31.5, 47</p>
+          <p>The five number summary Researcher Two: 2, 16, 22, 30, 44</p>
+          <p><img src="../2-2-QuantitiativeGraphically/images/researchersboxplots.JPG" width="50%" alt="The five number summary Researcher One: 1, 15, 24, 31.5, 47. The five number summary Researcher Two: 2, 16, 22, 30, 44"/></p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <p>The following box plot shows the estimated percent of U.S. population below a given age for 2019 (from census.gov).</p>
+      <p><img src="../2-2-QuantitiativeGraphically/images/populationpercentboxplot.JPG" width="90%"  alt=""/></p>
+      <ol type="a">
+        <li>
+          <p>Can we say children (17 and under) make up 25% of the population?</p>
+        </li>
+        <li>
+          <p>What percent of the population is between 19 and 58?</p>
+        </li>
+        <li>
+          <p>If the total population is estimated to be 328,239,523, then approximately how many people are between the ages 19 and 39?</p>
+        </li>
+        <li>
+          <p>11.5% are age 65 and over. Approximately what percentage of the population are working adults (age 18 to age 65)?</p>
+        </li>
+      </ol>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to_expand">
+        <div class="exerciseanswer">
+          <p>The five number summary: 0, 19, 39, 58, 105</p>
+          <ol type="a">
+            <li>No. The first quartile ends at 19, so less than 25% of the population is below the age of 18.</li>
+            <li>The first and third quartile are 19 and 58 respectively, so 50% of the population will be between 19 and 58.</li>
+            <li>The first quartile is at age 19 and the median is at age 39. This means 25% of the population is between those ages and gives
+              <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                <mn>328</mn>
+                <mo>,</mo>
+                <mn>239</mn>
+                <mo>,</mo>
+                <mn>523</mn>
+                <mo>&#x22C5;<!-- ⋅ --></mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mn>0.25</mn>
+                  <mo>)</mo>
+                </mrow>
+                <mo>=</mo>
+                <mn>82</mn>
+                <mo>,</mo>
+                <mn>059</mn>
+                <mo>,</mo>
+                <mn>880</mn>
+              </math>
+              for the population between those ages.</li>
+            <li>If we consider the first quartile as being really close to 18 and say 25% are below the age of 18, then we can approximate this percentage as
+              <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                <mn>100</mn>
+                <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+                <mo>&#x2212;<!-- − --></mo>
+                <mn>11.5</mn>
+                <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+                <mo>&#x2212;<!-- − --></mo>
+                <mn>25</mn>
+                <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+                <mo>=</mo>
+                <mn>63.5</mn>
+                <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+              </math>
+              . This result may be slightly off.</li>
+          </ol>
+        </div>
+      </div>
+    </li>
+  </ol>
+  <hr/>
+  <div id="ftn1">
+    <p><a href="#_ftnref1" name="_ftn1" title=""> </a> van Vliet, P.K. and Gupta,  J.M. (1973) Sodium bicarbonate in idiopathic respiratory distress syndrome. <em>Arch.  Disease in Childhood</em>, <strong>48</strong>, 249&ndash;255.&nbsp;&nbsp;  As quoted on http://openlearn.open.ac.uk/mod/oucontent/view.php?id=398296&amp;section=1.1.3</p>
+  </div>
+  <footer>
+    <div >
+      <p class="text-center toggle-footnotes">[Show Footnotes]</p>
+      <div class="footnotes">
+        <h2>Attribution:</h2>
+        <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+        <p>This page contains modified content from <a href="https://openstax.org/books/introductory-statistics@25.17/pages/1-introduction"> "OpenStax Introductory Satistics" </a> by Barbara Illowsky, Susan Dean. CC BY 4.0. </p>
+        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+      </div>
+    </div>
+  </footer>
+  <!--=================--> 
+  
+  <!-- END YOUR CONTENT--> 
+</section>
+</body>
 </html>
