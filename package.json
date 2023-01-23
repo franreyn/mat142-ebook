@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp pug && gulp css && gulp js",
-    "build": "npm install && gulp pug && gulp css && gulp js"
+    "dev": "gulp build",
+    "build": "npm install && gulp build"
   },
-  "author": "Francisco Reynoso",
+  "author": "Center for Learning Technology at Pima Community College",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.2",
