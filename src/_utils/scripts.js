@@ -1,4 +1,46 @@
+let btnText = "Light/Dark";
+let ereaderDisplay = document.querySelector(".ereader-display");
+let readerHeader = document.createElement("header");
+let navWrapper = document.createElement("div");
+let lightButton = document.createElement("button");
+let nav = document.createElement("nav");
+let ul = document.createElement("ul");
+let li = document.createElement("li");
 
+// Add topnav
+// prepend <header>
+ereaderDisplay.prepend(readerHeader); 
+
+// append wrapping <div>
+readerHeader.append(navWrapper);
+navWrapper.id = "header-wrapper";
+
+// append nav
+navWrapper.append(nav);
+
+// append <ul>
+nav.append(ul);
+
+// append <li>
+// ul.append(li);
+
+// Update this to when you add for-loop for nav links
+let tempCode = `
+<li><a href="/index.html">Home</a></li>
+<li><a href="/chapters/chapter-1/Chapter1-CollectingData.html">Ch. 1</a></li>
+<li><a href="/chapters/chapter-1/1-1-BasicConcepts.html">1-1</a></li>
+<li><a href="/chapters/chapter-1/1-2-SamplingMethods.html">1-2</a></li>
+<li><a href="/chapters/chapter-1/1-3-Experiments.html">1-3</a></li>
+  `;
+
+ul.innerHTML = tempCode;
+//==//
+
+// append light/dark button
+navWrapper.append(lightButton);
+lightButton.type = "button";
+lightButton.id = "light-dark-mode";
+lightButton.innerHTML = btnText;
 
 // Dark and light modes
 const docBody = document.querySelector("body");

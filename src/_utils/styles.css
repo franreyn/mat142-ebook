@@ -89,6 +89,12 @@ li p {
   margin-left: 1rem;
 }
 
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+}
+
 body[darkmode] a {
   color: white;
 }
@@ -102,10 +108,13 @@ a {
   margin: 0 auto;
 }
 
-header {
+#header-wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1rem 0;
+
+  border-bottom: 1px solid rgba(13,13,13,.1);
+  margin-bottom: 25px;
 }
 
 .border {
