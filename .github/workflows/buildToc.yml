@@ -1,0 +1,12 @@
+name: build-toc-json
+run-name: ${{ github.actor }} is building the table of contents JSON
+on: push
+jobs:
+  build-toc-json:
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: node buildNav
