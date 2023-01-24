@@ -2,7 +2,7 @@ const fs = require("fs");
 const dir = require('node-dir');
 
 // display contents of files in this directory
-dir.readFiles("dist/chapters",
+dir.readFiles("src/chapters",
   // get content of files
   function(err, content, next) {
       if (err) throw err;
@@ -14,9 +14,9 @@ dir.readFiles("dist/chapters",
 
       // if `dist` folder does not exist create it
       try {
-        fs.readdirSync("dist/api");
+        fs.readdirSync("api");
       } catch (e) {
-        fs.mkdirSync("dist/api");
+        fs.mkdirSync("api");
       }
 
       // map through file names and remove `dist/`
@@ -26,7 +26,7 @@ dir.readFiles("dist/chapters",
       });
 
       // create JSON file of our navigation
-      fs.writeFile("dist/api/toc.json", JSON.stringify(paths), err => {
+      fs.writeFile("api/toc.json", JSON.stringify(paths), err => {
         if (err) return console.log(err);
       });
       
