@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp build",
-    "build": "npm install && gulp build"
+    "build": "npm install && gulp build && node buildNav"
   },
   "author": "Center for Learning Technology at Pima Community College",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-pug": "^5.0.0"
+  },
+  "dependencies": {
+    "node-dir": "^0.1.17"
   }
 }
