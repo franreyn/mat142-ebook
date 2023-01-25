@@ -21,7 +21,7 @@ dir.readFiles("src/chapters",
 
       // map through file names and remove `dist/`
       let paths = files.map((path) => {
-        let replaced = path.replace("dist", "");
+        let replaced = path.replace("src", "");
         return replaced;
       });
 
