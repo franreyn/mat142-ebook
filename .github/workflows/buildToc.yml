@@ -13,4 +13,4 @@ jobs:
       - run: node buildNav
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Merge toc.json      
+          commit_message: Merged toc.json      
