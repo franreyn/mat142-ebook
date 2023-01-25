@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is building the table of contents JSON
 on: push
 jobs:
   build-toc-json:
-    runs-on: macos-11
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -11,3 +11,6 @@ jobs:
           node-version: '18'
       - run: npm install node-dir
       - run: node buildNav
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Merge toc.json      
