@@ -6,6 +6,15 @@ let lightButton = document.createElement("button");
 let nav = document.createElement("nav");
 let ul = document.createElement("ul");
 let li = document.createElement("li");
+let tocUrl = "https://pimaonline-mat142-ebook.netlify.app/api/toc.json";
+
+// fetch toc
+const getToc = async () => {
+  let tocRes = await fetch(tocUrl, {mode: 'cors'});
+  let tocData = await tocRes.json();
+  console.log("toc:", tocData);
+};
+getToc();
 
 // Add topnav
 // prepend <header>
@@ -20,6 +29,7 @@ navWrapper.append(nav);
 
 // append <ul>
 nav.append(ul);
+
 
 // append <li>
 // ul.append(li);
