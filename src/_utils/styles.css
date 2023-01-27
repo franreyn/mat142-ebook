@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+:root {
+  --red-definition: rgba(102, 0, 0, 1);
+  --green-example: rgba(156, 209, 188, 1);
+  --grey-bkg: rgba(93, 93, 93, .05);
+  --blue: rgba(26, 97, 143, 1);
+  --black: rgba(15, 15,15, 1);
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -46,6 +55,12 @@ h1 {
   margin: 0 4rem 1rem 4rem;
 }
 
+.ereader-display h1 {
+  background-color: var(--grey-bkg);
+  padding: 40px;
+  border-bottom: 2px solid var(--blue)
+}
+
 h2 {  
   font-size: 1.602rem;
   margin: 0 4rem .5rem 4rem;
@@ -60,6 +75,12 @@ h3 {
 
 h4 {  
   font-size: 1.2rem;
+  margin: 0 4rem .5rem 4rem;
+  font-weight: 400;
+}
+
+h5 {  
+  font-size: 1rem;
   margin: 0 4rem .5rem 4rem;
   font-weight: 400;
 }
@@ -133,10 +154,10 @@ table {
 }
 
 .definition {
-  background-color: rgba(244, 184, 208, .2);
+  background-color: rgba(168, 87, 87, .05);
   padding: 20px 0;
   margin: 2rem 0;
-  border: 3px solid rgba(244, 184, 208, .5);
+  border: 3px solid var(--red-definition);
 }
 
 .definition h3 {
@@ -147,11 +168,41 @@ table {
   font-family:"FontAwesome";
   content: '\f02d';
   opacity: 1;
-  color: rgba(210, 45, 76, 1);
+  color: var(--red-definition);
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
   margin: 0rem 4rem .5rem;
+}
+
+.plainblock {
+  margin: 15px;
+  background-color: var(--grey-bkg);
+  padding: 20px 0;
+}
+
+.plainblock::before {
+    color: rgba(15, 15, 15, .25);
+    content: "\f10d";
+    display: block;
+    font-family: "FontAwesome";
+    font-size: 1em;
+    font-weight: 400;
+    opacity: 1;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.plainblock::after {
+  color: rgba(15, 15, 15, .25);
+  content: "\f10e";
+  display: block;
+  font-family: "FontAwesome";
+  font-size: 1em;
+  font-weight: 400;
+  opacity: 1;
+  text-align: right;
+  padding-right: 5%;
 }
 
 .tryitnow {
@@ -176,7 +227,8 @@ table {
 .example {
   background-color: rgba(184, 244, 220, .1);
   padding: 20px 0;
-  border-top: 5px solid rgba(45, 210, 179, 1);
+  border-top: 5px solid var(--green-example);
+  border-bottom:  5px solid var(--green-example);
   margin: 2rem 0;
 }
 
@@ -184,6 +236,7 @@ table {
   background-color: rgba(184, 244, 220, .2);
   margin: 1rem 3rem;
   padding: 1rem;
+  border: 2px solid var(--green-example);
 }
 
 .example-title p, .example-title h1,.example-title h2, .example-title h3,.example-title h4 {
