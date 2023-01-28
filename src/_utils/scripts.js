@@ -1,66 +1,90 @@
+"use strict"
+
 let btnText = "Light/Dark";
 let ereaderDisplay = document.querySelector(".ereader-display");
 let readerHeader = document.createElement("header");
 let navWrapper = document.createElement("div");
-let lightButton = document.createElement("button");
+
 let nav = document.createElement("nav");
 let ul = document.createElement("ul");
-let li = document.createElement("li");
-let tocUrl = "https://pimaonline-mat142-ebook.netlify.app/api/toc.json";
+let tocUrl = "http://127.0.0.1:5500/api/toc.json";
+// let tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
+// let tocUrl = "https://api.github.com/repos/franreyn/mat142-ebook/contents/api/toc.json";
 
-// fetch toc
+
+// Fetch table of contents data via api
 const getToc = async () => {
-  let tocRes = await fetch(tocUrl, {mode: 'cors'});
+  let tocRes = await fetch(tocUrl);
   let tocData = await tocRes.json();
-  console.log("toc:", tocData);
+  return tocData
 };
-getToc();
 
-// Add topnav
-// prepend <header>
+// Dynamically create and add Navigation bar
+
+/// prepend <header>
 ereaderDisplay.prepend(readerHeader); 
 
-// append wrapping <div>
+/// append wrapping <div id="header-wrapper"> to <header>
 readerHeader.append(navWrapper);
 navWrapper.id = "header-wrapper";
 
-// append nav
-navWrapper.append(nav);
+// append show/hide button to <div id="header-wrapper">
+let menuBtn = document.createElement("button");
+menuBtn.type = "button";
+menuBtn.id = "menu-btn";
+menuBtn.innerHTML = "Menu";
+navWrapper.append(menuBtn);
+// show-hide button logic
 
-// append <ul>
-nav.append(ul);
-
-
-// append <li>
-// ul.append(li);
-
-// Update this to when you add for-loop for nav links
-let tempCode = `
-<li><a href="/index.html">Home</a></li>
-<li><a href="/chapters/chapter-1/Chapter1-CollectingData.html">Ch. 1</a></li>
-<li><a href="/chapters/chapter-1/1-1-BasicConcepts.html">1-1</a></li>
-<li><a href="/chapters/chapter-1/1-2-SamplingMethods.html">1-2</a></li>
-<li><a href="/chapters/chapter-1/1-3-Experiments.html">1-3</a></li>
-  `;
-
-ul.innerHTML = tempCode;
-//==//
-
-// append light/dark button
-navWrapper.append(lightButton);
+/// append light/dark button to <div id="header-wrapper">
+let lightButton = document.createElement("button");
 lightButton.type = "button";
 lightButton.id = "light-dark-mode";
 lightButton.innerHTML = btnText;
+navWrapper.append(lightButton);
 
-// Dark and light modes
+//// Dark and light modes
 const docBody = document.querySelector("body");
 const button = document.querySelector("#light-dark-mode");
 let isDarkMode = false;
-
+//// dark-light mode logic
 if(button){
 button.addEventListener("click", () => {
   docBody.toggleAttribute("darkmode");
 }); }
+
+// append <nav> to <div id="header-wrapper">
+navWrapper.append(nav);
+
+// append <ul> to <nav>
+nav.append(ul);
+
+// display links
+const appendElements = async () => {
+  const payload = await getToc();
+  payload.map((list, index) => {
+    let li = document.createElement("li");
+    li.innerHTML = `Chapter ${index}`;
+    ul.append(li);
+
+    let _ul = document.createElement("ul");
+    li.append(_ul);
+
+    list.map((path, index) => {
+      let _li = document.createElement("li");
+      _ul.append(_li);
+      let a = document.createElement("a");
+      a.href = path;
+      // remove 'chapters' and 'chapters-0-9
+      let rmChapters = path.replace(/\/chapters\/chapter-[0-9]\//gi, "");
+      let rmHtml = rmChapters.replace(".html", "");
+
+      a.innerHTML = rmHtml;
+      _li.append(a);
+    });
+  });
+}
+appendElements();
 
 //Add Font Awesome 
 const docHead = document.querySelector("head");
