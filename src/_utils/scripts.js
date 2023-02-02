@@ -1,112 +1,147 @@
 "use strict"
 
-let btnText = "Light/Dark";
-let ereaderDisplay = document.querySelector(".ereader-display");
-let readerHeader = document.createElement("header");
-let navWrapper = document.createElement("div");
+// Variables
+const btnText = "Light/Dark";
+const navToggleText = "Menu"
+const fontAwesomeCdn = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css";
+const localTocUrl = "http://127.0.0.1:5500/api/toc.json";
+const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
+const docBody = document.querySelector("body");
+const docHead = document.querySelector("head");
+// ==
 
-let nav = document.createElement("nav");
-let ul = document.createElement("ul");
-let tocUrl = "http://127.0.0.1:5500/api/toc.json";
-// let tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
-// let tocUrl = "https://api.github.com/repos/franreyn/mat142-ebook/contents/api/toc.json";
-
-
-// Fetch table of contents data via api
+// (0) Fetch table-of-contents data via api
 const getToc = async () => {
   let tocRes = await fetch(tocUrl);
   let tocData = await tocRes.json();
   return tocData
 };
 
-// Dynamically create and add Navigation bar
-
-/// prepend <header>
+// (1) create and prepend <header>
+const ereaderDisplay = document.querySelector(".ereader-display");
+const readerHeader = document.createElement("header");
 ereaderDisplay.prepend(readerHeader); 
 
-/// append wrapping <div id="header-wrapper"> to <header>
+// (2) create and append <div id="navigation">
+const navWrapper = document.createElement("div");
+navWrapper.id = "navigation";
 readerHeader.append(navWrapper);
-navWrapper.id = "header-wrapper";
 
-// append show/hide button to <div id="header-wrapper">
-let menuBtn = document.createElement("button");
+// (3) create and append <div class="page-controller">
+const pageController = document.createElement("div");
+pageController.classList.add("page-controller");
+navWrapper.append(pageController);
+
+// (4) create and append menu-toggle button
+const menuBtn = document.createElement("button");
 menuBtn.type = "button";
-menuBtn.id = "menu-btn";
-menuBtn.innerHTML = "Menu";
-navWrapper.append(menuBtn);
-// show-hide button logic
+menuBtn.classList.add("nav-toggle");
+menuBtn.innerHTML = navToggleText;
+pageController.append(menuBtn);
+// (4a) logic for menu-toggle button
+menuBtn.addEventListener("click", () => {
+  nav.toggleAttribute("expanded");
+});
 
-/// append light/dark button to <div id="header-wrapper">
-let lightButton = document.createElement("button");
+// (5) create and append "dark mode" button
+const lightButton = document.createElement("button");
 lightButton.type = "button";
-lightButton.id = "light-dark-mode";
+lightButton.classList.add("darkmode-toggle");
 lightButton.innerHTML = btnText;
-navWrapper.append(lightButton);
+pageController.append(lightButton);
 
-//// Dark and light modes
-const docBody = document.querySelector("body");
-const button = document.querySelector("#light-dark-mode");
-let isDarkMode = false;
-//// dark-light mode logic
-if(button){
-button.addEventListener("click", () => {
-  docBody.toggleAttribute("darkmode");
-}); }
+// (5a) darkmode logic
+const darkModeBtn = document.querySelector(".darkmode-toggle");
+const darkMode = localStorage.getItem("isDarkMode");
+// if "isDarkMode" is null, make it false
+if (darkMode === null) {
+  localStorage.setItem("isDarkMode", "false");
+};
+// if "isDarkMode" is true, add attribute
+if (localStorage.getItem("isDarkMode") === "true") {
+  docBody.setAttribute("dark", "");
+}
+// (5b) click event for darkmode button
+darkModeBtn.addEventListener("click", () => {
+  // if "isDarkMode" is false 
+  if (localStorage.getItem("isDarkMode") === "false") {
+    localStorage.setItem("isDarkMode", "true");
+    docBody.toggleAttribute("dark");
+    // if "isDarkMode" is true
+  } else {
+    localStorage.setItem("isDarkMode", "false");
+    docBody.toggleAttribute("dark");
+ }
+});
 
-// append <nav> to <div id="header-wrapper">
+// (6) create and append <nav> to <div id="navigation">
+const nav = document.createElement("nav");
 navWrapper.append(nav);
 
-// append <ul> to <nav>
+// (6a) create and append <ul> to <nav>
+const ul = document.createElement("ul");
 nav.append(ul);
 
-// display links
-const appendElements = async () => {
-  const payload = await getToc();
-  payload.map((list, index) => {
-    let li = document.createElement("li");
-    li.innerHTML = `Chapter ${index}`;
+// (6b) append navigation from toc.json
+const appendNavigation = async () => {
+  // import toc data
+  const toc = await getToc();
+  // loop through toc
+  toc.forEach((list, index) => {
+    const li = document.createElement("li");
+    // chapter buttons
+    li.innerHTML = `<button type="button" class="chapter-btn">Chapter ${index}</button>`;
     ul.append(li);
-
-    let _ul = document.createElement("ul");
+    const _ul = document.createElement("ul");
     li.append(_ul);
-
-    list.map((path, index) => {
-      let _li = document.createElement("li");
+    // loop through individual lists of toc
+    list.forEach((path) => {
+      const _li = document.createElement("li");
       _ul.append(_li);
-      let a = document.createElement("a");
+      const a = document.createElement("a");
       a.href = path;
-      // remove 'chapters' and 'chapters-0-9
-      let rmChapters = path.replace(/\/chapters\/chapter-[0-9]\//gi, "");
-      let rmHtml = rmChapters.replace(".html", "");
-
-      a.innerHTML = rmHtml;
+      // remove 'chapters' 
+      const rmChapters = path.replace(/\/chapters\/chapter-[0-9]\//gi, "");
+      // remove '.html'
+      const rmHtml = rmChapters.replace(".html", "");
+      // replace '-' with '.'
+      const rmDash = rmHtml.replace(/-/g, ".");
+      // replace '_' with ' '
+      const finalOutput = rmDash.replace(/_/g, " ");
+      // add file name (plus above changes) as text for <a>
+      a.innerHTML = finalOutput;
       _li.append(a);
+    });
+  }); 
+  // (6c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
+  const navChaptBtn = document.querySelectorAll(".chapter-btn");
+  navChaptBtn.forEach((btn) => {
+    btn.addEventListener("click", function() {
+      const __ul = this.nextElementSibling;
+      __ul.toggleAttribute("expanded");
     });
   });
 }
-appendElements();
+appendNavigation();
 
-//Add Font Awesome 
-const docHead = document.querySelector("head");
-  const fontAwesomeCdn = document.createElement("link");
-  fontAwesomeCdn.setAttribute("rel", "stylesheet");
-  fontAwesomeCdn.setAttribute("href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
-  docHead.appendChild(fontAwesomeCdn);
+// (7) add font-awesome to <head>
+const fontAwesome = document.createElement("link");
+fontAwesome.setAttribute("rel", "stylesheet");
+fontAwesome.setAttribute("href", fontAwesomeCdn);
+docHead.appendChild(fontAwesome);
 
-
-// Accordions - show/hide script
+// (8) accordions - show/hide script
 const getAccords = document.querySelectorAll(".accordion");
 getAccords.forEach((accord) => {
-  let btn = accord.querySelector("button");
-  let body = btn.nextElementSibling;
-  btn.addEventListener("click", () => {
-    body.toggleAttribute("hidden");
+  let accordBtn = accord.querySelector("button");
+  let accordBody = accordBtn.nextElementSibling;
+  accordBtn.addEventListener("click", () => {
+    accordBody.toggleAttribute("hidden");
   });
 });
 
-// Footnotes toggle
+// (9) footnotes toggle
 const toggleBtns = document.querySelectorAll(".toggle-btn, .toggle-footnotes");
-
 const changeFootnotesText = (toggleBtns,toggleBtn) => {
   if(toggleBtns[toggleBtn].innerHTML == "[Show Footnotes]") {
     toggleBtns[toggleBtn].innerHTML = "[Hide Footnotes]";
@@ -116,7 +151,6 @@ const changeFootnotesText = (toggleBtns,toggleBtn) => {
 }
 
 if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-footnotes")) {
-
   for (let toggleBtn = 0; toggleBtn < toggleBtns.length; toggleBtn++) {
     // Add tabindex
     toggleBtns[toggleBtn].setAttribute("tabindex", "0");
