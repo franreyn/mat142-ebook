@@ -2,48 +2,19 @@
 
 :root {
   --red-definition: rgba(102, 0, 0, 1);
-  --green-example: rgba(156, 209, 188, 1);
+  --red-definition-text: rgba(102, 0, 0, 1);
+  --example: rgba(15, 98, 146, 1);
+  --example-text: rgba(15, 98, 146, 1);
+  --example-bkg: rgba(186, 210, 224, 0.1);
+  --try-it-now: rgba(227, 139, 41, 1);
+  --try-it-now-text: rgb(184, 114, 33);;
+  --try-it-now-bkg: rgba(225, 175, 118, 0.1);
   --grey-bkg: rgba(93, 93, 93, .05);
   --blue: rgba(26, 97, 143, 1);
   --black: rgba(15, 15,15, 1);
 }
 
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 18px;
-  font-family: 'Lato', sans-serif;
-}
-
-body {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-body[darkmode] {
-  background-color: rgba(20, 20, 20, 1);
-}
-
-body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
-  color: white;
-  opacity: 87%;
-}
-
-#light-dark-mode {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 8px;
-  padding: .25rem;
-}
-
-#light-dark-mode:hover {
-  background-color: lightgray;
-  cursor: pointer;
-}
+/* Font Styles */
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'Lato', sans-serif;
@@ -89,6 +60,43 @@ p {
   font-size: 1.1rem;
   line-height: 1.35;
   margin: 0 4rem 1rem 4rem;
+}
+
+/* Formatting Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+body[darkmode] {
+  background-color: rgba(20, 20, 20, 1);
+}
+
+body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
+  color: white;
+  opacity: 87%;
+}
+
+#light-dark-mode {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: .25rem;
+}
+
+#light-dark-mode:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 ul, ol {
@@ -138,6 +146,49 @@ a {
   margin-bottom: 25px;
 }
 
+table {
+  margin-left: 4rem;
+}
+
+img {
+  max-width: 800px;
+}
+
+img.center {
+  margin: 0.5rem auto !important;
+  display:block;
+}
+
+
+hr {
+  margin: 0 4rem 1rem 4rem;
+}
+
+/* Widgets */
+
+/* Accordions */
+.accordion {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.accordion button {
+  background-color: lightblue;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: .5rem .75rem;
+}
+
+.accordion button:hover {
+  cursor: pointer;
+}
+
+.accordion .accordion-content {
+  padding: 1rem;
+}
+
+/* Border */
 .border {
   background-color: rgba(15, 15, 15, .02);
   border-left: 6px solid darkgray;
@@ -149,10 +200,7 @@ a {
   margin: 2rem 4rem 0;
 }
 
-table {
-  margin-left: 4rem;
-}
-
+/* Definition */
 .definition {
   background-color: rgba(168, 87, 87, .05);
   padding: 20px 0;
@@ -160,8 +208,9 @@ table {
   border: 3px solid var(--red-definition);
 }
 
-.definition h3 {
+.definition :is(h3,h4) {
   margin-bottom: 1rem;
+  color: var(--red-definition-text);
 }
 
 .definition::before {
@@ -175,6 +224,42 @@ table {
   margin: 0rem 4rem .5rem;
 }
 
+/* Example */
+.example {
+  background-color: var(--example-bkg);
+  padding: 20px 0;
+  border: 3px solid var(--example);
+  margin: 2rem 0;
+}
+
+.example-title {
+  background-color: var(--example-bkg);
+  margin: 1rem 3rem;
+  padding: 1rem;
+  border: 2px solid var(--example);
+}
+
+.example-title h3 {
+  color: var(--example);
+}
+
+.example-title p, .example-title h1,.example-title h2, .example-title h3,.example-title h4 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.example::before {
+  font-family:"FontAwesome";
+  content: '\f51c';
+  opacity: 1;
+  color: var(--example);
+  font-weight: 900;
+  font-size: 1.5rem;
+  display:inline-block;
+  margin: 0 4rem 1rem;
+}
+
+/* Plain Block */
 .plainblock {
   margin: 15px;
   background-color: var(--grey-bkg);
@@ -205,90 +290,72 @@ table {
   padding-right: 5%;
 }
 
-.tryitnow {
-  background-color: rgba(238, 244, 184, .2);
-  padding: 20px 0;
-  border-left: 5px solid rgba(238, 244, 184, 1);
-  margin: 2rem 0;
+/* Side By Side */
 
+/* Side By Side */
+
+.width-400 {
+  width: auto;
+  max-width: 400px;
+}
+
+.side-by-side {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0 20px 0;
+}
+.side-by-side-item {
+  flex-basis: 100%;
+  margin: 10px 0;
+  padding: 0;
+}
+.side-by-side-item :is(figure, img) {
+  width: 100%;
+  margin: 0 auto !important;
+}
+@media screen and (min-width: 730px) {
+  .side-by-side-item {
+    flex-basis: 49%;
+    margin: 0;
+ }
+  .side-by-side-item :is(figure, img) {
+    max-width: none;
+    margin-left: auto !important;
+ }
+
+ .side-by-side-item.width-400 :is(figure, img) {
+  width: auto;
+  max-width: 400px;
+}
+}
+
+/* Try It Now */
+
+.tryitnow {
+  background-color: var(--try-it-now-bkg);
+  padding: 20px 0;
+  border: 3px solid var(--try-it-now);
+  margin: 2rem 0;
+}
+
+.tryitnow :is(h3,h4,h5) {
+  color: var(--try-it-now-text);
 }
 
 .tryitnow::before {
   font-family:"FontAwesome";
   content: '\f545';
   opacity: 1;
-  color: rgba(200, 196, 55, 1);
+  color: var(--try-it-now);
   font-weight: 900;
   font-size: 1.5rem;
   display:inline-block;
   margin: 0 4rem 1rem;
 }
 
-.example {
-  background-color: rgba(184, 244, 220, .1);
-  padding: 20px 0;
-  border-top: 5px solid var(--green-example);
-  border-bottom:  5px solid var(--green-example);
-  margin: 2rem 0;
-}
-
-.example-title {
-  background-color: rgba(184, 244, 220, .2);
-  margin: 1rem 3rem;
-  padding: 1rem;
-  border: 2px solid var(--green-example);
-}
-
-.example-title p, .example-title h1,.example-title h2, .example-title h3,.example-title h4 {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.example::before {
-  font-family:"FontAwesome";
-  content: '\f51c';
-  opacity: 1;
-  color: rgba(45, 210, 179, 1);
-  font-weight: 900;
-  font-size: 1.5rem;
-  display:inline-block;
-  margin: 0 4rem 1rem;
-}
-
-img {
-  max-width: 800px;
-}
-
-img.center {
-  margin: 0.5rem auto !important;
-  display:block;
-}
-
-hr {
-  margin: 0 4rem 1rem 4rem;
-}
-
-/* Accordions */
-.accordion {
-  margin: 2rem 0;
-  padding: 0;
-}
-
-.accordion button {
-  background-color: lightblue;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  padding: .5rem .75rem;
-}
-
-.accordion button:hover {
-  cursor: pointer;
-}
-
-.accordion .accordion-content {
-  padding: 1rem;
-}
+/* Toggling & Footnotes */
 
 .toggle-btn:hover,
 .toggle-footnotes:hover {
