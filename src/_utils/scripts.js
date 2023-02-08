@@ -74,10 +74,10 @@ getAccords.forEach((accord) => {
 const toggleBtns = document.querySelectorAll(".toggle-btn, .toggle-footnotes");
 
 const changeFootnotesText = (toggleBtns,toggleBtn) => {
-  if(toggleBtns[toggleBtn].innerHTML == "[Show Footnotes]") {
-    toggleBtns[toggleBtn].innerHTML = "[Hide Footnotes]";
+  if(toggleBtns[toggleBtn].innerHTML == "[Show Attributions]") {
+    toggleBtns[toggleBtn].innerHTML = "[Hide Attributions]";
   } else {
-    toggleBtns[toggleBtn].innerHTML = "[Show Footnotes]";
+    toggleBtns[toggleBtn].innerHTML = "[Show Attributions]";
   }
 }
 
