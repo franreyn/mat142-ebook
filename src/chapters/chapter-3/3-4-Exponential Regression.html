@@ -1,0 +1,1250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="../../_utils/styles.css">
+<script type="text/javascript" src="../../_utils/scripts.js" defer></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<title>3.4 Modeling Exponential Relationships with Regression</title>
+</head>
+<body>
+<section class="ereader-display">
+  <header>
+    <button type="button" id="light-dark-mode">Light/Dark </button>
+  </header>
+  <!-- START YOUR CONTENT--> 
+  <!--===================-->
+  <h1>3.4 Modeling Exponential Relationships with Regression</h1>
+  <h2>3.4 Modeling Exponential Relationships with Regression</h2>
+  <p>Upon completion of this section, you should be able to</p>
+  <ul>
+    <li>Create an exponential regression model between two quantitative variables using a spreadsheet</li>
+    <li>Interpret an exponential regression model in applications</li>
+  </ul>
+  <hr>
+    <h3>Exponential Regresion Model</h3>
+    <p>Recall that exponential models have the form
+      <math display="inline">
+        <mi>y</mi>
+        <mo>=</mo>
+        <mi>a</mi>
+        <mo>&#x22C5;</mo>
+        <msup>
+          <mi>b</mi>
+          <mi>x</mi>
+        </msup>
+      </math>
+      .  Take a moment to reflect on the characteristics we’ve already learned about the exponential model.</p>
+    <div class="definition">
+      <h4>Exponential Model</h4>
+      <p>An exponential model (equation) has a form
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+          <mi>y</mi>
+          <mo>=</mo>
+          <mi>a</mi>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mi>b</mi>
+            <mi>x</mi>
+          </msup>
+        </math>
+        , where <em>a</em> is any nonzero number, <em>b</em> is a positive real number not equal to 1.</p>
+      <ul>
+        <li>
+          <p>If
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+              <mi>b</mi>
+              <mo>&gt;</mo>
+              <mn>1</mn>
+            </math>
+            , we say it models exponential growth. As
+            <math display="inline">
+              <mi>x</mi>
+            </math>
+            increases, the outputs of the model will increase as well and continue to increase at a much faster rate without bound.</p>
+        </li>
+        <li>
+          <p>If
+            <math display="inline">
+              <mrow>
+                <mn>0</mn>
+                <mo>&#x003C;</mo>
+                <mi>b</mi>
+                <mo>&#x003C;</mo>
+                <mn>1</mn>
+              </mrow>
+            </math>
+            , the model shows exponential decay. As
+            <math display="inline">
+              <mi>x</mi>
+            </math>
+            increases, the outputs for the model decrease and continue to decrease, but levels off to the
+            <math display="inline">
+              <mi>x</mi>
+            </math>
+            -axis (gets close to zero, but will not equal to zero).</p>
+        </li>
+        <li>
+          <p>When
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+              <mi>x</mi>
+              <mo>=</mo>
+              <mn>0</mn>
+            </math>
+            the output is
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+              <mi>a</mi>
+            </math>
+            , so we often call a the <strong>initial amount</strong> in applications (or the starting amount). We also say
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+              <mi>a</mi>
+            </math>
+            is also the <em>y</em>-intercept on the graph for the model.</p>
+        </li>
+        <li>
+          <p>The value <em>b</em> is what we call the <strong>growth multiplier</strong>. If we increase <em>x</em> by 1, then <em>b</em> is what we multiply the previous output value by to get the new output.</p>
+        </li>
+      </ul>
+    </div>
+    <p>Exponential regression is used to model situations in which growth begins slowly and then accelerates rapidly without bound, or where decay begins rapidly and then slows down to get closer and closer to zero. We use the command &ldquo;ExpReg&rdquo; on a graphing utility to fit an exponential model to a set of data points. With Google Sheets or Excel we can use &ldquo;LOGEST&rdquo; to find the parameters
+      <math display="inline">
+        <mi>a</mi>
+      </math>
+      and
+      <math display="inline">
+        <mi>b</mi>
+      </math>
+      for the exponential model (the methods will be demonstrated in Example 1).</p>
+    <div class="plainblock">
+      <h4>Exponential Regression with Google Sheets Instructions</h4>
+      <ol>
+        <li>
+          <p>Enter the data in two rows or two columns in Google Sheets</p>
+        </li>
+        <li>
+          <p>Find an empty cell with another empty cell to the right. The values for the
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            and
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            in
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            will be inserted in those two cells.</p>
+        </li>
+        <li>
+          <p>Enter the following: =ARRAYFORMULA(LOGEST(data_y_values,data_x_values)), where the data_y_values is the array of y values from the table and data_x_values is the array of x values from the table. </p>
+        </li>
+        <li>
+          <p>The first value where the function was entered will be
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            and the second will be
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            for the model
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            . </p>
+        </li>
+      </ol>
+      <p></p>
+      <p><strong>Note</strong>: At the time of writing this text Google Sheets built in trendline on a scatter plot used a different approach for the values in an exponential model compared to LOGEST. It is recommended you only use the approach as highlighted above in your work as it will match the output from Excel as well as other software. <a href="https://developers.google.com/chart/interactive/docs/gallery/trendlines" target="_blank">Google Support</a>.</p>
+    </div>
+    <div class="plainblock">
+      <h4>Exponential Regression with Excel Instructions</h4>
+      <p><strong>Office 365</strong></p>
+      <ol>
+        <li>
+          <p>Enter the data in two rows or two columns in Excel</p>
+        </li>
+        <li>
+          <p>Find an empty cell with another empty cell to the right. The values for the
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            and
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            in
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            will be inserted in those two cells.</p>
+        </li>
+        <li>
+          <p>Enter the following: =LOGEST(data_y_values,data_x_values), where the data_y_values is the array of y values from the table and data_x_values is the array of x values from the table. </p>
+        </li>
+        <li>
+          <p>The first value where the function was entered will be
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            and the second will be
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            for the model
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            . </p>
+        </li>
+      </ol>
+      <p><strong>Office Desktop</strong></p>
+      <ol>
+        <li>
+          <p>Enter the data in two rows or two columns in Excel</p>
+        </li>
+        <li>
+          <p>Find an empty cell with another empty cell to the right. The values for the
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            and
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            in
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            will be inserted in those two cells.</p>
+        </li>
+        <li>
+          <p>Highlight the two cells for the values and enter the following in the left hand cell: =LOGEST(data_y_values,data_x_values), where the data_y_values is the array of y values from the table and data_x_values is the array of x values from the table. Instead of hitting enter you will need to hold down CTRL+SHIFT+ENTER (CSE) in order to have Excel give an array of values for
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            and
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            .</p>
+        </li>
+        <li>
+          <p>The first value where the function was entered will be
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            and the second will be
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            for the model
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            . </p>
+        </li>
+      </ol>
+    </div>
+    <div class="example">
+      <div class="example-title">
+        <h3>Example 1</h3>
+        <p>Find the exponential regression model for the data found in the table below:</p>
+        <table class="display-lg" bgcolor="#FFFFFF" border="1">
+          <tbody>
+            <tr>
+              <th scope="row"><math display="inline">
+                  <mi>x</mi>
+                </math></th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <th scope="row"><math display="inline">
+                  <mi>y</mi>
+                </math></th>
+              <td>3</td>
+              <td>5</td>
+              <td>7</td>
+              <td>11</td>
+              <td>19</td>
+              <td>28</td>
+              <td>41</td>
+              <td>67</td>
+              <td>95</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Before we jump to finding the regression model it is always best to construct a scatter plot for the data to ensure the exponential model seems like a good fit.</p>
+      <figure class="center">
+        <iframe width="600" height="371" seamless title="Scatter plot y vs x" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-HSpTOk4w0-rycsZop4an0DUFmdrZ74DVl6ulcBTVCDLDeR_crCChe8NqAoV-RWQbFoFCgme3-Jf4/pubchart?oid=582590516&amp;format=interactive"></iframe>
+        <figcaption>Scatter plot y vs x <a href="https://docs.google.com/spreadsheets/d/1180FwPGr2KkPG2ZJm1des68sZbK7EvVeICHrFWPkjz4/edit?usp=sharing" target="_blank">Google Sheet for Exercise</a></figcaption>
+      </figure>
+      <p>With the data already in a spread sheet (Google Sheets or Excel). Find the values for
+        <math display="inline">
+          <mi>a</mi>
+        </math>
+        and b for the model. </p>
+      <p><strong>Google Sheets</strong>:</p>
+      <p>A screenshot of the work is shown below where the table values are located in cells B1:J2 with x in the first row and y in the second row. <a href="https://docs.google.com/spreadsheets/d/1180FwPGr2KkPG2ZJm1des68sZbK7EvVeICHrFWPkjz4/edit?usp=sharing" target="_blank">Google Sheet for y vs x</a></p>
+      <div class="side-by-side"> <img src="../../images/chapter-3/3-4/google-sheets-logest-demo.jpg" width="100%" alt="Screenshot of the table of x and y values along with output of the function in B7 =ARRAYFORMULA(LOGEST(B2:J2,B1:J1))"/> </div>
+      <p><strong>Excel (Office 365)</strong>:</p>
+      <p>A screenshot of the work is shown below where the table values are located in cells B1:J2 with x in the first row and y in the second row. </p>
+      <div class="side-by-side"> <img src="../../images/chapter-3/3-4/excel365-example1-logest.jpg" width="100%" alt="Screenshot of the table of x and y values along with output of the function in B7 =LOGEST(B2:J2,B1:J1)"/> </div>
+      <p><strong>Final Results</strong>:</p>
+      <p>We see that
+        <math display="inline">
+          <mi>b</mi>
+          <mo>=</mo>
+          <mn>1.5444</mn>
+        </math>
+        and
+        <math display="inline">
+          <mi>a</mi>
+          <mo>=</mo>
+          <mn>2.0011</mn>
+        </math>
+        giving us the exponential regression model as
+        <math display="inline">
+          <mi>y</mi>
+          <mo>=</mo>
+          <mn>2.0011</mn>
+          <mo>&#x22C5;</mo>
+          <msup>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1.5444</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>x</mi>
+          </msup>
+        </math>
+      </p>
+      <p>The scatter plot and regression model is given below:</p>
+      <div class="side-by-side">
+        <figure>
+          <figcaption>Graph of
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mn>2.0011</mn>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1.5444</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>x</mi>
+              </msup>
+            </math>
+            produced on Desmos. <a href="https://www.desmos.com/calculator/74u6yn0ojp" target="_blank">Go to Desmos to explore this model.</a></figcaption>
+          <iframe src="https://www.desmos.com/calculator/74u6yn0ojp?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder="0"></iframe>
+        </figure>
+      </div>
+    </div>
+    <p>Like linear regression, finding the exponential regression equation can be done easily with software. There are some cautions though as there are multiple ways to construct the regression line and to match with what we are doing you will need to use the steps described above. If you use something like Desmos you will need to make sure you select the method the log mode method.</p>
+    <h3>Understanding Exponetial Regression in Applications</h3>
+    <p>Remember that exponential regression is used to model situations in which growth begins slowly and then accelerates rapidly without bound, or where decay begins rapidly and then slows down to get closer and closer to zero. Now in some cases that continuation of growth or decay may not always continue, so we must be careful not to extrapolate outside of the given data region as we work with a regression model.</p>
+    <p>Lets look at some examples on how to find the regression equation and use it to predict outcomes from the model. We will use Google Sheets to do the computations for the regression equation.</p>
+    <div class="example">
+      <div class="example-title">
+        <h3>Example 2</h3>
+        <p>The following table that relates the total number of confirmed Wuhan Covid cases from January 20 through January 28 in mainland China in 2020. Source: <a href="https://coronavirus.jhu.edu/region/china" target="_blank">John Hopkins</a></p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <caption>
+          Total Number of confirmed Wuhan Covid cases in Mainland China
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Number of days after January 20, 2020</th>
+              <th scope="col">Total Number of Cases</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>0</td>
+            <td>278</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>326</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>547</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>639</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>916</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>2000</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>2700</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>4400</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>5970</td>
+          </tr>
+        </table>
+        <ol type="a">
+          <li>
+            <p>Let
+              <math display="inline">
+                <mi>x</mi>
+              </math>
+              be the number of days after 2020 and
+              <math display="inline">
+                <mi>y</mi>
+              </math>
+              be the total number of cases. Use exponential regression to fit a model to this data.</p>
+          </li>
+          <li>
+            <p>What does the model predict for the total number of cases on January 25?</p>
+          </li>
+          <li>
+            <p>We know it is not wise to extrapolate beyond the original data set, but in some cases we use that extrapolation to help decide on what to currently do (the caveat is that we have to assume the growth will continue at the same rate). Imagine you have the data and it is January 29. You want to give warnings based on the model and show what the predicted values would be in 12 days from now (January 29) if that current growth rate continued. Find the total number of cases predicted based on the model.</p>
+          </li>
+        </ol>
+      </div>
+      <ol type="a">
+        <li>
+          <p>First thing to do is plot the data to ensure using exponential regression seems reasonable. </p>
+          <figure class="center">
+            <iframe width="600" height="371" seamless title="Total number of cases vs number of days after January 20, 2020 scatter plot " frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSISO7LUbSR-Ln1XcThk1UmUPm44bk_cMrIgMcmKo-icjoup2vsAMBpuXgN2g_wyzL7c6Jp7rDphmta/pubchart?oid=560458680&amp;format=interactive"></iframe>
+            <figcaption>Total number of cases vs number of days after January 20, 2020 scatter plot " <a href="https://docs.google.com/spreadsheets/d/1SmHbU8-FljNxHlR3lbClfOdgAcUAr4rbfepprb-7NGE/edit?usp=sharing" target="_blank">Google Sheet for Example 2</a></figcaption>
+          </figure>
+          <p>Looking at the above scatter plot we do see the increase in number of cases appears to be increasing as well. This is a sign of exponential growth (not just that it is increasing, but the amount of increase is increasing).</p>
+          <p>Using Google Sheets we get the values for
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            and
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            in the exponential regression model
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>a</mi>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mi>b</mi>
+                <mi>x</mi>
+              </msup>
+            </math>
+            . Screenshot below shows what was done:</p>
+          <div class="side-by-side"> <img src="../../images/chapter-3/3-4/example2-google-sheet-logest.jpg" width="90%" alt="Table of data for Number of days after Jan 20 A1:J1 and Total Number of Cases A2:J2. In B7 the formula =ARRAYFORMULA(LOGEST(B2:J2,B1:J1)) is entered giving results for b=1.502 and a=229.9113"/></div>
+          <p>The exonential regression model is
+            <math display="inline">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mn>229.9113</mn>
+              <mo>&#x22C5;</mo>
+              <msup>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1.502</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>x</mi>
+              </msup>
+            </math>
+            .</p>
+        </li>
+        <li>
+          <p>January 25 would be 5 days after January 20, so we evaluate the model at
+            <math display="inline">
+              <mi>x</mi>
+              <mo>=</mo>
+              <mn>5</mn>
+            </math>
+            .</p>
+          <math display="block">
+            <mtable columnalign="left">
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>=</mo>
+                  <mn>229.9113</mn>
+                  <mo>&#x22C5;</mo>
+                  <msup>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>1.502</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mn>5</mn>
+                  </msup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>&#x2248;</mo>
+                  <mn>1758</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </math>
+          <p>The model predicts there would be 1758 total cases on January 25th.</p>
+        </li>
+        <li>
+          <p>January 29th is already 9 days after January 20 and we want to add on an additional 12 days, so we will evaluate the model at
+            <math display="inline">
+              <mi>x</mi>
+              <mo>=</mo>
+              <mn>9</mn>
+              <mo>+</mo>
+              <mn>12</mn>
+              <mo>=</mo>
+              <mn>21</mn>
+            </math>
+            .</p>
+          <math display="block">
+            <mtable columnalign="left">
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>=</mo>
+                  <mn>229.9113</mn>
+                  <mo>&#x22C5;</mo>
+                  <msup>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>1.502</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mrow>
+                      <mn>21</mn>
+                    </mrow>
+                  </msup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>&#x2248;</mo>
+                  <mn>1180962</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </math>
+          <p>The model would predict that there would be approximately 1,180,962 total cases. This is a much larger number than what was observed on that day (Feb 10) from the reported data: 42,300. Why the big difference? The government began to take actions on the outbreak prior to January 29 (one of which was a travel ban on Jan 23) as well as many other actions being taken.</p>
+        </li>
+      </ol>
+    </div>
+    <p>Another example below shows how the value of the base can be very large when dealing with very small numbers for the independent variable in the situation.</p>
+    <div class="example">
+      <div class="example-title">
+        <h3>Example 3</h3>
+        <p>In 2007, a university study was published investigating the crash risk of alcohol impaired driving. Data from 2,871 crashes were used to measure the association of a person’s blood alcohol level (BAC) with the risk of being in an accident. The table below shows results from the study. [Source: Indiana University Center for Studies of Law in Action, 2007] The relative risk is a measure of how many times more likely a person is to crash. So, for example, a person with a BAC of 0.09 is 3.54 times as likely to crash as a person who has not been drinking alcohol.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <caption>
+          Relative Risk vs BAC
+          </caption>
+          <tr>
+            <th scope="row">BAC</th>
+            <td>0</td>
+            <td>0.01</td>
+            <td>0.03</td>
+            <td>0.05</td>
+            <td>0.07</td>
+            <td>0.09</td>
+            <td>0.11</td>
+            <td>0.13</td>
+            <td>0.15</td>
+            <td>0.17</td>
+            <td>0.19</td>
+            <td>0.21</td>
+          </tr>
+          <tr>
+            <th scope="row">Relative Risk of Crashing</th>
+            <td>1</td>
+            <td>1.03</td>
+            <td>1.06</td>
+            <td>1.38</td>
+            <td>2.09</td>
+            <td>3.54</td>
+            <td>6.41</td>
+            <td>12.6</td>
+            <td>22.1</td>
+            <td>39.05</td>
+            <td>65.32</td>
+            <td>99.78</td>
+          </tr>
+        </table>
+        <ol type="a">
+          <li>
+            <p>Let
+              <math display="inline">
+                <mi>x</mi>
+              </math>
+              represent the BAC level, and let
+              <math display="inline">
+                <mi>y</mi>
+              </math>
+              represent the corresponding relative risk. Use exponential regression to fit a model to these data.</p>
+          </li>
+          <li>
+            <p>After 6 drinks, a person weighing 160 pounds will have a BAC of about 0.16. How many times more likely is a person with this weight to crash if they drive after having 6 drinks? Round to the nearest hundredth.</p>
+          </li>
+        </ol>
+      </div>
+      <ol type="a">
+        <li>
+          <p>Start with constructing the scatter plot to ensure an exponential model is a good fit.</p>
+          <figure class="center">
+            <iframe width="600" height="371" seamless title="Scatter plot of Relative Risk of Crashing vs BAC" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSAfXjltDOTL1mdVkYHK9ODMbRJ-Djn6g2gsVJ3XEDM78-VwLjq-mr2kGgfmfOQ3RFep7ZxL9bZjW_z/pubchart?oid=355632157&amp;format=interactive"></iframe>
+            <figcaption>Scatter plot of Relative Risk of Crashing vs BAC <a href="https://docs.google.com/spreadsheets/d/1qgqh5l3DR-uBM_WeUXmR2Xgazh_3pQsT3xeBSP9fVqA/edit?usp=sharing" target="_blank">Google Sheet for Example 3</a></figcaption>
+          </figure>
+          <p>From the scatter plot we do see the upward trend in growth that has the look of an exponential model. We find the values for
+            <math display="inline">
+              <mi>a</mi>
+            </math>
+            and
+            <math display="inline">
+              <mi>b</mi>
+            </math>
+            for the exponential regression model in Google Sheets and use them to write the equation:</p>
+          <math display="block">
+            <mi>y</mi>
+            <mo>=</mo>
+            <mn>0.58305</mn>
+            <mo>&#x22C5;</mo>
+            <msup>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>22072021331</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>x</mi>
+            </msup>
+          </math>
+          <p>A visual of the scatter plot along with the exponential model is shown below</p>
+          <div class="side-by-side">
+            <figure>
+              <figcaption>Graph of
+                <math display="inline">
+                  <mi>y</mi>
+                  <mo>=</mo>
+                  <mn>0.58305</mn>
+                  <mo>&#x22C5;</mo>
+                  <msup>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>22072021331</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mi>x</mi>
+                  </msup>
+                </math>
+                <a href="https://www.desmos.com/calculator/c150yvs5m5" target="_blank">Go to Desmos to explore this model.</a></figcaption>
+              <iframe src="https://www.desmos.com/calculator/c150yvs5m5?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder="0"></iframe>
+            </figure>
+          </div>
+        </li>
+        <li>
+          <p>Use the model to estimate the risk associated with a BAC of 0.16. Substitute 0.16 for
+            <math display="inline">
+              <mi>x</mi>
+            </math>
+            in the model and solve for
+            <math display="inline">
+              <mi>y</mi>
+            </math>
+            .</p>
+          <math display="block">
+            <mtable columnalign="left">
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>=</mo>
+                  <mn>0.58305</mn>
+                  <mo>&#x22C5;</mo>
+                  <msup>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>22072021331</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mi>x</mi>
+                  </msup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>=</mo>
+                  <mn>0.58305</mn>
+                  <mo>&#x22C5;</mo>
+                  <msup>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>22072021331</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mn>6</mn>
+                  </msup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>y</mi>
+                  <mo>&#x2248;</mo>
+                  <mn>26.35</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </math>
+          <p>If a 160-pound person drives after having 6 drinks, he or she is about 26.35 times more likely to crash than if driving while sober.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="plainblock">
+      <h4>Will it Remain Exponential?</h4>
+      <p>Is it reasonable to assume that an exponential regression model will represent a situation indefinitely?</p>
+      <p>No. Remember that models are formed by real-world data gathered for regression. It is usually reasonable to make estimates within the interval of original observation (interpolation). However, when a model is used to make predictions, it is important to use reasoning skills to determine whether the model makes sense for inputs far beyond the original observation interval (extrapolation).</p>
+    </div>
+    <h2>Exercises:</h2>
+    <ol>
+      <li>
+        <p>Find an exponential regression model for the data given in the following table.</p>
+        <table class="display-lg">
+          <tbody>
+            <tr>
+              <th scope="row"><math display="inline">
+                  <mi>x</mi>
+                </math></th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th scope="row"><math display="inline">
+                  <mi>y</mi>
+                </math></th>
+              <td>1125</td>
+              <td>1495</td>
+              <td>2310</td>
+              <td>3294</td>
+              <td>4650</td>
+              <td>6361</td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <div class="exerciseanswer">
+            <p>
+              <math display="inline">
+                <mi>y</mi>
+                <mo>=</mo>
+                <mn>776.6824</mn>
+                <msup>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1.4260</mn>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mi>x</mi>
+                </msup>
+              </math>
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>Find an exponential regression model for the data given in the following table.</p>
+        <table class="display-lg">
+          <tbody>
+            <tr>
+              <th scope="row"><math display="inline">
+                  <mi>x</mi>
+                </math>
+              </th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th scope="row"><math display="inline">
+                  <mi>y</mi>
+                </math></th>
+              <td>555</td>
+              <td>383</td>
+              <td>307</td>
+              <td>210</td>
+              <td>158</td>
+              <td>122</td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <div class="exerciseanswer">
+            <p>
+              <math display="inline">
+                <mi>y</mi>
+                <mo>=</mo>
+                <mn>731.923</mn>
+                <msup>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>0.7385</mn>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mi>x</mi>
+                </msup>
+              </math>
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>The table below shows a recent graduate’s credit card balance each month after graduation.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <tr>
+            <th scope="row">Month</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <th scope="row">Debt (&#36;)</th>
+            <td>620</td>
+            <td>761.88</td>
+            <td>899.80</td>
+            <td>1039.93</td>
+            <td>1270.63</td>
+            <td>1589.04</td>
+            <td>1851.31</td>
+            <td>2154.92</td>
+          </tr>
+        </table>
+        <ol type="a">
+          <li>
+            <p>Use exponential regression to fit a model to these data.</p>
+          </li>
+          <li>
+            <p>If spending continues at this rate, what will the graduate’s credit card debt be one year after graduating?</p>
+          </li>
+        </ol>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <div class="exerciseanswer">
+            <ol type="a">
+              <li>
+                <p>Using Google Sheets the exponential regression model that fits these data is
+                  <math display="inline">
+                    <mi>y</mi>
+                    <mo>=</mo>
+                    <mn>522.88</mn>
+                    <msup>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>1.1965</mn>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>x</mi>
+                    </msup>
+                  </math>
+                </p>
+              </li>
+              <li>
+                <p>If spending continues at this rate, the graduate’s credit card debt will be &#36;4,501.47 after one year.</p>
+                <math display="block">
+                  <mtable columnalign="left">
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mn>522.88</mn>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1.1965</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mi>x</mi>
+                        </msup>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mn>522.88</mn>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1.1965</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mrow>
+                            <mn>12</mn>
+                          </mrow>
+                        </msup>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>&#x2248;</mo>
+                        <mn>4501.47</mn>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                </math>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>Data was collected on a particular drugs absorbtion into the body when 1000 mg is given through an IV (see table below).</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <tr>
+            <th scope="row">Time (hours)</th>
+            <td>0</td>
+            <td>4</td>
+            <td>8</td>
+            <td>12</td>
+            <td>16</td>
+            <td>20</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <th scope="row">Debt (&#36;)</th>
+            <td>1000</td>
+            <td>580</td>
+            <td>290</td>
+            <td>162</td>
+            <td>93</td>
+            <td>41</td>
+            <td>27</td>
+          </tr>
+        </table>
+        <ol type="a">
+          <li>
+            <p>Construct an exponential regression model for Amount of Drug in body (mg) vs time (hours)</p>
+          </li>
+          <li>
+            <p>Based on that model determine the amount of drugs present after 10 hours.</p>
+          </li>
+        </ol>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <div class="exerciseanswer">
+            <ol type="a">
+              <li>
+                <p>
+                  <math display="inline">
+                    <mi>y</mi>
+                    <mo>=</mo>
+                    <mn>1024.57</mn>
+                    <msup>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>0.8571</mn>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>x</mi>
+                    </msup>
+                  </math>
+                </p>
+              </li>
+              <li>
+                <p>Based on that model the amount of drugs (mg) still in the system after 10 hours is 219 mg.</p>
+                <math display="block">
+                  <mtable columnalign="left">
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mn>1024.57</mn>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>0.8571</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mi>x</mi>
+                        </msup>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mn>1024.57</mn>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>0.8571</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mrow>
+                            <mn>10</mn>
+                          </mrow>
+                        </msup>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>&#x2248;</mo>
+                        <mn>219</mn>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                </math>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>It is a safe assumption that box office sales for each week of a movie would follow an exponential model. The table below comes from the first four weeks of Avengers Endgame demostic ticket sales.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <tr>
+            <th scope="row">Week</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">Ticket Sales (in millions)</th>
+            <td>$474</td>
+            <td>$187</td>
+            <td>$81</td>
+            <td>$40</td>
+          </tr>
+        </table>
+        <ol type="a">
+          <li>
+            <p>Find an exponential regression model for ticket sales
+              <math display="inline">
+                <mi>x</mi>
+              </math>
+              weeks after opening.</p>
+          </li>
+          <li>
+            <p>What would the model predict for week 6 total ticket sales?</p>
+          </li>
+          <li>
+            <p>Using the model can you find which week the total weekly sales would drop below &#36;1 million dollars?</p>
+          </li>
+          <li>
+            <p>Would there be any reason that the projected sales based on the model would not continue to match up with what actually happened?</p>
+          </li>
+        </ol>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <div class="exerciseanswer">
+            <ol type="a">
+              <li>
+                <p>
+                  <math display="inline">
+                    <mi>y</mi>
+                    <mo>=</mo>
+                    <mn>1024.87</mn>
+                    <msup>
+                      <mrow>
+                        <mo>(</mo>
+                        <mrow>
+                          <mn>0.4381</mn>
+                        </mrow>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>x</mi>
+                    </msup>
+                  </math>
+                </p>
+              </li>
+              <li>
+                <p>The ticket sales after the 6th week would be approximately 7.25 million dollars.</p>
+                <math display="block">
+                  <mtable columnalign="left">
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mn>1024.87</mn>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>0.4381</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mi>x</mi>
+                        </msup>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mn>1024.87</mn>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>0.4381</mn>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mn>6</mn>
+                        </msup>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mi>y</mi>
+                        <mo>&#x2248;</mo>
+                        <mn>7.25</mn>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                </math>
+              </li>
+              <li>
+                <p>By trial and error the projected weekly ticket sales drop below 1 million dollars after week 9 (week 9 projected sales are approximately 0.61 million dollars while week 8 projected ticket sales was 1.39 million dollars). </p>
+              </li>
+              <li>
+                <p>Answers will vary. There are various reasons a movies sales may shift away from the model over the passing weeks. One thing that did happen for this movie was getting a boost in ticket sales over the 4th of July weekend. In other cases a movies sales may increase if it started as a limited release and increased the number of theaters it was shown at as the movie became more popular.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </li>
+    </ol>
+  <footer>
+    <div >
+      <p class="text-center toggle-footnotes">[Show Attributions]</p>
+      <div class="footnotes">
+        <h2>Attribution:</h2>
+        <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+        <p>College Algebra. Authored by: Abramson, Jay et al.. Provided by: OpenStax. Located at: <a href="http://cnx.org/contents/9b08c294-057f-4201-9f48-5d6ad992740d@5.2" target="_blank">http://cnx.org/contents/9b08c294-057f-4201-9f48-5d6ad992740d@5.2</a>. License: CC BY: Attribution. License Terms: Download for free at http://cnx.org/contents/9b08c294-057f-4201-9f48-5d6ad992740d@5.2</p>
+      </div>
+    </div>
+  </footer>
+  <!--=================--> 
+  
+  <!-- END YOUR CONTENT--> 
+</section>
+</body>
+</html>
