@@ -3,3 +3,5 @@ node_modules
 .DS_Code
 .next
 dist
+.DS_Store
+.DS_Store
