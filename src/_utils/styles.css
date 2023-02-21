@@ -448,3 +448,8 @@ a:active,
   cursor: pointer;
   text-decoration: none;
 }
+
+/* Temporary - remove when navigation is complete */
+#navigation {
+  overflow: scroll;
+}
