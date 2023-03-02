@@ -1,13 +1,14 @@
 "use strict"
 
 // Variables
-const btnText = "Light/Dark";
-const navToggleText = "Menu"
+const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
+const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>"
 const fontAwesomeCdn = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css";
 const localTocUrl = "http://127.0.0.1:5500/api/toc.json";
 const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
+
 // ==
 
 // (0) Fetch table-of-contents data via api
@@ -47,7 +48,7 @@ menuBtn.addEventListener("click", () => {
 const lightButton = document.createElement("button");
 lightButton.type = "button";
 lightButton.classList.add("darkmode-toggle");
-lightButton.innerHTML = btnText;
+lightButton.innerHTML = btnContent;
 pageController.append(lightButton);
 
 // (5a) darkmode logic
@@ -59,18 +60,18 @@ if (darkMode === null) {
 };
 // if "isDarkMode" is true, add attribute
 if (localStorage.getItem("isDarkMode") === "true") {
-  docBody.setAttribute("dark", "");
+  docBody.setAttribute("darkmode", "");
 }
 // (5b) click event for darkmode button
 darkModeBtn.addEventListener("click", () => {
   // if "isDarkMode" is false 
   if (localStorage.getItem("isDarkMode") === "false") {
     localStorage.setItem("isDarkMode", "true");
-    docBody.toggleAttribute("dark");
+    docBody.toggleAttribute("darkmode");
     // if "isDarkMode" is true
   } else {
     localStorage.setItem("isDarkMode", "false");
-    docBody.toggleAttribute("dark");
+    docBody.toggleAttribute("darkmode");
  }
 });
 
@@ -97,6 +98,7 @@ const appendNavigation = async () => {
     // loop through individual lists of toc
     list.forEach((path) => {
       const _li = document.createElement("li");
+      _li.classList.add("chapter")
       _ul.append(_li);
       const a = document.createElement("a");
       a.href = path;
@@ -170,3 +172,9 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
     })
   }
 }
+
+// Expand or collapse navigation
+const menuNav = document.querySelector(".nav-toggle");
+  menuNav.addEventListener("click", () => {
+  menuNav.toggleAttribute("open");
+});
