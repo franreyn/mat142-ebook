@@ -14,6 +14,467 @@
   --black: rgba(15, 15,15, 1);
 }
 
+
+/* Navigation Mobile */
+
+#navigation {
+  padding: 20px;
+}
+
+.page-controller {
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  align-items: center;
+}
+
+.darkmode-toggle {
+  position:relative;
+  display: inline;
+  width: 5.5em; height: 3em;
+  cursor: pointer;
+  border-radius: 1.5em;
+  transition: 350ms;
+  margin-right: 20px;
+  z-index: 999;
+  border: 1px solid rgba(15,15,15, .25);
+}
+
+.fa-moon:before {
+  display: inline-block;
+  transform: rotate(0deg);
+}
+
+.icon-lrg {
+  font-size: 1.5em;
+}
+
+.nav-toggle {
+  z-index: 999;
+  transition: .542s ease;
+  background-color:white;
+  border:none;
+  margin-top: 5px;
+  padding: 2px;
+  cursor:pointer;
+}
+
+.nav-toggle[open] {
+  z-index: 999;
+  transition: .542s ease;
+}
+
+body[darkmode] .nav-toggle {
+  background-color: rgba(20,20,20,1);
+}
+
+body[darkmode] .nav-toggle #nav-icon span {
+  background-color: white;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.nav-toggle[open] #nav-icon span:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+
+.nav-toggle[open] #nav-icon span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.nav-toggle[open] #nav-icon span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-135deg);
+}
+
+nav ul{
+  display:flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  gap: 25px;
+}
+
+/* If we want it to be collapsible */
+/* nav .chapter-btn + ul[expanded] {
+  size: auto;
+  height: auto;
+  visibility: visible;
+  gap: 25px;
+}
+
+.chapter-btn + ul {
+  margin-bottom: 0;
+  size: 0;
+  height: 0;
+  visibility: hidden;
+} */
+
+nav[expanded] {
+  bottom: 0;
+  box-shadow: 0 0 5px #666;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: .5s ease;
+  user-select: none;
+  overflow-y:auto;
+  background-color: white;
+  z-index: 8;
+}
+
+nav {
+  bottom: 0;
+  box-shadow: 0 0 5px #666;
+  height: 100%;
+  left: -56rem;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  transition: .5s ease;
+  width: 100vw;
+  user-select: none;
+  overflow-y:auto;
+  background-color: white;
+}
+
+.darkmode-toggle::before {
+  position: absolute; content:'';
+  width: 2em; height: 2em;
+  top: 0.4em; left: 0.3em;
+  border-radius: 50%;
+  border: 1px solid rgba(15,15,15, .25);
+  transition: 250ms ease-in-out;
+  background: linear-gradient(#f5f5f5 10%,#eee);
+  z-index: 999;
+}
+
+.darkmode-toggle::after {
+  position: absolute; content:'';
+  width: 1em; height: 1em;
+  top: 1em; left: 6em;
+  border-radius: 50%;
+  transition: 250ms ease-in;
+  background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#ddd;
+  box-shadow:
+    0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+    0 0.05em 0.08em -0.01em rgba(#fff,.7),
+    -7.25em 0 0 -0.25em rgba(#000,.3);
+}
+
+body[darkmode] .darkmode-toggle::after {
+  background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#4c6;
+  box-shadow:
+    0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+    0 0.05em 0.08em -0.01em rgba(#fff,.7),
+    -7.25em 0 0 -0.25em rgba(#000,.12);
+}
+
+body[darkmode] .darkmode-toggle::before {
+  left: 2.75em;
+}
+
+body[darkmode] nav {
+  background-color: rgba(20,20,20,1)
+}
+
+body[darkmode] .chapter-btn {
+  color:white;
+}
+
+.light-dark-icons {
+  display:flex;
+  justify-content: space-around;
+}
+
+#nav-icon {
+  width: 50px;
+  height: 46px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 30px;
+  background: rgba(15,15,15,1);
+  border-radius: 7px;
+  opacity: 1;
+  left: 10px;
+  transition: .35s ease-in-out;
+  transform: rotate(0deg);
+}
+
+#nav-icon span:nth-child(1) {
+  top: 8px;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 20px;
+}
+
+#nav-icon span:nth-child(3) {
+  top: 32px;
+}
+
+.nav-toggle[open] #nav-icon span:nth-child(2) {
+  opacity: 0;
+  left: 30px;
+}
+
+.chapter-btn {
+    border: none;
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    transition: .25s;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+body[darkmode] nav[expanded] .chapter-btn {
+  border-bottom: 1px solid white;
+}
+
+nav[expanded] .chapter-btn {
+  border-bottom: 1px solid rgba(15,15,15, .25);
+  transition: .25s;
+
+}
+
+.chapter a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Navigation Desktop*/
+@media screen and (min-width: 1024px) {
+  nav ul{
+    display:flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+  
+  nav[expanded] {
+    bottom: 0;
+    box-shadow: 0 0 5px #666;
+    height: 100%;
+    left: 0;
+    padding-top: 38px;
+    position: fixed;
+    top: 0;
+    transition: .5s ease;
+    width: 15rem;
+    user-select: none;
+    overflow-y:auto;
+    background-color: white;
+    z-index: 8;
+  }
+  
+  nav {
+    bottom: 0;
+    box-shadow: 0 0 5px #666;
+    height: 100%;
+    left: -16rem;
+    padding-top: 38px;
+    position: fixed;
+    top: 0;
+    transition: .5s ease;
+    width: 20rem;
+    user-select: none;
+    overflow-y:auto;
+    background-color: white;
+  }
+  
+  .nav-toggle[open] {
+    position:fixed;
+    left: 13.5rem;
+    z-index: 999;
+    transition: .542s ease;
+  }
+  
+  .nav-toggle {
+    position:fixed;
+    left: 2.5rem;
+    top: 3rem;
+    z-index: 999;
+    transition: .542s ease;
+    background-color:white;
+    border:none;
+    box-shadow: 0 0 10px rgba(15,15,15,.5);
+    margin-top: 5px;
+    padding: 2px;
+    border-radius: 50%;
+    cursor:pointer;
+  }
+  
+  .darkmode-toggle {
+    position: fixed; 
+    display: block;
+    width: 5.5em; height: 3em;
+    cursor: pointer;
+    border-radius: 1.5em;
+    transition: 350ms;
+    right: 2rem;
+    top: 4rem;
+    transform: rotate(90deg);
+  }
+  
+  .darkmode-toggle::before {
+    position: absolute; content:'';
+    width: 2em; height: 2em;
+    top: 0.3em; left: 0.3em;
+    border-radius: 50%;
+    border: 1px solid rgba(15,15,15, .25);
+    transition: 250ms ease-in-out;
+    background: linear-gradient(#f5f5f5 10%,#eee);
+    z-index: 999;
+  }
+  
+  .darkmode-toggle::after {
+    position: absolute; content:'';
+    width: 1em; height: 1em;
+    top: 1em; left: 6em;
+    border-radius: 50%;
+    transition: 250ms ease-in;
+    background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#ddd;
+    box-shadow:
+      0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+      0 0.05em 0.08em -0.01em rgba(#fff,.7),
+      -7.25em 0 0 -0.25em rgba(#000,.3);
+  }
+  
+  body[darkmode] .darkmode-toggle::after {
+    background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#4c6;
+    box-shadow:
+      0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+      0 0.05em 0.08em -0.01em rgba(#fff,.7),
+      -7.25em 0 0 -0.25em rgba(#000,.12);
+  }
+  
+  body[darkmode] .darkmode-toggle::before {
+    left: 2.75em;
+  }
+  
+  body[darkmode] nav {
+    background-color: rgba(20,20,20,1)
+  }
+  
+  body[darkmode] .chapter-btn {
+    color:white;
+  }
+  
+  .light-dark-icons {
+    display:flex;
+    justify-content: space-around;
+  }
+  
+  .fa-moon:before {
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+  
+  #nav-icon {
+    width: 50px;
+    height: 46px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #nav-icon span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 30px;
+    background: rgba(15,15,15,1);
+    border-radius: 7px;
+    opacity: 1;
+    left: 10px;
+    transition: .35s ease-in-out;
+    transform: rotate(0deg);
+  }
+  
+  #nav-icon span:nth-child(1) {
+    top: 8px;
+  }
+  
+  #nav-icon span:nth-child(2) {
+    top: 20px;
+  }
+  
+  #nav-icon span:nth-child(3) {
+    top: 32px;
+  }
+  
+  .nav-toggle[open] #nav-icon span:nth-child(1) {
+    top: 15px;
+    left:13px;
+    width: 22.5px;
+    transition: .35s ease-in-out;
+    transform: rotate(145deg);
+  }
+  
+  
+  .nav-toggle[open] #nav-icon span:nth-child(2) {
+    opacity: 0;
+    left: 30px;
+  }
+  
+  .nav-toggle[open] #nav-icon span:nth-child(3) {
+    top: 26px;
+    left:13px;
+    width: 22.5px;
+    transition: .35s ease-in-out;
+  transform: rotate(-145deg);
+  }
+  
+  .chapter-btn {
+      border: none;
+      display: block;
+      background-color: transparent;
+      width: 100%;
+      text-align: left;
+      padding-bottom: 5px;
+      font-size: 1.25rem;
+      margin-bottom: 25px;
+      transition: .25s;
+      border-bottom: none;
+  }
+  
+  .chapter-btn + ul {
+    margin-bottom: 0;
+  }
+  
+  nav[expanded] .chapter-btn {
+    border-bottom: 1px solid rgba(15,15,15, .25);
+    transition: .25s;
+  
+  }
+  
+  .chapter a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
 /* Font Styles */
 
 h1, h2, h3, h4, h5, h6, p {
@@ -121,7 +582,6 @@ li p {
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 25px;
 }
 
 body[darkmode] a {
@@ -135,13 +595,13 @@ a {
 .ereader-display {
   max-width: 900px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 #header-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
-
   border-bottom: 1px solid rgba(13,13,13,.1);
   margin-bottom: 25px;
 }
