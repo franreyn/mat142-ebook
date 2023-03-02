@@ -178,3 +178,35 @@ const menuNav = document.querySelector(".nav-toggle");
   menuNav.addEventListener("click", () => {
   menuNav.toggleAttribute("open");
 });
+
+//Get location of current URL to highlight active link 
+let currentUrl = window.location.href;
+currentUrl = currentUrl.split("/").pop();
+console.log(currentUrl)
+
+//Parse and find URL in navigation that matches that link 
+window.onload = () => {
+  const links = document.querySelectorAll("nav a");
+  const chapters = document.querySelectorAll(".chapter-btn");
+
+  // Convert node list into array
+  const linkList = Array.prototype.slice.call(links);
+  const chapterList = Array.prototype.slice.call(chapters);
+
+  // Cut off end of URL
+  let navHrefs = [];
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+    let  newLinkHref = linkList[linkIndex].href.split("/").pop();
+    navHrefs.push(newLinkHref);
+    
+    // Add class to chapter heading
+    if(currentUrl.charAt(0) == navHrefs[linkIndex].charAt(0)) {
+      chapterList[currentUrl.charAt(0)].classList.add("activeChapter")
+    }
+
+    // Add class to chapter
+    if(navHrefs[linkIndex] == currentUrl) {
+      links[linkIndex].classList.add("activeUrl");
+    }
+  }
+}
