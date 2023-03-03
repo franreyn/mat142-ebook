@@ -64,10 +64,9 @@
     <p>A <strong>random experiment</strong> is a mechanism that produces a definite outcome that cannot be predicted with certainty. The <strong>sample space</strong> associated with a random experiment is the set or collection of all possible outcomes. An <strong>event</strong> is any particular outcome or group of outcomes. When an event is made up of just one single outcome we call it a <strong>simple event</strong>.</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 1</h3>
-      <p>Construct a sample space for the experiment that consists of tossing a single coin.</p>
-    </div>
+    <h3>Example 1</h3>
+    <p>Construct a sample space for the experiment that consists of tossing a single coin.</p>
+    <p><strong>Solution</strong> </p>
     <p>The outcomes could be labeled <em>h</em> for heads and <em>t</em> for tails. Then the sample space is the set
       <math display="inline">
         <mrow>
@@ -83,10 +82,9 @@
       .</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 2</h3>
-      <p>Construct a sample space for the experiment that consists of rolling a standard single die. Find the events that correspond to the phrases “an even number is rolled” and “a number greater than two is rolled.”</p>
-    </div>
+    <h3>Example 2</h3>
+    <p>Construct a sample space for the experiment that consists of rolling a standard single die. Find the events that correspond to the phrases “an even number is rolled” and “a number greater than two is rolled.”</p>
+    <p><strong>Solution</strong>
     <p>The sample space is the set of all possible simple events:
       <math display="inline">
         <mrow>
@@ -148,58 +146,57 @@
   </div>
   <p>A device that can be helpful in identifying all possible outcomes of a random experiment, particularly one that can be viewed as proceeding in stages, is what is called a <strong>tree diagram</strong>. It is described in the following example.</p>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 3</h3>
-      <p>Construct a sample space that describes all three-child families according to the binary genders of the children with respect to birth order. For simplicity we are only using the binary genders, but recognize there are those who identify as nonbinary.</p>
+    <h3>Example 3</h3>
+    <p>Construct a sample space that describes all three-child families according to the binary genders of the children with respect to birth order. For simplicity we are only using the binary genders, but recognize there are those who identify as nonbinary.</p>
+  </div>
+  <p>Two of the outcomes are “two boys then a girl,” which we might denote bbg, and “a girl then two boys,” which we would denote gbb. Clearly there are many outcomes, and when we try to list all of them it could be difficult to be sure that we have found them all unless we proceed systematically. The tree diagram shown below "Tree Diagram For Three-Child Families", gives a systematic approach.</p>
+  <div class="side-by-side">
+    <div class="side-by-side-item">
+      <figure>
+        <figcaption>Tree Diagram For Three-Child Families</figcaption>
+        <img src="../../images/chapter-4/4-1/tree-diagram-for-three-child-families.jpg" width="40%" alt="Tree diagram starting with b and g and each branching out to two choices of either b or g until we have branches that list out bbb, bbg, bgb, bgg, gbb, gbg, ggb, ggb, ggg."/></figure>
     </div>
-    <p>Two of the outcomes are “two boys then a girl,” which we might denote bbg, and “a girl then two boys,” which we would denote gbb. Clearly there are many outcomes, and when we try to list all of them it could be difficult to be sure that we have found them all unless we proceed systematically. The tree diagram shown below "Tree Diagram For Three-Child Families", gives a systematic approach.</p>
-    <div class="side-by-side">
-      <div class="side-by-side-item">
-        <figure>
-          <figcaption>Tree Diagram For Three-Child Families</figcaption>
-          <img src="../../images/chapter-4/4-1/tree-diagram-for-three-child-families.jpg" width="40%" alt="Tree diagram starting with b and g and each branching out to two choices of either b or g until we have branches that list out bbb, bbg, bgb, bgg, gbb, gbg, ggb, ggb, ggg."/></figure>
-      </div>
-    </div>
-    <p>The diagram was constructed as follows. There are two possibilities for the first child, boy or girl, so we draw two line segments coming out of a starting point, one ending in a b for “boy” and the other ending in a g for “girl.” For each of these two possibilities for the first child there are two possibilities for the second child, “boy” or “girl,” so from each of the b and g we draw two line segments, one segment ending in a b and one in a g. For each of the four ending points now in the diagram there are two possibilities for the third child, so we repeat the process once more.</p>
-    <p>The line segments are called branches of the tree. The right ending point of each branch is called a node. The nodes on the extreme right are the final nodes; to each one there corresponds an outcome, as shown in the figure.</p>
-    <p>From the tree it is easy to read off the eight outcomes of the experiment, so the sample space is, reading from the top to the bottom of the final nodes in the tree,</p>
-    <math display="block">
-      <mi>S</mi>
-      <mo>=</mo>
-      <mo>&#x007B;</mo>
-      <mi>b</mi>
-      <mi>b</mi>
-      <mi>b</mi>
-      <mo>,</mo>
-      <mi>b</mi>
-      <mi>b</mi>
-      <mi>g</mi>
-      <mo>,</mo>
-      <mi>b</mi>
-      <mi>g</mi>
-      <mi>b</mi>
-      <mo>,</mo>
-      <mi>b</mi>
-      <mi>g</mi>
-      <mi>g</mi>
-      <mo>,</mo>
-      <mi>g</mi>
-      <mi>b</mi>
-      <mi>b</mi>
-      <mo>,</mo>
-      <mi>g</mi>
-      <mi>b</mi>
-      <mi>g</mi>
-      <mo>,</mo>
-      <mi>g</mi>
-      <mi>g</mi>
-      <mi>b</mi>
-      <mo>,</mo>
-      <mi>g</mi>
-      <mi>g</mi>
-      <mi>g</mi>
-      <mo>&#x007D;</mo>
-    </math>
+  </div>
+  <p>The diagram was constructed as follows. There are two possibilities for the first child, boy or girl, so we draw two line segments coming out of a starting point, one ending in a b for “boy” and the other ending in a g for “girl.” For each of these two possibilities for the first child there are two possibilities for the second child, “boy” or “girl,” so from each of the b and g we draw two line segments, one segment ending in a b and one in a g. For each of the four ending points now in the diagram there are two possibilities for the third child, so we repeat the process once more.</p>
+  <p>The line segments are called branches of the tree. The right ending point of each branch is called a node. The nodes on the extreme right are the final nodes; to each one there corresponds an outcome, as shown in the figure.</p>
+  <p>From the tree it is easy to read off the eight outcomes of the experiment, so the sample space is, reading from the top to the bottom of the final nodes in the tree,</p>
+  <math display="block">
+    <mi>S</mi>
+    <mo>=</mo>
+    <mo>&#x007B;</mo>
+    <mi>b</mi>
+    <mi>b</mi>
+    <mi>b</mi>
+    <mo>,</mo>
+    <mi>b</mi>
+    <mi>b</mi>
+    <mi>g</mi>
+    <mo>,</mo>
+    <mi>b</mi>
+    <mi>g</mi>
+    <mi>b</mi>
+    <mo>,</mo>
+    <mi>b</mi>
+    <mi>g</mi>
+    <mi>g</mi>
+    <mo>,</mo>
+    <mi>g</mi>
+    <mi>b</mi>
+    <mi>b</mi>
+    <mo>,</mo>
+    <mi>g</mi>
+    <mi>b</mi>
+    <mi>g</mi>
+    <mo>,</mo>
+    <mi>g</mi>
+    <mi>g</mi>
+    <mi>b</mi>
+    <mo>,</mo>
+    <mi>g</mi>
+    <mi>g</mi>
+    <mi>g</mi>
+    <mo>&#x007D;</mo>
+  </math>
   </div>
   <div class="tryitnow">
     <h5>Try it Now 1</h5>
@@ -394,11 +391,9 @@
       " notation we will be using reads "the probability of the event E occurring". In the notation <em>P</em> just means to find the probability and <em>E</em> is the event of interest.</p>
   </div>
   <div class="example">
-    <div class="example-title">
       <h3>Example 4</h3>
       <p>A coin is called “balanced” or “fair” if each side is equally likely to land up. Assign a probability to each outcome in the sample space for the experiment that consists of tossing a single fair coin.</p>
-    </div>
-    <p>With the outcomes labeled <em>h</em> for heads and <em>t</em> for tails, the sample space is the set
+<p><strong>Solution</strong> </p>    <p>With the outcomes labeled <em>h</em> for heads and <em>t</em> for tails, the sample space is the set
       <math display="inline">
         <mi>S</mi>
         <mo>=</mo>
@@ -446,11 +441,9 @@
       . </p>
   </div>
   <div class="example">
-    <div class="example-title">
       <h3>Example 5</h3>
       <p>A die is called “balanced” or “fair” if each side is equally likely to land on top. Assign a probability to each outcome in the sample space for the experiment that consists of tossing a single fair die. Find the probabilities of the events E: “an even number is rolled” and T: “a number greater than two is rolled.”</p>
-    </div>
-    <p>With outcomes labeled according to the number of dots on the top face of the die, the sample space is the set
+<p><strong>Solution</strong> </p>    <p>With outcomes labeled according to the number of dots on the top face of the die, the sample space is the set
       <math display="inline">
         <mi>S</mi>
         <mo>=</mo>
@@ -721,11 +714,9 @@
     </math>
     we keep the information about how many outcomes out of the 6 made up the event rolling a number greater than 2.</p>
   <div class="example">
-    <div class="example-title">
       <h3>Example 6</h3>
       <p>Let's say you have a bag with 20 cherries where 14 are sweet and 6 are sour. If you pick a cherry at random, what is the probability that it will be sweet? </p>
-    </div>
-    <p>There are 20 possible cherries that could be picked, so the number of possible outcomes is 20. Of these 20 possible outcomes, 14 are favorable (sweet), so the probability that the cherry will be sweet is
+<p><strong>Solution</strong> </p>    <p>There are 20 possible cherries that could be picked, so the number of possible outcomes is 20. Of these 20 possible outcomes, 14 are favorable (sweet), so the probability that the cherry will be sweet is
       <math display="inline">
         <mi>P</mi>
         <mrow>
@@ -756,7 +747,6 @@
   </div>
   <p>There is one potential complication to the cherry picking example, however. It must be assumed that the probability of picking any of the cherries is the same as the probability of picking any other. This wouldn't be true if (let us imagine) the sweet cherries are smaller than the sour ones. (The sour cherries would come to hand more readily when you sampled from the bag.) Let us keep in mind, therefore, that when we assess probabilities in terms of the ratio of favorable to all potential cases, we rely heavily on the assumption of equal probability for all outcomes.</p>
   <div class="example">
-    <div class="example-title">
       <h3>Example 7 <img src="../../images/chapter-4/4-1/playing-cards.jpg" alt="Cards" width="180" height="142" class="floatRight"></h3>
       <p>A standard deck of 52 playing cards consists of four <strong>suits</strong> (hearts, spades, diamonds and clubs). Spades and clubs are black while hearts and diamonds are red. Each suit contains 13 cards, each of a different <strong>rank</strong>: an Ace (which in many games functions as both a low card and a high card), cards numbered 2 through 10, a Jack, a Queen and a King.</p>
       <ol type="a">
@@ -770,8 +760,7 @@
           <p>Compute the probability of randomly drawing one card from a deck and getting a black card.</p>
         </li>
       </ol>
-    </div>
-    <ol type="a">
+<p><strong>Solutions</strong> </p>      <ol type="a">
       <li>
         <p>There are 52 cards in the deck and 4 Aces so&nbsp;
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1099,7 +1088,6 @@
     </p>
   </div>
   <div class="example">
-    <div class="example-title">
       <h3>Example 8</h3>
       <p>The breakdown of the student body <a href="https://pima.edu/about-pima/reports-data/student-reports/docs-student-characteristics/docs-fall/2020-fall-student-characteristics-report-das-49.pdf" target="_blank">Race and Ethnicity at Pima Community College in Fall 2020</a> was 37.33% white, 4.93% black, 47.16% Hispanic, 3.12% Asian, and 1.97% American Indian or Alaskan Native, 5.49% for all others (including undeclared). A student is randomly selected from Fall 202. (To select “randomly” means that every student has the same chance of being selected.) Find the probabilities of the following events:</p>
       <ol type="a">
@@ -1113,8 +1101,7 @@
           <p>M: the student is a minority (that is, not white),</p>
         </li>
       </ol>
-    </div>
-    <p>The student body's race and ethnicity is broken down into 6 different outcomes. We can write this out as a sample space of
+<p><strong>Solutions</strong> </p>      <p>The student body's race and ethnicity is broken down into 6 different outcomes. We can write this out as a sample space of
       <math display="inline">
         <mi>S</mi>
         <mo>=</mo>
