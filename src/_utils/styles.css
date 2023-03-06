@@ -364,7 +364,7 @@ h1 {
 
 h2 {  
   font-size: 1.602rem;
-  margin: 0 4rem .5rem 4rem;
+  margin: 0 4rem .5rem 2rem;
   font-weight: 400;
 }
 
@@ -486,6 +486,9 @@ img.center {
 
 hr {
   margin: 0 4rem 1rem 4rem;
+  height: 3px;
+  border: none;
+  background-color: rgba(15,15,15,.1);
 }
 
 /* Widgets */
@@ -516,36 +519,33 @@ hr {
 .border {
   background-color: rgba(15, 15, 15, .02);
   border-left: 6px solid darkgray;
-  padding: .75rem .5rem .25rem 1.5rem;
-  margin: 2rem 0;
+  padding: 20px 0;
+  margin: 2rem 4rem;
 }
 
-.border h3 {
-  margin: 2rem 4rem 0;
+.border :is(p,h4) {
+  margin: 0 2rem .3rem 2rem;
+}
+
+.border :is(p,h3) {
+  margin-bottom: 1rem;
 }
 
 /* Definition */
 .definition {
   background-color: rgba(168, 87, 87, .05);
   padding: 20px 0;
-  margin: 2rem 0;
+  margin: 2rem 4rem;
   border: 3px solid var(--red-definition);
 }
 
-.definition :is(h3,h4) {
-  margin-bottom: 1rem;
-  color: var(--red-definition-text);
+.definition :is(p,h4) {
+  margin: 0 2rem .3rem 2rem;
 }
 
-.definition::before {
-  font-family:"FontAwesome";
-  content: '\f02d';
-  opacity: 1;
-  color: var(--red-definition);
-  font-weight: 900;
-  font-size: 1.5rem;
-  display:inline-block;
-  margin: 0rem 4rem .5rem;
+.definition h3 {
+  margin-bottom: 1rem;
+  color: var(--red-definition-text);
 }
 
 /* Example */
@@ -553,35 +553,26 @@ hr {
   background-color: var(--example-bkg);
   padding: 20px 0;
   border: 3px solid var(--example);
-  margin: 2rem 0;
+  margin: 2rem 4rem;
 }
 
-.example-title {
-  background-color: var(--example-bkg);
-  margin: 1rem 3rem;
-  padding: 1rem;
-  border: 2px solid var(--example);
-}
-
-.example-title h3 {
+.example h3 {
   color: var(--example);
 }
 
-.example-title p, .example-title h1,.example-title h2, .example-title h3,.example-title h4 {
-  margin-right: 0;
-  margin-left: 0;
+.example :is(p,h4) {
+  margin: 0 2rem .3rem 2rem;
 }
 
-.example::before {
-  font-family:"FontAwesome";
-  content: '\f51c';
-  opacity: 1;
-  color: var(--example);
-  font-weight: 900;
-  font-size: 1.5rem;
-  display:inline-block;
-  margin: 0 4rem 1rem;
+:is(.example,.definition,.tryitnow,.border) h3 {
+  margin: 0 4rem 1rem 2rem;
 }
+
+:is(.example,.definition,.tryitnow,.border) hr {
+  margin: 1rem 2rem 1rem 2rem;
+  color: var(--example);
+}
+
 
 /* Plain Block */
 .plainblock {
@@ -590,17 +581,10 @@ hr {
   padding: 20px 0;
 }
 
-.plainblock::before {
-    color: rgba(15, 15, 15, .25);
-    content: "\f10d";
-    display: block;
-    font-family: "FontAwesome";
-    font-size: 1em;
-    font-weight: 400;
-    opacity: 1;
-    text-align: left;
-    padding-left: 5%;
+.plainblock :is(p,h3,h4) {
+  margin: 0 2rem .3rem 2rem;
 }
+
 
 .plainblock::after {
   color: rgba(15, 15, 15, .25);
@@ -661,23 +645,17 @@ hr {
   background-color: var(--try-it-now-bkg);
   padding: 20px 0;
   border: 3px solid var(--try-it-now);
-  margin: 2rem 0;
+  margin: 2rem 4rem;
 }
 
 .tryitnow :is(h3,h4,h5) {
   color: var(--try-it-now-text);
 }
 
-.tryitnow::before {
-  font-family:"FontAwesome";
-  content: '\f545';
-  opacity: 1;
-  color: var(--try-it-now);
-  font-weight: 900;
-  font-size: 1.5rem;
-  display:inline-block;
-  margin: 0 4rem 1rem;
+.tryitnow :is(p,h3,h4) {
+  margin: 0 2rem .3rem 2rem;
 }
+
 
 /* Toggling & Footnotes */
 
