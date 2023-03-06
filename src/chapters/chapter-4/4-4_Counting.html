@@ -23,6 +23,7 @@
     <li>Solve counting problems using permutations involving n distinct objects.</li>
     <li>Solve counting problems using combinations.</li>
   </ul>
+  <hr>
   <h2>Introduction</h2>
   <p>Counting?&nbsp; You already know how to count or you wouldn't be taking a college-level math class, right?&nbsp; Well yes, but what we'll really be investigating here are ways of counting <em>efficiently</em>.&nbsp; When we get to the probability situations a bit later in this chapter we will need to count some <em>very</em> large numbers, like the number of possible winning lottery tickets.&nbsp; One way to do this would be to write down every possible set of numbers that might show up on a lottery ticket, but believe me: you don't want to do this.</p>
   <p>We encounter a wide variety of counting problems every day. There is a branch of mathematics devoted to the study of counting problems such as this one. Other applications of counting include secure passwords, horse racing outcomes, and college scheduling choices. We will examine this type of mathematics in this section</p>
@@ -48,10 +49,9 @@
       ways.</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 1</h3>
-      <p>There are 2 vegetarian entrée options and 5 meat entrée options on a dinner menu. What is the total number of entrée options?</p>
-    </div>
+    <h3>Example 1</h3>
+    <p>There are 2 vegetarian entrée options and 5 meat entrée options on a dinner menu. What is the total number of entrée options?</p>
+    <p><strong>Solution</strong></p>
     <p>We can add the number of vegetarian options (2) to the number of meat options (5) to find the total number of entrée options. This gives us a total of 7 options.</p>
   </div>
   <div class="tryitnow">
@@ -65,10 +65,9 @@
   <h3>Multiplication Principle</h3>
   <p>We will start with an example to illustrate the Multiplication Principle.</p>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 2</h3>
-      <p>Suppose at a particular restaurant you have three choices for an appetizer (soup, salad or breadsticks) and five choices for a main course (hamburger, sandwich, quiche, fajita or pasta). If you are allowed to choose exactly one item from each category for your meal, how many different meal options do you have?</p>
-    </div>
+    <h3>Example 2</h3>
+    <p>Suppose at a particular restaurant you have three choices for an appetizer (soup, salad or breadsticks) and five choices for a main course (hamburger, sandwich, quiche, fajita or pasta). If you are allowed to choose exactly one item from each category for your meal, how many different meal options do you have?</p>
+    <p><strong>Solution</strong></p>
     <p><strong>Solution 1</strong>: One way to solve this problem would be to systematically list each possible meal: <br>
     </p>
     <table class="display-lg" bgcolor="#FFFFFF">
@@ -158,28 +157,25 @@
     <p>This is sometimes called the Fundamental Counting Principle or Basic Counting Rule.</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 3</h3>
-      <p>There are 21 novels and 18 volumes of poetry on a reading list for a college English course. How many different ways can a student select one novel and one volume of poetry to read during the quarter?&nbsp;</p>
-    </div>
+    <h3>Example 3</h3>
+    <p>There are 21 novels and 18 volumes of poetry on a reading list for a college English course. How many different ways can a student select one novel and one volume of poetry to read during the quarter?&nbsp;</p>
+    <p><strong>Solution</strong></p>
     <p>There are 21 choices from the first category and 18 for the second, so there are 21&nbsp;<strong>&middot;</strong>&nbsp;18&nbsp;=&nbsp;378 possibilities.</p>
     <p><a href="http://youtu.be/fROqcu-ekkw?t=1m39s" target="_blank">Video Solution Example 3</a> (cc) - another example starts after 2:08 mark on the video.</p>
   </div>
   <p>The Multiplication Principle can be extended when there are more than two categories by applying it repeatedly, as we see in the next example. </p>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 4</h3>
-      <p>Suppose at a particular restaurant you have three choices for an appetizer (soup, salad or breadsticks), five choices for a main course (hamburger, sandwich, quiche, fajita or pasta) and two choices for dessert (pie or ice cream). If you are allowed to choose exactly one item from each category for your meal, how many different meal options do you have?</p>
-    </div>
+    <h3>Example 4</h3>
+    <p>Suppose at a particular restaurant you have three choices for an appetizer (soup, salad or breadsticks), five choices for a main course (hamburger, sandwich, quiche, fajita or pasta) and two choices for dessert (pie or ice cream). If you are allowed to choose exactly one item from each category for your meal, how many different meal options do you have?</p>
+    <p><strong>Solution</strong></p>
     <p>There are 3 choices for an appetizer, 5 for the main course and 2 for dessert, so there are <br>
       3<strong>&middot;</strong><strong>&nbsp;</strong>5&nbsp;<strong>&middot;</strong><strong> </strong>2&nbsp;=&nbsp;30 possibilities.</p>
     <p><a href="http://youtu.be/fROqcu-ekkw?t=2m8s" target="_blank">Video Solution Example 4</a> (cc) - another example starts after 2:38 mark on the video.</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 5</h3>
-      <p>A quiz consists of 3 true-or-false questions.&nbsp; In how many ways can a student answer the quiz?</p>
-    </div>
+    <h3>Example 5</h3>
+    <p>A quiz consists of 3 true-or-false questions.&nbsp; In how many ways can a student answer the quiz?</p>
+    <p><strong>Solution</strong></p>
     <p>There are 3 questions on the quiz.  Each question has 2 possible answers (true or false), so the quiz may be answered in
       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
@@ -273,21 +269,20 @@
     </ol>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 6</h3>
-      <p>At a swimming competition, nine swimmers compete in a race.</p>
-      <ol type="a">
-        <li>
-          <p>How many ways can they place first, second, and third?</p>
-        </li>
-        <li>
-          <p>How many ways can they place first, second, and third if a swimmer named Ariel wins first place? (Assume there is only one contestant named Ariel.)</p>
-        </li>
-        <li>
-          <p>How many ways can all nine swimmers line up for a photo? </p>
-        </li>
-      </ol>
-    </div>
+    <h3>Example 6</h3>
+    <p>At a swimming competition, nine swimmers compete in a race.</p>
+    <ol type="a">
+      <li>
+        <p>How many ways can they place first, second, and third?</p>
+      </li>
+      <li>
+        <p>How many ways can they place first, second, and third if a swimmer named Ariel wins first place? (Assume there is only one contestant named Ariel.)</p>
+      </li>
+      <li>
+        <p>How many ways can all nine swimmers line up for a photo? </p>
+      </li>
+    </ol>
+    <p><strong>Solution</strong></p>
     <ol type="a">
       <li>
         <p>Draw lines for each place.</p>
@@ -312,7 +307,8 @@
         <p>Multiply to find that there are 56 ways for the swimmers to place if Ariel wins first.</p>
       </li>
       <li>
-        <p>Draw lines for describing each place in the photo.</p> images/swimming3a.jpg
+        <p>Draw lines for describing each place in the photo.</p>
+        images/swimming3a.jpg
         <div class="side-by-side">
           <figure> <img src="../../images/chapter-4/4-4/swimming3a.jpg" width="90%" alt="9 blank slots with multipliction symbol between each of the blank spots"/></figure>
         </div>
@@ -380,10 +376,9 @@
     </p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 7</h3>
-      <p>How many ways can five different door prizes be distributed among five people?</p>
-    </div>
+    <h3>Example 7</h3>
+    <p>How many ways can five different door prizes be distributed among five people?</p>
+    <p><strong>Solution</strong></p>
     <p>There are 5 choices of prize for the first person, 4 choices for the second, and so on.  The number of ways the prizes can be distributed will be
       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
         <mn>5</mn>
@@ -663,10 +658,9 @@
   </div>
   <p>In practicality, we usually use technology rather than factorials or repeated multiplication to compute permutations. Although with some calculations the technology may fail as the numbers can get extremely large.</p>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 8</h3>
-      <p>I have nine paintings and have room to display only four of them at a time on my wall.  How many different ways could I do this?</p>
-    </div>
+    <h3>Example 8</h3>
+    <p>I have nine paintings and have room to display only four of them at a time on my wall.  How many different ways could I do this?</p>
+    <p><strong>Solution</strong></p>
     <p>Since we are choosing 4 paintings out of 9 <em>without replacement</em> where the <em>order of selection is important</em> there are
       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
         <mmultiscripts>
@@ -696,10 +690,9 @@
     <p><a href="http://youtu.be/xlyX2UJMJQI" target="_blank">Video Solution Example 8</a> (cc) - another example starts after 3:06 mark on the video.</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 9</h3>
-      <p>How many ways can a four-person executive committee (president, vice-president, secretary, treasurer) be selected from a 16-member board of directors of a non-profit organization?</p>
-    </div>
+    <h3>Example 9</h3>
+    <p>How many ways can a four-person executive committee (president, vice-president, secretary, treasurer) be selected from a 16-member board of directors of a non-profit organization?</p>
+    <p><strong>Solution</strong></p>
     <p>We want to choose 4 people out of 16 without replacement and where the order of selection is important. So the answer is
       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
         <mmultiscripts>
@@ -920,10 +913,9 @@
     </math>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 10</h3>
-      <p>A group of four students is to be chosen from a 35-member class to represent the class on the student council. How many ways can this be done?</p>
-    </div>
+    <h3>Example 10</h3>
+    <p>A group of four students is to be chosen from a 35-member class to represent the class on the student council. How many ways can this be done?</p>
+    <p><strong>Solution</strong></p>
     <p>Since we are choosing 4 people out of 35 <em>without replacement</em> where the <em>order of selection is <strong>not</strong> important</em> there are
       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
@@ -970,18 +962,17 @@
     <p><a href="http://youtu.be/W8kd4YosbzE" target="_blank">Video Solution Example 12</a> (cc)</p>
   </div>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 11</h3>
-      <p>A fast food restaurant offers five side dish options. Your meal comes with two side dishes.</p>
-      <ol type="a">
-        <li>
-          <p>How many ways can you select your side dishes?</p>
-        </li>
-        <li>
-          <p>How many ways can you select 3 side dishes?</p>
-        </li>
-      </ol>
-    </div>
+    <h3>Example 11</h3>
+    <p>A fast food restaurant offers five side dish options. Your meal comes with two side dishes.</p>
+    <ol type="a">
+      <li>
+        <p>How many ways can you select your side dishes?</p>
+      </li>
+      <li>
+        <p>How many ways can you select 3 side dishes?</p>
+      </li>
+    </ol>
+    <p><strong>Solution</strong></p>
     <ol type="a">
       <li>
         <p>We want to choose 2 side dishes from 5 options.</p>
@@ -1211,10 +1202,9 @@
   </div>
   <p>In the preceding Try it Now problem we assumed that the 19 members of the Defense Subcommittee were chosen without regard to party affiliation.&nbsp; In reality this would never happen: if Republicans are in the majority they would never let a majority of Democrats sit on (and thus control) any subcommittee.&nbsp; (The same of course would be true if the Democrats were in control.)&nbsp; So let's consider the problem again, in a slightly more complicated form: </p>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 12</h3>
-      <p>The United States Senate Appropriations Committee consists of 29 members, 15 Republicans and 14 Democrats. The Defense Subcommittee consists of 19 members, 10 Republicans and 9 Democrats. How many different ways can the members of the Defense Subcommittee be chosen from among the 29 Senators on the Appropriations Committee?</p>
-    </div>
+    <h3>Example 12</h3>
+    <p>The United States Senate Appropriations Committee consists of 29 members, 15 Republicans and 14 Democrats. The Defense Subcommittee consists of 19 members, 10 Republicans and 9 Democrats. How many different ways can the members of the Defense Subcommittee be chosen from among the 29 Senators on the Appropriations Committee?</p>
+    <p><strong>Solution</strong></p>
     <p>In this case we need to choose 10 of the 15 Republicans and 9 of the 14 Democrats.&nbsp; There are 15<em>C</em>10 = 3003 ways to choose the 10 Republicans and 14<em>C</em>9 = 2002 ways to choose the 9 Democrats. But now what?&nbsp; How do we finish the problem?&nbsp;&nbsp;</p>
     <p>Suppose we listed all of the possible 10-member Republican groups on 3003 slips of red paper and &nbsp;all of the possible 9-member Democratic groups on 2002 slips of blue paper.&nbsp; How many ways can we choose one red slip and one blue slip?&nbsp; This is a job for the Multiplication Principle!&nbsp; We are simply making one choice from the first category and one choice from the second category, just like in the restaurant menu problems from earlier.&nbsp; </p>
     <p>There must be 3003 · 2002 = 6,012,006 possible ways of selecting the members of the Defense Subcommittee. </p>
@@ -1225,18 +1215,17 @@
   <p>A coach selects three players from a team of 8 to represent the team   at an award banquet is a combination problem as the three players   selected do not have to be in any particular order. A problem where a   coach select 3 players from a team of 8, but those three players will be   wearing different uniforms would be a permutation problem as the same 3   players can be selected in a variety of ways by changing what uniform   each wears (here the order was based on them having something different   ... we could have they were selected and arranged in order from #1 to   #3.</p>
   <p>&nbsp;</p>
   <div class="example">
-    <div class="example-title">
-      <h3>Example 13</h3>
-      <p>Permutation or Combination?</p>
-      <ol>
-        <li>
-          <p>How many ways can you select 5 free toys from a bucket of 200 toys?</p>
-        </li>
-        <li>
-          <p>In a contest with 1000 players, in how many ways can the first three finishers come in?</p>
-        </li>
-      </ol>
-    </div>
+    <h3>Example 13</h3>
+    <p>Permutation or Combination?</p>
+    <ol>
+      <li>
+        <p>How many ways can you select 5 free toys from a bucket of 200 toys?</p>
+      </li>
+      <li>
+        <p>In a contest with 1000 players, in how many ways can the first three finishers come in?</p>
+      </li>
+    </ol>
+    <p><strong>Solution</strong></p>
     <ol>
       <li>
         <p>The toys being selected are not being ranked, so order does not matter. This is an example of a combination.</p>
@@ -1542,7 +1531,7 @@
     <div >
       <p class="text-center toggle-footnotes">[Show Attributions]</p>
       <div class="footnotes">
-        <h2>Attribution:</h2>
+        <h2>Attributions:</h2>
         <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
         <p><a href="https://courses.lumenlearning.com/collegealgebra2017//" target="_blank">College Algebra 2017 from Lumen Learning. Creative Commons by 4.0 </a></p>
         <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
