@@ -47,7 +47,7 @@
 }
 
 body[darkmode] .nav-toggle {
-  background-color: rgba(20,20,20,1);
+  background-color: rgba(40,40,40,1);
 }
 
 body[darkmode] .nav-toggle #nav-icon span {
@@ -73,12 +73,12 @@ nav ul{
   display:flex;
   flex-direction: column;
   margin-left: 1rem;
-    list-style-type: none;
-  gap: 25px;
+  list-style-type: none;
 }
 
 nav ul li a {
-  padding: 5px 0 5px 15px;
+  padding: 20px 0 20px 10px;
+  display:block;
 }
 
 /* If we want it to be collapsible */
@@ -101,8 +101,8 @@ nav[expanded] {
   box-shadow: 0 0 5px #666;
   height: 100%;
   left: 0;
-  position: fixed;
   top: 0;
+  position:fixed;
   transition: .5s ease;
   user-select: none;
   overflow-y:auto;
@@ -115,8 +115,8 @@ nav {
   box-shadow: 0 0 5px #666;
   height: 100%;
   left: -56rem;
+  position:fixed;
   padding-top: 100px;
-  position: fixed;
   top: 0;
   transition: .5s ease;
   width: 100vw;
@@ -175,7 +175,8 @@ body[darkmode] .darkmode-toggle::before {
 }
 
 body[darkmode] nav {
-  background-color: rgba(20,20,20,1)
+  background-color: rgba(26,26,26,1);
+  scrollbar-color: dark;
 }
 
 body[darkmode] .chapter-btn {
@@ -209,11 +210,11 @@ body[darkmode] .activeUrl {
   display: block;
   position: absolute;
   height: 5px;
-  width: 30px;
+  width: 25px;
   background: rgba(15,15,15,1);
   border-radius: 7px;
   opacity: 1;
-  left: 10px;
+  left: 12px;
   transition: .35s ease-in-out;
   transform: rotate(0deg);
 }
@@ -249,11 +250,11 @@ body[darkmode] .activeUrl {
     cursor: pointer;
 }
 
-body[darkmode] nav[expanded] .chapter-btn {
+body[darkmode] nav .chapter-btn {
   border-bottom: 1px solid white;
 }
 
-nav[expanded] .chapter-btn {
+nav .chapter-btn {
   border-bottom: 1px solid rgba(15,15,15, .25);
   transition: .25s;
 
@@ -271,22 +272,61 @@ nav[expanded] .chapter-btn {
 /* Navigation Desktop*/
 @media screen and (min-width: 1024px) {
 
+  #navigation {
+    padding:0;
+    display:flex;
+    flex-direction: row-reverse;
+    position:fixed;
+    top:0;
+    left:-16rem;
+    width: 20rem;
+    transition: .5s ease;
+  }
+
+  #navigation[expanded] {
+    padding:0;
+    display:flex;
+    flex-direction: row-reverse;
+    position:fixed;
+    left:0;
+    width: 20rem;
+    z-index: 9;
+  }
+
   nav[expanded] {
+    position:fixed;
     padding-top: 38px;
-    width: 15rem;
+    box-shadow: 0 0 5px #666;
+    z-index: 8;
+    left:0;
+    transition: .5s;
   }
   
   nav {
-    left: -16rem;
+    position:relative;
+    left:-16rem;
+    width: 16rem;
     padding-top: 38px;
-    width: 20rem;
+    width: 16rem;
+    box-shadow: 0 0 5px #666;
+    transition: .5s;
+  }
+
+  .page-controller {
+    min-width:4rem;
+    height:100vh;
+    box-shadow: 0 0 5px #666;
+    background-color: white;
+    z-index:9;
+    transition: .5s;
+
   }
   
   .nav-toggle[open] {
     position:fixed;
-    left: 13.5rem;
-    z-index: 999;
+    left: 18.5rem;
     transition: .542s ease;
+    z-index:999;
   }
   
   .nav-toggle {
@@ -295,6 +335,8 @@ nav[expanded] .chapter-btn {
     top: 3rem;
     box-shadow: 0 0 10px rgba(15,15,15,.5);
     border-radius: 50%;
+    z-index:999;
+
   }
   
   .darkmode-toggle {
@@ -413,7 +455,7 @@ body[darkmode] {
 }
 
 body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
-  color: white;
+  color: rgba(235,235,235,1);
   opacity: 87%;
 }
 
@@ -482,7 +524,6 @@ img.center {
   margin: 0.5rem auto !important;
   display:block;
 }
-
 
 hr {
   margin: 0 4rem 1rem 4rem;
@@ -573,7 +614,6 @@ hr {
   color: var(--example);
 }
 
-
 /* Plain Block */
 .plainblock {
   margin: 15px;
@@ -584,7 +624,6 @@ hr {
 .plainblock :is(p,h3,h4) {
   margin: 0 2rem .3rem 2rem;
 }
-
 
 .plainblock::after {
   color: rgba(15, 15, 15, .25);
@@ -597,8 +636,6 @@ hr {
   text-align: right;
   padding-right: 5%;
 }
-
-/* Side By Side */
 
 /* Side By Side */
 
@@ -655,7 +692,6 @@ hr {
 .tryitnow :is(p,h3,h4) {
   margin: 0 2rem .3rem 2rem;
 }
-
 
 /* Toggling & Footnotes */
 
