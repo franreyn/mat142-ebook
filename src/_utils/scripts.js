@@ -41,6 +41,7 @@ menuBtn.innerHTML = navToggleText;
 pageController.append(menuBtn);
 // (4a) logic for menu-toggle button
 menuBtn.addEventListener("click", () => {
+  navWrapper.toggleAttribute("expanded");
   nav.toggleAttribute("expanded");
 });
 
@@ -177,6 +178,11 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 const menuNav = document.querySelector(".nav-toggle");
   menuNav.addEventListener("click", () => {
   menuNav.toggleAttribute("open");
+});
+menuNav.addEventListener("keypress", (e) => {
+  if(e.key== "Enter"){
+    menuNav.toggleAttribute("open");
+  }
 });
 
 //Get location of current URL to highlight active link 
