@@ -188,7 +188,6 @@ menuNav.addEventListener("keypress", (e) => {
 //Get location of current URL to highlight active link 
 let currentUrl = window.location.href;
 currentUrl = currentUrl.split("/").pop();
-console.log(currentUrl)
 
 //Parse and find URL in navigation that matches that link 
 window.onload = () => {
