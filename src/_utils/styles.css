@@ -14,17 +14,54 @@
   --black: rgba(15, 15,15, 1);
 }
 
+
 /* Navigation Mobile */
 
 #navigation {
-  padding: 20px;
+  position:fixed;
+  top:0;
+  left:-100%;
+  width: 100%;
+  transition: .5s ease;
+  height: 100%;
+  z-index: 999;
+  background-color: white;
+}
+
+body[darkmode] #navigation {
+  background-color: rgba(26, 26, 26, 1);
+  transition: .5s ease;
+}
+
+/* remove scroll bar */
+#navigation {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+#navigation::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+/*  */
+
+#navigation[expanded] {
+  left: 0;
+}
+
+#navigation ul {
+  margin: 0;
 }
 
 .page-controller {
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display:flex; 
   align-items: center;
+  transition: .5s ease;
+
 }
 
 .fa-moon:before {
@@ -37,12 +74,11 @@
 }
 
 .nav-toggle {
-  z-index: 999;
+
   transition: .542s ease;
-  background-color:white;
+  background-color:transparent;
   border:none;
-  margin-top: 5px;
-  padding: 2px;
+
   cursor:pointer;
 }
 
@@ -72,7 +108,7 @@ body[darkmode] .nav-toggle #nav-icon span {
 nav ul{
   display:flex;
   flex-direction: column;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   list-style-type: none;
 }
 
@@ -81,48 +117,12 @@ nav ul li a {
   display:block;
 }
 
-/* If we want it to be collapsible */
-/* nav .chapter-btn + ul[expanded] {
-  size: auto;
-  height: auto;
-  visibility: visible;
-  gap: 25px;
-}
-
-.chapter-btn + ul {
-  margin-bottom: 0;
-  size: 0;
-  height: 0;
-  visibility: hidden;
-} */
-
-nav[expanded] {
-  bottom: 0;
-  box-shadow: 0 0 5px #666;
-  height: 100%;
-  left: 0;
-  top: 0;
-  position:fixed;
-  transition: .5s ease;
-  user-select: none;
-  overflow-y:auto;
-  background-color: white;
-  z-index: 8;
-}
-
 nav {
-  bottom: 0;
-  box-shadow: 0 0 5px #666;
   height: 100%;
-  left: -56rem;
-  position:fixed;
-  padding-top: 100px;
-  top: 0;
+  padding: 0 25px;
+  padding-top: 70px;
   transition: .5s ease;
-  width: 100vw;
-  user-select: none;
   overflow-y:auto;
-  background-color: white;
 }
 
 .darkmode-toggle {
@@ -133,15 +133,17 @@ nav {
   cursor: pointer;
   border-radius: 1.5em;
   transition: 350ms;
-  margin-right: 20px;
+  margin-left: 20px;
   z-index: 999;
   border: 1px solid rgba(15,15,15, .25);
 }
 
 .darkmode-toggle::before {
   position: absolute; content:'';
-  width: 2em; height: 2em;
-  top: 0.4em; left: 0.3em;
+  width: 2em;
+  height: 2em;
+  top: 0.4em;
+  left: 0.3em;
   border-radius: 50%;
   border: 1px solid rgba(15,15,15, .25);
   transition: 250ms ease-in-out;
@@ -242,20 +244,20 @@ body[darkmode] .activeUrl {
     background-color: transparent;
     width: 100%;
     text-align: left;
-    padding: 15px;
+    padding: 20px 10px;
     font-size: 1.25rem;
-    margin-bottom: 25px;
     transition: .25s;
     border-bottom: none;
     cursor: pointer;
+    font-size: 1.324rem;
 }
 
 body[darkmode] nav .chapter-btn {
-  border-bottom: 1px solid white;
+  border-top: 1px solid white;
 }
 
 nav .chapter-btn {
-  border-bottom: 1px solid rgba(15,15,15, .25);
+  border-top: 1px solid rgba(15,15,15, .25);
   transition: .25s;
 
 }
@@ -273,102 +275,54 @@ nav .chapter-btn {
 @media screen and (min-width: 1024px) {
 
   #navigation {
-    padding:0;
-    display:flex;
-    flex-direction: row-reverse;
-    position:fixed;
-    top:0;
-    left:-16rem;
-    width: 20rem;
-    transition: .5s ease;
-  }
-
-  #navigation[expanded] {
-    padding:0;
-    display:flex;
-    flex-direction: row-reverse;
-    position:fixed;
-    left:0;
-    width: 20rem;
-    z-index: 9;
-  }
-
-  nav[expanded] {
-    position:fixed;
-    padding-top: 38px;
+    width: fit-content;
+    padding-top: 50px;
+    left: -100%;
     box-shadow: 0 0 5px #666;
-    z-index: 8;
-    left:0;
-    transition: .5s;
-  }
-  
+  } 
+
+  #navigation[darkmode] {
+    width: fit-content;
+    padding-top: 50px;
+    background-color: rgba(20, 20, 20, 1);
+  } 
+
   nav {
-    position:relative;
-    left:-16rem;
-    width: 16rem;
-    padding-top: 38px;
-    width: 16rem;
-    box-shadow: 0 0 5px #666;
-    transition: .5s;
+    padding-top: 20px;
   }
 
   .page-controller {
-    min-width:4rem;
-    height:100vh;
-    box-shadow: 0 0 5px #666;
     background-color: white;
-    z-index:9;
-    transition: .5s;
+    width: fit-content;
+  }
 
+  body[darkmode] .page-controller {
+    background-color: rgba(20, 20, 20, 1);
+    width: fit-content;
   }
   
   .nav-toggle[open] {
-    position:fixed;
-    left: 18.5rem;
-    transition: .542s ease;
+    transition: .5s ease;
     z-index:999;
-  }
-  
-  .nav-toggle {
-    position:fixed;
-    left: 2.5rem;
-    top: 3rem;
-    box-shadow: 0 0 10px rgba(15,15,15,.5);
-    border-radius: 50%;
-    z-index:999;
-
-  }
-  
-  .darkmode-toggle {
-    position: fixed; 
-    display: block;
-    right: 2rem;
-    top: 4rem;
-    transform: rotate(90deg);
   }
   
   .darkmode-toggle::before {
     top: 0.3em;
   }
   
-  .fa-moon:before {
-    transform: rotate(-90deg);
+  .nav-toggle[open] #nav-icon span:nth-child(1) {
+    top: 18px;
+    transform: rotate(135deg);
   }
   
-  .nav-toggle[open] #nav-icon span:nth-child(1) {
-    top: 15px;
-    left:13px;
-    width: 22.5px;
-    transition: .35s ease-in-out;
-    transform: rotate(145deg);
+  .nav-toggle[open] #nav-icon span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
   }
   
   .nav-toggle[open] #nav-icon span:nth-child(3) {
-    top: 26px;
-    left:13px;
-    width: 22.5px;
-    transition: .35s ease-in-out;
-  transform: rotate(-145deg);
+    top: 18px;
+    transform: rotate(-135deg);
   }
   
   .chapter-btn {
@@ -379,11 +333,7 @@ nav .chapter-btn {
     margin-bottom: 0;
     margin-left: 0;
   }
-  
-  nav[expanded] .chapter-btn {
-    border-bottom: 1px solid rgba(15,15,15, .25);
-    transition: .25s;
-  }
+
 }
 
 /* Font Styles */
@@ -393,7 +343,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: rgba(30, 30, 30,1);
 }
 
-h1 { 
+h1 {
   font-size: 2rem;
   margin: 0 4rem 1rem 4rem;
 }
@@ -406,7 +356,7 @@ h1 {
 
 h2 {  
   font-size: 1.602rem;
-  margin: 0 4rem .5rem 2rem;
+  margin: 0 4rem .5rem 4rem;
   font-weight: 400;
 }
 
@@ -431,7 +381,7 @@ h5 {
 p {
   font-size: 1.1rem;
   line-height: 1.35;
-  margin: 0 4rem 1rem 4rem;
+  margin: 0 4rem 1rem 4.5rem;
 }
 
 /* Formatting Styles */
@@ -502,6 +452,7 @@ a {
   max-width: 900px;
   margin: 0 auto;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 #header-wrapper {
