@@ -1,710 +1,804 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" type="text/css" href="../../_utils/styles.css">
-<script type="text/javascript" src="../../_utils/scripts.js" defer></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<title>4.6 Expected Value</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_utils/styles.css">
+  <script type="text/javascript" src="../../_utils/scripts.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+  <title>4.6 Expected Value</title>
 </head>
 <body>
-<section class="ereader-display">
-  <header>
-    <button type="button" id="light-dark-mode">Light/Dark </button>
-  </header>
-  <h1>4.6 Expected Value</h1>
-  <h2>4.6 Expected Value</h2>
-  <p>Upon completion of this section, you should be able to</p>
-  <ul>
-    <li>Compute expected values</li>
-  </ul>
-  <h2>Expected Value</h2>
-  <hr>
-  <p>Expected value is perhaps the most useful probability concept we will discuss.&nbsp; It has many applications, from insurance policies to making financial decisions, and it's one thing that the casinos and government agencies that run gambling operations and lotteries hope most people never learn about.&nbsp;</p>
-  <div class="example">
-    <h3>Example 1</h3>
-    <p><img src="../../images/chapter-4/4-6/module6-6-clip-image002.jpg" alt="" width="165" height="124" hspace="12" align="left" class="floatRight">In the casino game roulette, a wheel with 38 spaces (18 red, 18 black, and 2 green) is spun.  In one possible bet, the player bets $1 on a single number.  If that number is spun on the wheel, then they receive $36 (their original $1&nbsp;+&nbsp;$35).  Otherwise, they lose their $1.  On average, how much money should a player expect to win or lose if they play this game repeatedly?</p>
-    <p><strong>Solution</strong></p>
-    <p>Suppose you bet $1 on each of the 38 spaces on the wheel, for a total of $38 bet.  When the winning number is spun, you are paid $36 on that number.  While you won on that one number, overall you&rsquo;ve lost $2.  On a per-space basis, you have &ldquo;won&rdquo;
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mo>&#x2212;</mo>
-          <mfrac>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>2</mn>
-            </mrow>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>38</mn>
-            </mrow>
-          </mfrac>
-          <mo>&#x2248;</mo>
-          <mo>&#x2212;</mo>
-          <mi>&#x0024;</mi>
-          <mn>0.053</mn>
-        </mrow>
-      </math>
-      .  In other words, on average you lose 5.3 cents per space you bet on.</p>
-    <p><a href="http://youtu.be/pFzgxGVltS8" target="_blank">Video Solution Example 1</a> (cc) - another example starts after 2:42 mark on the video.</p>
-  </div>
-  <p>In the above example we call this average gain or loss the <strong>expected value</strong> of playing roulette.&nbsp; Notice that no one ever loses exactly 5.3 cents: most people (in fact, about 37 out of every 38) lose $1 and a very few people (about 1 person out of every 38) gain $35 (the $36 they win minus the $1 they spent to play the game).</p>
-  <p>There is another way to compute expected value without imagining what would happen if we play every possible space.&nbsp; There are 38 possible outcomes when the wheel spins, so the probability of winning is
-    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-        <mfrac>
-          <mn>1</mn>
-          <mrow>
-            <mn>38</mn>
-          </mrow>
-        </mfrac>
-      </mrow>
-    </math>
-    .  The complement, the probability of losing, is
-    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-        <mfrac>
-          <mrow>
-            <mn>37</mn>
-          </mrow>
-          <mrow>
-            <mn>38</mn>
-          </mrow>
-        </mfrac>
-      </mrow>
-    </math>
-    .  </p>
-  <p>Summarizing these along with the values, we get this table:</p>
-  <table class="display-lg" bgcolor="#FFFFFF">
-    <thead>
-      <tr>
-        <th> Outcome </th>
-        <th>Probability of outcome</th>
-      </tr>
-    </thead>
-    <tr>
-      <td><p>$35</p></td>
-      <td><p>
+  <section class="ereader-display">
+    <header>
+      <button type="button" id="light-dark-mode">Light/Dark </button>
+    </header>
+    <main>
+      <h1>4.6 Expected Value</h1>
+      <h2>4.6 Expected Value</h2>
+      <p>Upon completion of this section, you should be able to</p>
+      <ul>
+        <li>Compute expected values</li>
+      </ul>
+      <h2>Expected Value</h2>
+      <hr>
+      <p>Expected value is perhaps the most useful probability concept we will discuss.&nbsp; It has many applications,
+        from insurance policies to making financial decisions, and it's one thing that the casinos and government
+        agencies that run gambling operations and lotteries hope most people never learn about.&nbsp;</p>
+      <div class="example">
+        <h3>Example 1</h3>
+        <p><img src="../../images/chapter-4/4-6/module6-6-clip-image002.jpg" alt="" width="165" height="124" hspace="12"
+            align="left" class="floatRight">In the casino game roulette, a wheel with 38 spaces (18 red, 18 black, and 2
+          green) is spun.  In one possible bet, the player bets $1 on a single number.  If that number is spun on the
+          wheel, then they receive $36 (their original $1&nbsp;+&nbsp;$35).  Otherwise, they lose their $1.  On average,
+          how much money should a player expect to win or lose if they play this game repeatedly?</p>
+        <p><strong>Solution</strong></p>
+        <p>Suppose you bet $1 on each of the 38 spaces on the wheel, for a total of $38 bet.  When the winning number is
+          spun, you are paid $36 on that number.  While you won on that one number, overall you&rsquo;ve lost $2.  On a
+          per-space basis, you have &ldquo;won&rdquo;
           <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <mrow>
+              <mo>&#x2212;</mo>
               <mfrac>
                 <mrow>
-                  <mn>1</mn>
+                  <mi>&#x0024;</mi>
+                  <mn>2</mn>
                 </mrow>
                 <mrow>
+                  <mi>&#x0024;</mi>
                   <mn>38</mn>
                 </mrow>
               </mfrac>
+              <mo>&#x2248;</mo>
+              <mo>&#x2212;</mo>
+              <mi>&#x0024;</mi>
+              <mn>0.053</mn>
             </mrow>
           </math>
-        </p></td>
-    </tr>
-    <tr>
-      <td width="90" valign="top"><p>-$1</p></td>
-      <td width="162" valign="top"><p>
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <mrow>
-              <mfrac>
+          .  In other words, on average you lose 5.3 cents per space you bet on.
+        </p>
+        <p><a href="http://youtu.be/pFzgxGVltS8" target="_blank">Video Solution Example 1</a> (cc) - another example
+          starts after 2:42 mark on the video.</p>
+      </div>
+      <p>In the above example we call this average gain or loss the <strong>expected value</strong> of playing
+        roulette.&nbsp; Notice that no one ever loses exactly 5.3 cents: most people (in fact, about 37 out of every 38)
+        lose $1 and a very few people (about 1 person out of every 38) gain $35 (the $36 they win minus the $1 they
+        spent to play the game).</p>
+      <p>There is another way to compute expected value without imagining what would happen if we play every possible
+        space.&nbsp; There are 38 possible outcomes when the wheel spins, so the probability of winning is
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mn>38</mn>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+        .  The complement, the probability of losing, is
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mn>37</mn>
+              </mrow>
+              <mrow>
+                <mn>38</mn>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+        . 
+      </p>
+      <p>Summarizing these along with the values, we get this table:</p>
+      <table class="display-lg" bgcolor="#FFFFFF">
+        <thead>
+          <tr>
+            <th> Outcome </th>
+            <th>Probability of outcome</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>
+            <p>$35</p>
+          </td>
+          <td>
+            <p>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
                 <mrow>
-                  <mn>37</mn>
+                  <mfrac>
+                    <mrow>
+                      <mn>1</mn>
+                    </mrow>
+                    <mrow>
+                      <mn>38</mn>
+                    </mrow>
+                  </mfrac>
                 </mrow>
+              </math>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="90" valign="top">
+            <p>-$1</p>
+          </td>
+          <td width="162" valign="top">
+            <p>
+              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
                 <mrow>
-                  <mn>38</mn>
+                  <mfrac>
+                    <mrow>
+                      <mn>37</mn>
+                    </mrow>
+                    <mrow>
+                      <mn>38</mn>
+                    </mrow>
+                  </mfrac>
                 </mrow>
-              </mfrac>
-            </mrow>
-          </math>
-        </p></td>
-    </tr>
-  </table>
-  <p>Notice that if we multiply each outcome by its corresponding probability we get
-    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-        <mi>&#x0024;</mi>
-        <mn>35</mn>
-        <mo>&#x22C5;</mo>
-        <mfrac>
-          <mn>1</mn>
+              </math>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>Notice that if we multiply each outcome by its corresponding probability we get
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
           <mrow>
-            <mn>38</mn>
+            <mi>&#x0024;</mi>
+            <mn>35</mn>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mn>38</mn>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>0.9211</mn>
           </mrow>
-        </mfrac>
-        <mo>=</mo>
-        <mn>0.9211</mn>
-      </mrow>
-    </math>
-     and
-    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-        <mo>&#x2212;</mo>
-        <mi>&#x0024;</mi>
-        <mn>1</mn>
-        <mo>&#x22C5;</mo>
-        <mfrac>
+        </math>
+         and
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
           <mrow>
-            <mn>37</mn>
-          </mrow>
-          <mrow>
-            <mn>38</mn>
-          </mrow>
-        </mfrac>
-        <mo>=</mo>
-        <mo>&#x2212;</mo>
-        <mn>0.9737</mn>
-      </mrow>
-    </math>
-    , and if we add these numbers we get&nbsp;</p>
-  <p>
-    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-      <mrow>
-        <mn>0.9211</mn>
-        <mo>+</mo>
-        <mrow>
-          <mo>(</mo>
-          <mrow>
+            <mo>&#x2212;</mo>
+            <mi>&#x0024;</mi>
+            <mn>1</mn>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>37</mn>
+              </mrow>
+              <mrow>
+                <mn>38</mn>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
             <mo>&#x2212;</mo>
             <mn>0.9737</mn>
           </mrow>
-          <mo>)</mo>
-        </mrow>
-        <mo>&#x2248;</mo>
-        <mo>&#x2212;</mo>
-        <mn>0.053</mn>
-      </mrow>
-    </math>
-    , which is the expected value we computed above.</p>
-  <p>The video below summarizes the results from above.</p>
-  <p>
-    <iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/xCeOYp49Kt4?rel=0" frameborder="1" allowfullscreen></iframe>
-  </p>
-  <div class="definition">
-    <h4>Expected Value</h4>
-    <p><strong>Expected Value</strong> is the average gain or loss of an event if the procedure is repeated many times. It is often referred to as the "long-term" average or mean for a probability experiment.</p>
-    <p>We can compute the expected value by multiplying each outcome in the sample space by the probability of that outcome, then adding up those products.</p>
-    <p>If
-      <math display="inline">
-        <mrow>
-          <mi>S</mi>
-          <mo>=</mo>
+        </math>
+        , and if we add these numbers we get&nbsp;
+      </p>
+      <p>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
           <mrow>
-            <mo>{</mo>
+            <mn>0.9211</mn>
+            <mo>+</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>0.9737</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>&#x2248;</mo>
+            <mo>&#x2212;</mo>
+            <mn>0.053</mn>
+          </mrow>
+        </math>
+        , which is the expected value we computed above.
+      </p>
+      <p>The video below summarizes the results from above.</p>
+      <p>
+        <iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/xCeOYp49Kt4?rel=0" frameborder="1"
+          allowfullscreen></iframe>
+      </p>
+      <div class="definition">
+        <h4>Expected Value</h4>
+        <p><strong>Expected Value</strong> is the average gain or loss of an event if the procedure is repeated many
+          times. It is often referred to as the "long-term" average or mean for a probability experiment.</p>
+        <p>We can compute the expected value by multiplying each outcome in the sample space by the probability of that
+          outcome, then adding up those products.</p>
+        <p>If
+          <math display="inline">
+            <mrow>
+              <mi>S</mi>
+              <mo>=</mo>
+              <mrow>
+                <mo>{</mo>
+                <mrow>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                  </msub>
+                  <mo>,</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>,</mo>
+                  <mo>&#x2026;</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mi>k</mi>
+                  </msub>
+                </mrow>
+                <mo>}</mo>
+              </mrow>
+            </mrow>
+          </math>
+          , then
+        </p>
+        <math display="block">
+          <mtext>Expected&#x00A0;Value</mtext>
+          <mo>=</mo>
+          <msub>
+            <mi>x</mi>
+            <mn>1</mn>
+          </msub>
+          <mo>&#x22C5;</mo>
+          <mi>P</mi>
+          <mrow>
+            <mo>(</mo>
             <mrow>
               <msub>
                 <mi>x</mi>
                 <mn>1</mn>
               </msub>
-              <mo>,</mo>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mo>+</mo>
+          <msub>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msub>
+          <mo>&#x22C5;</mo>
+          <mi>P</mi>
+          <mrow>
+            <mo>(</mo>
+            <mrow>
               <msub>
                 <mi>x</mi>
                 <mn>2</mn>
               </msub>
-              <mo>,</mo>
-              <mo>&#x2026;</mo>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mo>+</mo>
+          <mo>&#x22EF;</mo>
+          <msub>
+            <mi>x</mi>
+            <mi>k</mi>
+          </msub>
+          <mo>&#x22C5;</mo>
+          <mi>P</mi>
+          <mrow>
+            <mo>(</mo>
+            <mrow>
               <msub>
                 <mi>x</mi>
                 <mi>k</mi>
               </msub>
             </mrow>
-            <mo>}</mo>
+            <mo>)</mo>
           </mrow>
-        </mrow>
-      </math>
-      , then </p>
-    <math display="block">
-      <mtext>Expected&#x00A0;Value</mtext>
-      <mo>=</mo>
-      <msub>
-        <mi>x</mi>
-        <mn>1</mn>
-      </msub>
-      <mo>&#x22C5;</mo>
-      <mi>P</mi>
-      <mrow>
-        <mo>(</mo>
-        <mrow>
-          <msub>
-            <mi>x</mi>
-            <mn>1</mn>
-          </msub>
-        </mrow>
-        <mo>)</mo>
-      </mrow>
-      <mo>+</mo>
-      <msub>
-        <mi>x</mi>
-        <mn>2</mn>
-      </msub>
-      <mo>&#x22C5;</mo>
-      <mi>P</mi>
-      <mrow>
-        <mo>(</mo>
-        <mrow>
-          <msub>
-            <mi>x</mi>
+        </math>
+      </div>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>Bob wants to know if you would play his game.  It costs $2 to play and you do not get the $2 back if you win
+          or lose.  The game consists of selecting a &ldquo;winning&rdquo; colored marble from the bag.  </p>
+        <p>–There is 1 green marble and winning $30.</p>
+        <p>–There are 4 red marbles and winning $3.</p>
+        <p>–There are 8 white marbles and winning $1.</p>
+        <p>–There are 7 black marbles and winning $0.</p>
+        <p>Is it in your favor to play this game? Answer the question using the idea of Expected Value (calculate the
+          expected value and decide for yourself). </p>
+        <p><strong>Solution</strong></p>
+        <p>Start with looking at the outcomes of the game overall (the net profit). There are four things that can
+          happen and each will have thir own net profit and probabilities associated with them. Create a table showing
+          the net profits and probability.</p>
+        <p>If we draw a green marble it states we win $30, but the actual net profit is
+          <math display="inline">
+            <mi>&#x0024;</mi>
+            <mn>30</mn>
+            <mo>&#x2212;</mo>
+            <mi>&#x0024;</mi>
             <mn>2</mn>
-          </msub>
-        </mrow>
-        <mo>)</mo>
-      </mrow>
-      <mo>+</mo>
-      <mo>&#x22EF;</mo>
-      <msub>
-        <mi>x</mi>
-        <mi>k</mi>
-      </msub>
-      <mo>&#x22C5;</mo>
-      <mi>P</mi>
-      <mrow>
-        <mo>(</mo>
-        <mrow>
-          <msub>
-            <mi>x</mi>
-            <mi>k</mi>
-          </msub>
-        </mrow>
-        <mo>)</mo>
-      </mrow>
-    </math>
-  </div>
-  <div class="example">
-    <h3>Example 2</h3>
-    <p>Bob wants to know if you would play his  game.  It costs $2 to play   and you do not  get the $2 back if you win or lose.  The  game consists of selecting a &ldquo;winning&rdquo; colored marble from the bag.  </p>
-    <p>–There is 1 green marble and winning  $30.</p>
-    <p>–There are 4 red marbles and winning $3.</p>
-    <p>–There are 8 white marbles and winning  $1.</p>
-    <p>–There are 7 black marbles and winning  $0.</p>
-    <p>Is it in your favor to play this game? Answer the question using the idea of Expected Value (calculate the expected value and decide for yourself). </p>
-    <p><strong>Solution</strong></p>
-    <p>Start with looking at the outcomes of the game overall (the net profit). There are four things that can happen and each will have thir own net profit and probabilities associated with them. Create a table showing the net profits and probability.</p>
-    <p>If we draw a green marble it states we win $30, but the actual net profit is
-      <math display="inline">
-        <mi>&#x0024;</mi>
-        <mn>30</mn>
-        <mo>&#x2212;</mo>
-        <mi>&#x0024;</mi>
-        <mn>2</mn>
-        <mo>=</mo>
-        <mi>&#x0024;</mi>
-        <mn>28</mn>
-      </math>
-      . We can do that for each of the other three outcomes of the experiment and put that in a table (Selecting red has a net profit of &#36;1, white has a net profit of $-1, and black has a net profit of $-2) </p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <tbody>
-        <tr>
-          <th scope="col">Net Profit (Outcomes)</th>
-          <td>28</td>
-          <td>1</td>
-          <td>-1</td>
-          <td>-2</td>
-        </tr>
-        <tr>
-          <th scope="col">Probability</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Next let us add in the probability for each of those outcomes. We will assume each marble is equal likely to be selected. The probability will be the number of marbles of the given color over the total number of marbles. Enter these values into the table.</p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <tbody>
-        <tr>
-          <th scope="col">Net Profit (Outcomes)</th>
-          <td>28</td>
-          <td>1</td>
-          <td>-1</td>
-          <td>-2</td>
-        </tr>
-        <tr>
-          <th scope="col">Probability</th>
-          <td><math display="inline">
-              <mfrac>
-                <mn>1</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mfrac>
-                <mn>4</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mfrac>
-                <mn>8</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mfrac>
-                <mn>7</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-        </tr>
-      </tbody>
-    </table>
-    <p>To find the expected value we need to multiply each outcome times their respective probability, so add one more row on the table that shows the producs. We will then add all those products on the last row to calculate the expected value.</p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <tbody>
-        <tr>
-          <th scope="col">Net Profit (Outcomes)</th>
-          <td>28</td>
-          <td>1</td>
-          <td>-1</td>
-          <td>-2</td>
-        </tr>
-        <tr>
-          <th scope="col">Probability</th>
-          <td><math display="inline">
-              <mfrac>
-                <mn>1</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mfrac>
-                <mn>4</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mfrac>
-                <mn>8</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mfrac>
-                <mn>7</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-        </tr>
-        <tr>
-          <th scope="col">Outcome &#8226; Probabilty</th>
-          <td><math display="inline">
-              <mn>28</mn>
-              <mo>&#x22C5;</mo>
-              <mfrac>
-                <mn>1</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mn>1</mn>
-              <mo>&#x22C5;</mo>
-              <mfrac>
-                <mn>4</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mo>&#x2212;</mo>
-              <mn>1</mn>
-              <mo>&#x22C5;</mo>
-              <mfrac>
-                <mn>8</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-          <td><math display="inline">
-              <mo>&#x2212;</mo>
-              <mn>2</mn>
-              <mo>&#x22C5;</mo>
-              <mfrac>
-                <mn>7</mn>
-                <mrow>
-                  <mn>20</mn>
-                </mrow>
-              </mfrac>
-            </math></td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Now add the products together to get the expected value</p>
-    <math display="block">
-      <mtable columnalign="left">
-        <mtr>
-          <mtd>
-            <mtext>Expected&#x00A0;Value</mtext>
             <mo>=</mo>
-            <msub>
-              <mi>x</mi>
-              <mn>1</mn>
-            </msub>
-            <mo>&#x22C5;</mo>
-            <mi>P</mi>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
+            <mi>&#x0024;</mi>
+            <mn>28</mn>
+          </math>
+          . We can do that for each of the other three outcomes of the experiment and put that in a table (Selecting red
+          has a net profit of &#36;1, white has a net profit of $-1, and black has a net profit of $-2)
+        </p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <tbody>
+            <tr>
+              <th scope="col">Net Profit (Outcomes)</th>
+              <td>28</td>
+              <td>1</td>
+              <td>-1</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <th scope="col">Probability</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Next let us add in the probability for each of those outcomes. We will assume each marble is equal likely to
+          be selected. The probability will be the number of marbles of the given color over the total number of
+          marbles. Enter these values into the table.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <tbody>
+            <tr>
+              <th scope="col">Net Profit (Outcomes)</th>
+              <td>28</td>
+              <td>1</td>
+              <td>-1</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <th scope="col">Probability</th>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>4</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>8</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>7</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>To find the expected value we need to multiply each outcome times their respective probability, so add one
+          more row on the table that shows the producs. We will then add all those products on the last row to calculate
+          the expected value.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <tbody>
+            <tr>
+              <th scope="col">Net Profit (Outcomes)</th>
+              <td>28</td>
+              <td>1</td>
+              <td>-1</td>
+              <td>-2</td>
+            </tr>
+            <tr>
+              <th scope="col">Probability</th>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>4</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>8</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mfrac>
+                    <mn>7</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+            </tr>
+            <tr>
+              <th scope="col">Outcome &#8226; Probabilty</th>
+              <td><math display="inline">
+                  <mn>28</mn>
+                  <mo>&#x22C5;</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mn>1</mn>
+                  <mo>&#x22C5;</mo>
+                  <mfrac>
+                    <mn>4</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mo>&#x2212;</mo>
+                  <mn>1</mn>
+                  <mo>&#x22C5;</mo>
+                  <mfrac>
+                    <mn>8</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+              <td><math display="inline">
+                  <mo>&#x2212;</mo>
+                  <mn>2</mn>
+                  <mo>&#x22C5;</mo>
+                  <mfrac>
+                    <mn>7</mn>
+                    <mrow>
+                      <mn>20</mn>
+                    </mrow>
+                  </mfrac>
+                </math></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Now add the products together to get the expected value</p>
+        <math display="block">
+          <mtable columnalign="left">
+            <mtr>
+              <mtd>
+                <mtext>Expected&#x00A0;Value</mtext>
+                <mo>=</mo>
                 <msub>
                   <mi>x</mi>
                   <mn>1</mn>
                 </msub>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>+</mo>
-            <msub>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msub>
-            <mo>&#x22C5;</mo>
-            <mi>P</mi>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <msub>
-                  <mi>x</mi>
-                  <mn>2</mn>
-                </msub>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>+</mo>
-            <mo>&#x22EF;</mo>
-            <msub>
-              <mi>x</mi>
-              <mi>k</mi>
-            </msub>
-            <mo>&#x22C5;</mo>
-            <mi>P</mi>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <msub>
-                  <mi>x</mi>
-                  <mi>k</mi>
-                </msub>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd>
-            <mtext>Expected&#x00A0;Value</mtext>
-            <mo>=</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mn>28</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mfrac>
-              <mn>1</mn>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mn>1</mn>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mfrac>
-              <mn>4</mn>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mo>&#x2212;</mo>
-                <mn>1</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mfrac>
-              <mn>8</mn>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mo>&#x2212;</mo>
-                <mn>2</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mfrac>
-              <mn>7</mn>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd>
-            <mtext>Expected&#x00A0;Value</mtext>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>28</mn>
-              </mrow>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-            <mo>+</mo>
-            <mfrac>
-              <mn>4</mn>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x2212;</mo>
-            <mfrac>
-              <mn>8</mn>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x2212;</mo>
-            <mfrac>
-              <mrow>
-                <mn>14</mn>
-              </mrow>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd>
-            <mtext>Expected&#x00A0;Value</mtext>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>28</mn>
-                <mo>+</mo>
-                <mn>4</mn>
-                <mo>&#x2212;</mo>
-                <mn>8</mn>
-                <mo>&#x2212;</mo>
-                <mn>14</mn>
-              </mrow>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd>
-            <mtext>Expected&#x00A0;Value</mtext>
-            <mo>=</mo>
-            <mfrac>
-              <mrow>
-                <mn>10</mn>
-              </mrow>
-              <mrow>
-                <mn>20</mn>
-              </mrow>
-            </mfrac>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd>
-            <mtext>Expected&#x00A0;Value</mtext>
-            <mo>=</mo>
-            <mi>&#x0024;</mi>
-            <mn>0.50</mn>
-          </mtd>
-        </mtr>
-      </mtable>
-    </math>
-    <p>The expected value or long run average is &#36;0.50 for the game. This means if you were play this game from Bob many many times and average your winnings and losses that you expect to earn &#36;0.50 per game played. It is definitely in your favor to play.</p>
-    <p><a href="https://youtu.be/UVl9CQcBNt8" target="_blank">Video Solution for Example 2</a> (cc)</p>
-  </div>
-  <div class="tryitnow">
-    <h5>Try it Now 1</h5>
-    <p>You purchase a raffle ticket to help out a charity. The raffle ticket costs $5. The charity is selling 2000 tickets. One of them will be drawn and the person holding the ticket will be given a prize worth $4000. Compute the expected value for this raffle.</p>
-    <h5 class="js-expandmore">Hint 1</h5>
-    <div class="js-to_expand">
-      <p>In order to find the expected value we need all of the outcomes and associated probabilities. Think of the outcomes as either the ticket holder wins &#36;3995 (the prize minus the cost of the ticket) or the ticket holder loses $5. What is the probability of each of those outcomes? Once we have these outcomes and probabilities use the definition of expected value.</p>
-      <p><strong>Expected Value</strong> is the average gain or loss of an event if the procedure is repeated many times.</p>
-      <p>We can compute the expected value by multiplying each outcome by the probability of that outcome, then adding up the products.</p>
-    </div>
-    <h5 class="js-expandmore">Answer</h5>
-    <div class="js-to_expand">
-      <p>Start by looking for the probability of winning $3995 and losing $5. Then calculate the expected value where the outcomes were $3995 and -$5. </p>
-      <p>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mtable columnalign="left">
-            <mtr>
-              <mtd>
+                <mo>&#x22C5;</mo>
                 <mi>P</mi>
                 <mrow>
                   <mo>(</mo>
                   <mrow>
-                    <mtext>win&#x00A0;</mtext>
-                    <mi>&#x0024;</mi>
-                    <mn>3995</mn>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>1</mn>
+                    </msub>
                   </mrow>
                   <mo>)</mo>
                 </mrow>
+                <mo>+</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>&#x22C5;</mo>
+                <mi>P</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>+</mo>
+                <mo>&#x22EF;</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mi>k</mi>
+                </msub>
+                <mo>&#x22C5;</mo>
+                <mi>P</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mi>k</mi>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mtext>Expected&#x00A0;Value</mtext>
                 <mo>=</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>28</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
                 <mfrac>
                   <mn>1</mn>
                   <mrow>
-                    <mn>2000</mn>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mn>1</mn>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
+                <mfrac>
+                  <mn>4</mn>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mo>&#x2212;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
+                <mfrac>
+                  <mn>8</mn>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mo>&#x2212;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
+                <mfrac>
+                  <mn>7</mn>
+                  <mrow>
+                    <mn>20</mn>
                   </mrow>
                 </mfrac>
               </mtd>
             </mtr>
             <mtr>
               <mtd>
-                <mi>P</mi>
+                <mtext>Expected&#x00A0;Value</mtext>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mn>28</mn>
+                  </mrow>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <mn>4</mn>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mn>8</mn>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                  <mrow>
+                    <mn>14</mn>
+                  </mrow>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mtext>Expected&#x00A0;Value</mtext>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mn>28</mn>
+                    <mo>+</mo>
+                    <mn>4</mn>
+                    <mo>&#x2212;</mo>
+                    <mn>8</mn>
+                    <mo>&#x2212;</mo>
+                    <mn>14</mn>
+                  </mrow>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mtext>Expected&#x00A0;Value</mtext>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mn>10</mn>
+                  </mrow>
+                  <mrow>
+                    <mn>20</mn>
+                  </mrow>
+                </mfrac>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mtext>Expected&#x00A0;Value</mtext>
+                <mo>=</mo>
+                <mi>&#x0024;</mi>
+                <mn>0.50</mn>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <p>The expected value or long run average is &#36;0.50 for the game. This means if you were play this game from
+          Bob many many times and average your winnings and losses that you expect to earn &#36;0.50 per game played. It
+          is definitely in your favor to play.</p>
+        <p><a href="https://youtu.be/UVl9CQcBNt8" target="_blank">Video Solution for Example 2</a> (cc)</p>
+      </div>
+      <div class="tryitnow">
+        <h5>Try it Now 1</h5>
+        <p>You purchase a raffle ticket to help out a charity. The raffle ticket costs $5. The charity is selling 2000
+          tickets. One of them will be drawn and the person holding the ticket will be given a prize worth $4000.
+          Compute the expected value for this raffle.</p>
+        <h5 class="js-expandmore">Hint 1</h5>
+        <div class="js-to_expand">
+          <p>In order to find the expected value we need all of the outcomes and associated probabilities. Think of the
+            outcomes as either the ticket holder wins &#36;3995 (the prize minus the cost of the ticket) or the ticket
+            holder loses $5. What is the probability of each of those outcomes? Once we have these outcomes and
+            probabilities use the definition of expected value.</p>
+          <p><strong>Expected Value</strong> is the average gain or loss of an event if the procedure is repeated many
+            times.</p>
+          <p>We can compute the expected value by multiplying each outcome by the probability of that outcome, then
+            adding up the products.</p>
+        </div>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <p>Start by looking for the probability of winning $3995 and losing $5. Then calculate the expected value
+            where the outcomes were $3995 and -$5. </p>
+          <p>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mtable columnalign="left">
+                <mtr>
+                  <mtd>
+                    <mi>P</mi>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mtext>win&#x00A0;</mtext>
+                        <mi>&#x0024;</mi>
+                        <mn>3995</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mn>1</mn>
+                      <mrow>
+                        <mn>2000</mn>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mi>P</mi>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mtext>lose&#x00A0;</mtext>
+                        <mi>&#x0024;</mi>
+                        <mn>5</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mn>1999</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>2000</mn>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                </mtr>
+              </mtable>
+            </math>
+          </p>
+          <p>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow>
                 <mrow>
                   <mo>(</mo>
                   <mrow>
-                    <mtext>lose&#x00A0;</mtext>
+                    <mi>&#x0024;</mi>
+                    <mn>3</mn>
+                    <mo>,</mo>
+                    <mn>995</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
+                <mfrac>
+                  <mn>1</mn>
+                  <mrow>
+                    <mn>2000</mn>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mo>&#x2212;</mo>
                     <mi>&#x0024;</mi>
                     <mn>5</mn>
                   </mrow>
                   <mo>)</mo>
                 </mrow>
-                <mo>=</mo>
+                <mo>&#x22C5;</mo>
                 <mfrac>
                   <mrow>
                     <mn>1999</mn>
@@ -713,554 +807,631 @@
                     <mn>2000</mn>
                   </mrow>
                 </mfrac>
-              </mtd>
-            </mtr>
-          </mtable>
-        </math>
-      </p>
-      <p>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mi>&#x0024;</mi>
-                <mn>3</mn>
-                <mo>,</mo>
-                <mn>995</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mfrac>
-              <mn>1</mn>
-              <mrow>
-                <mn>2000</mn>
-              </mrow>
-            </mfrac>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
+                <mo>&#x2248;</mo>
                 <mo>&#x2212;</mo>
                 <mi>&#x0024;</mi>
-                <mn>5</mn>
+                <mn>3.00</mn>
               </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mfrac>
+            </math>
+          <p>The conclusion is that on average a player expects to lose &#36;3 for each raffle ticket they purchase (or
+            that on average &#36;3 is being donated to charity for each raffle ticket that is purchased).</p>
+          </p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Example 3</h3>
+        <p>In a certain state's lottery, 48 balls numbered 1 through 48 are placed in a machine and six of them are
+          drawn at random. If the six numbers drawn match the numbers that a player had chosen, the player wins
+          $1,000,000.  If they match 5 numbers, then win $1,000.   It costs $1 to buy a ticket.  Find the expected
+          value.</p>
+        <p><strong>Solution</strong></p>
+        <p>Earlier, we calculated the probability of matching all 6 numbers and the probability of matching 5 numbers:
+        </p>
+        <ul>
+          <li>
+            <p>for all 6 numbers,</p>
+            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
               <mrow>
-                <mn>1999</mn>
-              </mrow>
-              <mrow>
-                <mn>2000</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x2248;</mo>
-            <mo>&#x2212;</mo>
-            <mi>&#x0024;</mi>
-            <mn>3.00</mn>
-          </mrow>
-        </math>
-      <p>The conclusion is that on average a player expects to lose &#36;3 for each raffle ticket they purchase (or that on average &#36;3 is being donated to charity for each raffle ticket that is purchased).</p>
-      </p>
-    </div>
-  </div>
-  <div class="example">
-    <h3>Example 3</h3>
-    <p>In a certain state's lottery, 48 balls numbered 1 through 48 are placed in a machine and six of them are drawn at random. If the six numbers drawn match the numbers that a player had chosen, the player wins $1,000,000.  If they match 5 numbers, then win $1,000.   It costs $1 to buy a ticket.  Find the expected value.</p>
-    <p><strong>Solution</strong></p>
-    <p>Earlier, we calculated the probability of matching all 6 numbers and the probability of matching 5 numbers:</p>
-    <ul>
-      <li>
-        <p>for all 6 numbers,</p>
-        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-            <mfrac>
-              <mrow>
-                <mmultiscripts>
-                  <mi>C</mi>
-                  <mprescripts/>
-                  <mn>6</mn>
-                  <none/>
-                </mmultiscripts>
-                <msub>
-                  <mrow></mrow>
-                  <mn>6</mn>
-                </msub>
-              </mrow>
-              <mrow>
-                <mmultiscripts>
-                  <mi>C</mi>
-                  <mprescripts/>
+                <mfrac>
                   <mrow>
-                    <mn>48</mn>
+                    <mmultiscripts>
+                      <mi>C</mi>
+                      <mprescripts />
+                      <mn>6</mn>
+                      <none />
+                    </mmultiscripts>
+                    <msub>
+                      <mrow></mrow>
+                      <mn>6</mn>
+                    </msub>
                   </mrow>
-                  <none/>
-                </mmultiscripts>
-                <msub>
-                  <mrow></mrow>
-                  <mn>6</mn>
-                </msub>
-              </mrow>
-            </mfrac>
-            <mo>=</mo>
-            <mfrac>
-              <mn>1</mn>
-              <mrow>
-                <mn>12271512</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x2248;</mo>
-            <mn>0.0000000815</mn>
-          </mrow>
-        </math>
-      </li>
-      <li>
-        <p>for 5 numbers,</p>
-      </li>
-      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mfrac>
-            <mrow>
-              <mrow>
-                <mo>(</mo>
-                <mrow>
-                  <mmultiscripts>
-                    <mi>C</mi>
-                    <mprescripts/>
-                    <mn>6</mn>
-                    <none/>
-                  </mmultiscripts>
-                  <msub>
-                    <mrow></mrow>
-                    <mn>5</mn>
-                  </msub>
-                </mrow>
-                <mo>)</mo>
-              </mrow>
-              <mrow>
-                <mo>(</mo>
-                <mrow>
-                  <mmultiscripts>
-                    <mi>C</mi>
-                    <mprescripts/>
-                    <mrow>
-                      <mn>42</mn>
-                    </mrow>
-                    <none/>
-                  </mmultiscripts>
-                  <msub>
-                    <mrow></mrow>
-                    <mn>1</mn>
-                  </msub>
-                </mrow>
-                <mo>)</mo>
-              </mrow>
-            </mrow>
-            <mrow>
-              <mmultiscripts>
-                <mi>C</mi>
-                <mprescripts/>
-                <mrow>
-                  <mn>48</mn>
-                </mrow>
-                <none/>
-              </mmultiscripts>
-              <msub>
-                <mrow></mrow>
-                <mn>6</mn>
-              </msub>
-            </mrow>
-          </mfrac>
-          <mo>=</mo>
-          <mfrac>
-            <mrow>
-              <mn>252</mn>
-            </mrow>
-            <mrow>
-              <mn>12271512</mn>
-            </mrow>
-          </mfrac>
-          <mo>&#x2248;</mo>
-          <mn>0.0000205</mn>
-        </mrow>
-      </math>
-    </ul>
-    <p>Our probabilities and outcome values are:</p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <thead>
-        <tr>
-          <th width="90" valign="top">Outcome</th>
-          <th width="162" valign="top">Probability of outcome</th>
-        </tr>
-      </thead>
-      <tr>
-        <td width="90" valign="top"><p>$999,999</p></td>
-        <td width="162" valign="top"><p>
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-              <mrow>
+                  <mrow>
+                    <mmultiscripts>
+                      <mi>C</mi>
+                      <mprescripts />
+                      <mrow>
+                        <mn>48</mn>
+                      </mrow>
+                      <none />
+                    </mmultiscripts>
+                    <msub>
+                      <mrow></mrow>
+                      <mn>6</mn>
+                    </msub>
+                  </mrow>
+                </mfrac>
+                <mo>=</mo>
                 <mfrac>
                   <mn>1</mn>
                   <mrow>
                     <mn>12271512</mn>
                   </mrow>
                 </mfrac>
+                <mo>&#x2248;</mo>
+                <mn>0.0000000815</mn>
               </mrow>
             </math>
-          </p></td>
-      </tr>
-      <tr>
-        <td width="90" valign="top"><p>$999</p></td>
-        <td width="162" valign="top"><p>
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          </li>
+          <li>
+            <p>for 5 numbers,</p>
+          </li>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mmultiscripts>
+                        <mi>C</mi>
+                        <mprescripts />
+                        <mn>6</mn>
+                        <none />
+                      </mmultiscripts>
+                      <msub>
+                        <mrow></mrow>
+                        <mn>5</mn>
+                      </msub>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mmultiscripts>
+                        <mi>C</mi>
+                        <mprescripts />
+                        <mrow>
+                          <mn>42</mn>
+                        </mrow>
+                        <none />
+                      </mmultiscripts>
+                      <msub>
+                        <mrow></mrow>
+                        <mn>1</mn>
+                      </msub>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mmultiscripts>
+                    <mi>C</mi>
+                    <mprescripts />
+                    <mrow>
+                      <mn>48</mn>
+                    </mrow>
+                    <none />
+                  </mmultiscripts>
+                  <msub>
+                    <mrow></mrow>
+                    <mn>6</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mn>252</mn>
+                </mrow>
+                <mrow>
+                  <mn>12271512</mn>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
+              <mn>0.0000205</mn>
+            </mrow>
+          </math>
+        </ul>
+        <p>Our probabilities and outcome values are:</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <thead>
+            <tr>
+              <th width="90" valign="top">Outcome</th>
+              <th width="162" valign="top">Probability of outcome</th>
+            </tr>
+          </thead>
+          <tr>
+            <td width="90" valign="top">
+              <p>$999,999</p>
+            </td>
+            <td width="162" valign="top">
+              <p>
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mn>1</mn>
+                      <mrow>
+                        <mn>12271512</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                </math>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="90" valign="top">
+              <p>$999</p>
+            </td>
+            <td width="162" valign="top">
+              <p>
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>252</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12271512</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                </math>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td width="90" valign="top">
+              <p>-$1</p>
+            </td>
+            <td width="162" valign="top">
+              <p>
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <mfrac>
+                      <mrow>
+                        <mn>253</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12271512</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mn>12271259</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>12271512</mn>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                </math>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p> The expected value, then is:</p>
+        <p>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
               <mrow>
-                <mfrac>
-                  <mrow>
-                    <mn>252</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>12271512</mn>
-                  </mrow>
-                </mfrac>
+                <mo>(</mo>
+                <mrow>
+                  <mi>&#x0024;</mi>
+                  <mn>999</mn>
+                  <mo>,</mo>
+                  <mn>999</mn>
+                </mrow>
+                <mo>)</mo>
               </mrow>
-            </math>
-          </p></td>
-      </tr>
-      <tr>
-        <td width="90" valign="top"><p>-$1</p></td>
-        <td width="162" valign="top"><p>
-            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-              <mrow>
+              <mo>&#x22C5;</mo>
+              <mfrac>
                 <mn>1</mn>
-                <mo>&#x2212;</mo>
-                <mfrac>
-                  <mrow>
-                    <mn>253</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>12271512</mn>
-                  </mrow>
-                </mfrac>
-                <mo>=</mo>
-                <mfrac>
-                  <mrow>
-                    <mn>12271259</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>12271512</mn>
-                  </mrow>
-                </mfrac>
+                <mrow>
+                  <mn>12271512</mn>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>&#x0024;</mi>
+                  <mn>999</mn>
+                </mrow>
+                <mo>)</mo>
               </mrow>
-            </math>
-          </p></td>
-      </tr>
-    </table>
-    <p> The expected value, then is:</p>
-    <p>
-      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>999</mn>
-              <mo>,</mo>
-              <mn>999</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>&#x22C5;</mo>
-          <mfrac>
-            <mn>1</mn>
-            <mrow>
-              <mn>12271512</mn>
-            </mrow>
-          </mfrac>
-          <mo>+</mo>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>999</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>&#x22C5;</mo>
-          <mfrac>
-            <mrow>
-              <mn>252</mn>
-            </mrow>
-            <mrow>
-              <mn>12271512</mn>
-            </mrow>
-          </mfrac>
-          <mo>+</mo>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
+              <mo>&#x22C5;</mo>
+              <mfrac>
+                <mrow>
+                  <mn>252</mn>
+                </mrow>
+                <mrow>
+                  <mn>12271512</mn>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mo>&#x2212;</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>1</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>&#x22C5;</mo>
+              <mfrac>
+                <mrow>
+                  <mn>12271259</mn>
+                </mrow>
+                <mrow>
+                  <mn>12271512</mn>
+                </mrow>
+              </mfrac>
+              <mo>&#x2248;</mo>
               <mo>&#x2212;</mo>
               <mi>&#x0024;</mi>
-              <mn>1</mn>
+              <mn>0.898</mn>
             </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>&#x22C5;</mo>
-          <mfrac>
-            <mrow>
-              <mn>12271259</mn>
-            </mrow>
-            <mrow>
-              <mn>12271512</mn>
-            </mrow>
-          </mfrac>
-          <mo>&#x2248;</mo>
-          <mo>&#x2212;</mo>
-          <mi>&#x0024;</mi>
-          <mn>0.898</mn>
-        </mrow>
-      </math>
-    </p>
-    <p>On average, one can expect to lose about 90 cents on a lottery ticket.  Of course, most players will lose $1.</p>
-    <p><a href="http://youtu.be/pFzgxGVltS8?t=2m42s" target="_blank">Video Solution Example 3</a> (cc)</p>
-  </div>
-  <div class="example">
-    <h3>Example 4</h3>
-    <p>The pick 5 lottery works by selecting 5 numbers from  1 to 35 (no repetition). It costs $1.</p>
-    <p>–Pick all 5 win Jackpot (estimated  at $50000)</p>
-    <p>–Pick 4 win $500</p>
-    <p>–Pick 3 win $5</p>
-    <p> What  is the expected winnings of a ticket?  </p>
-    <p><strong>Solution</strong></p>
-    <p>Start by listing the outomes for the lottery in terms of the net profit.</p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <thead>
-        <tr>
-          <th>Outcome</th>
-          <th>Probability of outcome</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-th="Outcome"><p>$49,999</p></td>
-          <td data-th="Probability of outcome"><p></p></td>
-        </tr>
-        <tr>
-          <td data-th="Outcome"><p>$499</p></td>
-          <td data-th="Probability of outcome"><p></p></td>
-        </tr>
-        <tr>
-          <td data-th="Outcome"><p>$4</p></td>
-          <td data-th="Probability of outcome"><p></p></td>
-        <tr>
-          <td data-th="Outcome"><p>-$1</p></td>
-          <td data-th="Probability of outcome"><p></p></td>
-        </tr>
-        </tr>
-        
-      </tbody>
-    </table>
-    <p>To find the probability of each we will need to use both the combination formulas and the multiplication principle for the numerator term where we find the number of ways to select how many numbers match the winning numbers of interest times the number of ways for the remaining non winning numbers.</p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <thead>
-        <tr>
-          <th>Outcome</th>
-          <th>Probability of outcome</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-th="Outcome"><p>$49,999</p></td>
-          <td data-th="Probability of outcome"><p>
-              <math display="inline">
-                <mfrac>
-                  <mrow>
-                    <mmultiscripts>
-                      <mi>C</mi>
-                      <mprescripts/>
-                      <mn>5</mn>
-                      <none/>
-                    </mmultiscripts>
-                    <msub>
-                      <mrow></mrow>
-                      <mn>5</mn>
-                    </msub>
-                  </mrow>
-                  <mrow>
-                    <mmultiscripts>
-                      <mi>C</mi>
-                      <mprescripts/>
-                      <mrow>
-                        <mn>35</mn>
-                      </mrow>
-                      <none/>
-                    </mmultiscripts>
-                    <msub>
-                      <mrow></mrow>
-                      <mn>5</mn>
-                    </msub>
-                  </mrow>
-                </mfrac>
-                <mo>=</mo>
-                <mfrac>
-                  <mn>1</mn>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </math>
-            </p></td>
-        </tr>
-        <tr>
-          <td data-th="Outcome"><p>$499</p></td>
-          <td data-th="Probability of outcome"><p>
-              <math display="inline">
-                <mfrac>
-                  <mrow>
-                    <mrow>
-                      <mo>(</mo>
+          </math>
+        </p>
+        <p>On average, one can expect to lose about 90 cents on a lottery ticket.  Of course, most players will lose $1.
+        </p>
+        <p><a href="http://youtu.be/pFzgxGVltS8?t=2m42s" target="_blank">Video Solution Example 3</a> (cc)</p>
+      </div>
+      <div class="example">
+        <h3>Example 4</h3>
+        <p>The pick 5 lottery works by selecting 5 numbers from 1 to 35 (no repetition). It costs $1.</p>
+        <p>–Pick all 5 win Jackpot (estimated at $50000)</p>
+        <p>–Pick 4 win $500</p>
+        <p>–Pick 3 win $5</p>
+        <p> What is the expected winnings of a ticket?  </p>
+        <p><strong>Solution</strong></p>
+        <p>Start by listing the outomes for the lottery in terms of the net profit.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <thead>
+            <tr>
+              <th>Outcome</th>
+              <th>Probability of outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Outcome">
+                <p>$49,999</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p></p>
+              </td>
+            </tr>
+            <tr>
+              <td data-th="Outcome">
+                <p>$499</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p></p>
+              </td>
+            </tr>
+            <tr>
+              <td data-th="Outcome">
+                <p>$4</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p></p>
+              </td>
+            <tr>
+              <td data-th="Outcome">
+                <p>-$1</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p></p>
+              </td>
+            </tr>
+            </tr>
+
+          </tbody>
+        </table>
+        <p>To find the probability of each we will need to use both the combination formulas and the multiplication
+          principle for the numerator term where we find the number of ways to select how many numbers match the winning
+          numbers of interest times the number of ways for the remaining non winning numbers.</p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <thead>
+            <tr>
+              <th>Outcome</th>
+              <th>Probability of outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Outcome">
+                <p>$49,999</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p>
+                  <math display="inline">
+                    <mfrac>
                       <mrow>
                         <mmultiscripts>
                           <mi>C</mi>
-                          <mprescripts/>
+                          <mprescripts />
                           <mn>5</mn>
-                          <none/>
+                          <none />
                         </mmultiscripts>
                         <msub>
                           <mrow></mrow>
-                          <mn>4</mn>
+                          <mn>5</mn>
                         </msub>
                       </mrow>
-                      <mo>)</mo>
-                    </mrow>
-                    <mo>&#x22C5;</mo>
-                    <mrow>
-                      <mo>(</mo>
                       <mrow>
                         <mmultiscripts>
                           <mi>C</mi>
-                          <mprescripts/>
+                          <mprescripts />
                           <mrow>
-                            <mn>30</mn>
+                            <mn>35</mn>
                           </mrow>
-                          <none/>
+                          <none />
                         </mmultiscripts>
                         <msub>
                           <mrow></mrow>
+                          <mn>5</mn>
+                        </msub>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mn>1</mn>
+                      <mrow>
+                        <mn>324</mn>
+                        <mo>,</mo>
+                        <mn>632</mn>
+                      </mrow>
+                    </mfrac>
+                  </math>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td data-th="Outcome">
+                <p>$499</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p>
+                  <math display="inline">
+                    <mfrac>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mmultiscripts>
+                              <mi>C</mi>
+                              <mprescripts />
+                              <mn>5</mn>
+                              <none />
+                            </mmultiscripts>
+                            <msub>
+                              <mrow></mrow>
+                              <mn>4</mn>
+                            </msub>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>&#x22C5;</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mmultiscripts>
+                              <mi>C</mi>
+                              <mprescripts />
+                              <mrow>
+                                <mn>30</mn>
+                              </mrow>
+                              <none />
+                            </mmultiscripts>
+                            <msub>
+                              <mrow></mrow>
+                              <mn>1</mn>
+                            </msub>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mmultiscripts>
+                          <mi>C</mi>
+                          <mprescripts />
+                          <mrow>
+                            <mn>35</mn>
+                          </mrow>
+                          <none />
+                        </mmultiscripts>
+                        <msub>
+                          <mrow></mrow>
+                          <mn>5</mn>
+                        </msub>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mn>150</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>324</mn>
+                        <mo>,</mo>
+                        <mn>632</mn>
+                      </mrow>
+                    </mfrac>
+                  </math>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td data-th="Outcome">
+                <p>$4</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p>
+                  <math display="inline">
+                    <mfrac>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mmultiscripts>
+                              <mi>C</mi>
+                              <mprescripts />
+                              <mn>5</mn>
+                              <none />
+                            </mmultiscripts>
+                            <msub>
+                              <mrow></mrow>
+                              <mn>3</mn>
+                            </msub>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>&#x22C5;</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mmultiscripts>
+                              <mi>C</mi>
+                              <mprescripts />
+                              <mrow>
+                                <mn>30</mn>
+                              </mrow>
+                              <none />
+                            </mmultiscripts>
+                            <msub>
+                              <mrow></mrow>
+                              <mn>2</mn>
+                            </msub>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mmultiscripts>
+                          <mi>C</mi>
+                          <mprescripts />
+                          <mrow>
+                            <mn>35</mn>
+                          </mrow>
+                          <none />
+                        </mmultiscripts>
+                        <msub>
+                          <mrow></mrow>
+                          <mn>5</mn>
+                        </msub>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mn>4350</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>324</mn>
+                        <mo>,</mo>
+                        <mn>632</mn>
+                      </mrow>
+                    </mfrac>
+                  </math>
+                </p>
+              </td>
+            <tr>
+              <td data-th="Outcome">
+                <p>-$1</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p>
+                  <math display="inline">
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mfrac>
                           <mn>1</mn>
-                        </msub>
-                      </mrow>
-                      <mo>)</mo>
-                    </mrow>
-                  </mrow>
-                  <mrow>
-                    <mmultiscripts>
-                      <mi>C</mi>
-                      <mprescripts/>
-                      <mrow>
-                        <mn>35</mn>
-                      </mrow>
-                      <none/>
-                    </mmultiscripts>
-                    <msub>
-                      <mrow></mrow>
-                      <mn>5</mn>
-                    </msub>
-                  </mrow>
-                </mfrac>
-                <mo>=</mo>
-                <mfrac>
-                  <mrow>
-                    <mn>150</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </math>
-            </p></td>
-        </tr>
-        <tr>
-          <td data-th="Outcome"><p>$4</p></td>
-          <td data-th="Probability of outcome"><p>
-              <math display="inline">
-                <mfrac>
-                  <mrow>
-                    <mrow>
-                      <mo>(</mo>
-                      <mrow>
-                        <mmultiscripts>
-                          <mi>C</mi>
-                          <mprescripts/>
-                          <mn>5</mn>
-                          <none/>
-                        </mmultiscripts>
-                        <msub>
-                          <mrow></mrow>
-                          <mn>3</mn>
-                        </msub>
-                      </mrow>
-                      <mo>)</mo>
-                    </mrow>
-                    <mo>&#x22C5;</mo>
-                    <mrow>
-                      <mo>(</mo>
-                      <mrow>
-                        <mmultiscripts>
-                          <mi>C</mi>
-                          <mprescripts/>
                           <mrow>
-                            <mn>30</mn>
+                            <mn>324</mn>
+                            <mo>,</mo>
+                            <mn>632</mn>
                           </mrow>
-                          <none/>
-                        </mmultiscripts>
-                        <msub>
-                          <mrow></mrow>
-                          <mn>2</mn>
-                        </msub>
+                        </mfrac>
+                        <mo>+</mo>
+                        <mfrac>
+                          <mrow>
+                            <mn>150</mn>
+                          </mrow>
+                          <mrow>
+                            <mn>324</mn>
+                            <mo>,</mo>
+                            <mn>632</mn>
+                          </mrow>
+                        </mfrac>
+                        <mo>+</mo>
+                        <mfrac>
+                          <mrow>
+                            <mn>4350</mn>
+                          </mrow>
+                          <mrow>
+                            <mn>324</mn>
+                            <mo>,</mo>
+                            <mn>632</mn>
+                          </mrow>
+                        </mfrac>
                       </mrow>
                       <mo>)</mo>
                     </mrow>
-                  </mrow>
-                  <mrow>
-                    <mmultiscripts>
-                      <mi>C</mi>
-                      <mprescripts/>
+                    <mo>=</mo>
+                    <mfrac>
                       <mrow>
-                        <mn>35</mn>
+                        <mn>320131</mn>
                       </mrow>
-                      <none/>
-                    </mmultiscripts>
-                    <msub>
-                      <mrow></mrow>
-                      <mn>5</mn>
-                    </msub>
-                  </mrow>
-                </mfrac>
+                      <mrow>
+                        <mn>324</mn>
+                        <mo>,</mo>
+                        <mn>632</mn>
+                      </mrow>
+                    </mfrac>
+                  </math>
+                </p>
+              </td>
+            </tr>
+            </tr>
+
+          </tbody>
+        </table>
+        <p>The expected value will be the sum of each outcomes times their probability:</p>
+        <math display="block">
+          <mtable columnalign="left">
+            <mtr>
+              <mtd>
+                <mtext>EV</mtext>
                 <mo>=</mo>
-                <mfrac>
+                <mrow>
+                  <mo>(</mo>
                   <mrow>
-                    <mn>4350</mn>
+                    <mn>49999</mn>
                   </mrow>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </math>
-            </p></td>
-        <tr>
-          <td data-th="Outcome"><p>-$1</p></td>
-          <td data-th="Probability of outcome"><p>
-              <math display="inline">
-                <mn>1</mn>
-                <mo>&#x2212;</mo>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
                 <mrow>
                   <mo>(</mo>
                   <mrow>
@@ -1272,7 +1443,21 @@
                         <mn>632</mn>
                       </mrow>
                     </mfrac>
-                    <mo>+</mo>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>499</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
                     <mfrac>
                       <mrow>
                         <mn>150</mn>
@@ -1283,7 +1468,19 @@
                         <mn>632</mn>
                       </mrow>
                     </mfrac>
-                    <mo>+</mo>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mn>4</mn>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
                     <mfrac>
                       <mrow>
                         <mn>4350</mn>
@@ -1297,531 +1494,498 @@
                   </mrow>
                   <mo>)</mo>
                 </mrow>
-                <mo>=</mo>
-                <mfrac>
-                  <mrow>
-                    <mn>320131</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </math>
-            </p></td>
-        </tr>
-        </tr>
-        
-      </tbody>
-    </table>
-    <p>The expected value will be the sum of each outcomes times their probability:</p>
-    <math display="block">
-      <mtable columnalign="left">
-        <mtr>
-          <mtd>
-            <mtext>EV</mtext>
-            <mo>=</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mn>49999</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mfrac>
-                  <mn>1</mn>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mn>499</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mfrac>
-                  <mrow>
-                    <mn>150</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mn>4</mn>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mfrac>
-                  <mrow>
-                    <mn>4350</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>+</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mo>&#x2212;</mo>
-                <mn>1</mn>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-            <mo>&#x22C5;</mo>
-            <mrow>
-              <mo>(</mo>
-              <mrow>
-                <mfrac>
-                  <mrow>
-                    <mn>320131</mn>
-                  </mrow>
-                  <mrow>
-                    <mn>324</mn>
-                    <mo>,</mo>
-                    <mn>632</mn>
-                  </mrow>
-                </mfrac>
-              </mrow>
-              <mo>)</mo>
-            </mrow>
-          </mtd>
-        </mtr>
-        <mtr>
-          <mtd>
-            <mtext>EV</mtext>
-            <mo>=</mo>
-            <mo>&#x2212;</mo>
-            <mfrac>
-              <mrow>
-                <mn>177882</mn>
-              </mrow>
-              <mrow>
-                <mn>324632</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x2248;</mo>
-            <mo>&#x2212;</mo>
-            <mn>0.55</mn>
-          </mtd>
-        </mtr>
-      </mtable>
-    </math>
-    <p>The result shows the player should expect that on average over a large number of trials of buying the lottery ticket to lose approximately &#36;0.55 per ticket.</p>
-    <p><a href="https://youtu.be/xQHG9QHkn2A" target="_blank">Video Solution Example 4</a> (cc)</p>
-  </div>
-  <p>In general, if the expected value of a game is negative, it is not a good idea to play, since on average you will lose money.&nbsp; It would be better to play a game with a positive expected value (good luck trying to find one!), although keep in mind that even if the <em>average</em> winnings are positive it could be the case that most people lose money and one very fortunate individual wins a great deal of money.&nbsp; If the expected value of a game is 0, we call it a <strong>fair game</strong>, since neither side has an advantage.</p>
-  <div class="tryitnow">
-    <h5>Try it Now 2</h5>
-    <p>A friend offers to play a game, in which you roll 3 standard 6-sided dice.  If all the dice roll different values, you give him $1.  If any two dice match values, you get $2.  What is the expected value of this game?  Would you play?</p>
-    <h5 class="js-expandmore">Hint 1</h5>
-    <div class="js-to_expand">
-      <p>The outcomes for the experiment is lose $1 or win $2. To find the expected value you will need to find the probability associated with each outcome. If we roll three dice there are 6*6*6=216 different outcomes of the three dice rolls according to the fundamental counting principle. Which probability is easier to find? If we find that probability can we find the probability of the other outcome with a simple formula?</p>
-    </div>
-    <h5 class="js-expandmore">Hint 2</h5>
-    <div class="js-to_expand">
-      <p>Try finding the probability that none are the same and use the complement rule to find the probability that at least two are equal.</p>
-    </div>
-    <h5 class="js-expandmore">Answer</h5>
-    <div class="js-to_expand">
-      <p>To find the probability that none are the same we take the number of ways no dice outcome in three rolls is the same over the total number of ways we can have three dice roll outcomes. We already saw the second portion that the number of ways to roll three dice is to have a total of 216 different outcomes in Hint 1. </p>
-      <p>We can treat the question of getting three different dice outcomes as a permutation problem or a fundamental counting problem. Think of the first dice outcome as having six choices, then the second dice outcome if not being equal to the first will only have five choices, and the third outcome not equaling with the first or second will only have four choices. This gives us:
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mi>n</mi>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mtext>all&#x00A0;three&#x00A0;dice&#x00A0;outcome&#x00A0;different</mtext>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>=</mo>
-          <mn>6</mn>
-          <mo>&#x22C5;</mo>
-          <mn>5</mn>
-          <mo>&#x22C5;</mo>
-          <mn>4</mn>
-          <mo>=</mo>
-          <mn>120</mn>
-        </math>
-      </p>
-      <p>Now find the probability of each outcome.</p>
-      <p>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mtable columnalign="left">
-            <mtr>
-              <mtd>
-                <mi>P</mi>
+                <mo>+</mo>
                 <mrow>
                   <mo>(</mo>
                   <mrow>
-                    <mtext>Lose&#x00A0;$1:&#x00A0;All&#x00A0;different</mtext>
+                    <mo>&#x2212;</mo>
+                    <mn>1</mn>
                   </mrow>
                   <mo>)</mo>
                 </mrow>
-                <mo>=</mo>
-                <mfrac>
+                <mo>&#x22C5;</mo>
+                <mrow>
+                  <mo>(</mo>
                   <mrow>
-                    <mi>n</mi>
-                    <mrow>
-                      <mo>(</mo>
+                    <mfrac>
                       <mrow>
-                        <mtext>all&#x00A0;three&#x00A0;different</mtext>
+                        <mn>320131</mn>
                       </mrow>
-                      <mo>)</mo>
-                    </mrow>
-                  </mrow>
-                  <mrow>
-                    <mi>n</mi>
-                    <mrow>
-                      <mo>(</mo>
                       <mrow>
-                        <mtext>roll&#x00A0;three&#x00A0;dice</mtext>
+                        <mn>324</mn>
+                        <mo>,</mo>
+                        <mn>632</mn>
                       </mrow>
-                      <mo>)</mo>
-                    </mrow>
+                    </mfrac>
                   </mrow>
-                </mfrac>
+                  <mo>)</mo>
+                </mrow>
               </mtd>
             </mtr>
             <mtr>
               <mtd>
-                <mi>P</mi>
-                <mrow>
-                  <mo>(</mo>
-                  <mrow>
-                    <mtext>Lose&#x00A0;$1:&#x00A0;All&#x00A0;different</mtext>
-                  </mrow>
-                  <mo>)</mo>
-                </mrow>
+                <mtext>EV</mtext>
                 <mo>=</mo>
+                <mo>&#x2212;</mo>
                 <mfrac>
                   <mrow>
-                    <mn>120</mn>
+                    <mn>177882</mn>
                   </mrow>
                   <mrow>
-                    <mn>216</mn>
+                    <mn>324632</mn>
                   </mrow>
                 </mfrac>
-                <mo>=</mo>
-                <mfrac>
-                  <mn>5</mn>
-                  <mn>9</mn>
-                </mfrac>
+                <mo>&#x2248;</mo>
+                <mo>&#x2212;</mo>
+                <mn>0.55</mn>
               </mtd>
             </mtr>
           </mtable>
         </math>
-      </p>
-      <p>Now we do not win we lose - these two events are complements of each other, so to find the probability of winning we use the complement rule.</p>
-      <p>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mi>P</mi>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mtext>Win&#x00A0;$2:&#x00A0;at&#x00A0;least&#x00A0;two&#x00A0;the&#x00A0;same</mtext>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>=</mo>
-          <mn>1</mn>
-          <mo>&#x2212;</mo>
-          <mi>P</mi>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mtext>&#x00A0;Lose&#x00A0;$1:&#x00A0;All&#x00A0;different</mtext>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-        </math>
-        , our complement rule at work.</p>
-      <p>
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mtext>Win&#x00A0;$2:&#x00A0;at&#x00A0;least&#x00A0;two&#x00A0;the&#x00A0;same</mtext>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>=</mo>
-          <mn>1</mn>
-          <mo>&#x2212;</mo>
-          <mfrac>
-            <mn>5</mn>
-            <mn>9</mn>
-          </mfrac>
-          <mo>=</mo>
-          <mfrac>
-            <mn>4</mn>
-            <mn>9</mn>
-          </mfrac>
-        </math>
-      </p>
-      <p>Now we have all the information needed to find the expected value.</p>
-      <p>Expected value is:
-        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>2</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mi>P</mi>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mtext>Win&#x00A0;$2</mtext>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mo>&#x2212;</mo>
-              <mi>&#x0024;</mi>
+        <p>The result shows the player should expect that on average over a large number of trials of buying the lottery
+          ticket to lose approximately &#36;0.55 per ticket.</p>
+        <p><a href="https://youtu.be/xQHG9QHkn2A" target="_blank">Video Solution Example 4</a> (cc)</p>
+      </div>
+      <p>In general, if the expected value of a game is negative, it is not a good idea to play, since on average you
+        will lose money.&nbsp; It would be better to play a game with a positive expected value (good luck trying to
+        find one!), although keep in mind that even if the <em>average</em> winnings are positive it could be the case
+        that most people lose money and one very fortunate individual wins a great deal of money.&nbsp; If the expected
+        value of a game is 0, we call it a <strong>fair game</strong>, since neither side has an advantage.</p>
+      <div class="tryitnow">
+        <h5>Try it Now 2</h5>
+        <p>A friend offers to play a game, in which you roll 3 standard 6-sided dice.  If all the dice roll different
+          values, you give him $1.  If any two dice match values, you get $2.  What is the expected value of this game? 
+          Would you play?</p>
+        <h5 class="js-expandmore">Hint 1</h5>
+        <div class="js-to_expand">
+          <p>The outcomes for the experiment is lose $1 or win $2. To find the expected value you will need to find the
+            probability associated with each outcome. If we roll three dice there are 6*6*6=216 different outcomes of
+            the three dice rolls according to the fundamental counting principle. Which probability is easier to find?
+            If we find that probability can we find the probability of the other outcome with a simple formula?</p>
+        </div>
+        <h5 class="js-expandmore">Hint 2</h5>
+        <div class="js-to_expand">
+          <p>Try finding the probability that none are the same and use the complement rule to find the probability that
+            at least two are equal.</p>
+        </div>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to_expand">
+          <p>To find the probability that none are the same we take the number of ways no dice outcome in three rolls is
+            the same over the total number of ways we can have three dice roll outcomes. We already saw the second
+            portion that the number of ways to roll three dice is to have a total of 216 different outcomes in Hint 1.
+          </p>
+          <p>We can treat the question of getting three different dice outcomes as a permutation problem or a
+            fundamental counting problem. Think of the first dice outcome as having six choices, then the second dice
+            outcome if not being equal to the first will only have five choices, and the third outcome not equaling with
+            the first or second will only have four choices. This gives us:
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>n</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>all&#x00A0;three&#x00A0;dice&#x00A0;outcome&#x00A0;different</mtext>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mn>6</mn>
+              <mo>&#x22C5;</mo>
+              <mn>5</mn>
+              <mo>&#x22C5;</mo>
+              <mn>4</mn>
+              <mo>=</mo>
+              <mn>120</mn>
+            </math>
+          </p>
+          <p>Now find the probability of each outcome.</p>
+          <p>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mtable columnalign="left">
+                <mtr>
+                  <mtd>
+                    <mi>P</mi>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mtext>Lose&#x00A0;$1:&#x00A0;All&#x00A0;different</mtext>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mi>n</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mtext>all&#x00A0;three&#x00A0;different</mtext>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mi>n</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mtext>roll&#x00A0;three&#x00A0;dice</mtext>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mi>P</mi>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mtext>Lose&#x00A0;$1:&#x00A0;All&#x00A0;different</mtext>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mn>120</mn>
+                      </mrow>
+                      <mrow>
+                        <mn>216</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mn>5</mn>
+                      <mn>9</mn>
+                    </mfrac>
+                  </mtd>
+                </mtr>
+              </mtable>
+            </math>
+          </p>
+          <p>Now we do not win we lose - these two events are complements of each other, so to find the probability of
+            winning we use the complement rule.</p>
+          <p>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>P</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>Win&#x00A0;$2:&#x00A0;at&#x00A0;least&#x00A0;two&#x00A0;the&#x00A0;same</mtext>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
               <mn>1</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mi>P</mi>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mtext>Lose&#x00A0;$1</mtext>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>=</mo>
-          <mrow>
-            <mo>(</mo>
-            <mn>2</mn>
-            <mo>)</mo>
-          </mrow>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mfrac>
-                <mn>4</mn>
-                <mn>9</mn>
-              </mfrac>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
               <mo>&#x2212;</mo>
+              <mi>P</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>&#x00A0;Lose&#x00A0;$1:&#x00A0;All&#x00A0;different</mtext>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </math>
+            , our complement rule at work.
+          </p>
+          <p>
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>Win&#x00A0;$2:&#x00A0;at&#x00A0;least&#x00A0;two&#x00A0;the&#x00A0;same</mtext>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
               <mn>1</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
+              <mo>&#x2212;</mo>
               <mfrac>
                 <mn>5</mn>
                 <mn>9</mn>
               </mfrac>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>=</mo>
-          <mfrac>
-            <mn>3</mn>
-            <mn>9</mn>
-          </mfrac>
-          <mo>&#x2248;</mo>
-          <mi>&#x0024;</mi>
-          <mn>0.33</mn>
-        </math>
-        . This positive value tell us that it is in your favor (not your friends) to play this game. On average you would win approximately $0.33 per play. </p>
-    </div>
-  </div>
-  <p>Expected value also has applications outside of gambling.  Expected value is very common in making insurance decisions. </p>
-  <div class="example">
-    <h3>Example 5</h3>
-    <p>An insurance company determined that a 40-year-old man in the U.S. has a 0.242% risk of dying during the next year.  The insurance company charges $275 for a 1 year life-insurance policy that pays $100,000 death benefit.  What is the expected value for the person buying the insurance?</p>
-    <p><strong>Solution</strong> </p>
-    <p>The outcomes in this situation is the net profit for the person buying the life insurance. One outcome is that the person is still alive (and probably greatful for that), but is out the &#36;275 used to purchase the life insurance. The other outcome means the person didn't survive, but the death benefit is paid out to the beneficiary of the policy. This payout net profit would be
-      <math display="inline">
-        <mi>&#x0024;</mi>
-        <mn>100</mn>
-        <mo>,</mo>
-        <mn>000</mn>
-        <mo>&#x2212;</mo>
-        <mi>&#x0024;</mi>
-        <mn>275</mn>
-        <mo>=</mo>
-        <mi>&#x0024;</mi>
-        <mn>99</mn>
-        <mo>,</mo>
-        <mn>725</mn>
-      </math>
-      . Below in the table we have the outcomes and the associated probabilities. </p>
-    <table class="display-lg" bgcolor="#FFFFFF">
-      <thead>
-        <tr>
-          <th>Outcome</th>
-          <th>Probability of outcome</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-th="Outcome"><p>&#36;99,725</p></td>
-          <td data-th="Probability of outcome"><p>0.00242</p></td>
-        </tr>
-        <tr>
-          <td data-th="Outcome"><p>-$275</p></td>
-          <td data-th="Probability of outcome"><p>
-              <math display="inline">
-                <mn>1</mn>
-                <mo>&#x2212;</mo>
-                <mn>0.00242</mn>
-                <mo>=</mo>
-                <mn>0.99758</mn>
-              </math>
-            </p></td>
-        </tr>
-      </tbody>
-    </table>
-    <p>The expected value is
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
+              <mo>=</mo>
+              <mfrac>
+                <mn>4</mn>
+                <mn>9</mn>
+              </mfrac>
+            </math>
+          </p>
+          <p>Now we have all the information needed to find the expected value.</p>
+          <p>Expected value is:
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>&#x0024;</mi>
+                  <mn>2</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>P</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>Win&#x00A0;$2</mtext>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mo>&#x2212;</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>1</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mi>P</mi>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mtext>Lose&#x00A0;$1</mtext>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mrow>
+                <mo>(</mo>
+                <mn>2</mn>
+                <mo>)</mo>
+              </mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mn>4</mn>
+                    <mn>9</mn>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mo>&#x2212;</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mfrac>
+                    <mn>5</mn>
+                    <mn>9</mn>
+                  </mfrac>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
+              <mfrac>
+                <mn>3</mn>
+                <mn>9</mn>
+              </mfrac>
+              <mo>&#x2248;</mo>
               <mi>&#x0024;</mi>
-              <mn>99</mn>
-              <mo>,</mo>
-              <mn>725</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mrow>
-            <mo>(</mo>
+              <mn>0.33</mn>
+            </math>
+            . This positive value tell us that it is in your favor (not your friends) to play this game. On average you
+            would win approximately $0.33 per play.
+          </p>
+        </div>
+      </div>
+      <p>Expected value also has applications outside of gambling.  Expected value is very common in making insurance
+        decisions. </p>
+      <div class="example">
+        <h3>Example 5</h3>
+        <p>An insurance company determined that a 40-year-old man in the U.S. has a 0.242% risk of dying during the next
+          year.  The insurance company charges $275 for a 1 year life-insurance policy that pays $100,000 death
+          benefit.  What is the expected value for the person buying the insurance?</p>
+        <p><strong>Solution</strong> </p>
+        <p>The outcomes in this situation is the net profit for the person buying the life insurance. One outcome is
+          that the person is still alive (and probably greatful for that), but is out the &#36;275 used to purchase the
+          life insurance. The other outcome means the person didn't survive, but the death benefit is paid out to the
+          beneficiary of the policy. This payout net profit would be
+          <math display="inline">
+            <mi>&#x0024;</mi>
+            <mn>100</mn>
+            <mo>,</mo>
+            <mn>000</mn>
+            <mo>&#x2212;</mo>
+            <mi>&#x0024;</mi>
+            <mn>275</mn>
+            <mo>=</mo>
+            <mi>&#x0024;</mi>
+            <mn>99</mn>
+            <mo>,</mo>
+            <mn>725</mn>
+          </math>
+          . Below in the table we have the outcomes and the associated probabilities.
+        </p>
+        <table class="display-lg" bgcolor="#FFFFFF">
+          <thead>
+            <tr>
+              <th>Outcome</th>
+              <th>Probability of outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-th="Outcome">
+                <p>&#36;99,725</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p>0.00242</p>
+              </td>
+            </tr>
+            <tr>
+              <td data-th="Outcome">
+                <p>-$275</p>
+              </td>
+              <td data-th="Probability of outcome">
+                <p>
+                  <math display="inline">
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <mn>0.00242</mn>
+                    <mo>=</mo>
+                    <mn>0.99758</mn>
+                  </math>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>The expected value is
+          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
             <mrow>
-              <mn>0.00242</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mi>&#x0024;</mi>
+                  <mn>99</mn>
+                  <mo>,</mo>
+                  <mn>725</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.00242</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mo>&#x2212;</mo>
+                  <mi>&#x0024;</mi>
+                  <mn>275</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>0.99758</mn>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>=</mo>
               <mo>&#x2212;</mo>
               <mi>&#x0024;</mi>
-              <mn>275</mn>
+              <mn>33</mn>
             </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mrow>
-            <mo>(</mo>
-            <mrow>
-              <mn>0.99758</mn>
-            </mrow>
-            <mo>)</mo>
-          </mrow>
-          <mo>=</mo>
-          <mo>&#x2212;</mo>
-          <mi>&#x0024;</mi>
-          <mn>33</mn>
-        </mrow>
-      </math>
-      .</p>
-    <p>The person buying the insurance expects to lose overall &#36;33 for each such policy when we look at a long run average. The flip side is more important to why insurance companies can stay in business. They expect to seel many of these policies over the year. Each policy give an averge return of &#36;33 for them.</p>
-    <p><a href="http://youtu.be/Bnai8apt8vw" target="_blank">Video Solution Example 5</a> (cc)</p>
-  </div>
-  <p>&nbsp;</p>
-  <p>Not surprisingly, the expected value is negative; the insurance company can only afford to offer policies if they, on average, make money on each policy.  They can afford to pay out the occasional benefit because they offer enough policies that those benefit payouts are balanced by the rest of the insured people. </p>
-  <p>For people buying the insurance, there is a negative expected value, but there is a security that comes from insurance that is worth that cost.</p>
-  <h2>Exercises:</h2>
-  <ol>
-    <li>
-      <p> A  bag contains 3 gold marbles, 6 silver marbles, and 28 black marbles. Someone  offers to play this game: You randomly select on marble from the bag. If it is  gold, you win $3. If it is silver, you win $2. If it is black, you lose  $1.  What is your expected value if you  play this game?</p>
-    </li>
-    <li>
-      <p>A  friend devises a game that is played by rolling a single six-sided die once. If  you roll a 6, he pays you $3; if you roll a 5, he pays you nothing; if you roll  a number less than 5, you pay him $1. Compute the expected value for this  game.&nbsp; Should you play this game?</p>
-    </li>
-    <li>
-      <p>In  a lottery game, a player picks six numbers from 1 to 23. If the player matches  all six numbers, they win 30,000 dollars. Otherwise, they lose $1.  Find the expected value of this game.</p>
-    </li>
-    <li>
-      <p>A  game is played by picking two cards from a deck.  If they are the same value, then you win $5,  otherwise you lose $1.  What is the  expected value of this game?</p>
-    </li>
-    <li>
-      <p>A  company estimates that 0.7% of their products will fail after the original  warranty period but within 2 years of the purchase, with a replacement cost of  $350.  If they offer a 2 year extended  warranty for $48, what is the company's expected value of each warranty sold?</p>
-    </li>
-    <li>
-      <p>An  insurance company estimates the probability of an earthquake in the next year  to be 0.0013.  The average damage done by  an earthquake it estimates to be $60,000.   If the company offers earthquake insurance for $100, what is their  expected value of the policy?</p>
-    </li>
-    <li>
-      <p>You roll two  dice.  If the sum of the faces is eight  or more, you win $7.  If the sum is 7 you  win $1 and if the sum is less than 7 you lose $8.  Is  this a fair game?  Justify your answer  using expected values.</p>
-    </li>
-    <li>
-      <p>You pay $10 to  play a game of chance.  There are twenty  balls in a bag.  Seven of them are red,  five are green, and the rest are yellow.   You are to draw one ball from the bag.   You will win $14 if you draw a yellow ball, you will win $12 if you draw  a red ball, and you win $1 if you draw a green ball. How  much do you expect to win or lose after you have played one hundred games?  Use the word &ldquo;win&rdquo; or &ldquo;lose&rdquo; in your answer.</p>
-    </li>
-    <li>
-      <p>In a gambling game a person is paid $3 if they draw a Jack or a Queen and $5 if they draw a King or an Ace from an ordinary deck of 52 playing cards. If they draw  any other card, they lose. How much should they pay to play if the game is to be fair. </p>
-    </li>
-  </ol>
-  <div>
-    <div id="ftn2">
-      <p><a href="#_ftnref1" name="_ftn1" title=""> </a> Photo CC-BY-SA http://www.flickr.com/photos/stoneflower/</p>
-    </div>
-  </div>
-  <footer>
-    <div >
-      <p class="text-center toggle-footnotes">[Show Attributions]</p>
-      <div class="footnotes">
-        <h2>Attributions:</h2>
-        <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
-        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+          </math>
+          .
+        </p>
+        <p>The person buying the insurance expects to lose overall &#36;33 for each such policy when we look at a long
+          run average. The flip side is more important to why insurance companies can stay in business. They expect to
+          seel many of these policies over the year. Each policy give an averge return of &#36;33 for them.</p>
+        <p><a href="http://youtu.be/Bnai8apt8vw" target="_blank">Video Solution Example 5</a> (cc)</p>
       </div>
-    </div>
-  </footer>
-  <!--=================--> 
-  
-  <!-- END YOUR CONTENT--> 
-</section>
+      <p>&nbsp;</p>
+      <p>Not surprisingly, the expected value is negative; the insurance company can only afford to offer policies if
+        they, on average, make money on each policy.  They can afford to pay out the occasional benefit because they
+        offer enough policies that those benefit payouts are balanced by the rest of the insured people. </p>
+      <p>For people buying the insurance, there is a negative expected value, but there is a security that comes from
+        insurance that is worth that cost.</p>
+      <h2>Exercises:</h2>
+      <ol>
+        <li>
+          <p> A bag contains 3 gold marbles, 6 silver marbles, and 28 black marbles. Someone offers to play this game:
+            You randomly select on marble from the bag. If it is gold, you win $3. If it is silver, you win $2. If it is
+            black, you lose $1.  What is your expected value if you play this game?</p>
+        </li>
+        <li>
+          <p>A friend devises a game that is played by rolling a single six-sided die once. If you roll a 6, he pays you
+            $3; if you roll a 5, he pays you nothing; if you roll a number less than 5, you pay him $1. Compute the
+            expected value for this game.&nbsp; Should you play this game?</p>
+        </li>
+        <li>
+          <p>In a lottery game, a player picks six numbers from 1 to 23. If the player matches all six numbers, they win
+            30,000 dollars. Otherwise, they lose $1.  Find the expected value of this game.</p>
+        </li>
+        <li>
+          <p>A game is played by picking two cards from a deck.  If they are the same value, then you win $5, otherwise
+            you lose $1.  What is the expected value of this game?</p>
+        </li>
+        <li>
+          <p>A company estimates that 0.7% of their products will fail after the original warranty period but within 2
+            years of the purchase, with a replacement cost of $350.  If they offer a 2 year extended warranty for $48,
+            what is the company's expected value of each warranty sold?</p>
+        </li>
+        <li>
+          <p>An insurance company estimates the probability of an earthquake in the next year to be 0.0013.  The average
+            damage done by an earthquake it estimates to be $60,000.  If the company offers earthquake insurance for
+            $100, what is their expected value of the policy?</p>
+        </li>
+        <li>
+          <p>You roll two dice.  If the sum of the faces is eight or more, you win $7.  If the sum is 7 you win $1 and
+            if the sum is less than 7 you lose $8.  Is this a fair game?  Justify your answer using expected values.</p>
+        </li>
+        <li>
+          <p>You pay $10 to play a game of chance.  There are twenty balls in a bag.  Seven of them are red, five are
+            green, and the rest are yellow.  You are to draw one ball from the bag.  You will win $14 if you draw a
+            yellow ball, you will win $12 if you draw a red ball, and you win $1 if you draw a green ball. How much do
+            you expect to win or lose after you have played one hundred games?  Use the word &ldquo;win&rdquo; or
+            &ldquo;lose&rdquo; in your answer.</p>
+        </li>
+        <li>
+          <p>In a gambling game a person is paid $3 if they draw a Jack or a Queen and $5 if they draw a King or an Ace
+            from an ordinary deck of 52 playing cards. If they draw any other card, they lose. How much should they pay
+            to play if the game is to be fair. </p>
+        </li>
+      </ol>
+      <div>
+        <div id="ftn2">
+          <p><a href="#_ftnref1" name="_ftn1" title=""> </a> Photo CC-BY-SA http://www.flickr.com/photos/stoneflower/
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <p class="text-center toggle-footnotes">[Show Attributions]</p>
+        <div class="footnotes">
+          <h2>Attributions:</h2>
+          <p>This page contains modified content by David Lippman Math in Society, <a class="ext"
+              href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In
+              Society, 2nd Edition”</a> CC BY-SA 3.0</p>
+          <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
+        </div>
+      </div>
+    </footer>
+    <!--=================-->
+    <!-- END YOUR CONTENT-->
+  </section>
 </body>
 </html>
