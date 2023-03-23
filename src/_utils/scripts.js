@@ -88,11 +88,14 @@ nav.append(ul);
 const appendNavigation = async () => {
   // import toc data
   const toc = await getToc();
+  const homePage = document.createElement("li");
+  homePage.innerHTML = '<a href="/" class="chapter-btn"> Introduction</a>';
+  ul.append(homePage);
   // loop through toc
   toc.forEach((list, index) => {
     const li = document.createElement("li");
     // chapter buttons
-    li.innerHTML = `<button type="button" class="chapter-btn">Chapter ${index}</button>`;
+    li.innerHTML = `<h3 class="chapter-btn">Chapter ${index}</h3>`;
     ul.append(li);
     const _ul = document.createElement("ul");
     li.append(_ul);
