@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
                 options = $this.data(),
                 $hideshow_prefix_classes = typeof options.hideshowPrefixClass !== 'undefined' ? options.hideshowPrefixClass + '-' : '',
                 not_all_expands = typeof options.notAllExpands !== 'undefined' ? true : false,
-                $to_expand = $this.next(".js-to_expand"),
+                $to_expand = $this.next(".js-to-expand"),
                 $expandmore_text = $this.html();
 
             $this.html('<button type="button" class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button"' + ( not_all_expands ? 'data-not-all-expands="true"' : '' ) + '><span class="' + $hideshow_prefix_classes + 'expandmore__symbol" aria-hidden="true"></span>' + $expandmore_text + '</button>');
@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
 
             if (multiexpandable === false) {
                 $('.js-expandmore-button').removeClass('is-opened').attr(attr_expanded, 'false');
-                $('.js-to_expand').attr(attr_hidden, 'true');
+                $('.js-to-expand').attr(attr_hidden, 'true');
             }
 
             $this.addClass('is-opened').attr(attr_expanded, 'true');
@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
             txt_expand_all = typeof options.textExpandAll !== 'undefined' ? options.textExpandAll : expand_all_text,
             txt_collapse_all = typeof options.textCloseAll !== 'undefined' ? options.textCloseAll : collapse_all_text,
             $all_buttons = $('.js-expandmore-button:not([data-not-all-expands])'),
-            $all_destinations = $('.js-to_expand:not([data-not-all-expands])');
+            $all_destinations = $('.js-to-expand:not([data-not-all-expands])');
 
         if (is_expanded === 'true') {
             $all_buttons.addClass('is-opened').attr(attr_expanded, 'true');
