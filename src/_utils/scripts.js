@@ -218,3 +218,17 @@ window.onload = () => {
     }
   }
 }
+
+const toggleHints = async () => {
+  const toggleHints = document.querySelectorAll(".js-expandmore");
+  
+  toggleHints.forEach((toggle) => {
+    toggle.addEventListener("click", function() {
+      const toggleContent = this.nextElementSibling;
+      console.log(toggleContent)
+      toggleContent.toggleAttribute("show");
+    });
+  });
+} 
+
+toggleHints();
