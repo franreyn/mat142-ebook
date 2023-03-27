@@ -16,6 +16,8 @@
   --dark-layer-2: rgba(40, 40, 40, 1);
   --dark-layer-3: rgba(64, 64, 64, 1);
   --white-layer-1: rgba(179, 179, 179);
+  --button-grey: rgba(211, 211, 211, 1);
+  --button-dark-grey: rgba(199, 199, 199, 1);
   --white: rgba(255, 255, 255, 1);
 }
 
@@ -445,7 +447,7 @@ h3.chapter-heading {
   margin-bottom: 1rem;
 }
 
-nav::after {
+nav::before {
   content: "";
   background-image: url(../assets/logos/pcc-black.png);
   height: 50px;
@@ -453,6 +455,7 @@ nav::after {
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
+  margin: 20px 0;
 }
 
 a.chapter-btn {
@@ -460,13 +463,8 @@ a.chapter-btn {
   padding-bottom: 20px;
 }
 
-body[darkmode] nav::after {
+body[darkmode] nav::before {
   background-image: url(../assets/logos/pcc-white.png);
-}
-
-nav>ul {
-  border-bottom: 1px solid grey;
-  margin-bottom: 20px !important;
 }
 
 body[darkmode] nav>ul {
@@ -615,52 +613,6 @@ body[darkmode] nav>ul {
 .side-by-side-item :is(figure, img) {
   width: 100%;
   margin: 0 auto !important;
-}
-@media screen and (min-width: 730px) {
-
-
-  h1 {
-    font-size: 2rem;
-    margin: 0 2rem 1rem 2rem;
-  }
-  
-  h2 {  
-    margin: 0 2rem .5rem 2rem;
-  }
-  
-  h3 {  
-    margin: 0 2rem .3rem 2rem;
-  }
-  
-  h4 {  
-    margin: 0 2rem .5rem 2rem;
-  }
-  
-  h5 {  
-    margin: 0 2rem .5rem 2rem;
-  }
-
-  p {
-    margin: 0 2rem 1rem 2.5rem;
-  }
-  
-  ul, ol {
-    margin: 0 0 1rem 2rem;
-  }
-
-  .side-by-side-item {
-    flex-basis: 49%;
-    margin: 0;
- }
-  .side-by-side-item :is(figure, img) {
-    max-width: none;
-    margin-left: auto !important;
- }
-
- .side-by-side-item.width-400 :is(figure, img) {
-  width: auto;
-  max-width: 400px;
-}
 }
 
 /* Try It Now */
@@ -843,9 +795,17 @@ dl.accordion dt.active:after {
 }
 
 h5.js-expandmore {
-  color: white;
-    display: block;
-    width: fit-content;
+  color: var(--color-pcc-black);
+  display: block;
+  width: fit-content;
+  background-color: var(--button-grey);
+  margin: 0.5rem 2rem 0.5rem 1rem;
+}
+
+h5.js-expandmore:hover {
+  color: var(--color-pcc-black);
+  background-color: var(--button-dark-grey);
+  transition: .5s;
 }
 
 .js-to-expand {
@@ -854,6 +814,52 @@ h5.js-expandmore {
 
 .js-to-expand[show] {
  display:block;
+}
+
+@media screen and (min-width: 730px) {
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 2rem 1rem 2rem;
+  }
+  
+  h2 {  
+    margin: 0 2rem .5rem 2rem;
+  }
+  
+  h3 {  
+    margin: 0 2rem .3rem 2rem;
+  }
+  
+  h4 {  
+    margin: 0 2rem .5rem 2rem;
+  }
+  
+  h5 {  
+    margin: 0 2rem .5rem 2rem;
+  }
+
+  p {
+    margin: 0 2rem 1rem 2.5rem;
+  }
+  
+  ul, ol {
+    margin: 0 0 1rem 2rem;
+  }
+
+  .side-by-side-item {
+    flex-basis: 49%;
+    margin: 0;
+ }
+  .side-by-side-item :is(figure, img) {
+    max-width: none;
+    margin-left: auto !important;
+ }
+
+ .side-by-side-item.width-400 :is(figure, img) {
+  width: auto;
+  max-width: 400px;
+}
 }
 
   /* Text spacing Media Query */
@@ -924,10 +930,19 @@ h5.js-expandmore {
     .plainblock {
       margin: 2rem 4rem;
     }
+
+    .tryitnow h5.js-expandmore {
+      margin: 0.5rem 2rem 0.5rem 2rem;
+    }
   }
 
 /* Navigation Desktop*/
 @media screen and (min-width: 1024px) {
+
+  nav::before {
+    margin: 0;
+    padding: 0;
+  }
 
   #navigation {
     width: fit-content;
