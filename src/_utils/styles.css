@@ -16,6 +16,8 @@
   --dark-layer-2: rgba(40, 40, 40, 1);
   --dark-layer-3: rgba(64, 64, 64, 1);
   --white-layer-1: rgba(179, 179, 179);
+  --button-grey: rgba(211, 211, 211, 1);
+  --button-dark-grey: rgba(199, 199, 199, 1);
   --white: rgba(255, 255, 255, 1);
 }
 
@@ -27,44 +29,44 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  font-size: 2rem;
-  margin: 0 2rem 1rem 2rem;
+  font-size: 1.8rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .ereader-display h1 {
   background-color: var(--grey-bkg);
-  padding: 40px;
+  padding: 20px;
   border-bottom: 2px solid var(--blue)
 }
 
 h2 {  
   font-size: 1.602rem;
-  margin: 0 2rem .5rem 2rem;
+  margin: 0 1rem .5rem 1rem;
   font-weight: 400;
 }
 
 h3 {  
   font-size: 1.324rem;
-  margin: 0 2rem .3rem 2rem;
+  margin: 0 1rem .3rem 1rem;
   font-weight: 400;
 }
 
 h4 {  
   font-size: 1.2rem;
-  margin: 0 2rem .5rem 2rem;
+  margin: 0 1rem .5rem 1rem;
   font-weight: 400;
 }
 
 h5 {  
   font-size: 1rem;
-  margin: 0 2rem .5rem 2rem;
+  margin: 0 1rem .5rem 1rem;
   font-weight: 400;
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.35;
-  margin: 0 2rem 1rem 2.5rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 1rem 1rem 1.5rem;
 }
 
 ul, ol {
@@ -126,7 +128,9 @@ body[darkmode] #navigation {
   left: 0;
   display:flex; 
   align-items: center;
+  padding-left: 10px;
   transition: .5s ease;
+  z-index: 999;
   width: 100%;
   background-color: var(--white);
 }
@@ -320,8 +324,8 @@ body[darkmode] .activeUrl {
     font-size: 1.25rem;
     transition: .5s ease;
     border-bottom: none;
-    cursor: pointer;
     font-size: 1.324rem;
+    margin: 0;
 }
 
 body[darkmode] nav .chapter-btn {
@@ -437,6 +441,34 @@ hr {
   height: 3px;
   border: none;
   background-color: rgba(15,15,15,.1);
+}
+
+h3.chapter-heading {
+  margin-bottom: 1rem;
+}
+
+nav::before {
+  content: "";
+  background-image: url(../assets/logos/pcc-black.png);
+  height: 50px;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin: 20px 0;
+}
+
+a.chapter-btn {
+  text-decoration: none;
+  padding-bottom: 20px;
+}
+
+body[darkmode] nav::before {
+  background-image: url(../assets/logos/pcc-white.png);
+}
+
+body[darkmode] nav>ul {
+  border-bottom: 1px solid white;
 }
 
 /* Widgets */
@@ -582,21 +614,6 @@ hr {
   width: 100%;
   margin: 0 auto !important;
 }
-@media screen and (min-width: 730px) {
-  .side-by-side-item {
-    flex-basis: 49%;
-    margin: 0;
- }
-  .side-by-side-item :is(figure, img) {
-    max-width: none;
-    margin-left: auto !important;
- }
-
- .side-by-side-item.width-400 :is(figure, img) {
-  width: auto;
-  max-width: 400px;
-}
-}
 
 /* Try It Now */
 
@@ -713,6 +730,137 @@ a:active,
   text-decoration: none;
 }
 
+/* Accordion Styles */
+dl.accordion {
+	margin: 25px;
+}
+
+dl.accordion dt {
+  background-color: var(--color-bkg);
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin: 5px 0px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+dl.accordion dt:hover {
+  background-color: var(--color-quarternary);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+dl.accordion dd {
+  padding: 15px 20px 20px;
+  display: none;
+  border-style: inset;
+  overflow: hidden;
+  border: 1px solid rgba(15, 15, 15, .05);
+  margin-top: -5px;
+  border-top:none;
+}
+
+dl.accordion dt:after {
+font-family: "Font Awesome";
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+  opacity: 1;
+}
+
+dl.accordion dt.active:after {
+  font-family: "Font Awesome";
+  opacity: 1;
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.js-expandmore {
+  background-color: rgba(232, 122, 0, 1);
+  border-radius: 5px;
+  box-shadow: 0 2px 1px rgb(164 166 173);
+  color: rgba(255, 255, 255, 1);
+  font-size: .8em;
+  font-weight: bold;
+  height: 40px;
+  letter-spacing: 2px;
+  padding: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+h5.js-expandmore {
+  color: var(--color-pcc-black);
+  display: block;
+  width: fit-content;
+  background-color: var(--button-grey);
+  margin: 0.5rem 2rem 0.5rem 1rem;
+}
+
+h5.js-expandmore:hover {
+  color: var(--color-pcc-black);
+  background-color: var(--button-dark-grey);
+  transition: .5s;
+}
+
+.js-to-expand {
+  display:none;
+}
+
+.js-to-expand[show] {
+ display:block;
+}
+
+@media screen and (min-width: 730px) {
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 2rem 1rem 2rem;
+  }
+  
+  h2 {  
+    margin: 0 2rem .5rem 2rem;
+  }
+  
+  h3 {  
+    margin: 0 2rem .3rem 2rem;
+  }
+  
+  h4 {  
+    margin: 0 2rem .5rem 2rem;
+  }
+  
+  h5 {  
+    margin: 0 2rem .5rem 2rem;
+  }
+
+  p {
+    margin: 0 2rem 1rem 2.5rem;
+  }
+  
+  ul, ol {
+    margin: 0 0 1rem 2rem;
+  }
+
+  .side-by-side-item {
+    flex-basis: 49%;
+    margin: 0;
+ }
+  .side-by-side-item :is(figure, img) {
+    max-width: none;
+    margin-left: auto !important;
+ }
+
+ .side-by-side-item.width-400 :is(figure, img) {
+  width: auto;
+  max-width: 400px;
+}
+}
 
   /* Text spacing Media Query */
 
@@ -754,8 +902,8 @@ a:active,
     }
     
     p {
-      font-size: 1.1rem;
-      line-height: 1.35;
+      font-size: 1.25rem;
+      line-height: 1.6;
       margin: 0 4rem 1rem 4.5rem;
     }
 
@@ -782,10 +930,19 @@ a:active,
     .plainblock {
       margin: 2rem 4rem;
     }
+
+    .tryitnow h5.js-expandmore {
+      margin: 0.5rem 2rem 0.5rem 2rem;
+    }
   }
 
 /* Navigation Desktop*/
 @media screen and (min-width: 1024px) {
+
+  nav::before {
+    margin: 0;
+    padding: 0;
+  }
 
   #navigation {
     width: fit-content;

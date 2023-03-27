@@ -88,11 +88,14 @@ nav.append(ul);
 const appendNavigation = async () => {
   // import toc data
   const toc = await getToc();
+  const homePage = document.createElement("li");
+  homePage.innerHTML = '<a href="/" class="chapter-btn"> Introduction</a>';
+  ul.append(homePage);
   // loop through toc
   toc.forEach((list, index) => {
     const li = document.createElement("li");
     // chapter buttons
-    li.innerHTML = `<button type="button" class="chapter-btn">Chapter ${index}</button>`;
+    li.innerHTML = `<h3 class="chapter-btn">Chapter ${index}</h3>`;
     ul.append(li);
     const _ul = document.createElement("ul");
     li.append(_ul);
@@ -215,3 +218,29 @@ window.onload = () => {
     }
   }
 }
+
+const toggleHints = async () => {
+  const toggleHints = document.querySelectorAll(".js-expandmore");
+  
+  toggleHints.forEach((toggle) => {
+
+    toggle.addEventListener("click", function() {
+      const toggleContent = this.nextElementSibling;
+      console.log(toggleContent)
+      toggleContent.toggleAttribute("show");
+    });
+
+    toggle.addEventListener("keydown", function(e) {
+      if(e.key == "Enter") {
+      const toggleContent = this.nextElementSibling;
+      console.log(toggleContent)
+      toggleContent.toggleAttribute("show");
+      }
+    });
+
+
+
+  });
+} 
+
+toggleHints();
