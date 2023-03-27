@@ -456,6 +456,7 @@ nav::before {
   background-size: contain;
   display: block;
   margin: 20px 0;
+  opacity: 1;
 }
 
 a.chapter-btn {
@@ -465,6 +466,7 @@ a.chapter-btn {
 
 body[darkmode] nav::before {
   background-image: url(../assets/logos/pcc-white.png);
+  opacity: .8;
 }
 
 body[darkmode] nav>ul {
