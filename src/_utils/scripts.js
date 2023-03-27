@@ -223,11 +223,23 @@ const toggleHints = async () => {
   const toggleHints = document.querySelectorAll(".js-expandmore");
   
   toggleHints.forEach((toggle) => {
+
     toggle.addEventListener("click", function() {
       const toggleContent = this.nextElementSibling;
       console.log(toggleContent)
       toggleContent.toggleAttribute("show");
     });
+
+    toggle.addEventListener("keydown", function(e) {
+      if(e.key == "Enter") {
+      const toggleContent = this.nextElementSibling;
+      console.log(toggleContent)
+      toggleContent.toggleAttribute("show");
+      }
+    });
+
+
+
   });
 } 
 
