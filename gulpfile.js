@@ -24,4 +24,16 @@ gulp.task("js", async () => {
   .pipe(gulp.dest("dist/_utils"));
 });
 
-gulp.task("build", gulp.series("html", "css", "js"));
+// compile assets
+gulp.task("assets", async () => {
+  return gulp.src("src/assets/**/*")
+  .pipe(gulp.dest("dist/assets"));
+});
+
+// compile images
+gulp.task("images", async () => {
+  return gulp.src("src/images/**/*")
+  .pipe(gulp.dest("dist/images"));
+});
+
+gulp.task("build", gulp.series("html", "css", "js", "assets", "images"));
