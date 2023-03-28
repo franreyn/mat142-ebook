@@ -177,17 +177,6 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   }
 }
 
-// Expand or collapse navigation
-const menuNav = document.querySelector(".nav-toggle");
-  menuNav.addEventListener("click", () => {
-  menuNav.toggleAttribute("open");
-});
-menuNav.addEventListener("keypress", (e) => {
-  if(e.key== "Enter"){
-    menuNav.toggleAttribute("open");
-  }
-});
-
 //Get location of current URL to highlight active link 
 let currentUrl = window.location.href;
 currentUrl = currentUrl.split("/").pop();
@@ -215,6 +204,50 @@ window.onload = () => {
     // Add class to chapter
     if(navHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
+    }
+  }
+    
+  // Expand or collapse navigation
+  let navIsOpen = false;
+  const menuNav = document.querySelector(".nav-toggle");
+  menuNav.addEventListener("click", () => {
+    
+  removeTabbing();
+
+  if(navIsOpen) {
+    navIsOpen = !navIsOpen;
+    menuNav.toggleAttribute("open");
+  } else {
+    navIsOpen = !navIsOpen;
+    menuNav.toggleAttribute("open");
+  }
+  });
+  menuNav.addEventListener("keypress", (e) => {
+    if(e.key== "Enter"){
+
+      removeTabbing();
+
+      if(navIsOpen) {
+        navIsOpen = !navIsOpen;
+        menuNav.toggleAttribute("open");
+      } else {
+        navIsOpen = !navIsOpen;
+        menuNav.toggleAttribute("open");
+      }
+    }
+  });
+ 
+  //Remove tabbing from navigation if closed
+  const navLinks = document.querySelectorAll("#navigation a"); 
+  const removeTabbing = () => {
+    if(!navIsOpen) {
+      navLinks.forEach((link) => {
+        link.tabIndex = 0;
+      });
+    } else {
+      navLinks.forEach((link) => {
+        link.tabIndex = -1;
+      });
     }
   }
 }
