@@ -190,15 +190,20 @@ window.onload = () => {
   const linkList = Array.prototype.slice.call(links);
   const chapterList = Array.prototype.slice.call(chapters);
 
+  //If it is the home page highlight the first page
+  if(currentUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
+    chapterList[0].classList.add("activeChapter")
+  } else {
   // Cut off end of URL
   let navHrefs = [];
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
-    
+
     // Add class to chapter heading
     if(currentUrl.charAt(0) == navHrefs[linkIndex].charAt(0)) {
-      chapterList[currentUrl.charAt(0)].classList.add("activeChapter")
+      let activeChapter = Number(currentUrl.charAt(0)) + 1;
+      chapterList[activeChapter].classList.add("activeChapter")
     }
 
     // Add class to chapter
@@ -206,6 +211,7 @@ window.onload = () => {
       links[linkIndex].classList.add("activeUrl");
     }
   }
+}
     
   // Expand or collapse navigation
   let navIsOpen = false;
