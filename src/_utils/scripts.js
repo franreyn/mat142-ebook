@@ -192,7 +192,6 @@ window.onload = () => {
 
   //If it is the home page highlight the first page
   if(currentUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
-    console.log(currentUrl)
     chapterList[0].classList.add("activeChapter")
   } else {
   // Cut off end of URL
