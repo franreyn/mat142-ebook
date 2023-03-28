@@ -268,9 +268,6 @@ const toggleHints = async () => {
       toggleContent.toggleAttribute("show");
       }
     });
-
-
-
   });
 } 
 
