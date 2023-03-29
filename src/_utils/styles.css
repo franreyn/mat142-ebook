@@ -516,8 +516,6 @@ body[darkmode] nav>ul {
 
 /* Widgets */
 
-
-
 /* Accordions */
 .accordion {
   margin: 2rem 0;
@@ -620,7 +618,6 @@ body[darkmode] figcaption {
   color: white;
   opacity: 87%;
 }
-
 
 /* Plain Block */
 .plainblock {
