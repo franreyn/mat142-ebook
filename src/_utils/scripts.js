@@ -263,6 +263,8 @@ const toggleHints = async () => {
   
   toggleHints.forEach((toggle) => {
 
+    toggle.tabIndex = 0;
+
     toggle.addEventListener("click", function() {
       const toggleContent = this.nextElementSibling;
       toggleContent.toggleAttribute("show");
