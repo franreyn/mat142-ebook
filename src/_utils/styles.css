@@ -112,7 +112,6 @@ body[darkmode] #navigation {
   width: 0;
   height: 0;
 }
-/*  */
 
 #navigation[expanded] {
   left: 0;
@@ -142,6 +141,26 @@ body[darkmode] #navigation[expanded] .page-controller {
 body[darkmode] .page-controller {
   background-color: var(--black);
   transition: .5s ease;
+}
+
+/* Colors the math jacks items */
+body[darkmode] .mjx-chtml {
+  color: var(--white);
+  opacity: 87%;
+}
+
+.mjx-chtml {
+  color: var(--color-pcc-black);
+  opacity: 1;
+}
+
+.math-small {
+  font-size: 100% !important;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .fa-moon:before {
@@ -394,10 +413,13 @@ ul > li > ul  {
 
 li {
   margin-bottom: .1225rem;
+  line-height: 1.6;
+  font-size: 1.25rem;
+  margin-left: .25rem !important;
 }
 
 li p {
-  margin-left: 1rem;
+  margin-left: .25rem !important;
 }
 
 body[darkmode] a {
@@ -424,16 +446,35 @@ a {
 }
 
 table {
-  margin-left: 4rem;
+  color: var(--black);
+  opacity: 1;
+  margin: 0 auto;
+}
+
+body[darkmode] table {
+  color: var(--white);
+  opacity: 87%;
+}
+
+td {
+  padding: 3px;
 }
 
 img {
-  max-width: 800px;
+  border-style: none;
+  display: block;
+  height: auto;
+  margin: 0 auto 1rem;
+  max-width: 85%;
 }
 
 img.center {
   margin: 0.5rem auto !important;
   display:block;
+}
+body[darkmode] hr {
+  background-color: rgba(255,255,255,.1);
+
 }
 
 hr {
@@ -475,6 +516,8 @@ body[darkmode] nav>ul {
 
 /* Widgets */
 
+
+
 /* Accordions */
 .accordion {
   margin: 2rem 0;
@@ -502,11 +545,11 @@ body[darkmode] nav>ul {
   background-color: rgba(15, 15, 15, .02);
   border-left: 6px solid darkgray;
   padding: 20px 0;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .border :is(p,h4) {
-  margin: 0 2rem .3rem 2rem;
+  margin: 0 2rem 1rem 2rem;
 }
 
 .border :is(p,h3) {
@@ -517,12 +560,12 @@ body[darkmode] nav>ul {
 .definition {
   background-color: rgba(168, 87, 87, .05);
   padding: 20px 0;
-  margin: 2rem;
+  margin: 1rem;
   border: 3px solid var(--red-definition);
 }
 
 .definition :is(p,h4) {
-  margin: 0 2rem .3rem 2rem;
+  margin: 0 2rem 1rem 2rem;
 }
 
 .definition h3 {
@@ -535,7 +578,7 @@ body[darkmode] nav>ul {
   background-color: var(--example-bkg);
   padding: 20px 0;
   border: 3px solid var(--example);
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .example h3 {
@@ -543,7 +586,7 @@ body[darkmode] nav>ul {
 }
 
 .example :is(p,h4) {
-  margin: 0 2rem .3rem 2rem;
+  margin: 0 2rem 1rem 2rem;
 }
 
 :is(.example,.definition,.tryitnow,.border) h3 {
@@ -555,9 +598,33 @@ body[darkmode] nav>ul {
   color: var(--example);
 }
 
+/* Figures  & Figcaptions */
+figure {
+  margin: 0;
+}
+
+figcaption {
+  text-align: center;
+}
+
+:is(figure) figcaption,
+.caption {
+  color: #666666;
+  font-size: 0.85em;
+  font-style: italic;
+  padding: 0 0 5px 0;
+  opacity: 1;
+}
+
+body[darkmode] figcaption {
+  color: white;
+  opacity: 87%;
+}
+
+
 /* Plain Block */
 .plainblock {
-  margin: 2rem;
+  margin: 1rem;
   background-color: var(--grey-bkg);
   padding: 20px 0;
 }
@@ -593,28 +660,25 @@ body[darkmode] nav>ul {
   transform: rotate(180deg);
 }
 
+body[darkmode] .plainblock::before {
+  color: var(--white);
+}
+
+body[darkmode] .plainblock::after {
+  color: var(--white);
+}
+
+body[darkmode] .plainblock {
+  color: var(--white);
+  opacity: 87%;
+  background-color: var(--dark-layer-2);
+}
+
 /* Side By Side */
 
 .width-400 {
   width: auto;
   max-width: 400px;
-}
-
-.side-by-side {
-  align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 10px 0 20px 0;
-}
-.side-by-side-item {
-  flex-basis: 100%;
-  margin: 10px 0;
-  padding: 0;
-}
-.side-by-side-item :is(figure, img) {
-  width: 100%;
-  margin: 0 auto !important;
 }
 
 /* Try It Now */
@@ -623,7 +687,7 @@ body[darkmode] nav>ul {
   background-color: var(--try-it-now-bkg);
   padding: 20px 0;
   border: 3px solid var(--try-it-now);
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .tryitnow :is(h3,h4,h5) {
@@ -631,7 +695,7 @@ body[darkmode] nav>ul {
 }
 
 .tryitnow :is(p,h3,h4) {
-  margin: 0 2rem .3rem 2rem;
+  margin: 0 2rem 1rem 2rem;
 }
 
 /* Toggling & Footnotes */
@@ -655,6 +719,7 @@ body .toggle-footnotes {
 
 body[darkmode] .toggle-footnotes {
   background-color: rgba(255,255,255,.1);
+  color: var(--white);
 }
 
 .toggle-btn-content,
@@ -781,13 +846,12 @@ dl.accordion dt.active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-
 .js-expandmore {
   background-color: rgba(232, 122, 0, 1);
   border-radius: 5px;
   box-shadow: 0 2px 1px rgb(164 166 173);
   color: rgba(255, 255, 255, 1);
-  font-size: .8em;
+  font-size: .8rem;
   font-weight: bold;
   height: 40px;
   letter-spacing: 2px;
@@ -807,6 +871,17 @@ dl.accordion dt.active:after {
 :is(h5,h4).js-expandmore:hover {
   color: var(--color-pcc-black);
   background-color: var(--button-dark-grey);
+  transition: .5s;
+}
+
+body[darkmode] :is(h5,h4).js-expandmore {
+  color: var(--white);
+  background-color: var(--dark-layer-3);
+}
+
+body[darkmode] :is(h5,h4).js-expandmore:hover {
+  color: var(--white);
+  background-color: var(--dark-layer-3);
   transition: .5s;
 }
 
@@ -858,10 +933,10 @@ dl.accordion dt.active:after {
     margin-left: auto !important;
  }
 
- .side-by-side-item.width-400 :is(figure, img) {
-  width: auto;
-  max-width: 400px;
-}
+  .side-by-side-item.width-400 :is(figure, img) {
+    width: auto;
+    max-width: 400px;
+ }
 }
 
   /* Text spacing Media Query */
