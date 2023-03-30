@@ -169,7 +169,6 @@
           . </p>
       </li>
     </ol>
-    <p></p>
     <p><strong>Note</strong>: At the time of writing this text Google Sheets built in trendline on a scatter plot used a different approach for the values in an exponential model compared to LOGEST. It is recommended you only use the approach as highlighted above in your work as it will match the output from Excel as well as other software. <a href="https://developers.google.com/chart/interactive/docs/gallery/trendlines" target="_blank">Google Support</a>.</p>
   </div>
   <div class="plainblock">
@@ -338,10 +337,10 @@
       and b for the model. </p>
     <p><strong>Google Sheets</strong>:</p>
     <p>A screenshot of the work is shown below where the table values are located in cells B1:J2 with x in the first row and y in the second row. <a href="https://docs.google.com/spreadsheets/d/1180FwPGr2KkPG2ZJm1des68sZbK7EvVeICHrFWPkjz4/edit?usp=sharing" target="_blank">Google Sheet for y vs x</a></p>
-    <div class="side-by-side"> <img src="../../images/chapter-3/3-4/google-sheets-logest-demo.jpg" width="100%" alt="Screenshot of the table of x and y values along with output of the function in B7 =ARRAYFORMULA(LOGEST(B2:J2,B1:J1))"/> </div>
+    <div> <img src="../../images/chapter-3/3-4/google-sheets-logest-demo.jpg" width="100%" alt="Screenshot of the table of x and y values along with output of the function in B7 =ARRAYFORMULA(LOGEST(B2:J2,B1:J1))"/> </div>
     <p><strong>Excel (Office 365)</strong>:</p>
     <p>A screenshot of the work is shown below where the table values are located in cells B1:J2 with x in the first row and y in the second row. </p>
-    <div class="side-by-side"> <img src="../../images/chapter-3/3-4/excel365-example1-logest.jpg" width="100%" alt="Screenshot of the table of x and y values along with output of the function in B7 =LOGEST(B2:J2,B1:J1)"/> </div>
+    <div> <img src="../../images/chapter-3/3-4/excel365-example1-logest.jpg" width="100%" alt="Screenshot of the table of x and y values along with output of the function in B7 =LOGEST(B2:J2,B1:J1)"/> </div>
     <p><strong>Final Results</strong>:</p>
     <p>We see that
       <math display="inline">
@@ -374,7 +373,7 @@
       </math>
     </p>
     <p>The scatter plot and regression model is given below:</p>
-    <div class="side-by-side">
+    <div>
       <figure>
         <figcaption>Graph of
           <math display="inline">
@@ -500,7 +499,7 @@
             </msup>
           </math>
           . Screenshot below shows what was done:</p>
-        <div class="side-by-side"> <img src="../../images/chapter-3/3-4/example2-google-sheet-logest.jpg" width="90%" alt="Table of data for Number of days after Jan 20 A1:J1 and Total Number of Cases A2:J2. In B7 the formula =ARRAYFORMULA(LOGEST(B2:J2,B1:J1)) is entered giving results for b=1.502 and a=229.9113"/></div>
+        <div> <img src="../../images/chapter-3/3-4/example2-google-sheet-logest.jpg" width="90%" alt="Table of data for Number of days after Jan 20 A1:J1 and Total Number of Cases A2:J2. In B7 the formula =ARRAYFORMULA(LOGEST(B2:J2,B1:J1)) is entered giving results for b=1.502 and a=229.9113"/></div>
         <p>The exonential regression model is
           <math display="inline">
             <mi>y</mi>
@@ -695,7 +694,7 @@
           </msup>
         </math>
         <p>A visual of the scatter plot along with the exponential model is shown below</p>
-        <div class="side-by-side">
+        <div>
           <figure>
             <figcaption>Graph of
               <math display="inline">
@@ -785,7 +784,7 @@
     <p>Is it reasonable to assume that an exponential regression model will represent a situation indefinitely?</p>
     <p>No. Remember that models are formed by real-world data gathered for regression. It is usually reasonable to make estimates within the interval of original observation (interpolation). However, when a model is used to make predictions, it is important to use reasoning skills to determine whether the model makes sense for inputs far beyond the original observation interval (extrapolation).</p>
   </div>
-  <h2>Exercises:</h2>
+  <h2>Exercises</h2><hr>
   <ol>
     <li>
       <p>Find an exponential regression model for the data given in the following table.</p>
