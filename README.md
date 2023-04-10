@@ -4,7 +4,6 @@
 ## Available styles
 
 ### Table Styles 
-`<table class="display-lg small-text not-fixed”>`
 
 `.not-fixed`
 Used for tables, this class will help with any tables where the cells cut off text and are set at a fixed width. This class will allow some auto-sizing for the cells and ensure that the text fits inside the cell.
@@ -18,7 +17,7 @@ This will change the selection for the table to be a <td> or table cell instead 
 ### Button Styles
 
 `.exmple-answer`
-This class is used as an extra selection option to ensure that the answer buttons for example sections have a border around them when expanded.
+This class is used for example answers to have a border around them when expanded. (Add to div with the class .`js-to-expand` for correct usage)
 
 ### Text Styles 
 
