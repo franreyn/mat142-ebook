@@ -15,10 +15,18 @@
   --dark-layer-1: rgba(24, 24, 24, 1);
   --dark-layer-2: rgba(40, 40, 40, 1);
   --dark-layer-3: rgba(64, 64, 64, 1);
+  --dark-layer-4: rgba(100, 100, 100, 1);
   --white-layer-1: rgba(179, 179, 179);
   --button-grey: rgba(211, 211, 211, 1);
   --button-dark-grey: rgba(199, 199, 199, 1);
   --white: rgba(255, 255, 255, 1);
+}
+
+/* Dark Theme Style changes */
+@media (prefers-color-scheme: dark) {
+
+
+
 }
 
 /* Font Styles */
@@ -30,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
   font-size: 1.8rem;
-  margin: 0 1rem 1rem 1rem;
+  margin: 3.13rem 1rem 0;
 }
 
 .ereader-display h1 {
@@ -41,36 +49,63 @@ h1 {
 
 h2 {  
   font-size: 1.602rem;
-  margin: 0 1rem .5rem 1rem;
+  margin: 3.13rem 1rem 0;
   font-weight: 400;
+}
+
+h2 + p {
+  margin-top: .85rem;
 }
 
 h3 {  
   font-size: 1.324rem;
-  margin: 0 1rem .3rem 1rem;
+  margin: 2rem 4rem 1rem;
   font-weight: 400;
 }
 
 h4 {  
   font-size: 1.2rem;
-  margin: 0 1rem .5rem 1rem;
+  margin: 2rem 4rem 1rem;
   font-weight: 400;
 }
 
 h5 {  
   font-size: 1rem;
-  margin: 0 1rem .5rem 1rem;
+  margin: 2rem 4rem 1rem;
   font-weight: 400;
 }
 
 p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin: 0 1rem 1rem 1.5rem;
+  font-size: 1.11rem;
+  line-height: 1.778rem;
+  margin: 2rem 1rem 0 1.5rem;
+}
+
+:is(.definition,.example,.plainblock,.tryitnow) ul,ol {
+  margin: 0 0 0 2.5rem;
 }
 
 ul, ol {
-  margin: 0 0 1rem 2rem;
+  margin: 0 0 1rem 4.5rem;
+}
+
+li :is(ul,ol) {
+  margin: 0 !important;
+}
+
+li {
+  font-size: 1.11rem;
+  margin: 1rem 2rem 0 1.667rem;
+}
+
+li + :is(h1,h2,h3,h4,h5,p) {
+  margin-top: 1.9rem;
+}
+
+li p {
+  margin-left: .25rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 
 /* Scroll bar styles */
@@ -146,7 +181,7 @@ body[darkmode] .page-controller {
 /* Colors the math jacks items */
 body[darkmode] .mjx-chtml {
   color: var(--white);
-  opacity: 87%;
+  opacity: 90%;
 }
 
 .mjx-chtml {
@@ -154,8 +189,17 @@ body[darkmode] .mjx-chtml {
   opacity: 1;
 }
 
+.MJXc-display {
+  margin: 2rem 0;
+}
+
 .math-small {
-  font-size: 100% !important;
+  font-size: 16px !important;
+  text-align: center;
+}
+
+.math-extra-small {
+  font-size: 16px !important;
   text-align: center;
 }
 
@@ -209,9 +253,14 @@ nav ul{
   list-style-type: none;
 }
 
+nav ul li {
+  margin: 0;
+}
+
 nav ul li a {
-  padding: 20px 0 20px 10px;
+  padding: 15px 0 15px 10px;
   display:block;
+  font-size: 1rem;
 }
 
 nav {
@@ -389,7 +438,7 @@ body[darkmode] {
 
 body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
   color: rgba(235,235,235,1);
-  opacity: 87%;
+  opacity: 90%;
 }
 
 #light-dark-mode {
@@ -409,17 +458,6 @@ ol > li > ol,
 ul > li > ol,
 ul > li > ul  {
   margin: 0 0 1rem 1rem;
-}
-
-li {
-  margin-bottom: .1225rem;
-  line-height: 1.6;
-  font-size: 1.25rem;
-  margin-left: .25rem !important;
-}
-
-li p {
-  margin-left: .25rem !important;
 }
 
 body[darkmode] a {
@@ -448,24 +486,90 @@ a {
 table {
   color: var(--black);
   opacity: 1;
-  margin: 0 auto;
+  margin: 2rem auto;
+  table-layout: fixed;
+  width: 80%;
 }
 
-body[darkmode] table {
-  color: var(--white);
-  opacity: 87%;
+body[darkmode] :is(table, th, td) {
+  border: 2px solid var(--dark-layer-3);
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table.not-fixed {
+  table-layout: auto;
+}
+
+table.small-text p {
+  font-size: 1rem;
 }
 
 td {
   padding: 3px;
+  text-align: center;
+}
+
+td p {
+  margin: auto;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: var(--button-grey);
+  transition: .25s;
+  cursor: default;
+}
+
+body[darkmode] tr:hover {
+  background-color: var(--white-layer-1);
+  color: var(--black);
+}
+
+body[darkmode] tr:hover p {
+  color: var(--black);
+}
+
+table.cell-hover td:hover {
+  background-color: var(--button-grey);
+  transition: .25s;
+  cursor: default;
+}
+
+body[darkmode] table.cell-hover td:hover {
+  background-color: var(--dark-layer-4);
+  transition: .25s;
+  cursor: default;
+}
+
+table.cell-hover tr:hover {
+  background-color: transparent;
+}
+
+  body[darkmode] table.cell-hover tr:hover p {
+    color: var(--white);
+  }
+
+body[darkmode] table {
+  color: var(--white);
+  opacity: 90%;
+}
+
+figure {
+  text-align: center;
 }
 
 img {
   border-style: none;
   display: block;
   height: auto;
-  margin: 0 auto 1rem;
   max-width: 85%;
+  margin: 56px auto 2rem;
+  background-color: var(--white);
 }
 
 img.center {
@@ -478,7 +582,7 @@ body[darkmode] hr {
 }
 
 hr {
-  margin: 0 4rem 1rem 4rem;
+  margin: 1rem 4rem 0 4rem;
   height: 3px;
   border: none;
   background-color: rgba(15,15,15,.1);
@@ -542,39 +646,23 @@ body[darkmode] nav>ul {
 .border {
   background-color: rgba(15, 15, 15, .02);
   border-left: 6px solid darkgray;
-  padding: 20px 0;
   margin: 1rem;
-}
-
-.border :is(p,h4) {
-  margin: 0 2rem 1rem 2rem;
-}
-
-.border :is(p,h3) {
-  margin-bottom: 1rem;
 }
 
 /* Definition */
 .definition {
   background-color: rgba(168, 87, 87, .05);
-  padding: 20px 0;
   margin: 1rem;
   border: 3px solid var(--red-definition);
 }
 
-.definition :is(p,h4) {
-  margin: 0 2rem 1rem 2rem;
-}
-
 .definition h3 {
-  margin-bottom: 1rem;
   color: var(--red-definition-text);
 }
 
 /* Example */
 .example {
   background-color: var(--example-bkg);
-  padding: 20px 0;
   border: 3px solid var(--example);
   margin: 1rem;
 }
@@ -583,15 +671,19 @@ body[darkmode] nav>ul {
   color: var(--example);
 }
 
-.example :is(p,h4) {
-  margin: 0 2rem 1rem 2rem;
+:is(.example,.definition,.tryitnow,.border,.plainblock) {
+  padding: 1rem 0 0;
 }
 
-:is(.example,.definition,.tryitnow,.border) h3 {
-  margin: 0 4rem 1rem 2rem;
+:is(.example,.definition,.tryitnow,.border,.plainblock) :is(h4,h3,h2) {
+  margin: 1rem 2rem 2rem 1.5rem;
 }
 
-:is(.example,.definition,.tryitnow,.border) hr {
+:is(.example,.definition,.tryitnow,.border,.plainblock) p {
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+:is(.example,.definition,.tryitnow,.border,.plainblock) hr {
   margin: 1rem 2rem 1rem 2rem;
   color: var(--example);
 }
@@ -616,7 +708,7 @@ figcaption {
 
 body[darkmode] figcaption {
   color: white;
-  opacity: 87%;
+  opacity: 90%;
 }
 
 /* Plain Block */
@@ -626,52 +718,48 @@ body[darkmode] figcaption {
   padding: 20px 0;
 }
 
-.plainblock :is(p,h3,h4) {
-  margin: 0 2rem .3rem 2rem;
-}
-
-.plainblock::after {
-  color: rgba(15, 15, 15, .25);
-  content: "\f10e";
-  display: block;
-  font-family: "FontAwesome";
-  font-size: 1em;
-  font-weight: 400;
-  opacity: 1;
-  text-align: right;
-  margin-top: 15px;
-  padding-right: 5%;
-}
-
-.plainblock::before {
-  color: rgba(15, 15, 15, .25);
-  content: "\f10e";
-  display: block;
-  font-family: "FontAwesome";
-  font-size: 1em;
-  font-weight: 400;
-  opacity: 1;
-  text-align: right;
-  margin-bottom: 15px;
-  padding-right: 5%;
-  transform: rotate(180deg);
-}
-
-body[darkmode] .plainblock::before {
-  color: var(--white);
-}
-
-body[darkmode] .plainblock::after {
-  color: var(--white);
-}
-
 body[darkmode] .plainblock {
   color: var(--white);
-  opacity: 87%;
+  opacity: 90%;
   background-color: var(--dark-layer-2);
 }
 
 /* Side By Side */
+
+
+.side-by-side {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0 20px 0;
+}
+
+.side-by-side-item {
+  flex-basis: 100%;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.side-by-side-item p {
+  margin: 1rem;
+}
+
+.side-by-side-item :is(figure, img) {
+  width: 100%;
+  margin: 0 .5rem !important;
+}
+
+@media screen and (min-width: 730px) {
+  .side-by-side-item {
+    flex-basis: 49%;
+    margin: 0;
+  }
+
+  .side-by-side :is(figure, img) {
+    max-width: none;
+  }
+}
 
 .width-400 {
   width: auto;
@@ -689,10 +777,6 @@ body[darkmode] .plainblock {
 
 .tryitnow :is(h3,h4,h5) {
   color: var(--try-it-now-text);
-}
-
-.tryitnow :is(p,h3,h4) {
-  margin: 0 2rem 1rem 2rem;
 }
 
 /* Toggling & Footnotes */
@@ -751,6 +835,7 @@ footer {
   grid-area: footer;
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 2rem;
 }
 
 .footnotes {
@@ -879,7 +964,6 @@ body[darkmode] :is(h5,h4).js-expandmore {
 body[darkmode] :is(h5,h4).js-expandmore:hover {
   color: var(--white);
   background-color: var(--dark-layer-3);
-  transition: .5s;
 }
 
 .js-to-expand {
@@ -888,6 +972,20 @@ body[darkmode] :is(h5,h4).js-expandmore:hover {
 
 .js-to-expand[show] {
  display:block;
+}
+
+.js-to-expand[show].example-answer {
+  background-color: var(--grey-bkg);
+  padding: 20px 0;
+  margin-top: 1rem;
+}
+
+body[darkmode] .js-to-expand[show].example-answer {
+  background-color: var(--dark-layer-2);
+}
+
+:is(.definition,.example,.plainblock,.tryitnow) :is(ul,ol) {
+  margin: 0 0 0 2.5rem;
 }
 
 @media screen and (min-width: 730px) {
@@ -920,20 +1018,6 @@ body[darkmode] :is(h5,h4).js-expandmore:hover {
   ul, ol {
     margin: 0 0 1rem 2rem;
   }
-
-  .side-by-side-item {
-    flex-basis: 49%;
-    margin: 0;
- }
-  .side-by-side-item :is(figure, img) {
-    max-width: none;
-    margin-left: auto !important;
- }
-
-  .side-by-side-item.width-400 :is(figure, img) {
-    width: auto;
-    max-width: 400px;
- }
 }
 
   /* Text spacing Media Query */
@@ -942,7 +1026,7 @@ body[darkmode] :is(h5,h4).js-expandmore:hover {
 
     h1 {
       font-size: 2rem;
-      margin: 0 4rem 1rem 4rem;
+      margin: 3.13rem 4rem 0rem 4rem;
     }
     
     .ereader-display h1 {
@@ -953,36 +1037,40 @@ body[darkmode] :is(h5,h4).js-expandmore:hover {
     
     h2 {  
       font-size: 1.602rem;
-      margin: 0 4rem .5rem 4rem;
+      margin: 3.13rem 4rem 0 4rem;
       font-weight: 400;
     }
     
     h3 {  
       font-size: 1.324rem;
-      margin: 0 4rem .3rem 4rem;
+      margin: 2rem 4rem 0 4rem;
       font-weight: 400;
     }
     
     h4 {  
       font-size: 1.2rem;
-      margin: 0 4rem .5rem 4rem;
+      margin: 2rem 4rem 0 4rem;
       font-weight: 400;
     }
     
     h5 {  
       font-size: 1rem;
-      margin: 0 4rem .5rem 4rem;
+      margin: 2rem 4rem 0 4rem;
       font-weight: 400;
     }
     
     p {
       font-size: 1.25rem;
-      line-height: 1.6;
-      margin: 0 4rem 1rem 4.5rem;
+      line-height: 1.778rem;
+      margin: 2rem 4rem 0 4.5rem;
     }
 
     ul, ol {
       margin: 0 0 1rem 5rem;
+    }
+
+    :is(.definition,.example,.plainblock,.tryitnow) :is(ul,ol) {
+      margin: 0 0 2rem 2.5rem;
     }
 
     .example {
