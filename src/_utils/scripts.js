@@ -181,6 +181,9 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 //Get location of current URL to highlight active link 
 let fullUrl = window.location.href.split("/").pop();;
 let currentUrl = fullUrl.split("/").pop();
+currentUrl = currentUrl + ".html";
+
+console.log(currentUrl)
 
 //Parse and find URL in navigation that matches that link 
 window.onload = () => {
