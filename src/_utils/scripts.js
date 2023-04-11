@@ -31,6 +31,7 @@ readerHeader.append(navWrapper);
 // (3) create and append <div class="page-controller">
 const pageController = document.createElement("div");
 pageController.classList.add("page-controller");
+pageController.classList.add("no-print");
 navWrapper.append(pageController);
 
 // (4) create and append menu-toggle button
@@ -178,8 +179,8 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 }
 
 //Get location of current URL to highlight active link 
-let currentUrl = window.location.href;
-currentUrl = currentUrl.split("/").pop();
+let fullUrl = window.location.href.split("/").pop();;
+let currentUrl = fullUrl.split("/").pop();
 
 //Parse and find URL in navigation that matches that link 
 window.onload = () => {
@@ -191,27 +192,43 @@ window.onload = () => {
   const chapterList = Array.prototype.slice.call(chapters);
 
   //If it is the home page highlight the first page
-  if(currentUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
+  if(fullUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
     chapterList[0].classList.add("activeChapter")
   } else {
+
   // Cut off end of URL
   let navHrefs = [];
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
+    console.log(navHrefs);
+
+
     // Add class to chapter heading
     if(currentUrl.charAt(0) == navHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
       chapterList[activeChapter].classList.add("activeChapter")
+      console.log("Added class to chapter")
+
     }
+
+    console.log(navHrefs[linkIndex]);
+    console.log(currentUrl);
+
 
     // Add class to chapter
     if(navHrefs[linkIndex] == currentUrl) {
+
+      console.log("Entered if statement")
+
       links[linkIndex].classList.add("activeUrl");
+
+      console.log("Added class to link")
+
     }
+   }
   }
-}
     
   // Expand or collapse navigation
   let navIsOpen = false;
@@ -256,6 +273,16 @@ window.onload = () => {
       });
     }
   }
+
+  // Add resize button for content area 
+  const toggleWidth = () => {
+
+    // target width with JS 
+    
+    
+    }
+    
+    toggleWidth();
 }
 
 const toggleHints = async () => {
