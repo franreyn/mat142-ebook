@@ -195,7 +195,7 @@ window.onload = () => {
   const chapterList = Array.prototype.slice.call(chapters);
 
   //If it is the home page highlight the first page
-  if(fullUrl == "https://deploy-preview-24--pimaonline-mat142-ebook.netlify.app/") {
+  if(fullUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
     chapterList[0].classList.add("activeChapter")
   } else {
 
