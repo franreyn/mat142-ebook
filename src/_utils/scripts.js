@@ -179,7 +179,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 }
 
 //Get location of current URL to highlight active link 
-let fullUrl = window.location.href.split("/").pop();;
+let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl + ".html";
 
@@ -195,7 +195,7 @@ window.onload = () => {
   const chapterList = Array.prototype.slice.call(chapters);
 
   //If it is the home page highlight the first page
-  if(fullUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
+  if(fullUrl == "https://deploy-preview-24--pimaonline-mat142-ebook.netlify.app/") {
     chapterList[0].classList.add("activeChapter")
   } else {
 
@@ -205,31 +205,18 @@ window.onload = () => {
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
+    //Convert hrefs to lowercase
     let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
-    console.log(navHrefs);
-
 
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
       chapterList[activeChapter].classList.add("activeChapter")
-      console.log("Added class to chapter")
-
     }
-
-    console.log(lowerCaseHrefs[linkIndex]);
-    console.log(currentUrl);
-
 
     // Add class to chapter
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
-
-      console.log("Entered if statement")
-
       links[linkIndex].classList.add("activeUrl");
-
-      console.log("Added class to link")
-
     }
    }
   }
