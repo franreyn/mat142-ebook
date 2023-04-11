@@ -205,23 +205,24 @@ window.onload = () => {
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
+    let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
     console.log(navHrefs);
 
 
     // Add class to chapter heading
-    if(currentUrl.charAt(0) == navHrefs[linkIndex].charAt(0)) {
+    if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
       chapterList[activeChapter].classList.add("activeChapter")
       console.log("Added class to chapter")
 
     }
 
-    console.log(navHrefs[linkIndex]);
+    console.log(lowerCaseHrefs[linkIndex]);
     console.log(currentUrl);
 
 
     // Add class to chapter
-    if(navHrefs[linkIndex] == currentUrl) {
+    if(lowerCaseHrefs[linkIndex] == currentUrl) {
 
       console.log("Entered if statement")
 
