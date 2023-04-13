@@ -2,12 +2,13 @@
 
 // Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
-const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>"
+const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
 const fontAwesomeCdn = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css";
 const localTocUrl = "http://127.0.0.1:5500/api/toc.json";
 const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
+const ereaderArea = document.querySelector(".ereader-display");
 
 // ==
 
@@ -77,15 +78,49 @@ darkModeBtn.addEventListener("click", () => {
  }
 });
 
-// (6) create and append <nav> to <div id="navigation">
+// (6) create and append resizing button
+const resizer = document.createElement("button");
+resizer.type = "button";
+resizer.classList.add("resizer");
+pageController.append(resizer);
+
+const widthLarge = localStorage.getItem("isWidthLarge");
+// if "isWidthLarge" is null, make it false
+if (widthLarge === null) {
+  localStorage.setItem("isWidthLarge", "false");
+};
+
+// if "isWidthLarge" is true, add attribute
+if (localStorage.getItem("isWidthLarge") === "true") {
+  ereaderArea.setAttribute("widthLarge", "");
+  resizer.toggleAttribute("resized");
+}
+
+// (6b) click event for darkmode button
+resizer.addEventListener("click", () => {
+  // if "isWidthLarge" is false 
+  if (localStorage.getItem("isWidthLarge") === "false") {
+    localStorage.setItem("isWidthLarge", "true");
+    ereaderArea.toggleAttribute("widthLarge");
+    resizer.toggleAttribute("resized");
+
+    // if "isWidthLarge" is true
+  } else {
+    localStorage.setItem("isWidthLarge", "false");
+    ereaderArea.toggleAttribute("widthLarge");
+    resizer.toggleAttribute("resized");
+ }
+});
+
+// (7) create and append <nav> to <div id="navigation">
 const nav = document.createElement("nav");
 navWrapper.append(nav);
 
-// (6a) create and append <ul> to <nav>
+// (7a) create and append <ul> to <nav>
 const ul = document.createElement("ul");
 nav.append(ul);
 
-// (6b) append navigation from toc.json
+// (7b) append navigation from toc.json
 const appendNavigation = async () => {
   // import toc data
   const toc = await getToc();
@@ -120,7 +155,7 @@ const appendNavigation = async () => {
       _li.append(a);
     });
   }); 
-  // (6c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
+  // (7c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
   const navChaptBtn = document.querySelectorAll(".chapter-btn");
   navChaptBtn.forEach((btn) => {
     btn.addEventListener("click", function() {
@@ -131,13 +166,13 @@ const appendNavigation = async () => {
 }
 appendNavigation();
 
-// (7) add font-awesome to <head>
+// (8) add font-awesome to <head>
 const fontAwesome = document.createElement("link");
 fontAwesome.setAttribute("rel", "stylesheet");
 fontAwesome.setAttribute("href", fontAwesomeCdn);
 docHead.appendChild(fontAwesome);
 
-// (8) accordions - show/hide script
+// (9) accordions - show/hide script
 const getAccords = document.querySelectorAll(".accordion");
 getAccords.forEach((accord) => {
   let accordBtn = accord.querySelector("button");
@@ -147,7 +182,7 @@ getAccords.forEach((accord) => {
   });
 });
 
-// (9) footnotes toggle
+// (10) footnotes toggle
 const toggleBtns = document.querySelectorAll(".toggle-btn, .toggle-footnotes");
 const changeFootnotesText = (toggleBtns,toggleBtn) => {
   if(toggleBtns[toggleBtn].innerHTML == "[Show Attributions]") {
@@ -183,10 +218,9 @@ let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl + ".html";
 
-console.log(currentUrl)
-
 //Parse and find URL in navigation that matches that link 
 window.onload = () => {
+
   const links = document.querySelectorAll("nav a");
   const chapters = document.querySelectorAll(".chapter-btn");
 
@@ -274,6 +308,7 @@ window.onload = () => {
     }
     
     toggleWidth();
+
 }
 
 const toggleHints = async () => {
