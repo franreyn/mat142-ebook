@@ -124,6 +124,36 @@ body {
   display: none;
 }
 
+/* Forward & back button styles */
+
+.back-btn,.forward-btn {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(15, 15, 15, .2);
+  transition: .5s;
+  transition-timing-function: ease;
+}
+
+.back-btn:hover,.forward-btn:hover {
+  background-color: rgba(15, 15, 15, .4);
+  transition: .5s;
+  transition-timing-function: ease;
+}
+
+.back-btn {
+  position:fixed;
+  top: 90%;
+  left: 2rem;
+}
+
+.forward-btn {
+  position:fixed;
+  top: 90%;
+  right: 2rem;
+}
+
 /* Navigation Mobile */
 
 #navigation {
