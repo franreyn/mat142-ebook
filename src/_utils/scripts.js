@@ -3,14 +3,14 @@
 // Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
 const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
+const backButtonContent = "<i class=\"fa-solid fa-chevron-left\"></i>";
+const forwardButtonContent = "<i class=\"fa-solid fa-chevron-right\"></i>";
 const fontAwesomeCdn = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css";
 const localTocUrl = "http://127.0.0.1:5500/api/toc.json";
 const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderArea = document.querySelector(".ereader-display");
-
-// ==
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -213,14 +213,14 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   }
 }
 
-//Get location of current URL to highlight active link 
+// (11) Get location of current URL to highlight active link 
 let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl + ".html";
 
-//Parse and find URL in navigation that matches that link 
 window.onload = () => {
 
+  // (11a) Parse and find URL in navigation that matches that link 
   const links = document.querySelectorAll("nav a");
   const chapters = document.querySelectorAll(".chapter-btn");
 
@@ -254,8 +254,9 @@ window.onload = () => {
     }
    }
   }
-    
-  // Expand or collapse navigation
+  
+  
+  // (12) Expand or collapse navigation
   let navIsOpen = false;
   const menuNav = document.querySelector(".nav-toggle");
   menuNav.addEventListener("click", () => {
@@ -285,7 +286,7 @@ window.onload = () => {
     }
   });
  
-  //Remove tabbing from navigation if closed
+  // (12b) Remove tabbing from navigation if closed
   const navLinks = document.querySelectorAll("#navigation a"); 
   const removeTabbing = () => {
     if(!navIsOpen) {
@@ -298,19 +299,9 @@ window.onload = () => {
       });
     }
   }
+} // End of onload functions
 
-  // Add resize button for content area 
-  const toggleWidth = () => {
-
-    // target width with JS 
-    
-    
-    }
-    
-    toggleWidth();
-
-}
-
+// (13) toggle hints and answers
 const toggleHints = async () => {
   const toggleHints = document.querySelectorAll(".js-expandmore");
   
@@ -331,5 +322,66 @@ const toggleHints = async () => {
     });
   });
 } 
-
 toggleHints();
+
+// (14) add back and forwards buttons
+const backButton = document.createElement("button");
+backButton.type = "button";
+backButton.classList.add("back-btn");
+backButton.innerHTML = backButtonContent;
+ereaderDisplay.append(backButton); 
+
+const forwardButton = document.createElement("button");
+forwardButton.type = "button";
+forwardButton.classList.add("forward-btn");
+forwardButton.innerHTML = forwardButtonContent;
+ereaderDisplay.append(forwardButton); 
+
+
+// (14a) call function when one of the buttons are clicked
+
+const changePage = (direction) => {
+
+
+  let links = document.querySelectorAll("nav a");
+  let chapters = document.querySelectorAll(".chapter-btn");
+
+  // Convert node list into array
+  let linkList = Array.prototype.slice.call(links);
+  let chapterList = Array.prototype.slice.call(chapters);
+
+    // Cut off end of URL
+    let navHrefs = [];
+    for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+      let  newLinkHref = linkList[linkIndex].href.split("/").pop();
+      navHrefs.push(newLinkHref);
+  
+      //Convert hrefs to lowercase
+      let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+  
+      // If the page matches the current one
+      if(lowerCaseHrefs[linkIndex] == currentUrl) {
+
+        // Go back or forwards one link in navigation
+        if(direction == "back") {
+          window.location.href = links[linkIndex + 1];
+        } else {
+          window.location.href = links[linkIndex - 1];
+        }
+      }
+    }
+
+}
+
+backButton.addEventListener("click", () => {
+  let direction = "back"
+  changePage(direction)
+
+})
+
+forwardButton.addEventListener("click", () => {
+
+  let direction = "forward"
+  changePage(direction)
+
+})
