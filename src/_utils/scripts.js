@@ -342,7 +342,6 @@ ereaderDisplay.append(forwardButton);
 
 const changePage = (direction) => {
 
-
   let links = document.querySelectorAll("nav a");
   let chapters = document.querySelectorAll(".chapter-btn");
 
@@ -355,18 +354,17 @@ const changePage = (direction) => {
     for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
       let  newLinkHref = linkList[linkIndex].href.split("/").pop();
       navHrefs.push(newLinkHref);
-  
+
       //Convert hrefs to lowercase
       let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
-      console.log("in for loop")
+
       // If the page matches the current one
       if(lowerCaseHrefs[linkIndex] == currentUrl) {
-        console.log("matches the link")
         // Go back or forwards one link in navigation
         if(direction == "back") {
-          window.location.href = links[linkIndex + 1];
-        } else {
           window.location.href = links[linkIndex - 1];
+        } else {
+          window.location.href = links[linkIndex + 1];
         }
       }
     }
