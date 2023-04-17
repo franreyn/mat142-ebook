@@ -348,8 +348,10 @@ const changePage = (direction) => {
 
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
+  console.log(currentUrl)
 
-  if(currentUrl == "index.html.html") {
+  if(currentUrl == ".html") {
+    console.log("url is home page")
     window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
   } else {
 
@@ -362,7 +364,6 @@ const changePage = (direction) => {
       //Convert hrefs to lowercase
       let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
 
-      console.log(currentUrl)
 
       // If the page matches the current one
       if(lowerCaseHrefs[linkIndex] == currentUrl) {
