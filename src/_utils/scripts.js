@@ -343,11 +343,15 @@ ereaderDisplay.append(forwardButton);
 const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
-  let chapters = document.querySelectorAll(".chapter-btn");
+
+  console.log("change page fuction")
 
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
-  let chapterList = Array.prototype.slice.call(chapters);
+
+  if(currentUrl == "index.html.html") {
+    window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
+  } else {
 
     // Cut off end of URL
     let navHrefs = [];
@@ -358,8 +362,13 @@ const changePage = (direction) => {
       //Convert hrefs to lowercase
       let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
 
+      console.log(currentUrl)
+
       // If the page matches the current one
       if(lowerCaseHrefs[linkIndex] == currentUrl) {
+
+        console.log(lowerCaseHrefs[linkIndex])
+
         // Go back or forwards one link in navigation
         if(direction == "back") {
           window.location.href = links[linkIndex - 1];
@@ -368,7 +377,7 @@ const changePage = (direction) => {
         }
       }
     }
-
+  }
 }
 
 backButton.addEventListener("click", () => {
