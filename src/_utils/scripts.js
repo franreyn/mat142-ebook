@@ -351,8 +351,10 @@ const changePage = (direction) => {
   console.log(currentUrl)
 
   if(currentUrl == ".html") {
-    console.log("url is home page")
-    window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
+    if(direction == "forward") {
+      window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
+    } else {
+    }
   } else {
 
     // Cut off end of URL
