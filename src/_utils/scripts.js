@@ -129,16 +129,12 @@ const showTooltip = () => {
   let tooltip = document.querySelector(".tooltip");
   tooltip.style.opacity = "1";
   tooltip.style.transition = "opacity .5s";
-  // tooltip.style.display = "block";
-
 }
 
 const hideTooltip = () => {
   let tooltip = document.querySelector(".tooltip");
   tooltip.style.opacity = "0";
   tooltip.style.transition = "opacity .5s";
-  // tooltip.style.display = "none";
-
 }
 
 resizer.addEventListener("mouseover", showTooltip);
