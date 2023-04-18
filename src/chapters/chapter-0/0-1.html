@@ -1,3 +1,38 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@eugenejars 
+franreyn
+/
+mat142-ebook
+Public
+Fork your own copy of franreyn/mat142-ebook
+Code
+Issues
+Pull requests
+1
+Actions
+Projects
+Wiki
+Security
+Insights
+Beta Try the new code view
+mat142-ebook/src/chapters/chapter-0/0-1.html
+@eugenejars
+eugenejars Latest changes: removed side-by-sides, fixed a <div> issue in 2.2, up…
+…
+Latest commit a3c1d27 3 weeks ago
+ History
+ 2 contributors
+@eugenejars@clintmoss
+448 lines (448 sloc)  32.1 KB
+ 
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -116,7 +151,7 @@
       </tr>
       <tr>
         <td>8. Use direct reasoning.</td>
-        <td> </td>
+        <td> </td>
       </tr>
     </tbody>
   </table>
@@ -147,14 +182,16 @@
   <p>&nbsp;</p>
   <div class="example">
     <h3>Example 2</h3>
-    <p>Estimate how thick is a single sheet of 8.5 x 11 inches printer paper? How much does it weigh?</p>
+    <p>Estimate how thick is a single sheet of 8.5 x 11 inches printer paper. How much does it weigh?</p>
     <p><strong>Solution</strong></p>
-    <p>1. <strong>Understand the Problem</strong>. This is another problem that seems straight forward until you try to measure the papers width by hand.</p>
-    <p>2. <strong>Devise a Plan</strong>. Instead of directly measuring a single piece of paper we might try a stack of paper instead, and then scale the thickness and weight to a single sheet. It may be easy to get the information for a ream of paper from an online store and use that information to then estimate the thickness and weight of a single sheet. One ream of paper (500 sheets) found on an online stores website shows that the thickness of the ream is about 2 inches and weighs about 5 pounds.</p>
-    <p>3. <strong>Carry out the Plan</strong>. Using the information we found from the store we can determine the thickness and weight by dividing the amount for the ream by 500, since there were 500 sheets of paper in the ream.</p>
+    <ol>
+      <li><strong>Understand the Problem</strong>. This is another problem that seems straight forward until you try to measure the papers width by hand.</li>
+      <li><strong>Devise a Plan</strong>. Instead of directly measuring a single piece of paper we might try a stack of paper instead, and then scale the thickness and weight to a single sheet. It may be easy to get the information for a ream of paper from an online store and use that information to then estimate the thickness and weight of a single sheet. One ream of paper (500 sheets) found on an online stores website shows that the thickness of the ream is about 2 inches and weighs about 5 pounds.</li>
+      <li><strong>Carry out the Plan</strong>. Using the information we found from the store we can determine the thickness and weight by dividing the amount for the ream by 500, since there were 500 sheets of paper in the ream.</li>
+    </ol>
     <p>
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mtable columnalign="left">
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML" class="math-small">
+        <mtable columnalign="center">
           <mtr>
             <mtd>
               <mfrac>
@@ -216,8 +253,10 @@
           </mtr>
         </mtable>
       </math>
-    </p>
-    <p>4. <strong>Looking Back</strong>. You can check thickness of most reams of paper directly on the package. A typical sheet has a thickness of roughly .1 mm and our estimate we found matches up when converting millimeters to inches.</p>
+  </p>
+    <ol start="4">
+      <li><strong>Looking Back</strong>. You can check thickness of most reams of paper directly on the package. A typical sheet has a thickness of roughly .1 mm and our estimate we found matches up when converting millimeters to inches.</li>
+    </ol>
     <p><a href="http://youtu.be/xF5BNEr0gjo?t=1m55s" target="_blank">Video Solution</a> (cc) </p>
   </div>
   <p>&nbsp;</p>
@@ -225,12 +264,14 @@
     <h3>Example 3</h3>
     <p>A recipe for zucchini muffins states that it yields 12 muffins, with 250 calories per muffin. You decide to make the exact same recipe, but instead make 20 mini-muffins. If the amount of ingrediants is excatly the same, then how many calories would 4 of the mini-muffins be?</p>
     <p><strong>Solution</strong></p>
-    <p>1. <strong>Understand the Problem</strong>. We need to find how many calories it is for 4 mini-muffins from the same recipe that created 12 muffins with each muffin being 250 calories.</p>
-    <p>2. <strong>Devise a Plan</strong>. To answer the question of how many calories 4 mini-muffins will contain, we would want to know the number of calories in each mini-muffin. Since both batches (the 12 muffins and 20 mini-muffins) have the same ingrediants they should both have the same total calories for all their respective amount of muffins. To find the calories in each mini-muffin, we could take the total calories for the entire recipe, then divide it by the number of mini-muffins produced. To find the total calories for the recipe, we  could multiply the calories per standard muffin (12 muffin batch) by 12 (the number of muffins).&nbsp; Notice that this produces a multi-step  solution pathway.&nbsp; It is often easier to solve a problem in small steps, rather than trying to find a way to jump  directly from the given information to the solution.</p>
-    <p>3. <strong>Carry out the Plan</strong>.</p>
+    <ol>
+      <li><strong>Understand the Problem</strong>. We need to find how many calories it is for 4 mini-muffins from the same recipe that created 12 muffins with each muffin being 250 calories.</li>
+      <li><strong>Devise a Plan</strong>. To answer the question of how many calories 4 mini-muffins will contain, we would want to know the number of calories in each mini-muffin. Since both batches (the 12 muffins and 20 mini-muffins) have the same ingrediants they should both have the same total calories for all their respective amount of muffins. To find the calories in each mini-muffin, we could take the total calories for the entire recipe, then divide it by the number of mini-muffins produced. To find the total calories for the recipe, we  could multiply the calories per standard muffin (12 muffin batch) by 12 (the number of muffins).&nbsp; Notice that this produces a multi-step  solution pathway.&nbsp; It is often easier to solve a problem in small steps, rather than trying to find a way to jump  directly from the given information to the solution.</li>
+      <li><strong>Carry out the Plan</strong>.</li>
+    </ol>
     <p>
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mtable columnalign="left">
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML" class="math-small">
+        <mtable columnalign="center">
           <mtr>
             <mtd>
               <mn>12</mn>
@@ -240,48 +281,48 @@
                 <mrow>
                   <mn>250</mn>
                   <mtext>&#x00A0;calories</mtext>
-                </mrow>
+                  </mrow>
                 <mrow>
                   <mtext>muffin</mtext>
-                </mrow>
-              </mfrac>
+                  </mrow>
+                </mfrac>
               <mo>=</mo>
               <mtext>3</mtext>
               <mn>000</mn>
               <mtext>&#x00A0;calories&#x00A0;for&#x00A0;the&#x00A0;whole&#x00A0;recipe</mtext>
-            </mtd>
-          </mtr>
+              </mtd>
+            </mtr>
           <mtr>
             <mtd>
               <mrow></mrow>
-            </mtd>
-          </mtr>
+              </mtd>
+            </mtr>
           <mtr>
             <mtd>
               <mfrac>
                 <mrow>
                   <mn>3000</mn>
                   <mtext>&#x00A0;calories</mtext>
-                </mrow>
+                  </mrow>
                 <mrow>
                   <mn>20</mn>
                   <mtext>&#x00A0;mini</mtext>
                   <mo>&#x2212;</mo>
                   <mtext>muffins</mtext>
-                </mrow>
-              </mfrac>
+                  </mrow>
+                </mfrac>
               <mtext>&#x00A0;gives&#x00A0;15</mtext>
               <mn>0</mn>
               <mtext>&#x00A0;calories&#x00A0;per&#x00A0;mini</mtext>
               <mo>&#x2212;</mo>
               <mtext>muffin</mtext>
-            </mtd>
-          </mtr>
+              </mtd>
+            </mtr>
           <mtr>
             <mtd>
               <mrow></mrow>
-            </mtd>
-          </mtr>
+              </mtd>
+            </mtr>
           <mtr>
             <mtd>
               <mn>4</mn>
@@ -291,23 +332,25 @@
                 <mrow>
                   <mn>150</mn>
                   <mtext>&#x00A0;calories</mtext>
-                </mrow>
+                  </mrow>
                 <mrow>
                   <mtext>mini</mtext>
                   <mo>&#x2212;</mo>
                   <mtext>muffin</mtext>
-                </mrow>
-              </mfrac>
+                  </mrow>
+                </mfrac>
               <mtext>&#x00A0;totals&#x00A0;6</mtext>
               <mn>00</mn>
               <mtext>&#x00A0;calories&#x00A0;consumed</mtext>
               <mo>.</mo>
-            </mtd>
-          </mtr>
-        </mtable>
+              </mtd>
+            </mtr>
+          </mtable>
       </math>
     </p>
-    <p>4. <strong>Looking Back</strong>. One way to see if our result seems reasonable is to check to see if things seem realistic. Since the 20 mini-muffin batch would be spreading out the calories to more muffins we should expect to see the number of calories per muffin to be smaller when compared to the 12 muffin batch. The 12 muffin batch had 250 calories per muffin while the 20 mini-muffin batch had 150 calories per muffing. This fits our expectations and helps us feel more confident in the final result being correct or at least in the right direction.</p>
+    <ol start="4">
+      <li><strong>Looking Back</strong>. One way to see if our result seems reasonable is to check to see if things seem realistic. Since the 20 mini-muffin batch would be spreading out the calories to more muffins we should expect to see the number of calories per muffin to be smaller when compared to the 12 muffin batch. The 12 muffin batch had 250 calories per muffin while the 20 mini-muffin batch had 150 calories per muffing. This fits our expectations and helps us feel more confident in the final result being correct or at least in the right direction.</li>
+    </ol>
     <p><a href="http://www.youtube.com/watch?v=NVCwFO-w2z4&feature=share&list=PL_PzRS-mVErH0c6u2QqXrTJ54xjijDCty&index=15" target="_blank">Video Solution</a> (cc)</p>
   </div>
   <p>In the next examples solution we will explore another strategy that can help explore the problem while also providing a solution. It uses the Guess and Test method where through an iteration of trials you approach the solution or come up with a strategy based on finding to answer the question.</p>
@@ -315,9 +358,11 @@
     <h3>Example 4</h3>
     <p>A farmer has a total of 20 chickens and cows on his farm. How many of each does he have if all together there are 52 feet?</p>
     <p><strong>Solution</strong></p>
-    <p>1. <strong>Understand the Problem</strong>. The details we need involve the total number of chicken and cows to add up to 20 and when counting the feet a total of 52 is present. Each chicken is assumed to only have two feet and each cow would have four feet. </p>
-    <p>2. <strong>Devise a Plan</strong>. It may help to start with dividing the 20 animals into 10 chickens and 10 cows and explore how many feet you would find with that division. With 10 chickens there are 20 feet (each chicken has two feet) and with 10 cows we would have 40 feet (each cow has four feet). To help organize our work inserting the information in a table and gradually changing values may help identify how to update each new guess.</p>
-    <p>3. <strong>Carry out the Plan</strong>. Start with putting the first results of 10 chickens and 10 cows and add one more row where you add one more cow and one less chicken to see how things change.</p>
+    <ol>
+      <li><strong>Understand the Problem</strong>. The details we need involve the total number of chicken and cows to add up to 20 and when counting the feet a total of 52 is present. Each chicken is assumed to only have two feet and each cow would have four feet. </li>
+      <li><strong>Devise a Plan</strong>. It may help to start with dividing the 20 animals into 10 chickens and 10 cows and explore how many feet you would find with that division. With 10 chickens there are 20 feet (each chicken has two feet) and with 10 cows we would have 40 feet (each cow has four feet). To help organize our work inserting the information in a table and gradually changing values may help identify how to update each new guess.</li>
+      <li><strong>Carry out the Plan</strong>. Start with putting the first results of 10 chickens and 10 cows and add one more row where you add one more cow and one less chicken to see how things change.
+    
     <table width="650" border="1" cellspacing="3" cellpadding="3">
       <tbody>
         <tr>
@@ -342,8 +387,11 @@
           <td>62</td>
         </tr>
       </tbody>
-    </table>
-    <p>Now looking over what happened is that when we updated the number of cows to one more the total number of feet went up. This is heading us in the wrong direction as we wanted to find a total of 52 feet which is less than the 60 feet we had when there were 10 chickens and 10 cows. Lets continue guessing by moving in the other direction (decrease the number of cows and increase the number of chickens).</p>
+  </table>
+    <br>
+    <br>
+ 
+     Now looking over what happened is that when we updated the number of cows to one more the total number of feet went up. This is heading us in the wrong direction as we wanted to find a total of 52 feet which is less than the 60 feet we had when there were 10 chickens and 10 cows. Lets continue guessing by moving in the other direction (decrease the number of cows and increase the number of chickens).
     <table width="650" border="1" cellspacing="3" cellpadding="3">
       <tbody>
         <tr>
@@ -389,9 +437,14 @@
           <td>52</td>
         </tr>
       </tbody>
-    </table>
-    <p>In the last row we see that we found the correct number. With 14 chickens and 6 cows there are a total of 52 feet.</p>
-    <p>4. <strong>Lookin Back</strong>.  Now this time around we used a guess and check approach and then adjusted values to determine what to do next. When raising the number of cows we saw the total feet go up (which makes sense as cows have two more feet than chickens). This strategy is good when there are more limited number of choices to go between. If we had more choices we could update the strategy by changing our guess by larger jumps and applying more logic on the guess based on the situation.</p>
+  </table>
+    <br>
+    <br>
+    In the last row we see that we found the correct number. With 14 chickens and 6 cows there are a total of 52 feet.</li>
+    </ol>
+    <ol start="4">
+      <li><strong>Lookin Back</strong>.  Now this time around we used a guess and check approach and then adjusted values to determine what to do next. When raising the number of cows we saw the total feet go up (which makes sense as cows have two more feet than chickens). This strategy is good when there are more limited number of choices to go between. If we had more choices we could update the strategy by changing our guess by larger jumps and applying more logic on the guess based on the situation.</li>
+    </ol>
   </div>
   <p>The Problem Solving Process outlined in this section gives you a framework to approach problems not just in your mathematics courses. This process is to help you break apart a problem into pieces to help explore what you are working on. As mentioned earlier the mathematics course you are taking that goes along with this text will introduce simple problems where a single step is needed to help you practice on a particular skill or concept, but as you progress you will run into multi-step problems that require you to build out a solution pathway that may take multiple iterations to fine tune. Using the problem solving process can help in identifying what you are trying to answer.</p>
   <h3>Exercises</h3>
@@ -446,3 +499,18 @@
 </section>
 </body>
 </html>
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+mat142-ebook/0-1.html at main · franreyn/mat142-ebook
