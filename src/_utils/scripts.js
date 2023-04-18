@@ -125,8 +125,6 @@ resizerTooltip.innerText = "Adjust page width";
 resizerTooltip.classList.add("tooltip");
 navControls.append(resizerTooltip);
 
-console.log(resizer);
-
 const showTooltip = () => {
   let tooltip = document.querySelector(".tooltip");
   tooltip.style.opacity = "1";
@@ -386,8 +384,6 @@ pageSwitch.append(forwardButton);
 const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
-
-  console.log("change page fuction")
 
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
