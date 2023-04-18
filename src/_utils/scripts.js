@@ -35,12 +35,18 @@ pageController.classList.add("page-controller");
 pageController.classList.add("no-print");
 navWrapper.append(pageController);
 
+// (3a) create and append <div class="nav-controls">
+const navControls = document.createElement("div");
+navControls.classList.add("nav-controls");
+pageController.append(navControls);
+
 // (4) create and append menu-toggle button
 const menuBtn = document.createElement("button");
 menuBtn.type = "button";
 menuBtn.classList.add("nav-toggle");
 menuBtn.innerHTML = navToggleText;
-pageController.append(menuBtn);
+navControls.append(menuBtn);
+
 // (4a) logic for menu-toggle button
 menuBtn.addEventListener("click", () => {
   navWrapper.toggleAttribute("expanded");
@@ -52,7 +58,7 @@ const lightButton = document.createElement("button");
 lightButton.type = "button";
 lightButton.classList.add("darkmode-toggle");
 lightButton.innerHTML = btnContent;
-pageController.append(lightButton);
+navControls.append(lightButton);
 
 // (5a) darkmode logic
 const darkModeBtn = document.querySelector(".darkmode-toggle");
@@ -81,8 +87,9 @@ darkModeBtn.addEventListener("click", () => {
 // (6) create and append resizing button
 const resizer = document.createElement("button");
 resizer.type = "button";
+resizer.setAttribute("data-text", "Adjust page width");
 resizer.classList.add("resizer");
-pageController.append(resizer);
+navControls.append(resizer);
 
 const widthLarge = localStorage.getItem("isWidthLarge");
 // if "isWidthLarge" is null, make it false
@@ -111,6 +118,36 @@ resizer.addEventListener("click", () => {
     resizer.toggleAttribute("resized");
  }
 });
+
+// (6b) add tooltip to resizer 
+const resizerTooltip = document.createElement("span");
+resizerTooltip.innerText = "Adjust page width";
+resizerTooltip.classList.add("tooltip");
+navControls.append(resizerTooltip);
+
+console.log(resizer);
+
+const showTooltip = () => {
+  let tooltip = document.querySelector(".tooltip");
+  tooltip.style.opacity = "1";
+  tooltip.style.transition = "opacity .5s";
+  // tooltip.style.display = "block";
+
+}
+
+const hideTooltip = () => {
+  let tooltip = document.querySelector(".tooltip");
+  tooltip.style.opacity = "0";
+  tooltip.style.transition = "opacity .5s";
+  // tooltip.style.display = "none";
+
+}
+
+resizer.addEventListener("mouseover", showTooltip);
+resizer.addEventListener("mouseout", hideTooltip);
+
+
+
 
 // (7) create and append <nav> to <div id="navigation">
 const nav = document.createElement("nav");
@@ -325,17 +362,23 @@ const toggleHints = async () => {
 toggleHints();
 
 // (14) add back and forwards buttons
+const pageSwitch = document.createElement("div");
+pageSwitch.classList.add("page-switch")
+pageController.append(pageSwitch); 
+
+
+// (14a) create and append back and forward buttons
 const backButton = document.createElement("button");
 backButton.type = "button";
 backButton.classList.add("back-btn");
 backButton.innerHTML = backButtonContent;
-ereaderDisplay.append(backButton); 
+pageSwitch.append(backButton); 
 
 const forwardButton = document.createElement("button");
 forwardButton.type = "button";
 forwardButton.classList.add("forward-btn");
 forwardButton.innerHTML = forwardButtonContent;
-ereaderDisplay.append(forwardButton); 
+pageSwitch.append(forwardButton); 
 
 
 // (14a) call function when one of the buttons are clicked
@@ -348,7 +391,6 @@ const changePage = (direction) => {
 
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
-  console.log(currentUrl)
 
   if(currentUrl == ".html") {
     if(direction == "forward") {
@@ -369,8 +411,6 @@ const changePage = (direction) => {
 
       // If the page matches the current one
       if(lowerCaseHrefs[linkIndex] == currentUrl) {
-
-        console.log(lowerCaseHrefs[linkIndex])
 
         // Go back or forwards one link in navigation
         if(direction == "back") {
@@ -394,4 +434,4 @@ forwardButton.addEventListener("click", () => {
   let direction = "forward"
   changePage(direction)
 
-})
+});
