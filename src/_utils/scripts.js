@@ -10,7 +10,7 @@ const localTocUrl = "http://127.0.0.1:5500/api/toc.json";
 const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
-const ereaderArea = document.querySelector(".ereader-display");
+const ereaderDisplay = document.querySelector(".ereader-display");
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -20,7 +20,6 @@ const getToc = async () => {
 };
 
 // (1) create and prepend <header>
-const ereaderDisplay = document.querySelector(".ereader-display");
 const readerHeader = document.createElement("header");
 ereaderDisplay.prepend(readerHeader); 
 
@@ -92,6 +91,7 @@ resizer.classList.add("resizer");
 navControls.append(resizer);
 
 const widthLarge = localStorage.getItem("isWidthLarge");
+
 // if "isWidthLarge" is null, make it false
 if (widthLarge === null) {
   localStorage.setItem("isWidthLarge", "false");
@@ -99,22 +99,22 @@ if (widthLarge === null) {
 
 // if "isWidthLarge" is true, add attribute
 if (localStorage.getItem("isWidthLarge") === "true") {
-  ereaderArea.setAttribute("widthLarge", "");
+  ereaderDisplay.setAttribute("widthLarge", "");
   resizer.toggleAttribute("resized");
 }
 
-// (6b) click event for darkmode button
+// (6b) click event for resizer
 resizer.addEventListener("click", () => {
   // if "isWidthLarge" is false 
   if (localStorage.getItem("isWidthLarge") === "false") {
     localStorage.setItem("isWidthLarge", "true");
-    ereaderArea.toggleAttribute("widthLarge");
+    ereaderDisplay.toggleAttribute("widthLarge");
     resizer.toggleAttribute("resized");
 
     // if "isWidthLarge" is true
   } else {
     localStorage.setItem("isWidthLarge", "false");
-    ereaderArea.toggleAttribute("widthLarge");
+    ereaderDisplay.toggleAttribute("widthLarge");
     resizer.toggleAttribute("resized");
  }
 });
@@ -139,9 +139,6 @@ const hideTooltip = () => {
 
 resizer.addEventListener("mouseover", showTooltip);
 resizer.addEventListener("mouseout", hideTooltip);
-
-
-
 
 // (7) create and append <nav> to <div id="navigation">
 const nav = document.createElement("nav");
@@ -285,8 +282,8 @@ window.onload = () => {
     }
    }
   }
-  
-  
+} // End of onload functions
+
   // (12) Expand or collapse navigation
   let navIsOpen = false;
   const menuNav = document.querySelector(".nav-toggle");
@@ -330,7 +327,6 @@ window.onload = () => {
       });
     }
   }
-} // End of onload functions
 
 // (13) toggle hints and answers
 const toggleHints = async () => {
@@ -360,7 +356,6 @@ const pageSwitch = document.createElement("div");
 pageSwitch.classList.add("page-switch")
 pageController.append(pageSwitch); 
 
-
 // (14a) create and append back and forward buttons
 const backButton = document.createElement("button");
 backButton.type = "button";
@@ -374,9 +369,7 @@ forwardButton.classList.add("forward-btn");
 forwardButton.innerHTML = forwardButtonContent;
 pageSwitch.append(forwardButton); 
 
-
 // (14a) call function when one of the buttons are clicked
-
 const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
@@ -418,12 +411,9 @@ const changePage = (direction) => {
 backButton.addEventListener("click", () => {
   let direction = "back"
   changePage(direction)
-
 })
 
 forwardButton.addEventListener("click", () => {
-
   let direction = "forward"
   changePage(direction)
-
 });
