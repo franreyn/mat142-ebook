@@ -83,72 +83,15 @@ darkModeBtn.addEventListener("click", () => {
  }
 });
 
-// (6) create and append resizing button
-const resizer = document.createElement("button");
-resizer.type = "button";
-resizer.setAttribute("data-text", "Adjust page width");
-resizer.classList.add("resizer");
-navControls.append(resizer);
-
-const widthLarge = localStorage.getItem("isWidthLarge");
-
-// if "isWidthLarge" is null, make it false
-if (widthLarge === null) {
-  localStorage.setItem("isWidthLarge", "false");
-};
-
-// if "isWidthLarge" is true, add attribute
-if (localStorage.getItem("isWidthLarge") === "true") {
-  ereaderDisplay.setAttribute("widthLarge", "");
-  resizer.toggleAttribute("resized");
-}
-
-// (6b) click event for resizer
-resizer.addEventListener("click", () => {
-  // if "isWidthLarge" is false 
-  if (localStorage.getItem("isWidthLarge") === "false") {
-    localStorage.setItem("isWidthLarge", "true");
-    ereaderDisplay.toggleAttribute("widthLarge");
-    resizer.toggleAttribute("resized");
-
-    // if "isWidthLarge" is true
-  } else {
-    localStorage.setItem("isWidthLarge", "false");
-    ereaderDisplay.toggleAttribute("widthLarge");
-    resizer.toggleAttribute("resized");
- }
-});
-
-// (6b) add tooltip to resizer 
-const resizerTooltip = document.createElement("span");
-resizerTooltip.innerText = "Adjust page width";
-resizerTooltip.classList.add("tooltip");
-navControls.append(resizerTooltip);
-
-const showTooltip = () => {
-  let tooltip = document.querySelector(".tooltip");
-  tooltip.style.opacity = "1";
-  tooltip.style.transition = "opacity .5s";
-}
-
-const hideTooltip = () => {
-  let tooltip = document.querySelector(".tooltip");
-  tooltip.style.opacity = "0";
-  tooltip.style.transition = "opacity .5s";
-}
-
-resizer.addEventListener("mouseover", showTooltip);
-resizer.addEventListener("mouseout", hideTooltip);
-
-// (7) create and append <nav> to <div id="navigation">
+// (6) create and append <nav> to <div id="navigation">
 const nav = document.createElement("nav");
 navWrapper.append(nav);
 
-// (7a) create and append <ul> to <nav>
+// (6a) create and append <ul> to <nav>
 const ul = document.createElement("ul");
 nav.append(ul);
 
-// (7b) append navigation from toc.json
+// (6b) append navigation from toc.json
 const appendNavigation = async () => {
   // import toc data
   const toc = await getToc();
@@ -183,7 +126,10 @@ const appendNavigation = async () => {
       _li.append(a);
     });
   }); 
-  // (7c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
+
+  ul.append(resizer);
+
+  // (6c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
   const navChaptBtn = document.querySelectorAll(".chapter-btn");
   navChaptBtn.forEach((btn) => {
     btn.addEventListener("click", function() {
@@ -193,6 +139,44 @@ const appendNavigation = async () => {
   });
 }
 appendNavigation();
+
+
+// (7) create and append resizing button
+const resizer = document.createElement("button")
+resizer.type = "button";
+resizer.textContent = "Resize page width"
+resizer.classList.add("resizer");
+
+const widthLarge = localStorage.getItem("isWidthLarge");
+
+// if "isWidthLarge" is null, make it false
+if (widthLarge === null) {
+  localStorage.setItem("isWidthLarge", "false");
+};
+
+// if "isWidthLarge" is true, add attribute
+if (localStorage.getItem("isWidthLarge") === "true") {
+  ereaderDisplay.setAttribute("widthLarge", "");
+  resizer.toggleAttribute("resized");
+}
+
+// (7a) click event for resizer
+resizer.addEventListener("click", () => {
+  // if "isWidthLarge" is false 
+  if (localStorage.getItem("isWidthLarge") === "false") {
+    localStorage.setItem("isWidthLarge", "true");
+    ereaderDisplay.toggleAttribute("widthLarge");
+    resizer.toggleAttribute("resized");
+
+    // if "isWidthLarge" is true
+  } else {
+    localStorage.setItem("isWidthLarge", "false");
+    ereaderDisplay.toggleAttribute("widthLarge");
+    resizer.toggleAttribute("resized");
+ }
+}); 
+
+
 
 // (8) add font-awesome to <head>
 const fontAwesome = document.createElement("link");
@@ -227,14 +211,14 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 
     // Show/hide on click
     toggleBtns[toggleBtn].addEventListener("click", () => {      
-      toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show");      
+      toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show-active");      
       changeFootnotesText(toggleBtns,toggleBtn)
     })
 
     // Show/hide on enter for users who use tab
     toggleBtns[toggleBtn].addEventListener("keydown", (enter) => {
       if (enter.keyCode === 13) {
-        toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show");
+        toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show-active");
         changeFootnotesText(toggleBtns,toggleBtn)
       }
     })
@@ -338,13 +322,13 @@ const toggleHints = async () => {
 
     toggle.addEventListener("click", function() {
       const toggleContent = this.nextElementSibling;
-      toggleContent.toggleAttribute("show");
+      toggleContent.toggleAttribute("show-active");
     });
 
     toggle.addEventListener("keydown", function(e) {
       if(e.key == "Enter") {
       const toggleContent = this.nextElementSibling;
-      toggleContent.toggleAttribute("show");
+      toggleContent.toggleAttribute("show-active");
       }
     });
   });
