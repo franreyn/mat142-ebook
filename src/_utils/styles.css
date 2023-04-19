@@ -669,6 +669,11 @@ nav::before {
   background-color: rgba(18, 18, 18, .2);
 }
 
+body[darkmode] .resizer {
+  background-color: var(--dark-layer-3);
+  color: var(--white);
+}
+
 a.chapter-btn {
   text-decoration: none;
   padding-bottom: 20px;
