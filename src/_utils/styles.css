@@ -203,7 +203,7 @@ body[darkmode] #navigation {
   padding-bottom: 5px;
   transition: .5s;
   margin-right: 10%;
-  box-shadow: 0 0 5px #666;
+  box-shadow: 0 0 5px var(--button-grey);
   background-color: var(--white);
 }
 
@@ -916,11 +916,11 @@ body[darkmode] .toggle-footnotes {
   background-color:var(--white);
   border: 2px solid rgba(13,13,13,.1);
   max-height: 0px;
-  -webkit-transition: max-height 2.5s cubic-bezier(0, 1, 0, 1); 
-  -moz-transition: max-height 2.5s cubic-bezier(0, 1, 0, 1); 
-  -ms-transition: max-height 2.5s cubic-bezier(0, 1, 0, 1); 
-  -o-transition: max-height 2s cubic-bezier(0, 1, 0, 1); 
-  transition: max-height 2.5s cubic-bezier(0, 1, 0, 1);  
+  -webkit-transition: max-height .5s ease;
+  -moz-transition: max-height .5s ease; 
+  -ms-transition: max-height .5s ease; 
+  -o-transition: max-height .5s ease;  
+  transition: max-height .5s ease;  
   overflow: hidden;
 }
 
@@ -930,11 +930,11 @@ body[darkmode] .toggle-footnotes {
 
 .show {
   padding: 0 10px;
-  -webkit-transition: max-height 2s ease-in-out; 
-  -moz-transition: max-height 2s ease-in-out; 
-  -ms-transition: max-height 2s ease-in-out; 
-  -o-transition: max-height 2s ease-in-out; 
-  transition: max-height 2s ease-in-out;  
+  -webkit-transition: max-height .5s ease; 
+  -moz-transition: max-height .5s ease; 
+  -ms-transition: max-height .5s ease; 
+  -o-transition: max-height .5s ease; 
+  transition: max-height .5s ease;  
   max-height: 400px;
   overflow:scroll;
 }
@@ -1239,7 +1239,7 @@ body[darkmode] .js-to-expand[show] .exerciseanswer {
     width: fit-content;
     padding-top: 50px;
     left: -100%;
-    box-shadow: 0 0 5px #666;
+    box-shadow: 0 0 5px var(--button-grey);
   } 
 
   #navigation[darkmode] {
