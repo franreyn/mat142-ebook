@@ -358,6 +358,8 @@ const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
 
+  docBody.style.transition = "color-scheme none";
+
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
 
