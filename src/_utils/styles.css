@@ -138,6 +138,15 @@ body[darkmode] .back-btn:hover,body[darkmode] .forward-btn:hover {
   color: var(--white);
 }
 
+a.ext::after {
+  content: "  \f35d";
+  font-family: "FontAwesome";
+  opacity: 1;
+  font-weight: 700; 
+  font-size: .9rem;
+  text-decoration: none;
+}
+
 /* Navigation Mobile */
 #navigation {
   position:fixed;
