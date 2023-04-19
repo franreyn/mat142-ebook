@@ -136,7 +136,6 @@ body[darkmode] .back-btn,body[darkmode] .forward-btn {
 
 body[darkmode] .back-btn:hover,body[darkmode] .forward-btn:hover {
   background-color: var(--dark-layer-4);
-  color: var(--white);
 }
 
 a.ext::after {
@@ -673,6 +672,10 @@ nav::before {
 body[darkmode] .resizer {
   background-color: var(--dark-layer-3);
   color: var(--white);
+}
+
+body[darkmode] .resizer:hover {
+  background-color: var(--dark-layer-4);
 }
 
 a.chapter-btn {
