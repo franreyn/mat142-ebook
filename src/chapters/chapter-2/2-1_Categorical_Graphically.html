@@ -10,805 +10,776 @@
 <title>2.1 Presenting Categorical Data Graphically</title>
 </head>
 <body>
-<section class="ereader-display">
+<section class="ereader-display"> 
   <!-- START YOUR CONTENT--> 
   <!--===================-->
   <main>
-  <h1>2.1 Presenting Categorical Data Graphically</h1>
-  <h2>2.1 Presenting Categorical Data Graphically</h2>
-  <p>Upon completion of this section, you should be able to</p>
-  <ul>
-    <li>Create a frequency table</li>
-    <li>Create bar graphs</li>
-    <li>Create pie charts</li>
-    <li>Identify common graphical mistakes</li>
-  </ul>
-  <hr>
-  <h2>Presenting Categorical Data Graphically</h2>
-  <p>Categorical, or qualitative, data are pieces of information that allow us to classify the objects under investigation into various categories. We usually begin working with categorical data by summarizing the data into a <strong>frequency table.</strong></p>
-  <div class="definition">
-    <h4>Frequency Table</h4>
-    <p>A <strong>frequency table</strong> is a table with two columns. One column lists the categories, and another for the frequencies with which the items in the categories occur (how many items fit into each category).</p>
-  </div>
-  <div class="example">
-    <h3>Example 1</h3>
-    <p>An insurance company determines vehicle insurance premiums based on known risk factors. If a person is considered a higher risk, their premiums will be higher. One potential factor is the color of your car. The insurance company believes that people with some color cars are more likely to get in accidents. To research this, they examine police reports for recent total-loss collisions. The data is summarized in the frequency table below.</p>
-    <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
-      <caption>
-      Car Color
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Color</th>
-          <th scope="col">Frequency</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Blue</td>
-          <td>25</td>
-        </tr>
-        <tr>
-          <td>Green</td>
-          <td>52</td>
-        </tr>
-        <tr>
-          <td>Red</td>
-          <td>41</td>
-        </tr>
-        <tr>
-          <td>White</td>
-          <td>36</td>
-        </tr>
-        <tr>
-          <td>Black</td>
-          <td>39</td>
-        </tr>
-        <tr>
-          <td>Grey</td>
-          <td>23</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>&nbsp;</p>
-    <p>I would caution you on interpreting this data at this point. One of the things we didn't examine was the number of potential of cars of each type of color on the road. Hypothetically speaking if there were twice as many Green cars as Blue cars on the road the difference in the number of Green cars in accidents and Blue cars in accidents may be explained by that total difference in the number of cars of each color on the road.</p>
-  </div>
-  <p>Sometimes we need an even more intuitive way of displaying data. This is where charts and graphs come in. There are many, many ways of displaying data graphically, but we will concentrate on one very useful type of graph called a bar graph. In this section we will work with bar graphs that display categorical data; the next section will be devoted to bar graphs that display quantitative data.</p>
-  <div class="definition">
-    <h4>Bar graph</h4>
-    <p>A <strong>bar graph</strong> is a graph that displays a bar for each category with the length of each bar indicating the frequency of that category.</p>
-  </div>
-  <p>To construct a bar graph, we need to draw a vertical axis and a horizontal axis. The vertical direction will have a scale and measure the frequency of each category; the horizontal axis has no scale in this instance. On the horizontal axis we will create bars to represent each category. It is important that the bars are evenly spaced and each have the same width. The construction of a bar chart is most easily described by use of an example.</p>
-  <div class="example">
-    <h3>Example 2</h3>
-    <p>You would start the process with identifying the frequency as the vertical axis values and the horizontal axis being made up of the categories (color of car). On the vertical axis we look at our data to determine the largest value as we will need to make sure the bar graph can be displayed up to that height. Using our car data above we see the highest frequency is 52, so our vertical axis needs to go from 0 to 52, but we might as well use 0 to 55, so that we can put a hash mark every 5 units. For each category you will create a bar going from 0 to the frequency value in the table (as shown below):</p>
-    <p><img src="../../images/chapter-2/2-1/car-example-bar-graph.png" alt="Bar Graph for data on number of accidents for each color. Horizontal Axis: 'Vehicle color involved in total-loss collision.' Vertical Axis: 'Frequency.' First bar is labeled Blue with height of 25. Second bar is labeled Green with height of 52. Third bar is labeled Red with height of 41. Fourth bar is labeled White with height of 26. Fifth bar is labeled Black with height of 39. Sixth bar is labeled Grey with a height of 23." border="1" height="217" width="383" /></p>
-    <p>Notice that the height of each bar is determined by the frequency of the corresponding color. The horizontal gridlines are a nice touch, but not necessary. In practice, you will find it useful to draw bar graphs using graph paper, so the gridlines will already be in place, or using technology. Instead of gridlines, we might also list the frequencies at the top of each bar, like this:</p>
-    <p><img src="../../images/chapter-2/2-1/car-example-bar-graph-labelson-bars.png" alt="Bar Graph for data on number of accidents for each color with height of each bar labeled on top of each bar. Horizontal Axis: 'Vehicle color involved in total-loss collision.' Vertical Axis: 'Frequency.' First bar is labeled Blue with height of 25. Second bar is labeled Green with height of 52. Third bar is labeled Red with height of 41. Fourth bar is labeled White with height of 26. Fifth bar is labeled Black with height of 39. Sixth bar is labeled Grey with a height of 23." border="2" height="217" width="371" /></p>
-    <p>These types of graphs are typically easy to create in a spreadsheet program, like Excel or Google Sheets.</p>
-  </div>
-  <p>In the above example, our chart might benefit from being reordered from largest to smallest frequency values. This arrangement can make it easier to compare similar values in the chart, even without gridlines. When we arrange the categories in decreasing frequency order like this, it is called a <strong>Pareto chart</strong>.</p>
-  <p><a href="http://youtu.be/vwxKf_O3ui0" target="_blank">Video Summary of Example 1 and 2</a> (cc)</p>
-  <div class="definition">
-    <h4>Pareto chart</h4>
-    <p>A <strong>Pareto chart</strong> is a bar graph ordered from highest to lowest frequency.</p>
-  </div>
-  <div class="example">
-    <h3>Example 3</h3>
-    <p>Transforming our bar graph from earlier into a Pareto chart, we get:</p>
-    <p><img src="../../images/chapter-2/2-1/car-example-bar-graph-pareto.png" alt="Bar Graph for data on number of accidents for each color with height of each bar labeled on top of each bar and bars are in decreasing order based on Frequency. Horizontal Axis: 'Vehicle color involved in total-loss collision.' Vertical Axis: 'Frequency.' First bar is labeled Blue with height of 25. Second bar is labeled Green with height of 52. Third bar is labeled Red with height of 41. Fourth bar is labeled White with height of 26. Fifth bar is labeled Black with height of 39. Sixth bar is labeled Grey with a height of 23." border="2" height="225" width="381" /></p>
-    <p><a href="http://youtu.be/Tsvru8DPxBE" target="_blank">Video Solution Example 3</a> (cc)</p>
-  </div>
-  <div class="example">
-    <h3>Example 4</h3>
-    <p>In some cases the bar graph categories may have an implied order (like dates or quarters) and we would not want to move those categories in a different order as it would lose the meaning behind the graphic. Take the example below from Statista about the revenue for Zoom. As you read this graph we are seeing a progression in time of the revenue growth of Zoom. Reordering from largest to small would lose the meaning behind what we are seeing with the visual representation of the revenue growth through time and the huge increase in the 2021 fiscal year report (not 2021 fiscal year started in January 2020). That huge increase in growth was explained by the start of the Covid-19 Pandemic.</p>
-    <p><a href="https://www.statista.com/chart/21906/zoom-revenue/" title="Infographic: Zoom's Revenue Skyrockets On Pandemic Boost | Statista"><img src="https://cdn.statcdn.com/Infographic/images/normal/21906.jpeg" alt="Infographic: Zoom's Revenue Skyrockets On Pandemic Boost | Statista" width="70%" height="auto" style="width: 70%; height: auto !important; max-width:960px;-ms-interpolation-mode: bicubic;"/></a> You will find more infographics at <a href="https://www.statista.com/chartoftheday/">Statista</a></p>
-  </div>
-  <div class="example">
-    <h3>Example 5</h3>
-    <p>In a survey<a href="#_ftn1" name="_ftnref1" title=""></a><sup>1</sup> , adults were asked whether they personally worried about a variety of environmental concerns.&nbsp; The number (out of 1012 surveyed) indicating that they worried &ldquo;a great deal&rdquo; about some selected concerns is summarized below.</p>
-    <table class="display-lg" cellpadding="5" cellspacing="0" width="50%">
-      <caption>
-      Environmental Issue and Frequency
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Environmental Issue</th>
-          <th scope="col">Frequency</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Pollution of drinking water</td>
-          <td>597</td>
-        </tr>
-        <tr>
-          <td>Contamination of soil and water by toxic waste</td>
-          <td>526</td>
-        </tr>
-        <tr>
-          <td>Air pollution</td>
-          <td>455</td>
-        </tr>
-        <tr>
-          <td>Global warming</td>
-          <td>354</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>This data could be shown graphically in a bar graph:</p>
-    <p><img src="../../images/chapter-2/2-1/environmental-worries-bar-graph.png" alt="Bar Graph for data on number of responses on an environmental concern. Horizontal Axis: 'Environmental Worries.' Vertical Axis: 'Frequency.' First bar is labeled Water Pollution with height of 597. Second bar is labeled Toxic Waste with height of 526. Third bar is labeled Air Pollution with height of 455. Fourth bar is labeled Global Warming with height of 354." border="2" height="239" width="573" /></p>
-  </div>
-  <p>To show relative sizes, it is common to use a pie chart. In a pie chart a circle is divided into wedges where each category represents a wedge. The size of the wedge of the whole circle is relative to the frequency for that category when compared to all of the data. If one category represents 25% of the data, than the wedge for that category would be 25% of the circle.</p>
-  <div class="definition">
-    <h4>Pie Chart</h4>
-    <p>A <strong>pie chart</strong> is a circle with wedges that represent each categories relative frequencies.</p>
-  </div>
-  <div class="example">
-    <h3>Example 6</h3>
-    <p>To construct a pie chart for the vehicle color data we start by adding a new column to our original frequency table and title it as Relative Frequency. The relative frequency for each car color is then found by taking
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mfrac>
-            <mrow>
-              <mtext>Category&#x00A0;Frequency</mtext>
-            </mrow>
-            <mrow>
-              <mtext>Total&#x00A0;of&#x00A0;all&#x00A0;Frequency</mtext>
-            </mrow>
-          </mfrac>
-          <mo>&#x22C5;</mo>
-          <mn>100</mn>
-          <mi>&#x0025;</mi>
-        </mrow>
-      </math>
-      . For example to find the Blue relative frequency first find the total number in our frequency column (25+52+41+36+39+23=216) and then calculate the relative frequency:
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mfrac>
-            <mrow>
-              <mtext>25</mtext>
-            </mrow>
-            <mrow>
-              <mn>216</mn>
-            </mrow>
-          </mfrac>
-          <mo>&#x22C5;</mo>
-          <mn>100</mn>
-          <mi>&#x0025;</mi>
-          <mo>&#x2248;</mo>
-          <mn>11.6</mn>
-          <mi>&#x0025;</mi>
-        </mrow>
-      </math>
-    </p>
-    <p>Now do this for each vehicle color:</p>
-    <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
-      <caption>
-      Car Color
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Color</th>
-          <th scope="col">Frequency</th>
-          <th scope="col">Relative Frequency</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Blue</td>
-          <td>25</td>
-          <td>11.6&#37;</td>
-        </tr>
-        <tr>
-          <td>Green</td>
-          <td>52</td>
-          <td>24.1&#37;</td>
-        </tr>
-        <tr>
-          <td>Red</td>
-          <td>41</td>
-          <td>19.0&#37;</td>
-        </tr>
-        <tr>
-          <td>White</td>
-          <td>36</td>
-          <td>16.7&#37;</td>
-        </tr>
-        <tr>
-          <td>Black</td>
-          <td>39</td>
-          <td>18.1&#37;</td>
-        </tr>
-        <tr>
-          <td>Grey</td>
-          <td>23</td>
-          <td>10.6&#37;</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>For our vehicle color data, a pie chart might look like this:</p>
-    <p><img src="../../images/chapter-2/2-1/car-example-pie-chart.png" alt="Pie chart labeled 'Vehicle color involved in total-loss collisions' where each slice of the pie is the same color of the vehicle color it represents. The size of the slice is the relative size of each colors count of the whole. Blue has 11.6% of the total area. Green has 24.1% of the total area. Red has 19.0% of the total area. White has 16.7% of the total area. Black has 18.1% of the total area. Grey has 10.1% of the total area. A legend is included which indicates which color on the pie chart is related to each color of the vehicle in a total-loss collision." border="2" height="211" width="377" /></p>
-    <p>When looking at the above pie chart you may have a hard time determining which wedge is the largest, 2nd largest, and so on. Pie charts can often benefit from including frequencies or relative frequencies (percent) in the chart next to the pie slices. Often having the category names in a legend next to the pie slices is helpful we can also attach the names to the slices in most programs (as seen below).</p>
-    <p>
-      <img src="../../images/chapter-2/2-1/car-example-pie-chart-with-frequencies.png" alt="Pie chart labeled 'Vehicle color involved in total-loss collisions' where each slice of the pie is the same color of the vehicle color it represents. Next to each slice of pie the frequency is also given. The size of the slice is the relative size of each colors count of the whole. Blue has 11.6% of the total area with a frequency of 25. Green has 24.1% of the total area with a frequency of 52. Red has 19.0% of the total area with a frequency of 41. White has 16.7% of the total area with a frequency of 36. Black has 18.1% of the total area with a frequency of 39. Grey has 10.1% of the total area with a frequency of 23." border="2" height="240" width="378" /></p>
-    <p><a href="http://youtu.be/__1f8dKh6yo" target="_blank">Video Solution Example 5</a> (cc)</p>
-  </div>
-  <div class="example">
-    <h3>Example 7</h3>
-    <div class="side-by-side">
-      <div class="side-by-side-item">
-        <img src="../../images/chapter-2/2-1/voter-preference-pie-chart.png" alt="" height="197" width="262" />
-      </div>
-      <div class="side-by-side-item">
-        <p>The pie chart to the right shows the percentage of voters supporting each candidate running for a local senate seat.&nbsp;</p>
-        <p>If there are 20,000 voters in the district, the pie chart shows that about 11% of those, about 2,200 voters, support Reeves.</p>
-      </div>
-      <p>Take note that without the percentages labeled on the graph it would be hard to determine if Ellison had indeed received more votes than Douglas. By including the percentages we give both a visual and numeric way to compare different groups in the pie chart.</p>
+    <h1>2.1 Presenting Categorical Data Graphically</h1>
+    <h2>2.1 Presenting Categorical Data Graphically</h2>
+    <p>Upon completion of this section, you should be able to</p>
+    <ul>
+      <li>Create a frequency table</li>
+      <li>Create bar graphs</li>
+      <li>Create pie charts</li>
+      <li>Identify common graphical mistakes</li>
+    </ul>
+    <hr>
+    <h2>Presenting Categorical Data Graphically</h2>
+    <p>Categorical, or qualitative, data are pieces of information that allow us to classify the objects under investigation into various categories. We usually begin working with categorical data by summarizing the data into a <strong>frequency table.</strong></p>
+    <div class="definition">
+      <h4>Frequency Table</h4>
+      <p>A <strong>frequency table</strong> is a table with two columns. One column lists the categories, and another for the frequencies with which the items in the categories occur (how many items fit into each category).</p>
     </div>
-    <p><a href="http://youtu.be/mwa8vQnGr3I" target="_blank">Video Solution Example 6</a> (cc)</p>
-  </div>
-  <p>Pie charts look nice, but are harder to draw by hand than bar charts since to draw them accurately we would need to compute the angle each wedge cuts out of the circle, then measure the angle with a protractor.&nbsp; Computers are much better suited to drawing pie charts. Common software programs like Excel or Google Sheets are able to create bar graphs, pie charts, and other graph types. There are also numerous online tools that can create graphs<a href="#_ftn2" name="_ftnref2" title=""></a> <sup>2</sup> .</p>
-  <div class="tryitnow">
-    <h3>Try it Now 1</h3>
-    <p>Create a bar graph and a pie chart to illustrate the grades on a history exam below.<br />
-      A: 12 students, B: 19 students, C: 14 students, D: 4 students, F: 5 students</p>
-    <h5 class="js-expandmore">Answer</h5>
-    <div class="js-to-expand">
-      <p>Start with creating a frequency table and adding the relative frequency column (for the pie chart).</p>
+    <div class="example">
+      <h3>Example 1</h3>
+      <p>An insurance company determines vehicle insurance premiums based on known risk factors. If a person is considered a higher risk, their premiums will be higher. One potential factor is the color of your car. The insurance company believes that people with some color cars are more likely to get in accidents. To research this, they examine police reports for recent total-loss collisions. The data is summarized in the frequency table below.</p>
       <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
         <caption>
-        History Exam Grades
+        Car Color
         </caption>
         <thead>
           <tr>
-            <th scope="col">Grade</th>
+            <th scope="col">Color</th>
+            <th scope="col">Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blue</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Green</td>
+            <td>52</td>
+          </tr>
+          <tr>
+            <td>Red</td>
+            <td>41</td>
+          </tr>
+          <tr>
+            <td>White</td>
+            <td>36</td>
+          </tr>
+          <tr>
+            <td>Black</td>
+            <td>39</td>
+          </tr>
+          <tr>
+            <td>Grey</td>
+            <td>23</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>&nbsp;</p>
+      <p>I would caution you on interpreting this data at this point. One of the things we didn't examine was the number of potential of cars of each type of color on the road. Hypothetically speaking if there were twice as many Green cars as Blue cars on the road the difference in the number of Green cars in accidents and Blue cars in accidents may be explained by that total difference in the number of cars of each color on the road.</p>
+    </div>
+    <p>Sometimes we need an even more intuitive way of displaying data. This is where charts and graphs come in. There are many, many ways of displaying data graphically, but we will concentrate on one very useful type of graph called a bar graph. In this section we will work with bar graphs that display categorical data; the next section will be devoted to bar graphs that display quantitative data.</p>
+    <div class="definition">
+      <h4>Bar graph</h4>
+      <p>A <strong>bar graph</strong> is a graph that displays a bar for each category with the length of each bar indicating the frequency of that category.</p>
+    </div>
+    <p>To construct a bar graph, we need to draw a vertical axis and a horizontal axis. The vertical direction will have a scale and measure the frequency of each category; the horizontal axis has no scale in this instance. On the horizontal axis we will create bars to represent each category. It is important that the bars are evenly spaced and each have the same width. The construction of a bar chart is most easily described by use of an example.</p>
+    <div class="example">
+      <h3>Example 2</h3>
+      <p>You would start the process with identifying the frequency as the vertical axis values and the horizontal axis being made up of the categories (color of car). On the vertical axis we look at our data to determine the largest value as we will need to make sure the bar graph can be displayed up to that height. Using our car data above we see the highest frequency is 52, so our vertical axis needs to go from 0 to 52, but we might as well use 0 to 55, so that we can put a hash mark every 5 units. For each category you will create a bar going from 0 to the frequency value in the table (as shown below):</p>
+      <img src="../../images/chapter-2/2-1/car-example-bar-graph.png" alt="Bar Graph for data on number of accidents for each color. Horizontal Axis: 'Vehicle color involved in total-loss collision.' Vertical Axis: 'Frequency.' First bar is labeled Blue with height of 25. Second bar is labeled Green with height of 52. Third bar is labeled Red with height of 41. Fourth bar is labeled White with height of 26. Fifth bar is labeled Black with height of 39. Sixth bar is labeled Grey with a height of 23." border="1" height="217" width="383" />
+      <p>Notice that the height of each bar is determined by the frequency of the corresponding color. The horizontal gridlines are a nice touch, but not necessary. In practice, you will find it useful to draw bar graphs using graph paper, so the gridlines will already be in place, or using technology. Instead of gridlines, we might also list the frequencies at the top of each bar, like this:</p>
+      <img src="../../images/chapter-2/2-1/car-example-bar-graph-labelson-bars.png" alt="Bar Graph for data on number of accidents for each color with height of each bar labeled on top of each bar. Horizontal Axis: 'Vehicle color involved in total-loss collision.' Vertical Axis: 'Frequency.' First bar is labeled Blue with height of 25. Second bar is labeled Green with height of 52. Third bar is labeled Red with height of 41. Fourth bar is labeled White with height of 26. Fifth bar is labeled Black with height of 39. Sixth bar is labeled Grey with a height of 23." border="2" height="217" width="371" />
+      <p>These types of graphs are typically easy to create in a spreadsheet program, like Excel or Google Sheets.</p>
+    </div>
+    <p>In the above example, our chart might benefit from being reordered from largest to smallest frequency values. This arrangement can make it easier to compare similar values in the chart, even without gridlines. When we arrange the categories in decreasing frequency order like this, it is called a <strong>Pareto chart</strong>.</p>
+    <p><a href="http://youtu.be/vwxKf_O3ui0" target="_blank">Video Summary of Example 1 and 2</a> (cc)</p>
+    <div class="definition">
+      <h4>Pareto chart</h4>
+      <p>A <strong>Pareto chart</strong> is a bar graph ordered from highest to lowest frequency.</p>
+    </div>
+    <div class="example">
+      <h3>Example 3</h3>
+      <p>Transforming our bar graph from earlier into a Pareto chart, we get:</p>
+      <img src="../../images/chapter-2/2-1/car-example-bar-graph-pareto.png" alt="Bar Graph for data on number of accidents for each color with height of each bar labeled on top of each bar and bars are in decreasing order based on Frequency. Horizontal Axis: 'Vehicle color involved in total-loss collision.' Vertical Axis: 'Frequency.' First bar is labeled Blue with height of 25. Second bar is labeled Green with height of 52. Third bar is labeled Red with height of 41. Fourth bar is labeled White with height of 26. Fifth bar is labeled Black with height of 39. Sixth bar is labeled Grey with a height of 23." border="2" height="225" width="381" />
+      <p><a href="http://youtu.be/Tsvru8DPxBE" target="_blank">Video Solution Example 3</a> (cc)</p>
+    </div>
+    <div class="example">
+      <h3>Example 4</h3>
+      <p>In some cases the bar graph categories may have an implied order (like dates or quarters) and we would not want to move those categories in a different order as it would lose the meaning behind the graphic. Take the example below from Statista about the revenue for Zoom. As you read this graph we are seeing a progression in time of the revenue growth of Zoom. Reordering from largest to small would lose the meaning behind what we are seeing with the visual representation of the revenue growth through time and the huge increase in the 2021 fiscal year report (not 2021 fiscal year started in January 2020). That huge increase in growth was explained by the start of the Covid-19 Pandemic.</p>
+      <a href="https://www.statista.com/chart/21906/zoom-revenue/" title="Infographic: Zoom's Revenue Skyrockets On Pandemic Boost | Statista"><img src="https://cdn.statcdn.com/Infographic/images/normal/21906.jpeg" alt="Infographic: Zoom's Revenue Skyrockets On Pandemic Boost | Statista" width="70%" height="auto" style="width: 70%; height: auto !important; max-width:960px;-ms-interpolation-mode: bicubic;"/></a> You will find more infographics at <a href="https://www.statista.com/chartoftheday/">Statista</a> </div>
+    <div class="example">
+      <h3>Example 5</h3>
+      <p>In a survey<a href="#_ftn1" name="_ftnref1" title=""><sup>1</sup> </a>, adults were asked whether they personally worried about a variety of environmental concerns.&nbsp; The number (out of 1012 surveyed) indicating that they worried &ldquo;a great deal&rdquo; about some selected concerns is summarized below.</p>
+      <table class="display-lg" cellpadding="5" cellspacing="0" width="50%">
+        <caption>
+        Environmental Issue and Frequency
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Environmental Issue</th>
+            <th scope="col">Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pollution of drinking water</td>
+            <td>597</td>
+          </tr>
+          <tr>
+            <td>Contamination of soil and water by toxic waste</td>
+            <td>526</td>
+          </tr>
+          <tr>
+            <td>Air pollution</td>
+            <td>455</td>
+          </tr>
+          <tr>
+            <td>Global warming</td>
+            <td>354</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>This data could be shown graphically in a bar graph:</p>
+      <img src="../../images/chapter-2/2-1/environmental-worries-bar-graph.png" alt="Bar Graph for data on number of responses on an environmental concern. Horizontal Axis: 'Environmental Worries.' Vertical Axis: 'Frequency.' First bar is labeled Water Pollution with height of 597. Second bar is labeled Toxic Waste with height of 526. Third bar is labeled Air Pollution with height of 455. Fourth bar is labeled Global Warming with height of 354." border="2" height="239" width="573" /> </div>
+    <p>To show relative sizes, it is common to use a pie chart. In a pie chart a circle is divided into wedges where each category represents a wedge. The size of the wedge of the whole circle is relative to the frequency for that category when compared to all of the data. If one category represents 25% of the data, than the wedge for that category would be 25% of the circle.</p>
+    <div class="definition">
+      <h4>Pie Chart</h4>
+      <p>A <strong>pie chart</strong> is a circle with wedges that represent each categories relative frequencies.</p>
+    </div>
+    <div class="example">
+      <h3>Example 6</h3>
+      <p>To construct a pie chart for the vehicle color data we start by adding a new column to our original frequency table and title it as Relative Frequency. The relative frequency for each car color is then found by taking
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mtext>Category&#x00A0;Frequency</mtext>
+              </mrow>
+              <mrow>
+                <mtext>Total&#x00A0;of&#x00A0;all&#x00A0;Frequency</mtext>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mn>100</mn>
+            <mi>&#x0025;</mi>
+          </mrow>
+        </math>
+        . For example to find the Blue relative frequency first find the total number in our frequency column (25+52+41+36+39+23=216) and then calculate the relative frequency:
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mtext>25</mtext>
+              </mrow>
+              <mrow>
+                <mn>216</mn>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mn>100</mn>
+            <mi>&#x0025;</mi>
+            <mo>&#x2248;</mo>
+            <mn>11.6</mn>
+            <mi>&#x0025;</mi>
+          </mrow>
+        </math>
+      </p>
+      <p>Now do this for each vehicle color:</p>
+      <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+        <caption>
+        Car Color
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Color</th>
             <th scope="col">Frequency</th>
             <th scope="col">Relative Frequency</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>A</td>
-            <td>12</td>
-            <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mrow>
-                  <mfrac>
-                    <mrow>
-                      <mtext>12</mtext>
-                    </mrow>
-                    <mrow>
-                      <mn>54</mn>
-                    </mrow>
-                  </mfrac>
-                  <mo>&#x22C5;</mo>
-                  <mn>100</mn>
-                  <mi>&#x0025;</mi>
-                  <mo>&#x2248;</mo>
-                  <mn>22.2</mn>
-                  <mi>&#x0025;</mi>
-                </mrow>
-              </math></td>
+            <td>Blue</td>
+            <td>25</td>
+            <td>11.6&#37;</td>
           </tr>
           <tr>
-            <td>B</td>
-            <td>19</td>
-            <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mrow>
-                  <mfrac>
-                    <mrow>
-                      <mtext>19</mtext>
-                    </mrow>
-                    <mrow>
-                      <mn>54</mn>
-                    </mrow>
-                  </mfrac>
-                  <mo>&#x22C5;</mo>
-                  <mn>100</mn>
-                  <mi>&#x0025;</mi>
-                  <mo>&#x2248;</mo>
-                  <mn>35.2</mn>
-                  <mi>&#x0025;</mi>
-                </mrow>
-              </math></td>
+            <td>Green</td>
+            <td>52</td>
+            <td>24.1&#37;</td>
           </tr>
           <tr>
-            <td>C</td>
-            <td>14</td>
-            <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mrow>
-                  <mfrac>
-                    <mrow>
-                      <mtext>14</mtext>
-                    </mrow>
-                    <mrow>
-                      <mn>54</mn>
-                    </mrow>
-                  </mfrac>
-                  <mo>&#x22C5;</mo>
-                  <mn>100</mn>
-                  <mi>&#x0025;</mi>
-                  <mo>&#x2248;</mo>
-                  <mn>25.9</mn>
-                  <mi>&#x0025;</mi>
-                </mrow>
-              </math></td>
+            <td>Red</td>
+            <td>41</td>
+            <td>19.0&#37;</td>
           </tr>
           <tr>
-            <td>D</td>
-            <td>4</td>
-            <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mrow>
-                  <mfrac>
-                    <mtext>4</mtext>
-                    <mrow>
-                      <mn>54</mn>
-                    </mrow>
-                  </mfrac>
-                  <mo>&#x22C5;</mo>
-                  <mn>100</mn>
-                  <mi>&#x0025;</mi>
-                  <mo>&#x2248;</mo>
-                  <mn>7.4</mn>
-                  <mi>&#x0025;</mi>
-                </mrow>
-              </math></td>
+            <td>White</td>
+            <td>36</td>
+            <td>16.7&#37;</td>
           </tr>
           <tr>
-            <td>F</td>
-            <td>5</td>
-            <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mrow>
-                  <mfrac>
-                    <mn>5</mn>
-                    <mrow>
-                      <mn>54</mn>
-                    </mrow>
-                  </mfrac>
-                  <mo>&#x22C5;</mo>
-                  <mn>100</mn>
-                  <mi>&#x0025;</mi>
-                  <mo>&#x2248;</mo>
-                  <mn>9.3</mn>
-                  <mi>&#x0025;</mi>
-                </mrow>
-              </math></td>
+            <td>Black</td>
+            <td>39</td>
+            <td>18.1&#37;</td>
+          </tr>
+          <tr>
+            <td>Grey</td>
+            <td>23</td>
+            <td>10.6&#37;</td>
           </tr>
         </tbody>
       </table>
-      <p>Both charts are given below.</p>
-      <p><img src="../../images/chapter-2/2-1/history-exam-grades.png" alt="Two graphs displayed. First is a bar graph with Grade on horizontal axis and Frequency on vertical axis. First bar represents A with a frequency of about 12, second bar represent B with a frequency about 18, third bar represents C with a frequency of about 14, fourth bar represents D with a frequency of about 4, fifth bar represents F with a frequency of 5. The second graph is a pie chart. Each letter grade represents a different region and has the percentage of students labeled next to the letter grade: A 22%, B 36%, C 26%, D 7%, and F 9%." border="2" height="248" width="591" /></p>
-      <p>Be aware we only did the relative frequency as an exercise to show where the numbers in the pie chart came from. Typical software packages do not require you to do that step.</p>
+      <p>For our vehicle color data, a pie chart might look like this:</p>
+      <img src="../../images/chapter-2/2-1/car-example-pie-chart.png" alt="Pie chart labeled 'Vehicle color involved in total-loss collisions' where each slice of the pie is the same color of the vehicle color it represents. The size of the slice is the relative size of each colors count of the whole. Blue has 11.6% of the total area. Green has 24.1% of the total area. Red has 19.0% of the total area. White has 16.7% of the total area. Black has 18.1% of the total area. Grey has 10.1% of the total area. A legend is included which indicates which color on the pie chart is related to each color of the vehicle in a total-loss collision." border="2" height="211" width="377" />
+      <p>When looking at the above pie chart you may have a hard time determining which wedge is the largest, 2nd largest, and so on. Pie charts can often benefit from including frequencies or relative frequencies (percent) in the chart next to the pie slices. Often having the category names in a legend next to the pie slices is helpful we can also attach the names to the slices in most programs (as seen below).</p>
+      <img src="../../images/chapter-2/2-1/car-example-pie-chart-with-frequencies.png" alt="Pie chart labeled 'Vehicle color involved in total-loss collisions' where each slice of the pie is the same color of the vehicle color it represents. Next to each slice of pie the frequency is also given. The size of the slice is the relative size of each colors count of the whole. Blue has 11.6% of the total area with a frequency of 25. Green has 24.1% of the total area with a frequency of 52. Red has 19.0% of the total area with a frequency of 41. White has 16.7% of the total area with a frequency of 36. Black has 18.1% of the total area with a frequency of 39. Grey has 10.1% of the total area with a frequency of 23." border="2" height="240" width="378" />
+      <p><a href="http://youtu.be/__1f8dKh6yo" target="_blank">Video Solution Example 5</a> (cc)</p>
     </div>
-  </div>
-  <h2>Common Mistakes on Graphs</h2>
-  <p><a href="http://youtu.be/bFwTZNGNLKs" target="_blank">Video Summary of Bad Graphs</a> (cc)</p>
-  <div class="side-by-side">
-    <div class="side-by-side-item">
-      <img src="../../images/chapter-2/2-1/3d-bar-graph.png" alt="3-dimensional bar graph for number of vehicles of a particular color involved in a total-loss collision." border="2" height="195" width="245" />
+    <div class="example">
+      <h3>Example 7</h3>
+      <div class="side-by-side">
+        <div class="side-by-side-item"> <img src="../../images/chapter-2/2-1/voter-preference-pie-chart.png" alt="" height="197" width="262" /> </div>
+        <div class="side-by-side-item">
+          <p>The pie chart to the right shows the percentage of voters supporting each candidate running for a local senate seat.&nbsp;</p>
+          <p>If there are 20,000 voters in the district, the pie chart shows that about 11% of those, about 2,200 voters, support Reeves.</p>
+        </div>
+        <p>Take note that without the percentages labeled on the graph it would be hard to determine if Ellison had indeed received more votes than Douglas. By including the percentages we give both a visual and numeric way to compare different groups in the pie chart.</p>
+      </div>
+      <p><a href="http://youtu.be/mwa8vQnGr3I" target="_blank">Video Solution Example 6</a> (cc)</p>
     </div>
-    <div class="side-by-side-item">
-      <p>Don&rsquo;t get fancy with graphs! People sometimes add features to graphs that don&rsquo;t help to convey their information. For example, 3-dimensional bar charts like the one shown on the left are usually not as effective as their two-dimensional counterparts. This chart makes it very challenging to determine the heights of the bars due to the horizontal axis being skewed. It would be really challenging to determine if there were more blue or more black cars involved in a total-loss collision.</p>
+    <p>Pie charts look nice, but are harder to draw by hand than bar charts since to draw them accurately we would need to compute the angle each wedge cuts out of the circle, then measure the angle with a protractor.&nbsp; Computers are much better suited to drawing pie charts. Common software programs like Excel or Google Sheets are able to create bar graphs, pie charts, and other graph types. There are also numerous online tools that can create graphs<a href="#_ftn2" name="_ftnref2" title=""><sup>2</sup></a> .</p>
+    <div class="tryitnow">
+      <h3>Try it Now 1</h3>
+      <p>Create a bar graph and a pie chart to illustrate the grades on a history exam below.<br />
+        A: 12 students, B: 19 students, C: 14 students, D: 4 students, F: 5 students</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to-expand">
+        <p>Start with creating a frequency table and adding the relative frequency column (for the pie chart).</p>
+        <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+          <caption>
+          History Exam Grades
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Grade</th>
+              <th scope="col">Frequency</th>
+              <th scope="col">Relative Frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>12</td>
+              <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mtext>12</mtext>
+                      </mrow>
+                      <mrow>
+                        <mn>54</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>&#x22C5;</mo>
+                    <mn>100</mn>
+                    <mi>&#x0025;</mi>
+                    <mo>&#x2248;</mo>
+                    <mn>22.2</mn>
+                    <mi>&#x0025;</mi>
+                  </mrow>
+                </math></td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>19</td>
+              <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mtext>19</mtext>
+                      </mrow>
+                      <mrow>
+                        <mn>54</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>&#x22C5;</mo>
+                    <mn>100</mn>
+                    <mi>&#x0025;</mi>
+                    <mo>&#x2248;</mo>
+                    <mn>35.2</mn>
+                    <mi>&#x0025;</mi>
+                  </mrow>
+                </math></td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>14</td>
+              <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mtext>14</mtext>
+                      </mrow>
+                      <mrow>
+                        <mn>54</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>&#x22C5;</mo>
+                    <mn>100</mn>
+                    <mi>&#x0025;</mi>
+                    <mo>&#x2248;</mo>
+                    <mn>25.9</mn>
+                    <mi>&#x0025;</mi>
+                  </mrow>
+                </math></td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>4</td>
+              <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mtext>4</mtext>
+                      <mrow>
+                        <mn>54</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>&#x22C5;</mo>
+                    <mn>100</mn>
+                    <mi>&#x0025;</mi>
+                    <mo>&#x2248;</mo>
+                    <mn>7.4</mn>
+                    <mi>&#x0025;</mi>
+                  </mrow>
+                </math></td>
+            </tr>
+            <tr>
+              <td>F</td>
+              <td>5</td>
+              <td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mfrac>
+                      <mn>5</mn>
+                      <mrow>
+                        <mn>54</mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>&#x22C5;</mo>
+                    <mn>100</mn>
+                    <mi>&#x0025;</mi>
+                    <mo>&#x2248;</mo>
+                    <mn>9.3</mn>
+                    <mi>&#x0025;</mi>
+                  </mrow>
+                </math></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Both charts are given below.</p>
+        <img src="../../images/chapter-2/2-1/history-exam-grades.png" alt="Two graphs displayed. First is a bar graph with Grade on horizontal axis and Frequency on vertical axis. First bar represents A with a frequency of about 12, second bar represent B with a frequency about 18, third bar represents C with a frequency of about 14, fourth bar represents D with a frequency of about 4, fifth bar represents F with a frequency of 5. The second graph is a pie chart. Each letter grade represents a different region and has the percentage of students labeled next to the letter grade: A 22%, B 36%, C 26%, D 7%, and F 9%." border="2" height="248" width="591" />
+        <p>Be aware we only did the relative frequency as an exercise to show where the numbers in the pie chart came from. Typical software packages do not require you to do that step.</p>
+      </div>
     </div>
-    </div>
-  <p>Here is another way that fanciness can lead to trouble. Instead of plain bars, it is tempting to substitute meaningful images. This type of graph is called a <strong>pictogram</strong>.</p>
-  <div class="definition">
-    <h4>Pictogram</h4>
-    <p>A <strong>pictogram</strong> is a statistical graphic in which the size of the picture is intended to represent the frequencies or size of the values being represented.</p>
-  </div>
-  <div class="example">
-    <h3>Example 8</h3>
+    <h2>Common Mistakes on Graphs</h2>
+    <p><a href="http://youtu.be/bFwTZNGNLKs" target="_blank">Video Summary of Bad Graphs</a> (cc)</p>
     <div class="side-by-side">
+      <div class="side-by-side-item"> <img src="../../images/chapter-2/2-1/3d-bar-graph.png" alt="3-dimensional bar graph for number of vehicles of a particular color involved in a total-loss collision." border="2" height="195" width="245" /> </div>
       <div class="side-by-side-item">
-        <img src="../../images/chapter-2/2-1/managers-and-workers-salaries.png" alt="Two money bags are in the picture. The first money bag is labeled Manager Salaries and looks to be four times as large as the second money bag labeled Workers Salaries." height="221" width="193" />
-      </div>
-      <div class="side-by-side-item">
-        <p>A labor union might produce the graph to the right to show the difference between the average manager salary and the average worker salary.</p>
+        <p>Don&rsquo;t get fancy with graphs! People sometimes add features to graphs that don&rsquo;t help to convey their information. For example, 3-dimensional bar charts like the one shown on the left are usually not as effective as their two-dimensional counterparts. This chart makes it very challenging to determine the heights of the bars due to the horizontal axis being skewed. It would be really challenging to determine if there were more blue or more black cars involved in a total-loss collision.</p>
       </div>
     </div>
-    <p>Looking at the picture, it would be reasonable to guess that the manager salaries is 4 times as large as the worker salaries &ndash; the area of the bag looks about 4 times as large.&nbsp; However, the manager salaries are in fact only twice as large as worker salaries, which were reflected in the picture by making the manager bag twice as tall.</p>
-  </div>
-  <div class="tryitnow">
-    <h3>Try it Now 2</h3>
-    <p>Carefully examine the 2011 State of the Union address graphic given below. Does anything seem wrong? What caused the error?</p>
-    <p>&nbsp;</p>
-    <p><img src="../../images/chapter-2/2-1/state-of-union-image-math-flaw.jpg" alt="State of Union Speech from 2011 where circles ares used to represent the size of the Grodd Domestic Product. United States $14.6 Trillion, China $5.7 Trillion, Japan $5.3 Trillion, Germany $3.3 Trillion, and France $2.5 Trillion. The circles used the Diameter to be the GDP which causes visually the area to be much larger than it should. For instance it appears you could fit four to five Chinea circles inside yet United States GDP is less than 3 times the size of Chinas GDP" height="283" width="500" /></p>
-    <p>&nbsp;</p>
-    <h5 class="js-expandmore">Hint 1</h5>
-    <div class="js-to-expand">
-      <p>Visually something is not right. Look at the circles that are created. Does anything seem odd based on the size of the circle and the sizes of the numbers being compared?</p>
+    <p>Here is another way that fanciness can lead to trouble. Instead of plain bars, it is tempting to substitute meaningful images. This type of graph is called a <strong>pictogram</strong>.</p>
+    <div class="definition">
+      <h4>Pictogram</h4>
+      <p>A <strong>pictogram</strong> is a statistical graphic in which the size of the picture is intended to represent the frequencies or size of the values being represented.</p>
     </div>
-    <h5 class="js-expandmore">Answer</h5>
-    <div class="js-to-expand">
-      <p>This type of distortion can be intentional or unintentional as in the <a href="images/StateofUnionImagemathFlaw.jpg">2011 State of Union Address image</a> shown above. [Image Source <a href="http://blog.mrmeyer.com/?p=9258" target="_blank">dy/dan</a> blog] The error in the image shown in the State of the Union is based upon the diameter being used as the "height" of a graphic causing the area to be disproportional larger than it should have been. A rough estimate could be shown that we could fit six circles the size of China in the United States region, yet we can see based on the values given that United States GDP is not six times the size of Chinas (it is in face less than three times the size of China).</p>
+    <div class="example">
+      <h3>Example 8</h3>
+      <div class="side-by-side">
+        <div class="side-by-side-item"> <img src="../../images/chapter-2/2-1/managers-and-workers-salaries.png" alt="Two money bags are in the picture. The first money bag is labeled Manager Salaries and looks to be four times as large as the second money bag labeled Workers Salaries." height="221" width="193" /> </div>
+        <div class="side-by-side-item">
+          <p>A labor union might produce the graph to the right to show the difference between the average manager salary and the average worker salary.</p>
+        </div>
+      </div>
+      <p>Looking at the picture, it would be reasonable to guess that the manager salaries is 4 times as large as the worker salaries &ndash; the area of the bag looks about 4 times as large.&nbsp; However, the manager salaries are in fact only twice as large as worker salaries, which were reflected in the picture by making the manager bag twice as tall.</p>
     </div>
-  </div>
-  <p>Another distortion in bar charts results from setting the baseline to a value other than zero. The baseline is the bottom of the vertical axis, representing the least number of cases that could have occurred in a category. Normally, this number should be zero. There are times where setting this number higher is needed to show differences in values on the graph, but other times this change dramatically changes the message from the data as shown in the next example.</p>
-  <div class="example">
-    <h3>Example 9</h3>
-    <p>Compare the two graphs below showing support for same-sex marriage rights from a poll taken in December 2008<a href="#_ftn3" name="_ftnref3" title=""></a> <sup>3</sup>. The difference in the vertical scale on the first graph suggests a different story than the true differences in percentages; the second graph makes it look like twice as many people oppose marriage rights as support it.</p>
-    <p><img src="../../images/chapter-2/2-1/same-sex-marriage-chart.png" alt="First graph displays vertical axis going from 0 to 100 showing a difference in support to be narrow and around 10%. The second graph has vertical axis going from 40 to 60 with oppose appears three times as large as support yet is still around 10% when you compare the values on the vertical axis." border="2" height="218" width="583" /></p>
-  </div>
-  <p>In the above example we saw that by changing this vertical axis we are allowing for a different story to be told. On the flip side it is sometimes helpful to do this to allow for the examination of close differences between groups. </p>
-  <div class="tryitnow">
-    <h5><img src="../../images/chapter-2/2-1/candidate-county-office-poll.png" alt="Pie Chart with the following regions: 42% agreed with Nguyen's position, 35% agreed with McKee's position, 52% agreed with Brown's position, and 64% agreed with Jones position.&nbsp;Each slice of the pie has the candidates name and percent who agreed listed next to it." height="201" width="226" />Try it Now 3</h5>
-    <p>A poll was taken asking people if they agreed with the positions of the 4 candidates for a county office. The poll found that 42% agreed with Nguyen's position, 35% agreed with McKee's position, 52% agreed with Brown's position, and 64% agreed with Jones position.</p>
-    <p>Does the pie chart given to the right present a good representation of this data? Explain.</p>
-    <h5 class="js-expandmore">Answer</h5>
-    <div class="js-to-expand">
-      <p>A pie chart is inappropriate when a respondent can give an answer that falls into multiple categories (as in this case). You can see this is incorrect since the percentages do not add to 100%. A better approach for this visual would be a bar chart (where you can put the relative frequency on the vertical axis).</p>
-      <figure class="center">
-        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" title="Bar Chart of Candidates Approval" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSE4Cs94f9OscQNlGZcxot1an2JUjiu2KJhbAWc-ND5Z-3tS94ngpUPTrU3o4-m826idPhi4Z2dUwTN/pubchart?oid=2098077390&amp;format=interactive"></iframe>
-        <figcaption>Bar chart showing the percent approving candidates position. <a href="https://docs.google.com/spreadsheets/d/1E44ERNIS-2F4-mWKJeJGb-ibsHyfThJsd1cxPfCZs7s/edit?usp=sharing" target="_blank">Google Sheet for TryItNow 3 data.</a></figcaption>
-      </figure>
-    </div>
-  </div>
-  <h2>Homework Exercises:</h2>
-  <p>Please work on all the problems listed below for homework. You may ask questions in the discussion forum (it is also a great place to compare answers with your classmates).</p>
-  <ol>
-    <li>
-      <p>The table below shows scores on a Math test.</p>
-      <table class="display-lg cell-hover" cellpadding="5" cellspacing="0" width="80%">
-        <tbody>
-          <tr>
-            <td><p>80</p></td>
-            <td><p>50</p></td>
-            <td><p>50</p></td>
-            <td><p>90</p></td>
-            <td><p>70</p></td>
-            <td><p>70</p></td>
-            <td><p>100</p></td>
-            <td><p>60</p></td>
-            <td><p>70</p></td>
-            <td><p>80</p></td>
-            <td><p>70</p></td>
-            <td><p>50</p></td>
-          </tr>
-          <tr>
-            <td><p>90</p></td>
-            <td><p>100</p></td>
-            <td><p>80</p></td>
-            <td><p>70</p></td>
-            <td><p>30</p></td>
-            <td><p>80</p></td>
-            <td><p>80</p></td>
-            <td><p>70</p></td>
-            <td><p>100</p></td>
-            <td><p>60</p></td>
-            <td><p>60</p></td>
-            <td><p>50</p></td>
-          </tr>
-        </tbody>
-      </table>
-      <ol type="a">
-        <li>
-          <p>Treat the scores 30, 40, 50, 60, 70, 80, 90, and 100 as a category. Complete the frequency table for the Math test scores.</p>
-          <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
-            <caption>
-            Test Score
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Score</th>
-                <th scope="col">Frequency</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><p>30</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>40</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>50</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>60</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>70</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>80</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>90</p></td>
-                <td><p></p></td>
-              </tr>
-              <tr>
-                <td><p>100</p></td>
-                <td><p></p></td>
-              </tr>
-            </tbody>
-          </table>
-        </li>
-        <li>
-          <p>Construct a bar graph of the data</p>
-        </li>
-        <li>
-          <p>Construct a pie chart of the data</p>
-        </li>
-      </ol>
+    <div class="tryitnow">
+      <h3>Try it Now 2</h3>
+      <p>Carefully examine the 2011 State of the Union address graphic given below. Does anything seem wrong? What caused the error?</p>
+      <img src="../../images/chapter-2/2-1/state-of-union-image-math-flaw.jpg" alt="State of Union Speech from 2011 where circles ares used to represent the size of the Grodd Domestic Product. United States $14.6 Trillion, China $5.7 Trillion, Japan $5.3 Trillion, Germany $3.3 Trillion, and France $2.5 Trillion. The circles used the Diameter to be the GDP which causes visually the area to be much larger than it should. For instance it appears you could fit four to five Chinea circles inside yet United States GDP is less than 3 times the size of Chinas GDP" height="283" width="500" />
+      <p>&nbsp;</p>
+      <h5 class="js-expandmore">Hint 1</h5>
+      <div class="js-to-expand">
+        <p>Visually something is not right. Look at the circles that are created. Does anything seem odd based on the size of the circle and the sizes of the numbers being compared?</p>
+      </div>
       <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand example-answer">
-        <ol class="exerciseanswer" type="a">
-          <li>
+      <div class="js-to-expand">
+        <p>This type of distortion can be intentional or unintentional as in the <a href="images/StateofUnionImagemathFlaw.jpg">2011 State of Union Address image</a> shown above. [Image Source <a href="http://blog.mrmeyer.com/?p=9258" target="_blank">dy/dan</a> blog] The error in the image shown in the State of the Union is based upon the diameter being used as the "height" of a graphic causing the area to be disproportional larger than it should have been. A rough estimate could be shown that we could fit six circles the size of China in the United States region, yet we can see based on the values given that United States GDP is not six times the size of Chinas (it is in face less than three times the size of China).</p>
+      </div>
+    </div>
+    <p>Another distortion in bar charts results from setting the baseline to a value other than zero. The baseline is the bottom of the vertical axis, representing the least number of cases that could have occurred in a category. Normally, this number should be zero. There are times where setting this number higher is needed to show differences in values on the graph, but other times this change dramatically changes the message from the data as shown in the next example.</p>
+    <div class="example">
+      <h3>Example 9</h3>
+      <p>Compare the two graphs below showing support for same-sex marriage rights from a poll taken in December 2008<a href="#_ftn3" name="_ftnref3" title=""><sup>3</sup></a>. The difference in the vertical scale on the first graph suggests a different story than the true differences in percentages; the second graph makes it look like twice as many people oppose marriage rights as support it.</p>
+      <img src="../../images/chapter-2/2-1/same-sex-marriage-chart.png" alt="First graph displays vertical axis going from 0 to 100 showing a difference in support to be narrow and around 10%. The second graph has vertical axis going from 40 to 60 with oppose appears three times as large as support yet is still around 10% when you compare the values on the vertical axis." border="2" height="218" width="583" /> </div>
+    <p>In the above example we saw that by changing this vertical axis we are allowing for a different story to be told. On the flip side it is sometimes helpful to do this to allow for the examination of close differences between groups. </p>
+    <div class="tryitnow">
+      <h3>Try it Now 3</h3>
+      <img src="../../images/chapter-2/2-1/candidate-county-office-poll.png" alt="Pie Chart with the following regions: 42% agreed with Nguyen's position, 35% agreed with McKee's position, 52% agreed with Brown's position, and 64% agreed with Jones position.&nbsp;Each slice of the pie has the candidates name and percent who agreed listed next to it." height="201" width="226" />
+      <p>A poll was taken asking people if they agreed with the positions of the 4 candidates for a county office. The poll found that 42% agreed with Nguyen's position, 35% agreed with McKee's position, 52% agreed with Brown's position, and 64% agreed with Jones position.</p>
+      <p>Does the pie chart given to the right present a good representation of this data? Explain.</p>
+      <h5 class="js-expandmore">Answer</h5>
+      <div class="js-to-expand">
+        <p>A pie chart is inappropriate when a respondent can give an answer that falls into multiple categories (as in this case). You can see this is incorrect since the percentages do not add to 100%. A better approach for this visual would be a bar chart (where you can put the relative frequency on the vertical axis).</p>
+        <figure class="center">
+          <iframe width="600" height="371" seamless frameborder="0" scrolling="no" title="Bar Chart of Candidates Approval" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSE4Cs94f9OscQNlGZcxot1an2JUjiu2KJhbAWc-ND5Z-3tS94ngpUPTrU3o4-m826idPhi4Z2dUwTN/pubchart?oid=2098077390&amp;format=interactive"></iframe>
+          <figcaption>Bar chart showing the percent approving candidates position. <a href="https://docs.google.com/spreadsheets/d/1E44ERNIS-2F4-mWKJeJGb-ibsHyfThJsd1cxPfCZs7s/edit?usp=sharing" target="_blank">Google Sheet for TryItNow 3 data.</a></figcaption>
+        </figure>
+      </div>
+    </div>
+    <h2>Homework Exercises:</h2>
+    <p>Please work on all the problems listed below for homework. You may ask questions in the discussion forum (it is also a great place to compare answers with your classmates).</p>
+    <ol>
+      <li> The table below shows scores on a Math test.
+        <table class="display-lg cell-hover" cellpadding="5" cellspacing="0" width="80%">
+          <tbody>
+            <tr>
+              <td><p>80</p></td>
+              <td><p>50</p></td>
+              <td><p>50</p></td>
+              <td><p>90</p></td>
+              <td><p>70</p></td>
+              <td><p>70</p></td>
+              <td><p>100</p></td>
+              <td><p>60</p></td>
+              <td><p>70</p></td>
+              <td><p>80</p></td>
+              <td><p>70</p></td>
+              <td><p>50</p></td>
+            </tr>
+            <tr>
+              <td><p>90</p></td>
+              <td><p>100</p></td>
+              <td><p>80</p></td>
+              <td><p>70</p></td>
+              <td><p>30</p></td>
+              <td><p>80</p></td>
+              <td><p>80</p></td>
+              <td><p>70</p></td>
+              <td><p>100</p></td>
+              <td><p>60</p></td>
+              <td><p>60</p></td>
+              <td><p>50</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <ol type="a">
+          <li> Treat the scores 30, 40, 50, 60, 70, 80, 90, and 100 as a category. Complete the frequency table for the Math test scores.
             <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
               <caption>
               Test Score
               </caption>
               <thead>
                 <tr>
-                  <th>Score</th>
-                  <th>Frequency</th>
+                  <th scope="col">Score</th>
+                  <th scope="col">Frequency</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>30</td>
-                  <td>1</td>
+                  <td><p>30</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>40</td>
-                  <td>0</td>
+                  <td><p>40</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>50</td>
-                  <td>4</td>
+                  <td><p>50</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>60</td>
-                  <td>3</td>
+                  <td><p>60</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>70</td>
-                  <td>6</td>
+                  <td><p>70</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>80</td>
-                  <td>5</td>
+                  <td><p>80</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>90</td>
-                  <td>2</td>
+                  <td><p>90</p></td>
+                  <td><p></p></td>
                 </tr>
                 <tr>
-                  <td>100</td>
-                  <td>3</td>
+                  <td><p>100</p></td>
+                  <td><p></p></td>
                 </tr>
               </tbody>
             </table>
           </li>
-          <li>
-            <p>This is technically a histogram (something you will see in a later section).</p>
-            <figure class="center">
-              <iframe width="600" height="371" title="Math Test Scores Bar Graph for HW Exercise 1" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyjcNE7OlBH4EjZeDEXNnOC1nYdRfaRKhQsHTfarmmdDX9kQYUmMSt5W7Bmi4Y5soJwr0_F_n3wEW3/pubchart?oid=2025860198&amp;format=interactive"></iframe>
-              <figcaption>Bar graph math test scores.<a href="https://docs.google.com/spreadsheets/d/1WZNJJw7TIfb1hCAFtBQW8_gAbpM9Ehcv9nZCjYgotYk/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 1</a></figcaption>
-            </figure>
-          </li>
-          <li>
-            <p>Pie Chart</p>
-            <figure class="center">
-              <iframe width="600" height="371" title="Math Test Scores Pie Chart HW Exercise 1" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyjcNE7OlBH4EjZeDEXNnOC1nYdRfaRKhQsHTfarmmdDX9kQYUmMSt5W7Bmi4Y5soJwr0_F_n3wEW3/pubchart?oid=1198945532&amp;format=interactive"></iframe>
-              <figcaption>Pie chart math test scores <a href="https://docs.google.com/spreadsheets/d/1WZNJJw7TIfb1hCAFtBQW8_gAbpM9Ehcv9nZCjYgotYk/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 1</a></figcaption>
-            </figure>
-          </li>
+          <li> Construct a bar graph of the data </li>
+          <li> Construct a pie chart of the data </li>
         </ol>
-      </div>
-    </li>
-    <li>
-      <p>A group of adults where asked what type (model) of cars they had in their household</p>
-      <ol start="1" type="a">
-        <li>
-          <p>Complete the frequency table for the car number data</p>
-        </li>
-        <li>
-          <p>Construct a bar graph of the data</p>
-        </li>
-        <li>
-          <p>Construct a pie chart of the data</p>
-        </li>
-      </ol>
-      <table class="display-lg not-fixed" cellpadding="5" cellspacing="0">
-        <tbody>
-          <tr>
-            <td>Ford</td>
-            <td>Kia</td>
-            <td>Jeep</td>
-            <td>Ford</td>
-            <td>Toyota</td>
-            <td>Toyota</td>
-            <td>Chevy</td>
-            <td>Honda</td>
-            <td>Ford</td>
-            <td>Toyota</td>
-            <td>Honda</td>
-            <td>Chevy</td>
-          </tr>
-          <tr>
-            <td>Kia</td>
-            <td>Chrysler</td>
-            <td>Honda</td>
-            <td>Jeep</td>
-            <td>Ford</td>
-            <td>Ford</td>
-            <td>Toyota</td>
-            <td>Kia</td>
-            <td>Ford</td>
-            <td>Toyota</td>
-            <td>Chevy</td>
-            <td>Toyota</td>
-          </tr>
-        </tbody>
-      </table>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand example-answer">
-        <ol class="exerciseanswer" type="a">
-          <li>
-            <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
-              <caption>
-              Test Score
-              </caption>
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>Frequency</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Ford</td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>Kia</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>Jeep</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td>Toyota</td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>Chevy</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>Honda</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>Chrysler</td>
-                  <td>1</td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            <p>Bar Graph</p>
-            <figure class="center">
-              <iframe width="600" height="371" title="Car Model Bar Graph for HW Exercise 2" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTp1hEB_7qMQn4bANyvn1TYo34-J-atIG7X5njk4lzWbCTP4yD_m3MulpfGvMS1jGGFEiEUI_7tj0da/pubchart?oid=1761502108&amp;format=interactive"></iframe>
-              <figcaption>Bar graph car model <a href="https://docs.google.com/spreadsheets/d/1zPh1u-kVwVp8XhLKOAhXyfy3ITV67CAPxmqec8B69G0/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 2</a></figcaption>
-            </figure>
-          </li>
-          <li>
-            <p>Pie Chart</p>
-            <figure class="center">
-              <iframe width="600" height="371" title="Math Test Scores Pie Chart HW Exercise 1" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTp1hEB_7qMQn4bANyvn1TYo34-J-atIG7X5njk4lzWbCTP4yD_m3MulpfGvMS1jGGFEiEUI_7tj0da/pubchart?oid=909450200&amp;format=interactive"></iframe>
-              <figcaption>Pie chart car model <a href="https://docs.google.com/spreadsheets/d/1zPh1u-kVwVp8XhLKOAhXyfy3ITV67CAPxmqec8B69G0/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 2</a></figcaption>
-            </figure>
-          </li>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand example-answer">
+          <ol class="exerciseanswer" type="a">
+            <li>
+              <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+                <caption>
+                Test Score
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Score</th>
+                    <th>Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>30</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>40</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>50</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>60</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>70</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>80</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>90</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>100</td>
+                    <td>3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <p>This is technically a histogram (something you will see in a later section).</p>
+              <figure class="center">
+                <iframe width="600" height="371" title="Math Test Scores Bar Graph for HW Exercise 1" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyjcNE7OlBH4EjZeDEXNnOC1nYdRfaRKhQsHTfarmmdDX9kQYUmMSt5W7Bmi4Y5soJwr0_F_n3wEW3/pubchart?oid=2025860198&amp;format=interactive"></iframe>
+                <figcaption>Bar graph math test scores.<a href="https://docs.google.com/spreadsheets/d/1WZNJJw7TIfb1hCAFtBQW8_gAbpM9Ehcv9nZCjYgotYk/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 1</a></figcaption>
+              </figure>
+            </li>
+            <li> Pie Chart
+              <figure class="center">
+                <iframe width="600" height="371" title="Math Test Scores Pie Chart HW Exercise 1" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyjcNE7OlBH4EjZeDEXNnOC1nYdRfaRKhQsHTfarmmdDX9kQYUmMSt5W7Bmi4Y5soJwr0_F_n3wEW3/pubchart?oid=1198945532&amp;format=interactive"></iframe>
+                <figcaption>Pie chart math test scores <a href="https://docs.google.com/spreadsheets/d/1WZNJJw7TIfb1hCAFtBQW8_gAbpM9Ehcv9nZCjYgotYk/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 1</a></figcaption>
+              </figure>
+            </li>
+          </ol>
+        </div>
+      </li>
+      <li> A group of adults where asked what type (model) of cars they had in their household
+        <ol start="1" type="a">
+          <li> Complete the frequency table for the car number data </li>
+          <li> Construct a bar graph of the data </li>
+          <li>Construct a pie chart of the data </li>
         </ol>
-      </div>
-    </li>
-    <li>
-      <p> <div class="side-by-side">
-      <div class="side-by-side-item"><p>A group of adults were asked how many children they have in their families. The bar graph to the right shows the number of adults who indicated each number of children.</p>
-      <ol start="1" type="a">
-        <li>
-          <p>How many adults where questioned?</p>
-        </li>
-        <li>
-          <p>What percentage of the adults questioned had 0 children?</p>
-        </li>
-      </ol> </div>
-      <div class="side-by-side-item"><img src="../../images/chapter-2/2-1/number-of-children.png" alt="Frequency on vertical axis. Number of Children on horizontal axis. 0 Children has frequencey 5, 1 Children has frequency 3, 2 Children has frequency 4, 3 Children has frequency 2, 4 Children has frequency 0, 5 Children has frequency 1." align="left" height="220" width="287" /> </div> </div>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand example-answer">
-        <ol class="exerciseanswer" type="a">
-          <li>
-            <p>The total number of adults from the table:
-              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mrow>
-                  <mn>5</mn>
-                  <mo>+</mo>
-                  <mn>3</mn>
-                  <mo>+</mo>
-                  <mn>4</mn>
-                  <mo>+</mo>
-                  <mn>2</mn>
-                  <mo>+</mo>
-                  <mn>1</mn>
-                  <mo>=</mo>
-                  <mn>15</mn>
-                </mrow>
-              </math>
-            </p>
-          </li>
-          <li>
-            <p>5 of the 15 adults had 0 children:</p>
-            <p>
-              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mtable columnalign="left">
-                  <mtr>
-                    <mtd>
-                      <mfrac>
-                        <mn>5</mn>
-                        <mrow>
-                          <mn>15</mn>
-                        </mrow>
-                      </mfrac>
-                      <mo>&#x22C5;</mo>
-                      <mn>100</mn>
-                      <mi>&#x0025;</mi>
-                      <mo>=</mo>
-                      <mn>33</mn>
-                      <mfrac>
-                        <mn>1</mn>
-                        <mn>3</mn>
-                      </mfrac>
-                      <mi>&#x0025;</mi>
-                    </mtd>
-                  </mtr>
-                  <mtr>
-                    <mtd>
-                      <mfrac>
-                        <mn>5</mn>
-                        <mrow>
-                          <mn>15</mn>
-                        </mrow>
-                      </mfrac>
-                      <mo>&#x22C5;</mo>
-                      <mn>100</mn>
-                      <mi>&#x0025;</mi>
-                      <mo>&#x2248;</mo>
-                      <mn>33.33</mn>
-                      <mi>&#x0025;</mi>
-                    </mtd>
-                  </mtr>
-                </mtable>
-              </math>
-            </p>
-          </li>
+        <table class="display-lg not-fixed cell-hover" cellpadding="5" cellspacing="0">
+          <caption>
+          Type (model) of cars in your household
+          </caption>
+          <tbody>
+            <tr>
+              <td>Ford</td>
+              <td>Kia</td>
+              <td>Jeep</td>
+              <td>Ford</td>
+              <td>Toyota</td>
+              <td>Toyota</td>
+              <td>Chevy</td>
+              <td>Honda</td>
+              <td>Ford</td>
+              <td>Toyota</td>
+              <td>Honda</td>
+              <td>Chevy</td>
+            </tr>
+            <tr>
+              <td>Kia</td>
+              <td>Chrysler</td>
+              <td>Honda</td>
+              <td>Jeep</td>
+              <td>Ford</td>
+              <td>Ford</td>
+              <td>Toyota</td>
+              <td>Kia</td>
+              <td>Ford</td>
+              <td>Toyota</td>
+              <td>Chevy</td>
+              <td>Toyota</td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand example-answer">
+          <ol class="exerciseanswer" type="a">
+            <li>
+              <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+                <caption>
+                Test Score
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ford</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Kia</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Jeep</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Toyota</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Chevy</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Honda</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Chrysler</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <p>Bar Graph</p>
+              <figure class="center">
+                <iframe width="600" height="371" title="Car Model Bar Graph for HW Exercise 2" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTp1hEB_7qMQn4bANyvn1TYo34-J-atIG7X5njk4lzWbCTP4yD_m3MulpfGvMS1jGGFEiEUI_7tj0da/pubchart?oid=1761502108&amp;format=interactive"></iframe>
+                <figcaption>Bar graph car model <a href="https://docs.google.com/spreadsheets/d/1zPh1u-kVwVp8XhLKOAhXyfy3ITV67CAPxmqec8B69G0/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 2</a></figcaption>
+              </figure>
+            </li>
+            <li>
+              <p>Pie Chart</p>
+              <figure class="center">
+                <iframe width="600" height="371" title="Math Test Scores Pie Chart HW Exercise 1" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTp1hEB_7qMQn4bANyvn1TYo34-J-atIG7X5njk4lzWbCTP4yD_m3MulpfGvMS1jGGFEiEUI_7tj0da/pubchart?oid=909450200&amp;format=interactive"></iframe>
+                <figcaption>Pie chart car model <a href="https://docs.google.com/spreadsheets/d/1zPh1u-kVwVp8XhLKOAhXyfy3ITV67CAPxmqec8B69G0/edit?usp=sharing" target="_blank">Google Sheet for HW Exercise 2</a></figcaption>
+              </figure>
+            </li>
+          </ol>
+        </div>
+      </li>
+      <li>
+        <div class="side-by-side">
+          <div class="side-by-side-item">
+            <p>A group of adults were asked how many children they have in their families. The bar graph to the right shows the number of adults who indicated each number of children.</p>
+            <ol start="1" type="a">
+              <li>How many adults where questioned?</li>
+              <li>What percentage of the adults questioned had 0 children?</li>
+            </ol>
+          </div>
+          <div class="side-by-side-item"><img src="../../images/chapter-2/2-1/number-of-children.png" alt="Frequency on vertical axis. Number of Children on horizontal axis. 0 Children has frequencey 5, 1 Children has frequency 3, 2 Children has frequency 4, 3 Children has frequency 2, 4 Children has frequency 0, 5 Children has frequency 1." align="left" height="220" width="287" /> </div>
+        </div>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand example-answer">
+          <ol class="exerciseanswer" type="a">
+            <li>
+              <p>The total number of adults from the table:
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mrow>
+                    <mn>5</mn>
+                    <mo>+</mo>
+                    <mn>3</mn>
+                    <mo>+</mo>
+                    <mn>4</mn>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                    <mo>=</mo>
+                    <mn>15</mn>
+                  </mrow>
+                </math>
+              </p>
+            </li>
+            <li>
+              <p>5 of the 15 adults had 0 children:</p>
+              <p>
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mtable columnalign="left">
+                    <mtr>
+                      <mtd>
+                        <mfrac>
+                          <mn>5</mn>
+                          <mrow>
+                            <mn>15</mn>
+                          </mrow>
+                        </mfrac>
+                        <mo>&#x22C5;</mo>
+                        <mn>100</mn>
+                        <mi>&#x0025;</mi>
+                        <mo>=</mo>
+                        <mn>33</mn>
+                        <mfrac>
+                          <mn>1</mn>
+                          <mn>3</mn>
+                        </mfrac>
+                        <mi>&#x0025;</mi>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd>
+                        <mfrac>
+                          <mn>5</mn>
+                          <mrow>
+                            <mn>15</mn>
+                          </mrow>
+                        </mfrac>
+                        <mo>&#x22C5;</mo>
+                        <mn>100</mn>
+                        <mi>&#x0025;</mi>
+                        <mo>&#x2248;</mo>
+                        <mn>33.33</mn>
+                        <mi>&#x0025;</mi>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                </math>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </li>
+      <li> Jasmine was interested in how many days it would take an order of a single movie from Netflix to arrive at her door. The graph below shows the data she collected. The frequency represents orders of a single movie. <img src="../../images/chapter-2/2-1/shopping-times.png" alt="Frequency on Vertical axis. Shipping time in days on horizontal axis. Shipping time with 1 day has frequency of 4, Shipping time with 2 day has frequency of 8, Shipping time with 3 day has frequency of 6, Shipping time with 6 day has frequency of 0, Shipping time with 5 day has frequency of 1." border="2" height="225" width="361" />
+        <ol start="1" type="a">
+          <li> How many movies in all did she order? </li>
+          <li> What percentage of the movies arrived in one day? Round to the nearest tenth. </li>
         </ol>
-      </div>
-    </li>
-    <li>
-      <p>Jasmine was interested in how many days it would take an order of a single movie from Netflix to arrive at her door. The graph below shows the data she collected. The frequency represents orders of a single movie.</p>
-      <p><img src="../../images/chapter-2/2-1/shopping-times.png" alt="Frequency on Vertical axis. Shipping time in days on horizontal axis. Shipping time with 1 day has frequency of 4, Shipping time with 2 day has frequency of 8, Shipping time with 3 day has frequency of 6, Shipping time with 6 day has frequency of 0, Shipping time with 5 day has frequency of 1." border="2" height="225" width="361" /></p>
-      <ol start="1" type="a">
-        <li>
-          <p>How many movies in all did she order?</p>
-        </li>
-        <li>
-          <p>What percentage of the movies arrived in one day? Round to the nearest tenth.</p>
-        </li>
-      </ol>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand example-answer">
-        <ol class="exerciseanswer" type="a">
-          <li>
-            <p>The total number of movies ordered:
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand example-answer">
+          <ol class="exerciseanswer" type="a">
+            <li>The total number of movies ordered:
               <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
                 <mn>4</mn>
                 <mo>+</mo>
@@ -820,159 +791,142 @@
                 <mo>=</mo>
                 <mn>19</mn>
               </math>
-            </p>
-          </li>
-          <li>
-            <p>The percentage of movies that arrived in one day:</p>
-            <p>
-              <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-                <mfrac>
-                  <mn>4</mn>
-                  <mrow>
-                    <mn>19</mn>
-                  </mrow>
-                </mfrac>
-                <mo>&#x22C5;</mo>
-                <mn>100</mn>
-                <mi>&#x0025;</mi>
-                <mo>&#x2248;</mo>
-                <mn>21.1</mn>
-                <mi>&#x0025;</mi>
-              </math>
-            </p>
-          </li>
-        </ol>
-      </div>
-    </li>
-    <li>
-      <p>The bar graph below shows the <em>percentage</em> of students who received each letter grade on their last English paper. The class contains 20 students.&nbsp; What number of students earned an A on their paper?</p>
-      <p><img src="../../images/chapter-2/2-1/grade-earned-percentage.png" alt="Vertical axis is frequency in percentage. Horizontal axis has bars representing grade earned. Bar representing an A grade has frequency at 25%. Bar representing a B grade has frequency at 35%. Bar representing C grade has frequency at 25%. Bar representing a D grade has frequency at 15%." border="2" height="201" width="331" /></p>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand example-answer">
-        <p class="exerciseanswer">The table is showing the percent of the class earning a given grade. Looking at the column for A we see that it looks like 25% of the class earned an A. The class size was 20, so 25% of the 20 earned an A:
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <mfrac>
-              <mrow>
-                <mn>25</mn>
-              </mrow>
-              <mrow>
-                <mn>100</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x22C5;</mo>
-            <mn>20</mn>
-            <mo>=</mo>
-            <mn>5</mn>
-          </math>
-          . This shows 5 students earned an A. </p>
-      </div>
-    </li>
-    <li>
-      <p><img src="../../images/chapter-2/2-1/expenses.png" alt="Pie Chart. Food represents 24% of the region, Rent represents 26% of the region, Fun represents 16% of the region, and Other represent 34% of the region." width="256" height="212" />Kori categorized her spending for this month into four categories: Rent, Food, Fun, and Other. The percents she spent in each category are pictured here.&nbsp; If she spent a total of $2600 this month, how much did she spend on rent?</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand">
-        <p class="exerciseanswer">From the pie chart we see rent represents 26% of her spending. To find the total spent on rent find 26% of 2600 (total spent):
-          <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-            <mfrac>
-              <mrow>
-                <mn>26</mn>
-              </mrow>
-              <mrow>
-                <mn>100</mn>
-              </mrow>
-            </mfrac>
-            <mo>&#x22C5;</mo>
-            <mi>&#x0024;</mi>
-            <mn>2600</mn>
-            <mo>=</mo>
-            <mi>&#x0024;</mi>
-            <mn>676</mn>
-          </math>
-          . Kori spent $676 on rent. </p>
-      </div>
-    </li>
-    <li>
-      <p>A graph appears below showing the number of adults and children who prefer each type of soda. There were 130 adults and kids surveyed. Discuss some ways in which the graph below could be improved</p>
-      <p><img src="../../images/chapter-2/2-1/sodas-number-of-children.png" alt="Side by Side bar chart using 3D. Each type of soda has both the Adult and Kids bar shown. No label on Vertical or Horizontal axis. Bars labeled as Coke, Diet Coke, Sprite, and Cherry Coke. Somewhat difficult to read height of bars quickly as the front and back appear at different heights when compared to grid in background." border="2" height="243" width="509" /></p>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand example-answer">
-        <p class="exerciseanswer">It is hard to make comparison on 3-d graphs as it can be difficult to determine the heights of each bar. It would be better to turn this into a 2-d bar graph. The graph is also misleading in that the y-axis values do not start with 0, so a height difference between two bars is magnified and seems larger than what it actually is numerically.</p>
-      </div>
-    </li>
-    <li>The graph below shows the number of complaints for six different airlines as reported to the US Department of Transportation in February 2013. Alaska, Pinnacle, and Airtran Airlines have far fewer complaints reported than American, Delta, and United. Can we conclude that American, Delta, and United are the worst airline carriers since they have the most complaints? <img src="../../images/chapter-2/2-1/cnx-stats-passenger-complaints-airlines.jpg" width="675" height="411" alt="This is a bar graph with 6 different airlines on the x-axis, and number of complaints on y-axis. The graph is titled Total Passenger Complaints. Data is from an April 2013 DOT report."/>
-      <h5 class="js-expandmore">Answer</h5>
-      <div class="js-to-expand">
-        <div class="exerciseanswer">
-          <p>You cannot assume that the numbers of complaints reflect the quality of the airlines. The airlines shown with the greatest number of complaints could be the ones with the most passengers. You must consider the appropriateness of methods for presenting data; in this case displaying totals is misleading as the categories where the data was pulled from (airlines) are not of equal sizes. A more appropriate choice would be to compare the percent of complaints for an airline as it takes into consideration the total number of passengers to compute that percent.</p>
+            </li>
+            <li> The percentage of movies that arrived in one day:
+              <p>
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mfrac>
+                    <mn>4</mn>
+                    <mrow>
+                      <mn>19</mn>
+                    </mrow>
+                  </mfrac>
+                  <mo>&#x22C5;</mo>
+                  <mn>100</mn>
+                  <mi>&#x0025;</mi>
+                  <mo>&#x2248;</mo>
+                  <mn>21.1</mn>
+                  <mi>&#x0025;</mi>
+                </math>
+              </p>
+            </li>
+          </ol>
         </div>
-      </div>
-    </li>
-    <li>
-      <p>Below is a frequency table that shows the number of covid cases in some Arizona Counties on May 7 2021 in thousands. (source: <a href="https://www.azdhs.gov/covid19/data/index.php" target="_blank">azdhs.gov/covid19/data/index.php</a>). </p>
-      <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
-        <caption>
-        Arizona Covid Cases
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Arizona County</th>
-            <th scope="col">Covid Cases in Thousands</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><p>Maricopa</p></td>
-            <td><p>540</p></td>
-          </tr>
-          <tr>
-            <td><p>Pima</p></td>
-            <td><p>115</p></td>
-          </tr>
-          <tr>
-            <td><p>Pinal</p></td>
-            <td><p>52</p></td>
-          </tr>
-          <tr>
-            <td><p>Yuma</p></td>
-            <td><p>37</p></td>
-          </tr>
-          <tr>
-            <td><p>Mohave</p></td>
-            <td><p>23</p></td>
-          </tr>
-          <tr>
-            <td><p>Yavapai</p></td>
-            <td><p>19</p></td>
-          </tr>
-        </tbody>
-      </table>
-      <ol type="a">
-        <li>
-          <p>Construct a bar graph to represent the data for the number of covid cases (in thousands) for the Arizona Counties.</p>
-        </li>
-        <li>
-          <p>What danger is there to compare the values for each county directly against each other?</p>
-        </li>
-        <li>
-          <p>From the bar graph it seems clear Maricopa has many more cases of covid when compared to Yuma (about 15 times as many). If you factor in the population for each county we can get a better understanding of the penetration of Covid-19. According to the the recent 2019 census Maricopa has a population of 4,485,414 and Yuma has a population of 209,468. Which county has a higher percent of covid cases?</p>
-        </li>
-      </ol>
-    </li>
-  </ol>
-  <p>&nbsp;</p>
-  <hr />
-  <div id="ftn1">
-    <p>1. <a href="#_ftnref1" name="_ftn1" title=""></a> Gallup Poll.&nbsp; March 5-8, 2009. http://www.pollingreport.com/enviro.htm</p>
-  </div>
-  <div id="ftn2">
-    <p>2. <a href="#_ftnref2" name="_ftn2" title=""></a> For example: http://nces.ed.gov/nceskids/createAgraph/ or http://docs.google.com</p>
-  </div>
-  <div id="ftn3">
-    <p>3. <a href="#_ftnref3" name="_ftn3" title=""></a> CNN/Opinion Research Corporation Poll.&nbsp; Dec 19-21, 2008, from http://www.pollingreport.com/civil.htm</p>
-  </div>
-</main>
+      </li>
+      <li> The bar graph below shows the <em>percentage</em> of students who received each letter grade on their last English paper. The class contains 20 students.&nbsp; What number of students earned an A on their paper? <img src="../../images/chapter-2/2-1/grade-earned-percentage.png" alt="Vertical axis is frequency in percentage. Horizontal axis has bars representing grade earned. Bar representing an A grade has frequency at 25%. Bar representing a B grade has frequency at 35%. Bar representing C grade has frequency at 25%. Bar representing a D grade has frequency at 15%." border="2" height="201" width="331" />
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand example-answer">
+          <p class="exerciseanswer">The table is showing the percent of the class earning a given grade. Looking at the column for A we see that it looks like 25% of the class earned an A. The class size was 20, so 25% of the 20 earned an A:
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mfrac>
+                <mrow>
+                  <mn>25</mn>
+                </mrow>
+                <mrow>
+                  <mn>100</mn>
+                </mrow>
+              </mfrac>
+              <mo>&#x22C5;</mo>
+              <mn>20</mn>
+              <mo>=</mo>
+              <mn>5</mn>
+            </math>
+            . This shows 5 students earned an A. </p>
+        </div>
+      </li>
+      <li>Kori categorized her spending for this month into four categories: Rent, Food, Fun, and Other. The percents she spent in each category are pictured here.&nbsp; If she spent a total of $2600 this month, how much did she spend on rent? <img src="../../images/chapter-2/2-1/expenses.png" alt="Pie Chart. Food represents 24% of the region, Rent represents 26% of the region, Fun represents 16% of the region, and Other represent 34% of the region." width="256" height="212" />
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand">
+          <p class="exerciseanswer">From the pie chart we see rent represents 26% of her spending. To find the total spent on rent find 26% of 2600 (total spent):
+            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+              <mfrac>
+                <mrow>
+                  <mn>26</mn>
+                </mrow>
+                <mrow>
+                  <mn>100</mn>
+                </mrow>
+              </mfrac>
+              <mo>&#x22C5;</mo>
+              <mi>&#x0024;</mi>
+              <mn>2600</mn>
+              <mo>=</mo>
+              <mi>&#x0024;</mi>
+              <mn>676</mn>
+            </math>
+            . Kori spent $676 on rent. </p>
+        </div>
+      </li>
+      <li> A graph appears below showing the number of adults and children who prefer each type of soda. There were 130 adults and kids surveyed. Discuss some ways in which the graph below could be improved <img src="../../images/chapter-2/2-1/sodas-number-of-children.png" alt="Side by Side bar chart using 3D. Each type of soda has both the Adult and Kids bar shown. No label on Vertical or Horizontal axis. Bars labeled as Coke, Diet Coke, Sprite, and Cherry Coke. Somewhat difficult to read height of bars quickly as the front and back appear at different heights when compared to grid in background." border="2" height="243" width="509" />
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand example-answer">
+          <p class="exerciseanswer">It is hard to make comparison on 3-d graphs as it can be difficult to determine the heights of each bar. It would be better to turn this into a 2-d bar graph. The graph is also misleading in that the y-axis values do not start with 0, so a height difference between two bars is magnified and seems larger than what it actually is numerically.</p>
+        </div>
+      </li>
+      <li>The graph below shows the number of complaints for six different airlines as reported to the US Department of Transportation in February 2013. Alaska, Pinnacle, and Airtran Airlines have far fewer complaints reported than American, Delta, and United. Can we conclude that American, Delta, and United are the worst airline carriers since they have the most complaints? <img src="../../images/chapter-2/2-1/cnx-stats-passenger-complaints-airlines.jpg" width="675" height="411" alt="This is a bar graph with 6 different airlines on the x-axis, and number of complaints on y-axis. The graph is titled Total Passenger Complaints. Data is from an April 2013 DOT report."/>
+        <h5 class="js-expandmore">Answer</h5>
+        <div class="js-to-expand">
+          <div class="exerciseanswer">
+            <p>You cannot assume that the numbers of complaints reflect the quality of the airlines. The airlines shown with the greatest number of complaints could be the ones with the most passengers. You must consider the appropriateness of methods for presenting data; in this case displaying totals is misleading as the categories where the data was pulled from (airlines) are not of equal sizes. A more appropriate choice would be to compare the percent of complaints for an airline as it takes into consideration the total number of passengers to compute that percent.</p>
+          </div>
+        </div>
+      </li>
+      <li> Below is a frequency table that shows the number of covid cases in some Arizona Counties on May 7 2021 in thousands. (source: <a href="https://www.azdhs.gov/covid19/data/index.php" target="_blank" class="ext" >azdhs.gov/covid19/data/index.php</a>).
+        <table class="display-lg" cellpadding="5" cellspacing="0" width="30%">
+          <caption>
+          Arizona Covid Cases
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Arizona County</th>
+              <th scope="col">Covid Cases in Thousands</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><p>Maricopa</p></td>
+              <td><p>540</p></td>
+            </tr>
+            <tr>
+              <td><p>Pima</p></td>
+              <td><p>115</p></td>
+            </tr>
+            <tr>
+              <td><p>Pinal</p></td>
+              <td><p>52</p></td>
+            </tr>
+            <tr>
+              <td><p>Yuma</p></td>
+              <td><p>37</p></td>
+            </tr>
+            <tr>
+              <td><p>Mohave</p></td>
+              <td><p>23</p></td>
+            </tr>
+            <tr>
+              <td><p>Yavapai</p></td>
+              <td><p>19</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <ol type="a">
+          <li>Construct a bar graph to represent the data for the number of covid cases (in thousands) for the Arizona Counties. </li>
+          <li>What danger is there to compare the values for each county directly against each other?</li>
+          <li>From the bar graph it seems clear Maricopa has many more cases of covid when compared to Yuma (about 15 times as many). If you factor in the population for each county we can get a better understanding of the penetration of Covid-19. According to the the recent 2019 census Maricopa has a population of 4,485,414 and Yuma has a population of 209,468. Which county has a higher percent of covid cases? </li>
+        </ol>
+      </li>
+    </ol>
+    <hr />
+    <div id="ftn1">
+      <p>1. <a href="#_ftnref1" name="_ftn1" title=""></a> Gallup Poll.&nbsp; March 5-8, 2009. http://www.pollingreport.com/enviro.htm</p>
+    </div>
+    <div id="ftn2">
+      <p>2. <a href="#_ftnref2" name="_ftn2" title=""></a> For example: http://nces.ed.gov/nceskids/createAgraph/ or http://docs.google.com</p>
+    </div>
+    <div id="ftn3">
+      <p>3. <a href="#_ftnref3" name="_ftn3" title=""></a> CNN/Opinion Research Corporation Poll.&nbsp; Dec 19-21, 2008, from http://www.pollingreport.com/civil.htm</p>
+    </div>
+  </main>
   <footer>
     <div >
       <p class="text-center toggle-footnotes">[Show Attributions]</p>
