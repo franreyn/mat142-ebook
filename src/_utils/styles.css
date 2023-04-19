@@ -104,6 +104,7 @@ li p {
 /* Scroll bar styles */
 body[darkmode] {
   color-scheme: dark;
+  transition: none;
 }
 
 body {
