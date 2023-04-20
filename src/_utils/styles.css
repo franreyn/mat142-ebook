@@ -18,7 +18,7 @@
   --dark-layer-4: rgba(100, 100, 100, 1);
   --white-layer-1: rgba(179, 179, 179, 1);
   --button-grey: rgba(211, 211, 211, 1);
-  --button-light-grey: rgba(231, 231, 231, 1);
+  --button-light-grey: rgba(239, 239, 239, 1);
   --button-dark-grey: rgba(199, 199, 199, 1);
   --white: rgba(255, 255, 255, 1);
 }
@@ -117,9 +117,17 @@ body {
   width: 40px;
   border-radius: 50%;
   border: 1px solid rgba(18, 18, 18, .25);
-  background-color: rgba(239, 239, 239, 1);
+  background-color: var(--button-light-grey);
   transition: .5s;
   transition-timing-function: ease;
+}
+
+.back-btn[disabled],.forward-btn[disabled] {
+  opacity: .5;
+}
+
+.back-btn[disabled]:hover,.forward-btn[disabled]:hover {
+  opacity: .5;
 }
 
 .back-btn:hover,.forward-btn:hover {
@@ -660,7 +668,7 @@ nav::before {
   text-align: center;
   padding: 10px 5px;
   border: 1px solid rgba(18, 18, 18, .25);
-  background-color: rgba(239, 239, 239, 1);  margin: 20px 0;
+  background-color: var(--button-light-grey);  margin: 20px 0;
   border-radius: 15px;
   cursor: pointer;
   font-size: 1rem;
