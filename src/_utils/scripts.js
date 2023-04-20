@@ -228,6 +228,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 // (11) Get location of current URL to highlight active link 
 let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
+currentUrl = currentUrl.toLowerCase();
 currentUrl = currentUrl + ".html";
 
 window.onload = () => {
@@ -240,19 +241,20 @@ window.onload = () => {
   const linkList = Array.prototype.slice.call(links);
   const chapterList = Array.prototype.slice.call(chapters);
 
-  //If it is the home page highlight the first page
-  if(fullUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
-    chapterList[0].classList.add("activeChapter")
-  } else {
-
-  // Cut off end of URL
+  //Create loop of navigation items
+  let lowerCaseHrefs = [];
   let navHrefs = [];
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
     //Convert hrefs to lowercase
-    let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+     lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+
+    //If it is the home page highlight the first page
+    if(fullUrl == "https://pima-topicsinmath.netlify.app/") {
+      chapterList[0].classList.add("activeChapter")
+    } else {
 
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
@@ -264,9 +266,16 @@ window.onload = () => {
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
     }
-   }
   }
-} // End of onload functions
+  }
+
+  //if first or last indexes 
+  if(currentUrl == lowerCaseHrefs[0]) {
+    backButton.toggleAttribute("disabled");
+  } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
+    forwardButton.toggleAttribute("disabled");
+  }
+}
 
   // (12) Expand or collapse navigation
   let navIsOpen = false;
@@ -363,32 +372,22 @@ const changePage = (direction) => {
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
 
-  if(currentUrl == ".html") {
-    if(direction == "forward") {
-      window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
-    } else {
-    }
-  } else {
+  // Cut off end of URL
+  let navHrefs = [];
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+    let  newLinkHref = linkList[linkIndex].href.split("/").pop();
+    navHrefs.push(newLinkHref);
 
-    // Cut off end of URL
-    let navHrefs = [];
-    for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
-      let  newLinkHref = linkList[linkIndex].href.split("/").pop();
-      navHrefs.push(newLinkHref);
+    //Convert hrefs to lowercase
+    let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
 
-      //Convert hrefs to lowercase
-      let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
-
-
-      // If the page matches the current one
-      if(lowerCaseHrefs[linkIndex] == currentUrl) {
-
-        // Go back or forwards one link in navigation
-        if(direction == "back") {
-          window.location.href = links[linkIndex - 1];
-        } else {
-          window.location.href = links[linkIndex + 1];
-        }
+    // If the page matches the current one
+    if(lowerCaseHrefs[linkIndex] == currentUrl) {
+      // Go back or forwards one link in navigation
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      } else {
+        window.location.href = links[linkIndex + 1];
       }
     }
   }
