@@ -255,8 +255,6 @@ window.onload = () => {
       chapterList[0].classList.add("activeChapter")
     } else {
 
-      console.log(lowerCaseHrefs[linkIndex]);
-      // console.log(currentUrl)
 
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
@@ -373,7 +371,6 @@ const changePage = (direction) => {
 
   console.log("changing page")
   console.log(currentUrl)
-  console.log(lowerCaseHrefs)
 
   let links = document.querySelectorAll("nav a");
 
@@ -390,10 +387,10 @@ let linkList = Array.prototype.slice.call(links);
 
     console.log("entering loop")
     console.log(currentUrl)
-    console.log(lowerCaseHrefs[linkIndex])
 
     //Convert hrefs to lowercase
     let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+    console.log(lowerCaseHrefs[linkIndex])
 
     // If the page matches the current one
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
