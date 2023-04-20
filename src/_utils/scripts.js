@@ -372,7 +372,7 @@ const changePage = (direction) => {
   console.log("changing page")
   console.log(currentUrl)
 
-  let links = document.querySelectorAll("nav a");
+let links = document.querySelectorAll("nav a");
 
   docBody.style.transition = "color-scheme none";
 
@@ -387,10 +387,21 @@ let linkList = Array.prototype.slice.call(links);
 
     console.log("entering loop")
     console.log(currentUrl)
+    console.log(links)
 
     //Convert hrefs to lowercase
     let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
     console.log(lowerCaseHrefs[linkIndex])
+
+    if(currentUrl == "") {
+      if(direction == "forward") {
+        window.location.href = links[linkIndex + 1];
+      }
+    } else if(currentUrl == lowerCaseHrefs[linkList.length - 1]) {
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      }
+    }
 
     // If the page matches the current one
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
