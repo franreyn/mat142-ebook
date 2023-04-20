@@ -205,6 +205,8 @@ body[darkmode] #navigation[expanded] .page-controller {
 
 body[darkmode] .page-controller {
   background-color: var(--black);
+  box-shadow: 0 0 5px var(--dark-layer-4);
+  transition: .5s;
 }
 
 .nav-controls {
@@ -479,6 +481,7 @@ body {
 
 body[darkmode] {
   background-color: var(--black);
+  transition: .5s ease;
 }
 
 body[darkmode] h1, body[darkmode] h2, body[darkmode] h3, body[darkmode] h4, body[darkmode] h5, body[darkmode] h6, body[darkmode] p, body[darkmode] ul, body[darkmode] ol {
@@ -1201,10 +1204,10 @@ body[darkmode] .js-to-expand[show-active] .exerciseanswer {
     box-shadow: 0 0 5px var(--button-grey);
   } 
 
-  #navigation[darkmode] {
+  body[darkmode] #navigation {
     width: fit-content;
     padding-top: 50px;
-    background-color: var(--dark-layer-1);
+    box-shadow: 0 0 5px var(--dark-layer-4);
   } 
 
   nav {
