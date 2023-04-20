@@ -2,14 +2,15 @@
 
 // Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
-const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>"
+const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
+const backButtonContent = "<i class=\"fa-solid fa-chevron-left\"></i>";
+const forwardButtonContent = "<i class=\"fa-solid fa-chevron-right\"></i>";
 const fontAwesomeCdn = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css";
 const localTocUrl = "http://127.0.0.1:5500/api/toc.json";
 const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api/toc.json";
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
-
-// ==
+const ereaderDisplay = document.querySelector(".ereader-display");
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -19,7 +20,6 @@ const getToc = async () => {
 };
 
 // (1) create and prepend <header>
-const ereaderDisplay = document.querySelector(".ereader-display");
 const readerHeader = document.createElement("header");
 ereaderDisplay.prepend(readerHeader); 
 
@@ -31,14 +31,21 @@ readerHeader.append(navWrapper);
 // (3) create and append <div class="page-controller">
 const pageController = document.createElement("div");
 pageController.classList.add("page-controller");
+pageController.classList.add("no-print");
 navWrapper.append(pageController);
+
+// (3a) create and append <div class="nav-controls">
+const navControls = document.createElement("div");
+navControls.classList.add("nav-controls");
+pageController.append(navControls);
 
 // (4) create and append menu-toggle button
 const menuBtn = document.createElement("button");
 menuBtn.type = "button";
 menuBtn.classList.add("nav-toggle");
 menuBtn.innerHTML = navToggleText;
-pageController.append(menuBtn);
+navControls.append(menuBtn);
+
 // (4a) logic for menu-toggle button
 menuBtn.addEventListener("click", () => {
   navWrapper.toggleAttribute("expanded");
@@ -50,7 +57,7 @@ const lightButton = document.createElement("button");
 lightButton.type = "button";
 lightButton.classList.add("darkmode-toggle");
 lightButton.innerHTML = btnContent;
-pageController.append(lightButton);
+navControls.append(lightButton);
 
 // (5a) darkmode logic
 const darkModeBtn = document.querySelector(".darkmode-toggle");
@@ -119,6 +126,9 @@ const appendNavigation = async () => {
       _li.append(a);
     });
   }); 
+
+  ul.append(resizer);
+
   // (6c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
   const navChaptBtn = document.querySelectorAll(".chapter-btn");
   navChaptBtn.forEach((btn) => {
@@ -130,13 +140,51 @@ const appendNavigation = async () => {
 }
 appendNavigation();
 
-// (7) add font-awesome to <head>
+
+// (7) create and append resizing button
+const resizer = document.createElement("button")
+resizer.type = "button";
+resizer.textContent = "Resize page width"
+resizer.classList.add("resizer");
+
+const widthLarge = localStorage.getItem("isWidthLarge");
+
+// if "isWidthLarge" is null, make it false
+if (widthLarge === null) {
+  localStorage.setItem("isWidthLarge", "false");
+};
+
+// if "isWidthLarge" is true, add attribute
+if (localStorage.getItem("isWidthLarge") === "true") {
+  ereaderDisplay.setAttribute("widthLarge", "");
+  resizer.toggleAttribute("resized");
+}
+
+// (7a) click event for resizer
+resizer.addEventListener("click", () => {
+  // if "isWidthLarge" is false 
+  if (localStorage.getItem("isWidthLarge") === "false") {
+    localStorage.setItem("isWidthLarge", "true");
+    ereaderDisplay.toggleAttribute("widthLarge");
+    resizer.toggleAttribute("resized");
+
+    // if "isWidthLarge" is true
+  } else {
+    localStorage.setItem("isWidthLarge", "false");
+    ereaderDisplay.toggleAttribute("widthLarge");
+    resizer.toggleAttribute("resized");
+ }
+}); 
+
+
+
+// (8) add font-awesome to <head>
 const fontAwesome = document.createElement("link");
 fontAwesome.setAttribute("rel", "stylesheet");
 fontAwesome.setAttribute("href", fontAwesomeCdn);
 docHead.appendChild(fontAwesome);
 
-// (8) accordions - show/hide script
+// (9) accordions - show/hide script
 const getAccords = document.querySelectorAll(".accordion");
 getAccords.forEach((accord) => {
   let accordBtn = accord.querySelector("button");
@@ -146,7 +194,7 @@ getAccords.forEach((accord) => {
   });
 });
 
-// (9) footnotes toggle
+// (10) footnotes toggle
 const toggleBtns = document.querySelectorAll(".toggle-btn, .toggle-footnotes");
 const changeFootnotesText = (toggleBtns,toggleBtn) => {
   if(toggleBtns[toggleBtn].innerHTML == "[Show Attributions]") {
@@ -163,26 +211,28 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 
     // Show/hide on click
     toggleBtns[toggleBtn].addEventListener("click", () => {      
-      toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show");      
+      toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show-active");      
       changeFootnotesText(toggleBtns,toggleBtn)
     })
 
     // Show/hide on enter for users who use tab
     toggleBtns[toggleBtn].addEventListener("keydown", (enter) => {
       if (enter.keyCode === 13) {
-        toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show");
+        toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show-active");
         changeFootnotesText(toggleBtns,toggleBtn)
       }
     })
   }
 }
 
-//Get location of current URL to highlight active link 
-let currentUrl = window.location.href;
-currentUrl = currentUrl.split("/").pop();
+// (11) Get location of current URL to highlight active link 
+let fullUrl = window.location.href;
+let currentUrl = fullUrl.split("/").pop();
+currentUrl = currentUrl + ".html";
 
-//Parse and find URL in navigation that matches that link 
 window.onload = () => {
+
+  // (11a) Parse and find URL in navigation that matches that link 
   const links = document.querySelectorAll("nav a");
   const chapters = document.querySelectorAll(".chapter-btn");
 
@@ -191,29 +241,34 @@ window.onload = () => {
   const chapterList = Array.prototype.slice.call(chapters);
 
   //If it is the home page highlight the first page
-  if(currentUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
+  if(fullUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
     chapterList[0].classList.add("activeChapter")
   } else {
+
   // Cut off end of URL
   let navHrefs = [];
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
+    //Convert hrefs to lowercase
+    let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+
     // Add class to chapter heading
-    if(currentUrl.charAt(0) == navHrefs[linkIndex].charAt(0)) {
+    if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
       chapterList[activeChapter].classList.add("activeChapter")
     }
 
     // Add class to chapter
-    if(navHrefs[linkIndex] == currentUrl) {
+    if(lowerCaseHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
     }
+   }
   }
-}
-    
-  // Expand or collapse navigation
+} // End of onload functions
+
+  // (12) Expand or collapse navigation
   let navIsOpen = false;
   const menuNav = document.querySelector(".nav-toggle");
   menuNav.addEventListener("click", () => {
@@ -243,7 +298,7 @@ window.onload = () => {
     }
   });
  
-  //Remove tabbing from navigation if closed
+  // (12b) Remove tabbing from navigation if closed
   const navLinks = document.querySelectorAll("#navigation a"); 
   const removeTabbing = () => {
     if(!navIsOpen) {
@@ -256,8 +311,8 @@ window.onload = () => {
       });
     }
   }
-}
 
+// (13) toggle hints and answers
 const toggleHints = async () => {
   const toggleHints = document.querySelectorAll(".js-expandmore");
   
@@ -267,16 +322,84 @@ const toggleHints = async () => {
 
     toggle.addEventListener("click", function() {
       const toggleContent = this.nextElementSibling;
-      toggleContent.toggleAttribute("show");
+      toggleContent.toggleAttribute("show-active");
     });
 
     toggle.addEventListener("keydown", function(e) {
       if(e.key == "Enter") {
       const toggleContent = this.nextElementSibling;
-      toggleContent.toggleAttribute("show");
+      toggleContent.toggleAttribute("show-active");
       }
     });
   });
 } 
-
 toggleHints();
+
+// (14) add back and forwards buttons
+const pageSwitch = document.createElement("div");
+pageSwitch.classList.add("page-switch")
+pageController.append(pageSwitch); 
+
+// (14a) create and append back and forward buttons
+const backButton = document.createElement("button");
+backButton.type = "button";
+backButton.classList.add("back-btn");
+backButton.innerHTML = backButtonContent;
+pageSwitch.append(backButton); 
+
+const forwardButton = document.createElement("button");
+forwardButton.type = "button";
+forwardButton.classList.add("forward-btn");
+forwardButton.innerHTML = forwardButtonContent;
+pageSwitch.append(forwardButton); 
+
+// (14a) call function when one of the buttons are clicked
+const changePage = (direction) => {
+
+  let links = document.querySelectorAll("nav a");
+
+  docBody.style.transition = "color-scheme none";
+
+  // Convert node list into array
+  let linkList = Array.prototype.slice.call(links);
+
+  if(currentUrl == ".html") {
+    if(direction == "forward") {
+      window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
+    } else {
+    }
+  } else {
+
+    // Cut off end of URL
+    let navHrefs = [];
+    for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+      let  newLinkHref = linkList[linkIndex].href.split("/").pop();
+      navHrefs.push(newLinkHref);
+
+      //Convert hrefs to lowercase
+      let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+
+
+      // If the page matches the current one
+      if(lowerCaseHrefs[linkIndex] == currentUrl) {
+
+        // Go back or forwards one link in navigation
+        if(direction == "back") {
+          window.location.href = links[linkIndex - 1];
+        } else {
+          window.location.href = links[linkIndex + 1];
+        }
+      }
+    }
+  }
+}
+
+backButton.addEventListener("click", () => {
+  let direction = "back"
+  changePage(direction)
+})
+
+forwardButton.addEventListener("click", () => {
+  let direction = "forward"
+  changePage(direction)
+});
