@@ -371,6 +371,10 @@ pageSwitch.append(forwardButton);
 // (14a) call function when one of the buttons are clicked
 const changePage = (direction) => {
 
+  console.log("changing page")
+  console.log(currentUrl)
+  console.log(lowerCaseHrefs)
+
   let links = document.querySelectorAll("nav a");
 
   docBody.style.transition = "color-scheme none";
@@ -383,6 +387,10 @@ let linkList = Array.prototype.slice.call(links);
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
+
+    console.log("entering loop")
+    console.log(currentUrl)
+    console.log(lowerCaseHrefs[linkIndex])
 
     //Convert hrefs to lowercase
     let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
