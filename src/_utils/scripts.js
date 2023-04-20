@@ -11,6 +11,7 @@ const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
+const navToggle = document.querySelector(".nav-toggle");
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -229,7 +230,6 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl.toLowerCase();
-currentUrl = currentUrl + ".html";
 
 window.onload = () => {
 
@@ -270,6 +270,8 @@ window.onload = () => {
 
       links[linkIndex].classList.add("activeUrl");
     }
+
+ 
   }
   }
 
@@ -281,49 +283,44 @@ window.onload = () => {
   }
 }
 
-  // (12) Expand or collapse navigation
-  let navIsOpen = false;
-  const menuNav = document.querySelector(".nav-toggle");
-  menuNav.addEventListener("click", () => {
-    
-  removeTabbing();
+// (12) Expand or collapse navigation
+let navIsOpen = false;
+const menuNav = document.querySelector(".nav-toggle");
+menuNav.addEventListener("click", () => {
+  
+if(navIsOpen) {
+  navIsOpen = !navIsOpen;
+  menuNav.toggleAttribute("open");
+} else {
+  navIsOpen = !navIsOpen;
+  menuNav.toggleAttribute("open");
+}
+});
+menuNav.addEventListener("keypress", (e) => {
+  if(e.key== "Enter"){
 
-  if(navIsOpen) {
-    navIsOpen = !navIsOpen;
-    menuNav.toggleAttribute("open");
-  } else {
-    navIsOpen = !navIsOpen;
-    menuNav.toggleAttribute("open");
-  }
-  });
-  menuNav.addEventListener("keypress", (e) => {
-    if(e.key== "Enter"){
-
-      removeTabbing();
-
-      if(navIsOpen) {
-        navIsOpen = !navIsOpen;
-        menuNav.toggleAttribute("open");
-      } else {
-        navIsOpen = !navIsOpen;
-        menuNav.toggleAttribute("open");
-      }
-    }
-  });
- 
-  // (12b) Remove tabbing from navigation if closed
-  const navLinks = document.querySelectorAll("#navigation a"); 
-  const removeTabbing = () => {
-    if(!navIsOpen) {
-      navLinks.forEach((link) => {
-        link.tabIndex = 0;
-      });
+    if(navIsOpen) {
+      navIsOpen = !navIsOpen;
+      menuNav.toggleAttribute("open");
     } else {
-      navLinks.forEach((link) => {
-        link.tabIndex = -1;
-      });
+      navIsOpen = !navIsOpen;
+      menuNav.toggleAttribute("open");
     }
   }
+});
+
+// (12b) Remove tabbing from navigation if closed
+const removeTabbing = () => {
+if(!navIsOpen) {
+  links.forEach((link) => {
+  link.tabIndex = 0;
+  });
+} else {
+    links.forEach((link) => {
+      link.tabIndex = -1;
+    });
+  }
+}
 
 // (13) toggle hints and answers
 const toggleHints = async () => {
