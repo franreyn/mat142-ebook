@@ -256,6 +256,9 @@ window.onload = () => {
       chapterList[0].classList.add("activeChapter")
     } else {
 
+      console.log(lowerCaseHrefs[linkIndex]);
+      console.log(currentUrl)
+
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
@@ -264,6 +267,7 @@ window.onload = () => {
 
     // Add class to chapter
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
+
       links[linkIndex].classList.add("activeUrl");
     }
   }
