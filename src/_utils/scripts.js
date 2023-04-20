@@ -229,6 +229,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl.toLowerCase();
+currentUrl = currentUrl + ".html";
 
 window.onload = () => {
 
