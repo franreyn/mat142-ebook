@@ -1,5 +1,37 @@
-# Math 142 - eBook 
+# Topics in Math eBook 
 
+Topics in Math is an online-based textbook developed by Pima Community College. This ebook uses
+Netlify to build and deploy the code for the website. 
+
+
+## What's Included
+
+### Dependencies 
+- Git
+- Node.js
+- Gulp.js
+
+## Npm Commands
+
+`npm run dev`
+
+This command will build and compile the code you have locally into the dist folder.
+
+`npm run build`
+
+This command will build the code, install the necessary npm dependencies, and build the navigation using buildNav.js.
+
+## CSS
+
+*styles.css*
+
+Contains all the styles for the ebook including for the navigation, typography, and layout.
+
+## JS
+
+*scripts.js*
+
+Contains all the JavaScript for the application. The logic for page switching, indexing the navigation, adjusting dark and light mode, as well as other functionality.
 
 ## Available styles
 
@@ -32,3 +64,11 @@ Changes the font size to 16px which should be small enough for the items to fit 
 `.math-extra-small`
 
 Changes the font size to 14px which can be used for extra long expressions.
+
+## Authors
+
+Center for Learning Technology at Pima Community College
+
+## License
+
+Code is released under the MIT license.
