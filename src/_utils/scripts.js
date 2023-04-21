@@ -273,7 +273,7 @@ window.onload = () => {
   }
 
   //if first or last indexes 
-  if(currentUrl == "") {
+  if(currentUrl == ".html") {
     console.log("this is the first page")
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
@@ -394,7 +394,7 @@ let linkList = Array.prototype.slice.call(links);
     let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
     console.log(lowerCaseHrefs[linkIndex])
 
-    if(currentUrl == "") {
+    if(currentUrl == ".html") {
       if(direction == "forward") {
         window.location.href = links[linkIndex + 1];
       }
