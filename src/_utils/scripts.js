@@ -391,6 +391,15 @@ for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
   lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
 }
 
+//Unique case for 0.1 until it is renamed 
+if(currentUrl == "0.1.html.html") {
+  if(direction == "forward") {
+    window.location.href = links[3].href;
+  } else {
+    window.location.href = links[1].href;
+  }
+}
+
 // Determine index and where to change URL
 for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
 
