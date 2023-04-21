@@ -264,7 +264,9 @@ window.onload = () => {
     }
 
     // Add class to chapter
-    if(lowerCaseHrefs[linkIndex] == currentUrl) {
+    if(currentUrl == "0-1.html.html") {
+      links[2].classList.add("activeUrl");
+    }else if(lowerCaseHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
     }
 
@@ -273,7 +275,7 @@ window.onload = () => {
   }
 
   //if first or last indexes 
-  if(currentUrl == ".html") {
+  if(currentUrl == ".html") {  
     console.log("this is the first page")
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
