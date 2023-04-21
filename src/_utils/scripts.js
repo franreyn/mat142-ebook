@@ -402,7 +402,7 @@ for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
 
   if(currentUrl == ".html") {
     if(direction == "forward") {
-      window.location.href = links[linkIndex + 1];
+      window.location.href = links[1].href;
     }
   } else if(currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     if(direction == "back") {
