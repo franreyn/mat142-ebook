@@ -232,7 +232,6 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl.toLowerCase();
-currentUrl = currentUrl + ".html";
 
 window.onload = () => {
 
@@ -266,16 +265,14 @@ window.onload = () => {
     }
 
     // Add class to chapter
-    if(currentUrl == "0-1.html.html") {
-      links[2].classList.add("activeUrl");
-    }else if(lowerCaseHrefs[linkIndex] == currentUrl) {
+    if(lowerCaseHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
     }
    }
   }
 
   //if first or last indexes 
-  if(currentUrl == ".html") {  
+  if(currentUrl == "") {  
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     forwardButton.toggleAttribute("disabled");
@@ -389,15 +386,6 @@ let lowerCaseHrefs= [];
     lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
   }
   
-  //Unique case for 0.1 until it is renamed 
-  if(currentUrl == "0-1.html.html") {
-    if(direction == "forward") {
-      window.location.href = links[3].href;
-    } else {
-      window.location.href = links[1].href;
-    }
-  }
-  
   // Determine index and where to change URL
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
   
@@ -407,7 +395,7 @@ let lowerCaseHrefs= [];
     //Convert hrefs to lowercase
     console.log(lowerCaseHrefs[linkIndex])
   
-    if(currentUrl == ".html") {
+    if(currentUrl == "") {
       if(direction == "forward") {
         window.location.href = links[1].href;
       }
