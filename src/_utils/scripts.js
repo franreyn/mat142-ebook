@@ -1,6 +1,22 @@
 "use strict"
 
-// Variables
+const docHtml = document.documentElement;
+
+// Check for darkmode before loading the DOM to prevent flashing
+const darkMode = localStorage.getItem("isDarkMode");
+// if "isDarkMode" is null, make it false
+if (darkMode === null) {
+  localStorage.setItem("isDarkMode", "false");
+};
+// if "isDarkMode" is true, add attribute
+if (localStorage.getItem("isDarkMode") === "true") {
+  docHtml.setAttribute("darkmode", "");
+}
+
+// All code below runs after the DOM has loaded
+window.addEventListener("DOMContentLoaded", () => {
+
+  // Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
 const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
 const backButtonContent = "<i class=\"fa-solid fa-chevron-left\"></i>";
@@ -12,7 +28,6 @@ const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
 const navToggle = document.querySelector(".nav-toggle");
-const docHtml = document.documentElement;
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -64,15 +79,7 @@ navControls.append(lightButton);
 
 // (5a) darkmode logic
 const darkModeBtn = document.querySelector(".darkmode-toggle");
-const darkMode = localStorage.getItem("isDarkMode");
-// if "isDarkMode" is null, make it false
-if (darkMode === null) {
-  localStorage.setItem("isDarkMode", "false");
-};
-// if "isDarkMode" is true, add attribute
-if (localStorage.getItem("isDarkMode") === "true") {
-  docHtml.setAttribute("darkmode", "");
-}
+
 // (5b) click event for darkmode button
 darkModeBtn.addEventListener("click", () => {
   // if "isDarkMode" is false 
@@ -228,12 +235,10 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   }
 }
 
-// (11) Get location of current URL to highlight active link 
-let fullUrl = window.location.href;
-let currentUrl = fullUrl.split("/").pop();
-currentUrl = currentUrl.toLowerCase();
-
-window.onload = () => {
+  // (11) Get location of current URL to highlight active link 
+  let fullUrl = window.location.href;
+  let currentUrl = fullUrl.split("/").pop();
+  currentUrl = currentUrl.toLowerCase();
 
   // (11a) Parse and find URL in navigation that matches that link 
   const links = document.querySelectorAll("nav a");
@@ -277,7 +282,7 @@ window.onload = () => {
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     forwardButton.toggleAttribute("disabled");
   }
-}
+
 
 // (12) Expand or collapse navigation
 let navIsOpen = false;
@@ -425,3 +430,5 @@ forwardButton.addEventListener("click", () => {
   let direction = "forward"
   changePage(direction)
 });
+
+})
