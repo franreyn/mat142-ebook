@@ -239,6 +239,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   let fullUrl = window.location.href;
   let currentUrl = fullUrl.split("/").pop();
   currentUrl = currentUrl.toLowerCase();
+  currentUrl = currentUrl + ".html";
 
   // (11a) Parse and find URL in navigation that matches that link 
   const links = document.querySelectorAll("nav a");
@@ -277,7 +278,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   }
 
   //if first or last indexes 
-  if(currentUrl == "") {  
+  if(currentUrl == ".html") {  
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     forwardButton.toggleAttribute("disabled");
@@ -400,7 +401,7 @@ let lowerCaseHrefs= [];
     //Convert hrefs to lowercase
     console.log(lowerCaseHrefs[linkIndex])
   
-    if(currentUrl == "") {
+    if(currentUrl == ".html") {
       if(direction == "forward") {
         window.location.href = links[1].href;
       }
