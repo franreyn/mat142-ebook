@@ -28,6 +28,9 @@ const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
 const navToggle = document.querySelector(".nav-toggle");
+const backButton = document.createElement("button");
+const forwardButton = document.createElement("button");
+
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -358,18 +361,18 @@ const pageSwitch = document.createElement("div");
 pageSwitch.classList.add("page-switch")
 pageController.append(pageSwitch); 
 
+
 // (14a) create and append back and forward buttons
-const backButton = document.createElement("button");
 backButton.type = "button";
 backButton.classList.add("back-btn");
 backButton.innerHTML = backButtonContent;
 pageSwitch.append(backButton); 
 
-const forwardButton = document.createElement("button");
 forwardButton.type = "button";
 forwardButton.classList.add("forward-btn");
 forwardButton.innerHTML = forwardButtonContent;
 pageSwitch.append(forwardButton); 
+
 
 // (14a) call function when one of the buttons are clicked
 const changePage = (direction) => {
