@@ -386,7 +386,7 @@ pageSwitch.append(forwardButton);
 const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
-  let currentUrl = fullUrl.split("/").pop();
+  let currentUrl = window.location.href.split("/").pop();
   currentUrl = currentUrl.toLowerCase();
   currentUrl = currentUrl + ".html";
 
@@ -411,6 +411,7 @@ let lowerCaseHrefs= [];
   
     //Convert hrefs to lowercase
     console.log(lowerCaseHrefs[linkIndex])
+    console.log(currentUrl)
   
     if(currentUrl == ".html") {
       if(direction == "forward") {
