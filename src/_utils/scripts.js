@@ -386,6 +386,9 @@ pageSwitch.append(forwardButton);
 const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
+  let currentUrl = fullUrl.split("/").pop();
+  currentUrl = currentUrl.toLowerCase();
+  currentUrl = currentUrl + ".html";
 
   docBody.style.transition = "color-scheme none";
 
@@ -405,9 +408,6 @@ let lowerCaseHrefs= [];
   
   // Determine index and where to change URL
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
-  
-    console.log("entering loop")
-    console.log(currentUrl)
   
     //Convert hrefs to lowercase
     console.log(lowerCaseHrefs[linkIndex])
