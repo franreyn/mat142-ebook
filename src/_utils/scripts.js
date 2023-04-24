@@ -11,6 +11,8 @@ const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
+const navToggle = document.querySelector(".nav-toggle");
+const docHtml = document.documentElement;
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -50,6 +52,7 @@ navControls.append(menuBtn);
 menuBtn.addEventListener("click", () => {
   navWrapper.toggleAttribute("expanded");
   nav.toggleAttribute("expanded");
+  removeTabbing();
 });
 
 // (5) create and append "dark mode" button
@@ -68,18 +71,18 @@ if (darkMode === null) {
 };
 // if "isDarkMode" is true, add attribute
 if (localStorage.getItem("isDarkMode") === "true") {
-  docBody.setAttribute("darkmode", "");
+  docHtml.setAttribute("darkmode", "");
 }
 // (5b) click event for darkmode button
 darkModeBtn.addEventListener("click", () => {
   // if "isDarkMode" is false 
   if (localStorage.getItem("isDarkMode") === "false") {
     localStorage.setItem("isDarkMode", "true");
-    docBody.toggleAttribute("darkmode");
+    docHtml.toggleAttribute("darkmode");
     // if "isDarkMode" is true
   } else {
     localStorage.setItem("isDarkMode", "false");
-    docBody.toggleAttribute("darkmode");
+    docHtml.toggleAttribute("darkmode");
  }
 });
 
@@ -256,7 +259,6 @@ window.onload = () => {
       chapterList[0].classList.add("activeChapter")
     } else {
 
-
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
@@ -269,64 +271,61 @@ window.onload = () => {
     }else if(lowerCaseHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
     }
-
- 
-  }
+   }
   }
 
   //if first or last indexes 
   if(currentUrl == ".html") {  
-    console.log("this is the first page")
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
-    console.log("this is the last page")
     forwardButton.toggleAttribute("disabled");
   }
 }
 
-  // (12) Expand or collapse navigation
-  let navIsOpen = false;
-  const menuNav = document.querySelector(".nav-toggle");
-  menuNav.addEventListener("click", () => {
-    
+// (12) Expand or collapse navigation
+let navIsOpen = false;
+const menuNav = document.querySelector(".nav-toggle");
+menuNav.addEventListener("click", () => {
+  
   removeTabbing();
 
-  if(navIsOpen) {
-    navIsOpen = !navIsOpen;
-    menuNav.toggleAttribute("open");
-  } else {
-    navIsOpen = !navIsOpen;
-    menuNav.toggleAttribute("open");
-  }
-  });
-  menuNav.addEventListener("keypress", (e) => {
-    if(e.key== "Enter"){
+if(navIsOpen) {
+  navIsOpen = !navIsOpen;
+  menuNav.toggleAttribute("open");
+} else {
+  navIsOpen = !navIsOpen;
+  menuNav.toggleAttribute("open");
+}
+});
+menuNav.addEventListener("keypress", (e) => {
+  if(e.key== "Enter"){
+    removeTabbing();
 
-      removeTabbing();
-
-      if(navIsOpen) {
-        navIsOpen = !navIsOpen;
-        menuNav.toggleAttribute("open");
-      } else {
-        navIsOpen = !navIsOpen;
-        menuNav.toggleAttribute("open");
-      }
-    }
-  });
- 
-  // (12b) Remove tabbing from navigation if closed
-  const navLinks = document.querySelectorAll("#navigation a"); 
-  const removeTabbing = () => {
-    if(!navIsOpen) {
-      navLinks.forEach((link) => {
-        link.tabIndex = 0;
-      });
+    if(navIsOpen) {
+      navIsOpen = !navIsOpen;
+      menuNav.toggleAttribute("open");
     } else {
-      navLinks.forEach((link) => {
+      navIsOpen = !navIsOpen;
+      menuNav.toggleAttribute("open");
+    }
+  }
+});
+
+// (12b) Remove tabbing from navigation if closed
+const removeTabbing = () => {
+
+  let links = document.querySelectorAll("nav a");
+
+  if(!navIsOpen) {
+    links.forEach((link) => {
+    link.tabIndex = 0;
+    });
+  } else {
+      links.forEach((link) => {
         link.tabIndex = -1;
       });
     }
-  }
+}
 
 // (13) toggle hints and answers
 const toggleHints = async () => {
@@ -372,66 +371,61 @@ pageSwitch.append(forwardButton);
 // (14a) call function when one of the buttons are clicked
 const changePage = (direction) => {
 
-  console.log("changing page")
-  console.log(currentUrl)
+  let links = document.querySelectorAll("nav a");
 
-let links = document.querySelectorAll("nav a");
+  docBody.style.transition = "color-scheme none";
 
-docBody.style.transition = "color-scheme none";
+  // Convert node list into array
+  let linkList = Array.prototype.slice.call(links);
 
-// Convert node list into array
-let linkList = Array.prototype.slice.call(links);
-
-// Index navigation links into an array
+ // Index navigation links into an array
 let lowerCaseHrefs= [];
-let navHrefs = [];
-for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
-  let  newLinkHref = linkList[linkIndex].href.split("/").pop();
-  navHrefs.push(newLinkHref);
+  let navHrefs = [];
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+    let  newLinkHref = linkList[linkIndex].href.split("/").pop();
+    navHrefs.push(newLinkHref);
 
-  //Convert hrefs to lowercase
-  lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
-}
-
-//Unique case for 0.1 until it is renamed 
-if(currentUrl == "0-1.html.html") {
-  if(direction == "forward") {
-    window.location.href = links[3].href;
-  } else {
-    window.location.href = links[1].href;
+    //Convert hrefs to lowercase
+    lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
   }
-}
-
-// Determine index and where to change URL
-for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
-
-  console.log("entering loop")
-  console.log(currentUrl)
-
-  //Convert hrefs to lowercase
-  console.log(lowerCaseHrefs[linkIndex])
-
-  if(currentUrl == ".html") {
+  
+  //Unique case for 0.1 until it is renamed 
+  if(currentUrl == "0-1.html.html") {
     if(direction == "forward") {
+      window.location.href = links[3].href;
+    } else {
       window.location.href = links[1].href;
     }
-  } else if(currentUrl == lowerCaseHrefs[linkList.length - 1]) {
-    if(direction == "back") {
-      window.location.href = links[linkIndex - 1];
+  }
+  
+  // Determine index and where to change URL
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+  
+    console.log("entering loop")
+    console.log(currentUrl)
+  
+    //Convert hrefs to lowercase
+    console.log(lowerCaseHrefs[linkIndex])
+  
+    if(currentUrl == ".html") {
+      if(direction == "forward") {
+        window.location.href = links[1].href;
+      }
+    } else if(currentUrl == lowerCaseHrefs[linkList.length - 1]) {
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      }
+    }
+    // If the page matches the current one
+    if(lowerCaseHrefs[linkIndex] == currentUrl) {
+      // Go back or forwards one link in navigation
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      } else {
+        window.location.href = links[linkIndex + 1];
+      }
     }
   }
-
-  // If the page matches the current one
-  if(lowerCaseHrefs[linkIndex] == currentUrl) {
-
-    // Go back or forwards one link in navigation
-    if(direction == "back") {
-      window.location.href = links[linkIndex - 1];
-    } else {
-      window.location.href = links[linkIndex + 1];
-    }
-  }
-}
 }
 
 backButton.addEventListener("click", () => {
