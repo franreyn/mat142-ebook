@@ -123,10 +123,12 @@ body {
 }
 
 .back-btn[disabled],.forward-btn[disabled] {
+  background-color: var(--button-light-grey);
   opacity: .5;
 }
 
 .back-btn[disabled]:hover,.forward-btn[disabled]:hover {
+  background-color: var(--button-light-grey);
   opacity: .5;
 }
 
@@ -145,6 +147,17 @@ html[darkmode] .back-btn,html[darkmode] .forward-btn {
 html[darkmode] .back-btn:hover,html[darkmode] .forward-btn:hover {
   background-color: var(--dark-layer-4);
 }
+
+html[darkmode] .back-btn[disabled],html[darkmode] .forward-btn[disabled] {
+  background-color: var(--dark-layer-3);
+  opacity: .5;
+}
+
+html[darkmode] .back-btn[disabled]:hover,html[darkmode] .forward-btn[disabled]:hover {
+  background-color: var(--dark-layer-3);
+  opacity: .5;
+}
+
 
 a.ext::after {
   content: "  \f35d";
@@ -341,7 +354,7 @@ nav {
   margin: 0 20px;
   z-index: 999;
   border: 1px solid rgba(18, 18, 18, .25);
-  background-color: rgba(239, 239, 239, 1)
+  background-color: var(--button-light-grey);
 }
 
 html[darkmode] .darkmode-toggle {
