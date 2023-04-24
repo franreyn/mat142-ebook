@@ -569,7 +569,7 @@
           loan is for 30 years.&nbsp; How much will your monthly payments be?</p>
         <p><strong>Solution</strong></p>
         <p>In this example we&rsquo;re looking for the amount of the payment, <em>pymt</em>.</p>
-        <p>
+        <p class="math-small">
           <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
             <mrow>
               <mtable columnalign="left">
@@ -639,7 +639,7 @@
                   <mtd columnalign="left">
                     <mrow>
                       <mtext>
-                        since&#x00A0;we're&#x00A0;making&#x00A0;monthly&#x00A0;payments&#x00A0;for&#x00A0;30&#x00A0;years
+since&#x00A0;we're&#x00A0;making&#x00A0;monthly&#x00A0;payments&#x00A0;for&#x00A0;30&#x00A0;years
                       </mtext>
                     </mrow>
                   </mtd>
@@ -1061,8 +1061,8 @@
         <table class="display-lg" >
           <thead>
             <tr>
-              <th scope="col">Time in Years</th>
-              <th scope="col">Balance of Loan</th>
+              <th width="9%" scope="col">Time in Years</th>
+              <th width="91%" scope="col">Balance of Loan</th>
             </tr>
           </thead>
           <tbody>
@@ -1450,7 +1450,7 @@
         <div>
           <figure>
             <figcaption>Graph produced on Desmos. <a href="https://www.desmos.com/calculator/a59dzvuyot"
-                target="_blank" class="ext">Go to Desmos to explore this data.</a></figcaption>
+                target="_blank" >Go to Desmos to explore this data.</a></figcaption>
             <iframe src="https://www.desmos.com/calculator/a59dzvuyot?embed" width="500" height="500"
               style="border: 1px solid #ccc" frameborder="0"></iframe>
           </figure>
@@ -1466,7 +1466,7 @@
         <p><strong>Solution</strong></p>
         <p>First we will calculate their monthly payments.&nbsp; <br>
           We&rsquo;re looking for <em>d</em>.</p>
-        <p>
+        <p class="math-small">
           <math display="block">
             <mrow>
               <mtable columnalign="left">
@@ -1690,7 +1690,7 @@
         <p>Now that we know the monthly payments, we can determine the remaining balance after 5 years. We want the
           remaining balance after 5 years, when 25 years will be remaining on the loan, so we calculate the loan balance
           that will be paid off with the monthly payments of $859.35 over those 25 years.</p>
-        <p>
+        <p class="math-small">
          <math display="block">
             <mrow>
               <mtable columnalign="left">
@@ -2334,8 +2334,8 @@
         </math>
         <p>Below represents the first three payments in the amortization schedule. <a
             href="https://docs.google.com/spreadsheets/d/12B7iB-sN2AyBbeRqU6yQbrLRgnOnS1PIyul5bcEopL4/edit?usp=sharing"
-            target="_blank" class="ext">View the full schedule in Google Sheets</a>.</p>
-        <table class="display-lg" >
+            target="_blank" >View the full schedule in Google Sheets</a>.</p>
+        <table class="display-lg math-small" >
           <thead>
             <tr>
               <th scope="col">Payment #</th>
@@ -2373,9 +2373,9 @@
             </tr>
           </tbody>
         </table>
-        <ol type="a">
-          <li>From the schedule we see the balance after the 100th payment is $134,139.52.
-            <table class="display-lg" >
+        <p>From the schedule we see the balance after the 100th payment is $134,139.52.</p>
+       
+        <table class="display-lg math-small">
               <thead>
                 <tr>
                   <th scope="col">Payment #</th>
@@ -2397,9 +2397,11 @@
                 </tr>
               </tbody>
             </table>
-          </li>
-          <li>After 20 years is the same as after the 20*12=240th payment. This balance is $77,668.70
-            <table class="display-lg" >
+            
+          <p>After 20 years is the same as after the 20*12=240th payment. This balance is $77,668.70
+        </p>
+ 
+        <table class="display-lg math-small">
               <thead>
                 <tr>
                   <th scope="col">Payment #</th>
@@ -2421,21 +2423,20 @@
                 </tr>
               </tbody>
             </table>
-          </li>
-          <li>The cost of the loan can be found by adding up all the interest payments in the schedule. This total was
-              found to be $128,437.30 when adding the interest payments found in the google sheets document. It will be
-              slightly different due to rounding from taking the sum of all payments and subtracting the principal of
-              the loan (that value would be $128.439.20).</li>
-          <li>In the second tab of the Google Sheets file we can see the extra $200 per month added to each payment
-              that goes towards reducing the balance in addition to the principal portion of a payment. The loan would
-              now finish at the 241 payment as that is where the balance is now a negative value. This is 20 years plus
-              1 month. The cost of the loan is found by adding all the interest payments and we find the cost is
-              $81,218.<br>
-<br>
-By adding an extra $200 per month for each payment the borrower pays approximately $47,000 less in
-              interest over the life of the loan.</li>
-          <li>In the third tab of the document we see what happens when an extra $400 is applied each month. There is a
-              total of 184 payments yielding a cost for the loan of $59,963.</li>
+        <p>The cost of the loan can be found by adding up all the interest payments in the schedule. This total was
+            found to be $128,437.30 when adding the interest payments found in the google sheets document. It will be
+            slightly different due to rounding from taking the sum of all payments and subtracting the principal of
+            the loan (that value would be $128.439.20).</p>
+        <p>In the second tab of the Google Sheets file we can see the extra $200 per month added to each payment
+            that goes towards reducing the balance in addition to the principal portion of a payment. The loan would
+            now finish at the 241 payment as that is where the balance is now a negative value. This is 20 years plus
+            1 month. The cost of the loan is found by adding all the interest payments and we find the cost is
+            $81,218.<br>
+  <br>
+          By adding an extra $200 per month for each payment the borrower pays approximately $47,000 less in
+          interest over the life of the loan.</p>
+          <p>In the third tab of the document we see what happens when an extra $400 is applied each month. There is a
+            total of 184 payments yielding a cost for the loan of $59,963.</p>
         </ol>
       </div>
       <h2>Exercises</h2><hr>
@@ -2498,18 +2499,15 @@ By adding an extra $200 per month for each payment the borrower pays approximate
     </main>
     <footer>
       <div id="footer">
-        <p class="text-center toggle-footnotes">[Show Attributions]</p>
-        <div class="footnotes">
-          <h2>Attributions:</h2>
-          <p>This page contains modified content by David Lippman Math in Society, <a class="ext"
-              href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In
+        <p class="text-center toggle-footnotes">[Show Attributions]</p>  <div class="footnotes">
+          <p>This page contains modified content by David Lippman Math in Society, <a href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank"  rel="noopener">“Math In
               Society, 2nd Edition”</a> CC BY-SA 3.0</p>
           <p>This page contains modified content from <a
               href="https://math.libretexts.org/Bookshelves/Applied_Mathematics/Applied_Finite_Mathematics_(Sekhon_and_Bloom)/06%3A_Mathematics_of_Finance/6.01%3A_Simple_Interest_and_Discount"
-              target="_blank" class="ext"> " Simple Interest and Discount" and "Miscellaneous Application Problems" </a> by <a
-              href="https://www.deanza.edu/directory/user.html?u=sekhonrupinder">Rupinder Sekhon and Roberta Bloom</a>,
-            <a href="https://libretexts.org/" target="_blank" class="ext">LibreTexts</a> is licensed under <a
-              href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="ext"> CC BY </a>. </p>
+              target="_blank"  rel="noopener"> " Simple Interest and Discount" and "Miscellaneous Application Problems" </a> by <a
+              href="https://www.deanza.edu/directory/user.html?u=sekhonrupinder" rel="noopener">Rupinder Sekhon and Roberta Bloom</a>,
+            <a href="https://libretexts.org/" target="_blank"  rel="noopener">LibreTexts</a> is licensed under <a
+              href="https://creativecommons.org/licenses/by/4.0/" target="_blank"  rel="noopener"> CC BY </a>. </p>
           <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.</p>
         </div>
       </div>
