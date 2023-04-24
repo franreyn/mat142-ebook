@@ -16,7 +16,9 @@ if (localStorage.getItem("isDarkMode") === "true") {
 // All code below runs after the DOM has loaded
 window.addEventListener("DOMContentLoaded", () => {
 
-  // Variables
+  console.log("dom is loaded")
+
+// Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
 const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
 const backButtonContent = "<i class=\"fa-solid fa-chevron-left\"></i>";
@@ -139,7 +141,6 @@ const appendNavigation = async () => {
       _li.append(a);
     });
   }); 
-
   ul.append(resizer);
 
   // (6c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
@@ -236,8 +237,10 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
       }
     })
   }
-}
+  }
 
+
+  window.onload = () => {
   // (11) Get location of current URL to highlight active link 
   let fullUrl = window.location.href;
   let currentUrl = fullUrl.split("/").pop();
@@ -247,6 +250,12 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   // (11a) Parse and find URL in navigation that matches that link 
   const links = document.querySelectorAll("nav a");
   const chapters = document.querySelectorAll(".chapter-btn");
+
+  if(links.length) {
+    console.log("something is in links")
+  } else {
+    console.log("nothing is in links")
+  }
 
   // Convert node list into array
   const linkList = Array.prototype.slice.call(links);
@@ -278,7 +287,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
       links[linkIndex].classList.add("activeUrl");
     }
    }
-  }
+}
 
   //if first or last indexes 
   if(currentUrl == ".html") {  
@@ -286,8 +295,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     forwardButton.toggleAttribute("disabled");
   }
-
-
+  }
 // (12) Expand or collapse navigation
 let navIsOpen = false;
 const menuNav = document.querySelector(".nav-toggle");
