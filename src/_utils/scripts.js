@@ -12,6 +12,7 @@ const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
 const navToggle = document.querySelector(".nav-toggle");
+const docHtml = document.documentElement;
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -51,6 +52,7 @@ navControls.append(menuBtn);
 menuBtn.addEventListener("click", () => {
   navWrapper.toggleAttribute("expanded");
   nav.toggleAttribute("expanded");
+  removeTabbing();
 });
 
 // (5) create and append "dark mode" button
@@ -69,18 +71,18 @@ if (darkMode === null) {
 };
 // if "isDarkMode" is true, add attribute
 if (localStorage.getItem("isDarkMode") === "true") {
-  docBody.setAttribute("darkmode", "");
+  docHtml.setAttribute("darkmode", "");
 }
 // (5b) click event for darkmode button
 darkModeBtn.addEventListener("click", () => {
   // if "isDarkMode" is false 
   if (localStorage.getItem("isDarkMode") === "false") {
     localStorage.setItem("isDarkMode", "true");
-    docBody.toggleAttribute("darkmode");
+    docHtml.toggleAttribute("darkmode");
     // if "isDarkMode" is true
   } else {
     localStorage.setItem("isDarkMode", "false");
-    docBody.toggleAttribute("darkmode");
+    docHtml.toggleAttribute("darkmode");
  }
 });
 
@@ -267,16 +269,13 @@ window.onload = () => {
 
     // Add class to chapter
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
-
       links[linkIndex].classList.add("activeUrl");
     }
-
- 
-  }
+   }
   }
 
   //if first or last indexes 
-  if(currentUrl == lowerCaseHrefs[0]) {
+  if(currentUrl == "") {
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     forwardButton.toggleAttribute("disabled");
@@ -311,15 +310,18 @@ menuNav.addEventListener("keypress", (e) => {
 
 // (12b) Remove tabbing from navigation if closed
 const removeTabbing = () => {
-if(!navIsOpen) {
-  links.forEach((link) => {
-  link.tabIndex = 0;
-  });
-} else {
+
+  let links = document.querySelectorAll("nav a");
+
+  if(!navIsOpen) {
     links.forEach((link) => {
-      link.tabIndex = -1;
+    link.tabIndex = 0;
     });
-  }
+  } else {
+      links.forEach((link) => {
+        link.tabIndex = -1;
+      });
+    }
 }
 
 // (13) toggle hints and answers
