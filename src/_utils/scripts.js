@@ -232,6 +232,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 let fullUrl = window.location.href;
 let currentUrl = fullUrl.split("/").pop();
 currentUrl = currentUrl.toLowerCase();
+currentUrl = currentUrl + ".html";
 
 window.onload = () => {
 
@@ -258,9 +259,6 @@ window.onload = () => {
       chapterList[0].classList.add("activeChapter")
     } else {
 
-      console.log(lowerCaseHrefs[linkIndex]);
-      console.log(currentUrl)
-
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
       let activeChapter = Number(currentUrl.charAt(0)) + 1;
@@ -268,14 +266,16 @@ window.onload = () => {
     }
 
     // Add class to chapter
-    if(lowerCaseHrefs[linkIndex] == currentUrl) {
+    if(currentUrl == "0-1.html.html") {
+      links[2].classList.add("activeUrl");
+    }else if(lowerCaseHrefs[linkIndex] == currentUrl) {
       links[linkIndex].classList.add("activeUrl");
     }
    }
   }
 
   //if first or last indexes 
-  if(currentUrl == "") {
+  if(currentUrl == ".html") {  
     backButton.toggleAttribute("disabled");
   } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
     forwardButton.toggleAttribute("disabled");
@@ -287,6 +287,8 @@ let navIsOpen = false;
 const menuNav = document.querySelector(".nav-toggle");
 menuNav.addEventListener("click", () => {
   
+  removeTabbing();
+
 if(navIsOpen) {
   navIsOpen = !navIsOpen;
   menuNav.toggleAttribute("open");
@@ -297,6 +299,7 @@ if(navIsOpen) {
 });
 menuNav.addEventListener("keypress", (e) => {
   if(e.key== "Enter"){
+    removeTabbing();
 
     if(navIsOpen) {
       navIsOpen = !navIsOpen;
@@ -375,15 +378,44 @@ const changePage = (direction) => {
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
 
-  // Cut off end of URL
+ // Index navigation links into an array
+let lowerCaseHrefs= [];
   let navHrefs = [];
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
     //Convert hrefs to lowercase
-    let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
-
+    lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+  }
+  
+  //Unique case for 0.1 until it is renamed 
+  if(currentUrl == "0-1.html.html") {
+    if(direction == "forward") {
+      window.location.href = links[3].href;
+    } else {
+      window.location.href = links[1].href;
+    }
+  }
+  
+  // Determine index and where to change URL
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+  
+    console.log("entering loop")
+    console.log(currentUrl)
+  
+    //Convert hrefs to lowercase
+    console.log(lowerCaseHrefs[linkIndex])
+  
+    if(currentUrl == ".html") {
+      if(direction == "forward") {
+        window.location.href = links[1].href;
+      }
+    } else if(currentUrl == lowerCaseHrefs[linkList.length - 1]) {
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      }
+    }
     // If the page matches the current one
     if(lowerCaseHrefs[linkIndex] == currentUrl) {
       // Go back or forwards one link in navigation
