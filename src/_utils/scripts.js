@@ -16,8 +16,6 @@ if (localStorage.getItem("isDarkMode") === "true") {
 // All code below runs after the DOM has loaded
 window.addEventListener("DOMContentLoaded", () => {
 
-  console.log("dom is loaded")
-
 // Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
 const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
@@ -251,12 +249,6 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
   const links = document.querySelectorAll("nav a");
   const chapters = document.querySelectorAll(".chapter-btn");
 
-  if(links.length) {
-    console.log("something is in links")
-  } else {
-    console.log("nothing is in links")
-  }
-
   // Convert node list into array
   const linkList = Array.prototype.slice.call(links);
   const chapterList = Array.prototype.slice.call(chapters);
@@ -408,10 +400,6 @@ let lowerCaseHrefs= [];
   
   // Determine index and where to change URL
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
-  
-    //Convert hrefs to lowercase
-    console.log(lowerCaseHrefs[linkIndex])
-    console.log(currentUrl)
   
     if(currentUrl == ".html") {
       if(direction == "forward") {
