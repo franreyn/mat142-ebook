@@ -27,7 +27,6 @@ const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
-const navToggle = document.querySelector(".nav-toggle");
 const backButton = document.createElement("button");
 const forwardButton = document.createElement("button");
 
@@ -70,7 +69,6 @@ navControls.append(menuBtn);
 menuBtn.addEventListener("click", () => {
   navWrapper.toggleAttribute("expanded");
   nav.toggleAttribute("expanded");
-  removeTabbing();
 });
 
 // (5) create and append "dark mode" button
@@ -229,7 +227,7 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 
     // Show/hide on enter for users who use tab
     toggleBtns[toggleBtn].addEventListener("keydown", (enter) => {
-      if (enter.keyCode === 13) {
+      if (enter.key === 13) {
         toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show-active");
         changeFootnotesText(toggleBtns,toggleBtn)
       }
@@ -291,29 +289,17 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 // (12) Expand or collapse navigation
 let navIsOpen = false;
 const menuNav = document.querySelector(".nav-toggle");
+
 menuNav.addEventListener("click", () => {
-  
+
+  menuNav.toggleAttribute("open");
+
   removeTabbing();
 
-if(navIsOpen) {
-  navIsOpen = !navIsOpen;
-  menuNav.toggleAttribute("open");
-} else {
-  navIsOpen = !navIsOpen;
-  menuNav.toggleAttribute("open");
-}
-});
-menuNav.addEventListener("keypress", (e) => {
-  if(e.key== "Enter"){
-    removeTabbing();
-
-    if(navIsOpen) {
-      navIsOpen = !navIsOpen;
-      menuNav.toggleAttribute("open");
-    } else {
-      navIsOpen = !navIsOpen;
-      menuNav.toggleAttribute("open");
-    }
+  if(navIsOpen) {
+    navIsOpen = !navIsOpen;
+  } else {
+    navIsOpen = !navIsOpen;
   }
 });
 
