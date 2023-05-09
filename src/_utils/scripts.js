@@ -1,5 +1,21 @@
 "use strict"
 
+const docHtml = document.documentElement;
+
+// Check for darkmode before loading the DOM to prevent flashing
+const darkMode = localStorage.getItem("isDarkMode");
+// if "isDarkMode" is null, make it false
+if (darkMode === null) {
+  localStorage.setItem("isDarkMode", "false");
+};
+// if "isDarkMode" is true, add attribute
+if (localStorage.getItem("isDarkMode") === "true") {
+  docHtml.setAttribute("darkmode", "");
+}
+
+// All code below runs after the DOM has loaded
+window.addEventListener("DOMContentLoaded", () => {
+
 // Variables
 const btnContent = "<div class=\"light-dark-icons\"><i class=\"fa-solid fa-sun icon-lrg\"></i><i class=\"fa-solid fa-moon icon-lrg\"></i></div>";
 const navToggleText = "<div id=\"nav-icon\"><span></span><span></span><span></span></div>";
@@ -11,6 +27,9 @@ const tocUrl = "https://raw.githubusercontent.com/franreyn/mat142-ebook/main/api
 const docBody = document.querySelector("body");
 const docHead = document.querySelector("head");
 const ereaderDisplay = document.querySelector(".ereader-display");
+const backButton = document.createElement("button");
+const forwardButton = document.createElement("button");
+
 
 // (0) Fetch table-of-contents data via api
 const getToc = async () => {
@@ -61,25 +80,17 @@ navControls.append(lightButton);
 
 // (5a) darkmode logic
 const darkModeBtn = document.querySelector(".darkmode-toggle");
-const darkMode = localStorage.getItem("isDarkMode");
-// if "isDarkMode" is null, make it false
-if (darkMode === null) {
-  localStorage.setItem("isDarkMode", "false");
-};
-// if "isDarkMode" is true, add attribute
-if (localStorage.getItem("isDarkMode") === "true") {
-  docBody.setAttribute("darkmode", "");
-}
+
 // (5b) click event for darkmode button
 darkModeBtn.addEventListener("click", () => {
   // if "isDarkMode" is false 
   if (localStorage.getItem("isDarkMode") === "false") {
     localStorage.setItem("isDarkMode", "true");
-    docBody.toggleAttribute("darkmode");
+    docHtml.toggleAttribute("darkmode");
     // if "isDarkMode" is true
   } else {
     localStorage.setItem("isDarkMode", "false");
-    docBody.toggleAttribute("darkmode");
+    docHtml.toggleAttribute("darkmode");
  }
 });
 
@@ -126,7 +137,6 @@ const appendNavigation = async () => {
       _li.append(a);
     });
   }); 
-
   ul.append(resizer);
 
   // (6c) loop through all nav chapter-buttons, when clicked toggle attribute on next-sibling
@@ -217,20 +227,21 @@ if (document.querySelector(".toggle-btn") || document.querySelector(".toggle-foo
 
     // Show/hide on enter for users who use tab
     toggleBtns[toggleBtn].addEventListener("keydown", (enter) => {
-      if (enter.keyCode === 13) {
+      if (enter.key === 13) {
         toggleBtns[toggleBtn].nextElementSibling.classList.toggle("show-active");
         changeFootnotesText(toggleBtns,toggleBtn)
       }
     })
   }
-}
+  }
 
-// (11) Get location of current URL to highlight active link 
-let fullUrl = window.location.href;
-let currentUrl = fullUrl.split("/").pop();
-currentUrl = currentUrl + ".html";
 
-window.onload = () => {
+  window.onload = () => {
+  // (11) Get location of current URL to highlight active link 
+  let fullUrl = window.location.href;
+  let currentUrl = fullUrl.split("/").pop();
+  currentUrl = currentUrl.toLowerCase();
+  currentUrl = currentUrl + ".html";
 
   // (11a) Parse and find URL in navigation that matches that link 
   const links = document.querySelectorAll("nav a");
@@ -240,19 +251,20 @@ window.onload = () => {
   const linkList = Array.prototype.slice.call(links);
   const chapterList = Array.prototype.slice.call(chapters);
 
-  //If it is the home page highlight the first page
-  if(fullUrl == "https://pimaonline-mat142-ebook.netlify.app/") {
-    chapterList[0].classList.add("activeChapter")
-  } else {
-
-  // Cut off end of URL
+  //Create loop of navigation items
+  let lowerCaseHrefs = [];
   let navHrefs = [];
   for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
     let  newLinkHref = linkList[linkIndex].href.split("/").pop();
     navHrefs.push(newLinkHref);
 
     //Convert hrefs to lowercase
-    let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+     lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+
+    //If it is the home page highlight the first page
+    if(fullUrl == "https://pima-topicsinmath.netlify.app/") {
+      chapterList[0].classList.add("activeChapter")
+    } else {
 
     // Add class to chapter heading
     if(currentUrl.charAt(0) == lowerCaseHrefs[linkIndex].charAt(0)) {
@@ -265,52 +277,47 @@ window.onload = () => {
       links[linkIndex].classList.add("activeUrl");
     }
    }
-  }
-} // End of onload functions
+}
 
-  // (12) Expand or collapse navigation
-  let navIsOpen = false;
-  const menuNav = document.querySelector(".nav-toggle");
-  menuNav.addEventListener("click", () => {
-    
+  //if first or last indexes 
+  if(currentUrl == ".html") {  
+    backButton.toggleAttribute("disabled");
+  } else if (currentUrl == lowerCaseHrefs[linkList.length - 1]) {
+    forwardButton.toggleAttribute("disabled");
+  }
+  }
+// (12) Expand or collapse navigation
+let navIsOpen = false;
+const menuNav = document.querySelector(".nav-toggle");
+
+menuNav.addEventListener("click", () => {
+
+  menuNav.toggleAttribute("open");
+
   removeTabbing();
 
   if(navIsOpen) {
     navIsOpen = !navIsOpen;
-    menuNav.toggleAttribute("open");
   } else {
     navIsOpen = !navIsOpen;
-    menuNav.toggleAttribute("open");
   }
-  });
-  menuNav.addEventListener("keypress", (e) => {
-    if(e.key== "Enter"){
+});
 
-      removeTabbing();
+// (12b) Remove tabbing from navigation if closed
+const removeTabbing = () => {
 
-      if(navIsOpen) {
-        navIsOpen = !navIsOpen;
-        menuNav.toggleAttribute("open");
-      } else {
-        navIsOpen = !navIsOpen;
-        menuNav.toggleAttribute("open");
-      }
-    }
-  });
- 
-  // (12b) Remove tabbing from navigation if closed
-  const navLinks = document.querySelectorAll("#navigation a"); 
-  const removeTabbing = () => {
-    if(!navIsOpen) {
-      navLinks.forEach((link) => {
-        link.tabIndex = 0;
-      });
-    } else {
-      navLinks.forEach((link) => {
+  let links = document.querySelectorAll("nav a");
+
+  if(!navIsOpen) {
+    links.forEach((link) => {
+    link.tabIndex = 0;
+    });
+  } else {
+      links.forEach((link) => {
         link.tabIndex = -1;
       });
     }
-  }
+}
 
 // (13) toggle hints and answers
 const toggleHints = async () => {
@@ -340,55 +347,62 @@ const pageSwitch = document.createElement("div");
 pageSwitch.classList.add("page-switch")
 pageController.append(pageSwitch); 
 
+
 // (14a) create and append back and forward buttons
-const backButton = document.createElement("button");
 backButton.type = "button";
 backButton.classList.add("back-btn");
 backButton.innerHTML = backButtonContent;
 pageSwitch.append(backButton); 
 
-const forwardButton = document.createElement("button");
 forwardButton.type = "button";
 forwardButton.classList.add("forward-btn");
 forwardButton.innerHTML = forwardButtonContent;
 pageSwitch.append(forwardButton); 
 
+
 // (14a) call function when one of the buttons are clicked
 const changePage = (direction) => {
 
   let links = document.querySelectorAll("nav a");
+  let currentUrl = window.location.href.split("/").pop();
+  currentUrl = currentUrl.toLowerCase();
+  currentUrl = currentUrl + ".html";
 
   docBody.style.transition = "color-scheme none";
 
   // Convert node list into array
   let linkList = Array.prototype.slice.call(links);
 
-  if(currentUrl == ".html") {
-    if(direction == "forward") {
-      window.location.href = "https://pimaonline-mat142-ebook.netlify.app/chapters/chapter-0/0-0_introduction";
-    } else {
+ // Index navigation links into an array
+let lowerCaseHrefs= [];
+  let navHrefs = [];
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+    let  newLinkHref = linkList[linkIndex].href.split("/").pop();
+    navHrefs.push(newLinkHref);
+
+    //Convert hrefs to lowercase
+    lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
+  }
+  
+  // Determine index and where to change URL
+  for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
+  
+    if(currentUrl == ".html") {
+      if(direction == "forward") {
+        window.location.href = links[1].href;
+      }
+    } else if(currentUrl == lowerCaseHrefs[linkList.length - 1]) {
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      }
     }
-  } else {
-
-    // Cut off end of URL
-    let navHrefs = [];
-    for(let linkIndex = 0; linkIndex < linkList.length;linkIndex++){
-      let  newLinkHref = linkList[linkIndex].href.split("/").pop();
-      navHrefs.push(newLinkHref);
-
-      //Convert hrefs to lowercase
-      let lowerCaseHrefs = navHrefs.map(url => url.toLowerCase());
-
-
-      // If the page matches the current one
-      if(lowerCaseHrefs[linkIndex] == currentUrl) {
-
-        // Go back or forwards one link in navigation
-        if(direction == "back") {
-          window.location.href = links[linkIndex - 1];
-        } else {
-          window.location.href = links[linkIndex + 1];
-        }
+    // If the page matches the current one
+    if(lowerCaseHrefs[linkIndex] == currentUrl) {
+      // Go back or forwards one link in navigation
+      if(direction == "back") {
+        window.location.href = links[linkIndex - 1];
+      } else {
+        window.location.href = links[linkIndex + 1];
       }
     }
   }
@@ -403,3 +417,5 @@ forwardButton.addEventListener("click", () => {
   let direction = "forward"
   changePage(direction)
 });
+
+})
