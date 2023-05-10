@@ -1,23 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" type="text/css" href="../../_utils/styles.css">
 <script type="text/javascript" src="../../_utils/scripts.js" ></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" ></script>
-<title>4.1 Probability Fundamentals</title>
-=======
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="../../_utils/styles.css">
-  <script type="text/javascript" src="../../_utils/scripts.js" ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" ></script>
-  <title>4.5 Probability with Counting Techniques</title>
->>>>>>> origin/main
+<title>4.6 Expected Value</title>
 </head>
 <body>
 <section class="ereader-display"> 
@@ -33,35 +23,38 @@
     <h2>Expected Value</h2>
     <p>Expected value is perhaps the most useful probability concept we will discuss.&nbsp; It has many applications, from insurance policies to making financial decisions, and it's one thing that the casinos and government agencies that run gambling operations and lotteries hope most people never learn about.&nbsp;</p>
     <div class="example">
-        <h3>Example 1</h3>
-        <div class="side-by-side">
-         <div class="side-by-side-item">
-        <p>In the casino game roulette, a wheel with 38 spaces (18 red, 18 black, and 2 green) is spun.  In one possible bet, the player bets $1 on a single number.  If that number is spun on the wheel, then they receive $36 (their original $1&nbsp;+&nbsp;$35).  Otherwise, they lose their $1.  On average, how much money should a player expect to win or lose if they play this game repeatedly? </p>
-      </div><div class="side-by-side-item">
-        <img src="../../images/chapter-4/4-6/module6-6-clip-image002.jpg" alt="" width="165" height="124"><figcaption>Photo of roulette wheel, CC-BY-SA <a href="http://www.flickr.com/photos/stoneflower/" target="_blank">http://www.flickr.com/photos/stoneflower/</a></figcaption></div>
-   </div>
-    <p>Suppose you bet $1 on each of the 38 spaces on the wheel, for a total of $38 bet.  When the winning number is spun, you are paid $36 on that number.  While you won on that one number, overall you&rsquo;ve lost $2.  On a per-space basis, you have &ldquo;won&rdquo;
-      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mo>&#x2212;</mo>
-          <mfrac>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>2</mn>
-            </mrow>
-            <mrow>
-              <mi>&#x0024;</mi>
-              <mn>38</mn>
-            </mrow>
-          </mfrac>
-          <mo>&#x2248;</mo>
-          <mo>&#x2212;</mo>
-          <mi>&#x0024;</mi>
-          <mn>0.053</mn>
-        </mrow>
-      </math>
-      .  In other words, on average you lose 5.3 cents per space you bet on.</p>
-    <p><a href="http://youtu.be/pFzgxGVltS8" target="_blank">Video Solution Example 1</a> (2 mins and 13 seconds - <em>CC)</em> Another example starts after 2:42 mark on the video.</p></div>
+      <h3>Example 1</h3>
+      <div class="side-by-side">
+        <div class="side-by-side-item">
+          <p>In the casino game roulette, a wheel with 38 spaces (18 red, 18 black, and 2 green) is spun.  In one possible bet, the player bets $1 on a single number.  If that number is spun on the wheel, then they receive $36 (their original $1&nbsp;+&nbsp;$35).  Otherwise, they lose their $1.  On average, how much money should a player expect to win or lose if they play this game repeatedly? </p>
+        </div>
+        <div class="side-by-side-item"> <img src="../../images/chapter-4/4-6/module6-6-clip-image002.jpg" alt="" width="165" height="124">
+          <figcaption>Photo of roulette wheel, CC-BY-SA <a href="http://www.flickr.com/photos/stoneflower/" target="_blank">http://www.flickr.com/photos/stoneflower/</a></figcaption>
+        </div>
+      </div>
+      <p>Suppose you bet $1 on each of the 38 spaces on the wheel, for a total of $38 bet.  When the winning number is spun, you are paid $36 on that number.  While you won on that one number, overall you&rsquo;ve lost $2.  On a per-space basis, you have &ldquo;won&rdquo;
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+            <mo>&#x2212;</mo>
+            <mfrac>
+              <mrow>
+                <mi>&#x0024;</mi>
+                <mn>2</mn>
+              </mrow>
+              <mrow>
+                <mi>&#x0024;</mi>
+                <mn>38</mn>
+              </mrow>
+            </mfrac>
+            <mo>&#x2248;</mo>
+            <mo>&#x2212;</mo>
+            <mi>&#x0024;</mi>
+            <mn>0.053</mn>
+          </mrow>
+        </math>
+        .  In other words, on average you lose 5.3 cents per space you bet on.</p>
+      <p><a href="http://youtu.be/pFzgxGVltS8" target="_blank">Video Solution Example 1</a> (2 mins and 13 seconds - <em>CC)</em> Another example starts after 2:42 mark on the video.</p>
+    </div>
     <p>In the above example we call this average gain or loss the <strong>expected value</strong> of playing roulette.&nbsp; Notice that no one ever loses exactly 5.3 cents: most people (in fact, about 37 out of every 38) lose $1 and a very few people (about 1 person out of every 38) gain $35 (the $36 they win minus the $1 they spent to play the game).</p>
     <p>There is another way to compute expected value without imagining what would happen if we play every possible space.&nbsp; There are 38 possible outcomes when the wheel spins, so the probability of winning is
       <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -189,8 +182,9 @@
       , which is the expected value we computed above.</p>
     <p>The video below summarizes the results from above.</p>
     <p>
-      <iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/xCeOYp49Kt4?rel=0" frameborder="1" allowfullscreen></iframe><br>
-    <em>Introduction to Expected Values (10 mins 23 secs)</em></p>
+      <iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/xCeOYp49Kt4?rel=0" frameborder="1" allowfullscreen></iframe>
+      <br>
+      <em>Introduction to Expected Values (10 mins 23 secs)</em></p>
     <div class="definition">
       <h4>Expected Value</h4>
       <p><strong>Expected Value</strong> is the average gain or loss of an event if the procedure is repeated many times. It is often referred to as the "long-term" average or mean for a probability experiment.</p>
@@ -1790,7 +1784,8 @@
     </div>
     <p>Not surprisingly, the expected value is negative; the insurance company can only afford to offer policies if they, on average, make money on each policy.  They can afford to pay out the occasional benefit because they offer enough policies that those benefit payouts are balanced by the rest of the insured people. </p>
     <p>For people buying the insurance, there is a negative expected value, but there is a security that comes from insurance that is worth that cost.</p>
-    <h2>Exercises</h2><hr>
+    <h2>Exercises</h2>
+    <hr>
     <ol>
       <li>
         <p> A  bag contains 3 gold marbles, 6 silver marbles, and 28 black marbles. Someone  offers to play this game: You randomly select on marble from the bag. If it is  gold, you win $3. If it is silver, you win $2. If it is black, you lose  $1.  What is your expected value if you  play this game?</p>
@@ -1826,7 +1821,7 @@
       <p class="text-center toggle-footnotes">[Show Attributions]</p>
       <div class="footnotes">
         <p>This page contains modified content by David Lippman Math in Society, <a class="ext" href="http://www.opentextbookstore.com/mathinsociety/index.html" target="_blank" rel="noopener">“Math In Society, 2nd Edition”</a> CC BY-SA 3.0</p>
-        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021.      </p>
+        <p>This page contains content by Robert Foth, Math Faculty, Pima Community College, 2021. </p>
       </div>
     </div>
   </footer>
