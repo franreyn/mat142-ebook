@@ -1,6 +1,12 @@
 # Math 142 - eBook 
 
 
+## Widgets
+
+`.quarter-size .image-xxx`
+
+Adding both the classes to a `side-by-side` container, quarter size and either `image-first` or `image-second` will create a side by side container that will adjust the spacing so that the image takes up a quarter of the total width.
+
 ## Available styles
 
 ### Table Styles 
@@ -32,3 +38,10 @@ Changes the font size to 16px which should be small enough for the items to fit 
 `.math-extra-small`
 
 Changes the font size to 14px which can be used for extra long expressions.
+
+### Image Styles
+
+`.width-xxx`
+
+This places a max width on the image. You can select from `100` to `900` (increments of 100) to specify the width.
+
