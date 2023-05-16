@@ -1238,12 +1238,16 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
   padding: 15px 0;
   background: rgba(3, 81, 140, 1);
   max-width: 100%;
-  margin-top: -40px;
   position: relative;
-  z-index: 2;
 }
 
 @media screen and (min-width: 730px) {
+
+  .header .text-container {
+    background: rgba(3, 81, 140, .8);
+    position: relative;
+    margin-top: -103px;
+  }
   
   ul, ol {
     margin: 0 0 1rem 3rem;
@@ -1279,6 +1283,12 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 
 /* Text spacing Media Query */
 @media screen and (min-width: 800px) {
+
+  .header .text-container {
+    position: relative;
+    margin-top: -108px;
+  }
+
 
   h1 {
     font-size: 2rem;
@@ -1384,7 +1394,7 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
       padding: 15px 0;
       background: rgba(3, 81, 140, .8);
       position: absolute;
-      top: 34%;
+      top: 436px;
       width: 990px;
       max-width: 100%;
   }
