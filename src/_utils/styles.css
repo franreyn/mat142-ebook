@@ -1136,13 +1136,21 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
   margin-top: 0;
   padding: 0;
   border-bottom: none;
+  color:white;
+}
+
+.header .text-container h2 {
+  color: white;
+  margin-top: 0;
 }
 
 .header .text-container {
   padding: 15px 0;
   background: rgba(3, 81, 140, .8);
   max-width: 100%;
-  margin: 0 auto;
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
 }
 
 @media screen and (min-width: 730px) {
@@ -1260,7 +1268,7 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
   .header .text-container {
       padding: 15px 0;
       position: absolute;
-      top: 22%;
+      top: 34%;
       width: 990px;
       max-width: 100%;
   }
