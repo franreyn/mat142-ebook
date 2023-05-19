@@ -1215,6 +1215,7 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 
 .header {
   max-width: 990px;
+  position: relative;
 }
 
 .header img {
@@ -1394,7 +1395,7 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
       padding: 15px 0;
       background: rgba(3, 81, 140, .8);
       position: absolute;
-      top: 436px;
+      top: 310px;
       width: 990px;
       max-width: 100%;
   }
