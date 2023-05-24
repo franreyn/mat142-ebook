@@ -39,9 +39,32 @@ Changes the font size to 16px which should be small enough for the items to fit 
 
 Changes the font size to 14px which can be used for extra long expressions.
 
+`.math-normal`
+
+Adds the default `font-size:114%` to the math jacks.
+
+`.math-width-1`
+
+Adds `1em` to the math jacks width to avoid scrolling. 
+
+`.math-width-1-5`
+
+Adds `1.5em` to the math jacks width to avoid scrolling.
+
+`.math-width-1-75`
+
+Adds `1.75em` to the math jacks width to avoid scrolling.
+
+`.math-width-2`
+
+Adds `2em` to the math jacks width to avoid scrolling.
+
+`.disclaimer`
+
+Text that is only visible when the screen is under `500px`
+
 ### Image Styles
 
 `.width-xxx`
 
 This places a max width on the image. You can select from `100` to `900` (increments of 100) to specify the width.
-
