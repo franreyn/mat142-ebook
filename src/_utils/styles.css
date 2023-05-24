@@ -1469,7 +1469,8 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
   }
 
   .ereader-display[widthLarge] .header .text-container {
-    width: 1170px;
+    width: 1168px;
+    margin: -108px auto 0;
   }
 }
 
