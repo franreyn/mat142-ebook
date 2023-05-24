@@ -442,13 +442,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const addiFrameWrapper = () => {
 
     iframes.forEach(iframe => {
+
+      const src = iframe.getAttribute('src');
+
+      console.log("each iframe")
+
       // Create the wrapper and container elements
       const wrapper = document.createElement('div');
       const container = document.createElement('div');
-    
-      // Add the necessary classes to the elements
-      wrapper.classList.add('iframe-wrapper');
-      container.classList.add('iframe-container');
     
       // Store the iframe's attributes
       const attributes = Array.from(iframe.attributes);
@@ -458,6 +459,14 @@ window.addEventListener("DOMContentLoaded", () => {
     
       // Append the container to the wrapper
       wrapper.appendChild(container);
+
+      if (src.includes('youtube')) {
+        wrapper.classList.add('video-wrapper');
+        container.classList.add('video-container');
+      } else {
+        wrapper.classList.add('iframe-wrapper');
+        container.classList.add('iframe-container');
+      }
     
       // Replace the original iframe with the wrapped structure
       iframe.parentNode.replaceChild(wrapper, iframe);

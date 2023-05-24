@@ -93,6 +93,11 @@ li :is(ul,ol) {
 li {
   font-size: 1.11rem;
   margin: 1rem 2rem 0 1.667rem;
+  padding-left: 15px;
+}
+
+.disclaimer {
+  display:block;
 }
 
 li + :is(h1,h2,h3,h4,h5,p) {
@@ -277,6 +282,30 @@ html[darkmode] .mjx-chtml {
 
 .MJXc-display {
   margin: 2rem 0;
+}
+
+.math-width-1 {
+  width: 1.5em;
+}
+
+.math-width-100 {
+  width: 100%;
+}
+
+.math-width-1-5 {
+  width: 1.5em;
+}
+
+.math-width-1-75 {
+  width: 1.75em;
+}
+
+.math-width-2 {
+  width: 2em;
+}
+
+.math-normal {
+  font-size: 114%;
 }
 
 .math-small {
@@ -871,6 +900,32 @@ html[darkmode] figcaption {
 
 /* Media Container - iframe wrapper */
 
+.video-wrapper {
+  border: 1px solid rgba(51, 51, 51, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 25px auto;
+  padding: 5px;
+}
+
+.video-container {
+  overflow: hidden;
+  padding-top: 35px;
+  padding-bottom: 55%;
+  position: relative;
+  width: 100%;
+}
+
+.video-container iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .iframe-container {
   margin: 30px 0;
   position: relative;
@@ -888,7 +943,6 @@ html[darkmode] figcaption {
   height: 100%;
   overflow: scroll;
 }
-
 
 /* Plain Block */
 .plainblock {
@@ -1213,6 +1267,11 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 .header {
   max-width: 990px;
   position: relative;
+  margin: auto;
+}
+
+.ereader-display[widthLarge] .header {
+  max-width: 1170px;
 }
 
 .header img {
@@ -1239,7 +1298,17 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
   position: relative;
 }
 
+@media screen and (min-width: 500px) {
+  .disclaimer {
+    display:none;
+  }
+}
+
 @media screen and (min-width: 730px) {
+
+  .video-wrapper {
+    max-width: 80%;
+  }
 
   .header .text-container {
     background: rgba(3, 81, 140, .8);
@@ -1335,7 +1404,6 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 
   li .table-wrapper {
     margin: 2rem 1.25rem;
-
   }
 
   ul, ol {
@@ -1346,8 +1414,12 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
     margin: 2rem 4rem;
   }
 
+  li .side-by-side {
+    margin: 2rem 4rem 2rem 0;
+  }
+
   .side-by-side {
-    margin: 2rem ;
+    margin: 2rem 4rem 2rem 4.5rem ;
   }
 
   /* Change width of ereader area */
@@ -1386,15 +1458,18 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 @media screen and (min-width: 990px) {
   .header img {
     max-width: 100%;
+    height: 365.625px;
   }
 
   .header .text-container {
-      padding: 15px 0;
-      background: rgba(3, 81, 140, .8);
-      position: absolute;
-      top: 310px;
-      width: 990px;
-      max-width: 100%;
+    padding: 15px 0;
+    background: rgba(3, 81, 140, .8);
+    position:relative;
+    margin-top: -108px;
+  }
+
+  .ereader-display[widthLarge] .header .text-container {
+    width: 1170px;
   }
 }
 
