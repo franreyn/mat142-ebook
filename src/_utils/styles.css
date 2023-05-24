@@ -870,17 +870,14 @@ html[darkmode] figcaption {
 }
 
 /* Media Container - iframe wrapper */
-.iframe-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
 
 .iframe-container {
+  margin: 30px 0;
   position: relative;
-  overflow: auto; /* Allow both horizontal and vertical scrolling */
-  padding-bottom: 90%;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow-x:auto;
 }
 
 .iframe-container iframe {
