@@ -285,7 +285,7 @@ html[darkmode] .mjx-chtml {
 }
 
 .math-width-1 {
-  width: 1.5em;
+  width: 1em;
 }
 
 .math-width-100 {
@@ -1469,7 +1469,8 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
   }
 
   .ereader-display[widthLarge] .header .text-container {
-    width: 1170px;
+    width: 1168px;
+    margin: -108px auto 0;
   }
 }
 
