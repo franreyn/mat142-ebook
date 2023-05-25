@@ -445,8 +445,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const src = iframe.getAttribute('src');
 
-      console.log("each iframe")
-
       // Create the wrapper and container elements
       const wrapper = document.createElement('div');
       const container = document.createElement('div');
