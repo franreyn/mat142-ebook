@@ -31,6 +31,10 @@ This class is used for example answers to have a border around them when expande
 
 ### Text Styles 
 
+`text-center`
+
+Centers the text
+
 `.math-small`
 
 Changes the font size to 16px which should be small enough for the items to fit within the screen.
@@ -60,6 +64,14 @@ Adds `1.75em` to the math jacks width to avoid scrolling.
 Adds `2em` to the math jacks width to avoid scrolling.
 
 `.disclaimer`
+
+```
+<figure>
+  <iframe></iframe>
+  <figcaption></figcaption>
+  <p class="disclaimer"> Disclaimer Text here </p>
+</figure>
+```
 
 Text that is only visible when the screen is under `500px`
 
