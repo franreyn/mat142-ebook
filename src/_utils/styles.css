@@ -1277,6 +1277,8 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 .header img {
   margin-bottom: 0;
   max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .header .text-container h1 {
@@ -1456,10 +1458,6 @@ html[darkmode] .js-to-expand[show-active] .exerciseanswer {
 }
 
 @media screen and (min-width: 990px) {
-  .header img {
-    max-width: 100%;
-    height: 365.625px;
-  }
 
   .header .text-container {
     padding: 15px 0;
