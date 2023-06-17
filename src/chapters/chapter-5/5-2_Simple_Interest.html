@@ -611,25 +611,23 @@
     </div>
     <h2>Discounted Loans</h2>
     <p>When a loan is made over a specified period of time, but the interest that would have been paid is deducted
-      from the loan amount we call that a <strong>discounted loan</strong>. The total interest that was deducted from
-      the loan is called the <strong>discount</strong>. The amount that is given to the borrower and is called the
-      proceeds. The amount the borrower must pay back is called the maturity value.</p>
+      from the loan amount before it is given to the borrower we call that a <strong>discounted loan</strong>. The total interest that was deducted from the loan is called the <strong>discount</strong>. The amount that is given to the borrower and is called the proceeds. The amount the borrower must pay back is called the maturity value.</p>
     <div class="definition">
       <h4>Discount Loan</h4>
-      <p>If an amount <em>P</em> is borrowed for a time <em>t</em> at a discount rate <em>r</em> per year, then the
+      <p>If an amount <em>M</em> is borrowed for a time <em>t</em> at a discount rate <em>r</em> per year, then the
         discount <em>D</em> is</p>
       <math display="block">
         <mi>D</mi>
         <mo>=</mo>
-        <mi>P</mi>
+        <mi>M</mi>
         <mo>&#x22C5;</mo>
         <mi>r</mi>
         <mo>&#x22C5;</mo>
         <mi>t</mi>
       </math>
       <p>In a discount loan the amount agreed upon for the loan is not the amount received by the borrower. This loan
-        amount (given by <em>P</em>) is the total amount a borrower agrees to pay back after a set time period. The
-        amount <em>M</em> is what the borrower will receive (proceeds).</p>
+        amount (given by <em>M</em>) is the total amount a borrower agrees to pay back after a set time period. The
+        amount <em>P</em> is what the borrower will receive (proceeds).</p>
       <math display="block">
         <mtable columnalign="left">
           <mtr>
@@ -637,26 +635,17 @@
               <mi>P</mi>
               <mo>=</mo>
               <mi>M</mi>
-              <mo>+</mo>
-              <mi>D</mi>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <mi>M</mi>
-              <mo>=</mo>
-              <mi>P</mi>
               <mo>&#x2212;</mo>
               <mi>D</mi>
             </mtd>
           </mtr>
           <mtr>
             <mtd>
-              <mi>M</mi>
+              <mi>P</mi>
               <mo>=</mo>
-              <mi>P</mi>
+              <mi>M</mi>
               <mo>&#x2212;</mo>
-              <mi>P</mi>
+              <mi>M</mi>
               <mo>&#x22C5;</mo>
               <mi>r</mi>
               <mo>&#x22C5;</mo>
@@ -667,9 +656,9 @@
       </math>
       <p>or</p>
       <math display="block">
-        <mi>M</mi>
-        <mo>=</mo>
         <mi>P</mi>
+        <mo>=</mo>
+        <mi>M</mi>
         <mrow>
           <mo>(</mo>
           <mrow>
@@ -683,20 +672,52 @@
         </mrow>
       </math>
       <p> <br>
-        <em>D</em> is the Discount or interest<br>
-        <em>M</em> is the amount given to borrower (proceeds)<br>
-        <em>P</em> is the initial loan amount applying for (this is not what is given to the borrower)<br>
+        <em>D</em> is the Discount or interest paid<br>
+        <em>M</em> is the maturity value (the amount the borrow must repay)<br>
+        <em>P</em> is the proceeds (what is given to the borrower)<br>
         <em>r</em> is the interest rate (in decimal form.&nbsp; Example: 5% = 0.05)<br>
         <em>t</em> is the amount time for the loan in the time units given for the interest rate. </p>
     </div>
-    <p>A discounted loan is a fascinating product as it allows someone to charge a higher than advertised interest
-      rate to someone who does not understand the properties of this type of loan. Look at the example below that
-      shows how a discounted loan works.</p>
+    
     <div class="example">
       <h3>Example 6</h3>
+      <p>A freshman college student needs to borrow money to pay for furniture in a new appartment. They agree to pay the bank $1,200 in 2 years at 6.0% simple interest. Find the Maturity Value, Discount, and the Proceeds for this loan.</p>
+      <p><strong>Solution</strong></p>
+      <p>The maturity value is the amount of money that is agree to be repaid to the lender. In this case that would be the $1,200 they agreed to pay back after two years.</p>
+	  <p>The discount is found by finding the amount of simple interest for 2 years on a $1,200 loan at a rate of 6.0% </p>
+      <p>
+        <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>D</mi>
+          <mo>=</mo>
+          <mn>1200</mn>
+          <mrow>
+            <mo>(</mo>
+            <mrow>
+              <mn>.06</mn>
+            </mrow>
+            <mo>)</mo>
+          </mrow>
+          <mrow>
+            <mo>(</mo>
+            <mn>2</mn>
+            <mo>)</mo>
+          </mrow>
+          <mo>=</mo>
+          <mn>144</mn>
+        </math>
+      </p>
+      <p>The discount was found to be $144. This means the proceeds for the loan (the amount given to the student) will be $1,056.</p>
+    </div>	  
+	  
+	  <p>A discounted loan is a fascinating product in that it allows a lender to charge a higher than advertised interest
+      rate to someone who does not understand the properties of this type of loan. Look at the example below that
+      shows how a discounted loan works to hide that higher interest rate.</p>
+	  
+    <div class="example">
+      <h3>Example 7</h3>
       <p>Francisco borrows $5000 to pay off some bills and catch up on car payments. The bank offers him a discount
         loan with an advertised annual rate of 7.5% (simple interest) for a period of 2 years. Find the amount
-        Francisco receives and the loans simple interest rate.</p>
+        Francisco receives (proceeds) and then use that amount to determine a loans simple interest rate that ends up giving a total cost of the loan to be $5000.</p>
       <p><strong>Solution</strong></p>
       <p>The discount is found by finding the amount of simple interest for 2 years on a $5000 loan at a rate of 7.5% </p>
       <p>
@@ -836,8 +857,9 @@
       <p>What we find is that the interest rate that would be charged in a simple interest rate structure is
         approximately 8.82%. This is a little over 1% above the advertised rate for a discount loan, but represent the
         equivalent rate amount if comparing to a simple interest rate loan instead.</p>
-      <p><a href="https://youtu.be/43zZH8_oDeQ" target="_blank" >Video Example</a><em>(8 min 21 secs - CC)</em></p>
-    </div><div class="tryitnow">
+      <p><a href="https://youtu.be/43zZH8_oDeQ" target="_blank" >Video Example</a> <em>(8 min 21 secs - CC)</em></p>
+    </div>
+	  <div class="tryitnow">
       <h3>Try it Now 3</h3>
       <p>James borrows $1200 for 10 months at a simple interest rate of 15% per year from a lender that is offering
         him a discount loan. Determine the discount and the proceeds.</p>
@@ -854,7 +876,7 @@
               <mtd>
                 <mi>D</mi>
                 <mo>=</mo>
-                <mi>P</mi>
+                <mi>M</mi>
                 <mo>&#x22C5;</mo>
                 <mi>r</mi>
                 <mo>&#x22C5;</mo>
@@ -910,7 +932,7 @@
           </math>
           , and the proceeds </p>
         <math display="block">
-          <mi>M</mi>
+          <mi>P</mi>
           <mo>=</mo>
           <mi>&#x0024;</mi>
           <mn>1200</mn>
@@ -993,7 +1015,7 @@
       <p>You can find <em>n</em> by multiplying the number of years <em>t</em> of the loan by 12 if needed.</p>
     </div>
     <div class="example">
-      <h3>Example 7</h3>
+      <h3>Example 8</h3>
       <p>Samantha purchases new furniture for her first apartment. The furniture costs $1350 (including the tax and
         delivery). If the store is offering an annual rate of 8.95% to finance the purchase with a simple interest
         add-on loan with a term of 2 years, then what would her payments be?</p>
