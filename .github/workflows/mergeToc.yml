@@ -1,0 +1,29 @@
+name: approve and merge toc build
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  auto-approve-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-approve and merge
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const { actor, eventName, payload } = context;
+            const prAuthor = payload.pull_request.user.login;
+            const prRepo = payload.pull_request.head.repo.full_name;
+            if (prAuthor === 'github-actions[bot]' && prRepo === context.repo.full_name) {
+              await github.pulls.createReview({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                event: 'APPROVE'
+              });
+              await github.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number
+              });
+            }
