@@ -15,7 +15,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add toc.json
+          git add api/toc.json
           git commit -m "Update toc.json"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
