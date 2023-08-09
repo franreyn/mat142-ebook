@@ -11,17 +11,15 @@ jobs:
           node-version: '18'
       - run: npm install node-dir
       - run: node buildNav
-      - name: Create new branch
+      - name: Commit changes
         run: |
-          git checkout -b new-branch-name
-      - uses: stefanzweifel/git-auto-commit-action@v4
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add toc.json
+          git commit -m "Update toc.json"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
         with:
-          commit_message: Merged toc.json
-          branch: new-branch-name
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: 'Update toc.json'
-          body: 'Automated update of toc.json'
-          base: main
-          branch: new-branch-name
+          commit-message: Update toc.json
+          title: Update toc.json
+          body: Update toc.json
